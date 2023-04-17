@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 type AssetsServiceClient interface {
 	// RecentAssets returns recent added assets according to request.
 	RecentAssets(ctx context.Context, in *common.RecentAssetsRequest, opts ...grpc.CallOption) (*common.RecentAssetsResponse, error)
-	// AssetsList return list of assets according to request.
+	// AssetsList return list of assets according to snap time.
 	AssetsList(ctx context.Context, in *common.AssetsListRequest, opts ...grpc.CallOption) (*common.AssetsListResponse, error)
 	// Assets returns asset from the system according to request.
 	Assets(ctx context.Context, in *common.AssetsRequest, opts ...grpc.CallOption) (*common.AssetsResponse, error)
@@ -79,7 +79,7 @@ func (c *assetsServiceClient) SupportedAssets(ctx context.Context, in *emptypb.E
 type AssetsServiceServer interface {
 	// RecentAssets returns recent added assets according to request.
 	RecentAssets(context.Context, *common.RecentAssetsRequest) (*common.RecentAssetsResponse, error)
-	// AssetsList return list of assets according to request.
+	// AssetsList return list of assets according to snap time.
 	AssetsList(context.Context, *common.AssetsListRequest) (*common.AssetsListResponse, error)
 	// Assets returns asset from the system according to request.
 	Assets(context.Context, *common.AssetsRequest) (*common.AssetsResponse, error)

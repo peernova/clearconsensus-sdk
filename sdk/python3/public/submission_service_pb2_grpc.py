@@ -17,7 +17,8 @@ class SubmissionServiceServicer(object):
     """Missing associated documentation comment in .proto file."""
 
     def GetFilesView(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """GetFilesView returns information about submitted to s3 storage files.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

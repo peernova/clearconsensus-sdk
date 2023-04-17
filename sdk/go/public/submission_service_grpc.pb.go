@@ -19,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type SubmissionServiceClient interface {
+	// GetFilesView returns information about submitted to s3 storage files.
 	GetFilesView(ctx context.Context, in *common.GetSubmissionFilesRequest, opts ...grpc.CallOption) (*common.GetSubmissionFilesResponse, error)
 }
 
@@ -43,6 +44,7 @@ func (c *submissionServiceClient) GetFilesView(ctx context.Context, in *common.G
 // All implementations must embed UnimplementedSubmissionServiceServer
 // for forward compatibility
 type SubmissionServiceServer interface {
+	// GetFilesView returns information about submitted to s3 storage files.
 	GetFilesView(context.Context, *common.GetSubmissionFilesRequest) (*common.GetSubmissionFilesResponse, error)
 	mustEmbedUnimplementedSubmissionServiceServer()
 }

@@ -46,10 +46,13 @@ class ConsensusServiceStub(object):
         """
         self.ConsensusTimestamps = channel.unary_unary('/titanium.ConsensusService/ConsensusTimestamps', request_serializer=common_dot_consensus__pb2.ConsensusTimestampsRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.ConsensusTimestampsResponse.FromString)
         self.Consensus = channel.unary_unary('/titanium.ConsensusService/Consensus', request_serializer=common_dot_consensus__pb2.ConsensusRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.ConsensusResponse.FromString)
-        self.EvaluatedPrice = channel.unary_unary('/titanium.ConsensusService/EvaluatedPrice', request_serializer=common_dot_consensus__pb2.ConsensusRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.ConsensusResponse.FromString)
+        self.EvaluatedPrice = channel.unary_unary('/titanium.ConsensusService/EvaluatedPrice', request_serializer=common_dot_consensus__pb2.EVPRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.EVPResponse.FromString)
         self.ConsensusOutliers = channel.unary_unary('/titanium.ConsensusService/ConsensusOutliers', request_serializer=common_dot_gateway__base__pb2.OutliersListRequest.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.ConsensusActiveResponse.FromString)
         self.GetConsensusRuns = channel.unary_unary('/titanium.ConsensusService/GetConsensusRuns', request_serializer=common_dot_consensus__pb2.GetConsensusRunsRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.GetConsensusRunsResponse.FromString)
         self.ConsensusResultSetValues = channel.unary_unary('/titanium.ConsensusService/ConsensusResultSetValues', request_serializer=common_dot_consensus__pb2.ConsensusResultSetValuesRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.ConsensusResultSetValuesResponse.FromString)
+        self.ConsensusExplorerInstrumentDetails = channel.unary_unary('/titanium.ConsensusService/ConsensusExplorerInstrumentDetails', request_serializer=common_dot_consensus__pb2.ConsensusExplorerRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.ConsensusExplorerInstrumentDetailsResponse.FromString)
+        self.ConsensusExplorerTable = channel.unary_unary('/titanium.ConsensusService/ConsensusExplorerTable', request_serializer=common_dot_consensus__pb2.ConsensusExplorerRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.ConsensusExplorerTableResponse.FromString)
+        self.ConsensusExplorerRanges = channel.unary_unary('/titanium.ConsensusService/ConsensusExplorerRanges', request_serializer=common_dot_consensus__pb2.ConsensusExplorerRangeRequest.SerializeToString, response_deserializer=common_dot_consensus__pb2.ConsensusExplorerRangeResponse.FromString)
 
 class ConsensusServiceServicer(object):
     """
@@ -133,8 +136,26 @@ class ConsensusServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ConsensusExplorerInstrumentDetails(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ConsensusExplorerTable(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ConsensusExplorerRanges(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_ConsensusServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'ConsensusTimestamps': grpc.unary_unary_rpc_method_handler(servicer.ConsensusTimestamps, request_deserializer=common_dot_consensus__pb2.ConsensusTimestampsRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusTimestampsResponse.SerializeToString), 'Consensus': grpc.unary_unary_rpc_method_handler(servicer.Consensus, request_deserializer=common_dot_consensus__pb2.ConsensusRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusResponse.SerializeToString), 'EvaluatedPrice': grpc.unary_unary_rpc_method_handler(servicer.EvaluatedPrice, request_deserializer=common_dot_consensus__pb2.ConsensusRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusResponse.SerializeToString), 'ConsensusOutliers': grpc.unary_unary_rpc_method_handler(servicer.ConsensusOutliers, request_deserializer=common_dot_gateway__base__pb2.OutliersListRequest.FromString, response_serializer=common_dot_gateway__base__pb2.ConsensusActiveResponse.SerializeToString), 'GetConsensusRuns': grpc.unary_unary_rpc_method_handler(servicer.GetConsensusRuns, request_deserializer=common_dot_consensus__pb2.GetConsensusRunsRequest.FromString, response_serializer=common_dot_consensus__pb2.GetConsensusRunsResponse.SerializeToString), 'ConsensusResultSetValues': grpc.unary_unary_rpc_method_handler(servicer.ConsensusResultSetValues, request_deserializer=common_dot_consensus__pb2.ConsensusResultSetValuesRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusResultSetValuesResponse.SerializeToString)}
+    rpc_method_handlers = {'ConsensusTimestamps': grpc.unary_unary_rpc_method_handler(servicer.ConsensusTimestamps, request_deserializer=common_dot_consensus__pb2.ConsensusTimestampsRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusTimestampsResponse.SerializeToString), 'Consensus': grpc.unary_unary_rpc_method_handler(servicer.Consensus, request_deserializer=common_dot_consensus__pb2.ConsensusRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusResponse.SerializeToString), 'EvaluatedPrice': grpc.unary_unary_rpc_method_handler(servicer.EvaluatedPrice, request_deserializer=common_dot_consensus__pb2.EVPRequest.FromString, response_serializer=common_dot_consensus__pb2.EVPResponse.SerializeToString), 'ConsensusOutliers': grpc.unary_unary_rpc_method_handler(servicer.ConsensusOutliers, request_deserializer=common_dot_gateway__base__pb2.OutliersListRequest.FromString, response_serializer=common_dot_gateway__base__pb2.ConsensusActiveResponse.SerializeToString), 'GetConsensusRuns': grpc.unary_unary_rpc_method_handler(servicer.GetConsensusRuns, request_deserializer=common_dot_consensus__pb2.GetConsensusRunsRequest.FromString, response_serializer=common_dot_consensus__pb2.GetConsensusRunsResponse.SerializeToString), 'ConsensusResultSetValues': grpc.unary_unary_rpc_method_handler(servicer.ConsensusResultSetValues, request_deserializer=common_dot_consensus__pb2.ConsensusResultSetValuesRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusResultSetValuesResponse.SerializeToString), 'ConsensusExplorerInstrumentDetails': grpc.unary_unary_rpc_method_handler(servicer.ConsensusExplorerInstrumentDetails, request_deserializer=common_dot_consensus__pb2.ConsensusExplorerRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusExplorerInstrumentDetailsResponse.SerializeToString), 'ConsensusExplorerTable': grpc.unary_unary_rpc_method_handler(servicer.ConsensusExplorerTable, request_deserializer=common_dot_consensus__pb2.ConsensusExplorerRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusExplorerTableResponse.SerializeToString), 'ConsensusExplorerRanges': grpc.unary_unary_rpc_method_handler(servicer.ConsensusExplorerRanges, request_deserializer=common_dot_consensus__pb2.ConsensusExplorerRangeRequest.FromString, response_serializer=common_dot_consensus__pb2.ConsensusExplorerRangeResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('titanium.ConsensusService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -183,7 +204,7 @@ class ConsensusService(object):
 
     @staticmethod
     def EvaluatedPrice(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/titanium.ConsensusService/EvaluatedPrice', common_dot_consensus__pb2.ConsensusRequest.SerializeToString, common_dot_consensus__pb2.ConsensusResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+        return grpc.experimental.unary_unary(request, target, '/titanium.ConsensusService/EvaluatedPrice', common_dot_consensus__pb2.EVPRequest.SerializeToString, common_dot_consensus__pb2.EVPResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
     def ConsensusOutliers(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
@@ -196,3 +217,15 @@ class ConsensusService(object):
     @staticmethod
     def ConsensusResultSetValues(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/titanium.ConsensusService/ConsensusResultSetValues', common_dot_consensus__pb2.ConsensusResultSetValuesRequest.SerializeToString, common_dot_consensus__pb2.ConsensusResultSetValuesResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ConsensusExplorerInstrumentDetails(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.ConsensusService/ConsensusExplorerInstrumentDetails', common_dot_consensus__pb2.ConsensusExplorerRequest.SerializeToString, common_dot_consensus__pb2.ConsensusExplorerInstrumentDetailsResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ConsensusExplorerTable(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.ConsensusService/ConsensusExplorerTable', common_dot_consensus__pb2.ConsensusExplorerRequest.SerializeToString, common_dot_consensus__pb2.ConsensusExplorerTableResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ConsensusExplorerRanges(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.ConsensusService/ConsensusExplorerRanges', common_dot_consensus__pb2.ConsensusExplorerRangeRequest.SerializeToString, common_dot_consensus__pb2.ConsensusExplorerRangeResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

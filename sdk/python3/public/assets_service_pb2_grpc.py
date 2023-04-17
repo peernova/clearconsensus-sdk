@@ -32,7 +32,7 @@ class AssetsServiceServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AssetsList(self, request, context):
-        """AssetsList return list of assets according to request.
+        """AssetsList return list of assets according to snap time.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
