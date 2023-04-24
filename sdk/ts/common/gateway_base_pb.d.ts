@@ -655,6 +655,11 @@ export class ResponseData extends jspb.Message {
   setRowsList(value: Array<ValuesRow>): void;
   addRows(value?: ValuesRow, index?: number): ValuesRow;
 
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): Page | undefined;
+  setPage(value?: Page): void;
+
   getTotalRows(): number;
   setTotalRows(value: number): void;
 
@@ -672,6 +677,7 @@ export namespace ResponseData {
   export type AsObject = {
     columnsList: Array<ColumnInfo.AsObject>,
     rowsList: Array<ValuesRow.AsObject>,
+    page?: Page.AsObject,
     totalRows: number,
   }
 }
@@ -1554,6 +1560,68 @@ export namespace Page {
   }
 }
 
+export class EntityDefinition extends jspb.Message {
+  getName(): string;
+  setName(value: string): void;
+
+  getScope(): string;
+  setScope(value: string): void;
+
+  getType(): EntityTypeMap[keyof EntityTypeMap];
+  setType(value: EntityTypeMap[keyof EntityTypeMap]): void;
+
+  getDefinition(): string;
+  setDefinition(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntityDefinition.AsObject;
+  static toObject(includeInstance: boolean, msg: EntityDefinition): EntityDefinition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntityDefinition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntityDefinition;
+  static deserializeBinaryFromReader(message: EntityDefinition, reader: jspb.BinaryReader): EntityDefinition;
+}
+
+export namespace EntityDefinition {
+  export type AsObject = {
+    name: string,
+    scope: string,
+    type: EntityTypeMap[keyof EntityTypeMap],
+    definition: string,
+  }
+}
+
+export class EntityIdentifier extends jspb.Message {
+  hasIdentifier(): boolean;
+  clearIdentifier(): void;
+  getIdentifier(): Identifier | undefined;
+  setIdentifier(value?: Identifier): void;
+
+  getScope(): string;
+  setScope(value: string): void;
+
+  getType(): EntityTypeMap[keyof EntityTypeMap];
+  setType(value: EntityTypeMap[keyof EntityTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntityIdentifier.AsObject;
+  static toObject(includeInstance: boolean, msg: EntityIdentifier): EntityIdentifier.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntityIdentifier, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntityIdentifier;
+  static deserializeBinaryFromReader(message: EntityIdentifier, reader: jspb.BinaryReader): EntityIdentifier;
+}
+
+export namespace EntityIdentifier {
+  export type AsObject = {
+    identifier?: Identifier.AsObject,
+    scope: string,
+    type: EntityTypeMap[keyof EntityTypeMap],
+  }
+}
+
 export interface OrderMap {
   ASC: 0;
   DESC: 1;
@@ -1568,4 +1636,10 @@ export interface DecisionMap {
 }
 
 export const Decision: DecisionMap;
+
+export interface EntityTypeMap {
+  ADVANCED_TRANSFORM_RULE: 0;
+}
+
+export const EntityType: EntityTypeMap;
 

@@ -1583,9 +1583,9 @@ proto.titanium.DQErrorsRequest.toObject = function(includeInstance, msg) {
     submittedId: jspb.Message.getFieldWithDefault(msg, 2, ""),
     assetId: jspb.Message.getFieldWithDefault(msg, 3, ""),
     filter: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    filterPack: (f = msg.getFilterPack()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f),
     orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
-    limit: (f = msg.getLimit()) && common_gateway_base_pb.Limit.toObject(includeInstance, f),
-    offset: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f),
     traceName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
@@ -1640,18 +1640,19 @@ proto.titanium.DQErrorsRequest.deserializeBinaryFromReader = function(msg, reade
       msg.setFilter(value);
       break;
     case 5:
+      var value = new common_gateway_base_pb.FilterPack;
+      reader.readMessage(value,common_gateway_base_pb.FilterPack.deserializeBinaryFromReader);
+      msg.setFilterPack(value);
+      break;
+    case 6:
       var value = new common_gateway_base_pb.OrderBy;
       reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
       msg.setOrderby(value);
       break;
-    case 6:
-      var value = new common_gateway_base_pb.Limit;
-      reader.readMessage(value,common_gateway_base_pb.Limit.deserializeBinaryFromReader);
-      msg.setLimit(value);
-      break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setOffset(value);
+      var value = new common_gateway_base_pb.Page;
+      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
+      msg.setPage(value);
       break;
     case 8:
       var value = /** @type {string} */ (reader.readString());
@@ -1714,27 +1715,28 @@ proto.titanium.DQErrorsRequest.serializeBinaryToWriter = function(message, write
       f
     );
   }
-  f = message.getOrderby();
+  f = message.getFilterPack();
   if (f != null) {
     writer.writeMessage(
       5,
       f,
-      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+      common_gateway_base_pb.FilterPack.serializeBinaryToWriter
     );
   }
-  f = message.getLimit();
+  f = message.getOrderby();
   if (f != null) {
     writer.writeMessage(
       6,
       f,
-      common_gateway_base_pb.Limit.serializeBinaryToWriter
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
     );
   }
-  f = message.getOffset();
-  if (f !== 0) {
-    writer.writeInt32(
+  f = message.getPage();
+  if (f != null) {
+    writer.writeMessage(
       7,
-      f
+      f,
+      common_gateway_base_pb.Page.serializeBinaryToWriter
     );
   }
   f = message.getTraceName();
@@ -1820,12 +1822,49 @@ proto.titanium.DQErrorsRequest.prototype.setFilter = function(value) {
 
 
 /**
- * optional OrderBy orderBy = 5;
+ * optional FilterPack filter_pack = 5;
+ * @return {?proto.titanium.FilterPack}
+ */
+proto.titanium.DQErrorsRequest.prototype.getFilterPack = function() {
+  return /** @type{?proto.titanium.FilterPack} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.FilterPack, 5));
+};
+
+
+/**
+ * @param {?proto.titanium.FilterPack|undefined} value
+ * @return {!proto.titanium.DQErrorsRequest} returns this
+*/
+proto.titanium.DQErrorsRequest.prototype.setFilterPack = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.DQErrorsRequest} returns this
+ */
+proto.titanium.DQErrorsRequest.prototype.clearFilterPack = function() {
+  return this.setFilterPack(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.DQErrorsRequest.prototype.hasFilterPack = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional OrderBy orderBy = 6;
  * @return {?proto.titanium.OrderBy}
  */
 proto.titanium.DQErrorsRequest.prototype.getOrderby = function() {
   return /** @type{?proto.titanium.OrderBy} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 5));
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 6));
 };
 
 
@@ -1834,7 +1873,7 @@ proto.titanium.DQErrorsRequest.prototype.getOrderby = function() {
  * @return {!proto.titanium.DQErrorsRequest} returns this
 */
 proto.titanium.DQErrorsRequest.prototype.setOrderby = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -1852,26 +1891,26 @@ proto.titanium.DQErrorsRequest.prototype.clearOrderby = function() {
  * @return {boolean}
  */
 proto.titanium.DQErrorsRequest.prototype.hasOrderby = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional Limit limit = 6;
- * @return {?proto.titanium.Limit}
+ * optional Page page = 7;
+ * @return {?proto.titanium.Page}
  */
-proto.titanium.DQErrorsRequest.prototype.getLimit = function() {
-  return /** @type{?proto.titanium.Limit} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.Limit, 6));
+proto.titanium.DQErrorsRequest.prototype.getPage = function() {
+  return /** @type{?proto.titanium.Page} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 7));
 };
 
 
 /**
- * @param {?proto.titanium.Limit|undefined} value
+ * @param {?proto.titanium.Page|undefined} value
  * @return {!proto.titanium.DQErrorsRequest} returns this
 */
-proto.titanium.DQErrorsRequest.prototype.setLimit = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+proto.titanium.DQErrorsRequest.prototype.setPage = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1879,8 +1918,8 @@ proto.titanium.DQErrorsRequest.prototype.setLimit = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.titanium.DQErrorsRequest} returns this
  */
-proto.titanium.DQErrorsRequest.prototype.clearLimit = function() {
-  return this.setLimit(undefined);
+proto.titanium.DQErrorsRequest.prototype.clearPage = function() {
+  return this.setPage(undefined);
 };
 
 
@@ -1888,26 +1927,8 @@ proto.titanium.DQErrorsRequest.prototype.clearLimit = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.DQErrorsRequest.prototype.hasLimit = function() {
-  return jspb.Message.getField(this, 6) != null;
-};
-
-
-/**
- * optional int32 offset = 7;
- * @return {number}
- */
-proto.titanium.DQErrorsRequest.prototype.getOffset = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.titanium.DQErrorsRequest} returns this
- */
-proto.titanium.DQErrorsRequest.prototype.setOffset = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+proto.titanium.DQErrorsRequest.prototype.hasPage = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

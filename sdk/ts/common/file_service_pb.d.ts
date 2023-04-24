@@ -333,10 +333,8 @@ export class FileHistoryResponseData extends jspb.Message {
   setRowsList(value: Array<FileHistoryRow>): void;
   addRows(value?: FileHistoryRow, index?: number): FileHistoryRow;
 
-  hasPage(): boolean;
-  clearPage(): void;
-  getPage(): common_gateway_base_pb.Page | undefined;
-  setPage(value?: common_gateway_base_pb.Page): void;
+  getTotalRows(): number;
+  setTotalRows(value: number): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): FileHistoryResponseData.AsObject;
@@ -352,7 +350,7 @@ export namespace FileHistoryResponseData {
   export type AsObject = {
     columnsList: Array<common_gateway_base_pb.ColumnInfo.AsObject>,
     rowsList: Array<FileHistoryRow.AsObject>,
-    page?: common_gateway_base_pb.Page.AsObject,
+    totalRows: number,
   }
 }
 

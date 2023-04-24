@@ -2623,7 +2623,7 @@ proto.titanium.FileHistoryResponseData.toObject = function(includeInstance, msg)
     common_gateway_base_pb.ColumnInfo.toObject, includeInstance),
     rowsList: jspb.Message.toObjectList(msg.getRowsList(),
     proto.titanium.FileHistoryRow.toObject, includeInstance),
-    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f)
+    totalRows: jspb.Message.getFieldWithDefault(msg, 3, 0)
   };
 
   if (includeInstance) {
@@ -2671,9 +2671,8 @@ proto.titanium.FileHistoryResponseData.deserializeBinaryFromReader = function(ms
       msg.addRows(value);
       break;
     case 3:
-      var value = new common_gateway_base_pb.Page;
-      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
-      msg.setPage(value);
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTotalRows(value);
       break;
     default:
       reader.skipField();
@@ -2720,12 +2719,11 @@ proto.titanium.FileHistoryResponseData.serializeBinaryToWriter = function(messag
       proto.titanium.FileHistoryRow.serializeBinaryToWriter
     );
   }
-  f = message.getPage();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getTotalRows();
+  if (f !== 0) {
+    writer.writeInt32(
       3,
-      f,
-      common_gateway_base_pb.Page.serializeBinaryToWriter
+      f
     );
   }
 };
@@ -2808,39 +2806,20 @@ proto.titanium.FileHistoryResponseData.prototype.clearRowsList = function() {
 
 
 /**
- * optional Page page = 3;
- * @return {?proto.titanium.Page}
+ * optional int32 total_rows = 3;
+ * @return {number}
  */
-proto.titanium.FileHistoryResponseData.prototype.getPage = function() {
-  return /** @type{?proto.titanium.Page} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 3));
+proto.titanium.FileHistoryResponseData.prototype.getTotalRows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
 };
 
 
 /**
- * @param {?proto.titanium.Page|undefined} value
- * @return {!proto.titanium.FileHistoryResponseData} returns this
-*/
-proto.titanium.FileHistoryResponseData.prototype.setPage = function(value) {
-  return jspb.Message.setWrapperField(this, 3, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
+ * @param {number} value
  * @return {!proto.titanium.FileHistoryResponseData} returns this
  */
-proto.titanium.FileHistoryResponseData.prototype.clearPage = function() {
-  return this.setPage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.titanium.FileHistoryResponseData.prototype.hasPage = function() {
-  return jspb.Message.getField(this, 3) != null;
+proto.titanium.FileHistoryResponseData.prototype.setTotalRows = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
 };
 
 
