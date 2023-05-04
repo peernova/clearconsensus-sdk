@@ -5,15 +5,15 @@ from ..common import gateway_base_pb2 as common_dot_gateway__base__pb2
 
 class ConsensusServiceStub(object):
     """
-    ConsensusService is service that used to operate with consensus process.
+    *ConsensusService** is service that used to operate with consensus process.
 
-    Consensus price is either the valuation price of an instrument provided by combining the submissions for an
+    Consensus price is either the *valuation* price of an instrument provided by combining the submissions for an
     instrument. For a consensus to be reached for a tenor 3 points of data are requirement at minimum.
-    It can be the average price, average volatility or other agreed upon methods for a particular instrument.
+    It can be the ***average price***, average volatility or other agreed upon methods for a particular instrument.
 
     Consensus process is :
 
-    0.Validation of submitted data(using validation rules). All of the valid submitted points are used in the calculation of the consensus.
+    0. Validation of submitted data(using validation rules). All of the valid submitted points are used in the calculation of the consensus.
     These are rows from the submission that pass the data validation rules. Only rows with a state of “passed” are used in the calculation.
 
     1. Select: Gets all of the submission rows that are for this consensus.
@@ -27,12 +27,12 @@ class ConsensusServiceStub(object):
     Note: An outlier is an instrument price that falls outside the standard deviation limit for a particular instrument.
 
     4. Apply Evaluated Price to Outliers: Uses the evaluated price to bring points back in
-    Note:
-    The Evaluated Price is an authoritative source of data regarding the opinion of the market because it is based on trades and actionable orders beyond the view of information by a given dealer.
-    There are two types of Evaluated Prices :
-    The first is Bid/Ask which is where the view into the market establishes and spread in the pricing between buyers and sellers.
-    There is a Mid calculated between the Bid and Ask. There is a second type of Evaluated Price called Mid Only.
-    This is where there is no Bid and Ask available and the observable activity in the market is designated as a “Mid”, but it is not known whether this observable activity is from a seller or a buyer.
+    >Note:
+    >The Evaluated Price is an authoritative source of data regarding the opinion of the market because it is based on trades and actionable orders beyond the view of information by a given dealer.
+    >There are two types of Evaluated Prices :
+    >The first is Bid/Ask which is where the view into the market establishes and spread in the pricing between buyers and sellers.
+    >There is a Mid calculated between the Bid and Ask. There is a second type of Evaluated Price called Mid Only.
+    >This is where there is no Bid and Ask available and the observable activity in the market is designated as a “Mid”, but it is not known whether this observable activity is from a seller or a buyer.
 
     5. Calculate Consensus: Calculates the consensus using the points that are included and creates some statistics
 
@@ -56,15 +56,15 @@ class ConsensusServiceStub(object):
 
 class ConsensusServiceServicer(object):
     """
-    ConsensusService is service that used to operate with consensus process.
+    *ConsensusService** is service that used to operate with consensus process.
 
-    Consensus price is either the valuation price of an instrument provided by combining the submissions for an
+    Consensus price is either the *valuation* price of an instrument provided by combining the submissions for an
     instrument. For a consensus to be reached for a tenor 3 points of data are requirement at minimum.
-    It can be the average price, average volatility or other agreed upon methods for a particular instrument.
+    It can be the ***average price***, average volatility or other agreed upon methods for a particular instrument.
 
     Consensus process is :
 
-    0.Validation of submitted data(using validation rules). All of the valid submitted points are used in the calculation of the consensus.
+    0. Validation of submitted data(using validation rules). All of the valid submitted points are used in the calculation of the consensus.
     These are rows from the submission that pass the data validation rules. Only rows with a state of “passed” are used in the calculation.
 
     1. Select: Gets all of the submission rows that are for this consensus.
@@ -78,12 +78,12 @@ class ConsensusServiceServicer(object):
     Note: An outlier is an instrument price that falls outside the standard deviation limit for a particular instrument.
 
     4. Apply Evaluated Price to Outliers: Uses the evaluated price to bring points back in
-    Note:
-    The Evaluated Price is an authoritative source of data regarding the opinion of the market because it is based on trades and actionable orders beyond the view of information by a given dealer.
-    There are two types of Evaluated Prices :
-    The first is Bid/Ask which is where the view into the market establishes and spread in the pricing between buyers and sellers.
-    There is a Mid calculated between the Bid and Ask. There is a second type of Evaluated Price called Mid Only.
-    This is where there is no Bid and Ask available and the observable activity in the market is designated as a “Mid”, but it is not known whether this observable activity is from a seller or a buyer.
+    >Note:
+    >The Evaluated Price is an authoritative source of data regarding the opinion of the market because it is based on trades and actionable orders beyond the view of information by a given dealer.
+    >There are two types of Evaluated Prices :
+    >The first is Bid/Ask which is where the view into the market establishes and spread in the pricing between buyers and sellers.
+    >There is a Mid calculated between the Bid and Ask. There is a second type of Evaluated Price called Mid Only.
+    >This is where there is no Bid and Ask available and the observable activity in the market is designated as a “Mid”, but it is not known whether this observable activity is from a seller or a buyer.
 
     5. Calculate Consensus: Calculates the consensus using the points that are included and creates some statistics
 
@@ -93,6 +93,14 @@ class ConsensusServiceServicer(object):
         """ConsensusTimestamps returns timestamps when it was submitted.
         Need to specify asset ID and trace name.
         Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
+
+        This is a test to see how detailed we can make a RPC method's documentation using this commenting type:
+        Below we will be shown sample input for the ConsensusTimestamps endpoint.
+        **sample input**
+        >`{`
+        >`   "asset_id": "238917-2131-341ff",`
+        >`   "trace_name": "placeholder value"`
+        >`}`
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -161,15 +169,15 @@ def add_ConsensusServiceServicer_to_server(servicer, server):
 
 class ConsensusService(object):
     """
-    ConsensusService is service that used to operate with consensus process.
+    *ConsensusService** is service that used to operate with consensus process.
 
-    Consensus price is either the valuation price of an instrument provided by combining the submissions for an
+    Consensus price is either the *valuation* price of an instrument provided by combining the submissions for an
     instrument. For a consensus to be reached for a tenor 3 points of data are requirement at minimum.
-    It can be the average price, average volatility or other agreed upon methods for a particular instrument.
+    It can be the ***average price***, average volatility or other agreed upon methods for a particular instrument.
 
     Consensus process is :
 
-    0.Validation of submitted data(using validation rules). All of the valid submitted points are used in the calculation of the consensus.
+    0. Validation of submitted data(using validation rules). All of the valid submitted points are used in the calculation of the consensus.
     These are rows from the submission that pass the data validation rules. Only rows with a state of “passed” are used in the calculation.
 
     1. Select: Gets all of the submission rows that are for this consensus.
@@ -183,12 +191,12 @@ class ConsensusService(object):
     Note: An outlier is an instrument price that falls outside the standard deviation limit for a particular instrument.
 
     4. Apply Evaluated Price to Outliers: Uses the evaluated price to bring points back in
-    Note:
-    The Evaluated Price is an authoritative source of data regarding the opinion of the market because it is based on trades and actionable orders beyond the view of information by a given dealer.
-    There are two types of Evaluated Prices :
-    The first is Bid/Ask which is where the view into the market establishes and spread in the pricing between buyers and sellers.
-    There is a Mid calculated between the Bid and Ask. There is a second type of Evaluated Price called Mid Only.
-    This is where there is no Bid and Ask available and the observable activity in the market is designated as a “Mid”, but it is not known whether this observable activity is from a seller or a buyer.
+    >Note:
+    >The Evaluated Price is an authoritative source of data regarding the opinion of the market because it is based on trades and actionable orders beyond the view of information by a given dealer.
+    >There are two types of Evaluated Prices :
+    >The first is Bid/Ask which is where the view into the market establishes and spread in the pricing between buyers and sellers.
+    >There is a Mid calculated between the Bid and Ask. There is a second type of Evaluated Price called Mid Only.
+    >This is where there is no Bid and Ask available and the observable activity in the market is designated as a “Mid”, but it is not known whether this observable activity is from a seller or a buyer.
 
     5. Calculate Consensus: Calculates the consensus using the points that are included and creates some statistics
 

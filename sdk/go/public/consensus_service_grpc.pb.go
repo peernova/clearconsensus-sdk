@@ -22,6 +22,14 @@ type ConsensusServiceClient interface {
 	// ConsensusTimestamps returns timestamps when it was submitted.
 	// Need to specify asset ID and trace name.
 	// Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
+	//
+	// This is a test to see how detailed we can make a RPC method's documentation using this commenting type:
+	// Below we will be shown sample input for the ConsensusTimestamps endpoint.
+	// **sample input**
+	// >`{`
+	// >`   "asset_id": "238917-2131-341ff",`
+	// >`   "trace_name": "placeholder value"`
+	// >`}`
 	ConsensusTimestamps(ctx context.Context, in *common.ConsensusTimestampsRequest, opts ...grpc.CallOption) (*common.ConsensusTimestampsResponse, error)
 	// Consensus return information about consensus according to request.
 	// Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition)
@@ -136,6 +144,14 @@ type ConsensusServiceServer interface {
 	// ConsensusTimestamps returns timestamps when it was submitted.
 	// Need to specify asset ID and trace name.
 	// Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
+	//
+	// This is a test to see how detailed we can make a RPC method's documentation using this commenting type:
+	// Below we will be shown sample input for the ConsensusTimestamps endpoint.
+	// **sample input**
+	// >`{`
+	// >`   "asset_id": "238917-2131-341ff",`
+	// >`   "trace_name": "placeholder value"`
+	// >`}`
 	ConsensusTimestamps(context.Context, *common.ConsensusTimestampsRequest) (*common.ConsensusTimestampsResponse, error)
 	// Consensus return information about consensus according to request.
 	// Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition)

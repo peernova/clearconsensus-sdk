@@ -1,3 +1,3 @@
 module github.com/peernova/clearconsensus-sdk/sdk/go
 
-go 1.19
+go 1.18
