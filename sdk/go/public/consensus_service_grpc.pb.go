@@ -26,14 +26,25 @@ type ConsensusServiceClient interface {
 	// This is a test to see how detailed we can make a RPC method's documentation using this commenting type:
 	// Below we will be shown sample input for the ConsensusTimestamps endpoint.
 	// **sample input**
-	// >`{`
-	// >`   "asset_id": "238917-2131-341ff",`
-	// >`   "trace_name": "placeholder value"`
+	//
+	// >`{`<br>
+	// >`   "asset_id": "238917-2131-341ff",`<br>
+	// >`   "trace_name": "placeholder value"`<br>
 	// >`}`
 	ConsensusTimestamps(ctx context.Context, in *common.ConsensusTimestampsRequest, opts ...grpc.CallOption) (*common.ConsensusTimestampsResponse, error)
 	// Consensus return information about consensus according to request.
 	// Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition)
 	// Returns ConsensusResponse that contains information about column and rows related to consensus.
+	//
+	// This is a test of a different commenting type:
+	// Below we will be shown a placeholder for the Consensus RPC request.
+	// *sample input**
+	//
+	// >`{`<br>
+	// >`   "asset_id": "238917-2131-341ff",`<br>
+	// >`   "trace_name": "placeholder value",`<br>
+	// >`   "submitted_date": "238472301213"`<br>
+	// >`}`
 	Consensus(ctx context.Context, in *common.ConsensusRequest, opts ...grpc.CallOption) (*common.ConsensusResponse, error)
 	EvaluatedPrice(ctx context.Context, in *common.EVPRequest, opts ...grpc.CallOption) (*common.EVPResponse, error)
 	// ConsensusOutliers return list of outliers according to specified consensus.
@@ -148,14 +159,25 @@ type ConsensusServiceServer interface {
 	// This is a test to see how detailed we can make a RPC method's documentation using this commenting type:
 	// Below we will be shown sample input for the ConsensusTimestamps endpoint.
 	// **sample input**
-	// >`{`
-	// >`   "asset_id": "238917-2131-341ff",`
-	// >`   "trace_name": "placeholder value"`
+	//
+	// >`{`<br>
+	// >`   "asset_id": "238917-2131-341ff",`<br>
+	// >`   "trace_name": "placeholder value"`<br>
 	// >`}`
 	ConsensusTimestamps(context.Context, *common.ConsensusTimestampsRequest) (*common.ConsensusTimestampsResponse, error)
 	// Consensus return information about consensus according to request.
 	// Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition)
 	// Returns ConsensusResponse that contains information about column and rows related to consensus.
+	//
+	// This is a test of a different commenting type:
+	// Below we will be shown a placeholder for the Consensus RPC request.
+	// *sample input**
+	//
+	// >`{`<br>
+	// >`   "asset_id": "238917-2131-341ff",`<br>
+	// >`   "trace_name": "placeholder value",`<br>
+	// >`   "submitted_date": "238472301213"`<br>
+	// >`}`
 	Consensus(context.Context, *common.ConsensusRequest) (*common.ConsensusResponse, error)
 	EvaluatedPrice(context.Context, *common.EVPRequest) (*common.EVPResponse, error)
 	// ConsensusOutliers return list of outliers according to specified consensus.
