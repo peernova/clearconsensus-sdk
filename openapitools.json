@@ -3,21 +3,30 @@
   "spaces": 2,
   "generator-cli": {
     "version": "6.0.0",
-    "storageDir": "./openapi",
     "generators" : {
       "python_legacy": {
         "generatorName": "python-legacy",
-        "output": "./sdk",
-        "glob": "./sdk/openapi.json"
+        "output": "./rest_sdk/python",
+        "glob": "./rest_sdk/openapi/openapi.json"
       },
       "python": {
         "generatorName": "python",
-        "output": "./sdk",
-        "glob": "./sdk/openapi.json"
+        "output": "./rest_sdk/python_legacy",
+        "glob": "./rest_sdk/openapi/openapi.json"
+      },
+      "javascript": {
+        "generatorName": "javascript",
+        "output": "./rest_sdk/javascript",
+        "glob": "./rest_sdk/openapi/openapi.json"
+      },
+      "java": {
+        "generatorName": "java",
+        "output": "./rest_sdk/java",
+        "glob": "./rest_sdk/openapi/openapi.json"
       },
       "openapi": {
         "generatorName": "openapi",
-        "output": "./sdk",
+        "output": "./rest_sdk/openapi",
         "glob": "./sdk/openapi/clearconsensus-sdk.swagger.json"
       }
     }
