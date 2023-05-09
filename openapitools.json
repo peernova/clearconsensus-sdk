@@ -6,27 +6,27 @@
     "generators" : {
       "python_legacy": {
         "generatorName": "python-legacy",
-        "output": "./rest_sdk/python",
-        "glob": "./rest_sdk/openapi/openapi.json"
+        "output": "./sdk_rest/python_legacy",
+        "glob": "./sdk_rest/openapi/openapi.json"
       },
       "python": {
         "generatorName": "python",
-        "output": "./rest_sdk/python_legacy",
-        "glob": "./rest_sdk/openapi/openapi.json"
+        "output": "./sdk_rest/python",
+        "glob": "./sdk_rest/openapi/openapi.json"
       },
       "javascript": {
         "generatorName": "javascript",
-        "output": "./rest_sdk/javascript",
-        "glob": "./rest_sdk/openapi/openapi.json"
+        "output": "./sdk_rest/javascript",
+        "glob": "./sdk_rest/openapi/openapi.json"
       },
       "java": {
         "generatorName": "java",
-        "output": "./rest_sdk/java",
-        "glob": "./rest_sdk/openapi/openapi.json"
+        "output": "./sdk_rest/java",
+        "glob": "./sdk_rest/openapi/openapi.json"
       },
       "openapi": {
         "generatorName": "openapi",
-        "output": "./rest_sdk/openapi",
+        "output": "./sdk_rest/openapi",
         "glob": "./sdk/openapi/clearconsensus-sdk.swagger.json"
       }
     }
