@@ -1,0 +1,34 @@
+{
+  "$schema": "./node_modules/@openapitools/openapi-generator-cli/config.schema.json",
+  "spaces": 2,
+  "generator-cli": {
+    "version": "6.0.0",
+    "generators" : {
+      "python_legacy": {
+        "generatorName": "python-legacy",
+        "output": "./sdk_rest/python_legacy",
+        "glob": "./sdk_rest/openapi/openapi.json"
+      },
+      "python": {
+        "generatorName": "python",
+        "output": "./sdk_rest/python",
+        "glob": "./sdk_rest/openapi/openapi.json"
+      },
+      "javascript": {
+        "generatorName": "javascript",
+        "output": "./sdk_rest/javascript",
+        "glob": "./sdk_rest/openapi/openapi.json"
+      },
+      "java": {
+        "generatorName": "java",
+        "output": "./sdk_rest/java",
+        "glob": "./sdk_rest/openapi/openapi.json"
+      },
+      "openapi": {
+        "generatorName": "openapi",
+        "output": "./sdk_rest/openapi",
+        "glob": "./sdk/openapi/clearconsensus-sdk.swagger.json"
+      }
+    }
+  }
+}
