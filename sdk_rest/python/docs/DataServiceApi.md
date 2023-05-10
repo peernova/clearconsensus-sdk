@@ -1,0 +1,280 @@
+# openapi_client.DataServiceApi
+
+All URIs are relative to *http://api-dev.clearconsensus.io*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**data_service_export**](DataServiceApi.md#data_service_export) | **POST** /api/v1/export | Export exports data according to the request.
+[**data_service_submitted**](DataServiceApi.md#data_service_submitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
+[**data_service_upload_url**](DataServiceApi.md#data_service_upload_url) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
+
+
+# **data_service_export**
+> TitaniumExportResponse data_service_export(body)
+
+Export exports data according to the request.
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import data_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_export_response import TitaniumExportResponse
+from openapi_client.model.titanium_export_request import TitaniumExportRequest
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_service_api.DataServiceApi(api_client)
+    body = TitaniumExportRequest(
+        asset_id="asset_id_example",
+        consensus_run_timestamp="consensus_run_timestamp_example",
+        filter_pack=TitaniumFilterPack(
+            filter_packs=[
+                TitaniumFilterPack(),
+            ],
+            filters=[
+                TitaniumFilter(
+                    key="key_example",
+                    operator="operator_example",
+                    value={},
+                ),
+            ],
+            logical_operation="logical_operation_example",
+        ),
+        include_header=True,
+        order_by=TitaniumOrderBy(
+            column="column_example",
+            order="order_example",
+        ),
+        submission_date="submission_date_example",
+        trace_name="trace_name_example",
+    ) # TitaniumExportRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Export exports data according to the request.
+        api_response = api_instance.data_service_export(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling DataServiceApi->data_service_export: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumExportRequest**](TitaniumExportRequest.md)|  |
+
+### Return type
+
+[**TitaniumExportResponse**](TitaniumExportResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **data_service_submitted**
+> TitaniumSubmittedResponse data_service_submitted(body)
+
+Submitted returns submitted data based on the request made.
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import data_service_api
+from openapi_client.model.titanium_submitted_response import TitaniumSubmittedResponse
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_submitted_request import TitaniumSubmittedRequest
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_service_api.DataServiceApi(api_client)
+    body = TitaniumSubmittedRequest(
+        asset_id="asset_id_example",
+        consensus_run_timestamp="consensus_run_timestamp_example",
+        filter="filter_example",
+        filter_pack=TitaniumFilterPack(
+            filter_packs=[
+                TitaniumFilterPack(),
+            ],
+            filters=[
+                TitaniumFilter(
+                    key="key_example",
+                    operator="operator_example",
+                    value={},
+                ),
+            ],
+            logical_operation="logical_operation_example",
+        ),
+        filters=[
+            TitaniumFilter(
+                key="key_example",
+                operator="operator_example",
+                value={},
+            ),
+        ],
+        order_by=TitaniumOrderBy(
+            column="column_example",
+            order="order_example",
+        ),
+        page=TitaniumPage(
+            page_number=1,
+            size=1,
+            total_number_of_elements="total_number_of_elements_example",
+        ),
+        submitted_date="submitted_date_example",
+        trace_name="trace_name_example",
+    ) # TitaniumSubmittedRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # Submitted returns submitted data based on the request made.
+        api_response = api_instance.data_service_submitted(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling DataServiceApi->data_service_submitted: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumSubmittedRequest**](TitaniumSubmittedRequest.md)|  |
+
+### Return type
+
+[**TitaniumSubmittedResponse**](TitaniumSubmittedResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **data_service_upload_url**
+> TitaniumUploadURLResponse data_service_upload_url(body)
+
+UploadURL returns a pre-signed S3 URL for uploading data.
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import data_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_upload_url_request import TitaniumUploadURLRequest
+from openapi_client.model.titanium_upload_url_response import TitaniumUploadURLResponse
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_service_api.DataServiceApi(api_client)
+    body = TitaniumUploadURLRequest(
+        asset_id="asset_id_example",
+        client="client_example",
+        date="date_example",
+        descriptor_name="descriptor_name_example",
+        file_name="file_name_example",
+        trace_name="trace_name_example",
+    ) # TitaniumUploadURLRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # UploadURL returns a pre-signed S3 URL for uploading data.
+        api_response = api_instance.data_service_upload_url(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling DataServiceApi->data_service_upload_url: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUploadURLRequest**](TitaniumUploadURLRequest.md)|  |
+
+### Return type
+
+[**TitaniumUploadURLResponse**](TitaniumUploadURLResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

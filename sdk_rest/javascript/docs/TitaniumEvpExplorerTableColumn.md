@@ -1,0 +1,16 @@
+# ClearconsensusSdk.TitaniumEvpExplorerTableColumn
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**absDiffFromEvpMid** | **Object** |  | [optional] 
+**ask** | **Object** |  | [optional] 
+**bid** | **Object** |  | [optional] 
+**evpLowerBoundary** | **Object** |  | [optional] 
+**evpUpperBoundary** | **Object** |  | [optional] 
+**mid** | **Object** |  | [optional] 
+**subPriceDiff** | **Object** |  | [optional] 
+**tradesOrOrdersCount** | **Object** |  | [optional] 
+
+
