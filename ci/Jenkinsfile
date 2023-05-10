@@ -1,0 +1,45 @@
+pipeline {
+
+  agent {
+    label 'jenkins-titanium-slave'
+  }
+
+  options {
+    skipDefaultCheckout()
+    disableConcurrentBuilds()
+  }
+
+  environment {
+    BULDDIR = "$WORKSPACE/src/github.com/peernova/clearconsensus_sdk"
+    PATH = "${PATH}:/usr/bin:/usr/local/bin"
+  }
+
+  stages {
+
+    stage('Generate Rest Sdk') {
+      steps {
+        dir("$BULDDIR") {
+           checkout scm
+           sh "git config --global user.name 'pn-jenkins-ci'"
+           sh "npm install -g @openapitools/openapi-generator-cli"
+           sh "npx openapi-generator-cli generate --generator-key  openapi"
+           sh "openapi-generator-cli generate"
+           sh "git add sdk_rest"
+           sh "git commit -m \"Generated REST sdk ${env.BUILD_TIMESTAMP}\""
+           sshagent(['ci-github-key']) {
+            sh "GIT_SSH_COMMAND=\"ssh -oStrictHostKeyChecking=no\" git push origin ${env.BRANCH_NAME}"
+           }
+        }
+      }
+    }
+  }
+
+  post {
+    always {
+      dir (env.WORKSPACE) {
+          deleteDir()
+      }
+    }
+  }
+
+}
