@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumOutliersRow
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-10T18:18:07.053431Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-10T18:47:20.095866Z[UTC]")
 public class TitaniumOutliersRow {
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
