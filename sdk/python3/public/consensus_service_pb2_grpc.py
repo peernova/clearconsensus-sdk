@@ -5,11 +5,11 @@ from ..common import gateway_base_pb2 as common_dot_gateway__base__pb2
 
 class ConsensusServiceStub(object):
     """
-    *ConsensusService** is service that used to operate with consensus process.
+    <b>ConsensusService</b> is service that used to operate with consensus process.
 
     Consensus price is either the *valuation* price of an instrument provided by combining the submissions for an
     instrument. For a consensus to be reached for a tenor 3 points of data are requirement at minimum.
-    It can be the ***average price***, average volatility or other agreed upon methods for a particular instrument.
+    It can be the***average price***, average volatility or other agreed upon methods for a particular instrument.
 
     Consensus process is :
 
@@ -56,11 +56,11 @@ class ConsensusServiceStub(object):
 
 class ConsensusServiceServicer(object):
     """
-    *ConsensusService** is service that used to operate with consensus process.
+    <b>ConsensusService</b> is service that used to operate with consensus process.
 
     Consensus price is either the *valuation* price of an instrument provided by combining the submissions for an
     instrument. For a consensus to be reached for a tenor 3 points of data are requirement at minimum.
-    It can be the ***average price***, average volatility or other agreed upon methods for a particular instrument.
+    It can be the***average price***, average volatility or other agreed upon methods for a particular instrument.
 
     Consensus process is :
 
@@ -182,11 +182,11 @@ def add_ConsensusServiceServicer_to_server(servicer, server):
 
 class ConsensusService(object):
     """
-    *ConsensusService** is service that used to operate with consensus process.
+    <b>ConsensusService</b> is service that used to operate with consensus process.
 
     Consensus price is either the *valuation* price of an instrument provided by combining the submissions for an
     instrument. For a consensus to be reached for a tenor 3 points of data are requirement at minimum.
-    It can be the ***average price***, average volatility or other agreed upon methods for a particular instrument.
+    It can be the***average price***, average volatility or other agreed upon methods for a particular instrument.
 
     Consensus process is :
 
