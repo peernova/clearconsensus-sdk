@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumExpertExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-11T13:27:26.411619Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-11T14:56:18.793339Z[UTC]")
 public class TitaniumExpertExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_EXPERT_COHORT_MEAN = "absDiffFromExpertCohortMean";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_EXPERT_COHORT_MEAN)
