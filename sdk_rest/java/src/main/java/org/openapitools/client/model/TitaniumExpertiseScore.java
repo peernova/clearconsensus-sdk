@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumExpertiseScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-11T14:56:18.793339Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-12T16:18:26.451720Z[UTC]")
 public class TitaniumExpertiseScore {
   public static final String SERIALIZED_NAME_CHALLENGE_SCORE = "challengeScore";
   @SerializedName(SERIALIZED_NAME_CHALLENGE_SCORE)

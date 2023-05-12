@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAttachment
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-11T14:56:18.793339Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-12T16:18:26.451720Z[UTC]")
 public class TitaniumAttachment {
   public static final String SERIALIZED_NAME_ATTACHMENT_ID = "attachmentId";
   @SerializedName(SERIALIZED_NAME_ATTACHMENT_ID)
