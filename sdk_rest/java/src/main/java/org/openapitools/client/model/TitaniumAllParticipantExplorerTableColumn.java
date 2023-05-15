@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAllParticipantExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-15T16:53:32.150316Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-15T16:55:36.025678Z[UTC]")
 public class TitaniumAllParticipantExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS_PRICE = "absDiffFromConsensusPrice";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS_PRICE)
