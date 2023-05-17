@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumCriteriaDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-16T13:23:08.957131Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-17T15:14:30.290625Z[UTC]")
 public class TitaniumCriteriaDefinition {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)

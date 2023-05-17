@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumViewRow
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-16T13:23:08.957131Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-17T15:14:30.290625Z[UTC]")
 public class TitaniumViewRow {
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
