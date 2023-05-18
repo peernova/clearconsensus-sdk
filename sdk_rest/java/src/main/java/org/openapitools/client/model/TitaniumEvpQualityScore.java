@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpQualityScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-17T15:14:30.290625Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-18T19:12:46.243982Z[UTC]")
 public class TitaniumEvpQualityScore {
   public static final String SERIALIZED_NAME_INDICATIVE_COUNT = "indicativeCount";
   @SerializedName(SERIALIZED_NAME_INDICATIVE_COUNT)

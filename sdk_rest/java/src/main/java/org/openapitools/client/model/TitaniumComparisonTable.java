@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumComparisonTable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-17T15:14:30.290625Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-18T19:12:46.243982Z[UTC]")
 public class TitaniumComparisonTable {
   public static final String SERIALIZED_NAME_ALL_PARTICIPANT_COHORT_CONSENSUS = "allParticipantCohortConsensus";
   @SerializedName(SERIALIZED_NAME_ALL_PARTICIPANT_COHORT_CONSENSUS)
