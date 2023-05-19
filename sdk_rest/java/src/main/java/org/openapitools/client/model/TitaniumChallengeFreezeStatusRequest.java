@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChallengeFreezeStatusRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-19T14:00:36.715870Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-19T17:43:33.578505Z[UTC]")
 public class TitaniumChallengeFreezeStatusRequest {
   public static final String SERIALIZED_NAME_CONSENSUS_RUN_ID = "consensusRunId";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_RUN_ID)

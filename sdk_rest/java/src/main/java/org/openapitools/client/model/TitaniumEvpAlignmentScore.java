@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpAlignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-19T14:00:36.715870Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-19T17:43:33.578505Z[UTC]")
 public class TitaniumEvpAlignmentScore {
   public static final String SERIALIZED_NAME_EVP_ALIGNMENT_DISPERSION_SCORE = "evpAlignmentDispersionScore";
   @SerializedName(SERIALIZED_NAME_EVP_ALIGNMENT_DISPERSION_SCORE)
