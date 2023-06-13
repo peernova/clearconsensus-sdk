@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionStatisticsExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-05-22T13:06:44.239501Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-13T15:25:10.766422Z[UTC]")
 public class TitaniumSubmissionStatisticsExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN = "absDiffFromStatisticalMean";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN)
