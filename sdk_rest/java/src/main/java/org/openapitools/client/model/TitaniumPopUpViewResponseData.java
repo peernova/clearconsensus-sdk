@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumPopUpViewResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-13T17:19:24.039488Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:50:04.249110Z[UTC]")
 public class TitaniumPopUpViewResponseData {
   public static final String SERIALIZED_NAME_BENCHMARK = "benchmark";
   @SerializedName(SERIALIZED_NAME_BENCHMARK)
