@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.TitaniumEvpAlignmentScoreWithDate;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpAlignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumEvpAlignmentScore {
   public static final String SERIALIZED_NAME_EVP_ALIGNMENT_DISPERSION_SCORE = "evpAlignmentDispersionScore";
   @SerializedName(SERIALIZED_NAME_EVP_ALIGNMENT_DISPERSION_SCORE)
@@ -56,6 +59,10 @@ public class TitaniumEvpAlignmentScore {
   public static final String SERIALIZED_NAME_EVP_MID = "evpMid";
   @SerializedName(SERIALIZED_NAME_EVP_MID)
   private Object evpMid;
+
+  public static final String SERIALIZED_NAME_HISTORY = "history";
+  @SerializedName(SERIALIZED_NAME_HISTORY)
+  private List<TitaniumEvpAlignmentScoreWithDate> history = null;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -119,6 +126,37 @@ public class TitaniumEvpAlignmentScore {
 
   public void setEvpMid(Object evpMid) {
     this.evpMid = evpMid;
+  }
+
+
+  public TitaniumEvpAlignmentScore history(List<TitaniumEvpAlignmentScoreWithDate> history) {
+    
+    this.history = history;
+    return this;
+  }
+
+  public TitaniumEvpAlignmentScore addHistoryItem(TitaniumEvpAlignmentScoreWithDate historyItem) {
+    if (this.history == null) {
+      this.history = new ArrayList<>();
+    }
+    this.history.add(historyItem);
+    return this;
+  }
+
+   /**
+   * Get history
+   * @return history
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumEvpAlignmentScoreWithDate> getHistory() {
+    return history;
+  }
+
+
+  public void setHistory(List<TitaniumEvpAlignmentScoreWithDate> history) {
+    this.history = history;
   }
 
 
@@ -226,6 +264,7 @@ public class TitaniumEvpAlignmentScore {
     TitaniumEvpAlignmentScore titaniumEvpAlignmentScore = (TitaniumEvpAlignmentScore) o;
     return Objects.equals(this.evpAlignmentDispersionScore, titaniumEvpAlignmentScore.evpAlignmentDispersionScore) &&
         Objects.equals(this.evpMid, titaniumEvpAlignmentScore.evpMid) &&
+        Objects.equals(this.history, titaniumEvpAlignmentScore.history) &&
         Objects.equals(this.score, titaniumEvpAlignmentScore.score) &&
         Objects.equals(this.scoreStatus, titaniumEvpAlignmentScore.scoreStatus) &&
         Objects.equals(this.submissionMean, titaniumEvpAlignmentScore.submissionMean) &&
@@ -234,7 +273,7 @@ public class TitaniumEvpAlignmentScore {
 
   @Override
   public int hashCode() {
-    return Objects.hash(evpAlignmentDispersionScore, evpMid, score, scoreStatus, submissionMean, submissionStdDev);
+    return Objects.hash(evpAlignmentDispersionScore, evpMid, history, score, scoreStatus, submissionMean, submissionStdDev);
   }
 
   @Override
@@ -243,6 +282,7 @@ public class TitaniumEvpAlignmentScore {
     sb.append("class TitaniumEvpAlignmentScore {\n");
     sb.append("    evpAlignmentDispersionScore: ").append(toIndentedString(evpAlignmentDispersionScore)).append("\n");
     sb.append("    evpMid: ").append(toIndentedString(evpMid)).append("\n");
+    sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    scoreStatus: ").append(toIndentedString(scoreStatus)).append("\n");
     sb.append("    submissionMean: ").append(toIndentedString(submissionMean)).append("\n");
@@ -271,6 +311,7 @@ public class TitaniumEvpAlignmentScore {
     openapiFields = new HashSet<String>();
     openapiFields.add("evpAlignmentDispersionScore");
     openapiFields.add("evpMid");
+    openapiFields.add("history");
     openapiFields.add("score");
     openapiFields.add("scoreStatus");
     openapiFields.add("submissionMean");
@@ -301,6 +342,18 @@ public class TitaniumEvpAlignmentScore {
         if (!TitaniumEvpAlignmentScore.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumEvpAlignmentScore` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
+      }
+      JsonArray jsonArrayhistory = jsonObj.getAsJsonArray("history");
+      if (jsonArrayhistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("history").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `history` to be an array in the JSON string but got `%s`", jsonObj.get("history").toString()));
+        }
+
+        // validate the optional field `history` (array)
+        for (int i = 0; i < jsonArrayhistory.size(); i++) {
+          TitaniumEvpAlignmentScoreWithDate.validateJsonObject(jsonArrayhistory.get(i).getAsJsonObject());
+        };
       }
       if (jsonObj.get("scoreStatus") != null && !jsonObj.get("scoreStatus").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `scoreStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("scoreStatus").toString()));

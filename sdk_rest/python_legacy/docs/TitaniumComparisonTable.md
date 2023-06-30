@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **all_participant_cohort_consensus** | [**TitaniumAllParticipantExplorerTableColumn**](TitaniumAllParticipantExplorerTableColumn.md) |  | [optional] 
+**available_trades** | [**TitaniumAvailableTrades**](TitaniumAvailableTrades.md) |  | [optional] 
 **evaluated_price** | [**TitaniumEvpExplorerTableColumn**](TitaniumEvpExplorerTableColumn.md) |  | [optional] 
 **expert_cohort_consensus** | [**TitaniumExpertExplorerTableColumn**](TitaniumExpertExplorerTableColumn.md) |  | [optional] 
 **submission** | [**TitaniumSubmissionExplorerTableColumn**](TitaniumSubmissionExplorerTableColumn.md) |  | [optional] 

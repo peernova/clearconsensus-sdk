@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.TitaniumDateAndValue;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusDensityScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumConsensusDensityScore {
   public static final String SERIALIZED_NAME_BIMODALITY = "bimodality";
   @SerializedName(SERIALIZED_NAME_BIMODALITY)
@@ -69,9 +72,13 @@ public class TitaniumConsensusDensityScore {
   @SerializedName(SERIALIZED_NAME_EVP_QUALITY)
   private Object evpQuality;
 
+  public static final String SERIALIZED_NAME_HISTORY = "history";
+  @SerializedName(SERIALIZED_NAME_HISTORY)
+  private List<TitaniumDateAndValue> history = null;
+
   public static final String SERIALIZED_NAME_NUMBER_OF_PARTICIPANTS = "numberOfParticipants";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_PARTICIPANTS)
-  private String numberOfParticipants;
+  private Object numberOfParticipants;
 
   public static final String SERIALIZED_NAME_OUTLIER_VOLUME = "outlierVolume";
   @SerializedName(SERIALIZED_NAME_OUTLIER_VOLUME)
@@ -199,7 +206,38 @@ public class TitaniumConsensusDensityScore {
   }
 
 
-  public TitaniumConsensusDensityScore numberOfParticipants(String numberOfParticipants) {
+  public TitaniumConsensusDensityScore history(List<TitaniumDateAndValue> history) {
+    
+    this.history = history;
+    return this;
+  }
+
+  public TitaniumConsensusDensityScore addHistoryItem(TitaniumDateAndValue historyItem) {
+    if (this.history == null) {
+      this.history = new ArrayList<>();
+    }
+    this.history.add(historyItem);
+    return this;
+  }
+
+   /**
+   * Get history
+   * @return history
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumDateAndValue> getHistory() {
+    return history;
+  }
+
+
+  public void setHistory(List<TitaniumDateAndValue> history) {
+    this.history = history;
+  }
+
+
+  public TitaniumConsensusDensityScore numberOfParticipants(Object numberOfParticipants) {
     
     this.numberOfParticipants = numberOfParticipants;
     return this;
@@ -212,12 +250,12 @@ public class TitaniumConsensusDensityScore {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getNumberOfParticipants() {
+  public Object getNumberOfParticipants() {
     return numberOfParticipants;
   }
 
 
-  public void setNumberOfParticipants(String numberOfParticipants) {
+  public void setNumberOfParticipants(Object numberOfParticipants) {
     this.numberOfParticipants = numberOfParticipants;
   }
 
@@ -283,6 +321,7 @@ public class TitaniumConsensusDensityScore {
         Objects.equals(this.dispersion, titaniumConsensusDensityScore.dispersion) &&
         Objects.equals(this.evpAlignmentScore, titaniumConsensusDensityScore.evpAlignmentScore) &&
         Objects.equals(this.evpQuality, titaniumConsensusDensityScore.evpQuality) &&
+        Objects.equals(this.history, titaniumConsensusDensityScore.history) &&
         Objects.equals(this.numberOfParticipants, titaniumConsensusDensityScore.numberOfParticipants) &&
         Objects.equals(this.outlierVolume, titaniumConsensusDensityScore.outlierVolume) &&
         Objects.equals(this.score, titaniumConsensusDensityScore.score);
@@ -290,7 +329,7 @@ public class TitaniumConsensusDensityScore {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bimodality, challengeQuality, dispersion, evpAlignmentScore, evpQuality, numberOfParticipants, outlierVolume, score);
+    return Objects.hash(bimodality, challengeQuality, dispersion, evpAlignmentScore, evpQuality, history, numberOfParticipants, outlierVolume, score);
   }
 
   @Override
@@ -302,6 +341,7 @@ public class TitaniumConsensusDensityScore {
     sb.append("    dispersion: ").append(toIndentedString(dispersion)).append("\n");
     sb.append("    evpAlignmentScore: ").append(toIndentedString(evpAlignmentScore)).append("\n");
     sb.append("    evpQuality: ").append(toIndentedString(evpQuality)).append("\n");
+    sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("    numberOfParticipants: ").append(toIndentedString(numberOfParticipants)).append("\n");
     sb.append("    outlierVolume: ").append(toIndentedString(outlierVolume)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
@@ -332,6 +372,7 @@ public class TitaniumConsensusDensityScore {
     openapiFields.add("dispersion");
     openapiFields.add("evpAlignmentScore");
     openapiFields.add("evpQuality");
+    openapiFields.add("history");
     openapiFields.add("numberOfParticipants");
     openapiFields.add("outlierVolume");
     openapiFields.add("score");
@@ -362,8 +403,17 @@ public class TitaniumConsensusDensityScore {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumConsensusDensityScore` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      if (jsonObj.get("numberOfParticipants") != null && !jsonObj.get("numberOfParticipants").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `numberOfParticipants` to be a primitive type in the JSON string but got `%s`", jsonObj.get("numberOfParticipants").toString()));
+      JsonArray jsonArrayhistory = jsonObj.getAsJsonArray("history");
+      if (jsonArrayhistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("history").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `history` to be an array in the JSON string but got `%s`", jsonObj.get("history").toString()));
+        }
+
+        // validate the optional field `history` (array)
+        for (int i = 0; i < jsonArrayhistory.size(); i++) {
+          TitaniumDateAndValue.validateJsonObject(jsonArrayhistory.get(i).getAsJsonObject());
+        };
       }
   }
 

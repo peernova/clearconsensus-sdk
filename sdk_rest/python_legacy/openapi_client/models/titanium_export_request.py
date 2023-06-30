@@ -39,6 +39,7 @@ class TitaniumExportRequest(object):
         'asset_id': 'str',
         'consensus_run_timestamp': 'str',
         'filter_pack': 'TitaniumFilterPack',
+        'filters': 'list[TitaniumFilter]',
         'include_header': 'bool',
         'order_by': 'TitaniumOrderBy',
         'submission_date': 'str',
@@ -49,13 +50,14 @@ class TitaniumExportRequest(object):
         'asset_id': 'assetId',
         'consensus_run_timestamp': 'consensusRunTimestamp',
         'filter_pack': 'filterPack',
+        'filters': 'filters',
         'include_header': 'includeHeader',
         'order_by': 'orderBy',
         'submission_date': 'submissionDate',
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, consensus_run_timestamp=None, filter_pack=None, include_header=None, order_by=None, submission_date=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, consensus_run_timestamp=None, filter_pack=None, filters=None, include_header=None, order_by=None, submission_date=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumExportRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -64,6 +66,7 @@ class TitaniumExportRequest(object):
         self._asset_id = None
         self._consensus_run_timestamp = None
         self._filter_pack = None
+        self._filters = None
         self._include_header = None
         self._order_by = None
         self._submission_date = None
@@ -76,6 +79,8 @@ class TitaniumExportRequest(object):
             self.consensus_run_timestamp = consensus_run_timestamp
         if filter_pack is not None:
             self.filter_pack = filter_pack
+        if filters is not None:
+            self.filters = filters
         if include_header is not None:
             self.include_header = include_header
         if order_by is not None:
@@ -147,6 +152,27 @@ class TitaniumExportRequest(object):
         """
 
         self._filter_pack = filter_pack
+
+    @property
+    def filters(self):
+        """Gets the filters of this TitaniumExportRequest.  # noqa: E501
+
+
+        :return: The filters of this TitaniumExportRequest.  # noqa: E501
+        :rtype: list[TitaniumFilter]
+        """
+        return self._filters
+
+    @filters.setter
+    def filters(self, filters):
+        """Sets the filters of this TitaniumExportRequest.
+
+
+        :param filters: The filters of this TitaniumExportRequest.  # noqa: E501
+        :type filters: list[TitaniumFilter]
+        """
+
+        self._filters = filters
 
     @property
     def include_header(self):

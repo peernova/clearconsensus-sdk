@@ -56,14 +56,8 @@ class TitaniumConsensusResultSetValuesRequest {
             if (data.hasOwnProperty('client')) {
                 obj['client'] = ApiClient.convertToType(data['client'], 'String');
             }
-            if (data.hasOwnProperty('consensusResultSetId')) {
-                obj['consensusResultSetId'] = ApiClient.convertToType(data['consensusResultSetId'], 'String');
-            }
             if (data.hasOwnProperty('consensusRunTimestamp')) {
                 obj['consensusRunTimestamp'] = ApiClient.convertToType(data['consensusRunTimestamp'], 'String');
-            }
-            if (data.hasOwnProperty('filter')) {
-                obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
             }
             if (data.hasOwnProperty('filterPack')) {
                 obj['filterPack'] = TitaniumFilterPack.constructFromObject(data['filterPack']);
@@ -76,9 +70,6 @@ class TitaniumConsensusResultSetValuesRequest {
             }
             if (data.hasOwnProperty('submittedDate')) {
                 obj['submittedDate'] = ApiClient.convertToType(data['submittedDate'], 'String');
-            }
-            if (data.hasOwnProperty('submittedId')) {
-                obj['submittedId'] = ApiClient.convertToType(data['submittedId'], 'String');
             }
             if (data.hasOwnProperty('traceName')) {
                 obj['traceName'] = ApiClient.convertToType(data['traceName'], 'String');
@@ -101,19 +92,9 @@ TitaniumConsensusResultSetValuesRequest.prototype['assetId'] = undefined;
 TitaniumConsensusResultSetValuesRequest.prototype['client'] = undefined;
 
 /**
- * @member {String} consensusResultSetId
- */
-TitaniumConsensusResultSetValuesRequest.prototype['consensusResultSetId'] = undefined;
-
-/**
  * @member {String} consensusRunTimestamp
  */
 TitaniumConsensusResultSetValuesRequest.prototype['consensusRunTimestamp'] = undefined;
-
-/**
- * @member {String} filter
- */
-TitaniumConsensusResultSetValuesRequest.prototype['filter'] = undefined;
 
 /**
  * @member {module:model/TitaniumFilterPack} filterPack
@@ -134,11 +115,6 @@ TitaniumConsensusResultSetValuesRequest.prototype['page'] = undefined;
  * @member {String} submittedDate
  */
 TitaniumConsensusResultSetValuesRequest.prototype['submittedDate'] = undefined;
-
-/**
- * @member {String} submittedId
- */
-TitaniumConsensusResultSetValuesRequest.prototype['submittedId'] = undefined;
 
 /**
  * @member {String} traceName

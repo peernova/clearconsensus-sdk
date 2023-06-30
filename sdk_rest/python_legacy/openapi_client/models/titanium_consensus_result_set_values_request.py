@@ -38,32 +38,26 @@ class TitaniumConsensusResultSetValuesRequest(object):
     openapi_types = {
         'asset_id': 'str',
         'client': 'str',
-        'consensus_result_set_id': 'str',
         'consensus_run_timestamp': 'str',
-        'filter': 'str',
         'filter_pack': 'TitaniumFilterPack',
         'order_by': 'TitaniumOrderBy',
         'page': 'TitaniumPage',
         'submitted_date': 'str',
-        'submitted_id': 'str',
         'trace_name': 'str'
     }
 
     attribute_map = {
         'asset_id': 'assetId',
         'client': 'client',
-        'consensus_result_set_id': 'consensusResultSetId',
         'consensus_run_timestamp': 'consensusRunTimestamp',
-        'filter': 'filter',
         'filter_pack': 'filterPack',
         'order_by': 'orderBy',
         'page': 'page',
         'submitted_date': 'submittedDate',
-        'submitted_id': 'submittedId',
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, client=None, consensus_result_set_id=None, consensus_run_timestamp=None, filter=None, filter_pack=None, order_by=None, page=None, submitted_date=None, submitted_id=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, client=None, consensus_run_timestamp=None, filter_pack=None, order_by=None, page=None, submitted_date=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusResultSetValuesRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -71,14 +65,11 @@ class TitaniumConsensusResultSetValuesRequest(object):
 
         self._asset_id = None
         self._client = None
-        self._consensus_result_set_id = None
         self._consensus_run_timestamp = None
-        self._filter = None
         self._filter_pack = None
         self._order_by = None
         self._page = None
         self._submitted_date = None
-        self._submitted_id = None
         self._trace_name = None
         self.discriminator = None
 
@@ -86,12 +77,8 @@ class TitaniumConsensusResultSetValuesRequest(object):
             self.asset_id = asset_id
         if client is not None:
             self.client = client
-        if consensus_result_set_id is not None:
-            self.consensus_result_set_id = consensus_result_set_id
         if consensus_run_timestamp is not None:
             self.consensus_run_timestamp = consensus_run_timestamp
-        if filter is not None:
-            self.filter = filter
         if filter_pack is not None:
             self.filter_pack = filter_pack
         if order_by is not None:
@@ -100,8 +87,6 @@ class TitaniumConsensusResultSetValuesRequest(object):
             self.page = page
         if submitted_date is not None:
             self.submitted_date = submitted_date
-        if submitted_id is not None:
-            self.submitted_id = submitted_id
         if trace_name is not None:
             self.trace_name = trace_name
 
@@ -148,27 +133,6 @@ class TitaniumConsensusResultSetValuesRequest(object):
         self._client = client
 
     @property
-    def consensus_result_set_id(self):
-        """Gets the consensus_result_set_id of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-
-
-        :return: The consensus_result_set_id of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._consensus_result_set_id
-
-    @consensus_result_set_id.setter
-    def consensus_result_set_id(self, consensus_result_set_id):
-        """Sets the consensus_result_set_id of this TitaniumConsensusResultSetValuesRequest.
-
-
-        :param consensus_result_set_id: The consensus_result_set_id of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-        :type consensus_result_set_id: str
-        """
-
-        self._consensus_result_set_id = consensus_result_set_id
-
-    @property
     def consensus_run_timestamp(self):
         """Gets the consensus_run_timestamp of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
 
@@ -188,27 +152,6 @@ class TitaniumConsensusResultSetValuesRequest(object):
         """
 
         self._consensus_run_timestamp = consensus_run_timestamp
-
-    @property
-    def filter(self):
-        """Gets the filter of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-
-
-        :return: The filter of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._filter
-
-    @filter.setter
-    def filter(self, filter):
-        """Sets the filter of this TitaniumConsensusResultSetValuesRequest.
-
-
-        :param filter: The filter of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-        :type filter: str
-        """
-
-        self._filter = filter
 
     @property
     def filter_pack(self):
@@ -293,27 +236,6 @@ class TitaniumConsensusResultSetValuesRequest(object):
         """
 
         self._submitted_date = submitted_date
-
-    @property
-    def submitted_id(self):
-        """Gets the submitted_id of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-
-
-        :return: The submitted_id of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._submitted_id
-
-    @submitted_id.setter
-    def submitted_id(self, submitted_id):
-        """Sets the submitted_id of this TitaniumConsensusResultSetValuesRequest.
-
-
-        :param submitted_id: The submitted_id of this TitaniumConsensusResultSetValuesRequest.  # noqa: E501
-        :type submitted_id: str
-        """
-
-        self._submitted_id = submitted_id
 
     @property
     def trace_name(self):

@@ -4,6 +4,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bimodal_left_population** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 
+**bimodal_right_population** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 
 **challenge_overlay_consensus** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 
 **evp** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 
 **expert_post_challenge** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 

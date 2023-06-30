@@ -5,6 +5,7 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**dbDescriptorServiceAddDbDescriptor**](DbDescriptorServiceApi.md#dbDescriptorServiceAddDbDescriptor) | **POST** /api/v1/db/descriptor/add |  |
+| [**dbDescriptorServiceDescriptorDependencies**](DbDescriptorServiceApi.md#dbDescriptorServiceDescriptorDependencies) | **POST** /api/v1/db/descriptor/dependencies |  |
 | [**dbDescriptorServiceDisableDbDescriptor**](DbDescriptorServiceApi.md#dbDescriptorServiceDisableDbDescriptor) | **POST** /api/v1/db/descriptor/disable |  |
 | [**dbDescriptorServiceEnableDbDescriptor**](DbDescriptorServiceApi.md#dbDescriptorServiceEnableDbDescriptor) | **POST** /api/v1/db/descriptor/enable |  |
 | [**dbDescriptorServiceGetDbDescriptor**](DbDescriptorServiceApi.md#dbDescriptorServiceGetDbDescriptor) | **POST** /api/v1/db/descriptor/get |  |
@@ -58,6 +59,67 @@ public class Example {
 ### Return type
 
 [**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="dbDescriptorServiceDescriptorDependencies"></a>
+# **dbDescriptorServiceDescriptorDependencies**
+> TitaniumDescriptorDependenciesResponse dbDescriptorServiceDescriptorDependencies(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DbDescriptorServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    DbDescriptorServiceApi apiInstance = new DbDescriptorServiceApi(defaultClient);
+    TitaniumGetDefinition body = new TitaniumGetDefinition(); // TitaniumGetDefinition | 
+    try {
+      TitaniumDescriptorDependenciesResponse result = apiInstance.dbDescriptorServiceDescriptorDependencies(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DbDescriptorServiceApi#dbDescriptorServiceDescriptorDependencies");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumGetDefinition**](TitaniumGetDefinition.md)|  | |
+
+### Return type
+
+[**TitaniumDescriptorDependenciesResponse**](TitaniumDescriptorDependenciesResponse.md)
 
 ### Authorization
 

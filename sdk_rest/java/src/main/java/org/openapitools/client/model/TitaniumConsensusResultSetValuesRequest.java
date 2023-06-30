@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusResultSetValuesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumConsensusResultSetValuesRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -60,17 +60,9 @@ public class TitaniumConsensusResultSetValuesRequest {
   @SerializedName(SERIALIZED_NAME_CLIENT)
   private String client;
 
-  public static final String SERIALIZED_NAME_CONSENSUS_RESULT_SET_ID = "consensusResultSetId";
-  @SerializedName(SERIALIZED_NAME_CONSENSUS_RESULT_SET_ID)
-  private String consensusResultSetId;
-
   public static final String SERIALIZED_NAME_CONSENSUS_RUN_TIMESTAMP = "consensusRunTimestamp";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_RUN_TIMESTAMP)
   private String consensusRunTimestamp;
-
-  public static final String SERIALIZED_NAME_FILTER = "filter";
-  @SerializedName(SERIALIZED_NAME_FILTER)
-  private String filter;
 
   public static final String SERIALIZED_NAME_FILTER_PACK = "filterPack";
   @SerializedName(SERIALIZED_NAME_FILTER_PACK)
@@ -87,10 +79,6 @@ public class TitaniumConsensusResultSetValuesRequest {
   public static final String SERIALIZED_NAME_SUBMITTED_DATE = "submittedDate";
   @SerializedName(SERIALIZED_NAME_SUBMITTED_DATE)
   private String submittedDate;
-
-  public static final String SERIALIZED_NAME_SUBMITTED_ID = "submittedId";
-  @SerializedName(SERIALIZED_NAME_SUBMITTED_ID)
-  private String submittedId;
 
   public static final String SERIALIZED_NAME_TRACE_NAME = "traceName";
   @SerializedName(SERIALIZED_NAME_TRACE_NAME)
@@ -145,29 +133,6 @@ public class TitaniumConsensusResultSetValuesRequest {
   }
 
 
-  public TitaniumConsensusResultSetValuesRequest consensusResultSetId(String consensusResultSetId) {
-    
-    this.consensusResultSetId = consensusResultSetId;
-    return this;
-  }
-
-   /**
-   * Get consensusResultSetId
-   * @return consensusResultSetId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getConsensusResultSetId() {
-    return consensusResultSetId;
-  }
-
-
-  public void setConsensusResultSetId(String consensusResultSetId) {
-    this.consensusResultSetId = consensusResultSetId;
-  }
-
-
   public TitaniumConsensusResultSetValuesRequest consensusRunTimestamp(String consensusRunTimestamp) {
     
     this.consensusRunTimestamp = consensusRunTimestamp;
@@ -188,29 +153,6 @@ public class TitaniumConsensusResultSetValuesRequest {
 
   public void setConsensusRunTimestamp(String consensusRunTimestamp) {
     this.consensusRunTimestamp = consensusRunTimestamp;
-  }
-
-
-  public TitaniumConsensusResultSetValuesRequest filter(String filter) {
-    
-    this.filter = filter;
-    return this;
-  }
-
-   /**
-   * Get filter
-   * @return filter
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getFilter() {
-    return filter;
-  }
-
-
-  public void setFilter(String filter) {
-    this.filter = filter;
   }
 
 
@@ -306,29 +248,6 @@ public class TitaniumConsensusResultSetValuesRequest {
   }
 
 
-  public TitaniumConsensusResultSetValuesRequest submittedId(String submittedId) {
-    
-    this.submittedId = submittedId;
-    return this;
-  }
-
-   /**
-   * Get submittedId
-   * @return submittedId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getSubmittedId() {
-    return submittedId;
-  }
-
-
-  public void setSubmittedId(String submittedId) {
-    this.submittedId = submittedId;
-  }
-
-
   public TitaniumConsensusResultSetValuesRequest traceName(String traceName) {
     
     this.traceName = traceName;
@@ -364,20 +283,17 @@ public class TitaniumConsensusResultSetValuesRequest {
     TitaniumConsensusResultSetValuesRequest titaniumConsensusResultSetValuesRequest = (TitaniumConsensusResultSetValuesRequest) o;
     return Objects.equals(this.assetId, titaniumConsensusResultSetValuesRequest.assetId) &&
         Objects.equals(this.client, titaniumConsensusResultSetValuesRequest.client) &&
-        Objects.equals(this.consensusResultSetId, titaniumConsensusResultSetValuesRequest.consensusResultSetId) &&
         Objects.equals(this.consensusRunTimestamp, titaniumConsensusResultSetValuesRequest.consensusRunTimestamp) &&
-        Objects.equals(this.filter, titaniumConsensusResultSetValuesRequest.filter) &&
         Objects.equals(this.filterPack, titaniumConsensusResultSetValuesRequest.filterPack) &&
         Objects.equals(this.orderBy, titaniumConsensusResultSetValuesRequest.orderBy) &&
         Objects.equals(this.page, titaniumConsensusResultSetValuesRequest.page) &&
         Objects.equals(this.submittedDate, titaniumConsensusResultSetValuesRequest.submittedDate) &&
-        Objects.equals(this.submittedId, titaniumConsensusResultSetValuesRequest.submittedId) &&
         Objects.equals(this.traceName, titaniumConsensusResultSetValuesRequest.traceName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, client, consensusResultSetId, consensusRunTimestamp, filter, filterPack, orderBy, page, submittedDate, submittedId, traceName);
+    return Objects.hash(assetId, client, consensusRunTimestamp, filterPack, orderBy, page, submittedDate, traceName);
   }
 
   @Override
@@ -386,14 +302,11 @@ public class TitaniumConsensusResultSetValuesRequest {
     sb.append("class TitaniumConsensusResultSetValuesRequest {\n");
     sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
     sb.append("    client: ").append(toIndentedString(client)).append("\n");
-    sb.append("    consensusResultSetId: ").append(toIndentedString(consensusResultSetId)).append("\n");
     sb.append("    consensusRunTimestamp: ").append(toIndentedString(consensusRunTimestamp)).append("\n");
-    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
     sb.append("    filterPack: ").append(toIndentedString(filterPack)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
     sb.append("    submittedDate: ").append(toIndentedString(submittedDate)).append("\n");
-    sb.append("    submittedId: ").append(toIndentedString(submittedId)).append("\n");
     sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -419,14 +332,11 @@ public class TitaniumConsensusResultSetValuesRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("assetId");
     openapiFields.add("client");
-    openapiFields.add("consensusResultSetId");
     openapiFields.add("consensusRunTimestamp");
-    openapiFields.add("filter");
     openapiFields.add("filterPack");
     openapiFields.add("orderBy");
     openapiFields.add("page");
     openapiFields.add("submittedDate");
-    openapiFields.add("submittedId");
     openapiFields.add("traceName");
 
     // a set of required properties/fields (JSON key names)
@@ -461,14 +371,8 @@ public class TitaniumConsensusResultSetValuesRequest {
       if (jsonObj.get("client") != null && !jsonObj.get("client").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `client` to be a primitive type in the JSON string but got `%s`", jsonObj.get("client").toString()));
       }
-      if (jsonObj.get("consensusResultSetId") != null && !jsonObj.get("consensusResultSetId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `consensusResultSetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("consensusResultSetId").toString()));
-      }
       if (jsonObj.get("consensusRunTimestamp") != null && !jsonObj.get("consensusRunTimestamp").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `consensusRunTimestamp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("consensusRunTimestamp").toString()));
-      }
-      if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `filter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("filter").toString()));
       }
       // validate the optional field `filterPack`
       if (jsonObj.getAsJsonObject("filterPack") != null) {
@@ -484,9 +388,6 @@ public class TitaniumConsensusResultSetValuesRequest {
       }
       if (jsonObj.get("submittedDate") != null && !jsonObj.get("submittedDate").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `submittedDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("submittedDate").toString()));
-      }
-      if (jsonObj.get("submittedId") != null && !jsonObj.get("submittedId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `submittedId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("submittedId").toString()));
       }
       if (jsonObj.get("traceName") != null && !jsonObj.get("traceName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `traceName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("traceName").toString()));

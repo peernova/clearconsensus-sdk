@@ -38,6 +38,7 @@ class TitaniumGetConsensusRunsRequest(object):
     openapi_types = {
         'asset_id': 'str',
         'filter_pack': 'TitaniumFilterPack',
+        'order_by': 'TitaniumOrderBy',
         'page': 'TitaniumPage',
         'participant': 'str',
         'show_archived': 'bool',
@@ -49,6 +50,7 @@ class TitaniumGetConsensusRunsRequest(object):
     attribute_map = {
         'asset_id': 'assetId',
         'filter_pack': 'filterPack',
+        'order_by': 'orderBy',
         'page': 'page',
         'participant': 'participant',
         'show_archived': 'showArchived',
@@ -57,7 +59,7 @@ class TitaniumGetConsensusRunsRequest(object):
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, filter_pack=None, page=None, participant=None, show_archived=None, snap_date_from=None, snap_date_to=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, filter_pack=None, order_by=None, page=None, participant=None, show_archived=None, snap_date_from=None, snap_date_to=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumGetConsensusRunsRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -65,6 +67,7 @@ class TitaniumGetConsensusRunsRequest(object):
 
         self._asset_id = None
         self._filter_pack = None
+        self._order_by = None
         self._page = None
         self._participant = None
         self._show_archived = None
@@ -77,6 +80,8 @@ class TitaniumGetConsensusRunsRequest(object):
             self.asset_id = asset_id
         if filter_pack is not None:
             self.filter_pack = filter_pack
+        if order_by is not None:
+            self.order_by = order_by
         if page is not None:
             self.page = page
         if participant is not None:
@@ -131,6 +136,27 @@ class TitaniumGetConsensusRunsRequest(object):
         """
 
         self._filter_pack = filter_pack
+
+    @property
+    def order_by(self):
+        """Gets the order_by of this TitaniumGetConsensusRunsRequest.  # noqa: E501
+
+
+        :return: The order_by of this TitaniumGetConsensusRunsRequest.  # noqa: E501
+        :rtype: TitaniumOrderBy
+        """
+        return self._order_by
+
+    @order_by.setter
+    def order_by(self, order_by):
+        """Sets the order_by of this TitaniumGetConsensusRunsRequest.
+
+
+        :param order_by: The order_by of this TitaniumGetConsensusRunsRequest.  # noqa: E501
+        :type order_by: TitaniumOrderBy
+        """
+
+        self._order_by = order_by
 
     @property
     def page(self):

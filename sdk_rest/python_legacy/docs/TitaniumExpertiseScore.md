@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **dimension_credit_score** | **object** |  | [optional] 
 **expertise_rank** | **object** |  | [optional] 
 **experts_count** | **object** |  | [optional] 
+**history** | [**list[TitaniumExpertiseScoreWithDate]**](TitaniumExpertiseScoreWithDate.md) |  | [optional] 
 **proximity_to_post_challenge_consensus_mean** | **object** |  | [optional] 
 **score** | **object** |  | [optional] 
 **submitted_score** | **object** |  | [optional] 

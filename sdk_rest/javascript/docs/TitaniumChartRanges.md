@@ -4,6 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**bimodalLeftPopulation** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 
+**bimodalRightPopulation** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 
 **challengeOverlayConsensus** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 
 **evp** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 
 **expertPostChallenge** | [**TitaniumRange**](TitaniumRange.md) |  | [optional] 

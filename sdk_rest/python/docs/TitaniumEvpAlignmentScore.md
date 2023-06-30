@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **evp_alignment_dispersion_score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **evp_mid** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**history** | [**[TitaniumEvpAlignmentScoreWithDate]**](TitaniumEvpAlignmentScoreWithDate.md) |  | [optional] 
 **score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **score_status** | **str** |  | [optional] 
 **submission_mean** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

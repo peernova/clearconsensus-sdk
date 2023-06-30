@@ -31,8 +31,10 @@ from openapi_client.exceptions import ApiAttributeError
 
 def lazy_import():
     from openapi_client.model.titanium_filter_pack import TitaniumFilterPack
+    from openapi_client.model.titanium_order_by import TitaniumOrderBy
     from openapi_client.model.titanium_page import TitaniumPage
     globals()['TitaniumFilterPack'] = TitaniumFilterPack
+    globals()['TitaniumOrderBy'] = TitaniumOrderBy
     globals()['TitaniumPage'] = TitaniumPage
 
 
@@ -91,6 +93,7 @@ class TitaniumGetConsensusRunsRequest(ModelNormal):
         return {
             'asset_id': (str,),  # noqa: E501
             'filter_pack': (TitaniumFilterPack,),  # noqa: E501
+            'order_by': (TitaniumOrderBy,),  # noqa: E501
             'page': (TitaniumPage,),  # noqa: E501
             'participant': (str,),  # noqa: E501
             'show_archived': (bool,),  # noqa: E501
@@ -107,6 +110,7 @@ class TitaniumGetConsensusRunsRequest(ModelNormal):
     attribute_map = {
         'asset_id': 'assetId',  # noqa: E501
         'filter_pack': 'filterPack',  # noqa: E501
+        'order_by': 'orderBy',  # noqa: E501
         'page': 'page',  # noqa: E501
         'participant': 'participant',  # noqa: E501
         'show_archived': 'showArchived',  # noqa: E501
@@ -158,6 +162,7 @@ class TitaniumGetConsensusRunsRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             asset_id (str): [optional]  # noqa: E501
             filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
+            order_by (TitaniumOrderBy): [optional]  # noqa: E501
             page (TitaniumPage): [optional]  # noqa: E501
             participant (str): [optional]  # noqa: E501
             show_archived (bool): [optional]  # noqa: E501
@@ -251,6 +256,7 @@ class TitaniumGetConsensusRunsRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             asset_id (str): [optional]  # noqa: E501
             filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
+            order_by (TitaniumOrderBy): [optional]  # noqa: E501
             page (TitaniumPage): [optional]  # noqa: E501
             participant (str): [optional]  # noqa: E501
             show_archived (bool): [optional]  # noqa: E501

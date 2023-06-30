@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionStatisticsExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumSubmissionStatisticsExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN = "absDiffFromStatisticalMean";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN)
@@ -64,6 +64,10 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   public static final String SERIALIZED_NAME_MIN = "min";
   @SerializedName(SERIALIZED_NAME_MIN)
   private Object min;
+
+  public static final String SERIALIZED_NAME_STAT_MEAN_ABS_DIFF_FROM_LATEST_TRADE = "statMeanAbsDiffFromLatestTrade";
+  @SerializedName(SERIALIZED_NAME_STAT_MEAN_ABS_DIFF_FROM_LATEST_TRADE)
+  private Object statMeanAbsDiffFromLatestTrade;
 
   public static final String SERIALIZED_NAME_STATISTICAL_MEAN = "statisticalMean";
   @SerializedName(SERIALIZED_NAME_STATISTICAL_MEAN)
@@ -177,6 +181,29 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
 
   public void setMin(Object min) {
     this.min = min;
+  }
+
+
+  public TitaniumSubmissionStatisticsExplorerTableColumn statMeanAbsDiffFromLatestTrade(Object statMeanAbsDiffFromLatestTrade) {
+    
+    this.statMeanAbsDiffFromLatestTrade = statMeanAbsDiffFromLatestTrade;
+    return this;
+  }
+
+   /**
+   * Get statMeanAbsDiffFromLatestTrade
+   * @return statMeanAbsDiffFromLatestTrade
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getStatMeanAbsDiffFromLatestTrade() {
+    return statMeanAbsDiffFromLatestTrade;
+  }
+
+
+  public void setStatMeanAbsDiffFromLatestTrade(Object statMeanAbsDiffFromLatestTrade) {
+    this.statMeanAbsDiffFromLatestTrade = statMeanAbsDiffFromLatestTrade;
   }
 
 
@@ -309,6 +336,7 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
         Objects.equals(this.lowerBoundary, titaniumSubmissionStatisticsExplorerTableColumn.lowerBoundary) &&
         Objects.equals(this.max, titaniumSubmissionStatisticsExplorerTableColumn.max) &&
         Objects.equals(this.min, titaniumSubmissionStatisticsExplorerTableColumn.min) &&
+        Objects.equals(this.statMeanAbsDiffFromLatestTrade, titaniumSubmissionStatisticsExplorerTableColumn.statMeanAbsDiffFromLatestTrade) &&
         Objects.equals(this.statisticalMean, titaniumSubmissionStatisticsExplorerTableColumn.statisticalMean) &&
         Objects.equals(this.stdDev, titaniumSubmissionStatisticsExplorerTableColumn.stdDev) &&
         Objects.equals(this.subPriceDiff, titaniumSubmissionStatisticsExplorerTableColumn.subPriceDiff) &&
@@ -318,7 +346,7 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromStatisticalMean, lowerBoundary, max, min, statisticalMean, stdDev, subPriceDiff, subValidPointsCount, upperBoundary);
+    return Objects.hash(absDiffFromStatisticalMean, lowerBoundary, max, min, statMeanAbsDiffFromLatestTrade, statisticalMean, stdDev, subPriceDiff, subValidPointsCount, upperBoundary);
   }
 
   @Override
@@ -329,6 +357,7 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
     sb.append("    lowerBoundary: ").append(toIndentedString(lowerBoundary)).append("\n");
     sb.append("    max: ").append(toIndentedString(max)).append("\n");
     sb.append("    min: ").append(toIndentedString(min)).append("\n");
+    sb.append("    statMeanAbsDiffFromLatestTrade: ").append(toIndentedString(statMeanAbsDiffFromLatestTrade)).append("\n");
     sb.append("    statisticalMean: ").append(toIndentedString(statisticalMean)).append("\n");
     sb.append("    stdDev: ").append(toIndentedString(stdDev)).append("\n");
     sb.append("    subPriceDiff: ").append(toIndentedString(subPriceDiff)).append("\n");
@@ -360,6 +389,7 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
     openapiFields.add("lowerBoundary");
     openapiFields.add("max");
     openapiFields.add("min");
+    openapiFields.add("statMeanAbsDiffFromLatestTrade");
     openapiFields.add("statisticalMean");
     openapiFields.add("stdDev");
     openapiFields.add("subPriceDiff");

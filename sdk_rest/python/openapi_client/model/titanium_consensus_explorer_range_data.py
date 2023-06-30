@@ -32,8 +32,12 @@ from openapi_client.exceptions import ApiAttributeError
 def lazy_import():
     from openapi_client.model.titanium_chart_ranges import TitaniumChartRanges
     from openapi_client.model.titanium_range_point import TitaniumRangePoint
+    from openapi_client.model.titanium_trade_periods_with_metrics import TitaniumTradePeriodsWithMetrics
+    from openapi_client.model.titanium_trade_ranges_data import TitaniumTradeRangesData
     globals()['TitaniumChartRanges'] = TitaniumChartRanges
     globals()['TitaniumRangePoint'] = TitaniumRangePoint
+    globals()['TitaniumTradePeriodsWithMetrics'] = TitaniumTradePeriodsWithMetrics
+    globals()['TitaniumTradeRangesData'] = TitaniumTradeRangesData
 
 
 class TitaniumConsensusExplorerRangeData(ModelNormal):
@@ -90,6 +94,8 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
         lazy_import()
         return {
             'all_participant_crs_consensus_price': (TitaniumRangePoint,),  # noqa: E501
+            'bimodal_left_mean': (TitaniumRangePoint,),  # noqa: E501
+            'bimodal_right_mean': (TitaniumRangePoint,),  # noqa: E501
             'challenge_overlay_crs_consensus_price': (TitaniumRangePoint,),  # noqa: E501
             'chart_ranges': (TitaniumChartRanges,),  # noqa: E501
             'evp_mid': (TitaniumRangePoint,),  # noqa: E501
@@ -98,6 +104,8 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
             'market_data_crs_consensus_price': (TitaniumRangePoint,),  # noqa: E501
             'submission_mean_point': (TitaniumRangePoint,),  # noqa: E501
             'submission_point': (TitaniumRangePoint,),  # noqa: E501
+            'trade_periods_with_metrics': (TitaniumTradePeriodsWithMetrics,),  # noqa: E501
+            'trade_ranges_data': (TitaniumTradeRangesData,),  # noqa: E501
         }
 
     @cached_property
@@ -107,6 +115,8 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
 
     attribute_map = {
         'all_participant_crs_consensus_price': 'allParticipantCrsConsensusPrice',  # noqa: E501
+        'bimodal_left_mean': 'bimodalLeftMean',  # noqa: E501
+        'bimodal_right_mean': 'bimodalRightMean',  # noqa: E501
         'challenge_overlay_crs_consensus_price': 'challengeOverlayCrsConsensusPrice',  # noqa: E501
         'chart_ranges': 'chartRanges',  # noqa: E501
         'evp_mid': 'evpMid',  # noqa: E501
@@ -115,6 +125,8 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
         'market_data_crs_consensus_price': 'marketDataCrsConsensusPrice',  # noqa: E501
         'submission_mean_point': 'submissionMeanPoint',  # noqa: E501
         'submission_point': 'submissionPoint',  # noqa: E501
+        'trade_periods_with_metrics': 'tradePeriodsWithMetrics',  # noqa: E501
+        'trade_ranges_data': 'tradeRangesData',  # noqa: E501
     }
 
     read_only_vars = {
@@ -159,6 +171,8 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             all_participant_crs_consensus_price (TitaniumRangePoint): [optional]  # noqa: E501
+            bimodal_left_mean (TitaniumRangePoint): [optional]  # noqa: E501
+            bimodal_right_mean (TitaniumRangePoint): [optional]  # noqa: E501
             challenge_overlay_crs_consensus_price (TitaniumRangePoint): [optional]  # noqa: E501
             chart_ranges (TitaniumChartRanges): [optional]  # noqa: E501
             evp_mid (TitaniumRangePoint): [optional]  # noqa: E501
@@ -167,6 +181,8 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
             market_data_crs_consensus_price (TitaniumRangePoint): [optional]  # noqa: E501
             submission_mean_point (TitaniumRangePoint): [optional]  # noqa: E501
             submission_point (TitaniumRangePoint): [optional]  # noqa: E501
+            trade_periods_with_metrics (TitaniumTradePeriodsWithMetrics): [optional]  # noqa: E501
+            trade_ranges_data (TitaniumTradeRangesData): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -253,6 +269,8 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             all_participant_crs_consensus_price (TitaniumRangePoint): [optional]  # noqa: E501
+            bimodal_left_mean (TitaniumRangePoint): [optional]  # noqa: E501
+            bimodal_right_mean (TitaniumRangePoint): [optional]  # noqa: E501
             challenge_overlay_crs_consensus_price (TitaniumRangePoint): [optional]  # noqa: E501
             chart_ranges (TitaniumChartRanges): [optional]  # noqa: E501
             evp_mid (TitaniumRangePoint): [optional]  # noqa: E501
@@ -261,6 +279,8 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
             market_data_crs_consensus_price (TitaniumRangePoint): [optional]  # noqa: E501
             submission_mean_point (TitaniumRangePoint): [optional]  # noqa: E501
             submission_point (TitaniumRangePoint): [optional]  # noqa: E501
+            trade_periods_with_metrics (TitaniumTradePeriodsWithMetrics): [optional]  # noqa: E501
+            trade_ranges_data (TitaniumTradeRangesData): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

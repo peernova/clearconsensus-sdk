@@ -24,6 +24,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.TitaniumAllParticipantExplorerTableColumn;
+import org.openapitools.client.model.TitaniumAvailableTrades;
 import org.openapitools.client.model.TitaniumEvpExplorerTableColumn;
 import org.openapitools.client.model.TitaniumExpertExplorerTableColumn;
 import org.openapitools.client.model.TitaniumSubmissionExplorerTableColumn;
@@ -52,11 +53,15 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumComparisonTable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumComparisonTable {
   public static final String SERIALIZED_NAME_ALL_PARTICIPANT_COHORT_CONSENSUS = "allParticipantCohortConsensus";
   @SerializedName(SERIALIZED_NAME_ALL_PARTICIPANT_COHORT_CONSENSUS)
   private TitaniumAllParticipantExplorerTableColumn allParticipantCohortConsensus;
+
+  public static final String SERIALIZED_NAME_AVAILABLE_TRADES = "availableTrades";
+  @SerializedName(SERIALIZED_NAME_AVAILABLE_TRADES)
+  private TitaniumAvailableTrades availableTrades;
 
   public static final String SERIALIZED_NAME_EVALUATED_PRICE = "evaluatedPrice";
   @SerializedName(SERIALIZED_NAME_EVALUATED_PRICE)
@@ -97,6 +102,29 @@ public class TitaniumComparisonTable {
 
   public void setAllParticipantCohortConsensus(TitaniumAllParticipantExplorerTableColumn allParticipantCohortConsensus) {
     this.allParticipantCohortConsensus = allParticipantCohortConsensus;
+  }
+
+
+  public TitaniumComparisonTable availableTrades(TitaniumAvailableTrades availableTrades) {
+    
+    this.availableTrades = availableTrades;
+    return this;
+  }
+
+   /**
+   * Get availableTrades
+   * @return availableTrades
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumAvailableTrades getAvailableTrades() {
+    return availableTrades;
+  }
+
+
+  public void setAvailableTrades(TitaniumAvailableTrades availableTrades) {
+    this.availableTrades = availableTrades;
   }
 
 
@@ -203,6 +231,7 @@ public class TitaniumComparisonTable {
     }
     TitaniumComparisonTable titaniumComparisonTable = (TitaniumComparisonTable) o;
     return Objects.equals(this.allParticipantCohortConsensus, titaniumComparisonTable.allParticipantCohortConsensus) &&
+        Objects.equals(this.availableTrades, titaniumComparisonTable.availableTrades) &&
         Objects.equals(this.evaluatedPrice, titaniumComparisonTable.evaluatedPrice) &&
         Objects.equals(this.expertCohortConsensus, titaniumComparisonTable.expertCohortConsensus) &&
         Objects.equals(this.submission, titaniumComparisonTable.submission) &&
@@ -211,7 +240,7 @@ public class TitaniumComparisonTable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(allParticipantCohortConsensus, evaluatedPrice, expertCohortConsensus, submission, submissionStatistics);
+    return Objects.hash(allParticipantCohortConsensus, availableTrades, evaluatedPrice, expertCohortConsensus, submission, submissionStatistics);
   }
 
   @Override
@@ -219,6 +248,7 @@ public class TitaniumComparisonTable {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumComparisonTable {\n");
     sb.append("    allParticipantCohortConsensus: ").append(toIndentedString(allParticipantCohortConsensus)).append("\n");
+    sb.append("    availableTrades: ").append(toIndentedString(availableTrades)).append("\n");
     sb.append("    evaluatedPrice: ").append(toIndentedString(evaluatedPrice)).append("\n");
     sb.append("    expertCohortConsensus: ").append(toIndentedString(expertCohortConsensus)).append("\n");
     sb.append("    submission: ").append(toIndentedString(submission)).append("\n");
@@ -246,6 +276,7 @@ public class TitaniumComparisonTable {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("allParticipantCohortConsensus");
+    openapiFields.add("availableTrades");
     openapiFields.add("evaluatedPrice");
     openapiFields.add("expertCohortConsensus");
     openapiFields.add("submission");
@@ -280,6 +311,10 @@ public class TitaniumComparisonTable {
       // validate the optional field `allParticipantCohortConsensus`
       if (jsonObj.getAsJsonObject("allParticipantCohortConsensus") != null) {
         TitaniumAllParticipantExplorerTableColumn.validateJsonObject(jsonObj.getAsJsonObject("allParticipantCohortConsensus"));
+      }
+      // validate the optional field `availableTrades`
+      if (jsonObj.getAsJsonObject("availableTrades") != null) {
+        TitaniumAvailableTrades.validateJsonObject(jsonObj.getAsJsonObject("availableTrades"));
       }
       // validate the optional field `evaluatedPrice`
       if (jsonObj.getAsJsonObject("evaluatedPrice") != null) {

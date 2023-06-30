@@ -42,6 +42,7 @@ class TitaniumExpertiseScore(object):
         'dimension_credit_score': 'object',
         'expertise_rank': 'object',
         'experts_count': 'object',
+        'history': 'list[TitaniumExpertiseScoreWithDate]',
         'proximity_to_post_challenge_consensus_mean': 'object',
         'score': 'object',
         'submitted_score': 'object'
@@ -54,12 +55,13 @@ class TitaniumExpertiseScore(object):
         'dimension_credit_score': 'dimensionCreditScore',
         'expertise_rank': 'expertiseRank',
         'experts_count': 'expertsCount',
+        'history': 'history',
         'proximity_to_post_challenge_consensus_mean': 'proximityToPostChallengeConsensusMean',
         'score': 'score',
         'submitted_score': 'submittedScore'
     }
 
-    def __init__(self, challenge_score=None, consensus_distance_score=None, consensus_score=None, dimension_credit_score=None, expertise_rank=None, experts_count=None, proximity_to_post_challenge_consensus_mean=None, score=None, submitted_score=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, challenge_score=None, consensus_distance_score=None, consensus_score=None, dimension_credit_score=None, expertise_rank=None, experts_count=None, history=None, proximity_to_post_challenge_consensus_mean=None, score=None, submitted_score=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumExpertiseScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -71,6 +73,7 @@ class TitaniumExpertiseScore(object):
         self._dimension_credit_score = None
         self._expertise_rank = None
         self._experts_count = None
+        self._history = None
         self._proximity_to_post_challenge_consensus_mean = None
         self._score = None
         self._submitted_score = None
@@ -88,6 +91,8 @@ class TitaniumExpertiseScore(object):
             self.expertise_rank = expertise_rank
         if experts_count is not None:
             self.experts_count = experts_count
+        if history is not None:
+            self.history = history
         if proximity_to_post_challenge_consensus_mean is not None:
             self.proximity_to_post_challenge_consensus_mean = proximity_to_post_challenge_consensus_mean
         if score is not None:
@@ -220,6 +225,27 @@ class TitaniumExpertiseScore(object):
         """
 
         self._experts_count = experts_count
+
+    @property
+    def history(self):
+        """Gets the history of this TitaniumExpertiseScore.  # noqa: E501
+
+
+        :return: The history of this TitaniumExpertiseScore.  # noqa: E501
+        :rtype: list[TitaniumExpertiseScoreWithDate]
+        """
+        return self._history
+
+    @history.setter
+    def history(self, history):
+        """Sets the history of this TitaniumExpertiseScore.
+
+
+        :param history: The history of this TitaniumExpertiseScore.  # noqa: E501
+        :type history: list[TitaniumExpertiseScoreWithDate]
+        """
+
+        self._history = history
 
     @property
     def proximity_to_post_challenge_consensus_mean(self):

@@ -47,11 +47,15 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAllParticipantExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumAllParticipantExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS_PRICE = "absDiffFromConsensusPrice";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS_PRICE)
   private Object absDiffFromConsensusPrice;
+
+  public static final String SERIALIZED_NAME_CON_PRICE_ABS_DIFF_FROM_LATEST_TRADE = "conPriceAbsDiffFromLatestTrade";
+  @SerializedName(SERIALIZED_NAME_CON_PRICE_ABS_DIFF_FROM_LATEST_TRADE)
+  private Object conPriceAbsDiffFromLatestTrade;
 
   public static final String SERIALIZED_NAME_CONSENSUS_PRICE = "consensusPrice";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_PRICE)
@@ -100,6 +104,29 @@ public class TitaniumAllParticipantExplorerTableColumn {
 
   public void setAbsDiffFromConsensusPrice(Object absDiffFromConsensusPrice) {
     this.absDiffFromConsensusPrice = absDiffFromConsensusPrice;
+  }
+
+
+  public TitaniumAllParticipantExplorerTableColumn conPriceAbsDiffFromLatestTrade(Object conPriceAbsDiffFromLatestTrade) {
+    
+    this.conPriceAbsDiffFromLatestTrade = conPriceAbsDiffFromLatestTrade;
+    return this;
+  }
+
+   /**
+   * Get conPriceAbsDiffFromLatestTrade
+   * @return conPriceAbsDiffFromLatestTrade
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getConPriceAbsDiffFromLatestTrade() {
+    return conPriceAbsDiffFromLatestTrade;
+  }
+
+
+  public void setConPriceAbsDiffFromLatestTrade(Object conPriceAbsDiffFromLatestTrade) {
+    this.conPriceAbsDiffFromLatestTrade = conPriceAbsDiffFromLatestTrade;
   }
 
 
@@ -252,6 +279,7 @@ public class TitaniumAllParticipantExplorerTableColumn {
     }
     TitaniumAllParticipantExplorerTableColumn titaniumAllParticipantExplorerTableColumn = (TitaniumAllParticipantExplorerTableColumn) o;
     return Objects.equals(this.absDiffFromConsensusPrice, titaniumAllParticipantExplorerTableColumn.absDiffFromConsensusPrice) &&
+        Objects.equals(this.conPriceAbsDiffFromLatestTrade, titaniumAllParticipantExplorerTableColumn.conPriceAbsDiffFromLatestTrade) &&
         Objects.equals(this.consensusPrice, titaniumAllParticipantExplorerTableColumn.consensusPrice) &&
         Objects.equals(this.lowerBoundary, titaniumAllParticipantExplorerTableColumn.lowerBoundary) &&
         Objects.equals(this.participantsCount, titaniumAllParticipantExplorerTableColumn.participantsCount) &&
@@ -262,7 +290,7 @@ public class TitaniumAllParticipantExplorerTableColumn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromConsensusPrice, consensusPrice, lowerBoundary, participantsCount, stdDev, subPriceDiff, upperBoundary);
+    return Objects.hash(absDiffFromConsensusPrice, conPriceAbsDiffFromLatestTrade, consensusPrice, lowerBoundary, participantsCount, stdDev, subPriceDiff, upperBoundary);
   }
 
   @Override
@@ -270,6 +298,7 @@ public class TitaniumAllParticipantExplorerTableColumn {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumAllParticipantExplorerTableColumn {\n");
     sb.append("    absDiffFromConsensusPrice: ").append(toIndentedString(absDiffFromConsensusPrice)).append("\n");
+    sb.append("    conPriceAbsDiffFromLatestTrade: ").append(toIndentedString(conPriceAbsDiffFromLatestTrade)).append("\n");
     sb.append("    consensusPrice: ").append(toIndentedString(consensusPrice)).append("\n");
     sb.append("    lowerBoundary: ").append(toIndentedString(lowerBoundary)).append("\n");
     sb.append("    participantsCount: ").append(toIndentedString(participantsCount)).append("\n");
@@ -299,6 +328,7 @@ public class TitaniumAllParticipantExplorerTableColumn {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("absDiffFromConsensusPrice");
+    openapiFields.add("conPriceAbsDiffFromLatestTrade");
     openapiFields.add("consensusPrice");
     openapiFields.add("lowerBoundary");
     openapiFields.add("participantsCount");

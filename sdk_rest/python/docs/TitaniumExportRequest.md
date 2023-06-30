@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **asset_id** | **str** |  | [optional] 
 **consensus_run_timestamp** | **str** |  | [optional] 
 **filter_pack** | [**TitaniumFilterPack**](TitaniumFilterPack.md) |  | [optional] 
+**filters** | [**[TitaniumFilter]**](TitaniumFilter.md) |  | [optional] 
 **include_header** | **bool** |  | [optional] 
 **order_by** | [**TitaniumOrderBy**](TitaniumOrderBy.md) |  | [optional] 
 **submission_date** | **str** |  | [optional] 

@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.TitaniumDateAndValue;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,8 +50,12 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpQualityScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumEvpQualityScore {
+  public static final String SERIALIZED_NAME_HISTORY = "history";
+  @SerializedName(SERIALIZED_NAME_HISTORY)
+  private List<TitaniumDateAndValue> history = null;
+
   public static final String SERIALIZED_NAME_INDICATIVE_COUNT = "indicativeCount";
   @SerializedName(SERIALIZED_NAME_INDICATIVE_COUNT)
   private String indicativeCount;
@@ -67,6 +74,37 @@ public class TitaniumEvpQualityScore {
 
   public TitaniumEvpQualityScore() { 
   }
+
+  public TitaniumEvpQualityScore history(List<TitaniumDateAndValue> history) {
+    
+    this.history = history;
+    return this;
+  }
+
+  public TitaniumEvpQualityScore addHistoryItem(TitaniumDateAndValue historyItem) {
+    if (this.history == null) {
+      this.history = new ArrayList<>();
+    }
+    this.history.add(historyItem);
+    return this;
+  }
+
+   /**
+   * Get history
+   * @return history
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumDateAndValue> getHistory() {
+    return history;
+  }
+
+
+  public void setHistory(List<TitaniumDateAndValue> history) {
+    this.history = history;
+  }
+
 
   public TitaniumEvpQualityScore indicativeCount(String indicativeCount) {
     
@@ -170,7 +208,8 @@ public class TitaniumEvpQualityScore {
       return false;
     }
     TitaniumEvpQualityScore titaniumEvpQualityScore = (TitaniumEvpQualityScore) o;
-    return Objects.equals(this.indicativeCount, titaniumEvpQualityScore.indicativeCount) &&
+    return Objects.equals(this.history, titaniumEvpQualityScore.history) &&
+        Objects.equals(this.indicativeCount, titaniumEvpQualityScore.indicativeCount) &&
         Objects.equals(this.orderCount, titaniumEvpQualityScore.orderCount) &&
         Objects.equals(this.score, titaniumEvpQualityScore.score) &&
         Objects.equals(this.tradeCount, titaniumEvpQualityScore.tradeCount);
@@ -178,13 +217,14 @@ public class TitaniumEvpQualityScore {
 
   @Override
   public int hashCode() {
-    return Objects.hash(indicativeCount, orderCount, score, tradeCount);
+    return Objects.hash(history, indicativeCount, orderCount, score, tradeCount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumEvpQualityScore {\n");
+    sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("    indicativeCount: ").append(toIndentedString(indicativeCount)).append("\n");
     sb.append("    orderCount: ").append(toIndentedString(orderCount)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
@@ -211,6 +251,7 @@ public class TitaniumEvpQualityScore {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("history");
     openapiFields.add("indicativeCount");
     openapiFields.add("orderCount");
     openapiFields.add("score");
@@ -241,6 +282,18 @@ public class TitaniumEvpQualityScore {
         if (!TitaniumEvpQualityScore.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumEvpQualityScore` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
+      }
+      JsonArray jsonArrayhistory = jsonObj.getAsJsonArray("history");
+      if (jsonArrayhistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("history").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `history` to be an array in the JSON string but got `%s`", jsonObj.get("history").toString()));
+        }
+
+        // validate the optional field `history` (array)
+        for (int i = 0; i < jsonArrayhistory.size(); i++) {
+          TitaniumDateAndValue.validateJsonObject(jsonArrayhistory.get(i).getAsJsonObject());
+        };
       }
       if (jsonObj.get("indicativeCount") != null && !jsonObj.get("indicativeCount").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `indicativeCount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("indicativeCount").toString()));

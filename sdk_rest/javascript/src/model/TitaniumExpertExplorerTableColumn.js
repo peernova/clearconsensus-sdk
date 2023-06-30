@@ -50,6 +50,9 @@ class TitaniumExpertExplorerTableColumn {
             if (data.hasOwnProperty('absDiffFromExpertCohortMean')) {
                 obj['absDiffFromExpertCohortMean'] = ApiClient.convertToType(data['absDiffFromExpertCohortMean'], Object);
             }
+            if (data.hasOwnProperty('conPriceAbsDiffFromLatestTrade')) {
+                obj['conPriceAbsDiffFromLatestTrade'] = ApiClient.convertToType(data['conPriceAbsDiffFromLatestTrade'], Object);
+            }
             if (data.hasOwnProperty('max')) {
                 obj['max'] = ApiClient.convertToType(data['max'], Object);
             }
@@ -79,6 +82,11 @@ class TitaniumExpertExplorerTableColumn {
  * @member {Object} absDiffFromExpertCohortMean
  */
 TitaniumExpertExplorerTableColumn.prototype['absDiffFromExpertCohortMean'] = undefined;
+
+/**
+ * @member {Object} conPriceAbsDiffFromLatestTrade
+ */
+TitaniumExpertExplorerTableColumn.prototype['conPriceAbsDiffFromLatestTrade'] = undefined;
 
 /**
  * @member {Object} max

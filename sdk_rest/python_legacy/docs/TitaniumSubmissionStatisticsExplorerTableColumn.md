@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **lower_boundary** | **object** |  | [optional] 
 **max** | **object** |  | [optional] 
 **min** | **object** |  | [optional] 
+**stat_mean_abs_diff_from_latest_trade** | **object** |  | [optional] 
 **statistical_mean** | **object** |  | [optional] 
 **std_dev** | **object** |  | [optional] 
 **sub_price_diff** | **object** |  | [optional] 

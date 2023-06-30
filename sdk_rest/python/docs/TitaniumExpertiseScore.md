@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **dimension_credit_score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **expertise_rank** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **experts_count** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**history** | [**[TitaniumExpertiseScoreWithDate]**](TitaniumExpertiseScoreWithDate.md) |  | [optional] 
 **proximity_to_post_challenge_consensus_mean** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **submitted_score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

@@ -85,6 +85,7 @@ class TitaniumEvpExplorerTableColumn(ModelNormal):
             'ask': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'bid': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'evp_lower_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'evp_mid_abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'evp_upper_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'mid': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'sub_price_diff': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -101,6 +102,7 @@ class TitaniumEvpExplorerTableColumn(ModelNormal):
         'ask': 'ask',  # noqa: E501
         'bid': 'bid',  # noqa: E501
         'evp_lower_boundary': 'evpLowerBoundary',  # noqa: E501
+        'evp_mid_abs_diff_from_latest_trade': 'evpMidAbsDiffFromLatestTrade',  # noqa: E501
         'evp_upper_boundary': 'evpUpperBoundary',  # noqa: E501
         'mid': 'mid',  # noqa: E501
         'sub_price_diff': 'subPriceDiff',  # noqa: E501
@@ -152,6 +154,7 @@ class TitaniumEvpExplorerTableColumn(ModelNormal):
             ask (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             bid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            evp_mid_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -245,6 +248,7 @@ class TitaniumEvpExplorerTableColumn(ModelNormal):
             ask (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             bid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            evp_mid_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501

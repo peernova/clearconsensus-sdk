@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import TitaniumFilterPack from './TitaniumFilterPack';
+import TitaniumOrderBy from './TitaniumOrderBy';
 import TitaniumPage from './TitaniumPage';
 
 /**
@@ -55,6 +56,9 @@ class TitaniumGetConsensusRunsRequest {
             if (data.hasOwnProperty('filterPack')) {
                 obj['filterPack'] = TitaniumFilterPack.constructFromObject(data['filterPack']);
             }
+            if (data.hasOwnProperty('orderBy')) {
+                obj['orderBy'] = TitaniumOrderBy.constructFromObject(data['orderBy']);
+            }
             if (data.hasOwnProperty('page')) {
                 obj['page'] = TitaniumPage.constructFromObject(data['page']);
             }
@@ -89,6 +93,11 @@ TitaniumGetConsensusRunsRequest.prototype['assetId'] = undefined;
  * @member {module:model/TitaniumFilterPack} filterPack
  */
 TitaniumGetConsensusRunsRequest.prototype['filterPack'] = undefined;
+
+/**
+ * @member {module:model/TitaniumOrderBy} orderBy
+ */
+TitaniumGetConsensusRunsRequest.prototype['orderBy'] = undefined;
 
 /**
  * @member {module:model/TitaniumPage} page

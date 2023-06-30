@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumExpertiseScoreWithDate from './TitaniumExpertiseScoreWithDate';
 
 /**
  * The TitaniumExpertiseScore model module.
@@ -65,6 +66,9 @@ class TitaniumExpertiseScore {
             if (data.hasOwnProperty('expertsCount')) {
                 obj['expertsCount'] = ApiClient.convertToType(data['expertsCount'], Object);
             }
+            if (data.hasOwnProperty('history')) {
+                obj['history'] = ApiClient.convertToType(data['history'], [TitaniumExpertiseScoreWithDate]);
+            }
             if (data.hasOwnProperty('proximityToPostChallengeConsensusMean')) {
                 obj['proximityToPostChallengeConsensusMean'] = ApiClient.convertToType(data['proximityToPostChallengeConsensusMean'], Object);
             }
@@ -110,6 +114,11 @@ TitaniumExpertiseScore.prototype['expertiseRank'] = undefined;
  * @member {Object} expertsCount
  */
 TitaniumExpertiseScore.prototype['expertsCount'] = undefined;
+
+/**
+ * @member {Array.<module:model/TitaniumExpertiseScoreWithDate>} history
+ */
+TitaniumExpertiseScore.prototype['history'] = undefined;
 
 /**
  * @member {Object} proximityToPostChallengeConsensusMean

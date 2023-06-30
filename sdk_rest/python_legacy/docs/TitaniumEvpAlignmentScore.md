@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **evp_alignment_dispersion_score** | **object** |  | [optional] 
 **evp_mid** | **object** |  | [optional] 
+**history** | [**list[TitaniumEvpAlignmentScoreWithDate]**](TitaniumEvpAlignmentScoreWithDate.md) |  | [optional] 
 **score** | **object** |  | [optional] 
 **score_status** | **str** |  | [optional] 
 **submission_mean** | **object** |  | [optional] 

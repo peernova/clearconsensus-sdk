@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**absDiffFromExpertCohortMean** | **Object** |  |  [optional] |
+|**conPriceAbsDiffFromLatestTrade** | **Object** |  |  [optional] |
 |**max** | **Object** |  |  [optional] |
 |**mean** | **Object** |  |  [optional] |
 |**min** | **Object** |  |  [optional] |

@@ -40,6 +40,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         'lower_boundary': 'object',
         'max': 'object',
         'min': 'object',
+        'stat_mean_abs_diff_from_latest_trade': 'object',
         'statistical_mean': 'object',
         'std_dev': 'object',
         'sub_price_diff': 'object',
@@ -52,6 +53,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         'lower_boundary': 'lowerBoundary',
         'max': 'max',
         'min': 'min',
+        'stat_mean_abs_diff_from_latest_trade': 'statMeanAbsDiffFromLatestTrade',
         'statistical_mean': 'statisticalMean',
         'std_dev': 'stdDev',
         'sub_price_diff': 'subPriceDiff',
@@ -59,7 +61,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         'upper_boundary': 'upperBoundary'
     }
 
-    def __init__(self, abs_diff_from_statistical_mean=None, lower_boundary=None, max=None, min=None, statistical_mean=None, std_dev=None, sub_price_diff=None, sub_valid_points_count=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_statistical_mean=None, lower_boundary=None, max=None, min=None, stat_mean_abs_diff_from_latest_trade=None, statistical_mean=None, std_dev=None, sub_price_diff=None, sub_valid_points_count=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumSubmissionStatisticsExplorerTableColumn - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -69,6 +71,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         self._lower_boundary = None
         self._max = None
         self._min = None
+        self._stat_mean_abs_diff_from_latest_trade = None
         self._statistical_mean = None
         self._std_dev = None
         self._sub_price_diff = None
@@ -84,6 +87,8 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
             self.max = max
         if min is not None:
             self.min = min
+        if stat_mean_abs_diff_from_latest_trade is not None:
+            self.stat_mean_abs_diff_from_latest_trade = stat_mean_abs_diff_from_latest_trade
         if statistical_mean is not None:
             self.statistical_mean = statistical_mean
         if std_dev is not None:
@@ -178,6 +183,27 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         """
 
         self._min = min
+
+    @property
+    def stat_mean_abs_diff_from_latest_trade(self):
+        """Gets the stat_mean_abs_diff_from_latest_trade of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+
+
+        :return: The stat_mean_abs_diff_from_latest_trade of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._stat_mean_abs_diff_from_latest_trade
+
+    @stat_mean_abs_diff_from_latest_trade.setter
+    def stat_mean_abs_diff_from_latest_trade(self, stat_mean_abs_diff_from_latest_trade):
+        """Sets the stat_mean_abs_diff_from_latest_trade of this TitaniumSubmissionStatisticsExplorerTableColumn.
+
+
+        :param stat_mean_abs_diff_from_latest_trade: The stat_mean_abs_diff_from_latest_trade of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :type stat_mean_abs_diff_from_latest_trade: object
+        """
+
+        self._stat_mean_abs_diff_from_latest_trade = stat_mean_abs_diff_from_latest_trade
 
     @property
     def statistical_mean(self):

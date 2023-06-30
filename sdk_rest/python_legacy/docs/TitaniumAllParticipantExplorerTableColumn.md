@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abs_diff_from_consensus_price** | **object** |  | [optional] 
+**con_price_abs_diff_from_latest_trade** | **object** |  | [optional] 
 **consensus_price** | **object** |  | [optional] 
 **lower_boundary** | **object** |  | [optional] 
 **participants_count** | **str** |  | [optional] 

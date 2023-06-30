@@ -5,11 +5,15 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**userServiceAddUserNotification**](UserServiceApi.md#userServiceAddUserNotification) | **POST** /api/v1/user/notifications/add | 
+[**userServiceCreate**](UserServiceApi.md#userServiceCreate) | **POST** /api/v1/user-management/users/create | 
 [**userServiceDeleteUserNotification**](UserServiceApi.md#userServiceDeleteUserNotification) | **POST** /api/v1/user/notifications/delete | 
+[**userServiceGetAll**](UserServiceApi.md#userServiceGetAll) | **POST** /api/v1/user-management/users/getAll | 
+[**userServiceGetById**](UserServiceApi.md#userServiceGetById) | **POST** /api/v1/user-management/users/getById | 
 [**userServiceGetUser**](UserServiceApi.md#userServiceGetUser) | **POST** /api/v1/user | 
 [**userServiceGetUserNotifications**](UserServiceApi.md#userServiceGetUserNotifications) | **POST** /api/v1/user/notifications | 
 [**userServiceGetUserNotificationsByMarket**](UserServiceApi.md#userServiceGetUserNotificationsByMarket) | **POST** /api/v1/user/notifications/market | 
 [**userServiceGetUserPermissions**](UserServiceApi.md#userServiceGetUserPermissions) | **POST** /api/v1/user/permissions | 
+[**userServiceUpdate**](UserServiceApi.md#userServiceUpdate) | **POST** /api/v1/user-management/users/update | 
 [**userServiceUpdateUserNotification**](UserServiceApi.md#userServiceUpdateUserNotification) | **POST** /api/v1/user/notifications/update | 
 
 
@@ -57,6 +61,49 @@ No authorization required
 - **Accept**: */*
 
 
+## userServiceCreate
+
+> ProtoServiceResponse userServiceCreate(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.UserServiceApi();
+let body = new ClearconsensusSdk.ProtoUserDto(); // ProtoUserDto | 
+apiInstance.userServiceCreate(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProtoUserDto**](ProtoUserDto.md)|  | 
+
+### Return type
+
+[**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
 ## userServiceDeleteUserNotification
 
 > TitaniumUserNotificationResponse userServiceDeleteUserNotification(body)
@@ -89,6 +136,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumUserNotificationResponse**](TitaniumUserNotificationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## userServiceGetAll
+
+> ProtoServiceResponse userServiceGetAll(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.UserServiceApi();
+let body = true; // Boolean | 
+apiInstance.userServiceGetAll(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **Boolean**|  | 
+
+### Return type
+
+[**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## userServiceGetById
+
+> ProtoServiceResponse userServiceGetById(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.UserServiceApi();
+let body = "body_example"; // String | 
+apiInstance.userServiceGetById(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **String**|  | 
+
+### Return type
+
+[**ProtoServiceResponse**](ProtoServiceResponse.md)
 
 ### Authorization
 
@@ -261,6 +394,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumUserPermissionsResponse**](TitaniumUserPermissionsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## userServiceUpdate
+
+> ProtoServiceResponse userServiceUpdate(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.UserServiceApi();
+let body = new ClearconsensusSdk.ProtoUserDto(); // ProtoUserDto | 
+apiInstance.userServiceUpdate(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProtoUserDto**](ProtoUserDto.md)|  | 
+
+### Return type
+
+[**ProtoServiceResponse**](ProtoServiceResponse.md)
 
 ### Authorization
 

@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abs_diff_from_expert_cohort_mean** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**con_price_abs_diff_from_latest_trade** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **max** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **mean** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **min** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

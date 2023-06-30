@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abs_diff_from_expert_cohort_mean** | **object** |  | [optional] 
+**con_price_abs_diff_from_latest_trade** | **object** |  | [optional] 
 **max** | **object** |  | [optional] 
 **mean** | **object** |  | [optional] 
 **min** | **object** |  | [optional] 

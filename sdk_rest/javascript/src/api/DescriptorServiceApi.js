@@ -17,6 +17,7 @@ import RpcStatus from '../model/RpcStatus';
 import TitaniumAcknowledgeResponse from '../model/TitaniumAcknowledgeResponse';
 import TitaniumDescriptorDefinition from '../model/TitaniumDescriptorDefinition';
 import TitaniumDescriptorDefinitionResponse from '../model/TitaniumDescriptorDefinitionResponse';
+import TitaniumDescriptorDependenciesResponse from '../model/TitaniumDescriptorDependenciesResponse';
 import TitaniumDescriptorList from '../model/TitaniumDescriptorList';
 import TitaniumEnableDisableRequest from '../model/TitaniumEnableDisableRequest';
 import TitaniumGetDefinition from '../model/TitaniumGetDefinition';
@@ -79,6 +80,46 @@ export default class DescriptorServiceApi {
       let returnType = TitaniumAcknowledgeResponse;
       return this.apiClient.callApi(
         '/api/v1/descriptor/add', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the descriptorServiceDescriptorDependencies operation.
+     * @callback module:api/DescriptorServiceApi~descriptorServiceDescriptorDependenciesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumDescriptorDependenciesResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumGetDefinition} body 
+     * @param {module:api/DescriptorServiceApi~descriptorServiceDescriptorDependenciesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumDescriptorDependenciesResponse}
+     */
+    descriptorServiceDescriptorDependencies(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling descriptorServiceDescriptorDependencies");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumDescriptorDependenciesResponse;
+      return this.apiClient.callApi(
+        '/api/v1/descriptor/dependencies', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

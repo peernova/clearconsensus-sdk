@@ -13,11 +13,24 @@
 
 
 import ApiClient from './ApiClient';
+import ErrorValidationErrorDetail from './model/ErrorValidationErrorDetail';
 import FileServiceGetFilePreviewRequest from './model/FileServiceGetFilePreviewRequest';
 import GetAttachmentUploadUrlResponseAttachmentUploadUrl from './model/GetAttachmentUploadUrlResponseAttachmentUploadUrl';
 import GetChallengeDetailsResponseCommonChallengeData from './model/GetChallengeDetailsResponseCommonChallengeData';
 import GetChallengeDetailsResponseResult from './model/GetChallengeDetailsResponseResult';
 import GetFileExportUrlResponseFileExportUrl from './model/GetFileExportUrlResponseFileExportUrl';
+import GrpcprotoError from './model/GrpcprotoError';
+import ProtoEntityDto from './model/ProtoEntityDto';
+import ProtoGroupPolicies from './model/ProtoGroupPolicies';
+import ProtoGroupPolicyDto from './model/ProtoGroupPolicyDto';
+import ProtoPolicies from './model/ProtoPolicies';
+import ProtoPolicyDto from './model/ProtoPolicyDto';
+import ProtoSearchCriteria from './model/ProtoSearchCriteria';
+import ProtoSearchCriteriaLimit from './model/ProtoSearchCriteriaLimit';
+import ProtoSearchCriteriaOrderBy from './model/ProtoSearchCriteriaOrderBy';
+import ProtoServiceResponse from './model/ProtoServiceResponse';
+import ProtoUserDto from './model/ProtoUserDto';
+import ProtoUsernamePermissionRequest from './model/ProtoUsernamePermissionRequest';
 import ProtobufAny from './model/ProtobufAny';
 import RpcStatus from './model/RpcStatus';
 import TitaniumAcknowledgeResponse from './model/TitaniumAcknowledgeResponse';
@@ -31,6 +44,7 @@ import TitaniumAssetsListResponse from './model/TitaniumAssetsListResponse';
 import TitaniumAssetsRequest from './model/TitaniumAssetsRequest';
 import TitaniumAssetsResponse from './model/TitaniumAssetsResponse';
 import TitaniumAttachment from './model/TitaniumAttachment';
+import TitaniumAvailableTrades from './model/TitaniumAvailableTrades';
 import TitaniumBenchmarkMetadata from './model/TitaniumBenchmarkMetadata';
 import TitaniumChallengeCreateRequest from './model/TitaniumChallengeCreateRequest';
 import TitaniumChallengeCreateResponse from './model/TitaniumChallengeCreateResponse';
@@ -47,6 +61,7 @@ import TitaniumChallengeFormMetaResponseData from './model/TitaniumChallengeForm
 import TitaniumChallengeFormOneOfFields from './model/TitaniumChallengeFormOneOfFields';
 import TitaniumChallengeFreezeStatusRequest from './model/TitaniumChallengeFreezeStatusRequest';
 import TitaniumChart from './model/TitaniumChart';
+import TitaniumChartDataResponse from './model/TitaniumChartDataResponse';
 import TitaniumChartPoint from './model/TitaniumChartPoint';
 import TitaniumChartRanges from './model/TitaniumChartRanges';
 import TitaniumChartSource from './model/TitaniumChartSource';
@@ -56,6 +71,7 @@ import TitaniumChartsCurrenciesResponseData from './model/TitaniumChartsCurrenci
 import TitaniumChartsRequest from './model/TitaniumChartsRequest';
 import TitaniumChartsResponse from './model/TitaniumChartsResponse';
 import TitaniumChartsResponseData from './model/TitaniumChartsResponseData';
+import TitaniumColDependency from './model/TitaniumColDependency';
 import TitaniumColumnInfo from './model/TitaniumColumnInfo';
 import TitaniumComparisonTable from './model/TitaniumComparisonTable';
 import TitaniumConsensusActiveResponse from './model/TitaniumConsensusActiveResponse';
@@ -93,16 +109,22 @@ import TitaniumDQErrorsResponse from './model/TitaniumDQErrorsResponse';
 import TitaniumDataQualityError from './model/TitaniumDataQualityError';
 import TitaniumDataQualityErrors from './model/TitaniumDataQualityErrors';
 import TitaniumDataQualityErrorsResponse from './model/TitaniumDataQualityErrorsResponse';
+import TitaniumDateAndValue from './model/TitaniumDateAndValue';
+import TitaniumDependency from './model/TitaniumDependency';
 import TitaniumDescriptorBasedIdentifier from './model/TitaniumDescriptorBasedIdentifier';
 import TitaniumDescriptorBasedResultsList from './model/TitaniumDescriptorBasedResultsList';
 import TitaniumDescriptorDefinition from './model/TitaniumDescriptorDefinition';
 import TitaniumDescriptorDefinitionResponse from './model/TitaniumDescriptorDefinitionResponse';
+import TitaniumDescriptorDependenciesResponse from './model/TitaniumDescriptorDependenciesResponse';
 import TitaniumDescriptorField from './model/TitaniumDescriptorField';
 import TitaniumDescriptorList from './model/TitaniumDescriptorList';
 import TitaniumDescriptorPairBasedAcknowledgeResponse from './model/TitaniumDescriptorPairBasedAcknowledgeResponse';
 import TitaniumDescriptorPairBasedGetDefinition from './model/TitaniumDescriptorPairBasedGetDefinition';
 import TitaniumDescriptorPairBasedIdentifier from './model/TitaniumDescriptorPairBasedIdentifier';
 import TitaniumDescriptorPairBasedResultsList from './model/TitaniumDescriptorPairBasedResultsList';
+import TitaniumDtccTabRequest from './model/TitaniumDtccTabRequest';
+import TitaniumDtccTabResponse from './model/TitaniumDtccTabResponse';
+import TitaniumDtccTabResponseData from './model/TitaniumDtccTabResponseData';
 import TitaniumDynamicLut from './model/TitaniumDynamicLut';
 import TitaniumEVPRequest from './model/TitaniumEVPRequest';
 import TitaniumEVPResponse from './model/TitaniumEVPResponse';
@@ -113,10 +135,12 @@ import TitaniumEntityIdentifier from './model/TitaniumEntityIdentifier';
 import TitaniumError from './model/TitaniumError';
 import TitaniumErrorDefinition from './model/TitaniumErrorDefinition';
 import TitaniumEvpAlignmentScore from './model/TitaniumEvpAlignmentScore';
+import TitaniumEvpAlignmentScoreWithDate from './model/TitaniumEvpAlignmentScoreWithDate';
 import TitaniumEvpExplorerTableColumn from './model/TitaniumEvpExplorerTableColumn';
 import TitaniumEvpQualityScore from './model/TitaniumEvpQualityScore';
 import TitaniumExpertExplorerTableColumn from './model/TitaniumExpertExplorerTableColumn';
 import TitaniumExpertiseScore from './model/TitaniumExpertiseScore';
+import TitaniumExpertiseScoreWithDate from './model/TitaniumExpertiseScoreWithDate';
 import TitaniumExportPresignedUrlResponseResponseData from './model/TitaniumExportPresignedUrlResponseResponseData';
 import TitaniumExportRequest from './model/TitaniumExportRequest';
 import TitaniumExportResponse from './model/TitaniumExportResponse';
@@ -142,6 +166,8 @@ import TitaniumGetAttachmentUploadUrlRequest from './model/TitaniumGetAttachment
 import TitaniumGetAttachmentUploadUrlResponse from './model/TitaniumGetAttachmentUploadUrlResponse';
 import TitaniumGetChallengeDetailsRequest from './model/TitaniumGetChallengeDetailsRequest';
 import TitaniumGetChallengeDetailsResponse from './model/TitaniumGetChallengeDetailsResponse';
+import TitaniumGetChartDataRequest from './model/TitaniumGetChartDataRequest';
+import TitaniumGetChartDataResponse from './model/TitaniumGetChartDataResponse';
 import TitaniumGetConsensusRunsData from './model/TitaniumGetConsensusRunsData';
 import TitaniumGetConsensusRunsRequest from './model/TitaniumGetConsensusRunsRequest';
 import TitaniumGetConsensusRunsResponse from './model/TitaniumGetConsensusRunsResponse';
@@ -174,12 +200,14 @@ import TitaniumKVList from './model/TitaniumKVList';
 import TitaniumKVListAsset from './model/TitaniumKVListAsset';
 import TitaniumKVOperationResponse from './model/TitaniumKVOperationResponse';
 import TitaniumKVRequest from './model/TitaniumKVRequest';
+import TitaniumKeyAndValue from './model/TitaniumKeyAndValue';
 import TitaniumLimit from './model/TitaniumLimit';
 import TitaniumListCustomFunctionRequest from './model/TitaniumListCustomFunctionRequest';
 import TitaniumListCustomFunctionResponse from './model/TitaniumListCustomFunctionResponse';
 import TitaniumListKVRequest from './model/TitaniumListKVRequest';
 import TitaniumListKVResponse from './model/TitaniumListKVResponse';
 import TitaniumListLookupTableResponse from './model/TitaniumListLookupTableResponse';
+import TitaniumListOfKeys from './model/TitaniumListOfKeys';
 import TitaniumListRequest from './model/TitaniumListRequest';
 import TitaniumListRuleResponse from './model/TitaniumListRuleResponse';
 import TitaniumListUniqueKeysResponse from './model/TitaniumListUniqueKeysResponse';
@@ -199,6 +227,7 @@ import TitaniumMarket from './model/TitaniumMarket';
 import TitaniumMarketSnapTimeResponse from './model/TitaniumMarketSnapTimeResponse';
 import TitaniumMessageResponse from './model/TitaniumMessageResponse';
 import TitaniumMessageResponseData from './model/TitaniumMessageResponseData';
+import TitaniumMetadata from './model/TitaniumMetadata';
 import TitaniumNameAliasPair from './model/TitaniumNameAliasPair';
 import TitaniumNormalizationRuleDefinition from './model/TitaniumNormalizationRuleDefinition';
 import TitaniumNormalizationRuleResponse from './model/TitaniumNormalizationRuleResponse';
@@ -231,6 +260,7 @@ import TitaniumRunDataProcessingAppResponse from './model/TitaniumRunDataProcess
 import TitaniumScopeExistResponse from './model/TitaniumScopeExistResponse';
 import TitaniumScopeIdentifier from './model/TitaniumScopeIdentifier';
 import TitaniumScopeListResponse from './model/TitaniumScopeListResponse';
+import TitaniumSeries from './model/TitaniumSeries';
 import TitaniumService from './model/TitaniumService';
 import TitaniumSetFileDelimiterRequest from './model/TitaniumSetFileDelimiterRequest';
 import TitaniumSetFileDescriptorRequest from './model/TitaniumSetFileDescriptorRequest';
@@ -249,12 +279,16 @@ import TitaniumSubmittedResponse from './model/TitaniumSubmittedResponse';
 import TitaniumSubmittedResponseData from './model/TitaniumSubmittedResponseData';
 import TitaniumSubmittedRow from './model/TitaniumSubmittedRow';
 import TitaniumSupportedField from './model/TitaniumSupportedField';
+import TitaniumTradePeriodMetrics from './model/TitaniumTradePeriodMetrics';
+import TitaniumTradePeriodsWithMetrics from './model/TitaniumTradePeriodsWithMetrics';
+import TitaniumTradeRangesData from './model/TitaniumTradeRangesData';
 import TitaniumTransformation from './model/TitaniumTransformation';
 import TitaniumUniqueKeyDefinition from './model/TitaniumUniqueKeyDefinition';
 import TitaniumUniqueKeyDefinitionResponse from './model/TitaniumUniqueKeyDefinitionResponse';
 import TitaniumUniqueKeyList from './model/TitaniumUniqueKeyList';
 import TitaniumUploadURLRequest from './model/TitaniumUploadURLRequest';
 import TitaniumUploadURLResponse from './model/TitaniumUploadURLResponse';
+import TitaniumUsage from './model/TitaniumUsage';
 import TitaniumUser from './model/TitaniumUser';
 import TitaniumUserNotification from './model/TitaniumUserNotification';
 import TitaniumUserNotificationRequest from './model/TitaniumUserNotificationRequest';
@@ -274,6 +308,7 @@ import TitaniumViewRow from './model/TitaniumViewRow';
 import AnalyticsControllerApi from './api/AnalyticsControllerApi';
 import AssetsServiceApi from './api/AssetsServiceApi';
 import ChallengeServiceApi from './api/ChallengeServiceApi';
+import ChartServiceApi from './api/ChartServiceApi';
 import ChartsServiceApi from './api/ChartsServiceApi';
 import ConsensusServiceApi from './api/ConsensusServiceApi';
 import CustomFunctionServiceApi from './api/CustomFunctionServiceApi';
@@ -282,7 +317,10 @@ import DataQualityServiceApi from './api/DataQualityServiceApi';
 import DataServiceApi from './api/DataServiceApi';
 import DbDescriptorServiceApi from './api/DbDescriptorServiceApi';
 import DescriptorServiceApi from './api/DescriptorServiceApi';
+import DtccServiceApi from './api/DtccServiceApi';
+import EntityServiceApi from './api/EntityServiceApi';
 import FileServiceApi from './api/FileServiceApi';
+import GroupPolicyServiceApi from './api/GroupPolicyServiceApi';
 import KVServiceApi from './api/KVServiceApi';
 import LoginServiceApi from './api/LoginServiceApi';
 import LookupTableServiceApi from './api/LookupTableServiceApi';
@@ -291,6 +329,7 @@ import MarketServiceApi from './api/MarketServiceApi';
 import MetadataEntityServiceApi from './api/MetadataEntityServiceApi';
 import NormalizationServiceApi from './api/NormalizationServiceApi';
 import OutliersServiceApi from './api/OutliersServiceApi';
+import PolicyServiceApi from './api/PolicyServiceApi';
 import PopUpServiceApi from './api/PopUpServiceApi';
 import ScopeServiceApi from './api/ScopeServiceApi';
 import SubmissionServiceApi from './api/SubmissionServiceApi';
@@ -339,6 +378,12 @@ export {
     ApiClient,
 
     /**
+     * The ErrorValidationErrorDetail model constructor.
+     * @property {module:model/ErrorValidationErrorDetail}
+     */
+    ErrorValidationErrorDetail,
+
+    /**
      * The FileServiceGetFilePreviewRequest model constructor.
      * @property {module:model/FileServiceGetFilePreviewRequest}
      */
@@ -367,6 +412,78 @@ export {
      * @property {module:model/GetFileExportUrlResponseFileExportUrl}
      */
     GetFileExportUrlResponseFileExportUrl,
+
+    /**
+     * The GrpcprotoError model constructor.
+     * @property {module:model/GrpcprotoError}
+     */
+    GrpcprotoError,
+
+    /**
+     * The ProtoEntityDto model constructor.
+     * @property {module:model/ProtoEntityDto}
+     */
+    ProtoEntityDto,
+
+    /**
+     * The ProtoGroupPolicies model constructor.
+     * @property {module:model/ProtoGroupPolicies}
+     */
+    ProtoGroupPolicies,
+
+    /**
+     * The ProtoGroupPolicyDto model constructor.
+     * @property {module:model/ProtoGroupPolicyDto}
+     */
+    ProtoGroupPolicyDto,
+
+    /**
+     * The ProtoPolicies model constructor.
+     * @property {module:model/ProtoPolicies}
+     */
+    ProtoPolicies,
+
+    /**
+     * The ProtoPolicyDto model constructor.
+     * @property {module:model/ProtoPolicyDto}
+     */
+    ProtoPolicyDto,
+
+    /**
+     * The ProtoSearchCriteria model constructor.
+     * @property {module:model/ProtoSearchCriteria}
+     */
+    ProtoSearchCriteria,
+
+    /**
+     * The ProtoSearchCriteriaLimit model constructor.
+     * @property {module:model/ProtoSearchCriteriaLimit}
+     */
+    ProtoSearchCriteriaLimit,
+
+    /**
+     * The ProtoSearchCriteriaOrderBy model constructor.
+     * @property {module:model/ProtoSearchCriteriaOrderBy}
+     */
+    ProtoSearchCriteriaOrderBy,
+
+    /**
+     * The ProtoServiceResponse model constructor.
+     * @property {module:model/ProtoServiceResponse}
+     */
+    ProtoServiceResponse,
+
+    /**
+     * The ProtoUserDto model constructor.
+     * @property {module:model/ProtoUserDto}
+     */
+    ProtoUserDto,
+
+    /**
+     * The ProtoUsernamePermissionRequest model constructor.
+     * @property {module:model/ProtoUsernamePermissionRequest}
+     */
+    ProtoUsernamePermissionRequest,
 
     /**
      * The ProtobufAny model constructor.
@@ -445,6 +562,12 @@ export {
      * @property {module:model/TitaniumAttachment}
      */
     TitaniumAttachment,
+
+    /**
+     * The TitaniumAvailableTrades model constructor.
+     * @property {module:model/TitaniumAvailableTrades}
+     */
+    TitaniumAvailableTrades,
 
     /**
      * The TitaniumBenchmarkMetadata model constructor.
@@ -543,6 +666,12 @@ export {
     TitaniumChart,
 
     /**
+     * The TitaniumChartDataResponse model constructor.
+     * @property {module:model/TitaniumChartDataResponse}
+     */
+    TitaniumChartDataResponse,
+
+    /**
      * The TitaniumChartPoint model constructor.
      * @property {module:model/TitaniumChartPoint}
      */
@@ -595,6 +724,12 @@ export {
      * @property {module:model/TitaniumChartsResponseData}
      */
     TitaniumChartsResponseData,
+
+    /**
+     * The TitaniumColDependency model constructor.
+     * @property {module:model/TitaniumColDependency}
+     */
+    TitaniumColDependency,
 
     /**
      * The TitaniumColumnInfo model constructor.
@@ -819,6 +954,18 @@ export {
     TitaniumDataQualityErrorsResponse,
 
     /**
+     * The TitaniumDateAndValue model constructor.
+     * @property {module:model/TitaniumDateAndValue}
+     */
+    TitaniumDateAndValue,
+
+    /**
+     * The TitaniumDependency model constructor.
+     * @property {module:model/TitaniumDependency}
+     */
+    TitaniumDependency,
+
+    /**
      * The TitaniumDescriptorBasedIdentifier model constructor.
      * @property {module:model/TitaniumDescriptorBasedIdentifier}
      */
@@ -841,6 +988,12 @@ export {
      * @property {module:model/TitaniumDescriptorDefinitionResponse}
      */
     TitaniumDescriptorDefinitionResponse,
+
+    /**
+     * The TitaniumDescriptorDependenciesResponse model constructor.
+     * @property {module:model/TitaniumDescriptorDependenciesResponse}
+     */
+    TitaniumDescriptorDependenciesResponse,
 
     /**
      * The TitaniumDescriptorField model constructor.
@@ -877,6 +1030,24 @@ export {
      * @property {module:model/TitaniumDescriptorPairBasedResultsList}
      */
     TitaniumDescriptorPairBasedResultsList,
+
+    /**
+     * The TitaniumDtccTabRequest model constructor.
+     * @property {module:model/TitaniumDtccTabRequest}
+     */
+    TitaniumDtccTabRequest,
+
+    /**
+     * The TitaniumDtccTabResponse model constructor.
+     * @property {module:model/TitaniumDtccTabResponse}
+     */
+    TitaniumDtccTabResponse,
+
+    /**
+     * The TitaniumDtccTabResponseData model constructor.
+     * @property {module:model/TitaniumDtccTabResponseData}
+     */
+    TitaniumDtccTabResponseData,
 
     /**
      * The TitaniumDynamicLut model constructor.
@@ -939,6 +1110,12 @@ export {
     TitaniumEvpAlignmentScore,
 
     /**
+     * The TitaniumEvpAlignmentScoreWithDate model constructor.
+     * @property {module:model/TitaniumEvpAlignmentScoreWithDate}
+     */
+    TitaniumEvpAlignmentScoreWithDate,
+
+    /**
      * The TitaniumEvpExplorerTableColumn model constructor.
      * @property {module:model/TitaniumEvpExplorerTableColumn}
      */
@@ -961,6 +1138,12 @@ export {
      * @property {module:model/TitaniumExpertiseScore}
      */
     TitaniumExpertiseScore,
+
+    /**
+     * The TitaniumExpertiseScoreWithDate model constructor.
+     * @property {module:model/TitaniumExpertiseScoreWithDate}
+     */
+    TitaniumExpertiseScoreWithDate,
 
     /**
      * The TitaniumExportPresignedUrlResponseResponseData model constructor.
@@ -1111,6 +1294,18 @@ export {
      * @property {module:model/TitaniumGetChallengeDetailsResponse}
      */
     TitaniumGetChallengeDetailsResponse,
+
+    /**
+     * The TitaniumGetChartDataRequest model constructor.
+     * @property {module:model/TitaniumGetChartDataRequest}
+     */
+    TitaniumGetChartDataRequest,
+
+    /**
+     * The TitaniumGetChartDataResponse model constructor.
+     * @property {module:model/TitaniumGetChartDataResponse}
+     */
+    TitaniumGetChartDataResponse,
 
     /**
      * The TitaniumGetConsensusRunsData model constructor.
@@ -1305,6 +1500,12 @@ export {
     TitaniumKVRequest,
 
     /**
+     * The TitaniumKeyAndValue model constructor.
+     * @property {module:model/TitaniumKeyAndValue}
+     */
+    TitaniumKeyAndValue,
+
+    /**
      * The TitaniumLimit model constructor.
      * @property {module:model/TitaniumLimit}
      */
@@ -1339,6 +1540,12 @@ export {
      * @property {module:model/TitaniumListLookupTableResponse}
      */
     TitaniumListLookupTableResponse,
+
+    /**
+     * The TitaniumListOfKeys model constructor.
+     * @property {module:model/TitaniumListOfKeys}
+     */
+    TitaniumListOfKeys,
 
     /**
      * The TitaniumListRequest model constructor.
@@ -1453,6 +1660,12 @@ export {
      * @property {module:model/TitaniumMessageResponseData}
      */
     TitaniumMessageResponseData,
+
+    /**
+     * The TitaniumMetadata model constructor.
+     * @property {module:model/TitaniumMetadata}
+     */
+    TitaniumMetadata,
 
     /**
      * The TitaniumNameAliasPair model constructor.
@@ -1647,6 +1860,12 @@ export {
     TitaniumScopeListResponse,
 
     /**
+     * The TitaniumSeries model constructor.
+     * @property {module:model/TitaniumSeries}
+     */
+    TitaniumSeries,
+
+    /**
      * The TitaniumService model constructor.
      * @property {module:model/TitaniumService}
      */
@@ -1755,6 +1974,24 @@ export {
     TitaniumSupportedField,
 
     /**
+     * The TitaniumTradePeriodMetrics model constructor.
+     * @property {module:model/TitaniumTradePeriodMetrics}
+     */
+    TitaniumTradePeriodMetrics,
+
+    /**
+     * The TitaniumTradePeriodsWithMetrics model constructor.
+     * @property {module:model/TitaniumTradePeriodsWithMetrics}
+     */
+    TitaniumTradePeriodsWithMetrics,
+
+    /**
+     * The TitaniumTradeRangesData model constructor.
+     * @property {module:model/TitaniumTradeRangesData}
+     */
+    TitaniumTradeRangesData,
+
+    /**
      * The TitaniumTransformation model constructor.
      * @property {module:model/TitaniumTransformation}
      */
@@ -1789,6 +2026,12 @@ export {
      * @property {module:model/TitaniumUploadURLResponse}
      */
     TitaniumUploadURLResponse,
+
+    /**
+     * The TitaniumUsage model constructor.
+     * @property {module:model/TitaniumUsage}
+     */
+    TitaniumUsage,
 
     /**
      * The TitaniumUser model constructor.
@@ -1905,6 +2148,12 @@ export {
     ChallengeServiceApi,
 
     /**
+    * The ChartServiceApi service constructor.
+    * @property {module:api/ChartServiceApi}
+    */
+    ChartServiceApi,
+
+    /**
     * The ChartsServiceApi service constructor.
     * @property {module:api/ChartsServiceApi}
     */
@@ -1953,10 +2202,28 @@ export {
     DescriptorServiceApi,
 
     /**
+    * The DtccServiceApi service constructor.
+    * @property {module:api/DtccServiceApi}
+    */
+    DtccServiceApi,
+
+    /**
+    * The EntityServiceApi service constructor.
+    * @property {module:api/EntityServiceApi}
+    */
+    EntityServiceApi,
+
+    /**
     * The FileServiceApi service constructor.
     * @property {module:api/FileServiceApi}
     */
     FileServiceApi,
+
+    /**
+    * The GroupPolicyServiceApi service constructor.
+    * @property {module:api/GroupPolicyServiceApi}
+    */
+    GroupPolicyServiceApi,
 
     /**
     * The KVServiceApi service constructor.
@@ -2005,6 +2272,12 @@ export {
     * @property {module:api/OutliersServiceApi}
     */
     OutliersServiceApi,
+
+    /**
+    * The PolicyServiceApi service constructor.
+    * @property {module:api/PolicyServiceApi}
+    */
+    PolicyServiceApi,
 
     /**
     * The PopUpServiceApi service constructor.

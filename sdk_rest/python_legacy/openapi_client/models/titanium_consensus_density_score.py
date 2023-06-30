@@ -41,7 +41,8 @@ class TitaniumConsensusDensityScore(object):
         'dispersion': 'object',
         'evp_alignment_score': 'object',
         'evp_quality': 'object',
-        'number_of_participants': 'str',
+        'history': 'list[TitaniumDateAndValue]',
+        'number_of_participants': 'object',
         'outlier_volume': 'object',
         'score': 'object'
     }
@@ -52,12 +53,13 @@ class TitaniumConsensusDensityScore(object):
         'dispersion': 'dispersion',
         'evp_alignment_score': 'evpAlignmentScore',
         'evp_quality': 'evpQuality',
+        'history': 'history',
         'number_of_participants': 'numberOfParticipants',
         'outlier_volume': 'outlierVolume',
         'score': 'score'
     }
 
-    def __init__(self, bimodality=None, challenge_quality=None, dispersion=None, evp_alignment_score=None, evp_quality=None, number_of_participants=None, outlier_volume=None, score=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bimodality=None, challenge_quality=None, dispersion=None, evp_alignment_score=None, evp_quality=None, history=None, number_of_participants=None, outlier_volume=None, score=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusDensityScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -68,6 +70,7 @@ class TitaniumConsensusDensityScore(object):
         self._dispersion = None
         self._evp_alignment_score = None
         self._evp_quality = None
+        self._history = None
         self._number_of_participants = None
         self._outlier_volume = None
         self._score = None
@@ -83,6 +86,8 @@ class TitaniumConsensusDensityScore(object):
             self.evp_alignment_score = evp_alignment_score
         if evp_quality is not None:
             self.evp_quality = evp_quality
+        if history is not None:
+            self.history = history
         if number_of_participants is not None:
             self.number_of_participants = number_of_participants
         if outlier_volume is not None:
@@ -196,12 +201,33 @@ class TitaniumConsensusDensityScore(object):
         self._evp_quality = evp_quality
 
     @property
+    def history(self):
+        """Gets the history of this TitaniumConsensusDensityScore.  # noqa: E501
+
+
+        :return: The history of this TitaniumConsensusDensityScore.  # noqa: E501
+        :rtype: list[TitaniumDateAndValue]
+        """
+        return self._history
+
+    @history.setter
+    def history(self, history):
+        """Sets the history of this TitaniumConsensusDensityScore.
+
+
+        :param history: The history of this TitaniumConsensusDensityScore.  # noqa: E501
+        :type history: list[TitaniumDateAndValue]
+        """
+
+        self._history = history
+
+    @property
     def number_of_participants(self):
         """Gets the number_of_participants of this TitaniumConsensusDensityScore.  # noqa: E501
 
 
         :return: The number_of_participants of this TitaniumConsensusDensityScore.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._number_of_participants
 
@@ -211,7 +237,7 @@ class TitaniumConsensusDensityScore(object):
 
 
         :param number_of_participants: The number_of_participants of this TitaniumConsensusDensityScore.  # noqa: E501
-        :type number_of_participants: str
+        :type number_of_participants: object
         """
 
         self._number_of_participants = number_of_participants

@@ -36,6 +36,7 @@ class TitaniumEvpQualityScore(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'history': 'list[TitaniumDateAndValue]',
         'indicative_count': 'str',
         'order_count': 'str',
         'score': 'object',
@@ -43,24 +44,28 @@ class TitaniumEvpQualityScore(object):
     }
 
     attribute_map = {
+        'history': 'history',
         'indicative_count': 'indicativeCount',
         'order_count': 'orderCount',
         'score': 'score',
         'trade_count': 'tradeCount'
     }
 
-    def __init__(self, indicative_count=None, order_count=None, score=None, trade_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, history=None, indicative_count=None, order_count=None, score=None, trade_count=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumEvpQualityScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._history = None
         self._indicative_count = None
         self._order_count = None
         self._score = None
         self._trade_count = None
         self.discriminator = None
 
+        if history is not None:
+            self.history = history
         if indicative_count is not None:
             self.indicative_count = indicative_count
         if order_count is not None:
@@ -69,6 +74,27 @@ class TitaniumEvpQualityScore(object):
             self.score = score
         if trade_count is not None:
             self.trade_count = trade_count
+
+    @property
+    def history(self):
+        """Gets the history of this TitaniumEvpQualityScore.  # noqa: E501
+
+
+        :return: The history of this TitaniumEvpQualityScore.  # noqa: E501
+        :rtype: list[TitaniumDateAndValue]
+        """
+        return self._history
+
+    @history.setter
+    def history(self, history):
+        """Sets the history of this TitaniumEvpQualityScore.
+
+
+        :param history: The history of this TitaniumEvpQualityScore.  # noqa: E501
+        :type history: list[TitaniumDateAndValue]
+        """
+
+        self._history = history
 
     @property
     def indicative_count(self):

@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**absDiffFromConsensusPrice** | **Object** |  |  [optional] |
+|**conPriceAbsDiffFromLatestTrade** | **Object** |  |  [optional] |
 |**consensusPrice** | **Object** |  |  [optional] |
 |**lowerBoundary** | **Object** |  |  [optional] |
 |**participantsCount** | **String** |  |  [optional] |

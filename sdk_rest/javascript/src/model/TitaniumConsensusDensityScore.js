@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumDateAndValue from './TitaniumDateAndValue';
 
 /**
  * The TitaniumConsensusDensityScore model module.
@@ -62,8 +63,11 @@ class TitaniumConsensusDensityScore {
             if (data.hasOwnProperty('evpQuality')) {
                 obj['evpQuality'] = ApiClient.convertToType(data['evpQuality'], Object);
             }
+            if (data.hasOwnProperty('history')) {
+                obj['history'] = ApiClient.convertToType(data['history'], [TitaniumDateAndValue]);
+            }
             if (data.hasOwnProperty('numberOfParticipants')) {
-                obj['numberOfParticipants'] = ApiClient.convertToType(data['numberOfParticipants'], 'String');
+                obj['numberOfParticipants'] = ApiClient.convertToType(data['numberOfParticipants'], Object);
             }
             if (data.hasOwnProperty('outlierVolume')) {
                 obj['outlierVolume'] = ApiClient.convertToType(data['outlierVolume'], Object);
@@ -104,7 +108,12 @@ TitaniumConsensusDensityScore.prototype['evpAlignmentScore'] = undefined;
 TitaniumConsensusDensityScore.prototype['evpQuality'] = undefined;
 
 /**
- * @member {String} numberOfParticipants
+ * @member {Array.<module:model/TitaniumDateAndValue>} history
+ */
+TitaniumConsensusDensityScore.prototype['history'] = undefined;
+
+/**
+ * @member {Object} numberOfParticipants
  */
 TitaniumConsensusDensityScore.prototype['numberOfParticipants'] = undefined;
 

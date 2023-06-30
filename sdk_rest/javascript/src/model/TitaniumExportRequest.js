@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumFilter from './TitaniumFilter';
 import TitaniumFilterPack from './TitaniumFilterPack';
 import TitaniumOrderBy from './TitaniumOrderBy';
 
@@ -58,6 +59,9 @@ class TitaniumExportRequest {
             if (data.hasOwnProperty('filterPack')) {
                 obj['filterPack'] = TitaniumFilterPack.constructFromObject(data['filterPack']);
             }
+            if (data.hasOwnProperty('filters')) {
+                obj['filters'] = ApiClient.convertToType(data['filters'], [TitaniumFilter]);
+            }
             if (data.hasOwnProperty('includeHeader')) {
                 obj['includeHeader'] = ApiClient.convertToType(data['includeHeader'], 'Boolean');
             }
@@ -91,6 +95,11 @@ TitaniumExportRequest.prototype['consensusRunTimestamp'] = undefined;
  * @member {module:model/TitaniumFilterPack} filterPack
  */
 TitaniumExportRequest.prototype['filterPack'] = undefined;
+
+/**
+ * @member {Array.<module:model/TitaniumFilter>} filters
+ */
+TitaniumExportRequest.prototype['filters'] = undefined;
 
 /**
  * @member {Boolean} includeHeader

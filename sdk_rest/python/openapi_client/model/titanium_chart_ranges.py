@@ -87,6 +87,8 @@ class TitaniumChartRanges(ModelNormal):
         """
         lazy_import()
         return {
+            'bimodal_left_population': (TitaniumRange,),  # noqa: E501
+            'bimodal_right_population': (TitaniumRange,),  # noqa: E501
             'challenge_overlay_consensus': (TitaniumRange,),  # noqa: E501
             'evp': (TitaniumRange,),  # noqa: E501
             'expert_post_challenge': (TitaniumRange,),  # noqa: E501
@@ -103,6 +105,8 @@ class TitaniumChartRanges(ModelNormal):
 
 
     attribute_map = {
+        'bimodal_left_population': 'bimodalLeftPopulation',  # noqa: E501
+        'bimodal_right_population': 'bimodalRightPopulation',  # noqa: E501
         'challenge_overlay_consensus': 'challengeOverlayConsensus',  # noqa: E501
         'evp': 'evp',  # noqa: E501
         'expert_post_challenge': 'expertPostChallenge',  # noqa: E501
@@ -154,6 +158,8 @@ class TitaniumChartRanges(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            bimodal_left_population (TitaniumRange): [optional]  # noqa: E501
+            bimodal_right_population (TitaniumRange): [optional]  # noqa: E501
             challenge_overlay_consensus (TitaniumRange): [optional]  # noqa: E501
             evp (TitaniumRange): [optional]  # noqa: E501
             expert_post_challenge (TitaniumRange): [optional]  # noqa: E501
@@ -247,6 +253,8 @@ class TitaniumChartRanges(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            bimodal_left_population (TitaniumRange): [optional]  # noqa: E501
+            bimodal_right_population (TitaniumRange): [optional]  # noqa: E501
             challenge_overlay_consensus (TitaniumRange): [optional]  # noqa: E501
             evp (TitaniumRange): [optional]  # noqa: E501
             expert_post_challenge (TitaniumRange): [optional]  # noqa: E501

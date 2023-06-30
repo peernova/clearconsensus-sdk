@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.TitaniumFilter;
 import org.openapitools.client.model.TitaniumFilterPack;
 import org.openapitools.client.model.TitaniumOrderBy;
 
@@ -49,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumExportRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumExportRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -62,6 +65,10 @@ public class TitaniumExportRequest {
   public static final String SERIALIZED_NAME_FILTER_PACK = "filterPack";
   @SerializedName(SERIALIZED_NAME_FILTER_PACK)
   private TitaniumFilterPack filterPack;
+
+  public static final String SERIALIZED_NAME_FILTERS = "filters";
+  @SerializedName(SERIALIZED_NAME_FILTERS)
+  private List<TitaniumFilter> filters = null;
 
   public static final String SERIALIZED_NAME_INCLUDE_HEADER = "includeHeader";
   @SerializedName(SERIALIZED_NAME_INCLUDE_HEADER)
@@ -148,6 +155,37 @@ public class TitaniumExportRequest {
 
   public void setFilterPack(TitaniumFilterPack filterPack) {
     this.filterPack = filterPack;
+  }
+
+
+  public TitaniumExportRequest filters(List<TitaniumFilter> filters) {
+    
+    this.filters = filters;
+    return this;
+  }
+
+  public TitaniumExportRequest addFiltersItem(TitaniumFilter filtersItem) {
+    if (this.filters == null) {
+      this.filters = new ArrayList<>();
+    }
+    this.filters.add(filtersItem);
+    return this;
+  }
+
+   /**
+   * Get filters
+   * @return filters
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumFilter> getFilters() {
+    return filters;
+  }
+
+
+  public void setFilters(List<TitaniumFilter> filters) {
+    this.filters = filters;
   }
 
 
@@ -256,6 +294,7 @@ public class TitaniumExportRequest {
     return Objects.equals(this.assetId, titaniumExportRequest.assetId) &&
         Objects.equals(this.consensusRunTimestamp, titaniumExportRequest.consensusRunTimestamp) &&
         Objects.equals(this.filterPack, titaniumExportRequest.filterPack) &&
+        Objects.equals(this.filters, titaniumExportRequest.filters) &&
         Objects.equals(this.includeHeader, titaniumExportRequest.includeHeader) &&
         Objects.equals(this.orderBy, titaniumExportRequest.orderBy) &&
         Objects.equals(this.submissionDate, titaniumExportRequest.submissionDate) &&
@@ -264,7 +303,7 @@ public class TitaniumExportRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, consensusRunTimestamp, filterPack, includeHeader, orderBy, submissionDate, traceName);
+    return Objects.hash(assetId, consensusRunTimestamp, filterPack, filters, includeHeader, orderBy, submissionDate, traceName);
   }
 
   @Override
@@ -274,6 +313,7 @@ public class TitaniumExportRequest {
     sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
     sb.append("    consensusRunTimestamp: ").append(toIndentedString(consensusRunTimestamp)).append("\n");
     sb.append("    filterPack: ").append(toIndentedString(filterPack)).append("\n");
+    sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
     sb.append("    includeHeader: ").append(toIndentedString(includeHeader)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    submissionDate: ").append(toIndentedString(submissionDate)).append("\n");
@@ -303,6 +343,7 @@ public class TitaniumExportRequest {
     openapiFields.add("assetId");
     openapiFields.add("consensusRunTimestamp");
     openapiFields.add("filterPack");
+    openapiFields.add("filters");
     openapiFields.add("includeHeader");
     openapiFields.add("orderBy");
     openapiFields.add("submissionDate");
@@ -343,6 +384,18 @@ public class TitaniumExportRequest {
       // validate the optional field `filterPack`
       if (jsonObj.getAsJsonObject("filterPack") != null) {
         TitaniumFilterPack.validateJsonObject(jsonObj.getAsJsonObject("filterPack"));
+      }
+      JsonArray jsonArrayfilters = jsonObj.getAsJsonArray("filters");
+      if (jsonArrayfilters != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("filters").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `filters` to be an array in the JSON string but got `%s`", jsonObj.get("filters").toString()));
+        }
+
+        // validate the optional field `filters` (array)
+        for (int i = 0; i < jsonArrayfilters.size(); i++) {
+          TitaniumFilter.validateJsonObject(jsonArrayfilters.get(i).getAsJsonObject());
+        };
       }
       // validate the optional field `orderBy`
       if (jsonObj.getAsJsonObject("orderBy") != null) {

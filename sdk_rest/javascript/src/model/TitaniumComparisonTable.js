@@ -13,6 +13,7 @@
 
 import ApiClient from '../ApiClient';
 import TitaniumAllParticipantExplorerTableColumn from './TitaniumAllParticipantExplorerTableColumn';
+import TitaniumAvailableTrades from './TitaniumAvailableTrades';
 import TitaniumEvpExplorerTableColumn from './TitaniumEvpExplorerTableColumn';
 import TitaniumExpertExplorerTableColumn from './TitaniumExpertExplorerTableColumn';
 import TitaniumSubmissionExplorerTableColumn from './TitaniumSubmissionExplorerTableColumn';
@@ -55,6 +56,9 @@ class TitaniumComparisonTable {
             if (data.hasOwnProperty('allParticipantCohortConsensus')) {
                 obj['allParticipantCohortConsensus'] = TitaniumAllParticipantExplorerTableColumn.constructFromObject(data['allParticipantCohortConsensus']);
             }
+            if (data.hasOwnProperty('availableTrades')) {
+                obj['availableTrades'] = TitaniumAvailableTrades.constructFromObject(data['availableTrades']);
+            }
             if (data.hasOwnProperty('evaluatedPrice')) {
                 obj['evaluatedPrice'] = TitaniumEvpExplorerTableColumn.constructFromObject(data['evaluatedPrice']);
             }
@@ -78,6 +82,11 @@ class TitaniumComparisonTable {
  * @member {module:model/TitaniumAllParticipantExplorerTableColumn} allParticipantCohortConsensus
  */
 TitaniumComparisonTable.prototype['allParticipantCohortConsensus'] = undefined;
+
+/**
+ * @member {module:model/TitaniumAvailableTrades} availableTrades
+ */
+TitaniumComparisonTable.prototype['availableTrades'] = undefined;
 
 /**
  * @member {module:model/TitaniumEvpExplorerTableColumn} evaluatedPrice

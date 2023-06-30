@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **dispersion** | **Object** |  | [optional] 
 **evpAlignmentScore** | **Object** |  | [optional] 
 **evpQuality** | **Object** |  | [optional] 
-**numberOfParticipants** | **String** |  | [optional] 
+**history** | [**[TitaniumDateAndValue]**](TitaniumDateAndValue.md) |  | [optional] 
+**numberOfParticipants** | **Object** |  | [optional] 
 **outlierVolume** | **Object** |  | [optional] 
 **score** | **Object** |  | [optional] 
 

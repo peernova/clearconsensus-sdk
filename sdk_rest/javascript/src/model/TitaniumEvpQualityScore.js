@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumDateAndValue from './TitaniumDateAndValue';
 
 /**
  * The TitaniumEvpQualityScore model module.
@@ -47,6 +48,9 @@ class TitaniumEvpQualityScore {
         if (data) {
             obj = obj || new TitaniumEvpQualityScore();
 
+            if (data.hasOwnProperty('history')) {
+                obj['history'] = ApiClient.convertToType(data['history'], [TitaniumDateAndValue]);
+            }
             if (data.hasOwnProperty('indicativeCount')) {
                 obj['indicativeCount'] = ApiClient.convertToType(data['indicativeCount'], 'String');
             }
@@ -65,6 +69,11 @@ class TitaniumEvpQualityScore {
 
 
 }
+
+/**
+ * @member {Array.<module:model/TitaniumDateAndValue>} history
+ */
+TitaniumEvpQualityScore.prototype['history'] = undefined;
 
 /**
  * @member {String} indicativeCount

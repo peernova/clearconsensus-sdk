@@ -82,6 +82,7 @@ class TitaniumAllParticipantExplorerTableColumn(ModelNormal):
         """
         return {
             'abs_diff_from_consensus_price': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'con_price_abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'consensus_price': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'lower_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'participants_count': (str,),  # noqa: E501
@@ -97,6 +98,7 @@ class TitaniumAllParticipantExplorerTableColumn(ModelNormal):
 
     attribute_map = {
         'abs_diff_from_consensus_price': 'absDiffFromConsensusPrice',  # noqa: E501
+        'con_price_abs_diff_from_latest_trade': 'conPriceAbsDiffFromLatestTrade',  # noqa: E501
         'consensus_price': 'consensusPrice',  # noqa: E501
         'lower_boundary': 'lowerBoundary',  # noqa: E501
         'participants_count': 'participantsCount',  # noqa: E501
@@ -147,6 +149,7 @@ class TitaniumAllParticipantExplorerTableColumn(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             abs_diff_from_consensus_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            con_price_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             consensus_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             participants_count (str): [optional]  # noqa: E501
@@ -239,6 +242,7 @@ class TitaniumAllParticipantExplorerTableColumn(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             abs_diff_from_consensus_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            con_price_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             consensus_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             participants_count (str): [optional]  # noqa: E501

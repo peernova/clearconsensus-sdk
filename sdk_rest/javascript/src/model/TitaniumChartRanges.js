@@ -48,6 +48,12 @@ class TitaniumChartRanges {
         if (data) {
             obj = obj || new TitaniumChartRanges();
 
+            if (data.hasOwnProperty('bimodalLeftPopulation')) {
+                obj['bimodalLeftPopulation'] = TitaniumRange.constructFromObject(data['bimodalLeftPopulation']);
+            }
+            if (data.hasOwnProperty('bimodalRightPopulation')) {
+                obj['bimodalRightPopulation'] = TitaniumRange.constructFromObject(data['bimodalRightPopulation']);
+            }
             if (data.hasOwnProperty('challengeOverlayConsensus')) {
                 obj['challengeOverlayConsensus'] = TitaniumRange.constructFromObject(data['challengeOverlayConsensus']);
             }
@@ -78,6 +84,16 @@ class TitaniumChartRanges {
 
 
 }
+
+/**
+ * @member {module:model/TitaniumRange} bimodalLeftPopulation
+ */
+TitaniumChartRanges.prototype['bimodalLeftPopulation'] = undefined;
+
+/**
+ * @member {module:model/TitaniumRange} bimodalRightPopulation
+ */
+TitaniumChartRanges.prototype['bimodalRightPopulation'] = undefined;
 
 /**
  * @member {module:model/TitaniumRange} challengeOverlayConsensus

@@ -13,6 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import ProtoServiceResponse from '../model/ProtoServiceResponse';
+import ProtoUserDto from '../model/ProtoUserDto';
 import RpcStatus from '../model/RpcStatus';
 import TitaniumGetUserNotificationByMarketRequest from '../model/TitaniumGetUserNotificationByMarketRequest';
 import TitaniumGetUserNotificationRequest from '../model/TitaniumGetUserNotificationRequest';
@@ -84,6 +86,46 @@ export default class UserServiceApi {
     }
 
     /**
+     * Callback function to receive the result of the userServiceCreate operation.
+     * @callback module:api/UserServiceApi~userServiceCreateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/ProtoUserDto} body 
+     * @param {module:api/UserServiceApi~userServiceCreateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ProtoServiceResponse}
+     */
+    userServiceCreate(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling userServiceCreate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = ProtoServiceResponse;
+      return this.apiClient.callApi(
+        '/api/v1/user-management/users/create', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the userServiceDeleteUserNotification operation.
      * @callback module:api/UserServiceApi~userServiceDeleteUserNotificationCallback
      * @param {String} error Error message, if any.
@@ -118,6 +160,86 @@ export default class UserServiceApi {
       let returnType = TitaniumUserNotificationResponse;
       return this.apiClient.callApi(
         '/api/v1/user/notifications/delete', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userServiceGetAll operation.
+     * @callback module:api/UserServiceApi~userServiceGetAllCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {Boolean} body 
+     * @param {module:api/UserServiceApi~userServiceGetAllCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ProtoServiceResponse}
+     */
+    userServiceGetAll(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling userServiceGetAll");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = ProtoServiceResponse;
+      return this.apiClient.callApi(
+        '/api/v1/user-management/users/getAll', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userServiceGetById operation.
+     * @callback module:api/UserServiceApi~userServiceGetByIdCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {String} body 
+     * @param {module:api/UserServiceApi~userServiceGetByIdCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ProtoServiceResponse}
+     */
+    userServiceGetById(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling userServiceGetById");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = ProtoServiceResponse;
+      return this.apiClient.callApi(
+        '/api/v1/user-management/users/getById', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -278,6 +400,46 @@ export default class UserServiceApi {
       let returnType = TitaniumUserPermissionsResponse;
       return this.apiClient.callApi(
         '/api/v1/user/permissions', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userServiceUpdate operation.
+     * @callback module:api/UserServiceApi~userServiceUpdateCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/ProtoUserDto} body 
+     * @param {module:api/UserServiceApi~userServiceUpdateCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/ProtoServiceResponse}
+     */
+    userServiceUpdate(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling userServiceUpdate");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = ProtoServiceResponse;
+      return this.apiClient.callApi(
+        '/api/v1/user-management/users/update', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

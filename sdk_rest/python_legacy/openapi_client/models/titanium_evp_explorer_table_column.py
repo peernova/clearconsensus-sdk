@@ -40,6 +40,7 @@ class TitaniumEvpExplorerTableColumn(object):
         'ask': 'object',
         'bid': 'object',
         'evp_lower_boundary': 'object',
+        'evp_mid_abs_diff_from_latest_trade': 'object',
         'evp_upper_boundary': 'object',
         'mid': 'object',
         'sub_price_diff': 'object',
@@ -51,13 +52,14 @@ class TitaniumEvpExplorerTableColumn(object):
         'ask': 'ask',
         'bid': 'bid',
         'evp_lower_boundary': 'evpLowerBoundary',
+        'evp_mid_abs_diff_from_latest_trade': 'evpMidAbsDiffFromLatestTrade',
         'evp_upper_boundary': 'evpUpperBoundary',
         'mid': 'mid',
         'sub_price_diff': 'subPriceDiff',
         'trades_or_orders_count': 'tradesOrOrdersCount'
     }
 
-    def __init__(self, abs_diff_from_evp_mid=None, ask=None, bid=None, evp_lower_boundary=None, evp_upper_boundary=None, mid=None, sub_price_diff=None, trades_or_orders_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_evp_mid=None, ask=None, bid=None, evp_lower_boundary=None, evp_mid_abs_diff_from_latest_trade=None, evp_upper_boundary=None, mid=None, sub_price_diff=None, trades_or_orders_count=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumEvpExplorerTableColumn - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -67,6 +69,7 @@ class TitaniumEvpExplorerTableColumn(object):
         self._ask = None
         self._bid = None
         self._evp_lower_boundary = None
+        self._evp_mid_abs_diff_from_latest_trade = None
         self._evp_upper_boundary = None
         self._mid = None
         self._sub_price_diff = None
@@ -81,6 +84,8 @@ class TitaniumEvpExplorerTableColumn(object):
             self.bid = bid
         if evp_lower_boundary is not None:
             self.evp_lower_boundary = evp_lower_boundary
+        if evp_mid_abs_diff_from_latest_trade is not None:
+            self.evp_mid_abs_diff_from_latest_trade = evp_mid_abs_diff_from_latest_trade
         if evp_upper_boundary is not None:
             self.evp_upper_boundary = evp_upper_boundary
         if mid is not None:
@@ -173,6 +178,27 @@ class TitaniumEvpExplorerTableColumn(object):
         """
 
         self._evp_lower_boundary = evp_lower_boundary
+
+    @property
+    def evp_mid_abs_diff_from_latest_trade(self):
+        """Gets the evp_mid_abs_diff_from_latest_trade of this TitaniumEvpExplorerTableColumn.  # noqa: E501
+
+
+        :return: The evp_mid_abs_diff_from_latest_trade of this TitaniumEvpExplorerTableColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._evp_mid_abs_diff_from_latest_trade
+
+    @evp_mid_abs_diff_from_latest_trade.setter
+    def evp_mid_abs_diff_from_latest_trade(self, evp_mid_abs_diff_from_latest_trade):
+        """Sets the evp_mid_abs_diff_from_latest_trade of this TitaniumEvpExplorerTableColumn.
+
+
+        :param evp_mid_abs_diff_from_latest_trade: The evp_mid_abs_diff_from_latest_trade of this TitaniumEvpExplorerTableColumn.  # noqa: E501
+        :type evp_mid_abs_diff_from_latest_trade: object
+        """
+
+        self._evp_mid_abs_diff_from_latest_trade = evp_mid_abs_diff_from_latest_trade
 
     @property
     def evp_upper_boundary(self):

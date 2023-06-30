@@ -82,6 +82,7 @@ class TitaniumExpertExplorerTableColumn(ModelNormal):
         """
         return {
             'abs_diff_from_expert_cohort_mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'con_price_abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'max': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'min': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -97,6 +98,7 @@ class TitaniumExpertExplorerTableColumn(ModelNormal):
 
     attribute_map = {
         'abs_diff_from_expert_cohort_mean': 'absDiffFromExpertCohortMean',  # noqa: E501
+        'con_price_abs_diff_from_latest_trade': 'conPriceAbsDiffFromLatestTrade',  # noqa: E501
         'max': 'max',  # noqa: E501
         'mean': 'mean',  # noqa: E501
         'min': 'min',  # noqa: E501
@@ -147,6 +149,7 @@ class TitaniumExpertExplorerTableColumn(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             abs_diff_from_expert_cohort_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            con_price_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -239,6 +242,7 @@ class TitaniumExpertExplorerTableColumn(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             abs_diff_from_expert_cohort_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            con_price_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501

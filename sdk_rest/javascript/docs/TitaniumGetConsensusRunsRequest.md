@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assetId** | **String** |  | [optional] 
 **filterPack** | [**TitaniumFilterPack**](TitaniumFilterPack.md) |  | [optional] 
+**orderBy** | [**TitaniumOrderBy**](TitaniumOrderBy.md) |  | [optional] 
 **page** | [**TitaniumPage**](TitaniumPage.md) |  | [optional] 
 **participant** | **String** |  | [optional] 
 **showArchived** | **Boolean** |  | [optional] 

@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.TitaniumDateAndValue;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,8 +50,16 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumInstrumentSubmissionStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumInstrumentSubmissionStatus {
+  public static final String SERIALIZED_NAME_BIMODALITY = "bimodality";
+  @SerializedName(SERIALIZED_NAME_BIMODALITY)
+  private String bimodality;
+
+  public static final String SERIALIZED_NAME_BIMODALITY_HISTORY = "bimodalityHistory";
+  @SerializedName(SERIALIZED_NAME_BIMODALITY_HISTORY)
+  private List<TitaniumDateAndValue> bimodalityHistory = null;
+
   public static final String SERIALIZED_NAME_CONSENSUS_STATUS = "consensusStatus";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_STATUS)
   private String consensusStatus;
@@ -56,6 +67,18 @@ public class TitaniumInstrumentSubmissionStatus {
   public static final String SERIALIZED_NAME_CONSENSUS_STATUS_DETAILS = "consensusStatusDetails";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_STATUS_DETAILS)
   private String consensusStatusDetails;
+
+  public static final String SERIALIZED_NAME_CONSENSUS_STATUS_DETAILS_HISTORY = "consensusStatusDetailsHistory";
+  @SerializedName(SERIALIZED_NAME_CONSENSUS_STATUS_DETAILS_HISTORY)
+  private List<TitaniumDateAndValue> consensusStatusDetailsHistory = null;
+
+  public static final String SERIALIZED_NAME_CONSENSUS_STATUS_HISTORY = "consensusStatusHistory";
+  @SerializedName(SERIALIZED_NAME_CONSENSUS_STATUS_HISTORY)
+  private List<TitaniumDateAndValue> consensusStatusHistory = null;
+
+  public static final String SERIALIZED_NAME_DQE_HISTORY = "dqeHistory";
+  @SerializedName(SERIALIZED_NAME_DQE_HISTORY)
+  private List<TitaniumDateAndValue> dqeHistory = null;
 
   public static final String SERIALIZED_NAME_HIGHEST_DQE = "highestDqe";
   @SerializedName(SERIALIZED_NAME_HIGHEST_DQE)
@@ -69,8 +92,70 @@ public class TitaniumInstrumentSubmissionStatus {
   @SerializedName(SERIALIZED_NAME_PARTICIPANT_CONSENSUS_STATUS_DETAILS)
   private String participantConsensusStatusDetails;
 
+  public static final String SERIALIZED_NAME_PARTICIPANT_CONSENSUS_STATUS_DETAILS_HISTORY = "participantConsensusStatusDetailsHistory";
+  @SerializedName(SERIALIZED_NAME_PARTICIPANT_CONSENSUS_STATUS_DETAILS_HISTORY)
+  private List<TitaniumDateAndValue> participantConsensusStatusDetailsHistory = null;
+
+  public static final String SERIALIZED_NAME_PARTICIPANT_CONSENSUS_STATUS_HISTORY = "participantConsensusStatusHistory";
+  @SerializedName(SERIALIZED_NAME_PARTICIPANT_CONSENSUS_STATUS_HISTORY)
+  private List<TitaniumDateAndValue> participantConsensusStatusHistory = null;
+
   public TitaniumInstrumentSubmissionStatus() { 
   }
+
+  public TitaniumInstrumentSubmissionStatus bimodality(String bimodality) {
+    
+    this.bimodality = bimodality;
+    return this;
+  }
+
+   /**
+   * Get bimodality
+   * @return bimodality
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getBimodality() {
+    return bimodality;
+  }
+
+
+  public void setBimodality(String bimodality) {
+    this.bimodality = bimodality;
+  }
+
+
+  public TitaniumInstrumentSubmissionStatus bimodalityHistory(List<TitaniumDateAndValue> bimodalityHistory) {
+    
+    this.bimodalityHistory = bimodalityHistory;
+    return this;
+  }
+
+  public TitaniumInstrumentSubmissionStatus addBimodalityHistoryItem(TitaniumDateAndValue bimodalityHistoryItem) {
+    if (this.bimodalityHistory == null) {
+      this.bimodalityHistory = new ArrayList<>();
+    }
+    this.bimodalityHistory.add(bimodalityHistoryItem);
+    return this;
+  }
+
+   /**
+   * Get bimodalityHistory
+   * @return bimodalityHistory
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumDateAndValue> getBimodalityHistory() {
+    return bimodalityHistory;
+  }
+
+
+  public void setBimodalityHistory(List<TitaniumDateAndValue> bimodalityHistory) {
+    this.bimodalityHistory = bimodalityHistory;
+  }
+
 
   public TitaniumInstrumentSubmissionStatus consensusStatus(String consensusStatus) {
     
@@ -115,6 +200,99 @@ public class TitaniumInstrumentSubmissionStatus {
 
   public void setConsensusStatusDetails(String consensusStatusDetails) {
     this.consensusStatusDetails = consensusStatusDetails;
+  }
+
+
+  public TitaniumInstrumentSubmissionStatus consensusStatusDetailsHistory(List<TitaniumDateAndValue> consensusStatusDetailsHistory) {
+    
+    this.consensusStatusDetailsHistory = consensusStatusDetailsHistory;
+    return this;
+  }
+
+  public TitaniumInstrumentSubmissionStatus addConsensusStatusDetailsHistoryItem(TitaniumDateAndValue consensusStatusDetailsHistoryItem) {
+    if (this.consensusStatusDetailsHistory == null) {
+      this.consensusStatusDetailsHistory = new ArrayList<>();
+    }
+    this.consensusStatusDetailsHistory.add(consensusStatusDetailsHistoryItem);
+    return this;
+  }
+
+   /**
+   * Get consensusStatusDetailsHistory
+   * @return consensusStatusDetailsHistory
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumDateAndValue> getConsensusStatusDetailsHistory() {
+    return consensusStatusDetailsHistory;
+  }
+
+
+  public void setConsensusStatusDetailsHistory(List<TitaniumDateAndValue> consensusStatusDetailsHistory) {
+    this.consensusStatusDetailsHistory = consensusStatusDetailsHistory;
+  }
+
+
+  public TitaniumInstrumentSubmissionStatus consensusStatusHistory(List<TitaniumDateAndValue> consensusStatusHistory) {
+    
+    this.consensusStatusHistory = consensusStatusHistory;
+    return this;
+  }
+
+  public TitaniumInstrumentSubmissionStatus addConsensusStatusHistoryItem(TitaniumDateAndValue consensusStatusHistoryItem) {
+    if (this.consensusStatusHistory == null) {
+      this.consensusStatusHistory = new ArrayList<>();
+    }
+    this.consensusStatusHistory.add(consensusStatusHistoryItem);
+    return this;
+  }
+
+   /**
+   * Get consensusStatusHistory
+   * @return consensusStatusHistory
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumDateAndValue> getConsensusStatusHistory() {
+    return consensusStatusHistory;
+  }
+
+
+  public void setConsensusStatusHistory(List<TitaniumDateAndValue> consensusStatusHistory) {
+    this.consensusStatusHistory = consensusStatusHistory;
+  }
+
+
+  public TitaniumInstrumentSubmissionStatus dqeHistory(List<TitaniumDateAndValue> dqeHistory) {
+    
+    this.dqeHistory = dqeHistory;
+    return this;
+  }
+
+  public TitaniumInstrumentSubmissionStatus addDqeHistoryItem(TitaniumDateAndValue dqeHistoryItem) {
+    if (this.dqeHistory == null) {
+      this.dqeHistory = new ArrayList<>();
+    }
+    this.dqeHistory.add(dqeHistoryItem);
+    return this;
+  }
+
+   /**
+   * Get dqeHistory
+   * @return dqeHistory
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumDateAndValue> getDqeHistory() {
+    return dqeHistory;
+  }
+
+
+  public void setDqeHistory(List<TitaniumDateAndValue> dqeHistory) {
+    this.dqeHistory = dqeHistory;
   }
 
 
@@ -187,6 +365,68 @@ public class TitaniumInstrumentSubmissionStatus {
   }
 
 
+  public TitaniumInstrumentSubmissionStatus participantConsensusStatusDetailsHistory(List<TitaniumDateAndValue> participantConsensusStatusDetailsHistory) {
+    
+    this.participantConsensusStatusDetailsHistory = participantConsensusStatusDetailsHistory;
+    return this;
+  }
+
+  public TitaniumInstrumentSubmissionStatus addParticipantConsensusStatusDetailsHistoryItem(TitaniumDateAndValue participantConsensusStatusDetailsHistoryItem) {
+    if (this.participantConsensusStatusDetailsHistory == null) {
+      this.participantConsensusStatusDetailsHistory = new ArrayList<>();
+    }
+    this.participantConsensusStatusDetailsHistory.add(participantConsensusStatusDetailsHistoryItem);
+    return this;
+  }
+
+   /**
+   * Get participantConsensusStatusDetailsHistory
+   * @return participantConsensusStatusDetailsHistory
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumDateAndValue> getParticipantConsensusStatusDetailsHistory() {
+    return participantConsensusStatusDetailsHistory;
+  }
+
+
+  public void setParticipantConsensusStatusDetailsHistory(List<TitaniumDateAndValue> participantConsensusStatusDetailsHistory) {
+    this.participantConsensusStatusDetailsHistory = participantConsensusStatusDetailsHistory;
+  }
+
+
+  public TitaniumInstrumentSubmissionStatus participantConsensusStatusHistory(List<TitaniumDateAndValue> participantConsensusStatusHistory) {
+    
+    this.participantConsensusStatusHistory = participantConsensusStatusHistory;
+    return this;
+  }
+
+  public TitaniumInstrumentSubmissionStatus addParticipantConsensusStatusHistoryItem(TitaniumDateAndValue participantConsensusStatusHistoryItem) {
+    if (this.participantConsensusStatusHistory == null) {
+      this.participantConsensusStatusHistory = new ArrayList<>();
+    }
+    this.participantConsensusStatusHistory.add(participantConsensusStatusHistoryItem);
+    return this;
+  }
+
+   /**
+   * Get participantConsensusStatusHistory
+   * @return participantConsensusStatusHistory
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumDateAndValue> getParticipantConsensusStatusHistory() {
+    return participantConsensusStatusHistory;
+  }
+
+
+  public void setParticipantConsensusStatusHistory(List<TitaniumDateAndValue> participantConsensusStatusHistory) {
+    this.participantConsensusStatusHistory = participantConsensusStatusHistory;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -197,27 +437,41 @@ public class TitaniumInstrumentSubmissionStatus {
       return false;
     }
     TitaniumInstrumentSubmissionStatus titaniumInstrumentSubmissionStatus = (TitaniumInstrumentSubmissionStatus) o;
-    return Objects.equals(this.consensusStatus, titaniumInstrumentSubmissionStatus.consensusStatus) &&
+    return Objects.equals(this.bimodality, titaniumInstrumentSubmissionStatus.bimodality) &&
+        Objects.equals(this.bimodalityHistory, titaniumInstrumentSubmissionStatus.bimodalityHistory) &&
+        Objects.equals(this.consensusStatus, titaniumInstrumentSubmissionStatus.consensusStatus) &&
         Objects.equals(this.consensusStatusDetails, titaniumInstrumentSubmissionStatus.consensusStatusDetails) &&
+        Objects.equals(this.consensusStatusDetailsHistory, titaniumInstrumentSubmissionStatus.consensusStatusDetailsHistory) &&
+        Objects.equals(this.consensusStatusHistory, titaniumInstrumentSubmissionStatus.consensusStatusHistory) &&
+        Objects.equals(this.dqeHistory, titaniumInstrumentSubmissionStatus.dqeHistory) &&
         Objects.equals(this.highestDqe, titaniumInstrumentSubmissionStatus.highestDqe) &&
         Objects.equals(this.participantConsensusStatus, titaniumInstrumentSubmissionStatus.participantConsensusStatus) &&
-        Objects.equals(this.participantConsensusStatusDetails, titaniumInstrumentSubmissionStatus.participantConsensusStatusDetails);
+        Objects.equals(this.participantConsensusStatusDetails, titaniumInstrumentSubmissionStatus.participantConsensusStatusDetails) &&
+        Objects.equals(this.participantConsensusStatusDetailsHistory, titaniumInstrumentSubmissionStatus.participantConsensusStatusDetailsHistory) &&
+        Objects.equals(this.participantConsensusStatusHistory, titaniumInstrumentSubmissionStatus.participantConsensusStatusHistory);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(consensusStatus, consensusStatusDetails, highestDqe, participantConsensusStatus, participantConsensusStatusDetails);
+    return Objects.hash(bimodality, bimodalityHistory, consensusStatus, consensusStatusDetails, consensusStatusDetailsHistory, consensusStatusHistory, dqeHistory, highestDqe, participantConsensusStatus, participantConsensusStatusDetails, participantConsensusStatusDetailsHistory, participantConsensusStatusHistory);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumInstrumentSubmissionStatus {\n");
+    sb.append("    bimodality: ").append(toIndentedString(bimodality)).append("\n");
+    sb.append("    bimodalityHistory: ").append(toIndentedString(bimodalityHistory)).append("\n");
     sb.append("    consensusStatus: ").append(toIndentedString(consensusStatus)).append("\n");
     sb.append("    consensusStatusDetails: ").append(toIndentedString(consensusStatusDetails)).append("\n");
+    sb.append("    consensusStatusDetailsHistory: ").append(toIndentedString(consensusStatusDetailsHistory)).append("\n");
+    sb.append("    consensusStatusHistory: ").append(toIndentedString(consensusStatusHistory)).append("\n");
+    sb.append("    dqeHistory: ").append(toIndentedString(dqeHistory)).append("\n");
     sb.append("    highestDqe: ").append(toIndentedString(highestDqe)).append("\n");
     sb.append("    participantConsensusStatus: ").append(toIndentedString(participantConsensusStatus)).append("\n");
     sb.append("    participantConsensusStatusDetails: ").append(toIndentedString(participantConsensusStatusDetails)).append("\n");
+    sb.append("    participantConsensusStatusDetailsHistory: ").append(toIndentedString(participantConsensusStatusDetailsHistory)).append("\n");
+    sb.append("    participantConsensusStatusHistory: ").append(toIndentedString(participantConsensusStatusHistory)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -240,11 +494,18 @@ public class TitaniumInstrumentSubmissionStatus {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("bimodality");
+    openapiFields.add("bimodalityHistory");
     openapiFields.add("consensusStatus");
     openapiFields.add("consensusStatusDetails");
+    openapiFields.add("consensusStatusDetailsHistory");
+    openapiFields.add("consensusStatusHistory");
+    openapiFields.add("dqeHistory");
     openapiFields.add("highestDqe");
     openapiFields.add("participantConsensusStatus");
     openapiFields.add("participantConsensusStatusDetails");
+    openapiFields.add("participantConsensusStatusDetailsHistory");
+    openapiFields.add("participantConsensusStatusHistory");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -272,11 +533,62 @@ public class TitaniumInstrumentSubmissionStatus {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumInstrumentSubmissionStatus` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
+      if (jsonObj.get("bimodality") != null && !jsonObj.get("bimodality").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bimodality` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bimodality").toString()));
+      }
+      JsonArray jsonArraybimodalityHistory = jsonObj.getAsJsonArray("bimodalityHistory");
+      if (jsonArraybimodalityHistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("bimodalityHistory").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `bimodalityHistory` to be an array in the JSON string but got `%s`", jsonObj.get("bimodalityHistory").toString()));
+        }
+
+        // validate the optional field `bimodalityHistory` (array)
+        for (int i = 0; i < jsonArraybimodalityHistory.size(); i++) {
+          TitaniumDateAndValue.validateJsonObject(jsonArraybimodalityHistory.get(i).getAsJsonObject());
+        };
+      }
       if (jsonObj.get("consensusStatus") != null && !jsonObj.get("consensusStatus").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `consensusStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("consensusStatus").toString()));
       }
       if (jsonObj.get("consensusStatusDetails") != null && !jsonObj.get("consensusStatusDetails").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `consensusStatusDetails` to be a primitive type in the JSON string but got `%s`", jsonObj.get("consensusStatusDetails").toString()));
+      }
+      JsonArray jsonArrayconsensusStatusDetailsHistory = jsonObj.getAsJsonArray("consensusStatusDetailsHistory");
+      if (jsonArrayconsensusStatusDetailsHistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("consensusStatusDetailsHistory").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `consensusStatusDetailsHistory` to be an array in the JSON string but got `%s`", jsonObj.get("consensusStatusDetailsHistory").toString()));
+        }
+
+        // validate the optional field `consensusStatusDetailsHistory` (array)
+        for (int i = 0; i < jsonArrayconsensusStatusDetailsHistory.size(); i++) {
+          TitaniumDateAndValue.validateJsonObject(jsonArrayconsensusStatusDetailsHistory.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayconsensusStatusHistory = jsonObj.getAsJsonArray("consensusStatusHistory");
+      if (jsonArrayconsensusStatusHistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("consensusStatusHistory").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `consensusStatusHistory` to be an array in the JSON string but got `%s`", jsonObj.get("consensusStatusHistory").toString()));
+        }
+
+        // validate the optional field `consensusStatusHistory` (array)
+        for (int i = 0; i < jsonArrayconsensusStatusHistory.size(); i++) {
+          TitaniumDateAndValue.validateJsonObject(jsonArrayconsensusStatusHistory.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArraydqeHistory = jsonObj.getAsJsonArray("dqeHistory");
+      if (jsonArraydqeHistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("dqeHistory").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `dqeHistory` to be an array in the JSON string but got `%s`", jsonObj.get("dqeHistory").toString()));
+        }
+
+        // validate the optional field `dqeHistory` (array)
+        for (int i = 0; i < jsonArraydqeHistory.size(); i++) {
+          TitaniumDateAndValue.validateJsonObject(jsonArraydqeHistory.get(i).getAsJsonObject());
+        };
       }
       if (jsonObj.get("highestDqe") != null && !jsonObj.get("highestDqe").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `highestDqe` to be a primitive type in the JSON string but got `%s`", jsonObj.get("highestDqe").toString()));
@@ -286,6 +598,30 @@ public class TitaniumInstrumentSubmissionStatus {
       }
       if (jsonObj.get("participantConsensusStatusDetails") != null && !jsonObj.get("participantConsensusStatusDetails").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `participantConsensusStatusDetails` to be a primitive type in the JSON string but got `%s`", jsonObj.get("participantConsensusStatusDetails").toString()));
+      }
+      JsonArray jsonArrayparticipantConsensusStatusDetailsHistory = jsonObj.getAsJsonArray("participantConsensusStatusDetailsHistory");
+      if (jsonArrayparticipantConsensusStatusDetailsHistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("participantConsensusStatusDetailsHistory").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `participantConsensusStatusDetailsHistory` to be an array in the JSON string but got `%s`", jsonObj.get("participantConsensusStatusDetailsHistory").toString()));
+        }
+
+        // validate the optional field `participantConsensusStatusDetailsHistory` (array)
+        for (int i = 0; i < jsonArrayparticipantConsensusStatusDetailsHistory.size(); i++) {
+          TitaniumDateAndValue.validateJsonObject(jsonArrayparticipantConsensusStatusDetailsHistory.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayparticipantConsensusStatusHistory = jsonObj.getAsJsonArray("participantConsensusStatusHistory");
+      if (jsonArrayparticipantConsensusStatusHistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("participantConsensusStatusHistory").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `participantConsensusStatusHistory` to be an array in the JSON string but got `%s`", jsonObj.get("participantConsensusStatusHistory").toString()));
+        }
+
+        // validate the optional field `participantConsensusStatusHistory` (array)
+        for (int i = 0; i < jsonArrayparticipantConsensusStatusHistory.size(); i++) {
+          TitaniumDateAndValue.validateJsonObject(jsonArrayparticipantConsensusStatusHistory.get(i).getAsJsonObject());
+        };
       }
   }
 

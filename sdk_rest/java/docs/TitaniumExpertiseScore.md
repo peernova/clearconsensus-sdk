@@ -13,6 +13,7 @@
 |**dimensionCreditScore** | **Object** |  |  [optional] |
 |**expertiseRank** | **Object** |  |  [optional] |
 |**expertsCount** | **Object** |  |  [optional] |
+|**history** | [**List&lt;TitaniumExpertiseScoreWithDate&gt;**](TitaniumExpertiseScoreWithDate.md) |  |  [optional] |
 |**proximityToPostChallengeConsensusMean** | **Object** |  |  [optional] |
 |**score** | **Object** |  |  [optional] |
 |**submittedScore** | **Object** |  |  [optional] |

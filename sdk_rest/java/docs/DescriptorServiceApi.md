@@ -5,6 +5,7 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**descriptorServiceAddDescriptor**](DescriptorServiceApi.md#descriptorServiceAddDescriptor) | **POST** /api/v1/descriptor/add | AddDescriptor is used to add specific descriptor with specific definition to the system. Regular users can store a descriptor within their own scope, and any attempts to push it to a different scope will be declined. Back office users can store descriptors in any scope, provided that a scope key is provided. The name of the descriptor must match the name of the asset class to be mapped correctly. If a descriptor with the same name already exists, it will be updated. |
+| [**descriptorServiceDescriptorDependencies**](DescriptorServiceApi.md#descriptorServiceDescriptorDependencies) | **POST** /api/v1/descriptor/dependencies |  |
 | [**descriptorServiceDisableDescriptor**](DescriptorServiceApi.md#descriptorServiceDisableDescriptor) | **POST** /api/v1/descriptor/disable | DisableDescriptor is used to disable specific descriptor. Example of response : {    \&quot;data\&quot;: {        \&quot;uid\&quot;: \&quot;\&quot;,        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } } |
 | [**descriptorServiceEnableDescriptor**](DescriptorServiceApi.md#descriptorServiceEnableDescriptor) | **POST** /api/v1/descriptor/enable | EnableDescriptor is used to enable specific descriptor. |
 | [**descriptorServiceGetDescriptor**](DescriptorServiceApi.md#descriptorServiceGetDescriptor) | **POST** /api/v1/descriptor/get | GetDescriptor is used to get specific descriptor definition based on get definition. Regular users can retrieve only their own descriptors and descriptors associated with asset classes. Back office users can retrieve any of the existing descriptors. |
@@ -60,6 +61,67 @@ public class Example {
 ### Return type
 
 [**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="descriptorServiceDescriptorDependencies"></a>
+# **descriptorServiceDescriptorDependencies**
+> TitaniumDescriptorDependenciesResponse descriptorServiceDescriptorDependencies(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DescriptorServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    DescriptorServiceApi apiInstance = new DescriptorServiceApi(defaultClient);
+    TitaniumGetDefinition body = new TitaniumGetDefinition(); // TitaniumGetDefinition | 
+    try {
+      TitaniumDescriptorDependenciesResponse result = apiInstance.descriptorServiceDescriptorDependencies(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DescriptorServiceApi#descriptorServiceDescriptorDependencies");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumGetDefinition**](TitaniumGetDefinition.md)|  | |
+
+### Return type
+
+[**TitaniumDescriptorDependenciesResponse**](TitaniumDescriptorDependenciesResponse.md)
 
 ### Authorization
 

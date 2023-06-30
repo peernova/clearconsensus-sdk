@@ -31,11 +31,13 @@ from openapi_client.exceptions import ApiAttributeError
 
 def lazy_import():
     from openapi_client.model.titanium_all_participant_explorer_table_column import TitaniumAllParticipantExplorerTableColumn
+    from openapi_client.model.titanium_available_trades import TitaniumAvailableTrades
     from openapi_client.model.titanium_evp_explorer_table_column import TitaniumEvpExplorerTableColumn
     from openapi_client.model.titanium_expert_explorer_table_column import TitaniumExpertExplorerTableColumn
     from openapi_client.model.titanium_submission_explorer_table_column import TitaniumSubmissionExplorerTableColumn
     from openapi_client.model.titanium_submission_statistics_explorer_table_column import TitaniumSubmissionStatisticsExplorerTableColumn
     globals()['TitaniumAllParticipantExplorerTableColumn'] = TitaniumAllParticipantExplorerTableColumn
+    globals()['TitaniumAvailableTrades'] = TitaniumAvailableTrades
     globals()['TitaniumEvpExplorerTableColumn'] = TitaniumEvpExplorerTableColumn
     globals()['TitaniumExpertExplorerTableColumn'] = TitaniumExpertExplorerTableColumn
     globals()['TitaniumSubmissionExplorerTableColumn'] = TitaniumSubmissionExplorerTableColumn
@@ -96,6 +98,7 @@ class TitaniumComparisonTable(ModelNormal):
         lazy_import()
         return {
             'all_participant_cohort_consensus': (TitaniumAllParticipantExplorerTableColumn,),  # noqa: E501
+            'available_trades': (TitaniumAvailableTrades,),  # noqa: E501
             'evaluated_price': (TitaniumEvpExplorerTableColumn,),  # noqa: E501
             'expert_cohort_consensus': (TitaniumExpertExplorerTableColumn,),  # noqa: E501
             'submission': (TitaniumSubmissionExplorerTableColumn,),  # noqa: E501
@@ -109,6 +112,7 @@ class TitaniumComparisonTable(ModelNormal):
 
     attribute_map = {
         'all_participant_cohort_consensus': 'allParticipantCohortConsensus',  # noqa: E501
+        'available_trades': 'availableTrades',  # noqa: E501
         'evaluated_price': 'evaluatedPrice',  # noqa: E501
         'expert_cohort_consensus': 'expertCohortConsensus',  # noqa: E501
         'submission': 'submission',  # noqa: E501
@@ -157,6 +161,7 @@ class TitaniumComparisonTable(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             all_participant_cohort_consensus (TitaniumAllParticipantExplorerTableColumn): [optional]  # noqa: E501
+            available_trades (TitaniumAvailableTrades): [optional]  # noqa: E501
             evaluated_price (TitaniumEvpExplorerTableColumn): [optional]  # noqa: E501
             expert_cohort_consensus (TitaniumExpertExplorerTableColumn): [optional]  # noqa: E501
             submission (TitaniumSubmissionExplorerTableColumn): [optional]  # noqa: E501
@@ -247,6 +252,7 @@ class TitaniumComparisonTable(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             all_participant_cohort_consensus (TitaniumAllParticipantExplorerTableColumn): [optional]  # noqa: E501
+            available_trades (TitaniumAvailableTrades): [optional]  # noqa: E501
             evaluated_price (TitaniumEvpExplorerTableColumn): [optional]  # noqa: E501
             expert_cohort_consensus (TitaniumExpertExplorerTableColumn): [optional]  # noqa: E501
             submission (TitaniumSubmissionExplorerTableColumn): [optional]  # noqa: E501

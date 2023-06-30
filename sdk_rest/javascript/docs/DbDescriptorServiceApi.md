@@ -5,6 +5,7 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**dbDescriptorServiceAddDbDescriptor**](DbDescriptorServiceApi.md#dbDescriptorServiceAddDbDescriptor) | **POST** /api/v1/db/descriptor/add | 
+[**dbDescriptorServiceDescriptorDependencies**](DbDescriptorServiceApi.md#dbDescriptorServiceDescriptorDependencies) | **POST** /api/v1/db/descriptor/dependencies | 
 [**dbDescriptorServiceDisableDbDescriptor**](DbDescriptorServiceApi.md#dbDescriptorServiceDisableDbDescriptor) | **POST** /api/v1/db/descriptor/disable | 
 [**dbDescriptorServiceEnableDbDescriptor**](DbDescriptorServiceApi.md#dbDescriptorServiceEnableDbDescriptor) | **POST** /api/v1/db/descriptor/enable | 
 [**dbDescriptorServiceGetDbDescriptor**](DbDescriptorServiceApi.md#dbDescriptorServiceGetDbDescriptor) | **POST** /api/v1/db/descriptor/get | 
@@ -46,6 +47,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## dbDescriptorServiceDescriptorDependencies
+
+> TitaniumDescriptorDependenciesResponse dbDescriptorServiceDescriptorDependencies(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.DbDescriptorServiceApi();
+let body = new ClearconsensusSdk.TitaniumGetDefinition(); // TitaniumGetDefinition | 
+apiInstance.dbDescriptorServiceDescriptorDependencies(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumGetDefinition**](TitaniumGetDefinition.md)|  | 
+
+### Return type
+
+[**TitaniumDescriptorDependenciesResponse**](TitaniumDescriptorDependenciesResponse.md)
 
 ### Authorization
 

@@ -5,6 +5,33 @@ info:
 servers:
 - url: //api-dev.clearconsensus.io/
 paths:
+  /api/v1/analytics/chart-data:
+    post:
+      operationId: ChartService_getChartData
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumGetChartDataRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumGetChartDataResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - ChartService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
   /api/v1/analytics/consensus/find:
     post:
       operationId: AnalyticsController_FindConsensusAnalytics
@@ -800,6 +827,33 @@ paths:
       x-codegen-request-body-name: body
       x-content-type: '*/*'
       x-accepts: '*/*'
+  /api/v1/db/descriptor/dependencies:
+    post:
+      operationId: DbDescriptorService_DescriptorDependencies
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumGetDefinition'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumDescriptorDependenciesResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - DbDescriptorService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
   /api/v1/db/descriptor/disable:
     post:
       operationId: DbDescriptorService_DisableDbDescriptor
@@ -1029,6 +1083,33 @@ paths:
         \ is provided.\nThe name of the descriptor must match the name of the asset\
         \ class to be mapped correctly.\nIf a descriptor with the same name already\
         \ exists, it will be updated."
+      tags:
+      - DescriptorService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/descriptor/dependencies:
+    post:
+      operationId: DescriptorService_DescriptorDependencies
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumGetDefinition'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumDescriptorDependenciesResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
       tags:
       - DescriptorService
       x-codegen-request-body-name: body
@@ -1313,6 +1394,33 @@ paths:
           description: An unexpected error response.
       tags:
       - DataQualityService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/dtcc/tab:
+    post:
+      operationId: DtccService_GetDtccTable
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumDtccTabRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumDtccTabResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - DtccService
       x-codegen-request-body-name: body
       x-content-type: '*/*'
       x-accepts: '*/*'
@@ -3197,6 +3305,492 @@ paths:
       x-codegen-request-body-name: body
       x-content-type: '*/*'
       x-accepts: '*/*'
+  /api/v1/user-management/entities/create:
+    post:
+      operationId: EntityService_create
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoEntityDto'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - EntityService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/entities/find:
+    post:
+      operationId: EntityService_find
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoSearchCriteria'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - EntityService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/entities/getAllByEnabled:
+    post:
+      operationId: EntityService_getAllEnabledOnly
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: boolean
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - EntityService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/entities/getById:
+    post:
+      operationId: EntityService_getById
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - EntityService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/entities/update:
+    post:
+      operationId: EntityService_update
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoEntityDto'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - EntityService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/group-policies/create:
+    post:
+      operationId: GroupPolicyService_create
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoGroupPolicies'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - GroupPolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/group-policies/getPolicies:
+    post:
+      operationId: GroupPolicyService_getPolicies
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - GroupPolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/policies/checkPolicy:
+    post:
+      operationId: PolicyService_checkPolicy
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoPolicyDto'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/policies/create:
+    post:
+      operationId: PolicyService_create
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoPolicies'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/policies/getAddons:
+    post:
+      operationId: PolicyService_getAddons
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoUsernamePermissionRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/policies/getApis:
+    post:
+      operationId: PolicyService_getApis
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoUsernamePermissionRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/policies/getAssets:
+    post:
+      operationId: PolicyService_getAssets
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoUsernamePermissionRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/policies/getPolicies:
+    post:
+      operationId: PolicyService_getPolicies
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/policies/removePolicy:
+    post:
+      operationId: PolicyService_removePolicy
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoPolicyDto'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - PolicyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/users/create:
+    post:
+      operationId: UserService_create
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoUserDto'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UserService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/users/getAll:
+    post:
+      operationId: UserService_getAll
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: boolean
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UserService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/users/getById:
+    post:
+      operationId: UserService_getById
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              type: string
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UserService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/user-management/users/update:
+    post:
+      operationId: UserService_update
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoUserDto'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoServiceResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UserService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
   /api/v1/user/notifications:
     post:
       operationId: UserService_GetUserNotifications
@@ -3946,10 +4540,18 @@ paths:
       x-accepts: '*/*'
 components:
   schemas:
-    CustomFunctionUsageUsageType:
-      type: string
     DynamicLutDynamicLutType:
       type: string
+    ErrorValidationErrorDetail:
+      example:
+        fieldName: fieldName
+        description: description
+      properties:
+        description:
+          type: string
+        fieldName:
+          type: string
+      type: object
     GetAttachmentUploadUrlResponseAttachmentUploadUrl:
       example:
         fileName: fileName
@@ -4014,7 +4616,144 @@ components:
       type: object
     RuleDefinitionRuleType:
       type: string
+    grpcprotoError:
+      example:
+        code: 0
+        validationErrorDetails:
+        - fieldName: fieldName
+          description: description
+        - fieldName: fieldName
+          description: description
+        message: message
+      properties:
+        code:
+          type: integer
+        message:
+          type: string
+        validationErrorDetails:
+          items:
+            $ref: '#/components/schemas/ErrorValidationErrorDetail'
+          type: array
+      type: object
+    protoEntityDto:
+      properties:
+        enabled:
+          type: boolean
+        externalId:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+      type: object
+    protoGroupPolicies:
+      properties:
+        groupPolicy:
+          items:
+            $ref: '#/components/schemas/protoGroupPolicyDto'
+          type: array
+      type: object
+    protoGroupPolicyDto:
+      properties:
+        group:
+          type: string
+        type:
+          type: string
+        username:
+          type: string
+      type: object
+    protoPolicies:
+      properties:
+        policyDto:
+          items:
+            $ref: '#/components/schemas/protoPolicyDto'
+          type: array
+      type: object
+    protoPolicyDto:
+      properties:
+        addon:
+          type: string
+        api:
+          type: string
+        apiPermission:
+          type: string
+        asset:
+          type: string
+        assetPermission:
+          type: string
+        type:
+          type: string
+        username:
+          type: string
+      type: object
+    protoSearchCriteria:
+      properties:
+        filter:
+          type: string
+        limit:
+          $ref: '#/components/schemas/protoSearchCriteriaLimit'
+        offset:
+          type: integer
+        orderBy:
+          $ref: '#/components/schemas/protoSearchCriteriaOrderBy'
+      type: object
+    protoSearchCriteriaLimit:
+      properties:
+        value:
+          type: integer
+      type: object
+    protoSearchCriteriaOrderBy:
+      properties:
+        column:
+          type: string
+        order:
+          type: string
+      type: object
+    protoServiceResponse:
+      example:
+        data:
+          typeUrl: typeUrl
+          value: value
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/protobufAny'
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+      type: object
+    protoUserDto:
+      properties:
+        email:
+          type: string
+        enabled:
+          type: boolean
+        entity:
+          $ref: '#/components/schemas/protoEntityDto'
+        firstName:
+          type: string
+        id:
+          type: string
+        lastName:
+          type: string
+      type: object
+    protoUsernamePermissionRequest:
+      properties:
+        permission:
+          type: string
+        username:
+          type: string
+      type: object
     protobufAny:
+      example:
+        typeUrl: typeUrl
+        value: value
       properties:
         typeUrl:
           type: string
@@ -4040,7 +4779,7 @@ components:
           uid: uid
           name: name
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -4062,11 +4801,15 @@ components:
         consensusPrice: "{}"
         absDiffFromConsensusPrice: "{}"
         subPriceDiff: "{}"
+        conPriceAbsDiffFromLatestTrade: "{}"
         stdDev: "{}"
         upperBoundary: "{}"
         lowerBoundary: "{}"
       properties:
         absDiffFromConsensusPrice:
+          properties: {}
+          type: object
+        conPriceAbsDiffFromLatestTrade:
           properties: {}
           type: object
         consensusPrice:
@@ -4226,7 +4969,7 @@ components:
                 traceName: traceName
                 id: id
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -4274,7 +5017,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -4293,6 +5036,43 @@ components:
         name:
           type: string
         url:
+          type: string
+      type: object
+    titaniumAvailableTrades:
+      example:
+        absDiffFromExpertCohortPrice: "{}"
+        min: "{}"
+        subPriceAbsDiffFromLatestTrade: "{}"
+        dayTradeNumber: dayTradeNumber
+        max: "{}"
+        monthTradeNumber: monthTradeNumber
+        absDiffFromConsensusPrice: "{}"
+        latestTradePrice: "{}"
+        weekTradeNumber: weekTradeNumber
+      properties:
+        absDiffFromConsensusPrice:
+          properties: {}
+          type: object
+        absDiffFromExpertCohortPrice:
+          properties: {}
+          type: object
+        dayTradeNumber:
+          type: string
+        latestTradePrice:
+          properties: {}
+          type: object
+        max:
+          properties: {}
+          type: object
+        min:
+          properties: {}
+          type: object
+        monthTradeNumber:
+          type: string
+        subPriceAbsDiffFromLatestTrade:
+          properties: {}
+          type: object
+        weekTradeNumber:
           type: string
       type: object
     titaniumBenchmarkMetadata:
@@ -4341,7 +5121,7 @@ components:
         data:
           ticketId: ticketId
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -4484,7 +5264,7 @@ components:
             maxLength:
               value: 6
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -4574,6 +5354,39 @@ components:
             $ref: '#/components/schemas/titaniumChartPoint'
           type: array
       type: object
+    titaniumChartDataResponse:
+      example:
+        chartId: chartId
+        series:
+        - metadata:
+            columnNames:
+            - columnNames
+            - columnNames
+          data:
+          - "{}"
+          - "{}"
+          name: name
+          contentType: contentType
+        - metadata:
+            columnNames:
+            - columnNames
+            - columnNames
+          data:
+          - "{}"
+          - "{}"
+          name: name
+          contentType: contentType
+        chartType: chartType
+      properties:
+        chartId:
+          type: string
+        chartType:
+          type: string
+        series:
+          items:
+            $ref: '#/components/schemas/titaniumSeries'
+          type: array
+      type: object
     titaniumChartPoint:
       example:
         tenor: tenor
@@ -4588,6 +5401,13 @@ components:
       type: object
     titaniumChartRanges:
       example:
+        bimodalRightPopulation:
+          min:
+            label: label
+            value: "{}"
+          max:
+            label: label
+            value: "{}"
         challengeOverlayConsensus:
           min:
             label: label
@@ -4596,6 +5416,13 @@ components:
             label: label
             value: "{}"
         submissionOnlyConsensus:
+          min:
+            label: label
+            value: "{}"
+          max:
+            label: label
+            value: "{}"
+        bimodalLeftPopulation:
           min:
             label: label
             value: "{}"
@@ -4645,6 +5472,10 @@ components:
             label: label
             value: "{}"
       properties:
+        bimodalLeftPopulation:
+          $ref: '#/components/schemas/titaniumRange'
+        bimodalRightPopulation:
+          $ref: '#/components/schemas/titaniumRange'
         challengeOverlayConsensus:
           $ref: '#/components/schemas/titaniumRange'
         evp:
@@ -4703,7 +5534,7 @@ components:
           - currencyPairs
           - currencyPairs
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -4781,7 +5612,7 @@ components:
           - reason: reason
             tenor: tenor
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -4851,6 +5682,38 @@ components:
             type: string
           type: array
       type: object
+    titaniumColDependency:
+      example:
+        col: col
+        dependency:
+        - entityName: entityName
+          entityType: entityType
+          scope: scope
+          usages:
+          - usageName: usageName
+            usageType: usageType
+          - usageName: usageName
+            usageType: usageType
+          version: version
+          entity: entity
+        - entityName: entityName
+          entityType: entityType
+          scope: scope
+          usages:
+          - usageName: usageName
+            usageType: usageType
+          - usageName: usageName
+            usageType: usageType
+          version: version
+          entity: entity
+      properties:
+        col:
+          type: string
+        dependency:
+          items:
+            $ref: '#/components/schemas/titaniumDependency'
+          type: array
+      type: object
     titaniumColumnInfo:
       example:
         columnType: columnType
@@ -4878,11 +5741,13 @@ components:
           tradesOrOrdersCount: "{}"
           evpUpperBoundary: "{}"
           bid: "{}"
+          evpMidAbsDiffFromLatestTrade: "{}"
         allParticipantCohortConsensus:
           participantsCount: participantsCount
           consensusPrice: "{}"
           absDiffFromConsensusPrice: "{}"
           subPriceDiff: "{}"
+          conPriceAbsDiffFromLatestTrade: "{}"
           stdDev: "{}"
           upperBoundary: "{}"
           lowerBoundary: "{}"
@@ -4890,6 +5755,7 @@ components:
           statisticalMean: "{}"
           min: "{}"
           max: "{}"
+          statMeanAbsDiffFromLatestTrade: "{}"
           subPriceDiff: "{}"
           subValidPointsCount: subValidPointsCount
           stdDev: "{}"
@@ -4903,12 +5769,25 @@ components:
           mean: "{}"
           subPriceDiff: "{}"
           absDiffFromExpertCohortMean: "{}"
+          conPriceAbsDiffFromLatestTrade: "{}"
           stdDev: "{}"
+        availableTrades:
+          absDiffFromExpertCohortPrice: "{}"
+          min: "{}"
+          subPriceAbsDiffFromLatestTrade: "{}"
+          dayTradeNumber: dayTradeNumber
+          max: "{}"
+          monthTradeNumber: monthTradeNumber
+          absDiffFromConsensusPrice: "{}"
+          latestTradePrice: "{}"
+          weekTradeNumber: weekTradeNumber
         submission:
           submissionPrice: 0.8008281904610115
       properties:
         allParticipantCohortConsensus:
           $ref: '#/components/schemas/titaniumAllParticipantExplorerTableColumn'
+        availableTrades:
+          $ref: '#/components/schemas/titaniumAvailableTrades'
         evaluatedPrice:
           $ref: '#/components/schemas/titaniumEvpExplorerTableColumn'
         expertCohortConsensus:
@@ -4943,7 +5822,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -4953,13 +5832,18 @@ components:
       type: object
     titaniumConsensusDensityScore:
       example:
-        numberOfParticipants: numberOfParticipants
+        numberOfParticipants: "{}"
         evpAlignmentScore: "{}"
         evpQuality: "{}"
         score: "{}"
         challengeQuality: "{}"
         bimodality: "{}"
         outlierVolume: "{}"
+        history:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
         dispersion: "{}"
       properties:
         bimodality:
@@ -4977,8 +5861,13 @@ components:
         evpQuality:
           properties: {}
           type: object
+        history:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
         numberOfParticipants:
-          type: string
+          properties: {}
+          type: object
         outlierVolume:
           properties: {}
           type: object
@@ -5013,9 +5902,40 @@ components:
         instrumentSubmissionStatus:
           participantConsensusStatus: participantConsensusStatus
           participantConsensusStatusDetails: participantConsensusStatusDetails
+          consensusStatusDetailsHistory:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
+          consensusStatusHistory:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
           consensusStatus: consensusStatus
+          bimodality: bimodality
           consensusStatusDetails: consensusStatusDetails
+          dqeHistory:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
           highestDqe: highestDqe
+          participantConsensusStatusDetailsHistory:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
+          participantConsensusStatusHistory:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
+          bimodalityHistory:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
         consensusScores:
           evpAlignmentScore:
             score: "{}"
@@ -5024,15 +5944,36 @@ components:
             evpMid: "{}"
             submissionMean: "{}"
             scoreStatus: scoreStatus
+            history:
+            - date: date
+              score: "{}"
+              scoreStatus: scoreStatus
+            - date: date
+              score: "{}"
+              scoreStatus: scoreStatus
           evpQualityScore:
             score: "{}"
             tradeCount: tradeCount
             indicativeCount: indicativeCount
             orderCount: orderCount
+            history:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
           expertiseScore:
             score: "{}"
             expertsCount: "{}"
             dimensionCreditScore: "{}"
+            history:
+            - date: date
+              score: "{}"
+              expertsCount: "{}"
+              expertiseRank: "{}"
+            - date: date
+              score: "{}"
+              expertsCount: "{}"
+              expertiseRank: "{}"
             proximityToPostChallengeConsensusMean: "{}"
             challengeScore: "{}"
             consensusScore: "{}"
@@ -5040,13 +5981,18 @@ components:
             consensusDistanceScore: "{}"
             expertiseRank: "{}"
           consensusDensityScore:
-            numberOfParticipants: numberOfParticipants
+            numberOfParticipants: "{}"
             evpAlignmentScore: "{}"
             evpQuality: "{}"
             score: "{}"
             challengeQuality: "{}"
             bimodality: "{}"
             outlierVolume: "{}"
+            history:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
             dispersion: "{}"
       properties:
         consensusScores:
@@ -5072,9 +6018,40 @@ components:
           instrumentSubmissionStatus:
             participantConsensusStatus: participantConsensusStatus
             participantConsensusStatusDetails: participantConsensusStatusDetails
+            consensusStatusDetailsHistory:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
+            consensusStatusHistory:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
             consensusStatus: consensusStatus
+            bimodality: bimodality
             consensusStatusDetails: consensusStatusDetails
+            dqeHistory:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
             highestDqe: highestDqe
+            participantConsensusStatusDetailsHistory:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
+            participantConsensusStatusHistory:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
+            bimodalityHistory:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
           consensusScores:
             evpAlignmentScore:
               score: "{}"
@@ -5083,15 +6060,36 @@ components:
               evpMid: "{}"
               submissionMean: "{}"
               scoreStatus: scoreStatus
+              history:
+              - date: date
+                score: "{}"
+                scoreStatus: scoreStatus
+              - date: date
+                score: "{}"
+                scoreStatus: scoreStatus
             evpQualityScore:
               score: "{}"
               tradeCount: tradeCount
               indicativeCount: indicativeCount
               orderCount: orderCount
+              history:
+              - date: date
+                value: "{}"
+              - date: date
+                value: "{}"
             expertiseScore:
               score: "{}"
               expertsCount: "{}"
               dimensionCreditScore: "{}"
+              history:
+              - date: date
+                score: "{}"
+                expertsCount: "{}"
+                expertiseRank: "{}"
+              - date: date
+                score: "{}"
+                expertsCount: "{}"
+                expertiseRank: "{}"
               proximityToPostChallengeConsensusMean: "{}"
               challengeScore: "{}"
               consensusScore: "{}"
@@ -5099,16 +6097,21 @@ components:
               consensusDistanceScore: "{}"
               expertiseRank: "{}"
             consensusDensityScore:
-              numberOfParticipants: numberOfParticipants
+              numberOfParticipants: "{}"
               evpAlignmentScore: "{}"
               evpQuality: "{}"
               score: "{}"
               challengeQuality: "{}"
               bimodality: "{}"
               outlierVolume: "{}"
+              history:
+              - date: date
+                value: "{}"
+              - date: date
+                value: "{}"
               dispersion: "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -5118,10 +6121,42 @@ components:
       type: object
     titaniumConsensusExplorerRangeData:
       example:
+        bimodalLeftMean:
+          label: label
+          value: "{}"
+        evpMid:
+          label: label
+          value: "{}"
+        submissionPoint:
+          label: label
+          value: "{}"
+        tradePeriodsWithMetrics:
+          lessWeek:
+            tradeCount: tradeCount
+            minNotionalAmount: 6.027456183070403
+            maxNotionalAmount: 0.8008281904610115
+          lessDay:
+            tradeCount: tradeCount
+            minNotionalAmount: 6.027456183070403
+            maxNotionalAmount: 0.8008281904610115
+          lessMonth:
+            tradeCount: tradeCount
+            minNotionalAmount: 6.027456183070403
+            maxNotionalAmount: 0.8008281904610115
+        expertPreChallengeConsensusPrice:
+          label: label
+          value: "{}"
         challengeOverlayCrsConsensusPrice:
           label: label
           value: "{}"
         chartRanges:
+          bimodalRightPopulation:
+            min:
+              label: label
+              value: "{}"
+            max:
+              label: label
+              value: "{}"
           challengeOverlayConsensus:
             min:
               label: label
@@ -5130,6 +6165,13 @@ components:
               label: label
               value: "{}"
           submissionOnlyConsensus:
+            min:
+              label: label
+              value: "{}"
+            max:
+              label: label
+              value: "{}"
+          bimodalLeftPopulation:
             min:
               label: label
               value: "{}"
@@ -5184,23 +6226,26 @@ components:
         allParticipantCrsConsensusPrice:
           label: label
           value: "{}"
-        evpMid:
-          label: label
-          value: "{}"
-        submissionPoint:
-          label: label
-          value: "{}"
         expertPostChallengeConsensusPrice:
           label: label
           value: "{}"
         submissionMeanPoint:
           label: label
           value: "{}"
-        expertPreChallengeConsensusPrice:
+        tradeRangesData:
+          notional: 5.962133916683182
+          pricingRecency: pricingRecency
+          latestTradePrice: 1.4658129805029452
+          tradeExecutionTime: tradeExecutionTime
+        bimodalRightMean:
           label: label
           value: "{}"
       properties:
         allParticipantCrsConsensusPrice:
+          $ref: '#/components/schemas/titaniumRangePoint'
+        bimodalLeftMean:
+          $ref: '#/components/schemas/titaniumRangePoint'
+        bimodalRightMean:
           $ref: '#/components/schemas/titaniumRangePoint'
         challengeOverlayCrsConsensusPrice:
           $ref: '#/components/schemas/titaniumRangePoint'
@@ -5218,14 +6263,50 @@ components:
           $ref: '#/components/schemas/titaniumRangePoint'
         submissionPoint:
           $ref: '#/components/schemas/titaniumRangePoint'
+        tradePeriodsWithMetrics:
+          $ref: '#/components/schemas/titaniumTradePeriodsWithMetrics'
+        tradeRangesData:
+          $ref: '#/components/schemas/titaniumTradeRangesData'
       type: object
     titaniumConsensusExplorerRangeResponse:
       example:
         data:
+          bimodalLeftMean:
+            label: label
+            value: "{}"
+          evpMid:
+            label: label
+            value: "{}"
+          submissionPoint:
+            label: label
+            value: "{}"
+          tradePeriodsWithMetrics:
+            lessWeek:
+              tradeCount: tradeCount
+              minNotionalAmount: 6.027456183070403
+              maxNotionalAmount: 0.8008281904610115
+            lessDay:
+              tradeCount: tradeCount
+              minNotionalAmount: 6.027456183070403
+              maxNotionalAmount: 0.8008281904610115
+            lessMonth:
+              tradeCount: tradeCount
+              minNotionalAmount: 6.027456183070403
+              maxNotionalAmount: 0.8008281904610115
+          expertPreChallengeConsensusPrice:
+            label: label
+            value: "{}"
           challengeOverlayCrsConsensusPrice:
             label: label
             value: "{}"
           chartRanges:
+            bimodalRightPopulation:
+              min:
+                label: label
+                value: "{}"
+              max:
+                label: label
+                value: "{}"
             challengeOverlayConsensus:
               min:
                 label: label
@@ -5234,6 +6315,13 @@ components:
                 label: label
                 value: "{}"
             submissionOnlyConsensus:
+              min:
+                label: label
+                value: "{}"
+              max:
+                label: label
+                value: "{}"
+            bimodalLeftPopulation:
               min:
                 label: label
                 value: "{}"
@@ -5288,23 +6376,22 @@ components:
           allParticipantCrsConsensusPrice:
             label: label
             value: "{}"
-          evpMid:
-            label: label
-            value: "{}"
-          submissionPoint:
-            label: label
-            value: "{}"
           expertPostChallengeConsensusPrice:
             label: label
             value: "{}"
           submissionMeanPoint:
             label: label
             value: "{}"
-          expertPreChallengeConsensusPrice:
+          tradeRangesData:
+            notional: 5.962133916683182
+            pricingRecency: pricingRecency
+            latestTradePrice: 1.4658129805029452
+            tradeExecutionTime: tradeExecutionTime
+          bimodalRightMean:
             label: label
             value: "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -5324,11 +6411,13 @@ components:
             tradesOrOrdersCount: "{}"
             evpUpperBoundary: "{}"
             bid: "{}"
+            evpMidAbsDiffFromLatestTrade: "{}"
           allParticipantCohortConsensus:
             participantsCount: participantsCount
             consensusPrice: "{}"
             absDiffFromConsensusPrice: "{}"
             subPriceDiff: "{}"
+            conPriceAbsDiffFromLatestTrade: "{}"
             stdDev: "{}"
             upperBoundary: "{}"
             lowerBoundary: "{}"
@@ -5336,6 +6425,7 @@ components:
             statisticalMean: "{}"
             min: "{}"
             max: "{}"
+            statMeanAbsDiffFromLatestTrade: "{}"
             subPriceDiff: "{}"
             subValidPointsCount: subValidPointsCount
             stdDev: "{}"
@@ -5349,7 +6439,18 @@ components:
             mean: "{}"
             subPriceDiff: "{}"
             absDiffFromExpertCohortMean: "{}"
+            conPriceAbsDiffFromLatestTrade: "{}"
             stdDev: "{}"
+          availableTrades:
+            absDiffFromExpertCohortPrice: "{}"
+            min: "{}"
+            subPriceAbsDiffFromLatestTrade: "{}"
+            dayTradeNumber: dayTradeNumber
+            max: "{}"
+            monthTradeNumber: monthTradeNumber
+            absDiffFromConsensusPrice: "{}"
+            latestTradePrice: "{}"
+            weekTradeNumber: weekTradeNumber
           submission:
             submissionPrice: 0.8008281904610115
       properties:
@@ -5369,11 +6470,13 @@ components:
               tradesOrOrdersCount: "{}"
               evpUpperBoundary: "{}"
               bid: "{}"
+              evpMidAbsDiffFromLatestTrade: "{}"
             allParticipantCohortConsensus:
               participantsCount: participantsCount
               consensusPrice: "{}"
               absDiffFromConsensusPrice: "{}"
               subPriceDiff: "{}"
+              conPriceAbsDiffFromLatestTrade: "{}"
               stdDev: "{}"
               upperBoundary: "{}"
               lowerBoundary: "{}"
@@ -5381,6 +6484,7 @@ components:
               statisticalMean: "{}"
               min: "{}"
               max: "{}"
+              statMeanAbsDiffFromLatestTrade: "{}"
               subPriceDiff: "{}"
               subValidPointsCount: subValidPointsCount
               stdDev: "{}"
@@ -5394,11 +6498,22 @@ components:
               mean: "{}"
               subPriceDiff: "{}"
               absDiffFromExpertCohortMean: "{}"
+              conPriceAbsDiffFromLatestTrade: "{}"
               stdDev: "{}"
+            availableTrades:
+              absDiffFromExpertCohortPrice: "{}"
+              min: "{}"
+              subPriceAbsDiffFromLatestTrade: "{}"
+              dayTradeNumber: dayTradeNumber
+              max: "{}"
+              monthTradeNumber: monthTradeNumber
+              absDiffFromConsensusPrice: "{}"
+              latestTradePrice: "{}"
+              weekTradeNumber: weekTradeNumber
             submission:
               submissionPrice: 0.8008281904610115
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -5488,7 +6603,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -5592,11 +6707,7 @@ components:
           type: string
         client:
           type: string
-        consensusResultSetId:
-          type: string
         consensusRunTimestamp:
-          type: string
-        filter:
           type: string
         filterPack:
           $ref: '#/components/schemas/titaniumFilterPack'
@@ -5605,8 +6716,6 @@ components:
         page:
           $ref: '#/components/schemas/titaniumPage'
         submittedDate:
-          type: string
-        submittedId:
           type: string
         traceName:
           type: string
@@ -5635,7 +6744,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -5684,15 +6793,36 @@ components:
           evpMid: "{}"
           submissionMean: "{}"
           scoreStatus: scoreStatus
+          history:
+          - date: date
+            score: "{}"
+            scoreStatus: scoreStatus
+          - date: date
+            score: "{}"
+            scoreStatus: scoreStatus
         evpQualityScore:
           score: "{}"
           tradeCount: tradeCount
           indicativeCount: indicativeCount
           orderCount: orderCount
+          history:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
         expertiseScore:
           score: "{}"
           expertsCount: "{}"
           dimensionCreditScore: "{}"
+          history:
+          - date: date
+            score: "{}"
+            expertsCount: "{}"
+            expertiseRank: "{}"
+          - date: date
+            score: "{}"
+            expertsCount: "{}"
+            expertiseRank: "{}"
           proximityToPostChallengeConsensusMean: "{}"
           challengeScore: "{}"
           consensusScore: "{}"
@@ -5700,13 +6830,18 @@ components:
           consensusDistanceScore: "{}"
           expertiseRank: "{}"
         consensusDensityScore:
-          numberOfParticipants: numberOfParticipants
+          numberOfParticipants: "{}"
           evpAlignmentScore: "{}"
           evpQuality: "{}"
           score: "{}"
           challengeQuality: "{}"
           bimodality: "{}"
           outlierVolume: "{}"
+          history:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
           dispersion: "{}"
       properties:
         consensusDensityScore:
@@ -5752,7 +6887,7 @@ components:
             - submittedDates
             - submittedDates
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -5915,7 +7050,7 @@ components:
           descriptorName: descriptorName
           descriptorType: descriptorType
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -5989,6 +7124,8 @@ components:
         type:
           type: string
       type: object
+    titaniumCustomFunctionUsageUsageType:
+      type: string
     titaniumDQError:
       example:
         severity: severity
@@ -6053,7 +7190,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -6136,6 +7273,45 @@ components:
         totalRows:
           type: integer
       type: object
+    titaniumDateAndValue:
+      example:
+        date: date
+        value: "{}"
+      properties:
+        date:
+          type: string
+        value:
+          properties: {}
+          type: object
+      type: object
+    titaniumDependency:
+      example:
+        entityName: entityName
+        entityType: entityType
+        scope: scope
+        usages:
+        - usageName: usageName
+          usageType: usageType
+        - usageName: usageName
+          usageType: usageType
+        version: version
+        entity: entity
+      properties:
+        entity:
+          type: string
+        entityName:
+          type: string
+        entityType:
+          type: string
+        scope:
+          type: string
+        usages:
+          items:
+            $ref: '#/components/schemas/titaniumUsage'
+          type: array
+        version:
+          type: string
+      type: object
     titaniumDescriptorBasedIdentifier:
       example:
         uid: uid
@@ -6192,13 +7368,66 @@ components:
       example:
         data: data
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
           type: string
         error:
           $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumDescriptorDependenciesResponse:
+      example:
+        dependencies:
+        - col: col
+          dependency:
+          - entityName: entityName
+            entityType: entityType
+            scope: scope
+            usages:
+            - usageName: usageName
+              usageType: usageType
+            - usageName: usageName
+              usageType: usageType
+            version: version
+            entity: entity
+          - entityName: entityName
+            entityType: entityType
+            scope: scope
+            usages:
+            - usageName: usageName
+              usageType: usageType
+            - usageName: usageName
+              usageType: usageType
+            version: version
+            entity: entity
+        - col: col
+          dependency:
+          - entityName: entityName
+            entityType: entityType
+            scope: scope
+            usages:
+            - usageName: usageName
+              usageType: usageType
+            - usageName: usageName
+              usageType: usageType
+            version: version
+            entity: entity
+          - entityName: entityName
+            entityType: entityType
+            scope: scope
+            usages:
+            - usageName: usageName
+              usageType: usageType
+            - usageName: usageName
+              usageType: usageType
+            version: version
+            entity: entity
+      properties:
+        dependencies:
+          items:
+            $ref: '#/components/schemas/titaniumColDependency'
+          type: array
       type: object
     titaniumDescriptorField:
       example:
@@ -6230,7 +7459,7 @@ components:
           - uid: uid
             name: name
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -6245,7 +7474,7 @@ components:
           destDescriptor: destDescriptor
           srcDescriptor: srcDescriptor
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -6293,6 +7522,91 @@ components:
         results:
           items:
             $ref: '#/components/schemas/titaniumDescriptorPairBasedIdentifier'
+          type: array
+      type: object
+    titaniumDtccTabRequest:
+      properties:
+        assetId:
+          type: string
+        filterPack:
+          $ref: '#/components/schemas/titaniumFilterPack'
+        groupKeys:
+          $ref: '#/components/schemas/titaniumListOfKeys'
+        orderBy:
+          $ref: '#/components/schemas/titaniumOrderBy'
+        page:
+          $ref: '#/components/schemas/titaniumPage'
+        snapDate:
+          type: string
+        submissionId:
+          type: string
+        traceName:
+          type: string
+      type: object
+    titaniumDtccTabResponse:
+      example:
+        data:
+          columns:
+          - columnType: columnType
+            columnDbType: columnDbType
+            rawColumnName: rawColumnName
+            columnName: columnName
+          - columnType: columnType
+            columnDbType: columnDbType
+            rawColumnName: rawColumnName
+            columnName: columnName
+          page:
+            pageNumber: 0
+            size: 6
+            totalNumberOfElements: totalNumberOfElements
+          rows:
+          - values:
+            - "{}"
+            - "{}"
+          - values:
+            - "{}"
+            - "{}"
+        error:
+          code: 0
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/titaniumDtccTabResponseData'
+        error:
+          $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumDtccTabResponseData:
+      example:
+        columns:
+        - columnType: columnType
+          columnDbType: columnDbType
+          rawColumnName: rawColumnName
+          columnName: columnName
+        - columnType: columnType
+          columnDbType: columnDbType
+          rawColumnName: rawColumnName
+          columnName: columnName
+        page:
+          pageNumber: 0
+          size: 6
+          totalNumberOfElements: totalNumberOfElements
+        rows:
+        - values:
+          - "{}"
+          - "{}"
+        - values:
+          - "{}"
+          - "{}"
+      properties:
+        columns:
+          items:
+            $ref: '#/components/schemas/titaniumColumnInfo'
+          type: array
+        page:
+          $ref: '#/components/schemas/titaniumPage'
+        rows:
+          items:
+            $ref: '#/components/schemas/titaniumValuesRow'
           type: array
       type: object
     titaniumDynamicLut:
@@ -6356,7 +7670,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -6435,7 +7749,7 @@ components:
       type: string
     titaniumError:
       example:
-        code: 6
+        code: 0
         message: message
       properties:
         code:
@@ -6467,6 +7781,13 @@ components:
         evpMid: "{}"
         submissionMean: "{}"
         scoreStatus: scoreStatus
+        history:
+        - date: date
+          score: "{}"
+          scoreStatus: scoreStatus
+        - date: date
+          score: "{}"
+          scoreStatus: scoreStatus
       properties:
         evpAlignmentDispersionScore:
           properties: {}
@@ -6474,6 +7795,10 @@ components:
         evpMid:
           properties: {}
           type: object
+        history:
+          items:
+            $ref: '#/components/schemas/titaniumEvpAlignmentScoreWithDate'
+          type: array
         score:
           properties: {}
           type: object
@@ -6486,6 +7811,20 @@ components:
           properties: {}
           type: object
       type: object
+    titaniumEvpAlignmentScoreWithDate:
+      example:
+        date: date
+        score: "{}"
+        scoreStatus: scoreStatus
+      properties:
+        date:
+          type: string
+        score:
+          properties: {}
+          type: object
+        scoreStatus:
+          type: string
+      type: object
     titaniumEvpExplorerTableColumn:
       example:
         absDiffFromEvpMid: "{}"
@@ -6496,6 +7835,7 @@ components:
         tradesOrOrdersCount: "{}"
         evpUpperBoundary: "{}"
         bid: "{}"
+        evpMidAbsDiffFromLatestTrade: "{}"
       properties:
         absDiffFromEvpMid:
           properties: {}
@@ -6507,6 +7847,9 @@ components:
           properties: {}
           type: object
         evpLowerBoundary:
+          properties: {}
+          type: object
+        evpMidAbsDiffFromLatestTrade:
           properties: {}
           type: object
         evpUpperBoundary:
@@ -6528,7 +7871,16 @@ components:
         tradeCount: tradeCount
         indicativeCount: indicativeCount
         orderCount: orderCount
+        history:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
       properties:
+        history:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
         indicativeCount:
           type: string
         orderCount:
@@ -6547,9 +7899,13 @@ components:
         mean: "{}"
         subPriceDiff: "{}"
         absDiffFromExpertCohortMean: "{}"
+        conPriceAbsDiffFromLatestTrade: "{}"
         stdDev: "{}"
       properties:
         absDiffFromExpertCohortMean:
+          properties: {}
+          type: object
+        conPriceAbsDiffFromLatestTrade:
           properties: {}
           type: object
         max:
@@ -6575,6 +7931,15 @@ components:
         score: "{}"
         expertsCount: "{}"
         dimensionCreditScore: "{}"
+        history:
+        - date: date
+          score: "{}"
+          expertsCount: "{}"
+          expertiseRank: "{}"
+        - date: date
+          score: "{}"
+          expertsCount: "{}"
+          expertiseRank: "{}"
         proximityToPostChallengeConsensusMean: "{}"
         challengeScore: "{}"
         consensusScore: "{}"
@@ -6600,6 +7965,10 @@ components:
         expertsCount:
           properties: {}
           type: object
+        history:
+          items:
+            $ref: '#/components/schemas/titaniumExpertiseScoreWithDate'
+          type: array
         proximityToPostChallengeConsensusMean:
           properties: {}
           type: object
@@ -6607,6 +7976,25 @@ components:
           properties: {}
           type: object
         submittedScore:
+          properties: {}
+          type: object
+      type: object
+    titaniumExpertiseScoreWithDate:
+      example:
+        date: date
+        score: "{}"
+        expertsCount: "{}"
+        expertiseRank: "{}"
+      properties:
+        date:
+          type: string
+        expertiseRank:
+          properties: {}
+          type: object
+        expertsCount:
+          properties: {}
+          type: object
+        score:
           properties: {}
           type: object
       type: object
@@ -6633,6 +8021,10 @@ components:
           type: string
         filterPack:
           $ref: '#/components/schemas/titaniumFilterPack'
+        filters:
+          items:
+            $ref: '#/components/schemas/titaniumFilter'
+          type: array
         includeHeader:
           type: boolean
         orderBy:
@@ -6649,7 +8041,7 @@ components:
           fileName: fileName
           compression: compression
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -6813,7 +8205,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7148,7 +8540,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7215,7 +8607,7 @@ components:
           uploadUrl: uploadUrl
           attachmentId: attachmentId
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7254,11 +8646,62 @@ components:
             attachmentId: attachmentId
             url: url
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
           $ref: '#/components/schemas/GetChallengeDetailsResponseResult'
+        error:
+          $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumGetChartDataRequest:
+      properties:
+        assetId:
+          type: string
+        chartId:
+          type: string
+        filterPack:
+          $ref: '#/components/schemas/titaniumFilterPack'
+        invalidateCache:
+          type: boolean
+        parameters:
+          properties: {}
+          type: object
+        sliceId:
+          type: string
+        traceName:
+          type: string
+      type: object
+    titaniumGetChartDataResponse:
+      example:
+        data:
+          chartId: chartId
+          series:
+          - metadata:
+              columnNames:
+              - columnNames
+              - columnNames
+            data:
+            - "{}"
+            - "{}"
+            name: name
+            contentType: contentType
+          - metadata:
+              columnNames:
+              - columnNames
+              - columnNames
+            data:
+            - "{}"
+            - "{}"
+            name: name
+            contentType: contentType
+          chartType: chartType
+        error:
+          code: 0
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/titaniumChartDataResponse'
         error:
           $ref: '#/components/schemas/titaniumError'
       type: object
@@ -7302,6 +8745,8 @@ components:
           type: string
         filterPack:
           $ref: '#/components/schemas/titaniumFilterPack'
+        orderBy:
+          $ref: '#/components/schemas/titaniumOrderBy'
         page:
           $ref: '#/components/schemas/titaniumPage'
         participant:
@@ -7339,7 +8784,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7406,7 +8851,7 @@ components:
               rulesetName: rulesetName
           totalRows: 0
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7434,7 +8879,7 @@ components:
           - "{}"
           type: type
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7458,7 +8903,7 @@ components:
         data:
           s3Url: s3Url
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7470,7 +8915,7 @@ components:
       example:
         data: data
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7487,7 +8932,7 @@ components:
           key: key
           ttlFrom: ttlFrom
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7516,7 +8961,7 @@ components:
             - "{}"
           type: type
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7539,7 +8984,7 @@ components:
             operator: operator
             predefinedValueLabel: predefinedValueLabel
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7622,7 +9067,7 @@ components:
             - "{}"
             - "{}"
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7656,7 +9101,7 @@ components:
             rawColumnName: rawColumnName
             columnName: columnName
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7800,7 +9245,7 @@ components:
             descriptorName: descriptorName
           descriptorName: descriptorName
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7931,7 +9376,7 @@ components:
               predefinedValueLabel: predefinedValueLabel
             rows: 6
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -7954,20 +9399,77 @@ components:
       example:
         participantConsensusStatus: participantConsensusStatus
         participantConsensusStatusDetails: participantConsensusStatusDetails
+        consensusStatusDetailsHistory:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
+        consensusStatusHistory:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
         consensusStatus: consensusStatus
+        bimodality: bimodality
         consensusStatusDetails: consensusStatusDetails
+        dqeHistory:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
         highestDqe: highestDqe
+        participantConsensusStatusDetailsHistory:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
+        participantConsensusStatusHistory:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
+        bimodalityHistory:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
       properties:
+        bimodality:
+          type: string
+        bimodalityHistory:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
         consensusStatus:
           type: string
         consensusStatusDetails:
           type: string
+        consensusStatusDetailsHistory:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
+        consensusStatusHistory:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
+        dqeHistory:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
         highestDqe:
           type: string
         participantConsensusStatus:
           type: string
         participantConsensusStatusDetails:
           type: string
+        participantConsensusStatusDetailsHistory:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
+        participantConsensusStatusHistory:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
       type: object
     titaniumKVAsset:
       example:
@@ -8015,7 +9517,7 @@ components:
     titaniumKVOperationResponse:
       example:
         error:
-          code: 6
+          code: 0
           message: message
         message: message
       properties:
@@ -8028,6 +9530,14 @@ components:
       properties:
         key:
           type: string
+      type: object
+    titaniumKeyAndValue:
+      properties:
+        key:
+          type: string
+        value:
+          properties: {}
+          type: object
       type: object
     titaniumLimit:
       properties:
@@ -8083,7 +9593,7 @@ components:
             descriptorName: descriptorName
             descriptorType: descriptorType
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8105,7 +9615,7 @@ components:
           - ttlDate: ttlDate
             key: key
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8129,13 +9639,20 @@ components:
             type: type
             valueField: valueField
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
           $ref: '#/components/schemas/titaniumLookupTableList'
         error:
           $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumListOfKeys:
+      properties:
+        list:
+          items:
+            $ref: '#/components/schemas/titaniumKeyAndValue'
+          type: array
       type: object
     titaniumListRequest:
       properties:
@@ -8159,7 +9676,7 @@ components:
           - uid: uid
             descriptorName: descriptorName
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8190,7 +9707,7 @@ components:
             - orderBy
             order: order
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8207,7 +9724,7 @@ components:
           - createdAt: createdAt
             versionId: versionId
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8225,7 +9742,7 @@ components:
         data:
           token: token
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8397,7 +9914,7 @@ components:
             destDescriptor: destDescriptor
             srcDescriptor: srcDescriptor
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8440,7 +9957,7 @@ components:
           destDescriptor: destDescriptor
           srcDescriptor: srcDescriptor
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8473,7 +9990,7 @@ components:
           - snapTimes
           - snapTimes
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8486,7 +10003,7 @@ components:
         data:
           message: message
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8500,6 +10017,17 @@ components:
       properties:
         message:
           type: string
+      type: object
+    titaniumMetadata:
+      example:
+        columnNames:
+        - columnNames
+        - columnNames
+      properties:
+        columnNames:
+          items:
+            type: string
+          type: array
       type: object
     titaniumNameAliasPair:
       properties:
@@ -8582,7 +10110,7 @@ components:
             sourceColumn: sourceColumn
           descriptorName: descriptorName
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8666,7 +10194,7 @@ components:
             - values
             - values
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -8813,7 +10341,7 @@ components:
             - "{}"
           benchmark: benchmark
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -9009,7 +10537,7 @@ components:
             - values
             - values
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -9299,7 +10827,7 @@ components:
       example:
         data: data
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -9312,7 +10840,7 @@ components:
       example:
         exist: true
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         error:
@@ -9331,7 +10859,7 @@ components:
         - data
         - data
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -9340,6 +10868,30 @@ components:
           type: array
         error:
           $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumSeries:
+      example:
+        metadata:
+          columnNames:
+          - columnNames
+          - columnNames
+        data:
+        - "{}"
+        - "{}"
+        name: name
+        contentType: contentType
+      properties:
+        contentType:
+          type: string
+        data:
+          items:
+            properties: {}
+            type: object
+          type: array
+        metadata:
+          $ref: '#/components/schemas/titaniumMetadata'
+        name:
+          type: string
       type: object
     titaniumService:
       example:
@@ -9442,7 +10994,7 @@ components:
         data:
           status: status
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -9537,6 +11089,7 @@ components:
         statisticalMean: "{}"
         min: "{}"
         max: "{}"
+        statMeanAbsDiffFromLatestTrade: "{}"
         subPriceDiff: "{}"
         subValidPointsCount: subValidPointsCount
         stdDev: "{}"
@@ -9554,6 +11107,9 @@ components:
           properties: {}
           type: object
         min:
+          properties: {}
+          type: object
+        statMeanAbsDiffFromLatestTrade:
           properties: {}
           type: object
         statisticalMean:
@@ -9635,7 +11191,7 @@ components:
             outlier: outlier
             benchmark: benchmark
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -9735,6 +11291,57 @@ components:
       type: object
     titaniumTTLTypes:
       type: string
+    titaniumTradePeriodMetrics:
+      example:
+        tradeCount: tradeCount
+        minNotionalAmount: 6.027456183070403
+        maxNotionalAmount: 0.8008281904610115
+      properties:
+        maxNotionalAmount:
+          type: number
+        minNotionalAmount:
+          type: number
+        tradeCount:
+          type: string
+      type: object
+    titaniumTradePeriodsWithMetrics:
+      example:
+        lessWeek:
+          tradeCount: tradeCount
+          minNotionalAmount: 6.027456183070403
+          maxNotionalAmount: 0.8008281904610115
+        lessDay:
+          tradeCount: tradeCount
+          minNotionalAmount: 6.027456183070403
+          maxNotionalAmount: 0.8008281904610115
+        lessMonth:
+          tradeCount: tradeCount
+          minNotionalAmount: 6.027456183070403
+          maxNotionalAmount: 0.8008281904610115
+      properties:
+        lessDay:
+          $ref: '#/components/schemas/titaniumTradePeriodMetrics'
+        lessMonth:
+          $ref: '#/components/schemas/titaniumTradePeriodMetrics'
+        lessWeek:
+          $ref: '#/components/schemas/titaniumTradePeriodMetrics'
+      type: object
+    titaniumTradeRangesData:
+      example:
+        notional: 5.962133916683182
+        pricingRecency: pricingRecency
+        latestTradePrice: 1.4658129805029452
+        tradeExecutionTime: tradeExecutionTime
+      properties:
+        latestTradePrice:
+          type: number
+        notional:
+          type: number
+        pricingRecency:
+          type: string
+        tradeExecutionTime:
+          type: string
+      type: object
     titaniumTransformation:
       example:
         targetColumn: targetColumn
@@ -9803,7 +11410,7 @@ components:
           - orderBy
           order: order
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         data:
@@ -9862,6 +11469,18 @@ components:
       title: UploadURLResponse is response to request of url for upload(contains s3
         url)
       type: object
+    titaniumUsage:
+      example:
+        usageName: usageName
+        usageType: usageType
+      properties:
+        usageName:
+          type: string
+        usageType:
+          type: string
+      type: object
+    titaniumUsageUsageType:
+      type: string
     titaniumUser:
       example:
         notifyByAppEnabled: true
@@ -9929,7 +11548,7 @@ components:
     titaniumUserNotificationResponse:
       example:
         error:
-          code: 6
+          code: 0
           message: message
         userNotification:
           market:
@@ -10022,7 +11641,7 @@ components:
     titaniumUserNotificationsResponse:
       example:
         error:
-          code: 6
+          code: 0
           message: message
         userNotifications:
           userNotification:
@@ -10128,7 +11747,7 @@ components:
             type: type
             enabled: true
         error:
-          code: 6
+          code: 0
           message: message
       properties:
         error:
@@ -10141,7 +11760,7 @@ components:
     titaniumUserResponse:
       example:
         error:
-          code: 6
+          code: 0
           message: message
         user:
           notifyByAppEnabled: true

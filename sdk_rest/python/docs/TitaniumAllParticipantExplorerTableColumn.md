@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **abs_diff_from_consensus_price** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**con_price_abs_diff_from_latest_trade** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **consensus_price** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **lower_boundary** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **participants_count** | **str** |  | [optional] 

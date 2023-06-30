@@ -8,6 +8,45 @@
     "url" : "//api-dev.clearconsensus.io/"
   } ],
   "paths" : {
+    "/api/v1/analytics/chart-data" : {
+      "post" : {
+        "operationId" : "ChartService_getChartData",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumGetChartDataRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumGetChartDataResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "ChartService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/analytics/consensus/find" : {
       "post" : {
         "operationId" : "AnalyticsController_FindConsensusAnalytics",
@@ -1086,6 +1125,45 @@
         "x-codegen-request-body-name" : "body"
       }
     },
+    "/api/v1/db/descriptor/dependencies" : {
+      "post" : {
+        "operationId" : "DbDescriptorService_DescriptorDependencies",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumGetDefinition"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumDescriptorDependenciesResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "DbDescriptorService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/db/descriptor/disable" : {
       "post" : {
         "operationId" : "DbDescriptorService_DisableDbDescriptor",
@@ -1373,6 +1451,45 @@
           }
         },
         "summary" : "AddDescriptor is used to add specific descriptor with specific definition to the system.\nRegular users can store a descriptor within their own scope, and any attempts to push it to a different scope will be declined.\nBack office users can store descriptors in any scope, provided that a scope key is provided.\nThe name of the descriptor must match the name of the asset class to be mapped correctly.\nIf a descriptor with the same name already exists, it will be updated.",
+        "tags" : [ "DescriptorService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/descriptor/dependencies" : {
+      "post" : {
+        "operationId" : "DescriptorService_DescriptorDependencies",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumGetDefinition"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumDescriptorDependenciesResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
         "tags" : [ "DescriptorService" ],
         "x-codegen-request-body-name" : "body"
       }
@@ -1675,6 +1792,45 @@
           }
         },
         "tags" : [ "DataQualityService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/dtcc/tab" : {
+      "post" : {
+        "operationId" : "DtccService_GetDtccTable",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumDtccTabRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumDtccTabResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "DtccService" ],
         "x-codegen-request-body-name" : "body"
       }
     },
@@ -4092,6 +4248,708 @@
         "x-codegen-request-body-name" : "body"
       }
     },
+    "/api/v1/user-management/entities/create" : {
+      "post" : {
+        "operationId" : "EntityService_create",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoEntityDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "EntityService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/entities/find" : {
+      "post" : {
+        "operationId" : "EntityService_find",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoSearchCriteria"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "EntityService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/entities/getAllByEnabled" : {
+      "post" : {
+        "operationId" : "EntityService_getAllEnabledOnly",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "type" : "boolean"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "EntityService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/entities/getById" : {
+      "post" : {
+        "operationId" : "EntityService_getById",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "type" : "string"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "EntityService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/entities/update" : {
+      "post" : {
+        "operationId" : "EntityService_update",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoEntityDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "EntityService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/group-policies/create" : {
+      "post" : {
+        "operationId" : "GroupPolicyService_create",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoGroupPolicies"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "GroupPolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/group-policies/getPolicies" : {
+      "post" : {
+        "operationId" : "GroupPolicyService_getPolicies",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "type" : "string"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "GroupPolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/policies/checkPolicy" : {
+      "post" : {
+        "operationId" : "PolicyService_checkPolicy",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoPolicyDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "PolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/policies/create" : {
+      "post" : {
+        "operationId" : "PolicyService_create",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoPolicies"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "PolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/policies/getAddons" : {
+      "post" : {
+        "operationId" : "PolicyService_getAddons",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoUsernamePermissionRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "PolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/policies/getApis" : {
+      "post" : {
+        "operationId" : "PolicyService_getApis",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoUsernamePermissionRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "PolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/policies/getAssets" : {
+      "post" : {
+        "operationId" : "PolicyService_getAssets",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoUsernamePermissionRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "PolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/policies/getPolicies" : {
+      "post" : {
+        "operationId" : "PolicyService_getPolicies",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "type" : "string"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "PolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/policies/removePolicy" : {
+      "post" : {
+        "operationId" : "PolicyService_removePolicy",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoPolicyDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "PolicyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/users/create" : {
+      "post" : {
+        "operationId" : "UserService_create",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoUserDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UserService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/users/getAll" : {
+      "post" : {
+        "operationId" : "UserService_getAll",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "type" : "boolean"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UserService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/users/getById" : {
+      "post" : {
+        "operationId" : "UserService_getById",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "type" : "string"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UserService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user-management/users/update" : {
+      "post" : {
+        "operationId" : "UserService_update",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoUserDto"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoServiceResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UserService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/user/notifications" : {
       "post" : {
         "operationId" : "UserService_GetUserNotifications",
@@ -4812,11 +5670,19 @@
   },
   "components" : {
     "schemas" : {
-      "CustomFunctionUsageUsageType" : {
-        "type" : "string"
-      },
       "DynamicLutDynamicLutType" : {
         "type" : "string"
+      },
+      "ErrorValidationErrorDetail" : {
+        "properties" : {
+          "description" : {
+            "type" : "string"
+          },
+          "fieldName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
       },
       "GetAttachmentUploadUrlResponseAttachmentUploadUrl" : {
         "properties" : {
@@ -4879,6 +5745,183 @@
       "RuleDefinitionRuleType" : {
         "type" : "string"
       },
+      "grpcprotoError" : {
+        "properties" : {
+          "code" : {
+            "type" : "integer"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "validationErrorDetails" : {
+            "items" : {
+              "$ref" : "#/components/schemas/ErrorValidationErrorDetail"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "protoEntityDto" : {
+        "properties" : {
+          "enabled" : {
+            "type" : "boolean"
+          },
+          "externalId" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "protoGroupPolicies" : {
+        "properties" : {
+          "groupPolicy" : {
+            "items" : {
+              "$ref" : "#/components/schemas/protoGroupPolicyDto"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "protoGroupPolicyDto" : {
+        "properties" : {
+          "group" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "username" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "protoPolicies" : {
+        "properties" : {
+          "policyDto" : {
+            "items" : {
+              "$ref" : "#/components/schemas/protoPolicyDto"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "protoPolicyDto" : {
+        "properties" : {
+          "addon" : {
+            "type" : "string"
+          },
+          "api" : {
+            "type" : "string"
+          },
+          "apiPermission" : {
+            "type" : "string"
+          },
+          "asset" : {
+            "type" : "string"
+          },
+          "assetPermission" : {
+            "type" : "string"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "username" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "protoSearchCriteria" : {
+        "properties" : {
+          "filter" : {
+            "type" : "string"
+          },
+          "limit" : {
+            "$ref" : "#/components/schemas/protoSearchCriteriaLimit"
+          },
+          "offset" : {
+            "type" : "integer"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/protoSearchCriteriaOrderBy"
+          }
+        },
+        "type" : "object"
+      },
+      "protoSearchCriteriaLimit" : {
+        "properties" : {
+          "value" : {
+            "type" : "integer"
+          }
+        },
+        "type" : "object"
+      },
+      "protoSearchCriteriaOrderBy" : {
+        "properties" : {
+          "column" : {
+            "type" : "string"
+          },
+          "order" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "protoServiceResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/protobufAny"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
+          }
+        },
+        "type" : "object"
+      },
+      "protoUserDto" : {
+        "properties" : {
+          "email" : {
+            "type" : "string"
+          },
+          "enabled" : {
+            "type" : "boolean"
+          },
+          "entity" : {
+            "$ref" : "#/components/schemas/protoEntityDto"
+          },
+          "firstName" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string"
+          },
+          "lastName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "protoUsernamePermissionRequest" : {
+        "properties" : {
+          "permission" : {
+            "type" : "string"
+          },
+          "username" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "protobufAny" : {
         "properties" : {
           "typeUrl" : {
@@ -4936,6 +5979,10 @@
       "titaniumAllParticipantExplorerTableColumn" : {
         "properties" : {
           "absDiffFromConsensusPrice" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "conPriceAbsDiffFromLatestTrade" : {
             "properties" : { },
             "type" : "object"
           },
@@ -5071,6 +6118,44 @@
             "type" : "string"
           },
           "url" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumAvailableTrades" : {
+        "properties" : {
+          "absDiffFromConsensusPrice" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "absDiffFromExpertCohortPrice" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "dayTradeNumber" : {
+            "type" : "string"
+          },
+          "latestTradePrice" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "max" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "min" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "monthTradeNumber" : {
+            "type" : "string"
+          },
+          "subPriceAbsDiffFromLatestTrade" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "weekTradeNumber" : {
             "type" : "string"
           }
         },
@@ -5305,6 +6390,23 @@
         },
         "type" : "object"
       },
+      "titaniumChartDataResponse" : {
+        "properties" : {
+          "chartId" : {
+            "type" : "string"
+          },
+          "chartType" : {
+            "type" : "string"
+          },
+          "series" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumSeries"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumChartPoint" : {
         "properties" : {
           "tenor" : {
@@ -5319,6 +6421,12 @@
       },
       "titaniumChartRanges" : {
         "properties" : {
+          "bimodalLeftPopulation" : {
+            "$ref" : "#/components/schemas/titaniumRange"
+          },
+          "bimodalRightPopulation" : {
+            "$ref" : "#/components/schemas/titaniumRange"
+          },
           "challengeOverlayConsensus" : {
             "$ref" : "#/components/schemas/titaniumRange"
           },
@@ -5457,6 +6565,20 @@
         },
         "type" : "object"
       },
+      "titaniumColDependency" : {
+        "properties" : {
+          "col" : {
+            "type" : "string"
+          },
+          "dependency" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDependency"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumColumnInfo" : {
         "properties" : {
           "columnDbType" : {
@@ -5478,6 +6600,9 @@
         "properties" : {
           "allParticipantCohortConsensus" : {
             "$ref" : "#/components/schemas/titaniumAllParticipantExplorerTableColumn"
+          },
+          "availableTrades" : {
+            "$ref" : "#/components/schemas/titaniumAvailableTrades"
           },
           "evaluatedPrice" : {
             "$ref" : "#/components/schemas/titaniumEvpExplorerTableColumn"
@@ -5527,8 +6652,15 @@
             "properties" : { },
             "type" : "object"
           },
+          "history" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDateAndValue"
+            },
+            "type" : "array"
+          },
           "numberOfParticipants" : {
-            "type" : "string"
+            "properties" : { },
+            "type" : "object"
           },
           "outlierVolume" : {
             "properties" : { },
@@ -5594,6 +6726,12 @@
           "allParticipantCrsConsensusPrice" : {
             "$ref" : "#/components/schemas/titaniumRangePoint"
           },
+          "bimodalLeftMean" : {
+            "$ref" : "#/components/schemas/titaniumRangePoint"
+          },
+          "bimodalRightMean" : {
+            "$ref" : "#/components/schemas/titaniumRangePoint"
+          },
           "challengeOverlayCrsConsensusPrice" : {
             "$ref" : "#/components/schemas/titaniumRangePoint"
           },
@@ -5617,6 +6755,12 @@
           },
           "submissionPoint" : {
             "$ref" : "#/components/schemas/titaniumRangePoint"
+          },
+          "tradePeriodsWithMetrics" : {
+            "$ref" : "#/components/schemas/titaniumTradePeriodsWithMetrics"
+          },
+          "tradeRangesData" : {
+            "$ref" : "#/components/schemas/titaniumTradeRangesData"
           }
         },
         "type" : "object"
@@ -5788,13 +6932,7 @@
           "client" : {
             "type" : "string"
           },
-          "consensusResultSetId" : {
-            "type" : "string"
-          },
           "consensusRunTimestamp" : {
-            "type" : "string"
-          },
-          "filter" : {
             "type" : "string"
           },
           "filterPack" : {
@@ -5807,9 +6945,6 @@
             "$ref" : "#/components/schemas/titaniumPage"
           },
           "submittedDate" : {
-            "type" : "string"
-          },
-          "submittedId" : {
             "type" : "string"
           },
           "traceName" : {
@@ -6026,10 +7161,13 @@
             "$ref" : "#/components/schemas/titaniumIdentifier"
           },
           "type" : {
-            "$ref" : "#/components/schemas/CustomFunctionUsageUsageType"
+            "$ref" : "#/components/schemas/titaniumCustomFunctionUsageUsageType"
           }
         },
         "type" : "object"
+      },
+      "titaniumCustomFunctionUsageUsageType" : {
+        "type" : "string"
       },
       "titaniumDQError" : {
         "properties" : {
@@ -6131,6 +7269,44 @@
         },
         "type" : "object"
       },
+      "titaniumDateAndValue" : {
+        "properties" : {
+          "date" : {
+            "type" : "string"
+          },
+          "value" : {
+            "properties" : { },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumDependency" : {
+        "properties" : {
+          "entity" : {
+            "type" : "string"
+          },
+          "entityName" : {
+            "type" : "string"
+          },
+          "entityType" : {
+            "$ref" : "#/components/schemas/titaniumEntityType"
+          },
+          "scope" : {
+            "type" : "string"
+          },
+          "usages" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumUsage"
+            },
+            "type" : "array"
+          },
+          "version" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumDescriptorBasedIdentifier" : {
         "properties" : {
           "descriptorName" : {
@@ -6181,6 +7357,17 @@
           },
           "error" : {
             "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumDescriptorDependenciesResponse" : {
+        "properties" : {
+          "dependencies" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColDependency"
+            },
+            "type" : "array"
           }
         },
         "type" : "object"
@@ -6266,6 +7453,66 @@
           "results" : {
             "items" : {
               "$ref" : "#/components/schemas/titaniumDescriptorPairBasedIdentifier"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumDtccTabRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "filterPack" : {
+            "$ref" : "#/components/schemas/titaniumFilterPack"
+          },
+          "groupKeys" : {
+            "$ref" : "#/components/schemas/titaniumListOfKeys"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          },
+          "page" : {
+            "$ref" : "#/components/schemas/titaniumPage"
+          },
+          "snapDate" : {
+            "type" : "string"
+          },
+          "submissionId" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumDtccTabResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumDtccTabResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumDtccTabResponseData" : {
+        "properties" : {
+          "columns" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColumnInfo"
+            },
+            "type" : "array"
+          },
+          "page" : {
+            "$ref" : "#/components/schemas/titaniumPage"
+          },
+          "rows" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumValuesRow"
             },
             "type" : "array"
           }
@@ -6433,6 +7680,12 @@
             "properties" : { },
             "type" : "object"
           },
+          "history" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumEvpAlignmentScoreWithDate"
+            },
+            "type" : "array"
+          },
           "score" : {
             "properties" : { },
             "type" : "object"
@@ -6447,6 +7700,21 @@
           "submissionStdDev" : {
             "properties" : { },
             "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumEvpAlignmentScoreWithDate" : {
+        "properties" : {
+          "date" : {
+            "type" : "string"
+          },
+          "score" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "scoreStatus" : {
+            "type" : "string"
           }
         },
         "type" : "object"
@@ -6466,6 +7734,10 @@
             "type" : "object"
           },
           "evpLowerBoundary" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "evpMidAbsDiffFromLatestTrade" : {
             "properties" : { },
             "type" : "object"
           },
@@ -6490,6 +7762,12 @@
       },
       "titaniumEvpQualityScore" : {
         "properties" : {
+          "history" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDateAndValue"
+            },
+            "type" : "array"
+          },
           "indicativeCount" : {
             "type" : "string"
           },
@@ -6509,6 +7787,10 @@
       "titaniumExpertExplorerTableColumn" : {
         "properties" : {
           "absDiffFromExpertCohortMean" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "conPriceAbsDiffFromLatestTrade" : {
             "properties" : { },
             "type" : "object"
           },
@@ -6564,6 +7846,12 @@
             "properties" : { },
             "type" : "object"
           },
+          "history" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumExpertiseScoreWithDate"
+            },
+            "type" : "array"
+          },
           "proximityToPostChallengeConsensusMean" : {
             "properties" : { },
             "type" : "object"
@@ -6573,6 +7861,26 @@
             "type" : "object"
           },
           "submittedScore" : {
+            "properties" : { },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumExpertiseScoreWithDate" : {
+        "properties" : {
+          "date" : {
+            "type" : "string"
+          },
+          "expertiseRank" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "expertsCount" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "score" : {
             "properties" : { },
             "type" : "object"
           }
@@ -6604,6 +7912,12 @@
           },
           "filterPack" : {
             "$ref" : "#/components/schemas/titaniumFilterPack"
+          },
+          "filters" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumFilter"
+            },
+            "type" : "array"
           },
           "includeHeader" : {
             "type" : "boolean"
@@ -7011,6 +8325,44 @@
         },
         "type" : "object"
       },
+      "titaniumGetChartDataRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "chartId" : {
+            "type" : "string"
+          },
+          "filterPack" : {
+            "$ref" : "#/components/schemas/titaniumFilterPack"
+          },
+          "invalidateCache" : {
+            "type" : "boolean"
+          },
+          "parameters" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "sliceId" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumGetChartDataResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumChartDataResponse"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumGetConsensusRunsData" : {
         "properties" : {
           "columns" : {
@@ -7038,6 +8390,9 @@
           },
           "filterPack" : {
             "$ref" : "#/components/schemas/titaniumFilterPack"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
           },
           "page" : {
             "$ref" : "#/components/schemas/titaniumPage"
@@ -7371,11 +8726,38 @@
       },
       "titaniumInstrumentSubmissionStatus" : {
         "properties" : {
+          "bimodality" : {
+            "type" : "string"
+          },
+          "bimodalityHistory" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDateAndValue"
+            },
+            "type" : "array"
+          },
           "consensusStatus" : {
             "type" : "string"
           },
           "consensusStatusDetails" : {
             "type" : "string"
+          },
+          "consensusStatusDetailsHistory" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDateAndValue"
+            },
+            "type" : "array"
+          },
+          "consensusStatusHistory" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDateAndValue"
+            },
+            "type" : "array"
+          },
+          "dqeHistory" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDateAndValue"
+            },
+            "type" : "array"
           },
           "highestDqe" : {
             "type" : "string"
@@ -7385,6 +8767,18 @@
           },
           "participantConsensusStatusDetails" : {
             "type" : "string"
+          },
+          "participantConsensusStatusDetailsHistory" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDateAndValue"
+            },
+            "type" : "array"
+          },
+          "participantConsensusStatusHistory" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumDateAndValue"
+            },
+            "type" : "array"
           }
         },
         "type" : "object"
@@ -7451,6 +8845,18 @@
         },
         "type" : "object"
       },
+      "titaniumKeyAndValue" : {
+        "properties" : {
+          "key" : {
+            "type" : "string"
+          },
+          "value" : {
+            "properties" : { },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumLimit" : {
         "properties" : {
           "value" : {
@@ -7511,6 +8917,17 @@
           },
           "error" : {
             "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumListOfKeys" : {
+        "properties" : {
+          "list" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumKeyAndValue"
+            },
+            "type" : "array"
           }
         },
         "type" : "object"
@@ -7765,6 +9182,17 @@
         "properties" : {
           "message" : {
             "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumMetadata" : {
+        "properties" : {
+          "columnNames" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
           }
         },
         "type" : "object"
@@ -8309,6 +9737,27 @@
         },
         "type" : "object"
       },
+      "titaniumSeries" : {
+        "properties" : {
+          "contentType" : {
+            "type" : "string"
+          },
+          "data" : {
+            "items" : {
+              "properties" : { },
+              "type" : "object"
+            },
+            "type" : "array"
+          },
+          "metadata" : {
+            "$ref" : "#/components/schemas/titaniumMetadata"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumService" : {
         "properties" : {
           "name" : {
@@ -8479,6 +9928,10 @@
             "properties" : { },
             "type" : "object"
           },
+          "statMeanAbsDiffFromLatestTrade" : {
+            "properties" : { },
+            "type" : "object"
+          },
           "statisticalMean" : {
             "properties" : { },
             "type" : "object"
@@ -8644,6 +10097,51 @@
       "titaniumTTLTypes" : {
         "type" : "string"
       },
+      "titaniumTradePeriodMetrics" : {
+        "properties" : {
+          "maxNotionalAmount" : {
+            "type" : "number"
+          },
+          "minNotionalAmount" : {
+            "type" : "number"
+          },
+          "tradeCount" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumTradePeriodsWithMetrics" : {
+        "properties" : {
+          "lessDay" : {
+            "$ref" : "#/components/schemas/titaniumTradePeriodMetrics"
+          },
+          "lessMonth" : {
+            "$ref" : "#/components/schemas/titaniumTradePeriodMetrics"
+          },
+          "lessWeek" : {
+            "$ref" : "#/components/schemas/titaniumTradePeriodMetrics"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumTradeRangesData" : {
+        "properties" : {
+          "latestTradePrice" : {
+            "type" : "number"
+          },
+          "notional" : {
+            "type" : "number"
+          },
+          "pricingRecency" : {
+            "type" : "string"
+          },
+          "tradeExecutionTime" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumTransformation" : {
         "properties" : {
           "description" : {
@@ -8746,6 +10244,20 @@
         },
         "title" : "UploadURLResponse is response to request of url for upload(contains s3 url)",
         "type" : "object"
+      },
+      "titaniumUsage" : {
+        "properties" : {
+          "usageName" : {
+            "type" : "string"
+          },
+          "usageType" : {
+            "$ref" : "#/components/schemas/titaniumUsageUsageType"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUsageUsageType" : {
+        "type" : "string"
       },
       "titaniumUser" : {
         "properties" : {

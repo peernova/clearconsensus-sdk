@@ -50,6 +50,9 @@ class TitaniumAllParticipantExplorerTableColumn {
             if (data.hasOwnProperty('absDiffFromConsensusPrice')) {
                 obj['absDiffFromConsensusPrice'] = ApiClient.convertToType(data['absDiffFromConsensusPrice'], Object);
             }
+            if (data.hasOwnProperty('conPriceAbsDiffFromLatestTrade')) {
+                obj['conPriceAbsDiffFromLatestTrade'] = ApiClient.convertToType(data['conPriceAbsDiffFromLatestTrade'], Object);
+            }
             if (data.hasOwnProperty('consensusPrice')) {
                 obj['consensusPrice'] = ApiClient.convertToType(data['consensusPrice'], Object);
             }
@@ -79,6 +82,11 @@ class TitaniumAllParticipantExplorerTableColumn {
  * @member {Object} absDiffFromConsensusPrice
  */
 TitaniumAllParticipantExplorerTableColumn.prototype['absDiffFromConsensusPrice'] = undefined;
+
+/**
+ * @member {Object} conPriceAbsDiffFromLatestTrade
+ */
+TitaniumAllParticipantExplorerTableColumn.prototype['conPriceAbsDiffFromLatestTrade'] = undefined;
 
 /**
  * @member {Object} consensusPrice

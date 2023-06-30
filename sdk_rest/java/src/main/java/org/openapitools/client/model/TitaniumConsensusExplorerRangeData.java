@@ -25,6 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.TitaniumChartRanges;
 import org.openapitools.client.model.TitaniumRangePoint;
+import org.openapitools.client.model.TitaniumTradePeriodsWithMetrics;
+import org.openapitools.client.model.TitaniumTradeRangesData;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -49,11 +51,19 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusExplorerRangeData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumConsensusExplorerRangeData {
   public static final String SERIALIZED_NAME_ALL_PARTICIPANT_CRS_CONSENSUS_PRICE = "allParticipantCrsConsensusPrice";
   @SerializedName(SERIALIZED_NAME_ALL_PARTICIPANT_CRS_CONSENSUS_PRICE)
   private TitaniumRangePoint allParticipantCrsConsensusPrice;
+
+  public static final String SERIALIZED_NAME_BIMODAL_LEFT_MEAN = "bimodalLeftMean";
+  @SerializedName(SERIALIZED_NAME_BIMODAL_LEFT_MEAN)
+  private TitaniumRangePoint bimodalLeftMean;
+
+  public static final String SERIALIZED_NAME_BIMODAL_RIGHT_MEAN = "bimodalRightMean";
+  @SerializedName(SERIALIZED_NAME_BIMODAL_RIGHT_MEAN)
+  private TitaniumRangePoint bimodalRightMean;
 
   public static final String SERIALIZED_NAME_CHALLENGE_OVERLAY_CRS_CONSENSUS_PRICE = "challengeOverlayCrsConsensusPrice";
   @SerializedName(SERIALIZED_NAME_CHALLENGE_OVERLAY_CRS_CONSENSUS_PRICE)
@@ -87,6 +97,14 @@ public class TitaniumConsensusExplorerRangeData {
   @SerializedName(SERIALIZED_NAME_SUBMISSION_POINT)
   private TitaniumRangePoint submissionPoint;
 
+  public static final String SERIALIZED_NAME_TRADE_PERIODS_WITH_METRICS = "tradePeriodsWithMetrics";
+  @SerializedName(SERIALIZED_NAME_TRADE_PERIODS_WITH_METRICS)
+  private TitaniumTradePeriodsWithMetrics tradePeriodsWithMetrics;
+
+  public static final String SERIALIZED_NAME_TRADE_RANGES_DATA = "tradeRangesData";
+  @SerializedName(SERIALIZED_NAME_TRADE_RANGES_DATA)
+  private TitaniumTradeRangesData tradeRangesData;
+
   public TitaniumConsensusExplorerRangeData() { 
   }
 
@@ -110,6 +128,52 @@ public class TitaniumConsensusExplorerRangeData {
 
   public void setAllParticipantCrsConsensusPrice(TitaniumRangePoint allParticipantCrsConsensusPrice) {
     this.allParticipantCrsConsensusPrice = allParticipantCrsConsensusPrice;
+  }
+
+
+  public TitaniumConsensusExplorerRangeData bimodalLeftMean(TitaniumRangePoint bimodalLeftMean) {
+    
+    this.bimodalLeftMean = bimodalLeftMean;
+    return this;
+  }
+
+   /**
+   * Get bimodalLeftMean
+   * @return bimodalLeftMean
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumRangePoint getBimodalLeftMean() {
+    return bimodalLeftMean;
+  }
+
+
+  public void setBimodalLeftMean(TitaniumRangePoint bimodalLeftMean) {
+    this.bimodalLeftMean = bimodalLeftMean;
+  }
+
+
+  public TitaniumConsensusExplorerRangeData bimodalRightMean(TitaniumRangePoint bimodalRightMean) {
+    
+    this.bimodalRightMean = bimodalRightMean;
+    return this;
+  }
+
+   /**
+   * Get bimodalRightMean
+   * @return bimodalRightMean
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumRangePoint getBimodalRightMean() {
+    return bimodalRightMean;
+  }
+
+
+  public void setBimodalRightMean(TitaniumRangePoint bimodalRightMean) {
+    this.bimodalRightMean = bimodalRightMean;
   }
 
 
@@ -297,6 +361,52 @@ public class TitaniumConsensusExplorerRangeData {
   }
 
 
+  public TitaniumConsensusExplorerRangeData tradePeriodsWithMetrics(TitaniumTradePeriodsWithMetrics tradePeriodsWithMetrics) {
+    
+    this.tradePeriodsWithMetrics = tradePeriodsWithMetrics;
+    return this;
+  }
+
+   /**
+   * Get tradePeriodsWithMetrics
+   * @return tradePeriodsWithMetrics
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumTradePeriodsWithMetrics getTradePeriodsWithMetrics() {
+    return tradePeriodsWithMetrics;
+  }
+
+
+  public void setTradePeriodsWithMetrics(TitaniumTradePeriodsWithMetrics tradePeriodsWithMetrics) {
+    this.tradePeriodsWithMetrics = tradePeriodsWithMetrics;
+  }
+
+
+  public TitaniumConsensusExplorerRangeData tradeRangesData(TitaniumTradeRangesData tradeRangesData) {
+    
+    this.tradeRangesData = tradeRangesData;
+    return this;
+  }
+
+   /**
+   * Get tradeRangesData
+   * @return tradeRangesData
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumTradeRangesData getTradeRangesData() {
+    return tradeRangesData;
+  }
+
+
+  public void setTradeRangesData(TitaniumTradeRangesData tradeRangesData) {
+    this.tradeRangesData = tradeRangesData;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -308,6 +418,8 @@ public class TitaniumConsensusExplorerRangeData {
     }
     TitaniumConsensusExplorerRangeData titaniumConsensusExplorerRangeData = (TitaniumConsensusExplorerRangeData) o;
     return Objects.equals(this.allParticipantCrsConsensusPrice, titaniumConsensusExplorerRangeData.allParticipantCrsConsensusPrice) &&
+        Objects.equals(this.bimodalLeftMean, titaniumConsensusExplorerRangeData.bimodalLeftMean) &&
+        Objects.equals(this.bimodalRightMean, titaniumConsensusExplorerRangeData.bimodalRightMean) &&
         Objects.equals(this.challengeOverlayCrsConsensusPrice, titaniumConsensusExplorerRangeData.challengeOverlayCrsConsensusPrice) &&
         Objects.equals(this.chartRanges, titaniumConsensusExplorerRangeData.chartRanges) &&
         Objects.equals(this.evpMid, titaniumConsensusExplorerRangeData.evpMid) &&
@@ -315,12 +427,14 @@ public class TitaniumConsensusExplorerRangeData {
         Objects.equals(this.expertPreChallengeConsensusPrice, titaniumConsensusExplorerRangeData.expertPreChallengeConsensusPrice) &&
         Objects.equals(this.marketDataCrsConsensusPrice, titaniumConsensusExplorerRangeData.marketDataCrsConsensusPrice) &&
         Objects.equals(this.submissionMeanPoint, titaniumConsensusExplorerRangeData.submissionMeanPoint) &&
-        Objects.equals(this.submissionPoint, titaniumConsensusExplorerRangeData.submissionPoint);
+        Objects.equals(this.submissionPoint, titaniumConsensusExplorerRangeData.submissionPoint) &&
+        Objects.equals(this.tradePeriodsWithMetrics, titaniumConsensusExplorerRangeData.tradePeriodsWithMetrics) &&
+        Objects.equals(this.tradeRangesData, titaniumConsensusExplorerRangeData.tradeRangesData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allParticipantCrsConsensusPrice, challengeOverlayCrsConsensusPrice, chartRanges, evpMid, expertPostChallengeConsensusPrice, expertPreChallengeConsensusPrice, marketDataCrsConsensusPrice, submissionMeanPoint, submissionPoint);
+    return Objects.hash(allParticipantCrsConsensusPrice, bimodalLeftMean, bimodalRightMean, challengeOverlayCrsConsensusPrice, chartRanges, evpMid, expertPostChallengeConsensusPrice, expertPreChallengeConsensusPrice, marketDataCrsConsensusPrice, submissionMeanPoint, submissionPoint, tradePeriodsWithMetrics, tradeRangesData);
   }
 
   @Override
@@ -328,6 +442,8 @@ public class TitaniumConsensusExplorerRangeData {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumConsensusExplorerRangeData {\n");
     sb.append("    allParticipantCrsConsensusPrice: ").append(toIndentedString(allParticipantCrsConsensusPrice)).append("\n");
+    sb.append("    bimodalLeftMean: ").append(toIndentedString(bimodalLeftMean)).append("\n");
+    sb.append("    bimodalRightMean: ").append(toIndentedString(bimodalRightMean)).append("\n");
     sb.append("    challengeOverlayCrsConsensusPrice: ").append(toIndentedString(challengeOverlayCrsConsensusPrice)).append("\n");
     sb.append("    chartRanges: ").append(toIndentedString(chartRanges)).append("\n");
     sb.append("    evpMid: ").append(toIndentedString(evpMid)).append("\n");
@@ -336,6 +452,8 @@ public class TitaniumConsensusExplorerRangeData {
     sb.append("    marketDataCrsConsensusPrice: ").append(toIndentedString(marketDataCrsConsensusPrice)).append("\n");
     sb.append("    submissionMeanPoint: ").append(toIndentedString(submissionMeanPoint)).append("\n");
     sb.append("    submissionPoint: ").append(toIndentedString(submissionPoint)).append("\n");
+    sb.append("    tradePeriodsWithMetrics: ").append(toIndentedString(tradePeriodsWithMetrics)).append("\n");
+    sb.append("    tradeRangesData: ").append(toIndentedString(tradeRangesData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -359,6 +477,8 @@ public class TitaniumConsensusExplorerRangeData {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("allParticipantCrsConsensusPrice");
+    openapiFields.add("bimodalLeftMean");
+    openapiFields.add("bimodalRightMean");
     openapiFields.add("challengeOverlayCrsConsensusPrice");
     openapiFields.add("chartRanges");
     openapiFields.add("evpMid");
@@ -367,6 +487,8 @@ public class TitaniumConsensusExplorerRangeData {
     openapiFields.add("marketDataCrsConsensusPrice");
     openapiFields.add("submissionMeanPoint");
     openapiFields.add("submissionPoint");
+    openapiFields.add("tradePeriodsWithMetrics");
+    openapiFields.add("tradeRangesData");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -397,6 +519,14 @@ public class TitaniumConsensusExplorerRangeData {
       // validate the optional field `allParticipantCrsConsensusPrice`
       if (jsonObj.getAsJsonObject("allParticipantCrsConsensusPrice") != null) {
         TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("allParticipantCrsConsensusPrice"));
+      }
+      // validate the optional field `bimodalLeftMean`
+      if (jsonObj.getAsJsonObject("bimodalLeftMean") != null) {
+        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("bimodalLeftMean"));
+      }
+      // validate the optional field `bimodalRightMean`
+      if (jsonObj.getAsJsonObject("bimodalRightMean") != null) {
+        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("bimodalRightMean"));
       }
       // validate the optional field `challengeOverlayCrsConsensusPrice`
       if (jsonObj.getAsJsonObject("challengeOverlayCrsConsensusPrice") != null) {
@@ -429,6 +559,14 @@ public class TitaniumConsensusExplorerRangeData {
       // validate the optional field `submissionPoint`
       if (jsonObj.getAsJsonObject("submissionPoint") != null) {
         TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("submissionPoint"));
+      }
+      // validate the optional field `tradePeriodsWithMetrics`
+      if (jsonObj.getAsJsonObject("tradePeriodsWithMetrics") != null) {
+        TitaniumTradePeriodsWithMetrics.validateJsonObject(jsonObj.getAsJsonObject("tradePeriodsWithMetrics"));
+      }
+      // validate the optional field `tradeRangesData`
+      if (jsonObj.getAsJsonObject("tradeRangesData") != null) {
+        TitaniumTradeRangesData.validateJsonObject(jsonObj.getAsJsonObject("tradeRangesData"));
       }
   }
 

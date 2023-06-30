@@ -38,6 +38,7 @@ class TitaniumEvpAlignmentScore(object):
     openapi_types = {
         'evp_alignment_dispersion_score': 'object',
         'evp_mid': 'object',
+        'history': 'list[TitaniumEvpAlignmentScoreWithDate]',
         'score': 'object',
         'score_status': 'str',
         'submission_mean': 'object',
@@ -47,13 +48,14 @@ class TitaniumEvpAlignmentScore(object):
     attribute_map = {
         'evp_alignment_dispersion_score': 'evpAlignmentDispersionScore',
         'evp_mid': 'evpMid',
+        'history': 'history',
         'score': 'score',
         'score_status': 'scoreStatus',
         'submission_mean': 'submissionMean',
         'submission_std_dev': 'submissionStdDev'
     }
 
-    def __init__(self, evp_alignment_dispersion_score=None, evp_mid=None, score=None, score_status=None, submission_mean=None, submission_std_dev=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, evp_alignment_dispersion_score=None, evp_mid=None, history=None, score=None, score_status=None, submission_mean=None, submission_std_dev=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumEvpAlignmentScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -61,6 +63,7 @@ class TitaniumEvpAlignmentScore(object):
 
         self._evp_alignment_dispersion_score = None
         self._evp_mid = None
+        self._history = None
         self._score = None
         self._score_status = None
         self._submission_mean = None
@@ -71,6 +74,8 @@ class TitaniumEvpAlignmentScore(object):
             self.evp_alignment_dispersion_score = evp_alignment_dispersion_score
         if evp_mid is not None:
             self.evp_mid = evp_mid
+        if history is not None:
+            self.history = history
         if score is not None:
             self.score = score
         if score_status is not None:
@@ -121,6 +126,27 @@ class TitaniumEvpAlignmentScore(object):
         """
 
         self._evp_mid = evp_mid
+
+    @property
+    def history(self):
+        """Gets the history of this TitaniumEvpAlignmentScore.  # noqa: E501
+
+
+        :return: The history of this TitaniumEvpAlignmentScore.  # noqa: E501
+        :rtype: list[TitaniumEvpAlignmentScoreWithDate]
+        """
+        return self._history
+
+    @history.setter
+    def history(self, history):
+        """Sets the history of this TitaniumEvpAlignmentScore.
+
+
+        :param history: The history of this TitaniumEvpAlignmentScore.  # noqa: E501
+        :type history: list[TitaniumEvpAlignmentScoreWithDate]
+        """
+
+        self._history = history
 
     @property
     def score(self):

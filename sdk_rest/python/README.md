@@ -128,6 +128,7 @@ Class | Method | HTTP request | Description
 *ChallengeServiceApi* | [**challenge_service_challenge_freeze_status**](docs/ChallengeServiceApi.md#challenge_service_challenge_freeze_status) | **POST** /api/v1/challenge/freeze/status | ChallengeFreezeStatus returns StatusResponse that contains string that represents freeze status of challenges if the challenge process is stopped and nothing if the one is not. Challenge can be stopped by operator.Dealer can see the freeze status using this method. Need to specify consensus(where outliers exists) run timestamp.
 *ChallengeServiceApi* | [**challenge_service_get_challenge_attachment_upload_url**](docs/ChallengeServiceApi.md#challenge_service_get_challenge_attachment_upload_url) | **POST** /api/v1/challenge/attachment_upload_urls | GetChallengeAttachmentUploadUrl returns string that represents s3 URL that can be used to upload attachment for the challenge. The file in attachment can be any file that provides additional information about the disputable outlier. Need to specify asset ID, submitted ID and file name.
 *ChallengeServiceApi* | [**challenge_service_get_challenge_details**](docs/ChallengeServiceApi.md#challenge_service_get_challenge_details) | **POST** /api/v1/challenge-details | 
+*ChartServiceApi* | [**chart_service_get_chart_data**](docs/ChartServiceApi.md#chart_service_get_chart_data) | **POST** /api/v1/analytics/chart-data | 
 *ChartsServiceApi* | [**charts_service_charts**](docs/ChartsServiceApi.md#charts_service_charts) | **POST** /api/v1/charts | Charts returns information about specific chart related to the specific asset.
 *ChartsServiceApi* | [**charts_service_charts_currencies**](docs/ChartsServiceApi.md#charts_service_charts_currencies) | **POST** /api/v1/charts/currencies | ChartsCurrencies returns information about the chart related to specific currency pair.
 *ConsensusServiceApi* | [**consensus_service_consensus**](docs/ConsensusServiceApi.md#consensus_service_consensus) | **POST** /api/v1/consensus | Consensus return information about consensus according to request. Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition) Returns ConsensusResponse that contains information about column and rows related to consensus.
@@ -150,6 +151,7 @@ Class | Method | HTTP request | Description
 *DataServiceApi* | [**data_service_submitted**](docs/DataServiceApi.md#data_service_submitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
 *DataServiceApi* | [**data_service_upload_url**](docs/DataServiceApi.md#data_service_upload_url) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
 *DbDescriptorServiceApi* | [**db_descriptor_service_add_db_descriptor**](docs/DbDescriptorServiceApi.md#db_descriptor_service_add_db_descriptor) | **POST** /api/v1/db/descriptor/add | 
+*DbDescriptorServiceApi* | [**db_descriptor_service_descriptor_dependencies**](docs/DbDescriptorServiceApi.md#db_descriptor_service_descriptor_dependencies) | **POST** /api/v1/db/descriptor/dependencies | 
 *DbDescriptorServiceApi* | [**db_descriptor_service_disable_db_descriptor**](docs/DbDescriptorServiceApi.md#db_descriptor_service_disable_db_descriptor) | **POST** /api/v1/db/descriptor/disable | 
 *DbDescriptorServiceApi* | [**db_descriptor_service_enable_db_descriptor**](docs/DbDescriptorServiceApi.md#db_descriptor_service_enable_db_descriptor) | **POST** /api/v1/db/descriptor/enable | 
 *DbDescriptorServiceApi* | [**db_descriptor_service_get_db_descriptor**](docs/DbDescriptorServiceApi.md#db_descriptor_service_get_db_descriptor) | **POST** /api/v1/db/descriptor/get | 
@@ -157,12 +159,19 @@ Class | Method | HTTP request | Description
 *DbDescriptorServiceApi* | [**db_descriptor_service_list_db_descriptor_versions**](docs/DbDescriptorServiceApi.md#db_descriptor_service_list_db_descriptor_versions) | **POST** /api/v1/db/descriptor/versions | 
 *DbDescriptorServiceApi* | [**db_descriptor_service_list_db_descriptors**](docs/DbDescriptorServiceApi.md#db_descriptor_service_list_db_descriptors) | **POST** /api/v1/db/descriptor/list | 
 *DescriptorServiceApi* | [**descriptor_service_add_descriptor**](docs/DescriptorServiceApi.md#descriptor_service_add_descriptor) | **POST** /api/v1/descriptor/add | AddDescriptor is used to add specific descriptor with specific definition to the system. Regular users can store a descriptor within their own scope, and any attempts to push it to a different scope will be declined. Back office users can store descriptors in any scope, provided that a scope key is provided. The name of the descriptor must match the name of the asset class to be mapped correctly. If a descriptor with the same name already exists, it will be updated.
+*DescriptorServiceApi* | [**descriptor_service_descriptor_dependencies**](docs/DescriptorServiceApi.md#descriptor_service_descriptor_dependencies) | **POST** /api/v1/descriptor/dependencies | 
 *DescriptorServiceApi* | [**descriptor_service_disable_descriptor**](docs/DescriptorServiceApi.md#descriptor_service_disable_descriptor) | **POST** /api/v1/descriptor/disable | DisableDescriptor is used to disable specific descriptor. Example of response : {    \&quot;data\&quot;: {        \&quot;uid\&quot;: \&quot;\&quot;,        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
 *DescriptorServiceApi* | [**descriptor_service_enable_descriptor**](docs/DescriptorServiceApi.md#descriptor_service_enable_descriptor) | **POST** /api/v1/descriptor/enable | EnableDescriptor is used to enable specific descriptor.
 *DescriptorServiceApi* | [**descriptor_service_get_descriptor**](docs/DescriptorServiceApi.md#descriptor_service_get_descriptor) | **POST** /api/v1/descriptor/get | GetDescriptor is used to get specific descriptor definition based on get definition. Regular users can retrieve only their own descriptors and descriptors associated with asset classes. Back office users can retrieve any of the existing descriptors.
 *DescriptorServiceApi* | [**descriptor_service_get_descriptor_version**](docs/DescriptorServiceApi.md#descriptor_service_get_descriptor_version) | **GET** /api/v1/descriptor/version/{scope}/{name}/{versionId} | GetDescriptorVersion returns current version of the specific descriptor.
 *DescriptorServiceApi* | [**descriptor_service_list_descriptor_versions**](docs/DescriptorServiceApi.md#descriptor_service_list_descriptor_versions) | **POST** /api/v1/descriptor/versions | ListDescriptorVersions returns list of version of the specific descriptor versions.
 *DescriptorServiceApi* | [**descriptor_service_list_descriptors**](docs/DescriptorServiceApi.md#descriptor_service_list_descriptors) | **POST** /api/v1/descriptor/list | ListDescriptors returns list of specific descriptors according to request.
+*DtccServiceApi* | [**dtcc_service_get_dtcc_table**](docs/DtccServiceApi.md#dtcc_service_get_dtcc_table) | **POST** /api/v1/dtcc/tab | 
+*EntityServiceApi* | [**entity_service_create**](docs/EntityServiceApi.md#entity_service_create) | **POST** /api/v1/user-management/entities/create | 
+*EntityServiceApi* | [**entity_service_find**](docs/EntityServiceApi.md#entity_service_find) | **POST** /api/v1/user-management/entities/find | 
+*EntityServiceApi* | [**entity_service_get_all_enabled_only**](docs/EntityServiceApi.md#entity_service_get_all_enabled_only) | **POST** /api/v1/user-management/entities/getAllByEnabled | 
+*EntityServiceApi* | [**entity_service_get_by_id**](docs/EntityServiceApi.md#entity_service_get_by_id) | **POST** /api/v1/user-management/entities/getById | 
+*EntityServiceApi* | [**entity_service_update**](docs/EntityServiceApi.md#entity_service_update) | **POST** /api/v1/user-management/entities/update | 
 *FileServiceApi* | [**file_service_file_history**](docs/FileServiceApi.md#file_service_file_history) | **POST** /api/v1/file-history | FileHistory retrieves the history for a specified file.
 *FileServiceApi* | [**file_service_file_submission**](docs/FileServiceApi.md#file_service_file_submission) | **POST** /api/v1/file-submission | FileSubmission submits a file for processing.
 *FileServiceApi* | [**file_service_get_file_delimiter**](docs/FileServiceApi.md#file_service_get_file_delimiter) | **POST** /api/v1/import/{filename}/delimiter | GetFileDelimiter retrieves the delimiter for a specified file.
@@ -172,6 +181,8 @@ Class | Method | HTTP request | Description
 *FileServiceApi* | [**file_service_list_files**](docs/FileServiceApi.md#file_service_list_files) | **POST** /api/v1/import/list | ListFiles retrieves a list of files.
 *FileServiceApi* | [**file_service_set_file_delimiter**](docs/FileServiceApi.md#file_service_set_file_delimiter) | **POST** /api/v1/import/{fileIdentifier.filename}/delimiter | SetFileDelimiter sets the delimiter for a specified file.
 *FileServiceApi* | [**file_service_set_file_descriptor**](docs/FileServiceApi.md#file_service_set_file_descriptor) | **POST** /api/v1/import/{fileIdentifier.filename}/descriptor | SetFileDescriptor sets the descriptor for a specified file.
+*GroupPolicyServiceApi* | [**group_policy_service_create**](docs/GroupPolicyServiceApi.md#group_policy_service_create) | **POST** /api/v1/user-management/group-policies/create | 
+*GroupPolicyServiceApi* | [**group_policy_service_get_policies**](docs/GroupPolicyServiceApi.md#group_policy_service_get_policies) | **POST** /api/v1/user-management/group-policies/getPolicies | 
 *KVServiceApi* | [**k_v_service_add_key**](docs/KVServiceApi.md#k_v_service_add_key) | **POST** /api/v1/kv/add | 
 *KVServiceApi* | [**k_v_service_delete_key**](docs/KVServiceApi.md#k_v_service_delete_key) | **POST** /api/v1/kv/delete | 
 *KVServiceApi* | [**k_v_service_get_key**](docs/KVServiceApi.md#k_v_service_get_key) | **POST** /api/v1/kv/get | 
@@ -202,6 +213,13 @@ Class | Method | HTTP request | Description
 *NormalizationServiceApi* | [**normalization_service_list_normalization_rule_versions**](docs/NormalizationServiceApi.md#normalization_service_list_normalization_rule_versions) | **POST** /api/v1/normalization/rule/versions | 
 *NormalizationServiceApi* | [**normalization_service_list_normalization_rules**](docs/NormalizationServiceApi.md#normalization_service_list_normalization_rules) | **POST** /api/v1/normalization/rule/list | 
 *OutliersServiceApi* | [**outliers_service_outliers**](docs/OutliersServiceApi.md#outliers_service_outliers) | **POST** /api/v1/outliers | Outliers returns outliers according to request.
+*PolicyServiceApi* | [**policy_service_check_policy**](docs/PolicyServiceApi.md#policy_service_check_policy) | **POST** /api/v1/user-management/policies/checkPolicy | 
+*PolicyServiceApi* | [**policy_service_create**](docs/PolicyServiceApi.md#policy_service_create) | **POST** /api/v1/user-management/policies/create | 
+*PolicyServiceApi* | [**policy_service_get_addons**](docs/PolicyServiceApi.md#policy_service_get_addons) | **POST** /api/v1/user-management/policies/getAddons | 
+*PolicyServiceApi* | [**policy_service_get_apis**](docs/PolicyServiceApi.md#policy_service_get_apis) | **POST** /api/v1/user-management/policies/getApis | 
+*PolicyServiceApi* | [**policy_service_get_assets**](docs/PolicyServiceApi.md#policy_service_get_assets) | **POST** /api/v1/user-management/policies/getAssets | 
+*PolicyServiceApi* | [**policy_service_get_policies**](docs/PolicyServiceApi.md#policy_service_get_policies) | **POST** /api/v1/user-management/policies/getPolicies | 
+*PolicyServiceApi* | [**policy_service_remove_policy**](docs/PolicyServiceApi.md#policy_service_remove_policy) | **POST** /api/v1/user-management/policies/removePolicy | 
 *PopUpServiceApi* | [**pop_up_service_pop_up_view**](docs/PopUpServiceApi.md#pop_up_service_pop_up_view) | **POST** /api/v1/popup-view | PopUpView returns information according to request for the popup view.
 *ScopeServiceApi* | [**scope_service_add_scope**](docs/ScopeServiceApi.md#scope_service_add_scope) | **POST** /api/v1/scope/add | AddScope creates scope in the system.
 *ScopeServiceApi* | [**scope_service_exist_scope**](docs/ScopeServiceApi.md#scope_service_exist_scope) | **POST** /api/v1/scope/exist | ExistScope return boolean value about existence of scope according to request.
@@ -215,11 +233,15 @@ Class | Method | HTTP request | Description
 *UniqueKeyServiceApi* | [**unique_key_service_list_unique_key_versions**](docs/UniqueKeyServiceApi.md#unique_key_service_list_unique_key_versions) | **POST** /api/v1/uniquekey/versions | ListUniqueKeyVersions is used to retrieve a list of all versions of a specific unique key definition by its scope and name. Request: {   \&quot;scope\&quot;:\&quot;global\&quot;,   \&quot;identifier\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
 *UniqueKeyServiceApi* | [**unique_key_service_list_unique_keys**](docs/UniqueKeyServiceApi.md#unique_key_service_list_unique_keys) | **POST** /api/v1/uniquekey/list | ListUniqueKeys is used to retrieve a list of all unique key definitions in the system. Request: {   \&quot;scope\&quot;:\&quot;global\&quot; }
 *UserServiceApi* | [**user_service_add_user_notification**](docs/UserServiceApi.md#user_service_add_user_notification) | **POST** /api/v1/user/notifications/add | 
+*UserServiceApi* | [**user_service_create**](docs/UserServiceApi.md#user_service_create) | **POST** /api/v1/user-management/users/create | 
 *UserServiceApi* | [**user_service_delete_user_notification**](docs/UserServiceApi.md#user_service_delete_user_notification) | **POST** /api/v1/user/notifications/delete | 
+*UserServiceApi* | [**user_service_get_all**](docs/UserServiceApi.md#user_service_get_all) | **POST** /api/v1/user-management/users/getAll | 
+*UserServiceApi* | [**user_service_get_by_id**](docs/UserServiceApi.md#user_service_get_by_id) | **POST** /api/v1/user-management/users/getById | 
 *UserServiceApi* | [**user_service_get_user**](docs/UserServiceApi.md#user_service_get_user) | **POST** /api/v1/user | 
 *UserServiceApi* | [**user_service_get_user_notifications**](docs/UserServiceApi.md#user_service_get_user_notifications) | **POST** /api/v1/user/notifications | 
 *UserServiceApi* | [**user_service_get_user_notifications_by_market**](docs/UserServiceApi.md#user_service_get_user_notifications_by_market) | **POST** /api/v1/user/notifications/market | 
 *UserServiceApi* | [**user_service_get_user_permissions**](docs/UserServiceApi.md#user_service_get_user_permissions) | **POST** /api/v1/user/permissions | 
+*UserServiceApi* | [**user_service_update**](docs/UserServiceApi.md#user_service_update) | **POST** /api/v1/user-management/users/update | 
 *UserServiceApi* | [**user_service_update_user_notification**](docs/UserServiceApi.md#user_service_update_user_notification) | **POST** /api/v1/user/notifications/update | 
 *ValidatorServiceApi* | [**validator_service_add_validation_rule**](docs/ValidatorServiceApi.md#validator_service_add_validation_rule) | **POST** /api/v1/validation/rule/add | AddValidationRule is a method used to add a validation rule to the system. Backoffice users can create a new validation ruleset in the &#39;global&#39; scope, for each asset class. Participant users can create a new validation ruleset in its own scope, for each asset class. Backoffice users can represent any participant and create a new validation ruleset in that participant&#39;s scope. The default scope is used if no scope is given in the request (&#39;global&#39; for the operator, participant scope for that participant user). The authorization will be fetched from the user&#39;s token. It will do an update if a validation rule with the same name already exists.
 *ValidatorServiceApi* | [**validator_service_disable_validation_rule**](docs/ValidatorServiceApi.md#validator_service_disable_validation_rule) | **POST** /api/v1/validation/rule/disable | DisableValidationRule method disables a validation rule in the system. The request includes the descriptor name and scope of the rule. Example of Request: { \&quot;descriptor_name\&quot; : \&quot;foreign_exchange-vanilla-forwards\&quot;, \&quot;scope\&quot;: \&quot;global\&quot; }
@@ -236,11 +258,24 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [ErrorValidationErrorDetail](docs/ErrorValidationErrorDetail.md)
  - [FileServiceGetFilePreviewRequest](docs/FileServiceGetFilePreviewRequest.md)
  - [GetAttachmentUploadUrlResponseAttachmentUploadUrl](docs/GetAttachmentUploadUrlResponseAttachmentUploadUrl.md)
  - [GetChallengeDetailsResponseCommonChallengeData](docs/GetChallengeDetailsResponseCommonChallengeData.md)
  - [GetChallengeDetailsResponseResult](docs/GetChallengeDetailsResponseResult.md)
  - [GetFileExportUrlResponseFileExportUrl](docs/GetFileExportUrlResponseFileExportUrl.md)
+ - [GrpcprotoError](docs/GrpcprotoError.md)
+ - [ProtoEntityDto](docs/ProtoEntityDto.md)
+ - [ProtoGroupPolicies](docs/ProtoGroupPolicies.md)
+ - [ProtoGroupPolicyDto](docs/ProtoGroupPolicyDto.md)
+ - [ProtoPolicies](docs/ProtoPolicies.md)
+ - [ProtoPolicyDto](docs/ProtoPolicyDto.md)
+ - [ProtoSearchCriteria](docs/ProtoSearchCriteria.md)
+ - [ProtoSearchCriteriaLimit](docs/ProtoSearchCriteriaLimit.md)
+ - [ProtoSearchCriteriaOrderBy](docs/ProtoSearchCriteriaOrderBy.md)
+ - [ProtoServiceResponse](docs/ProtoServiceResponse.md)
+ - [ProtoUserDto](docs/ProtoUserDto.md)
+ - [ProtoUsernamePermissionRequest](docs/ProtoUsernamePermissionRequest.md)
  - [ProtobufAny](docs/ProtobufAny.md)
  - [RpcStatus](docs/RpcStatus.md)
  - [TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)
@@ -254,6 +289,7 @@ Class | Method | HTTP request | Description
  - [TitaniumAssetsRequest](docs/TitaniumAssetsRequest.md)
  - [TitaniumAssetsResponse](docs/TitaniumAssetsResponse.md)
  - [TitaniumAttachment](docs/TitaniumAttachment.md)
+ - [TitaniumAvailableTrades](docs/TitaniumAvailableTrades.md)
  - [TitaniumBenchmarkMetadata](docs/TitaniumBenchmarkMetadata.md)
  - [TitaniumChallengeCreateRequest](docs/TitaniumChallengeCreateRequest.md)
  - [TitaniumChallengeCreateResponse](docs/TitaniumChallengeCreateResponse.md)
@@ -270,6 +306,7 @@ Class | Method | HTTP request | Description
  - [TitaniumChallengeFormOneOfFields](docs/TitaniumChallengeFormOneOfFields.md)
  - [TitaniumChallengeFreezeStatusRequest](docs/TitaniumChallengeFreezeStatusRequest.md)
  - [TitaniumChart](docs/TitaniumChart.md)
+ - [TitaniumChartDataResponse](docs/TitaniumChartDataResponse.md)
  - [TitaniumChartPoint](docs/TitaniumChartPoint.md)
  - [TitaniumChartRanges](docs/TitaniumChartRanges.md)
  - [TitaniumChartSource](docs/TitaniumChartSource.md)
@@ -279,6 +316,7 @@ Class | Method | HTTP request | Description
  - [TitaniumChartsRequest](docs/TitaniumChartsRequest.md)
  - [TitaniumChartsResponse](docs/TitaniumChartsResponse.md)
  - [TitaniumChartsResponseData](docs/TitaniumChartsResponseData.md)
+ - [TitaniumColDependency](docs/TitaniumColDependency.md)
  - [TitaniumColumnInfo](docs/TitaniumColumnInfo.md)
  - [TitaniumComparisonTable](docs/TitaniumComparisonTable.md)
  - [TitaniumConsensusActiveResponse](docs/TitaniumConsensusActiveResponse.md)
@@ -316,16 +354,22 @@ Class | Method | HTTP request | Description
  - [TitaniumDataQualityError](docs/TitaniumDataQualityError.md)
  - [TitaniumDataQualityErrors](docs/TitaniumDataQualityErrors.md)
  - [TitaniumDataQualityErrorsResponse](docs/TitaniumDataQualityErrorsResponse.md)
+ - [TitaniumDateAndValue](docs/TitaniumDateAndValue.md)
+ - [TitaniumDependency](docs/TitaniumDependency.md)
  - [TitaniumDescriptorBasedIdentifier](docs/TitaniumDescriptorBasedIdentifier.md)
  - [TitaniumDescriptorBasedResultsList](docs/TitaniumDescriptorBasedResultsList.md)
  - [TitaniumDescriptorDefinition](docs/TitaniumDescriptorDefinition.md)
  - [TitaniumDescriptorDefinitionResponse](docs/TitaniumDescriptorDefinitionResponse.md)
+ - [TitaniumDescriptorDependenciesResponse](docs/TitaniumDescriptorDependenciesResponse.md)
  - [TitaniumDescriptorField](docs/TitaniumDescriptorField.md)
  - [TitaniumDescriptorList](docs/TitaniumDescriptorList.md)
  - [TitaniumDescriptorPairBasedAcknowledgeResponse](docs/TitaniumDescriptorPairBasedAcknowledgeResponse.md)
  - [TitaniumDescriptorPairBasedGetDefinition](docs/TitaniumDescriptorPairBasedGetDefinition.md)
  - [TitaniumDescriptorPairBasedIdentifier](docs/TitaniumDescriptorPairBasedIdentifier.md)
  - [TitaniumDescriptorPairBasedResultsList](docs/TitaniumDescriptorPairBasedResultsList.md)
+ - [TitaniumDtccTabRequest](docs/TitaniumDtccTabRequest.md)
+ - [TitaniumDtccTabResponse](docs/TitaniumDtccTabResponse.md)
+ - [TitaniumDtccTabResponseData](docs/TitaniumDtccTabResponseData.md)
  - [TitaniumDynamicLut](docs/TitaniumDynamicLut.md)
  - [TitaniumEVPRequest](docs/TitaniumEVPRequest.md)
  - [TitaniumEVPResponse](docs/TitaniumEVPResponse.md)
@@ -336,10 +380,12 @@ Class | Method | HTTP request | Description
  - [TitaniumError](docs/TitaniumError.md)
  - [TitaniumErrorDefinition](docs/TitaniumErrorDefinition.md)
  - [TitaniumEvpAlignmentScore](docs/TitaniumEvpAlignmentScore.md)
+ - [TitaniumEvpAlignmentScoreWithDate](docs/TitaniumEvpAlignmentScoreWithDate.md)
  - [TitaniumEvpExplorerTableColumn](docs/TitaniumEvpExplorerTableColumn.md)
  - [TitaniumEvpQualityScore](docs/TitaniumEvpQualityScore.md)
  - [TitaniumExpertExplorerTableColumn](docs/TitaniumExpertExplorerTableColumn.md)
  - [TitaniumExpertiseScore](docs/TitaniumExpertiseScore.md)
+ - [TitaniumExpertiseScoreWithDate](docs/TitaniumExpertiseScoreWithDate.md)
  - [TitaniumExportPresignedUrlResponseResponseData](docs/TitaniumExportPresignedUrlResponseResponseData.md)
  - [TitaniumExportRequest](docs/TitaniumExportRequest.md)
  - [TitaniumExportResponse](docs/TitaniumExportResponse.md)
@@ -365,6 +411,8 @@ Class | Method | HTTP request | Description
  - [TitaniumGetAttachmentUploadUrlResponse](docs/TitaniumGetAttachmentUploadUrlResponse.md)
  - [TitaniumGetChallengeDetailsRequest](docs/TitaniumGetChallengeDetailsRequest.md)
  - [TitaniumGetChallengeDetailsResponse](docs/TitaniumGetChallengeDetailsResponse.md)
+ - [TitaniumGetChartDataRequest](docs/TitaniumGetChartDataRequest.md)
+ - [TitaniumGetChartDataResponse](docs/TitaniumGetChartDataResponse.md)
  - [TitaniumGetConsensusRunsData](docs/TitaniumGetConsensusRunsData.md)
  - [TitaniumGetConsensusRunsRequest](docs/TitaniumGetConsensusRunsRequest.md)
  - [TitaniumGetConsensusRunsResponse](docs/TitaniumGetConsensusRunsResponse.md)
@@ -397,12 +445,14 @@ Class | Method | HTTP request | Description
  - [TitaniumKVListAsset](docs/TitaniumKVListAsset.md)
  - [TitaniumKVOperationResponse](docs/TitaniumKVOperationResponse.md)
  - [TitaniumKVRequest](docs/TitaniumKVRequest.md)
+ - [TitaniumKeyAndValue](docs/TitaniumKeyAndValue.md)
  - [TitaniumLimit](docs/TitaniumLimit.md)
  - [TitaniumListCustomFunctionRequest](docs/TitaniumListCustomFunctionRequest.md)
  - [TitaniumListCustomFunctionResponse](docs/TitaniumListCustomFunctionResponse.md)
  - [TitaniumListKVRequest](docs/TitaniumListKVRequest.md)
  - [TitaniumListKVResponse](docs/TitaniumListKVResponse.md)
  - [TitaniumListLookupTableResponse](docs/TitaniumListLookupTableResponse.md)
+ - [TitaniumListOfKeys](docs/TitaniumListOfKeys.md)
  - [TitaniumListRequest](docs/TitaniumListRequest.md)
  - [TitaniumListRuleResponse](docs/TitaniumListRuleResponse.md)
  - [TitaniumListUniqueKeysResponse](docs/TitaniumListUniqueKeysResponse.md)
@@ -422,6 +472,7 @@ Class | Method | HTTP request | Description
  - [TitaniumMarketSnapTimeResponse](docs/TitaniumMarketSnapTimeResponse.md)
  - [TitaniumMessageResponse](docs/TitaniumMessageResponse.md)
  - [TitaniumMessageResponseData](docs/TitaniumMessageResponseData.md)
+ - [TitaniumMetadata](docs/TitaniumMetadata.md)
  - [TitaniumNameAliasPair](docs/TitaniumNameAliasPair.md)
  - [TitaniumNormalizationRuleDefinition](docs/TitaniumNormalizationRuleDefinition.md)
  - [TitaniumNormalizationRuleResponse](docs/TitaniumNormalizationRuleResponse.md)
@@ -454,6 +505,7 @@ Class | Method | HTTP request | Description
  - [TitaniumScopeExistResponse](docs/TitaniumScopeExistResponse.md)
  - [TitaniumScopeIdentifier](docs/TitaniumScopeIdentifier.md)
  - [TitaniumScopeListResponse](docs/TitaniumScopeListResponse.md)
+ - [TitaniumSeries](docs/TitaniumSeries.md)
  - [TitaniumService](docs/TitaniumService.md)
  - [TitaniumSetFileDelimiterRequest](docs/TitaniumSetFileDelimiterRequest.md)
  - [TitaniumSetFileDescriptorRequest](docs/TitaniumSetFileDescriptorRequest.md)
@@ -472,12 +524,16 @@ Class | Method | HTTP request | Description
  - [TitaniumSubmittedResponseData](docs/TitaniumSubmittedResponseData.md)
  - [TitaniumSubmittedRow](docs/TitaniumSubmittedRow.md)
  - [TitaniumSupportedField](docs/TitaniumSupportedField.md)
+ - [TitaniumTradePeriodMetrics](docs/TitaniumTradePeriodMetrics.md)
+ - [TitaniumTradePeriodsWithMetrics](docs/TitaniumTradePeriodsWithMetrics.md)
+ - [TitaniumTradeRangesData](docs/TitaniumTradeRangesData.md)
  - [TitaniumTransformation](docs/TitaniumTransformation.md)
  - [TitaniumUniqueKeyDefinition](docs/TitaniumUniqueKeyDefinition.md)
  - [TitaniumUniqueKeyDefinitionResponse](docs/TitaniumUniqueKeyDefinitionResponse.md)
  - [TitaniumUniqueKeyList](docs/TitaniumUniqueKeyList.md)
  - [TitaniumUploadURLRequest](docs/TitaniumUploadURLRequest.md)
  - [TitaniumUploadURLResponse](docs/TitaniumUploadURLResponse.md)
+ - [TitaniumUsage](docs/TitaniumUsage.md)
  - [TitaniumUser](docs/TitaniumUser.md)
  - [TitaniumUserNotification](docs/TitaniumUserNotification.md)
  - [TitaniumUserNotificationRequest](docs/TitaniumUserNotificationRequest.md)

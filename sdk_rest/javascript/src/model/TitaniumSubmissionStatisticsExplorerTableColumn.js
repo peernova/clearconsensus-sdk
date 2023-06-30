@@ -59,6 +59,9 @@ class TitaniumSubmissionStatisticsExplorerTableColumn {
             if (data.hasOwnProperty('min')) {
                 obj['min'] = ApiClient.convertToType(data['min'], Object);
             }
+            if (data.hasOwnProperty('statMeanAbsDiffFromLatestTrade')) {
+                obj['statMeanAbsDiffFromLatestTrade'] = ApiClient.convertToType(data['statMeanAbsDiffFromLatestTrade'], Object);
+            }
             if (data.hasOwnProperty('statisticalMean')) {
                 obj['statisticalMean'] = ApiClient.convertToType(data['statisticalMean'], Object);
             }
@@ -100,6 +103,11 @@ TitaniumSubmissionStatisticsExplorerTableColumn.prototype['max'] = undefined;
  * @member {Object} min
  */
 TitaniumSubmissionStatisticsExplorerTableColumn.prototype['min'] = undefined;
+
+/**
+ * @member {Object} statMeanAbsDiffFromLatestTrade
+ */
+TitaniumSubmissionStatisticsExplorerTableColumn.prototype['statMeanAbsDiffFromLatestTrade'] = undefined;
 
 /**
  * @member {Object} statisticalMean

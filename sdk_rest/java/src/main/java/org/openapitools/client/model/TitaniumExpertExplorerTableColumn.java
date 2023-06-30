@@ -47,11 +47,15 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumExpertExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumExpertExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_EXPERT_COHORT_MEAN = "absDiffFromExpertCohortMean";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_EXPERT_COHORT_MEAN)
   private Object absDiffFromExpertCohortMean;
+
+  public static final String SERIALIZED_NAME_CON_PRICE_ABS_DIFF_FROM_LATEST_TRADE = "conPriceAbsDiffFromLatestTrade";
+  @SerializedName(SERIALIZED_NAME_CON_PRICE_ABS_DIFF_FROM_LATEST_TRADE)
+  private Object conPriceAbsDiffFromLatestTrade;
 
   public static final String SERIALIZED_NAME_MAX = "max";
   @SerializedName(SERIALIZED_NAME_MAX)
@@ -100,6 +104,29 @@ public class TitaniumExpertExplorerTableColumn {
 
   public void setAbsDiffFromExpertCohortMean(Object absDiffFromExpertCohortMean) {
     this.absDiffFromExpertCohortMean = absDiffFromExpertCohortMean;
+  }
+
+
+  public TitaniumExpertExplorerTableColumn conPriceAbsDiffFromLatestTrade(Object conPriceAbsDiffFromLatestTrade) {
+    
+    this.conPriceAbsDiffFromLatestTrade = conPriceAbsDiffFromLatestTrade;
+    return this;
+  }
+
+   /**
+   * Get conPriceAbsDiffFromLatestTrade
+   * @return conPriceAbsDiffFromLatestTrade
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getConPriceAbsDiffFromLatestTrade() {
+    return conPriceAbsDiffFromLatestTrade;
+  }
+
+
+  public void setConPriceAbsDiffFromLatestTrade(Object conPriceAbsDiffFromLatestTrade) {
+    this.conPriceAbsDiffFromLatestTrade = conPriceAbsDiffFromLatestTrade;
   }
 
 
@@ -252,6 +279,7 @@ public class TitaniumExpertExplorerTableColumn {
     }
     TitaniumExpertExplorerTableColumn titaniumExpertExplorerTableColumn = (TitaniumExpertExplorerTableColumn) o;
     return Objects.equals(this.absDiffFromExpertCohortMean, titaniumExpertExplorerTableColumn.absDiffFromExpertCohortMean) &&
+        Objects.equals(this.conPriceAbsDiffFromLatestTrade, titaniumExpertExplorerTableColumn.conPriceAbsDiffFromLatestTrade) &&
         Objects.equals(this.max, titaniumExpertExplorerTableColumn.max) &&
         Objects.equals(this.mean, titaniumExpertExplorerTableColumn.mean) &&
         Objects.equals(this.min, titaniumExpertExplorerTableColumn.min) &&
@@ -262,7 +290,7 @@ public class TitaniumExpertExplorerTableColumn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromExpertCohortMean, max, mean, min, participantInstrumentsCount, stdDev, subPriceDiff);
+    return Objects.hash(absDiffFromExpertCohortMean, conPriceAbsDiffFromLatestTrade, max, mean, min, participantInstrumentsCount, stdDev, subPriceDiff);
   }
 
   @Override
@@ -270,6 +298,7 @@ public class TitaniumExpertExplorerTableColumn {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumExpertExplorerTableColumn {\n");
     sb.append("    absDiffFromExpertCohortMean: ").append(toIndentedString(absDiffFromExpertCohortMean)).append("\n");
+    sb.append("    conPriceAbsDiffFromLatestTrade: ").append(toIndentedString(conPriceAbsDiffFromLatestTrade)).append("\n");
     sb.append("    max: ").append(toIndentedString(max)).append("\n");
     sb.append("    mean: ").append(toIndentedString(mean)).append("\n");
     sb.append("    min: ").append(toIndentedString(min)).append("\n");
@@ -299,6 +328,7 @@ public class TitaniumExpertExplorerTableColumn {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("absDiffFromExpertCohortMean");
+    openapiFields.add("conPriceAbsDiffFromLatestTrade");
     openapiFields.add("max");
     openapiFields.add("mean");
     openapiFields.add("min");

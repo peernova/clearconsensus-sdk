@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumEvpAlignmentScoreWithDate from './TitaniumEvpAlignmentScoreWithDate';
 
 /**
  * The TitaniumEvpAlignmentScore model module.
@@ -53,6 +54,9 @@ class TitaniumEvpAlignmentScore {
             if (data.hasOwnProperty('evpMid')) {
                 obj['evpMid'] = ApiClient.convertToType(data['evpMid'], Object);
             }
+            if (data.hasOwnProperty('history')) {
+                obj['history'] = ApiClient.convertToType(data['history'], [TitaniumEvpAlignmentScoreWithDate]);
+            }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], Object);
             }
@@ -81,6 +85,11 @@ TitaniumEvpAlignmentScore.prototype['evpAlignmentDispersionScore'] = undefined;
  * @member {Object} evpMid
  */
 TitaniumEvpAlignmentScore.prototype['evpMid'] = undefined;
+
+/**
+ * @member {Array.<module:model/TitaniumEvpAlignmentScoreWithDate>} history
+ */
+TitaniumEvpAlignmentScore.prototype['history'] = undefined;
 
 /**
  * @member {Object} score

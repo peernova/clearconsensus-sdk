@@ -52,6 +52,13 @@ with openapi_client.ApiClient() as api_client:
             ],
             logical_operation="logical_operation_example",
         ),
+        filters=[
+            TitaniumFilter(
+                key="key_example",
+                operator="operator_example",
+                value={},
+            ),
+        ],
         include_header=True,
         order_by=TitaniumOrderBy(
             column="column_example",

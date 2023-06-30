@@ -36,6 +36,8 @@ class TitaniumChartRanges(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'bimodal_left_population': 'TitaniumRange',
+        'bimodal_right_population': 'TitaniumRange',
         'challenge_overlay_consensus': 'TitaniumRange',
         'evp': 'TitaniumRange',
         'expert_post_challenge': 'TitaniumRange',
@@ -47,6 +49,8 @@ class TitaniumChartRanges(object):
     }
 
     attribute_map = {
+        'bimodal_left_population': 'bimodalLeftPopulation',
+        'bimodal_right_population': 'bimodalRightPopulation',
         'challenge_overlay_consensus': 'challengeOverlayConsensus',
         'evp': 'evp',
         'expert_post_challenge': 'expertPostChallenge',
@@ -57,12 +61,14 @@ class TitaniumChartRanges(object):
         'submission_only_consensus': 'submissionOnlyConsensus'
     }
 
-    def __init__(self, challenge_overlay_consensus=None, evp=None, expert_post_challenge=None, expert_pre_challenge=None, market_data_overlay_consensus=None, submission_mean_median=None, submission_min_max=None, submission_only_consensus=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bimodal_left_population=None, bimodal_right_population=None, challenge_overlay_consensus=None, evp=None, expert_post_challenge=None, expert_pre_challenge=None, market_data_overlay_consensus=None, submission_mean_median=None, submission_min_max=None, submission_only_consensus=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumChartRanges - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._bimodal_left_population = None
+        self._bimodal_right_population = None
         self._challenge_overlay_consensus = None
         self._evp = None
         self._expert_post_challenge = None
@@ -73,6 +79,10 @@ class TitaniumChartRanges(object):
         self._submission_only_consensus = None
         self.discriminator = None
 
+        if bimodal_left_population is not None:
+            self.bimodal_left_population = bimodal_left_population
+        if bimodal_right_population is not None:
+            self.bimodal_right_population = bimodal_right_population
         if challenge_overlay_consensus is not None:
             self.challenge_overlay_consensus = challenge_overlay_consensus
         if evp is not None:
@@ -89,6 +99,48 @@ class TitaniumChartRanges(object):
             self.submission_min_max = submission_min_max
         if submission_only_consensus is not None:
             self.submission_only_consensus = submission_only_consensus
+
+    @property
+    def bimodal_left_population(self):
+        """Gets the bimodal_left_population of this TitaniumChartRanges.  # noqa: E501
+
+
+        :return: The bimodal_left_population of this TitaniumChartRanges.  # noqa: E501
+        :rtype: TitaniumRange
+        """
+        return self._bimodal_left_population
+
+    @bimodal_left_population.setter
+    def bimodal_left_population(self, bimodal_left_population):
+        """Sets the bimodal_left_population of this TitaniumChartRanges.
+
+
+        :param bimodal_left_population: The bimodal_left_population of this TitaniumChartRanges.  # noqa: E501
+        :type bimodal_left_population: TitaniumRange
+        """
+
+        self._bimodal_left_population = bimodal_left_population
+
+    @property
+    def bimodal_right_population(self):
+        """Gets the bimodal_right_population of this TitaniumChartRanges.  # noqa: E501
+
+
+        :return: The bimodal_right_population of this TitaniumChartRanges.  # noqa: E501
+        :rtype: TitaniumRange
+        """
+        return self._bimodal_right_population
+
+    @bimodal_right_population.setter
+    def bimodal_right_population(self, bimodal_right_population):
+        """Sets the bimodal_right_population of this TitaniumChartRanges.
+
+
+        :param bimodal_right_population: The bimodal_right_population of this TitaniumChartRanges.  # noqa: E501
+        :type bimodal_right_population: TitaniumRange
+        """
+
+        self._bimodal_right_population = bimodal_right_population
 
     @property
     def challenge_overlay_consensus(self):

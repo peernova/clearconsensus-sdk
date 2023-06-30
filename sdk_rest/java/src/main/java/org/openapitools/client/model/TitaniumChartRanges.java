@@ -48,8 +48,16 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChartRanges
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumChartRanges {
+  public static final String SERIALIZED_NAME_BIMODAL_LEFT_POPULATION = "bimodalLeftPopulation";
+  @SerializedName(SERIALIZED_NAME_BIMODAL_LEFT_POPULATION)
+  private TitaniumRange bimodalLeftPopulation;
+
+  public static final String SERIALIZED_NAME_BIMODAL_RIGHT_POPULATION = "bimodalRightPopulation";
+  @SerializedName(SERIALIZED_NAME_BIMODAL_RIGHT_POPULATION)
+  private TitaniumRange bimodalRightPopulation;
+
   public static final String SERIALIZED_NAME_CHALLENGE_OVERLAY_CONSENSUS = "challengeOverlayConsensus";
   @SerializedName(SERIALIZED_NAME_CHALLENGE_OVERLAY_CONSENSUS)
   private TitaniumRange challengeOverlayConsensus;
@@ -84,6 +92,52 @@ public class TitaniumChartRanges {
 
   public TitaniumChartRanges() { 
   }
+
+  public TitaniumChartRanges bimodalLeftPopulation(TitaniumRange bimodalLeftPopulation) {
+    
+    this.bimodalLeftPopulation = bimodalLeftPopulation;
+    return this;
+  }
+
+   /**
+   * Get bimodalLeftPopulation
+   * @return bimodalLeftPopulation
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumRange getBimodalLeftPopulation() {
+    return bimodalLeftPopulation;
+  }
+
+
+  public void setBimodalLeftPopulation(TitaniumRange bimodalLeftPopulation) {
+    this.bimodalLeftPopulation = bimodalLeftPopulation;
+  }
+
+
+  public TitaniumChartRanges bimodalRightPopulation(TitaniumRange bimodalRightPopulation) {
+    
+    this.bimodalRightPopulation = bimodalRightPopulation;
+    return this;
+  }
+
+   /**
+   * Get bimodalRightPopulation
+   * @return bimodalRightPopulation
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumRange getBimodalRightPopulation() {
+    return bimodalRightPopulation;
+  }
+
+
+  public void setBimodalRightPopulation(TitaniumRange bimodalRightPopulation) {
+    this.bimodalRightPopulation = bimodalRightPopulation;
+  }
+
 
   public TitaniumChartRanges challengeOverlayConsensus(TitaniumRange challengeOverlayConsensus) {
     
@@ -279,7 +333,9 @@ public class TitaniumChartRanges {
       return false;
     }
     TitaniumChartRanges titaniumChartRanges = (TitaniumChartRanges) o;
-    return Objects.equals(this.challengeOverlayConsensus, titaniumChartRanges.challengeOverlayConsensus) &&
+    return Objects.equals(this.bimodalLeftPopulation, titaniumChartRanges.bimodalLeftPopulation) &&
+        Objects.equals(this.bimodalRightPopulation, titaniumChartRanges.bimodalRightPopulation) &&
+        Objects.equals(this.challengeOverlayConsensus, titaniumChartRanges.challengeOverlayConsensus) &&
         Objects.equals(this.evp, titaniumChartRanges.evp) &&
         Objects.equals(this.expertPostChallenge, titaniumChartRanges.expertPostChallenge) &&
         Objects.equals(this.expertPreChallenge, titaniumChartRanges.expertPreChallenge) &&
@@ -291,13 +347,15 @@ public class TitaniumChartRanges {
 
   @Override
   public int hashCode() {
-    return Objects.hash(challengeOverlayConsensus, evp, expertPostChallenge, expertPreChallenge, marketDataOverlayConsensus, submissionMeanMedian, submissionMinMax, submissionOnlyConsensus);
+    return Objects.hash(bimodalLeftPopulation, bimodalRightPopulation, challengeOverlayConsensus, evp, expertPostChallenge, expertPreChallenge, marketDataOverlayConsensus, submissionMeanMedian, submissionMinMax, submissionOnlyConsensus);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumChartRanges {\n");
+    sb.append("    bimodalLeftPopulation: ").append(toIndentedString(bimodalLeftPopulation)).append("\n");
+    sb.append("    bimodalRightPopulation: ").append(toIndentedString(bimodalRightPopulation)).append("\n");
     sb.append("    challengeOverlayConsensus: ").append(toIndentedString(challengeOverlayConsensus)).append("\n");
     sb.append("    evp: ").append(toIndentedString(evp)).append("\n");
     sb.append("    expertPostChallenge: ").append(toIndentedString(expertPostChallenge)).append("\n");
@@ -328,6 +386,8 @@ public class TitaniumChartRanges {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("bimodalLeftPopulation");
+    openapiFields.add("bimodalRightPopulation");
     openapiFields.add("challengeOverlayConsensus");
     openapiFields.add("evp");
     openapiFields.add("expertPostChallenge");
@@ -362,6 +422,14 @@ public class TitaniumChartRanges {
         if (!TitaniumChartRanges.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumChartRanges` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
+      }
+      // validate the optional field `bimodalLeftPopulation`
+      if (jsonObj.getAsJsonObject("bimodalLeftPopulation") != null) {
+        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("bimodalLeftPopulation"));
+      }
+      // validate the optional field `bimodalRightPopulation`
+      if (jsonObj.getAsJsonObject("bimodalRightPopulation") != null) {
+        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("bimodalRightPopulation"));
       }
       // validate the optional field `challengeOverlayConsensus`
       if (jsonObj.getAsJsonObject("challengeOverlayConsensus") != null) {

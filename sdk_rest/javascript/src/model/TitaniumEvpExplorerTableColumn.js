@@ -59,6 +59,9 @@ class TitaniumEvpExplorerTableColumn {
             if (data.hasOwnProperty('evpLowerBoundary')) {
                 obj['evpLowerBoundary'] = ApiClient.convertToType(data['evpLowerBoundary'], Object);
             }
+            if (data.hasOwnProperty('evpMidAbsDiffFromLatestTrade')) {
+                obj['evpMidAbsDiffFromLatestTrade'] = ApiClient.convertToType(data['evpMidAbsDiffFromLatestTrade'], Object);
+            }
             if (data.hasOwnProperty('evpUpperBoundary')) {
                 obj['evpUpperBoundary'] = ApiClient.convertToType(data['evpUpperBoundary'], Object);
             }
@@ -97,6 +100,11 @@ TitaniumEvpExplorerTableColumn.prototype['bid'] = undefined;
  * @member {Object} evpLowerBoundary
  */
 TitaniumEvpExplorerTableColumn.prototype['evpLowerBoundary'] = undefined;
+
+/**
+ * @member {Object} evpMidAbsDiffFromLatestTrade
+ */
+TitaniumEvpExplorerTableColumn.prototype['evpMidAbsDiffFromLatestTrade'] = undefined;
 
 /**
  * @member {Object} evpUpperBoundary

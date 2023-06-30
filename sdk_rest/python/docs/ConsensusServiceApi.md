@@ -398,9 +398,7 @@ with openapi_client.ApiClient() as api_client:
     body = TitaniumConsensusResultSetValuesRequest(
         asset_id="asset_id_example",
         client="client_example",
-        consensus_result_set_id="consensus_result_set_id_example",
         consensus_run_timestamp="consensus_run_timestamp_example",
-        filter="filter_example",
         filter_pack=TitaniumFilterPack(
             filter_packs=[
                 TitaniumFilterPack(),
@@ -424,7 +422,6 @@ with openapi_client.ApiClient() as api_client:
             total_number_of_elements="total_number_of_elements_example",
         ),
         submitted_date="submitted_date_example",
-        submitted_id="submitted_id_example",
         trace_name="trace_name_example",
     ) # TitaniumConsensusResultSetValuesRequest | 
 
@@ -674,6 +671,10 @@ with openapi_client.ApiClient() as api_client:
                 ),
             ],
             logical_operation="logical_operation_example",
+        ),
+        order_by=TitaniumOrderBy(
+            column="column_example",
+            order="order_example",
         ),
         page=TitaniumPage(
             page_number=1,

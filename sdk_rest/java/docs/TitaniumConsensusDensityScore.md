@@ -12,7 +12,8 @@
 |**dispersion** | **Object** |  |  [optional] |
 |**evpAlignmentScore** | **Object** |  |  [optional] |
 |**evpQuality** | **Object** |  |  [optional] |
-|**numberOfParticipants** | **String** |  |  [optional] |
+|**history** | [**List&lt;TitaniumDateAndValue&gt;**](TitaniumDateAndValue.md) |  |  [optional] |
+|**numberOfParticipants** | **Object** |  |  [optional] |
 |**outlierVolume** | **Object** |  |  [optional] |
 |**score** | **Object** |  |  [optional] |
 

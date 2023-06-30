@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.TitaniumExpertiseScoreWithDate;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumExpertiseScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumExpertiseScore {
   public static final String SERIALIZED_NAME_CHALLENGE_SCORE = "challengeScore";
   @SerializedName(SERIALIZED_NAME_CHALLENGE_SCORE)
@@ -72,6 +75,10 @@ public class TitaniumExpertiseScore {
   public static final String SERIALIZED_NAME_EXPERTS_COUNT = "expertsCount";
   @SerializedName(SERIALIZED_NAME_EXPERTS_COUNT)
   private Object expertsCount;
+
+  public static final String SERIALIZED_NAME_HISTORY = "history";
+  @SerializedName(SERIALIZED_NAME_HISTORY)
+  private List<TitaniumExpertiseScoreWithDate> history = null;
 
   public static final String SERIALIZED_NAME_PROXIMITY_TO_POST_CHALLENGE_CONSENSUS_MEAN = "proximityToPostChallengeConsensusMean";
   @SerializedName(SERIALIZED_NAME_PROXIMITY_TO_POST_CHALLENGE_CONSENSUS_MEAN)
@@ -226,6 +233,37 @@ public class TitaniumExpertiseScore {
   }
 
 
+  public TitaniumExpertiseScore history(List<TitaniumExpertiseScoreWithDate> history) {
+    
+    this.history = history;
+    return this;
+  }
+
+  public TitaniumExpertiseScore addHistoryItem(TitaniumExpertiseScoreWithDate historyItem) {
+    if (this.history == null) {
+      this.history = new ArrayList<>();
+    }
+    this.history.add(historyItem);
+    return this;
+  }
+
+   /**
+   * Get history
+   * @return history
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumExpertiseScoreWithDate> getHistory() {
+    return history;
+  }
+
+
+  public void setHistory(List<TitaniumExpertiseScoreWithDate> history) {
+    this.history = history;
+  }
+
+
   public TitaniumExpertiseScore proximityToPostChallengeConsensusMean(Object proximityToPostChallengeConsensusMean) {
     
     this.proximityToPostChallengeConsensusMean = proximityToPostChallengeConsensusMean;
@@ -311,6 +349,7 @@ public class TitaniumExpertiseScore {
         Objects.equals(this.dimensionCreditScore, titaniumExpertiseScore.dimensionCreditScore) &&
         Objects.equals(this.expertiseRank, titaniumExpertiseScore.expertiseRank) &&
         Objects.equals(this.expertsCount, titaniumExpertiseScore.expertsCount) &&
+        Objects.equals(this.history, titaniumExpertiseScore.history) &&
         Objects.equals(this.proximityToPostChallengeConsensusMean, titaniumExpertiseScore.proximityToPostChallengeConsensusMean) &&
         Objects.equals(this.score, titaniumExpertiseScore.score) &&
         Objects.equals(this.submittedScore, titaniumExpertiseScore.submittedScore);
@@ -318,7 +357,7 @@ public class TitaniumExpertiseScore {
 
   @Override
   public int hashCode() {
-    return Objects.hash(challengeScore, consensusDistanceScore, consensusScore, dimensionCreditScore, expertiseRank, expertsCount, proximityToPostChallengeConsensusMean, score, submittedScore);
+    return Objects.hash(challengeScore, consensusDistanceScore, consensusScore, dimensionCreditScore, expertiseRank, expertsCount, history, proximityToPostChallengeConsensusMean, score, submittedScore);
   }
 
   @Override
@@ -331,6 +370,7 @@ public class TitaniumExpertiseScore {
     sb.append("    dimensionCreditScore: ").append(toIndentedString(dimensionCreditScore)).append("\n");
     sb.append("    expertiseRank: ").append(toIndentedString(expertiseRank)).append("\n");
     sb.append("    expertsCount: ").append(toIndentedString(expertsCount)).append("\n");
+    sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("    proximityToPostChallengeConsensusMean: ").append(toIndentedString(proximityToPostChallengeConsensusMean)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    submittedScore: ").append(toIndentedString(submittedScore)).append("\n");
@@ -362,6 +402,7 @@ public class TitaniumExpertiseScore {
     openapiFields.add("dimensionCreditScore");
     openapiFields.add("expertiseRank");
     openapiFields.add("expertsCount");
+    openapiFields.add("history");
     openapiFields.add("proximityToPostChallengeConsensusMean");
     openapiFields.add("score");
     openapiFields.add("submittedScore");
@@ -391,6 +432,18 @@ public class TitaniumExpertiseScore {
         if (!TitaniumExpertiseScore.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumExpertiseScore` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
+      }
+      JsonArray jsonArrayhistory = jsonObj.getAsJsonArray("history");
+      if (jsonArrayhistory != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("history").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `history` to be an array in the JSON string but got `%s`", jsonObj.get("history").toString()));
+        }
+
+        // validate the optional field `history` (array)
+        for (int i = 0; i < jsonArrayhistory.size(); i++) {
+          TitaniumExpertiseScoreWithDate.validateJsonObject(jsonArrayhistory.get(i).getAsJsonObject());
+        };
       }
   }
 

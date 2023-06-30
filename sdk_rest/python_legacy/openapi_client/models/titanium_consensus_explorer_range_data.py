@@ -37,6 +37,8 @@ class TitaniumConsensusExplorerRangeData(object):
     """
     openapi_types = {
         'all_participant_crs_consensus_price': 'TitaniumRangePoint',
+        'bimodal_left_mean': 'TitaniumRangePoint',
+        'bimodal_right_mean': 'TitaniumRangePoint',
         'challenge_overlay_crs_consensus_price': 'TitaniumRangePoint',
         'chart_ranges': 'TitaniumChartRanges',
         'evp_mid': 'TitaniumRangePoint',
@@ -44,11 +46,15 @@ class TitaniumConsensusExplorerRangeData(object):
         'expert_pre_challenge_consensus_price': 'TitaniumRangePoint',
         'market_data_crs_consensus_price': 'TitaniumRangePoint',
         'submission_mean_point': 'TitaniumRangePoint',
-        'submission_point': 'TitaniumRangePoint'
+        'submission_point': 'TitaniumRangePoint',
+        'trade_periods_with_metrics': 'TitaniumTradePeriodsWithMetrics',
+        'trade_ranges_data': 'TitaniumTradeRangesData'
     }
 
     attribute_map = {
         'all_participant_crs_consensus_price': 'allParticipantCrsConsensusPrice',
+        'bimodal_left_mean': 'bimodalLeftMean',
+        'bimodal_right_mean': 'bimodalRightMean',
         'challenge_overlay_crs_consensus_price': 'challengeOverlayCrsConsensusPrice',
         'chart_ranges': 'chartRanges',
         'evp_mid': 'evpMid',
@@ -56,16 +62,20 @@ class TitaniumConsensusExplorerRangeData(object):
         'expert_pre_challenge_consensus_price': 'expertPreChallengeConsensusPrice',
         'market_data_crs_consensus_price': 'marketDataCrsConsensusPrice',
         'submission_mean_point': 'submissionMeanPoint',
-        'submission_point': 'submissionPoint'
+        'submission_point': 'submissionPoint',
+        'trade_periods_with_metrics': 'tradePeriodsWithMetrics',
+        'trade_ranges_data': 'tradeRangesData'
     }
 
-    def __init__(self, all_participant_crs_consensus_price=None, challenge_overlay_crs_consensus_price=None, chart_ranges=None, evp_mid=None, expert_post_challenge_consensus_price=None, expert_pre_challenge_consensus_price=None, market_data_crs_consensus_price=None, submission_mean_point=None, submission_point=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, all_participant_crs_consensus_price=None, bimodal_left_mean=None, bimodal_right_mean=None, challenge_overlay_crs_consensus_price=None, chart_ranges=None, evp_mid=None, expert_post_challenge_consensus_price=None, expert_pre_challenge_consensus_price=None, market_data_crs_consensus_price=None, submission_mean_point=None, submission_point=None, trade_periods_with_metrics=None, trade_ranges_data=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusExplorerRangeData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._all_participant_crs_consensus_price = None
+        self._bimodal_left_mean = None
+        self._bimodal_right_mean = None
         self._challenge_overlay_crs_consensus_price = None
         self._chart_ranges = None
         self._evp_mid = None
@@ -74,10 +84,16 @@ class TitaniumConsensusExplorerRangeData(object):
         self._market_data_crs_consensus_price = None
         self._submission_mean_point = None
         self._submission_point = None
+        self._trade_periods_with_metrics = None
+        self._trade_ranges_data = None
         self.discriminator = None
 
         if all_participant_crs_consensus_price is not None:
             self.all_participant_crs_consensus_price = all_participant_crs_consensus_price
+        if bimodal_left_mean is not None:
+            self.bimodal_left_mean = bimodal_left_mean
+        if bimodal_right_mean is not None:
+            self.bimodal_right_mean = bimodal_right_mean
         if challenge_overlay_crs_consensus_price is not None:
             self.challenge_overlay_crs_consensus_price = challenge_overlay_crs_consensus_price
         if chart_ranges is not None:
@@ -94,6 +110,10 @@ class TitaniumConsensusExplorerRangeData(object):
             self.submission_mean_point = submission_mean_point
         if submission_point is not None:
             self.submission_point = submission_point
+        if trade_periods_with_metrics is not None:
+            self.trade_periods_with_metrics = trade_periods_with_metrics
+        if trade_ranges_data is not None:
+            self.trade_ranges_data = trade_ranges_data
 
     @property
     def all_participant_crs_consensus_price(self):
@@ -115,6 +135,48 @@ class TitaniumConsensusExplorerRangeData(object):
         """
 
         self._all_participant_crs_consensus_price = all_participant_crs_consensus_price
+
+    @property
+    def bimodal_left_mean(self):
+        """Gets the bimodal_left_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+
+
+        :return: The bimodal_left_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :rtype: TitaniumRangePoint
+        """
+        return self._bimodal_left_mean
+
+    @bimodal_left_mean.setter
+    def bimodal_left_mean(self, bimodal_left_mean):
+        """Sets the bimodal_left_mean of this TitaniumConsensusExplorerRangeData.
+
+
+        :param bimodal_left_mean: The bimodal_left_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type bimodal_left_mean: TitaniumRangePoint
+        """
+
+        self._bimodal_left_mean = bimodal_left_mean
+
+    @property
+    def bimodal_right_mean(self):
+        """Gets the bimodal_right_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+
+
+        :return: The bimodal_right_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :rtype: TitaniumRangePoint
+        """
+        return self._bimodal_right_mean
+
+    @bimodal_right_mean.setter
+    def bimodal_right_mean(self, bimodal_right_mean):
+        """Sets the bimodal_right_mean of this TitaniumConsensusExplorerRangeData.
+
+
+        :param bimodal_right_mean: The bimodal_right_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type bimodal_right_mean: TitaniumRangePoint
+        """
+
+        self._bimodal_right_mean = bimodal_right_mean
 
     @property
     def challenge_overlay_crs_consensus_price(self):
@@ -283,6 +345,48 @@ class TitaniumConsensusExplorerRangeData(object):
         """
 
         self._submission_point = submission_point
+
+    @property
+    def trade_periods_with_metrics(self):
+        """Gets the trade_periods_with_metrics of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+
+
+        :return: The trade_periods_with_metrics of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :rtype: TitaniumTradePeriodsWithMetrics
+        """
+        return self._trade_periods_with_metrics
+
+    @trade_periods_with_metrics.setter
+    def trade_periods_with_metrics(self, trade_periods_with_metrics):
+        """Sets the trade_periods_with_metrics of this TitaniumConsensusExplorerRangeData.
+
+
+        :param trade_periods_with_metrics: The trade_periods_with_metrics of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type trade_periods_with_metrics: TitaniumTradePeriodsWithMetrics
+        """
+
+        self._trade_periods_with_metrics = trade_periods_with_metrics
+
+    @property
+    def trade_ranges_data(self):
+        """Gets the trade_ranges_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+
+
+        :return: The trade_ranges_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :rtype: TitaniumTradeRangesData
+        """
+        return self._trade_ranges_data
+
+    @trade_ranges_data.setter
+    def trade_ranges_data(self, trade_ranges_data):
+        """Sets the trade_ranges_data of this TitaniumConsensusExplorerRangeData.
+
+
+        :param trade_ranges_data: The trade_ranges_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type trade_ranges_data: TitaniumTradeRangesData
+        """
+
+        self._trade_ranges_data = trade_ranges_data
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

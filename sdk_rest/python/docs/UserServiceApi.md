@@ -5,11 +5,15 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**user_service_add_user_notification**](UserServiceApi.md#user_service_add_user_notification) | **POST** /api/v1/user/notifications/add | 
+[**user_service_create**](UserServiceApi.md#user_service_create) | **POST** /api/v1/user-management/users/create | 
 [**user_service_delete_user_notification**](UserServiceApi.md#user_service_delete_user_notification) | **POST** /api/v1/user/notifications/delete | 
+[**user_service_get_all**](UserServiceApi.md#user_service_get_all) | **POST** /api/v1/user-management/users/getAll | 
+[**user_service_get_by_id**](UserServiceApi.md#user_service_get_by_id) | **POST** /api/v1/user-management/users/getById | 
 [**user_service_get_user**](UserServiceApi.md#user_service_get_user) | **POST** /api/v1/user | 
 [**user_service_get_user_notifications**](UserServiceApi.md#user_service_get_user_notifications) | **POST** /api/v1/user/notifications | 
 [**user_service_get_user_notifications_by_market**](UserServiceApi.md#user_service_get_user_notifications_by_market) | **POST** /api/v1/user/notifications/market | 
 [**user_service_get_user_permissions**](UserServiceApi.md#user_service_get_user_permissions) | **POST** /api/v1/user/permissions | 
+[**user_service_update**](UserServiceApi.md#user_service_update) | **POST** /api/v1/user-management/users/update | 
 [**user_service_update_user_notification**](UserServiceApi.md#user_service_update_user_notification) | **POST** /api/v1/user/notifications/update | 
 
 
@@ -111,6 +115,85 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **user_service_create**
+> ProtoServiceResponse user_service_create(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import user_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_user_dto import ProtoUserDto
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_service_api.UserServiceApi(api_client)
+    body = ProtoUserDto(
+        email="email_example",
+        enabled=True,
+        entity=ProtoEntityDto(
+            enabled=True,
+            external_id="external_id_example",
+            id="id_example",
+            name="name_example",
+        ),
+        first_name="first_name_example",
+        id="id_example",
+        last_name="last_name_example",
+    ) # ProtoUserDto | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.user_service_create(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling UserServiceApi->user_service_create: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProtoUserDto**](ProtoUserDto.md)|  |
+
+### Return type
+
+[**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **user_service_delete_user_notification**
 > TitaniumUserNotificationResponse user_service_delete_user_notification(body)
 
@@ -189,6 +272,138 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumUserNotificationResponse**](TitaniumUserNotificationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_service_get_all**
+> ProtoServiceResponse user_service_get_all(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import user_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.proto_service_response import ProtoServiceResponse
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_service_api.UserServiceApi(api_client)
+    body = True # bool | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.user_service_get_all(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling UserServiceApi->user_service_get_all: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **bool**|  |
+
+### Return type
+
+[**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_service_get_by_id**
+> ProtoServiceResponse user_service_get_by_id(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import user_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.proto_service_response import ProtoServiceResponse
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_service_api.UserServiceApi(api_client)
+    body = "body_example" # str | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.user_service_get_by_id(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling UserServiceApi->user_service_get_by_id: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **str**|  |
+
+### Return type
+
+[**ProtoServiceResponse**](ProtoServiceResponse.md)
 
 ### Authorization
 
@@ -466,6 +681,85 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumUserPermissionsResponse**](TitaniumUserPermissionsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_service_update**
+> ProtoServiceResponse user_service_update(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import user_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_user_dto import ProtoUserDto
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = user_service_api.UserServiceApi(api_client)
+    body = ProtoUserDto(
+        email="email_example",
+        enabled=True,
+        entity=ProtoEntityDto(
+            enabled=True,
+            external_id="external_id_example",
+            id="id_example",
+            name="name_example",
+        ),
+        first_name="first_name_example",
+        id="id_example",
+        last_name="last_name_example",
+    ) # ProtoUserDto | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.user_service_update(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling UserServiceApi->user_service_update: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProtoUserDto**](ProtoUserDto.md)|  |
+
+### Return type
+
+[**ProtoServiceResponse**](ProtoServiceResponse.md)
 
 ### Authorization
 

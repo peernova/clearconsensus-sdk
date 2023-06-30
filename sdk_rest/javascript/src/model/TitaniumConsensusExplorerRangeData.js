@@ -14,6 +14,8 @@
 import ApiClient from '../ApiClient';
 import TitaniumChartRanges from './TitaniumChartRanges';
 import TitaniumRangePoint from './TitaniumRangePoint';
+import TitaniumTradePeriodsWithMetrics from './TitaniumTradePeriodsWithMetrics';
+import TitaniumTradeRangesData from './TitaniumTradeRangesData';
 
 /**
  * The TitaniumConsensusExplorerRangeData model module.
@@ -52,6 +54,12 @@ class TitaniumConsensusExplorerRangeData {
             if (data.hasOwnProperty('allParticipantCrsConsensusPrice')) {
                 obj['allParticipantCrsConsensusPrice'] = TitaniumRangePoint.constructFromObject(data['allParticipantCrsConsensusPrice']);
             }
+            if (data.hasOwnProperty('bimodalLeftMean')) {
+                obj['bimodalLeftMean'] = TitaniumRangePoint.constructFromObject(data['bimodalLeftMean']);
+            }
+            if (data.hasOwnProperty('bimodalRightMean')) {
+                obj['bimodalRightMean'] = TitaniumRangePoint.constructFromObject(data['bimodalRightMean']);
+            }
             if (data.hasOwnProperty('challengeOverlayCrsConsensusPrice')) {
                 obj['challengeOverlayCrsConsensusPrice'] = TitaniumRangePoint.constructFromObject(data['challengeOverlayCrsConsensusPrice']);
             }
@@ -76,6 +84,12 @@ class TitaniumConsensusExplorerRangeData {
             if (data.hasOwnProperty('submissionPoint')) {
                 obj['submissionPoint'] = TitaniumRangePoint.constructFromObject(data['submissionPoint']);
             }
+            if (data.hasOwnProperty('tradePeriodsWithMetrics')) {
+                obj['tradePeriodsWithMetrics'] = TitaniumTradePeriodsWithMetrics.constructFromObject(data['tradePeriodsWithMetrics']);
+            }
+            if (data.hasOwnProperty('tradeRangesData')) {
+                obj['tradeRangesData'] = TitaniumTradeRangesData.constructFromObject(data['tradeRangesData']);
+            }
         }
         return obj;
     }
@@ -87,6 +101,16 @@ class TitaniumConsensusExplorerRangeData {
  * @member {module:model/TitaniumRangePoint} allParticipantCrsConsensusPrice
  */
 TitaniumConsensusExplorerRangeData.prototype['allParticipantCrsConsensusPrice'] = undefined;
+
+/**
+ * @member {module:model/TitaniumRangePoint} bimodalLeftMean
+ */
+TitaniumConsensusExplorerRangeData.prototype['bimodalLeftMean'] = undefined;
+
+/**
+ * @member {module:model/TitaniumRangePoint} bimodalRightMean
+ */
+TitaniumConsensusExplorerRangeData.prototype['bimodalRightMean'] = undefined;
 
 /**
  * @member {module:model/TitaniumRangePoint} challengeOverlayCrsConsensusPrice
@@ -127,6 +151,16 @@ TitaniumConsensusExplorerRangeData.prototype['submissionMeanPoint'] = undefined;
  * @member {module:model/TitaniumRangePoint} submissionPoint
  */
 TitaniumConsensusExplorerRangeData.prototype['submissionPoint'] = undefined;
+
+/**
+ * @member {module:model/TitaniumTradePeriodsWithMetrics} tradePeriodsWithMetrics
+ */
+TitaniumConsensusExplorerRangeData.prototype['tradePeriodsWithMetrics'] = undefined;
+
+/**
+ * @member {module:model/TitaniumTradeRangesData} tradeRangesData
+ */
+TitaniumConsensusExplorerRangeData.prototype['tradeRangesData'] = undefined;
 
 
 

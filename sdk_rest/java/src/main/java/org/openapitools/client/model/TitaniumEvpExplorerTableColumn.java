@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumEvpExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_EVP_MID = "absDiffFromEvpMid";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_EVP_MID)
@@ -64,6 +64,10 @@ public class TitaniumEvpExplorerTableColumn {
   public static final String SERIALIZED_NAME_EVP_LOWER_BOUNDARY = "evpLowerBoundary";
   @SerializedName(SERIALIZED_NAME_EVP_LOWER_BOUNDARY)
   private Object evpLowerBoundary;
+
+  public static final String SERIALIZED_NAME_EVP_MID_ABS_DIFF_FROM_LATEST_TRADE = "evpMidAbsDiffFromLatestTrade";
+  @SerializedName(SERIALIZED_NAME_EVP_MID_ABS_DIFF_FROM_LATEST_TRADE)
+  private Object evpMidAbsDiffFromLatestTrade;
 
   public static final String SERIALIZED_NAME_EVP_UPPER_BOUNDARY = "evpUpperBoundary";
   @SerializedName(SERIALIZED_NAME_EVP_UPPER_BOUNDARY)
@@ -176,6 +180,29 @@ public class TitaniumEvpExplorerTableColumn {
   }
 
 
+  public TitaniumEvpExplorerTableColumn evpMidAbsDiffFromLatestTrade(Object evpMidAbsDiffFromLatestTrade) {
+    
+    this.evpMidAbsDiffFromLatestTrade = evpMidAbsDiffFromLatestTrade;
+    return this;
+  }
+
+   /**
+   * Get evpMidAbsDiffFromLatestTrade
+   * @return evpMidAbsDiffFromLatestTrade
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getEvpMidAbsDiffFromLatestTrade() {
+    return evpMidAbsDiffFromLatestTrade;
+  }
+
+
+  public void setEvpMidAbsDiffFromLatestTrade(Object evpMidAbsDiffFromLatestTrade) {
+    this.evpMidAbsDiffFromLatestTrade = evpMidAbsDiffFromLatestTrade;
+  }
+
+
   public TitaniumEvpExplorerTableColumn evpUpperBoundary(Object evpUpperBoundary) {
     
     this.evpUpperBoundary = evpUpperBoundary;
@@ -282,6 +309,7 @@ public class TitaniumEvpExplorerTableColumn {
         Objects.equals(this.ask, titaniumEvpExplorerTableColumn.ask) &&
         Objects.equals(this.bid, titaniumEvpExplorerTableColumn.bid) &&
         Objects.equals(this.evpLowerBoundary, titaniumEvpExplorerTableColumn.evpLowerBoundary) &&
+        Objects.equals(this.evpMidAbsDiffFromLatestTrade, titaniumEvpExplorerTableColumn.evpMidAbsDiffFromLatestTrade) &&
         Objects.equals(this.evpUpperBoundary, titaniumEvpExplorerTableColumn.evpUpperBoundary) &&
         Objects.equals(this.mid, titaniumEvpExplorerTableColumn.mid) &&
         Objects.equals(this.subPriceDiff, titaniumEvpExplorerTableColumn.subPriceDiff) &&
@@ -290,7 +318,7 @@ public class TitaniumEvpExplorerTableColumn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromEvpMid, ask, bid, evpLowerBoundary, evpUpperBoundary, mid, subPriceDiff, tradesOrOrdersCount);
+    return Objects.hash(absDiffFromEvpMid, ask, bid, evpLowerBoundary, evpMidAbsDiffFromLatestTrade, evpUpperBoundary, mid, subPriceDiff, tradesOrOrdersCount);
   }
 
   @Override
@@ -301,6 +329,7 @@ public class TitaniumEvpExplorerTableColumn {
     sb.append("    ask: ").append(toIndentedString(ask)).append("\n");
     sb.append("    bid: ").append(toIndentedString(bid)).append("\n");
     sb.append("    evpLowerBoundary: ").append(toIndentedString(evpLowerBoundary)).append("\n");
+    sb.append("    evpMidAbsDiffFromLatestTrade: ").append(toIndentedString(evpMidAbsDiffFromLatestTrade)).append("\n");
     sb.append("    evpUpperBoundary: ").append(toIndentedString(evpUpperBoundary)).append("\n");
     sb.append("    mid: ").append(toIndentedString(mid)).append("\n");
     sb.append("    subPriceDiff: ").append(toIndentedString(subPriceDiff)).append("\n");
@@ -331,6 +360,7 @@ public class TitaniumEvpExplorerTableColumn {
     openapiFields.add("ask");
     openapiFields.add("bid");
     openapiFields.add("evpLowerBoundary");
+    openapiFields.add("evpMidAbsDiffFromLatestTrade");
     openapiFields.add("evpUpperBoundary");
     openapiFields.add("mid");
     openapiFields.add("subPriceDiff");

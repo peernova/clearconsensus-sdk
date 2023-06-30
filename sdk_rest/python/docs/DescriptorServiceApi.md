@@ -5,6 +5,7 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**descriptor_service_add_descriptor**](DescriptorServiceApi.md#descriptor_service_add_descriptor) | **POST** /api/v1/descriptor/add | AddDescriptor is used to add specific descriptor with specific definition to the system. Regular users can store a descriptor within their own scope, and any attempts to push it to a different scope will be declined. Back office users can store descriptors in any scope, provided that a scope key is provided. The name of the descriptor must match the name of the asset class to be mapped correctly. If a descriptor with the same name already exists, it will be updated.
+[**descriptor_service_descriptor_dependencies**](DescriptorServiceApi.md#descriptor_service_descriptor_dependencies) | **POST** /api/v1/descriptor/dependencies | 
 [**descriptor_service_disable_descriptor**](DescriptorServiceApi.md#descriptor_service_disable_descriptor) | **POST** /api/v1/descriptor/disable | DisableDescriptor is used to disable specific descriptor. Example of response : {    \&quot;data\&quot;: {        \&quot;uid\&quot;: \&quot;\&quot;,        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
 [**descriptor_service_enable_descriptor**](DescriptorServiceApi.md#descriptor_service_enable_descriptor) | **POST** /api/v1/descriptor/enable | EnableDescriptor is used to enable specific descriptor.
 [**descriptor_service_get_descriptor**](DescriptorServiceApi.md#descriptor_service_get_descriptor) | **POST** /api/v1/descriptor/get | GetDescriptor is used to get specific descriptor definition based on get definition. Regular users can retrieve only their own descriptors and descriptors associated with asset classes. Back office users can retrieve any of the existing descriptors.
@@ -76,6 +77,80 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **descriptor_service_descriptor_dependencies**
+> TitaniumDescriptorDependenciesResponse descriptor_service_descriptor_dependencies(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import descriptor_service_api
+from openapi_client.model.titanium_get_definition import TitaniumGetDefinition
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_descriptor_dependencies_response import TitaniumDescriptorDependenciesResponse
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = descriptor_service_api.DescriptorServiceApi(api_client)
+    body = TitaniumGetDefinition(
+        descriptor_name="descriptor_name_example",
+        identifier=TitaniumIdentifier(
+            name="name_example",
+            uid="uid_example",
+        ),
+        scope="scope_example",
+    ) # TitaniumGetDefinition | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.descriptor_service_descriptor_dependencies(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling DescriptorServiceApi->descriptor_service_descriptor_dependencies: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumGetDefinition**](TitaniumGetDefinition.md)|  |
+
+### Return type
+
+[**TitaniumDescriptorDependenciesResponse**](TitaniumDescriptorDependenciesResponse.md)
 
 ### Authorization
 

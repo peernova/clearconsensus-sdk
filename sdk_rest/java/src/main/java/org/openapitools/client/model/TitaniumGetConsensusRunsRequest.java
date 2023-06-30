@@ -24,6 +24,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.TitaniumFilterPack;
+import org.openapitools.client.model.TitaniumOrderBy;
 import org.openapitools.client.model.TitaniumPage;
 
 import com.google.gson.Gson;
@@ -49,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetConsensusRunsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-16T15:43:57.576275Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-06-30T14:58:59.766741Z[UTC]")
 public class TitaniumGetConsensusRunsRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -58,6 +59,10 @@ public class TitaniumGetConsensusRunsRequest {
   public static final String SERIALIZED_NAME_FILTER_PACK = "filterPack";
   @SerializedName(SERIALIZED_NAME_FILTER_PACK)
   private TitaniumFilterPack filterPack;
+
+  public static final String SERIALIZED_NAME_ORDER_BY = "orderBy";
+  @SerializedName(SERIALIZED_NAME_ORDER_BY)
+  private TitaniumOrderBy orderBy;
 
   public static final String SERIALIZED_NAME_PAGE = "page";
   @SerializedName(SERIALIZED_NAME_PAGE)
@@ -129,6 +134,29 @@ public class TitaniumGetConsensusRunsRequest {
 
   public void setFilterPack(TitaniumFilterPack filterPack) {
     this.filterPack = filterPack;
+  }
+
+
+  public TitaniumGetConsensusRunsRequest orderBy(TitaniumOrderBy orderBy) {
+    
+    this.orderBy = orderBy;
+    return this;
+  }
+
+   /**
+   * Get orderBy
+   * @return orderBy
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumOrderBy getOrderBy() {
+    return orderBy;
+  }
+
+
+  public void setOrderBy(TitaniumOrderBy orderBy) {
+    this.orderBy = orderBy;
   }
 
 
@@ -282,6 +310,7 @@ public class TitaniumGetConsensusRunsRequest {
     TitaniumGetConsensusRunsRequest titaniumGetConsensusRunsRequest = (TitaniumGetConsensusRunsRequest) o;
     return Objects.equals(this.assetId, titaniumGetConsensusRunsRequest.assetId) &&
         Objects.equals(this.filterPack, titaniumGetConsensusRunsRequest.filterPack) &&
+        Objects.equals(this.orderBy, titaniumGetConsensusRunsRequest.orderBy) &&
         Objects.equals(this.page, titaniumGetConsensusRunsRequest.page) &&
         Objects.equals(this.participant, titaniumGetConsensusRunsRequest.participant) &&
         Objects.equals(this.showArchived, titaniumGetConsensusRunsRequest.showArchived) &&
@@ -292,7 +321,7 @@ public class TitaniumGetConsensusRunsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, filterPack, page, participant, showArchived, snapDateFrom, snapDateTo, traceName);
+    return Objects.hash(assetId, filterPack, orderBy, page, participant, showArchived, snapDateFrom, snapDateTo, traceName);
   }
 
   @Override
@@ -301,6 +330,7 @@ public class TitaniumGetConsensusRunsRequest {
     sb.append("class TitaniumGetConsensusRunsRequest {\n");
     sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
     sb.append("    filterPack: ").append(toIndentedString(filterPack)).append("\n");
+    sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
     sb.append("    participant: ").append(toIndentedString(participant)).append("\n");
     sb.append("    showArchived: ").append(toIndentedString(showArchived)).append("\n");
@@ -331,6 +361,7 @@ public class TitaniumGetConsensusRunsRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("assetId");
     openapiFields.add("filterPack");
+    openapiFields.add("orderBy");
     openapiFields.add("page");
     openapiFields.add("participant");
     openapiFields.add("showArchived");
@@ -370,6 +401,10 @@ public class TitaniumGetConsensusRunsRequest {
       // validate the optional field `filterPack`
       if (jsonObj.getAsJsonObject("filterPack") != null) {
         TitaniumFilterPack.validateJsonObject(jsonObj.getAsJsonObject("filterPack"));
+      }
+      // validate the optional field `orderBy`
+      if (jsonObj.getAsJsonObject("orderBy") != null) {
+        TitaniumOrderBy.validateJsonObject(jsonObj.getAsJsonObject("orderBy"));
       }
       // validate the optional field `page`
       if (jsonObj.getAsJsonObject("page") != null) {

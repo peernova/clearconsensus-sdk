@@ -37,6 +37,7 @@ class TitaniumAllParticipantExplorerTableColumn(object):
     """
     openapi_types = {
         'abs_diff_from_consensus_price': 'object',
+        'con_price_abs_diff_from_latest_trade': 'object',
         'consensus_price': 'object',
         'lower_boundary': 'object',
         'participants_count': 'str',
@@ -47,6 +48,7 @@ class TitaniumAllParticipantExplorerTableColumn(object):
 
     attribute_map = {
         'abs_diff_from_consensus_price': 'absDiffFromConsensusPrice',
+        'con_price_abs_diff_from_latest_trade': 'conPriceAbsDiffFromLatestTrade',
         'consensus_price': 'consensusPrice',
         'lower_boundary': 'lowerBoundary',
         'participants_count': 'participantsCount',
@@ -55,13 +57,14 @@ class TitaniumAllParticipantExplorerTableColumn(object):
         'upper_boundary': 'upperBoundary'
     }
 
-    def __init__(self, abs_diff_from_consensus_price=None, consensus_price=None, lower_boundary=None, participants_count=None, std_dev=None, sub_price_diff=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_consensus_price=None, con_price_abs_diff_from_latest_trade=None, consensus_price=None, lower_boundary=None, participants_count=None, std_dev=None, sub_price_diff=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumAllParticipantExplorerTableColumn - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._abs_diff_from_consensus_price = None
+        self._con_price_abs_diff_from_latest_trade = None
         self._consensus_price = None
         self._lower_boundary = None
         self._participants_count = None
@@ -72,6 +75,8 @@ class TitaniumAllParticipantExplorerTableColumn(object):
 
         if abs_diff_from_consensus_price is not None:
             self.abs_diff_from_consensus_price = abs_diff_from_consensus_price
+        if con_price_abs_diff_from_latest_trade is not None:
+            self.con_price_abs_diff_from_latest_trade = con_price_abs_diff_from_latest_trade
         if consensus_price is not None:
             self.consensus_price = consensus_price
         if lower_boundary is not None:
@@ -105,6 +110,27 @@ class TitaniumAllParticipantExplorerTableColumn(object):
         """
 
         self._abs_diff_from_consensus_price = abs_diff_from_consensus_price
+
+    @property
+    def con_price_abs_diff_from_latest_trade(self):
+        """Gets the con_price_abs_diff_from_latest_trade of this TitaniumAllParticipantExplorerTableColumn.  # noqa: E501
+
+
+        :return: The con_price_abs_diff_from_latest_trade of this TitaniumAllParticipantExplorerTableColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._con_price_abs_diff_from_latest_trade
+
+    @con_price_abs_diff_from_latest_trade.setter
+    def con_price_abs_diff_from_latest_trade(self, con_price_abs_diff_from_latest_trade):
+        """Sets the con_price_abs_diff_from_latest_trade of this TitaniumAllParticipantExplorerTableColumn.
+
+
+        :param con_price_abs_diff_from_latest_trade: The con_price_abs_diff_from_latest_trade of this TitaniumAllParticipantExplorerTableColumn.  # noqa: E501
+        :type con_price_abs_diff_from_latest_trade: object
+        """
+
+        self._con_price_abs_diff_from_latest_trade = con_price_abs_diff_from_latest_trade
 
     @property
     def consensus_price(self):

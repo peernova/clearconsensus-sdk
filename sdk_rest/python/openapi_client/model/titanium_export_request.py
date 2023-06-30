@@ -30,8 +30,10 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from openapi_client.model.titanium_filter import TitaniumFilter
     from openapi_client.model.titanium_filter_pack import TitaniumFilterPack
     from openapi_client.model.titanium_order_by import TitaniumOrderBy
+    globals()['TitaniumFilter'] = TitaniumFilter
     globals()['TitaniumFilterPack'] = TitaniumFilterPack
     globals()['TitaniumOrderBy'] = TitaniumOrderBy
 
@@ -92,6 +94,7 @@ class TitaniumExportRequest(ModelNormal):
             'asset_id': (str,),  # noqa: E501
             'consensus_run_timestamp': (str,),  # noqa: E501
             'filter_pack': (TitaniumFilterPack,),  # noqa: E501
+            'filters': ([TitaniumFilter],),  # noqa: E501
             'include_header': (bool,),  # noqa: E501
             'order_by': (TitaniumOrderBy,),  # noqa: E501
             'submission_date': (str,),  # noqa: E501
@@ -107,6 +110,7 @@ class TitaniumExportRequest(ModelNormal):
         'asset_id': 'assetId',  # noqa: E501
         'consensus_run_timestamp': 'consensusRunTimestamp',  # noqa: E501
         'filter_pack': 'filterPack',  # noqa: E501
+        'filters': 'filters',  # noqa: E501
         'include_header': 'includeHeader',  # noqa: E501
         'order_by': 'orderBy',  # noqa: E501
         'submission_date': 'submissionDate',  # noqa: E501
@@ -157,6 +161,7 @@ class TitaniumExportRequest(ModelNormal):
             asset_id (str): [optional]  # noqa: E501
             consensus_run_timestamp (str): [optional]  # noqa: E501
             filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
+            filters ([TitaniumFilter]): [optional]  # noqa: E501
             include_header (bool): [optional]  # noqa: E501
             order_by (TitaniumOrderBy): [optional]  # noqa: E501
             submission_date (str): [optional]  # noqa: E501
@@ -249,6 +254,7 @@ class TitaniumExportRequest(ModelNormal):
             asset_id (str): [optional]  # noqa: E501
             consensus_run_timestamp (str): [optional]  # noqa: E501
             filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
+            filters ([TitaniumFilter]): [optional]  # noqa: E501
             include_header (bool): [optional]  # noqa: E501
             order_by (TitaniumOrderBy): [optional]  # noqa: E501
             submission_date (str): [optional]  # noqa: E501

@@ -135,6 +135,7 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeFreezeStatus**](docs/ChallengeServiceApi.md#challengeServiceChallengeFreezeStatus) | **POST** /api/v1/challenge/freeze/status | ChallengeFreezeStatus returns StatusResponse that contains string that represents freeze status of challenges if the challenge process is stopped and nothing if the one is not. Challenge can be stopped by operator.Dealer can see the freeze status using this method. Need to specify consensus(where outliers exists) run timestamp.
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceGetChallengeAttachmentUploadUrl**](docs/ChallengeServiceApi.md#challengeServiceGetChallengeAttachmentUploadUrl) | **POST** /api/v1/challenge/attachment_upload_urls | GetChallengeAttachmentUploadUrl returns string that represents s3 URL that can be used to upload attachment for the challenge. The file in attachment can be any file that provides additional information about the disputable outlier. Need to specify asset ID, submitted ID and file name.
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceGetChallengeDetails**](docs/ChallengeServiceApi.md#challengeServiceGetChallengeDetails) | **POST** /api/v1/challenge-details | 
+*ClearconsensusSdk.ChartServiceApi* | [**chartServiceGetChartData**](docs/ChartServiceApi.md#chartServiceGetChartData) | **POST** /api/v1/analytics/chart-data | 
 *ClearconsensusSdk.ChartsServiceApi* | [**chartsServiceCharts**](docs/ChartsServiceApi.md#chartsServiceCharts) | **POST** /api/v1/charts | Charts returns information about specific chart related to the specific asset.
 *ClearconsensusSdk.ChartsServiceApi* | [**chartsServiceChartsCurrencies**](docs/ChartsServiceApi.md#chartsServiceChartsCurrencies) | **POST** /api/v1/charts/currencies | ChartsCurrencies returns information about the chart related to specific currency pair.
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensus**](docs/ConsensusServiceApi.md#consensusServiceConsensus) | **POST** /api/v1/consensus | Consensus return information about consensus according to request. Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition) Returns ConsensusResponse that contains information about column and rows related to consensus.
@@ -157,6 +158,7 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceSubmitted**](docs/DataServiceApi.md#dataServiceSubmitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceUploadURL**](docs/DataServiceApi.md#dataServiceUploadURL) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceAddDbDescriptor**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceAddDbDescriptor) | **POST** /api/v1/db/descriptor/add | 
+*ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceDescriptorDependencies**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceDescriptorDependencies) | **POST** /api/v1/db/descriptor/dependencies | 
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceDisableDbDescriptor**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceDisableDbDescriptor) | **POST** /api/v1/db/descriptor/disable | 
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceEnableDbDescriptor**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceEnableDbDescriptor) | **POST** /api/v1/db/descriptor/enable | 
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceGetDbDescriptor**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceGetDbDescriptor) | **POST** /api/v1/db/descriptor/get | 
@@ -164,12 +166,19 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceListDbDescriptorVersions**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceListDbDescriptorVersions) | **POST** /api/v1/db/descriptor/versions | 
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceListDbDescriptors**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceListDbDescriptors) | **POST** /api/v1/db/descriptor/list | 
 *ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceAddDescriptor**](docs/DescriptorServiceApi.md#descriptorServiceAddDescriptor) | **POST** /api/v1/descriptor/add | AddDescriptor is used to add specific descriptor with specific definition to the system. Regular users can store a descriptor within their own scope, and any attempts to push it to a different scope will be declined. Back office users can store descriptors in any scope, provided that a scope key is provided. The name of the descriptor must match the name of the asset class to be mapped correctly. If a descriptor with the same name already exists, it will be updated.
+*ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceDescriptorDependencies**](docs/DescriptorServiceApi.md#descriptorServiceDescriptorDependencies) | **POST** /api/v1/descriptor/dependencies | 
 *ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceDisableDescriptor**](docs/DescriptorServiceApi.md#descriptorServiceDisableDescriptor) | **POST** /api/v1/descriptor/disable | DisableDescriptor is used to disable specific descriptor. Example of response : {    \&quot;data\&quot;: {        \&quot;uid\&quot;: \&quot;\&quot;,        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
 *ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceEnableDescriptor**](docs/DescriptorServiceApi.md#descriptorServiceEnableDescriptor) | **POST** /api/v1/descriptor/enable | EnableDescriptor is used to enable specific descriptor.
 *ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceGetDescriptor**](docs/DescriptorServiceApi.md#descriptorServiceGetDescriptor) | **POST** /api/v1/descriptor/get | GetDescriptor is used to get specific descriptor definition based on get definition. Regular users can retrieve only their own descriptors and descriptors associated with asset classes. Back office users can retrieve any of the existing descriptors.
 *ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceGetDescriptorVersion**](docs/DescriptorServiceApi.md#descriptorServiceGetDescriptorVersion) | **GET** /api/v1/descriptor/version/{scope}/{name}/{versionId} | GetDescriptorVersion returns current version of the specific descriptor.
 *ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceListDescriptorVersions**](docs/DescriptorServiceApi.md#descriptorServiceListDescriptorVersions) | **POST** /api/v1/descriptor/versions | ListDescriptorVersions returns list of version of the specific descriptor versions.
 *ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceListDescriptors**](docs/DescriptorServiceApi.md#descriptorServiceListDescriptors) | **POST** /api/v1/descriptor/list | ListDescriptors returns list of specific descriptors according to request.
+*ClearconsensusSdk.DtccServiceApi* | [**dtccServiceGetDtccTable**](docs/DtccServiceApi.md#dtccServiceGetDtccTable) | **POST** /api/v1/dtcc/tab | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceCreate**](docs/EntityServiceApi.md#entityServiceCreate) | **POST** /api/v1/user-management/entities/create | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceFind**](docs/EntityServiceApi.md#entityServiceFind) | **POST** /api/v1/user-management/entities/find | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceGetAllEnabledOnly**](docs/EntityServiceApi.md#entityServiceGetAllEnabledOnly) | **POST** /api/v1/user-management/entities/getAllByEnabled | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceGetById**](docs/EntityServiceApi.md#entityServiceGetById) | **POST** /api/v1/user-management/entities/getById | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceUpdate**](docs/EntityServiceApi.md#entityServiceUpdate) | **POST** /api/v1/user-management/entities/update | 
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceFileHistory**](docs/FileServiceApi.md#fileServiceFileHistory) | **POST** /api/v1/file-history | FileHistory retrieves the history for a specified file.
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceFileSubmission**](docs/FileServiceApi.md#fileServiceFileSubmission) | **POST** /api/v1/file-submission | FileSubmission submits a file for processing.
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceGetFileDelimiter**](docs/FileServiceApi.md#fileServiceGetFileDelimiter) | **POST** /api/v1/import/{filename}/delimiter | GetFileDelimiter retrieves the delimiter for a specified file.
@@ -179,6 +188,8 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceListFiles**](docs/FileServiceApi.md#fileServiceListFiles) | **POST** /api/v1/import/list | ListFiles retrieves a list of files.
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceSetFileDelimiter**](docs/FileServiceApi.md#fileServiceSetFileDelimiter) | **POST** /api/v1/import/{fileIdentifier.filename}/delimiter | SetFileDelimiter sets the delimiter for a specified file.
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceSetFileDescriptor**](docs/FileServiceApi.md#fileServiceSetFileDescriptor) | **POST** /api/v1/import/{fileIdentifier.filename}/descriptor | SetFileDescriptor sets the descriptor for a specified file.
+*ClearconsensusSdk.GroupPolicyServiceApi* | [**groupPolicyServiceCreate**](docs/GroupPolicyServiceApi.md#groupPolicyServiceCreate) | **POST** /api/v1/user-management/group-policies/create | 
+*ClearconsensusSdk.GroupPolicyServiceApi* | [**groupPolicyServiceGetPolicies**](docs/GroupPolicyServiceApi.md#groupPolicyServiceGetPolicies) | **POST** /api/v1/user-management/group-policies/getPolicies | 
 *ClearconsensusSdk.KVServiceApi* | [**kVServiceAddKey**](docs/KVServiceApi.md#kVServiceAddKey) | **POST** /api/v1/kv/add | 
 *ClearconsensusSdk.KVServiceApi* | [**kVServiceDeleteKey**](docs/KVServiceApi.md#kVServiceDeleteKey) | **POST** /api/v1/kv/delete | 
 *ClearconsensusSdk.KVServiceApi* | [**kVServiceGetKey**](docs/KVServiceApi.md#kVServiceGetKey) | **POST** /api/v1/kv/get | 
@@ -209,6 +220,13 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.NormalizationServiceApi* | [**normalizationServiceListNormalizationRuleVersions**](docs/NormalizationServiceApi.md#normalizationServiceListNormalizationRuleVersions) | **POST** /api/v1/normalization/rule/versions | 
 *ClearconsensusSdk.NormalizationServiceApi* | [**normalizationServiceListNormalizationRules**](docs/NormalizationServiceApi.md#normalizationServiceListNormalizationRules) | **POST** /api/v1/normalization/rule/list | 
 *ClearconsensusSdk.OutliersServiceApi* | [**outliersServiceOutliers**](docs/OutliersServiceApi.md#outliersServiceOutliers) | **POST** /api/v1/outliers | Outliers returns outliers according to request.
+*ClearconsensusSdk.PolicyServiceApi* | [**policyServiceCheckPolicy**](docs/PolicyServiceApi.md#policyServiceCheckPolicy) | **POST** /api/v1/user-management/policies/checkPolicy | 
+*ClearconsensusSdk.PolicyServiceApi* | [**policyServiceCreate**](docs/PolicyServiceApi.md#policyServiceCreate) | **POST** /api/v1/user-management/policies/create | 
+*ClearconsensusSdk.PolicyServiceApi* | [**policyServiceGetAddons**](docs/PolicyServiceApi.md#policyServiceGetAddons) | **POST** /api/v1/user-management/policies/getAddons | 
+*ClearconsensusSdk.PolicyServiceApi* | [**policyServiceGetApis**](docs/PolicyServiceApi.md#policyServiceGetApis) | **POST** /api/v1/user-management/policies/getApis | 
+*ClearconsensusSdk.PolicyServiceApi* | [**policyServiceGetAssets**](docs/PolicyServiceApi.md#policyServiceGetAssets) | **POST** /api/v1/user-management/policies/getAssets | 
+*ClearconsensusSdk.PolicyServiceApi* | [**policyServiceGetPolicies**](docs/PolicyServiceApi.md#policyServiceGetPolicies) | **POST** /api/v1/user-management/policies/getPolicies | 
+*ClearconsensusSdk.PolicyServiceApi* | [**policyServiceRemovePolicy**](docs/PolicyServiceApi.md#policyServiceRemovePolicy) | **POST** /api/v1/user-management/policies/removePolicy | 
 *ClearconsensusSdk.PopUpServiceApi* | [**popUpServicePopUpView**](docs/PopUpServiceApi.md#popUpServicePopUpView) | **POST** /api/v1/popup-view | PopUpView returns information according to request for the popup view.
 *ClearconsensusSdk.ScopeServiceApi* | [**scopeServiceAddScope**](docs/ScopeServiceApi.md#scopeServiceAddScope) | **POST** /api/v1/scope/add | AddScope creates scope in the system.
 *ClearconsensusSdk.ScopeServiceApi* | [**scopeServiceExistScope**](docs/ScopeServiceApi.md#scopeServiceExistScope) | **POST** /api/v1/scope/exist | ExistScope return boolean value about existence of scope according to request.
@@ -222,11 +240,15 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceListUniqueKeyVersions**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceListUniqueKeyVersions) | **POST** /api/v1/uniquekey/versions | ListUniqueKeyVersions is used to retrieve a list of all versions of a specific unique key definition by its scope and name. Request: {   \&quot;scope\&quot;:\&quot;global\&quot;,   \&quot;identifier\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceListUniqueKeys**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceListUniqueKeys) | **POST** /api/v1/uniquekey/list | ListUniqueKeys is used to retrieve a list of all unique key definitions in the system. Request: {   \&quot;scope\&quot;:\&quot;global\&quot; }
 *ClearconsensusSdk.UserServiceApi* | [**userServiceAddUserNotification**](docs/UserServiceApi.md#userServiceAddUserNotification) | **POST** /api/v1/user/notifications/add | 
+*ClearconsensusSdk.UserServiceApi* | [**userServiceCreate**](docs/UserServiceApi.md#userServiceCreate) | **POST** /api/v1/user-management/users/create | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceDeleteUserNotification**](docs/UserServiceApi.md#userServiceDeleteUserNotification) | **POST** /api/v1/user/notifications/delete | 
+*ClearconsensusSdk.UserServiceApi* | [**userServiceGetAll**](docs/UserServiceApi.md#userServiceGetAll) | **POST** /api/v1/user-management/users/getAll | 
+*ClearconsensusSdk.UserServiceApi* | [**userServiceGetById**](docs/UserServiceApi.md#userServiceGetById) | **POST** /api/v1/user-management/users/getById | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceGetUser**](docs/UserServiceApi.md#userServiceGetUser) | **POST** /api/v1/user | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceGetUserNotifications**](docs/UserServiceApi.md#userServiceGetUserNotifications) | **POST** /api/v1/user/notifications | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceGetUserNotificationsByMarket**](docs/UserServiceApi.md#userServiceGetUserNotificationsByMarket) | **POST** /api/v1/user/notifications/market | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceGetUserPermissions**](docs/UserServiceApi.md#userServiceGetUserPermissions) | **POST** /api/v1/user/permissions | 
+*ClearconsensusSdk.UserServiceApi* | [**userServiceUpdate**](docs/UserServiceApi.md#userServiceUpdate) | **POST** /api/v1/user-management/users/update | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceUpdateUserNotification**](docs/UserServiceApi.md#userServiceUpdateUserNotification) | **POST** /api/v1/user/notifications/update | 
 *ClearconsensusSdk.ValidatorServiceApi* | [**validatorServiceAddValidationRule**](docs/ValidatorServiceApi.md#validatorServiceAddValidationRule) | **POST** /api/v1/validation/rule/add | AddValidationRule is a method used to add a validation rule to the system. Backoffice users can create a new validation ruleset in the &#39;global&#39; scope, for each asset class. Participant users can create a new validation ruleset in its own scope, for each asset class. Backoffice users can represent any participant and create a new validation ruleset in that participant&#39;s scope. The default scope is used if no scope is given in the request (&#39;global&#39; for the operator, participant scope for that participant user). The authorization will be fetched from the user&#39;s token. It will do an update if a validation rule with the same name already exists.
 *ClearconsensusSdk.ValidatorServiceApi* | [**validatorServiceDisableValidationRule**](docs/ValidatorServiceApi.md#validatorServiceDisableValidationRule) | **POST** /api/v1/validation/rule/disable | DisableValidationRule method disables a validation rule in the system. The request includes the descriptor name and scope of the rule. Example of Request: { \&quot;descriptor_name\&quot; : \&quot;foreign_exchange-vanilla-forwards\&quot;, \&quot;scope\&quot;: \&quot;global\&quot; }
@@ -243,11 +265,24 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [ClearconsensusSdk.ErrorValidationErrorDetail](docs/ErrorValidationErrorDetail.md)
  - [ClearconsensusSdk.FileServiceGetFilePreviewRequest](docs/FileServiceGetFilePreviewRequest.md)
  - [ClearconsensusSdk.GetAttachmentUploadUrlResponseAttachmentUploadUrl](docs/GetAttachmentUploadUrlResponseAttachmentUploadUrl.md)
  - [ClearconsensusSdk.GetChallengeDetailsResponseCommonChallengeData](docs/GetChallengeDetailsResponseCommonChallengeData.md)
  - [ClearconsensusSdk.GetChallengeDetailsResponseResult](docs/GetChallengeDetailsResponseResult.md)
  - [ClearconsensusSdk.GetFileExportUrlResponseFileExportUrl](docs/GetFileExportUrlResponseFileExportUrl.md)
+ - [ClearconsensusSdk.GrpcprotoError](docs/GrpcprotoError.md)
+ - [ClearconsensusSdk.ProtoEntityDto](docs/ProtoEntityDto.md)
+ - [ClearconsensusSdk.ProtoGroupPolicies](docs/ProtoGroupPolicies.md)
+ - [ClearconsensusSdk.ProtoGroupPolicyDto](docs/ProtoGroupPolicyDto.md)
+ - [ClearconsensusSdk.ProtoPolicies](docs/ProtoPolicies.md)
+ - [ClearconsensusSdk.ProtoPolicyDto](docs/ProtoPolicyDto.md)
+ - [ClearconsensusSdk.ProtoSearchCriteria](docs/ProtoSearchCriteria.md)
+ - [ClearconsensusSdk.ProtoSearchCriteriaLimit](docs/ProtoSearchCriteriaLimit.md)
+ - [ClearconsensusSdk.ProtoSearchCriteriaOrderBy](docs/ProtoSearchCriteriaOrderBy.md)
+ - [ClearconsensusSdk.ProtoServiceResponse](docs/ProtoServiceResponse.md)
+ - [ClearconsensusSdk.ProtoUserDto](docs/ProtoUserDto.md)
+ - [ClearconsensusSdk.ProtoUsernamePermissionRequest](docs/ProtoUsernamePermissionRequest.md)
  - [ClearconsensusSdk.ProtobufAny](docs/ProtobufAny.md)
  - [ClearconsensusSdk.RpcStatus](docs/RpcStatus.md)
  - [ClearconsensusSdk.TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)
@@ -261,6 +296,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumAssetsRequest](docs/TitaniumAssetsRequest.md)
  - [ClearconsensusSdk.TitaniumAssetsResponse](docs/TitaniumAssetsResponse.md)
  - [ClearconsensusSdk.TitaniumAttachment](docs/TitaniumAttachment.md)
+ - [ClearconsensusSdk.TitaniumAvailableTrades](docs/TitaniumAvailableTrades.md)
  - [ClearconsensusSdk.TitaniumBenchmarkMetadata](docs/TitaniumBenchmarkMetadata.md)
  - [ClearconsensusSdk.TitaniumChallengeCreateRequest](docs/TitaniumChallengeCreateRequest.md)
  - [ClearconsensusSdk.TitaniumChallengeCreateResponse](docs/TitaniumChallengeCreateResponse.md)
@@ -277,6 +313,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumChallengeFormOneOfFields](docs/TitaniumChallengeFormOneOfFields.md)
  - [ClearconsensusSdk.TitaniumChallengeFreezeStatusRequest](docs/TitaniumChallengeFreezeStatusRequest.md)
  - [ClearconsensusSdk.TitaniumChart](docs/TitaniumChart.md)
+ - [ClearconsensusSdk.TitaniumChartDataResponse](docs/TitaniumChartDataResponse.md)
  - [ClearconsensusSdk.TitaniumChartPoint](docs/TitaniumChartPoint.md)
  - [ClearconsensusSdk.TitaniumChartRanges](docs/TitaniumChartRanges.md)
  - [ClearconsensusSdk.TitaniumChartSource](docs/TitaniumChartSource.md)
@@ -286,6 +323,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumChartsRequest](docs/TitaniumChartsRequest.md)
  - [ClearconsensusSdk.TitaniumChartsResponse](docs/TitaniumChartsResponse.md)
  - [ClearconsensusSdk.TitaniumChartsResponseData](docs/TitaniumChartsResponseData.md)
+ - [ClearconsensusSdk.TitaniumColDependency](docs/TitaniumColDependency.md)
  - [ClearconsensusSdk.TitaniumColumnInfo](docs/TitaniumColumnInfo.md)
  - [ClearconsensusSdk.TitaniumComparisonTable](docs/TitaniumComparisonTable.md)
  - [ClearconsensusSdk.TitaniumConsensusActiveResponse](docs/TitaniumConsensusActiveResponse.md)
@@ -323,16 +361,22 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumDataQualityError](docs/TitaniumDataQualityError.md)
  - [ClearconsensusSdk.TitaniumDataQualityErrors](docs/TitaniumDataQualityErrors.md)
  - [ClearconsensusSdk.TitaniumDataQualityErrorsResponse](docs/TitaniumDataQualityErrorsResponse.md)
+ - [ClearconsensusSdk.TitaniumDateAndValue](docs/TitaniumDateAndValue.md)
+ - [ClearconsensusSdk.TitaniumDependency](docs/TitaniumDependency.md)
  - [ClearconsensusSdk.TitaniumDescriptorBasedIdentifier](docs/TitaniumDescriptorBasedIdentifier.md)
  - [ClearconsensusSdk.TitaniumDescriptorBasedResultsList](docs/TitaniumDescriptorBasedResultsList.md)
  - [ClearconsensusSdk.TitaniumDescriptorDefinition](docs/TitaniumDescriptorDefinition.md)
  - [ClearconsensusSdk.TitaniumDescriptorDefinitionResponse](docs/TitaniumDescriptorDefinitionResponse.md)
+ - [ClearconsensusSdk.TitaniumDescriptorDependenciesResponse](docs/TitaniumDescriptorDependenciesResponse.md)
  - [ClearconsensusSdk.TitaniumDescriptorField](docs/TitaniumDescriptorField.md)
  - [ClearconsensusSdk.TitaniumDescriptorList](docs/TitaniumDescriptorList.md)
  - [ClearconsensusSdk.TitaniumDescriptorPairBasedAcknowledgeResponse](docs/TitaniumDescriptorPairBasedAcknowledgeResponse.md)
  - [ClearconsensusSdk.TitaniumDescriptorPairBasedGetDefinition](docs/TitaniumDescriptorPairBasedGetDefinition.md)
  - [ClearconsensusSdk.TitaniumDescriptorPairBasedIdentifier](docs/TitaniumDescriptorPairBasedIdentifier.md)
  - [ClearconsensusSdk.TitaniumDescriptorPairBasedResultsList](docs/TitaniumDescriptorPairBasedResultsList.md)
+ - [ClearconsensusSdk.TitaniumDtccTabRequest](docs/TitaniumDtccTabRequest.md)
+ - [ClearconsensusSdk.TitaniumDtccTabResponse](docs/TitaniumDtccTabResponse.md)
+ - [ClearconsensusSdk.TitaniumDtccTabResponseData](docs/TitaniumDtccTabResponseData.md)
  - [ClearconsensusSdk.TitaniumDynamicLut](docs/TitaniumDynamicLut.md)
  - [ClearconsensusSdk.TitaniumEVPRequest](docs/TitaniumEVPRequest.md)
  - [ClearconsensusSdk.TitaniumEVPResponse](docs/TitaniumEVPResponse.md)
@@ -343,10 +387,12 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumError](docs/TitaniumError.md)
  - [ClearconsensusSdk.TitaniumErrorDefinition](docs/TitaniumErrorDefinition.md)
  - [ClearconsensusSdk.TitaniumEvpAlignmentScore](docs/TitaniumEvpAlignmentScore.md)
+ - [ClearconsensusSdk.TitaniumEvpAlignmentScoreWithDate](docs/TitaniumEvpAlignmentScoreWithDate.md)
  - [ClearconsensusSdk.TitaniumEvpExplorerTableColumn](docs/TitaniumEvpExplorerTableColumn.md)
  - [ClearconsensusSdk.TitaniumEvpQualityScore](docs/TitaniumEvpQualityScore.md)
  - [ClearconsensusSdk.TitaniumExpertExplorerTableColumn](docs/TitaniumExpertExplorerTableColumn.md)
  - [ClearconsensusSdk.TitaniumExpertiseScore](docs/TitaniumExpertiseScore.md)
+ - [ClearconsensusSdk.TitaniumExpertiseScoreWithDate](docs/TitaniumExpertiseScoreWithDate.md)
  - [ClearconsensusSdk.TitaniumExportPresignedUrlResponseResponseData](docs/TitaniumExportPresignedUrlResponseResponseData.md)
  - [ClearconsensusSdk.TitaniumExportRequest](docs/TitaniumExportRequest.md)
  - [ClearconsensusSdk.TitaniumExportResponse](docs/TitaniumExportResponse.md)
@@ -372,6 +418,8 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumGetAttachmentUploadUrlResponse](docs/TitaniumGetAttachmentUploadUrlResponse.md)
  - [ClearconsensusSdk.TitaniumGetChallengeDetailsRequest](docs/TitaniumGetChallengeDetailsRequest.md)
  - [ClearconsensusSdk.TitaniumGetChallengeDetailsResponse](docs/TitaniumGetChallengeDetailsResponse.md)
+ - [ClearconsensusSdk.TitaniumGetChartDataRequest](docs/TitaniumGetChartDataRequest.md)
+ - [ClearconsensusSdk.TitaniumGetChartDataResponse](docs/TitaniumGetChartDataResponse.md)
  - [ClearconsensusSdk.TitaniumGetConsensusRunsData](docs/TitaniumGetConsensusRunsData.md)
  - [ClearconsensusSdk.TitaniumGetConsensusRunsRequest](docs/TitaniumGetConsensusRunsRequest.md)
  - [ClearconsensusSdk.TitaniumGetConsensusRunsResponse](docs/TitaniumGetConsensusRunsResponse.md)
@@ -404,12 +452,14 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumKVListAsset](docs/TitaniumKVListAsset.md)
  - [ClearconsensusSdk.TitaniumKVOperationResponse](docs/TitaniumKVOperationResponse.md)
  - [ClearconsensusSdk.TitaniumKVRequest](docs/TitaniumKVRequest.md)
+ - [ClearconsensusSdk.TitaniumKeyAndValue](docs/TitaniumKeyAndValue.md)
  - [ClearconsensusSdk.TitaniumLimit](docs/TitaniumLimit.md)
  - [ClearconsensusSdk.TitaniumListCustomFunctionRequest](docs/TitaniumListCustomFunctionRequest.md)
  - [ClearconsensusSdk.TitaniumListCustomFunctionResponse](docs/TitaniumListCustomFunctionResponse.md)
  - [ClearconsensusSdk.TitaniumListKVRequest](docs/TitaniumListKVRequest.md)
  - [ClearconsensusSdk.TitaniumListKVResponse](docs/TitaniumListKVResponse.md)
  - [ClearconsensusSdk.TitaniumListLookupTableResponse](docs/TitaniumListLookupTableResponse.md)
+ - [ClearconsensusSdk.TitaniumListOfKeys](docs/TitaniumListOfKeys.md)
  - [ClearconsensusSdk.TitaniumListRequest](docs/TitaniumListRequest.md)
  - [ClearconsensusSdk.TitaniumListRuleResponse](docs/TitaniumListRuleResponse.md)
  - [ClearconsensusSdk.TitaniumListUniqueKeysResponse](docs/TitaniumListUniqueKeysResponse.md)
@@ -429,6 +479,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumMarketSnapTimeResponse](docs/TitaniumMarketSnapTimeResponse.md)
  - [ClearconsensusSdk.TitaniumMessageResponse](docs/TitaniumMessageResponse.md)
  - [ClearconsensusSdk.TitaniumMessageResponseData](docs/TitaniumMessageResponseData.md)
+ - [ClearconsensusSdk.TitaniumMetadata](docs/TitaniumMetadata.md)
  - [ClearconsensusSdk.TitaniumNameAliasPair](docs/TitaniumNameAliasPair.md)
  - [ClearconsensusSdk.TitaniumNormalizationRuleDefinition](docs/TitaniumNormalizationRuleDefinition.md)
  - [ClearconsensusSdk.TitaniumNormalizationRuleResponse](docs/TitaniumNormalizationRuleResponse.md)
@@ -461,6 +512,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumScopeExistResponse](docs/TitaniumScopeExistResponse.md)
  - [ClearconsensusSdk.TitaniumScopeIdentifier](docs/TitaniumScopeIdentifier.md)
  - [ClearconsensusSdk.TitaniumScopeListResponse](docs/TitaniumScopeListResponse.md)
+ - [ClearconsensusSdk.TitaniumSeries](docs/TitaniumSeries.md)
  - [ClearconsensusSdk.TitaniumService](docs/TitaniumService.md)
  - [ClearconsensusSdk.TitaniumSetFileDelimiterRequest](docs/TitaniumSetFileDelimiterRequest.md)
  - [ClearconsensusSdk.TitaniumSetFileDescriptorRequest](docs/TitaniumSetFileDescriptorRequest.md)
@@ -479,12 +531,16 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumSubmittedResponseData](docs/TitaniumSubmittedResponseData.md)
  - [ClearconsensusSdk.TitaniumSubmittedRow](docs/TitaniumSubmittedRow.md)
  - [ClearconsensusSdk.TitaniumSupportedField](docs/TitaniumSupportedField.md)
+ - [ClearconsensusSdk.TitaniumTradePeriodMetrics](docs/TitaniumTradePeriodMetrics.md)
+ - [ClearconsensusSdk.TitaniumTradePeriodsWithMetrics](docs/TitaniumTradePeriodsWithMetrics.md)
+ - [ClearconsensusSdk.TitaniumTradeRangesData](docs/TitaniumTradeRangesData.md)
  - [ClearconsensusSdk.TitaniumTransformation](docs/TitaniumTransformation.md)
  - [ClearconsensusSdk.TitaniumUniqueKeyDefinition](docs/TitaniumUniqueKeyDefinition.md)
  - [ClearconsensusSdk.TitaniumUniqueKeyDefinitionResponse](docs/TitaniumUniqueKeyDefinitionResponse.md)
  - [ClearconsensusSdk.TitaniumUniqueKeyList](docs/TitaniumUniqueKeyList.md)
  - [ClearconsensusSdk.TitaniumUploadURLRequest](docs/TitaniumUploadURLRequest.md)
  - [ClearconsensusSdk.TitaniumUploadURLResponse](docs/TitaniumUploadURLResponse.md)
+ - [ClearconsensusSdk.TitaniumUsage](docs/TitaniumUsage.md)
  - [ClearconsensusSdk.TitaniumUser](docs/TitaniumUser.md)
  - [ClearconsensusSdk.TitaniumUserNotification](docs/TitaniumUserNotification.md)
  - [ClearconsensusSdk.TitaniumUserNotificationRequest](docs/TitaniumUserNotificationRequest.md)

@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**history** | [**[TitaniumDateAndValue]**](TitaniumDateAndValue.md) |  | [optional] 
 **indicative_count** | **str** |  | [optional] 
 **order_count** | **str** |  | [optional] 
 **score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

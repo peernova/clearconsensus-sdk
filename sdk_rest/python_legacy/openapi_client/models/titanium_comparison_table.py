@@ -37,6 +37,7 @@ class TitaniumComparisonTable(object):
     """
     openapi_types = {
         'all_participant_cohort_consensus': 'TitaniumAllParticipantExplorerTableColumn',
+        'available_trades': 'TitaniumAvailableTrades',
         'evaluated_price': 'TitaniumEvpExplorerTableColumn',
         'expert_cohort_consensus': 'TitaniumExpertExplorerTableColumn',
         'submission': 'TitaniumSubmissionExplorerTableColumn',
@@ -45,19 +46,21 @@ class TitaniumComparisonTable(object):
 
     attribute_map = {
         'all_participant_cohort_consensus': 'allParticipantCohortConsensus',
+        'available_trades': 'availableTrades',
         'evaluated_price': 'evaluatedPrice',
         'expert_cohort_consensus': 'expertCohortConsensus',
         'submission': 'submission',
         'submission_statistics': 'submissionStatistics'
     }
 
-    def __init__(self, all_participant_cohort_consensus=None, evaluated_price=None, expert_cohort_consensus=None, submission=None, submission_statistics=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, all_participant_cohort_consensus=None, available_trades=None, evaluated_price=None, expert_cohort_consensus=None, submission=None, submission_statistics=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumComparisonTable - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._all_participant_cohort_consensus = None
+        self._available_trades = None
         self._evaluated_price = None
         self._expert_cohort_consensus = None
         self._submission = None
@@ -66,6 +69,8 @@ class TitaniumComparisonTable(object):
 
         if all_participant_cohort_consensus is not None:
             self.all_participant_cohort_consensus = all_participant_cohort_consensus
+        if available_trades is not None:
+            self.available_trades = available_trades
         if evaluated_price is not None:
             self.evaluated_price = evaluated_price
         if expert_cohort_consensus is not None:
@@ -95,6 +100,27 @@ class TitaniumComparisonTable(object):
         """
 
         self._all_participant_cohort_consensus = all_participant_cohort_consensus
+
+    @property
+    def available_trades(self):
+        """Gets the available_trades of this TitaniumComparisonTable.  # noqa: E501
+
+
+        :return: The available_trades of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumAvailableTrades
+        """
+        return self._available_trades
+
+    @available_trades.setter
+    def available_trades(self, available_trades):
+        """Sets the available_trades of this TitaniumComparisonTable.
+
+
+        :param available_trades: The available_trades of this TitaniumComparisonTable.  # noqa: E501
+        :type available_trades: TitaniumAvailableTrades
+        """
+
+        self._available_trades = available_trades
 
     @property
     def evaluated_price(self):

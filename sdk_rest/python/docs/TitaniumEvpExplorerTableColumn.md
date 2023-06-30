@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **ask** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **bid** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **evp_lower_boundary** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**evp_mid_abs_diff_from_latest_trade** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **evp_upper_boundary** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **mid** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **sub_price_diff** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

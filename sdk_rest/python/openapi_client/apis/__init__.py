@@ -17,6 +17,7 @@
 from openapi_client.api.analytics_controller_api import AnalyticsControllerApi
 from openapi_client.api.assets_service_api import AssetsServiceApi
 from openapi_client.api.challenge_service_api import ChallengeServiceApi
+from openapi_client.api.chart_service_api import ChartServiceApi
 from openapi_client.api.charts_service_api import ChartsServiceApi
 from openapi_client.api.consensus_service_api import ConsensusServiceApi
 from openapi_client.api.custom_function_service_api import CustomFunctionServiceApi
@@ -25,7 +26,10 @@ from openapi_client.api.data_quality_service_api import DataQualityServiceApi
 from openapi_client.api.data_service_api import DataServiceApi
 from openapi_client.api.db_descriptor_service_api import DbDescriptorServiceApi
 from openapi_client.api.descriptor_service_api import DescriptorServiceApi
+from openapi_client.api.dtcc_service_api import DtccServiceApi
+from openapi_client.api.entity_service_api import EntityServiceApi
 from openapi_client.api.file_service_api import FileServiceApi
+from openapi_client.api.group_policy_service_api import GroupPolicyServiceApi
 from openapi_client.api.kv_service_api import KVServiceApi
 from openapi_client.api.login_service_api import LoginServiceApi
 from openapi_client.api.lookup_table_service_api import LookupTableServiceApi
@@ -34,6 +38,7 @@ from openapi_client.api.market_service_api import MarketServiceApi
 from openapi_client.api.metadata_entity_service_api import MetadataEntityServiceApi
 from openapi_client.api.normalization_service_api import NormalizationServiceApi
 from openapi_client.api.outliers_service_api import OutliersServiceApi
+from openapi_client.api.policy_service_api import PolicyServiceApi
 from openapi_client.api.pop_up_service_api import PopUpServiceApi
 from openapi_client.api.scope_service_api import ScopeServiceApi
 from openapi_client.api.submission_service_api import SubmissionServiceApi

@@ -37,6 +37,7 @@ class TitaniumExpertExplorerTableColumn(object):
     """
     openapi_types = {
         'abs_diff_from_expert_cohort_mean': 'object',
+        'con_price_abs_diff_from_latest_trade': 'object',
         'max': 'object',
         'mean': 'object',
         'min': 'object',
@@ -47,6 +48,7 @@ class TitaniumExpertExplorerTableColumn(object):
 
     attribute_map = {
         'abs_diff_from_expert_cohort_mean': 'absDiffFromExpertCohortMean',
+        'con_price_abs_diff_from_latest_trade': 'conPriceAbsDiffFromLatestTrade',
         'max': 'max',
         'mean': 'mean',
         'min': 'min',
@@ -55,13 +57,14 @@ class TitaniumExpertExplorerTableColumn(object):
         'sub_price_diff': 'subPriceDiff'
     }
 
-    def __init__(self, abs_diff_from_expert_cohort_mean=None, max=None, mean=None, min=None, participant_instruments_count=None, std_dev=None, sub_price_diff=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_expert_cohort_mean=None, con_price_abs_diff_from_latest_trade=None, max=None, mean=None, min=None, participant_instruments_count=None, std_dev=None, sub_price_diff=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumExpertExplorerTableColumn - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._abs_diff_from_expert_cohort_mean = None
+        self._con_price_abs_diff_from_latest_trade = None
         self._max = None
         self._mean = None
         self._min = None
@@ -72,6 +75,8 @@ class TitaniumExpertExplorerTableColumn(object):
 
         if abs_diff_from_expert_cohort_mean is not None:
             self.abs_diff_from_expert_cohort_mean = abs_diff_from_expert_cohort_mean
+        if con_price_abs_diff_from_latest_trade is not None:
+            self.con_price_abs_diff_from_latest_trade = con_price_abs_diff_from_latest_trade
         if max is not None:
             self.max = max
         if mean is not None:
@@ -105,6 +110,27 @@ class TitaniumExpertExplorerTableColumn(object):
         """
 
         self._abs_diff_from_expert_cohort_mean = abs_diff_from_expert_cohort_mean
+
+    @property
+    def con_price_abs_diff_from_latest_trade(self):
+        """Gets the con_price_abs_diff_from_latest_trade of this TitaniumExpertExplorerTableColumn.  # noqa: E501
+
+
+        :return: The con_price_abs_diff_from_latest_trade of this TitaniumExpertExplorerTableColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._con_price_abs_diff_from_latest_trade
+
+    @con_price_abs_diff_from_latest_trade.setter
+    def con_price_abs_diff_from_latest_trade(self, con_price_abs_diff_from_latest_trade):
+        """Sets the con_price_abs_diff_from_latest_trade of this TitaniumExpertExplorerTableColumn.
+
+
+        :param con_price_abs_diff_from_latest_trade: The con_price_abs_diff_from_latest_trade of this TitaniumExpertExplorerTableColumn.  # noqa: E501
+        :type con_price_abs_diff_from_latest_trade: object
+        """
+
+        self._con_price_abs_diff_from_latest_trade = con_price_abs_diff_from_latest_trade
 
     @property
     def max(self):

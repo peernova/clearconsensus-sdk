@@ -93,14 +93,11 @@ class TitaniumConsensusResultSetValuesRequest(ModelNormal):
         return {
             'asset_id': (str,),  # noqa: E501
             'client': (str,),  # noqa: E501
-            'consensus_result_set_id': (str,),  # noqa: E501
             'consensus_run_timestamp': (str,),  # noqa: E501
-            'filter': (str,),  # noqa: E501
             'filter_pack': (TitaniumFilterPack,),  # noqa: E501
             'order_by': (TitaniumOrderBy,),  # noqa: E501
             'page': (TitaniumPage,),  # noqa: E501
             'submitted_date': (str,),  # noqa: E501
-            'submitted_id': (str,),  # noqa: E501
             'trace_name': (str,),  # noqa: E501
         }
 
@@ -112,14 +109,11 @@ class TitaniumConsensusResultSetValuesRequest(ModelNormal):
     attribute_map = {
         'asset_id': 'assetId',  # noqa: E501
         'client': 'client',  # noqa: E501
-        'consensus_result_set_id': 'consensusResultSetId',  # noqa: E501
         'consensus_run_timestamp': 'consensusRunTimestamp',  # noqa: E501
-        'filter': 'filter',  # noqa: E501
         'filter_pack': 'filterPack',  # noqa: E501
         'order_by': 'orderBy',  # noqa: E501
         'page': 'page',  # noqa: E501
         'submitted_date': 'submittedDate',  # noqa: E501
-        'submitted_id': 'submittedId',  # noqa: E501
         'trace_name': 'traceName',  # noqa: E501
     }
 
@@ -166,14 +160,11 @@ class TitaniumConsensusResultSetValuesRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             asset_id (str): [optional]  # noqa: E501
             client (str): [optional]  # noqa: E501
-            consensus_result_set_id (str): [optional]  # noqa: E501
             consensus_run_timestamp (str): [optional]  # noqa: E501
-            filter (str): [optional]  # noqa: E501
             filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
             order_by (TitaniumOrderBy): [optional]  # noqa: E501
             page (TitaniumPage): [optional]  # noqa: E501
             submitted_date (str): [optional]  # noqa: E501
-            submitted_id (str): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """
 
@@ -262,14 +253,11 @@ class TitaniumConsensusResultSetValuesRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             asset_id (str): [optional]  # noqa: E501
             client (str): [optional]  # noqa: E501
-            consensus_result_set_id (str): [optional]  # noqa: E501
             consensus_run_timestamp (str): [optional]  # noqa: E501
-            filter (str): [optional]  # noqa: E501
             filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
             order_by (TitaniumOrderBy): [optional]  # noqa: E501
             page (TitaniumPage): [optional]  # noqa: E501
             submitted_date (str): [optional]  # noqa: E501
-            submitted_id (str): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """
 
