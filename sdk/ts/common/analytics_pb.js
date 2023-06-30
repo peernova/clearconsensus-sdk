@@ -356,7 +356,8 @@ proto.titanium.GetPredefinedFiltersRequest.toObject = function(includeInstance, 
     filter: jspb.Message.getFieldWithDefault(msg, 4, ""),
     filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
     common_gateway_base_pb.Filter.toObject, includeInstance),
-    traceName: jspb.Message.getFieldWithDefault(msg, 6, "")
+    filterPack: (f = msg.getFilterPack()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f),
+    traceName: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -415,6 +416,11 @@ proto.titanium.GetPredefinedFiltersRequest.deserializeBinaryFromReader = functio
       msg.addFilters(value);
       break;
     case 6:
+      var value = new common_gateway_base_pb.FilterPack;
+      reader.readMessage(value,common_gateway_base_pb.FilterPack.deserializeBinaryFromReader);
+      msg.setFilterPack(value);
+      break;
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setTraceName(value);
       break;
@@ -483,10 +489,18 @@ proto.titanium.GetPredefinedFiltersRequest.serializeBinaryToWriter = function(me
       common_gateway_base_pb.Filter.serializeBinaryToWriter
     );
   }
+  f = message.getFilterPack();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_gateway_base_pb.FilterPack.serializeBinaryToWriter
+    );
+  }
   f = message.getTraceName();
   if (f.length > 0) {
     writer.writeString(
-      6,
+      7,
       f
     );
   }
@@ -604,11 +618,48 @@ proto.titanium.GetPredefinedFiltersRequest.prototype.clearFiltersList = function
 
 
 /**
- * optional string trace_name = 6;
+ * optional FilterPack filter_pack = 6;
+ * @return {?proto.titanium.FilterPack}
+ */
+proto.titanium.GetPredefinedFiltersRequest.prototype.getFilterPack = function() {
+  return /** @type{?proto.titanium.FilterPack} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.FilterPack, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.FilterPack|undefined} value
+ * @return {!proto.titanium.GetPredefinedFiltersRequest} returns this
+*/
+proto.titanium.GetPredefinedFiltersRequest.prototype.setFilterPack = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.GetPredefinedFiltersRequest} returns this
+ */
+proto.titanium.GetPredefinedFiltersRequest.prototype.clearFilterPack = function() {
+  return this.setFilterPack(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.GetPredefinedFiltersRequest.prototype.hasFilterPack = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string trace_name = 7;
  * @return {string}
  */
 proto.titanium.GetPredefinedFiltersRequest.prototype.getTraceName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -617,7 +668,7 @@ proto.titanium.GetPredefinedFiltersRequest.prototype.getTraceName = function() {
  * @return {!proto.titanium.GetPredefinedFiltersRequest} returns this
  */
 proto.titanium.GetPredefinedFiltersRequest.prototype.setTraceName = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 

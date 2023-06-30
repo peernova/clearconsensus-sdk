@@ -76,3 +76,129 @@ export namespace DescriptorList {
   }
 }
 
+export class Usage extends jspb.Message {
+  getUsageName(): string;
+  setUsageName(value: string): void;
+
+  getUsageType(): Usage.UsageTypeMap[keyof Usage.UsageTypeMap];
+  setUsageType(value: Usage.UsageTypeMap[keyof Usage.UsageTypeMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Usage.AsObject;
+  static toObject(includeInstance: boolean, msg: Usage): Usage.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Usage, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Usage;
+  static deserializeBinaryFromReader(message: Usage, reader: jspb.BinaryReader): Usage;
+}
+
+export namespace Usage {
+  export type AsObject = {
+    usageName: string,
+    usageType: Usage.UsageTypeMap[keyof Usage.UsageTypeMap],
+  }
+
+  export interface UsageTypeMap {
+    CRITERIA_FILTER: 0;
+    RULE: 1;
+    RULE_FILTER: 2;
+    ERROR_MESSAGE: 3;
+    LOOKUPTABLE_KEY: 4;
+    LOOKUPTABLE_VALUE: 5;
+    LOOKUPTABLE_FILTER: 6;
+  }
+
+  export const UsageType: UsageTypeMap;
+}
+
+export class Dependency extends jspb.Message {
+  getScope(): string;
+  setScope(value: string): void;
+
+  getEntityType(): common_gateway_base_pb.EntityTypeMap[keyof common_gateway_base_pb.EntityTypeMap];
+  setEntityType(value: common_gateway_base_pb.EntityTypeMap[keyof common_gateway_base_pb.EntityTypeMap]): void;
+
+  getEntityName(): string;
+  setEntityName(value: string): void;
+
+  getEntity(): string;
+  setEntity(value: string): void;
+
+  getVersion(): string;
+  setVersion(value: string): void;
+
+  clearUsagesList(): void;
+  getUsagesList(): Array<Usage>;
+  setUsagesList(value: Array<Usage>): void;
+  addUsages(value?: Usage, index?: number): Usage;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Dependency.AsObject;
+  static toObject(includeInstance: boolean, msg: Dependency): Dependency.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Dependency, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Dependency;
+  static deserializeBinaryFromReader(message: Dependency, reader: jspb.BinaryReader): Dependency;
+}
+
+export namespace Dependency {
+  export type AsObject = {
+    scope: string,
+    entityType: common_gateway_base_pb.EntityTypeMap[keyof common_gateway_base_pb.EntityTypeMap],
+    entityName: string,
+    entity: string,
+    version: string,
+    usagesList: Array<Usage.AsObject>,
+  }
+}
+
+export class ColDependency extends jspb.Message {
+  getCol(): string;
+  setCol(value: string): void;
+
+  clearDependencyList(): void;
+  getDependencyList(): Array<Dependency>;
+  setDependencyList(value: Array<Dependency>): void;
+  addDependency(value?: Dependency, index?: number): Dependency;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ColDependency.AsObject;
+  static toObject(includeInstance: boolean, msg: ColDependency): ColDependency.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ColDependency, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColDependency;
+  static deserializeBinaryFromReader(message: ColDependency, reader: jspb.BinaryReader): ColDependency;
+}
+
+export namespace ColDependency {
+  export type AsObject = {
+    col: string,
+    dependencyList: Array<Dependency.AsObject>,
+  }
+}
+
+export class DescriptorDependenciesResponse extends jspb.Message {
+  clearDependenciesList(): void;
+  getDependenciesList(): Array<ColDependency>;
+  setDependenciesList(value: Array<ColDependency>): void;
+  addDependencies(value?: ColDependency, index?: number): ColDependency;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DescriptorDependenciesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: DescriptorDependenciesResponse): DescriptorDependenciesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DescriptorDependenciesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DescriptorDependenciesResponse;
+  static deserializeBinaryFromReader(message: DescriptorDependenciesResponse, reader: jspb.BinaryReader): DescriptorDependenciesResponse;
+}
+
+export namespace DescriptorDependenciesResponse {
+  export type AsObject = {
+    dependenciesList: Array<ColDependency.AsObject>,
+  }
+}
+

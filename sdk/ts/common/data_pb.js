@@ -129,7 +129,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.titanium.ExportRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ExportRequest.repeatedFields_, null);
 };
 goog.inherits(proto.titanium.ExportRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -1531,6 +1531,13 @@ proto.titanium.SubmittedRow.prototype.hasBenchmark = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ExportRequest.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -1567,8 +1574,10 @@ proto.titanium.ExportRequest.toObject = function(includeInstance, msg) {
     consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
     includeHeader: jspb.Message.getBooleanFieldWithDefault(msg, 4, false),
     filterPack: (f = msg.getFilterPack()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f),
+    filtersList: jspb.Message.toObjectList(msg.getFiltersList(),
+    common_gateway_base_pb.Filter.toObject, includeInstance),
     orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
-    traceName: jspb.Message.getFieldWithDefault(msg, 7, "")
+    traceName: jspb.Message.getFieldWithDefault(msg, 8, "")
   };
 
   if (includeInstance) {
@@ -1627,11 +1636,16 @@ proto.titanium.ExportRequest.deserializeBinaryFromReader = function(msg, reader)
       msg.setFilterPack(value);
       break;
     case 6:
+      var value = new common_gateway_base_pb.Filter;
+      reader.readMessage(value,common_gateway_base_pb.Filter.deserializeBinaryFromReader);
+      msg.addFilters(value);
+      break;
+    case 7:
       var value = new common_gateway_base_pb.OrderBy;
       reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
       msg.setOrderby(value);
       break;
-    case 7:
+    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setTraceName(value);
       break;
@@ -1700,10 +1714,18 @@ proto.titanium.ExportRequest.serializeBinaryToWriter = function(message, writer)
       common_gateway_base_pb.FilterPack.serializeBinaryToWriter
     );
   }
+  f = message.getFiltersList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      common_gateway_base_pb.Filter.serializeBinaryToWriter
+    );
+  }
   f = message.getOrderby();
   if (f != null) {
     writer.writeMessage(
-      6,
+      7,
       f,
       common_gateway_base_pb.OrderBy.serializeBinaryToWriter
     );
@@ -1711,7 +1733,7 @@ proto.titanium.ExportRequest.serializeBinaryToWriter = function(message, writer)
   f = message.getTraceName();
   if (f.length > 0) {
     writer.writeString(
-      7,
+      8,
       f
     );
   }
@@ -1828,12 +1850,50 @@ proto.titanium.ExportRequest.prototype.hasFilterPack = function() {
 
 
 /**
- * optional OrderBy orderBy = 6;
+ * repeated Filter filters = 6;
+ * @return {!Array<!proto.titanium.Filter>}
+ */
+proto.titanium.ExportRequest.prototype.getFiltersList = function() {
+  return /** @type{!Array<!proto.titanium.Filter>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.Filter, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.Filter>} value
+ * @return {!proto.titanium.ExportRequest} returns this
+*/
+proto.titanium.ExportRequest.prototype.setFiltersList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.titanium.Filter=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.Filter}
+ */
+proto.titanium.ExportRequest.prototype.addFilters = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.titanium.Filter, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ExportRequest} returns this
+ */
+proto.titanium.ExportRequest.prototype.clearFiltersList = function() {
+  return this.setFiltersList([]);
+};
+
+
+/**
+ * optional OrderBy orderBy = 7;
  * @return {?proto.titanium.OrderBy}
  */
 proto.titanium.ExportRequest.prototype.getOrderby = function() {
   return /** @type{?proto.titanium.OrderBy} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 6));
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 7));
 };
 
 
@@ -1842,7 +1902,7 @@ proto.titanium.ExportRequest.prototype.getOrderby = function() {
  * @return {!proto.titanium.ExportRequest} returns this
 */
 proto.titanium.ExportRequest.prototype.setOrderby = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -1860,16 +1920,16 @@ proto.titanium.ExportRequest.prototype.clearOrderby = function() {
  * @return {boolean}
  */
 proto.titanium.ExportRequest.prototype.hasOrderby = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional string trace_name = 7;
+ * optional string trace_name = 8;
  * @return {string}
  */
 proto.titanium.ExportRequest.prototype.getTraceName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
 };
 
 
@@ -1878,7 +1938,7 @@ proto.titanium.ExportRequest.prototype.getTraceName = function() {
  * @return {!proto.titanium.ExportRequest} returns this
  */
 proto.titanium.ExportRequest.prototype.setTraceName = function(value) {
-  return jspb.Message.setProto3StringField(this, 7, value);
+  return jspb.Message.setProto3StringField(this, 8, value);
 };
 
 

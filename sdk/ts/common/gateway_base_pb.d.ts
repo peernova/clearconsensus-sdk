@@ -1622,6 +1622,54 @@ export namespace EntityIdentifier {
   }
 }
 
+export class ListOfKeys extends jspb.Message {
+  clearListList(): void;
+  getListList(): Array<KeyAndValue>;
+  setListList(value: Array<KeyAndValue>): void;
+  addList(value?: KeyAndValue, index?: number): KeyAndValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ListOfKeys.AsObject;
+  static toObject(includeInstance: boolean, msg: ListOfKeys): ListOfKeys.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ListOfKeys, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ListOfKeys;
+  static deserializeBinaryFromReader(message: ListOfKeys, reader: jspb.BinaryReader): ListOfKeys;
+}
+
+export namespace ListOfKeys {
+  export type AsObject = {
+    listList: Array<KeyAndValue.AsObject>,
+  }
+}
+
+export class KeyAndValue extends jspb.Message {
+  getKey(): string;
+  setKey(value: string): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): google_protobuf_struct_pb.Value | undefined;
+  setValue(value?: google_protobuf_struct_pb.Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): KeyAndValue.AsObject;
+  static toObject(includeInstance: boolean, msg: KeyAndValue): KeyAndValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: KeyAndValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): KeyAndValue;
+  static deserializeBinaryFromReader(message: KeyAndValue, reader: jspb.BinaryReader): KeyAndValue;
+}
+
+export namespace KeyAndValue {
+  export type AsObject = {
+    key: string,
+    value?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
 export interface OrderMap {
   ASC: 0;
   DESC: 1;
@@ -1639,6 +1687,10 @@ export const Decision: DecisionMap;
 
 export interface EntityTypeMap {
   ADVANCED_TRANSFORM_RULE: 0;
+  VALIDATIONRULESET: 1;
+  NORMALIZATIONRULESET: 2;
+  MAPPINGRULESET: 3;
+  CUSTOMFUNCTION: 4;
 }
 
 export const EntityType: EntityTypeMap;

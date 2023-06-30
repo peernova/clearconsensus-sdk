@@ -71,6 +71,15 @@ type DescriptorServiceGetDescriptorVersion = {
   readonly responseType: typeof common_descriptor_pb.DescriptorDefinitionResponse;
 };
 
+type DescriptorServiceDescriptorDependencies = {
+  readonly methodName: string;
+  readonly service: typeof DescriptorService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_gateway_base_pb.GetDefinition;
+  readonly responseType: typeof common_descriptor_pb.DescriptorDependenciesResponse;
+};
+
 export class DescriptorService {
   static readonly serviceName: string;
   static readonly AddDescriptor: DescriptorServiceAddDescriptor;
@@ -80,6 +89,7 @@ export class DescriptorService {
   static readonly ListDescriptors: DescriptorServiceListDescriptors;
   static readonly ListDescriptorVersions: DescriptorServiceListDescriptorVersions;
   static readonly GetDescriptorVersion: DescriptorServiceGetDescriptorVersion;
+  static readonly DescriptorDependencies: DescriptorServiceDescriptorDependencies;
 }
 
 type DbDescriptorServiceAddDbDescriptor = {
@@ -145,6 +155,15 @@ type DbDescriptorServiceGetDbDescriptorVersion = {
   readonly responseType: typeof common_descriptor_pb.DescriptorDefinitionResponse;
 };
 
+type DbDescriptorServiceDescriptorDependencies = {
+  readonly methodName: string;
+  readonly service: typeof DbDescriptorService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_gateway_base_pb.GetDefinition;
+  readonly responseType: typeof common_descriptor_pb.DescriptorDependenciesResponse;
+};
+
 export class DbDescriptorService {
   static readonly serviceName: string;
   static readonly AddDbDescriptor: DbDescriptorServiceAddDbDescriptor;
@@ -154,6 +173,7 @@ export class DbDescriptorService {
   static readonly ListDbDescriptors: DbDescriptorServiceListDbDescriptors;
   static readonly ListDbDescriptorVersions: DbDescriptorServiceListDbDescriptorVersions;
   static readonly GetDbDescriptorVersion: DbDescriptorServiceGetDbDescriptorVersion;
+  static readonly DescriptorDependencies: DbDescriptorServiceDescriptorDependencies;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -251,6 +271,15 @@ export class DescriptorServiceClient {
     requestMessage: common_gateway_base_pb.VersionRequest,
     callback: (error: ServiceError|null, responseMessage: common_descriptor_pb.DescriptorDefinitionResponse|null) => void
   ): UnaryResponse;
+  descriptorDependencies(
+    requestMessage: common_gateway_base_pb.GetDefinition,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_descriptor_pb.DescriptorDependenciesResponse|null) => void
+  ): UnaryResponse;
+  descriptorDependencies(
+    requestMessage: common_gateway_base_pb.GetDefinition,
+    callback: (error: ServiceError|null, responseMessage: common_descriptor_pb.DescriptorDependenciesResponse|null) => void
+  ): UnaryResponse;
 }
 
 export class DbDescriptorServiceClient {
@@ -319,6 +348,15 @@ export class DbDescriptorServiceClient {
   getDbDescriptorVersion(
     requestMessage: common_gateway_base_pb.VersionRequest,
     callback: (error: ServiceError|null, responseMessage: common_descriptor_pb.DescriptorDefinitionResponse|null) => void
+  ): UnaryResponse;
+  descriptorDependencies(
+    requestMessage: common_gateway_base_pb.GetDefinition,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_descriptor_pb.DescriptorDependenciesResponse|null) => void
+  ): UnaryResponse;
+  descriptorDependencies(
+    requestMessage: common_gateway_base_pb.GetDefinition,
+    callback: (error: ServiceError|null, responseMessage: common_descriptor_pb.DescriptorDependenciesResponse|null) => void
   ): UnaryResponse;
 }
 

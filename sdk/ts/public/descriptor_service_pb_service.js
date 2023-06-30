@@ -77,6 +77,15 @@ DescriptorService.GetDescriptorVersion = {
   responseType: common_descriptor_pb.DescriptorDefinitionResponse
 };
 
+DescriptorService.DescriptorDependencies = {
+  methodName: "DescriptorDependencies",
+  service: DescriptorService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_gateway_base_pb.GetDefinition,
+  responseType: common_descriptor_pb.DescriptorDependenciesResponse
+};
+
 exports.DescriptorService = DescriptorService;
 
 function DescriptorServiceClient(serviceHost, options) {
@@ -301,6 +310,37 @@ DescriptorServiceClient.prototype.getDescriptorVersion = function getDescriptorV
   };
 };
 
+DescriptorServiceClient.prototype.descriptorDependencies = function descriptorDependencies(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DescriptorService.DescriptorDependencies, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
 exports.DescriptorServiceClient = DescriptorServiceClient;
 
 var DbDescriptorService = (function () {
@@ -370,6 +410,15 @@ DbDescriptorService.GetDbDescriptorVersion = {
   responseStream: false,
   requestType: common_gateway_base_pb.VersionRequest,
   responseType: common_descriptor_pb.DescriptorDefinitionResponse
+};
+
+DbDescriptorService.DescriptorDependencies = {
+  methodName: "DescriptorDependencies",
+  service: DbDescriptorService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_gateway_base_pb.GetDefinition,
+  responseType: common_descriptor_pb.DescriptorDependenciesResponse
 };
 
 exports.DbDescriptorService = DbDescriptorService;
@@ -570,6 +619,37 @@ DbDescriptorServiceClient.prototype.getDbDescriptorVersion = function getDbDescr
     callback = arguments[1];
   }
   var client = grpc.unary(DbDescriptorService.GetDbDescriptorVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DbDescriptorServiceClient.prototype.descriptorDependencies = function descriptorDependencies(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DbDescriptorService.DescriptorDependencies, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

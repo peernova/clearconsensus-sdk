@@ -24,6 +24,11 @@ export class GetPredefinedFiltersRequest extends jspb.Message {
   setFiltersList(value: Array<common_gateway_base_pb.Filter>): void;
   addFilters(value?: common_gateway_base_pb.Filter, index?: number): common_gateway_base_pb.Filter;
 
+  hasFilterPack(): boolean;
+  clearFilterPack(): void;
+  getFilterPack(): common_gateway_base_pb.FilterPack | undefined;
+  setFilterPack(value?: common_gateway_base_pb.FilterPack): void;
+
   getTraceName(): string;
   setTraceName(value: string): void;
 
@@ -44,6 +49,7 @@ export namespace GetPredefinedFiltersRequest {
     consensusRunTimestamp: string,
     filter: string,
     filtersList: Array<common_gateway_base_pb.Filter.AsObject>,
+    filterPack?: common_gateway_base_pb.FilterPack.AsObject,
     traceName: string,
   }
 }

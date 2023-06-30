@@ -202,6 +202,11 @@ export class ExportRequest extends jspb.Message {
   getFilterPack(): common_gateway_base_pb.FilterPack | undefined;
   setFilterPack(value?: common_gateway_base_pb.FilterPack): void;
 
+  clearFiltersList(): void;
+  getFiltersList(): Array<common_gateway_base_pb.Filter>;
+  setFiltersList(value: Array<common_gateway_base_pb.Filter>): void;
+  addFilters(value?: common_gateway_base_pb.Filter, index?: number): common_gateway_base_pb.Filter;
+
   hasOrderby(): boolean;
   clearOrderby(): void;
   getOrderby(): common_gateway_base_pb.OrderBy | undefined;
@@ -227,6 +232,7 @@ export namespace ExportRequest {
     consensusRunTimestamp: string,
     includeHeader: boolean,
     filterPack?: common_gateway_base_pb.FilterPack.AsObject,
+    filtersList: Array<common_gateway_base_pb.Filter.AsObject>,
     orderby?: common_gateway_base_pb.OrderBy.AsObject,
     traceName: string,
   }

@@ -5,7 +5,6 @@
 
 var public_consensus_service_pb = require("../public/consensus_service_pb");
 var common_gateway_base_pb = require("../common/gateway_base_pb");
-var common_consensus_pb = require("../common/consensus_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var ConsensusService = (function () {
@@ -19,8 +18,8 @@ ConsensusService.ConsensusTimestamps = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusTimestampsRequest,
-  responseType: common_consensus_pb.ConsensusTimestampsResponse
+  requestType: public_consensus_service_pb.ConsensusTimestampsRequest,
+  responseType: public_consensus_service_pb.ConsensusTimestampsResponse
 };
 
 ConsensusService.Consensus = {
@@ -28,8 +27,8 @@ ConsensusService.Consensus = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusRequest,
-  responseType: common_consensus_pb.ConsensusResponse
+  requestType: public_consensus_service_pb.ConsensusRequest,
+  responseType: public_consensus_service_pb.ConsensusResponse
 };
 
 ConsensusService.EvaluatedPrice = {
@@ -37,8 +36,8 @@ ConsensusService.EvaluatedPrice = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.EVPRequest,
-  responseType: common_consensus_pb.EVPResponse
+  requestType: public_consensus_service_pb.EVPRequest,
+  responseType: public_consensus_service_pb.EVPResponse
 };
 
 ConsensusService.ConsensusOutliers = {
@@ -55,8 +54,8 @@ ConsensusService.GetConsensusRuns = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.GetConsensusRunsRequest,
-  responseType: common_consensus_pb.GetConsensusRunsResponse
+  requestType: public_consensus_service_pb.GetConsensusRunsRequest,
+  responseType: public_consensus_service_pb.GetConsensusRunsResponse
 };
 
 ConsensusService.ConsensusResultSetValues = {
@@ -64,8 +63,8 @@ ConsensusService.ConsensusResultSetValues = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusResultSetValuesRequest,
-  responseType: common_consensus_pb.ConsensusResultSetValuesResponse
+  requestType: public_consensus_service_pb.ConsensusResultSetValuesRequest,
+  responseType: public_consensus_service_pb.ConsensusResultSetValuesResponse
 };
 
 ConsensusService.ConsensusExplorerInstrumentDetails = {
@@ -73,8 +72,8 @@ ConsensusService.ConsensusExplorerInstrumentDetails = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusExplorerRequest,
-  responseType: common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse
+  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
+  responseType: public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse
 };
 
 ConsensusService.ConsensusExplorerTable = {
@@ -82,8 +81,8 @@ ConsensusService.ConsensusExplorerTable = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusExplorerRequest,
-  responseType: common_consensus_pb.ConsensusExplorerTableResponse
+  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
+  responseType: public_consensus_service_pb.ConsensusExplorerTableResponse
 };
 
 ConsensusService.ConsensusExplorerRanges = {
@@ -91,8 +90,8 @@ ConsensusService.ConsensusExplorerRanges = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusExplorerRangeRequest,
-  responseType: common_consensus_pb.ConsensusExplorerRangeResponse
+  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
+  responseType: public_consensus_service_pb.ConsensusExplorerRangeResponse
 };
 
 exports.ConsensusService = ConsensusService;

@@ -208,6 +208,7 @@ type DescriptorServiceClient interface {
 	// "data":"{\"name\":\"fx_test_for_bank1\",\"fields\":[{\"name\":\"submission_date\",\"type\":\"date\",\"options\":{\"format\":\"MM/dd/yyyy\"},\"alias\":\"date12\"},{\"name\":\"submission_asset\",\"type\":\"string\",\"nullable\":true}],\"options\":{\"DEDUPLICATION\":{\"GROUP_BY\":[\"submission_date\",\"submission_asset\"]}}}"
 	// }
 	GetDescriptorVersion(ctx context.Context, in *common.VersionRequest, opts ...grpc.CallOption) (*common.DescriptorDefinitionResponse, error)
+	DescriptorDependencies(ctx context.Context, in *common.GetDefinition, opts ...grpc.CallOption) (*common.DescriptorDependenciesResponse, error)
 }
 
 type descriptorServiceClient struct {
@@ -275,6 +276,15 @@ func (c *descriptorServiceClient) ListDescriptorVersions(ctx context.Context, in
 func (c *descriptorServiceClient) GetDescriptorVersion(ctx context.Context, in *common.VersionRequest, opts ...grpc.CallOption) (*common.DescriptorDefinitionResponse, error) {
 	out := new(common.DescriptorDefinitionResponse)
 	err := c.cc.Invoke(ctx, "/titanium.DescriptorService/GetDescriptorVersion", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *descriptorServiceClient) DescriptorDependencies(ctx context.Context, in *common.GetDefinition, opts ...grpc.CallOption) (*common.DescriptorDependenciesResponse, error) {
+	out := new(common.DescriptorDependenciesResponse)
+	err := c.cc.Invoke(ctx, "/titanium.DescriptorService/DescriptorDependencies", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -474,6 +484,7 @@ type DescriptorServiceServer interface {
 	// "data":"{\"name\":\"fx_test_for_bank1\",\"fields\":[{\"name\":\"submission_date\",\"type\":\"date\",\"options\":{\"format\":\"MM/dd/yyyy\"},\"alias\":\"date12\"},{\"name\":\"submission_asset\",\"type\":\"string\",\"nullable\":true}],\"options\":{\"DEDUPLICATION\":{\"GROUP_BY\":[\"submission_date\",\"submission_asset\"]}}}"
 	// }
 	GetDescriptorVersion(context.Context, *common.VersionRequest) (*common.DescriptorDefinitionResponse, error)
+	DescriptorDependencies(context.Context, *common.GetDefinition) (*common.DescriptorDependenciesResponse, error)
 	mustEmbedUnimplementedDescriptorServiceServer()
 }
 
@@ -501,6 +512,9 @@ func (UnimplementedDescriptorServiceServer) ListDescriptorVersions(context.Conte
 }
 func (UnimplementedDescriptorServiceServer) GetDescriptorVersion(context.Context, *common.VersionRequest) (*common.DescriptorDefinitionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDescriptorVersion not implemented")
+}
+func (UnimplementedDescriptorServiceServer) DescriptorDependencies(context.Context, *common.GetDefinition) (*common.DescriptorDependenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescriptorDependencies not implemented")
 }
 func (UnimplementedDescriptorServiceServer) mustEmbedUnimplementedDescriptorServiceServer() {}
 
@@ -641,6 +655,24 @@ func _DescriptorService_GetDescriptorVersion_Handler(srv interface{}, ctx contex
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DescriptorService_DescriptorDependencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.GetDefinition)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DescriptorServiceServer).DescriptorDependencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.DescriptorService/DescriptorDependencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DescriptorServiceServer).DescriptorDependencies(ctx, req.(*common.GetDefinition))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DescriptorService_ServiceDesc is the grpc.ServiceDesc for DescriptorService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -676,6 +708,10 @@ var DescriptorService_ServiceDesc = grpc.ServiceDesc{
 			MethodName: "GetDescriptorVersion",
 			Handler:    _DescriptorService_GetDescriptorVersion_Handler,
 		},
+		{
+			MethodName: "DescriptorDependencies",
+			Handler:    _DescriptorService_DescriptorDependencies_Handler,
+		},
 	},
 	Streams:  []grpc.StreamDesc{},
 	Metadata: "public/descriptor_service.proto",
@@ -692,6 +728,7 @@ type DbDescriptorServiceClient interface {
 	ListDbDescriptors(ctx context.Context, in *common.ListRequest, opts ...grpc.CallOption) (*common.DescriptorList, error)
 	ListDbDescriptorVersions(ctx context.Context, in *common.GetDefinition, opts ...grpc.CallOption) (*common.ListVersionResponse, error)
 	GetDbDescriptorVersion(ctx context.Context, in *common.VersionRequest, opts ...grpc.CallOption) (*common.DescriptorDefinitionResponse, error)
+	DescriptorDependencies(ctx context.Context, in *common.GetDefinition, opts ...grpc.CallOption) (*common.DescriptorDependenciesResponse, error)
 }
 
 type dbDescriptorServiceClient struct {
@@ -765,6 +802,15 @@ func (c *dbDescriptorServiceClient) GetDbDescriptorVersion(ctx context.Context, 
 	return out, nil
 }
 
+func (c *dbDescriptorServiceClient) DescriptorDependencies(ctx context.Context, in *common.GetDefinition, opts ...grpc.CallOption) (*common.DescriptorDependenciesResponse, error) {
+	out := new(common.DescriptorDependenciesResponse)
+	err := c.cc.Invoke(ctx, "/titanium.DbDescriptorService/DescriptorDependencies", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DbDescriptorServiceServer is the server API for DbDescriptorService service.
 // All implementations must embed UnimplementedDbDescriptorServiceServer
 // for forward compatibility
@@ -776,6 +822,7 @@ type DbDescriptorServiceServer interface {
 	ListDbDescriptors(context.Context, *common.ListRequest) (*common.DescriptorList, error)
 	ListDbDescriptorVersions(context.Context, *common.GetDefinition) (*common.ListVersionResponse, error)
 	GetDbDescriptorVersion(context.Context, *common.VersionRequest) (*common.DescriptorDefinitionResponse, error)
+	DescriptorDependencies(context.Context, *common.GetDefinition) (*common.DescriptorDependenciesResponse, error)
 	mustEmbedUnimplementedDbDescriptorServiceServer()
 }
 
@@ -803,6 +850,9 @@ func (UnimplementedDbDescriptorServiceServer) ListDbDescriptorVersions(context.C
 }
 func (UnimplementedDbDescriptorServiceServer) GetDbDescriptorVersion(context.Context, *common.VersionRequest) (*common.DescriptorDefinitionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetDbDescriptorVersion not implemented")
+}
+func (UnimplementedDbDescriptorServiceServer) DescriptorDependencies(context.Context, *common.GetDefinition) (*common.DescriptorDependenciesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DescriptorDependencies not implemented")
 }
 func (UnimplementedDbDescriptorServiceServer) mustEmbedUnimplementedDbDescriptorServiceServer() {}
 
@@ -943,6 +993,24 @@ func _DbDescriptorService_GetDbDescriptorVersion_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DbDescriptorService_DescriptorDependencies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.GetDefinition)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DbDescriptorServiceServer).DescriptorDependencies(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.DbDescriptorService/DescriptorDependencies",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DbDescriptorServiceServer).DescriptorDependencies(ctx, req.(*common.GetDefinition))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DbDescriptorService_ServiceDesc is the grpc.ServiceDesc for DbDescriptorService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -977,6 +1045,10 @@ var DbDescriptorService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetDbDescriptorVersion",
 			Handler:    _DbDescriptorService_GetDbDescriptorVersion_Handler,
+		},
+		{
+			MethodName: "DescriptorDependencies",
+			Handler:    _DbDescriptorService_DescriptorDependencies_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

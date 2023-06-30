@@ -24,6 +24,7 @@ type OperatorServicePrivateClient interface {
 	ListClients(ctx context.Context, in *emptypb.Empty, opts ...grpc.CallOption) (*ListClientsResponse, error)
 	EvpStatuses(ctx context.Context, in *EvpStatusesRequest, opts ...grpc.CallOption) (*EvpStatusesResponse, error)
 	UploadEVP(ctx context.Context, in *UploadEVPRequest, opts ...grpc.CallOption) (*common.UploadURLResponse, error)
+	UploadDTCC(ctx context.Context, in *UploadDTCCRequest, opts ...grpc.CallOption) (*common.UploadURLResponse, error)
 }
 
 type operatorServicePrivateClient struct {
@@ -70,6 +71,15 @@ func (c *operatorServicePrivateClient) UploadEVP(ctx context.Context, in *Upload
 	return out, nil
 }
 
+func (c *operatorServicePrivateClient) UploadDTCC(ctx context.Context, in *UploadDTCCRequest, opts ...grpc.CallOption) (*common.UploadURLResponse, error) {
+	out := new(common.UploadURLResponse)
+	err := c.cc.Invoke(ctx, "/titanium.OperatorServicePrivate/UploadDTCC", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // OperatorServicePrivateServer is the server API for OperatorServicePrivate service.
 // All implementations must embed UnimplementedOperatorServicePrivateServer
 // for forward compatibility
@@ -78,6 +88,7 @@ type OperatorServicePrivateServer interface {
 	ListClients(context.Context, *emptypb.Empty) (*ListClientsResponse, error)
 	EvpStatuses(context.Context, *EvpStatusesRequest) (*EvpStatusesResponse, error)
 	UploadEVP(context.Context, *UploadEVPRequest) (*common.UploadURLResponse, error)
+	UploadDTCC(context.Context, *UploadDTCCRequest) (*common.UploadURLResponse, error)
 	mustEmbedUnimplementedOperatorServicePrivateServer()
 }
 
@@ -96,6 +107,9 @@ func (UnimplementedOperatorServicePrivateServer) EvpStatuses(context.Context, *E
 }
 func (UnimplementedOperatorServicePrivateServer) UploadEVP(context.Context, *UploadEVPRequest) (*common.UploadURLResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadEVP not implemented")
+}
+func (UnimplementedOperatorServicePrivateServer) UploadDTCC(context.Context, *UploadDTCCRequest) (*common.UploadURLResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UploadDTCC not implemented")
 }
 func (UnimplementedOperatorServicePrivateServer) mustEmbedUnimplementedOperatorServicePrivateServer() {
 }
@@ -183,6 +197,24 @@ func _OperatorServicePrivate_UploadEVP_Handler(srv interface{}, ctx context.Cont
 	return interceptor(ctx, in, info, handler)
 }
 
+func _OperatorServicePrivate_UploadDTCC_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadDTCCRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(OperatorServicePrivateServer).UploadDTCC(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.OperatorServicePrivate/UploadDTCC",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(OperatorServicePrivateServer).UploadDTCC(ctx, req.(*UploadDTCCRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // OperatorServicePrivate_ServiceDesc is the grpc.ServiceDesc for OperatorServicePrivate service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -205,6 +237,10 @@ var OperatorServicePrivate_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UploadEVP",
 			Handler:    _OperatorServicePrivate_UploadEVP_Handler,
+		},
+		{
+			MethodName: "UploadDTCC",
+			Handler:    _OperatorServicePrivate_UploadDTCC_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
