@@ -14,15 +14,24 @@
 
 import ApiClient from "../ApiClient";
 import RpcStatus from '../model/RpcStatus';
+import TitaniumChallengeActiveRequest from '../model/TitaniumChallengeActiveRequest';
+import TitaniumChallengeActiveResponse from '../model/TitaniumChallengeActiveResponse';
 import TitaniumChallengeCreateRequest from '../model/TitaniumChallengeCreateRequest';
 import TitaniumChallengeCreateResponse from '../model/TitaniumChallengeCreateResponse';
+import TitaniumChallengeDecisionRequest from '../model/TitaniumChallengeDecisionRequest';
 import TitaniumChallengeFormMetaRequest from '../model/TitaniumChallengeFormMetaRequest';
 import TitaniumChallengeFormMetaResponse from '../model/TitaniumChallengeFormMetaResponse';
+import TitaniumChallengeFreezeActionRequest from '../model/TitaniumChallengeFreezeActionRequest';
 import TitaniumChallengeFreezeStatusRequest from '../model/TitaniumChallengeFreezeStatusRequest';
+import TitaniumChallengeHistoryRequest from '../model/TitaniumChallengeHistoryRequest';
+import TitaniumChallengeHistoryResponse from '../model/TitaniumChallengeHistoryResponse';
+import TitaniumChallengeListRequest from '../model/TitaniumChallengeListRequest';
+import TitaniumChallengeListResponse from '../model/TitaniumChallengeListResponse';
 import TitaniumGetAttachmentUploadUrlRequest from '../model/TitaniumGetAttachmentUploadUrlRequest';
 import TitaniumGetAttachmentUploadUrlResponse from '../model/TitaniumGetAttachmentUploadUrlResponse';
 import TitaniumGetChallengeDetailsRequest from '../model/TitaniumGetChallengeDetailsRequest';
 import TitaniumGetChallengeDetailsResponse from '../model/TitaniumGetChallengeDetailsResponse';
+import TitaniumMessageResponse from '../model/TitaniumMessageResponse';
 import TitaniumStatusResponse from '../model/TitaniumStatusResponse';
 
 /**
@@ -43,6 +52,47 @@ export default class ChallengeServiceApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the challengeServiceChallengeActive operation.
+     * @callback module:api/ChallengeServiceApi~challengeServiceChallengeActiveCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumChallengeActiveResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * ChallengeActive returns active challenges(according to request) in active status(challenge process is active).
+     * @param {module:model/TitaniumChallengeActiveRequest} body 
+     * @param {module:api/ChallengeServiceApi~challengeServiceChallengeActiveCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumChallengeActiveResponse}
+     */
+    challengeServiceChallengeActive(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling challengeServiceChallengeActive");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumChallengeActiveResponse;
+      return this.apiClient.callApi(
+        '/api/v1/operator/challenge/active', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the challengeServiceChallengeCreate operation.
@@ -80,6 +130,47 @@ export default class ChallengeServiceApi {
       let returnType = TitaniumChallengeCreateResponse;
       return this.apiClient.callApi(
         '/api/v1/challenge/create', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the challengeServiceChallengeDecision operation.
+     * @callback module:api/ChallengeServiceApi~challengeServiceChallengeDecisionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumMessageResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * ChallengeDecision sets decision of the challenge according to request.
+     * @param {module:model/TitaniumChallengeDecisionRequest} body 
+     * @param {module:api/ChallengeServiceApi~challengeServiceChallengeDecisionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumMessageResponse}
+     */
+    challengeServiceChallengeDecision(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling challengeServiceChallengeDecision");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumMessageResponse;
+      return this.apiClient.callApi(
+        '/api/v1/operator/challenge/decision', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -127,6 +218,47 @@ export default class ChallengeServiceApi {
     }
 
     /**
+     * Callback function to receive the result of the challengeServiceChallengeFreezeAction operation.
+     * @callback module:api/ChallengeServiceApi~challengeServiceChallengeFreezeActionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumMessageResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * ChallengeFreezeAction makes challenge process stopped or not according to request.
+     * @param {module:model/TitaniumChallengeFreezeActionRequest} body 
+     * @param {module:api/ChallengeServiceApi~challengeServiceChallengeFreezeActionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumMessageResponse}
+     */
+    challengeServiceChallengeFreezeAction(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling challengeServiceChallengeFreezeAction");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumMessageResponse;
+      return this.apiClient.callApi(
+        '/api/v1/operator/challenge/freeze', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
      * Callback function to receive the result of the challengeServiceChallengeFreezeStatus operation.
      * @callback module:api/ChallengeServiceApi~challengeServiceChallengeFreezeStatusCallback
      * @param {String} error Error message, if any.
@@ -162,6 +294,88 @@ export default class ChallengeServiceApi {
       let returnType = TitaniumStatusResponse;
       return this.apiClient.callApi(
         '/api/v1/challenge/freeze/status', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the challengeServiceChallengeHistory operation.
+     * @callback module:api/ChallengeServiceApi~challengeServiceChallengeHistoryCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumChallengeHistoryResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * ChallengeHistory return already closed challenges according to request.
+     * @param {module:model/TitaniumChallengeHistoryRequest} body 
+     * @param {module:api/ChallengeServiceApi~challengeServiceChallengeHistoryCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumChallengeHistoryResponse}
+     */
+    challengeServiceChallengeHistory(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling challengeServiceChallengeHistory");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumChallengeHistoryResponse;
+      return this.apiClient.callApi(
+        '/api/v1/operator/challenge/history', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the challengeServiceChallengeList operation.
+     * @callback module:api/ChallengeServiceApi~challengeServiceChallengeListCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumChallengeListResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * ChallengeList returns list of challenges according to request.
+     * @param {module:model/TitaniumChallengeListRequest} body 
+     * @param {module:api/ChallengeServiceApi~challengeServiceChallengeListCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumChallengeListResponse}
+     */
+    challengeServiceChallengeList(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling challengeServiceChallengeList");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumChallengeListResponse;
+      return this.apiClient.callApi(
+        '/api/v1/operator/challenge/list', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from openapi_client.api.admin_service_api import AdminServiceApi
 from openapi_client.api.analytics_controller_api import AnalyticsControllerApi
 from openapi_client.api.assets_service_api import AssetsServiceApi
 from openapi_client.api.challenge_service_api import ChallengeServiceApi
@@ -26,6 +27,7 @@ from openapi_client.api.mapping_service_api import MappingServiceApi
 from openapi_client.api.market_service_api import MarketServiceApi
 from openapi_client.api.metadata_entity_service_api import MetadataEntityServiceApi
 from openapi_client.api.normalization_service_api import NormalizationServiceApi
+from openapi_client.api.operator_service_private_api import OperatorServicePrivateApi
 from openapi_client.api.outliers_service_api import OutliersServiceApi
 from openapi_client.api.policy_service_api import PolicyServiceApi
 from openapi_client.api.pop_up_service_api import PopUpServiceApi

@@ -323,6 +323,45 @@
         "x-codegen-request-body-name" : "body"
       }
     },
+    "/api/v1/calculator/run" : {
+      "post" : {
+        "operationId" : "AdminService_RunCalculator",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumRunCalculatorRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "AdminService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/challenge-details" : {
       "post" : {
         "operationId" : "ChallengeService_GetChallengeDetails",
@@ -803,6 +842,45 @@
         },
         "summary" : "Get Consensus Run's consensus result sets",
         "tags" : [ "ConsensusService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/consensus/run" : {
+      "post" : {
+        "operationId" : "AdminService_RunConsensus",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumRunConsensusRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "AdminService" ],
         "x-codegen-request-body-name" : "body"
       }
     },
@@ -2429,6 +2507,86 @@
         "x-codegen-request-body-name" : "body"
       }
     },
+    "/api/v1/internal/upload/authorize" : {
+      "post" : {
+        "operationId" : "DataService_AuthorizeUpload",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUploadURLRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumUploadAuthorizationResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "AuthorizeUpload shows availability of uploading for user.",
+        "tags" : [ "DataService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/internal/upload/notify" : {
+      "post" : {
+        "operationId" : "DataService_NotifyUpload",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUploadNotifyRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "NotifyUpload returns message with notify that data was uploaded according to url in request.",
+        "tags" : [ "DataService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/kv/add" : {
       "post" : {
         "operationId" : "KVService_AddKey",
@@ -3520,6 +3678,977 @@
         "x-codegen-request-body-name" : "body"
       }
     },
+    "/api/v1/onboard" : {
+      "post" : {
+        "operationId" : "AdminService_OnBoard",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumOnBoardRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "AdminService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator-outliers" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_OperatorOutliers",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumOperatorOutliersRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumOperatorOutliersResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/add/field-values" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_AddSupportedFields",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumSupportedFieldsValues"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/assets" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_Assets",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumAssetsRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumAssetsResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/assets/add" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_AddAsset",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumAddAssetRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "AddAsset adds asset to the system.",
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/challenge/active" : {
+      "post" : {
+        "operationId" : "ChallengeService_ChallengeActive",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumChallengeActiveRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumChallengeActiveResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "ChallengeActive returns active challenges(according to request) in active status(challenge process is active).",
+        "tags" : [ "ChallengeService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/challenge/decision" : {
+      "post" : {
+        "operationId" : "ChallengeService_ChallengeDecision",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumChallengeDecisionRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "ChallengeDecision sets decision of the challenge according to request.",
+        "tags" : [ "ChallengeService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/challenge/freeze" : {
+      "post" : {
+        "operationId" : "ChallengeService_ChallengeFreezeAction",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumChallengeFreezeActionRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "ChallengeFreezeAction makes challenge process stopped or not according to request.",
+        "tags" : [ "ChallengeService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/challenge/history" : {
+      "post" : {
+        "operationId" : "ChallengeService_ChallengeHistory",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumChallengeHistoryRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumChallengeHistoryResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "ChallengeHistory return already closed challenges according to request.",
+        "tags" : [ "ChallengeService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/challenge/list" : {
+      "post" : {
+        "operationId" : "ChallengeService_ChallengeList",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumChallengeListRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumChallengeListResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "ChallengeList returns list of challenges according to request.",
+        "tags" : [ "ChallengeService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/client/add" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_AddClient",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumClientName"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/client/list" : {
+      "get" : {
+        "operationId" : "OperatorServicePrivate_ListClients",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumListClientsResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ]
+      }
+    },
+    "/api/v1/operator/consensus/active" : {
+      "post" : {
+        "operationId" : "ConsensusService_ConsensusActive",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumConsensusActiveRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumConsensusActiveResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "ConsensusService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/consensus/decision" : {
+      "post" : {
+        "operationId" : "ConsensusService_ConsensusDecision",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumConsensusDecisionRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "ConsensusService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/consensus/history" : {
+      "post" : {
+        "operationId" : "ConsensusService_ConsensusHistory",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumConsensusHistoryRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumConsensusHistoryResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "ConsensusService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/consensus/publish" : {
+      "post" : {
+        "operationId" : "ConsensusService_ConsensusPublish",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumConsensusPublishRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "ConsensusService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/consensus/to-publish" : {
+      "post" : {
+        "operationId" : "ConsensusService_ConsensusToPublish",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumConsensusToPublishRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumConsensusToPublishResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "ConsensusService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/create/field-values" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_CreateSupportedFields",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumSupportedFieldsValues"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/delete/field-values" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_DeleteSupportedFields",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumSupportedFieldsValues"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/dtcc-trades/upload" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_UploadDTCC",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUploadDTCCRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumUploadURLResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/evaluated-prices/slice" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_EvpStatuses",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumEvpStatusesRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumEvpStatusesResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/evp/upload" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_UploadEVP",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUploadEVPRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumUploadURLResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/outliers" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_Outliers",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumOutliersRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumOutliersResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/recentassets" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_RecentAssets",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumRecentAssetsRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumRecentAssetsResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/operator/report" : {
+      "post" : {
+        "operationId" : "OperatorServicePrivate_ExportReport",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumExportReportRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumExportResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "summary" : "ExportReport returns pre signed s3 urls which can be used for export report(and compression type)",
+        "tags" : [ "OperatorServicePrivate" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/outliers" : {
       "post" : {
         "operationId" : "OutliersService_Outliers",
@@ -4166,6 +5295,45 @@
         },
         "summary" : "ListUniqueKeyVersions is used to retrieve a list of all versions of a specific unique key definition by its scope and name.\nRequest:\n{\n  \"scope\":\"global\",\n  \"identifier\": {\n       \"name\": \"foreign_exchange-vanilla-forwards\"\n   }\n}",
         "tags" : [ "UniqueKeyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/upload/evaluated-price" : {
+      "post" : {
+        "operationId" : "AdminService_UploadEvaluatedPrice",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUploadEvaluatedPriceRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "AdminService" ],
         "x-codegen-request-body-name" : "body"
       }
     },
@@ -4950,6 +6118,84 @@
         "x-codegen-request-body-name" : "body"
       }
     },
+    "/api/v1/user/add" : {
+      "post" : {
+        "operationId" : "UserService_AddUser",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUserRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumUserResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UserService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user/delete" : {
+      "post" : {
+        "operationId" : "UserService_DeleteUser",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUserRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumUserResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UserService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/user/notifications" : {
       "post" : {
         "operationId" : "UserService_GetUserNotifications",
@@ -5164,6 +6410,45 @@
               "*/*" : {
                 "schema" : {
                   "$ref" : "#/components/schemas/titaniumUserPermissionsResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UserService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/user/update" : {
+      "post" : {
+        "operationId" : "UserService_UpdateUser",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUserRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumUserResponse"
                 }
               }
             },
@@ -5965,6 +7250,20 @@
         "title" : "common response that notify the user that some action was executed",
         "type" : "object"
       },
+      "titaniumAddAssetRequest" : {
+        "properties" : {
+          "asset" : {
+            "type" : "string"
+          },
+          "instrumentType" : {
+            "type" : "string"
+          },
+          "service" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumAddLookupTableRequest" : {
         "properties" : {
           "lookuptable" : {
@@ -6172,6 +7471,72 @@
         },
         "type" : "object"
       },
+      "titaniumChallengeActiveRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "filter" : {
+            "type" : "string"
+          },
+          "limit" : {
+            "$ref" : "#/components/schemas/titaniumLimit"
+          },
+          "offset" : {
+            "type" : "integer"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "title" : "ChallengeActiveRequest is a request to retrieve a list of active challenges for a specific asset",
+        "type" : "object"
+      },
+      "titaniumChallengeActiveResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumChallengeActiveResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeActiveResponseData" : {
+        "properties" : {
+          "columns" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColumnInfo"
+            },
+            "type" : "array"
+          },
+          "rows" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumChallengeConsensusMetadata"
+            },
+            "type" : "array"
+          },
+          "totalRows" : {
+            "type" : "integer"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeConsensusMetadata" : {
+        "properties" : {
+          "challenges" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumValuesRow"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumChallengeCreateRequest" : {
         "properties" : {
           "assetId" : {
@@ -6232,6 +7597,20 @@
         "properties" : {
           "ticketId" : {
             "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeDecisionRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "challengeId" : {
+            "type" : "string"
+          },
+          "decision" : {
+            "$ref" : "#/components/schemas/titaniumDecision"
           }
         },
         "type" : "object"
@@ -6368,10 +7747,153 @@
         },
         "type" : "object"
       },
+      "titaniumChallengeFreezeAction" : {
+        "type" : "string"
+      },
+      "titaniumChallengeFreezeActionRequest" : {
+        "properties" : {
+          "action" : {
+            "$ref" : "#/components/schemas/titaniumChallengeFreezeAction"
+          },
+          "consensusRunId" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumChallengeFreezeStatusRequest" : {
         "properties" : {
           "consensusRunId" : {
             "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeHistoryRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "filter" : {
+            "type" : "string"
+          },
+          "limit" : {
+            "$ref" : "#/components/schemas/titaniumLimit"
+          },
+          "offset" : {
+            "type" : "integer"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeHistoryResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumChallengeHistoryResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeHistoryResponseData" : {
+        "properties" : {
+          "columns" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColumnInfo"
+            },
+            "type" : "array"
+          },
+          "rows" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumValuesRow"
+            },
+            "type" : "array"
+          },
+          "totalRows" : {
+            "type" : "integer"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeListMetadata" : {
+        "properties" : {
+          "values" : {
+            "items" : {
+              "properties" : { },
+              "type" : "object"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeListRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "consensusRunTimestamp" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string"
+          },
+          "filter" : {
+            "type" : "string"
+          },
+          "limit" : {
+            "$ref" : "#/components/schemas/titaniumLimit"
+          },
+          "offset" : {
+            "type" : "integer"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          },
+          "snapTime" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeListResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumChallengeListResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumChallengeListResponseData" : {
+        "properties" : {
+          "challenges" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumChallengeListMetadata"
+            },
+            "type" : "array"
+          },
+          "columns" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColumnInfo"
+            },
+            "type" : "array"
+          },
+          "totalRows" : {
+            "type" : "integer"
           }
         },
         "type" : "object"
@@ -6565,6 +8087,17 @@
         },
         "type" : "object"
       },
+      "titaniumClientName" : {
+        "properties" : {
+          "displayName" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumColDependency" : {
         "properties" : {
           "col" : {
@@ -6619,6 +8152,23 @@
         },
         "type" : "object"
       },
+      "titaniumConsensusActiveRequest" : {
+        "properties" : {
+          "filter" : {
+            "type" : "string"
+          },
+          "limit" : {
+            "$ref" : "#/components/schemas/titaniumLimit"
+          },
+          "offset" : {
+            "type" : "integer"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumConsensusActiveResponse" : {
         "properties" : {
           "data" : {
@@ -6626,6 +8176,17 @@
           },
           "error" : {
             "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumConsensusDecisionRequest" : {
+        "properties" : {
+          "consensusTrackingId" : {
+            "type" : "string"
+          },
+          "decision" : {
+            "$ref" : "#/components/schemas/titaniumDecision"
           }
         },
         "type" : "object"
@@ -6814,6 +8375,68 @@
           },
           "totalParseErrors" : {
             "type" : "integer"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumConsensusHistoryRequest" : {
+        "properties" : {
+          "filter" : {
+            "type" : "string"
+          },
+          "limit" : {
+            "$ref" : "#/components/schemas/titaniumLimit"
+          },
+          "offset" : {
+            "type" : "integer"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumConsensusHistoryResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumConsensusHistoryResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumConsensusHistoryResponseData" : {
+        "properties" : {
+          "columns" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColumnInfo"
+            },
+            "type" : "array"
+          },
+          "rows" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumValuesRow"
+            },
+            "type" : "array"
+          },
+          "totalRows" : {
+            "type" : "integer"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumConsensusPublishRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "consensusTrackingId" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
           }
         },
         "type" : "object"
@@ -7049,6 +8672,54 @@
         "title" : "ConsensusTimestampsResponseData is a message that contains the metadata of the consensus timestamps",
         "type" : "object"
       },
+      "titaniumConsensusToPublishRequest" : {
+        "properties" : {
+          "filter" : {
+            "type" : "string"
+          },
+          "limit" : {
+            "$ref" : "#/components/schemas/titaniumLimit"
+          },
+          "offset" : {
+            "type" : "integer"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumConsensusToPublishResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumConsensusToPublishResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumConsensusToPublishResponseData" : {
+        "properties" : {
+          "columns" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColumnInfo"
+            },
+            "type" : "array"
+          },
+          "rows" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumValuesRow"
+            },
+            "type" : "array"
+          },
+          "totalRows" : {
+            "type" : "integer"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumCriteriaDefinition" : {
         "properties" : {
           "description" : {
@@ -7280,6 +8951,9 @@
           }
         },
         "type" : "object"
+      },
+      "titaniumDecision" : {
+        "type" : "string"
       },
       "titaniumDependency" : {
         "properties" : {
@@ -7784,6 +9458,82 @@
         },
         "type" : "object"
       },
+      "titaniumEvpStatus" : {
+        "properties" : {
+          "added" : {
+            "type" : "string"
+          },
+          "asset" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string"
+          },
+          "dealer" : {
+            "type" : "string"
+          },
+          "instrumentType" : {
+            "type" : "string"
+          },
+          "logPath" : {
+            "type" : "string"
+          },
+          "s3path" : {
+            "type" : "string"
+          },
+          "snapTime" : {
+            "type" : "string"
+          },
+          "status" : {
+            "type" : "string"
+          },
+          "userEmail" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumEvpStatuses" : {
+        "properties" : {
+          "evpStatuses" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumEvpStatus"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumEvpStatusesRequest" : {
+        "properties" : {
+          "sliceRequestData" : {
+            "$ref" : "#/components/schemas/titaniumSliceRequestData"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumEvpStatusesResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumEvpStatusesResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumEvpStatusesResponseData" : {
+        "properties" : {
+          "evpStatuses" : {
+            "$ref" : "#/components/schemas/titaniumEvpStatuses"
+          },
+          "slice" : {
+            "$ref" : "#/components/schemas/titaniumSlice"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumExpertExplorerTableColumn" : {
         "properties" : {
           "absDiffFromExpertCohortMean" : {
@@ -7900,6 +9650,21 @@
           }
         },
         "title" : "ExportPresignedUrlResponseResponseData is data that contains pre signed url and compression type",
+        "type" : "object"
+      },
+      "titaniumExportReportRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "consensusRunTimestamp" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "title" : "ExportReportRequest is a request for exporting report data",
         "type" : "object"
       },
       "titaniumExportRequest" : {
@@ -8866,6 +10631,28 @@
         "title" : "use for customize result of query with limit of returned results",
         "type" : "object"
       },
+      "titaniumListClientsResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumListClientsResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumListClientsResponseData" : {
+        "properties" : {
+          "clients" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumClientName"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumListCustomFunctionRequest" : {
         "properties" : {
           "descriptorName" : {
@@ -9238,6 +11025,77 @@
           }
         },
         "title" : "NormalizationRuleResponse is response after adding rule to the system(can return error or data for the rule that was added)",
+        "type" : "object"
+      },
+      "titaniumOnBoardRequest" : {
+        "properties" : {
+          "authorized" : {
+            "$ref" : "#/components/schemas/titaniumAssetsList"
+          },
+          "client" : {
+            "type" : "string"
+          },
+          "password" : {
+            "type" : "string"
+          },
+          "publicKey" : {
+            "type" : "string"
+          },
+          "username" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumOperatorOutliersRequest" : {
+        "properties" : {
+          "date" : {
+            "type" : "string"
+          },
+          "filter" : {
+            "type" : "string"
+          },
+          "limit" : {
+            "$ref" : "#/components/schemas/titaniumLimit"
+          },
+          "offset" : {
+            "type" : "integer"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumOperatorOutliersResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumOperatorOutliersResponseData"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumOperatorOutliersResponseData" : {
+        "properties" : {
+          "columns" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColumnInfo"
+            },
+            "type" : "array"
+          },
+          "rows" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumValuesRow"
+            },
+            "type" : "array"
+          },
+          "totalRows" : {
+            "type" : "integer"
+          }
+        },
         "type" : "object"
       },
       "titaniumOrder" : {
@@ -9656,6 +11514,61 @@
         },
         "type" : "object"
       },
+      "titaniumRunCalculatorRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "clients" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "consensusRunReason" : {
+            "type" : "string"
+          },
+          "dates" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumRunConsensusRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "clients" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "dates" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumRunDataProcessingAppRequest" : {
         "properties" : {
           "asset" : {
@@ -9816,6 +11729,25 @@
               "$ref" : "#/components/schemas/titaniumDQError"
             },
             "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumSlice" : {
+        "properties" : {
+          "total" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumSliceRequestData" : {
+        "properties" : {
+          "limit" : {
+            "type" : "integer"
+          },
+          "offset" : {
+            "type" : "integer"
           }
         },
         "type" : "object"
@@ -10094,6 +12026,26 @@
         },
         "type" : "object"
       },
+      "titaniumSupportedFieldsValues" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "field" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          },
+          "values" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumTTLTypes" : {
         "type" : "string"
       },
@@ -10209,6 +12161,88 @@
               "$ref" : "#/components/schemas/titaniumUniqueKeyDefinition"
             },
             "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUploadAuthorizationResponse" : {
+        "properties" : {
+          "isValid" : {
+            "type" : "boolean"
+          },
+          "targetPath" : {
+            "type" : "string"
+          },
+          "uuid" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUploadDTCCRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string"
+          },
+          "fileName" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUploadEVPRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string"
+          },
+          "fileName" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUploadEvaluatedPriceRequest" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string"
+          },
+          "file" : {
+            "type" : "string"
+          },
+          "fileName" : {
+            "type" : "string"
+          },
+          "traceName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUploadNotifyRequest" : {
+        "properties" : {
+          "currentPath" : {
+            "type" : "string"
+          },
+          "targetPath" : {
+            "type" : "string"
+          },
+          "uuid" : {
+            "type" : "string"
           }
         },
         "type" : "object"
@@ -10382,6 +12416,14 @@
           }
         },
         "title" : "UserPermissionsResponse message is the response to a GetUserPermissionsRequest. It contains UserPermissions or an Error",
+        "type" : "object"
+      },
+      "titaniumUserRequest" : {
+        "properties" : {
+          "user" : {
+            "$ref" : "#/components/schemas/titaniumUser"
+          }
+        },
         "type" : "object"
       },
       "titaniumUserResponse" : {

@@ -24,6 +24,7 @@ import TitaniumUserNotificationRequest from '../model/TitaniumUserNotificationRe
 import TitaniumUserNotificationResponse from '../model/TitaniumUserNotificationResponse';
 import TitaniumUserNotificationsResponse from '../model/TitaniumUserNotificationsResponse';
 import TitaniumUserPermissionsResponse from '../model/TitaniumUserPermissionsResponse';
+import TitaniumUserRequest from '../model/TitaniumUserRequest';
 import TitaniumUserResponse from '../model/TitaniumUserResponse';
 
 /**
@@ -44,6 +45,46 @@ export default class UserServiceApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the userServiceAddUser operation.
+     * @callback module:api/UserServiceApi~userServiceAddUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumUserResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumUserRequest} body 
+     * @param {module:api/UserServiceApi~userServiceAddUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumUserResponse}
+     */
+    userServiceAddUser(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling userServiceAddUser");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumUserResponse;
+      return this.apiClient.callApi(
+        '/api/v1/user/add', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the userServiceAddUserNotification operation.
@@ -120,6 +161,46 @@ export default class UserServiceApi {
       let returnType = ProtoServiceResponse;
       return this.apiClient.callApi(
         '/api/v1/user-management/users/create', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userServiceDeleteUser operation.
+     * @callback module:api/UserServiceApi~userServiceDeleteUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumUserResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumUserRequest} body 
+     * @param {module:api/UserServiceApi~userServiceDeleteUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumUserResponse}
+     */
+    userServiceDeleteUser(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling userServiceDeleteUser");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumUserResponse;
+      return this.apiClient.callApi(
+        '/api/v1/user/delete', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -440,6 +521,46 @@ export default class UserServiceApi {
       let returnType = ProtoServiceResponse;
       return this.apiClient.callApi(
         '/api/v1/user-management/users/update', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the userServiceUpdateUser operation.
+     * @callback module:api/UserServiceApi~userServiceUpdateUserCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumUserResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumUserRequest} body 
+     * @param {module:api/UserServiceApi~userServiceUpdateUserCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumUserResponse}
+     */
+    userServiceUpdateUser(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling userServiceUpdateUser");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumUserResponse;
+      return this.apiClient.callApi(
+        '/api/v1/user/update', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

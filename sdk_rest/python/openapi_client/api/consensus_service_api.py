@@ -22,20 +22,28 @@ from openapi_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_consensus_active_request import TitaniumConsensusActiveRequest
 from openapi_client.model.titanium_consensus_active_response import TitaniumConsensusActiveResponse
+from openapi_client.model.titanium_consensus_decision_request import TitaniumConsensusDecisionRequest
 from openapi_client.model.titanium_consensus_explorer_instrument_details_response import TitaniumConsensusExplorerInstrumentDetailsResponse
 from openapi_client.model.titanium_consensus_explorer_range_response import TitaniumConsensusExplorerRangeResponse
 from openapi_client.model.titanium_consensus_explorer_table_response import TitaniumConsensusExplorerTableResponse
+from openapi_client.model.titanium_consensus_history_request import TitaniumConsensusHistoryRequest
+from openapi_client.model.titanium_consensus_history_response import TitaniumConsensusHistoryResponse
+from openapi_client.model.titanium_consensus_publish_request import TitaniumConsensusPublishRequest
 from openapi_client.model.titanium_consensus_request import TitaniumConsensusRequest
 from openapi_client.model.titanium_consensus_response import TitaniumConsensusResponse
 from openapi_client.model.titanium_consensus_result_set_values_request import TitaniumConsensusResultSetValuesRequest
 from openapi_client.model.titanium_consensus_result_set_values_response import TitaniumConsensusResultSetValuesResponse
 from openapi_client.model.titanium_consensus_timestamps_request import TitaniumConsensusTimestampsRequest
 from openapi_client.model.titanium_consensus_timestamps_response import TitaniumConsensusTimestampsResponse
+from openapi_client.model.titanium_consensus_to_publish_request import TitaniumConsensusToPublishRequest
+from openapi_client.model.titanium_consensus_to_publish_response import TitaniumConsensusToPublishResponse
 from openapi_client.model.titanium_evp_request import TitaniumEVPRequest
 from openapi_client.model.titanium_evp_response import TitaniumEVPResponse
 from openapi_client.model.titanium_get_consensus_runs_request import TitaniumGetConsensusRunsRequest
 from openapi_client.model.titanium_get_consensus_runs_response import TitaniumGetConsensusRunsResponse
+from openapi_client.model.titanium_message_response import TitaniumMessageResponse
 from openapi_client.model.titanium_outliers_list_request import TitaniumOutliersListRequest
 
 
@@ -81,6 +89,102 @@ class ConsensusServiceApi(object):
                 'openapi_types': {
                     'body':
                         (TitaniumConsensusRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.consensus_service_consensus_active_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumConsensusActiveResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/consensus/active',
+                'operation_id': 'consensus_service_consensus_active',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumConsensusActiveRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.consensus_service_consensus_decision_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumMessageResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/consensus/decision',
+                'operation_id': 'consensus_service_consensus_decision',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumConsensusDecisionRequest,),
                 },
                 'attribute_map': {
                 },
@@ -224,6 +328,54 @@ class ConsensusServiceApi(object):
             },
             api_client=api_client
         )
+        self.consensus_service_consensus_history_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumConsensusHistoryResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/consensus/history',
+                'operation_id': 'consensus_service_consensus_history',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumConsensusHistoryRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.consensus_service_consensus_outliers_endpoint = _Endpoint(
             settings={
                 'response_type': (TitaniumConsensusActiveResponse,),
@@ -255,6 +407,54 @@ class ConsensusServiceApi(object):
                 'openapi_types': {
                     'body':
                         (TitaniumOutliersListRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.consensus_service_consensus_publish_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumMessageResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/consensus/publish',
+                'operation_id': 'consensus_service_consensus_publish',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumConsensusPublishRequest,),
                 },
                 'attribute_map': {
                 },
@@ -351,6 +551,54 @@ class ConsensusServiceApi(object):
                 'openapi_types': {
                     'body':
                         (TitaniumConsensusTimestampsRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.consensus_service_consensus_to_publish_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumConsensusToPublishResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/consensus/to-publish',
+                'operation_id': 'consensus_service_consensus_to_publish',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumConsensusToPublishRequest,),
                 },
                 'attribute_map': {
                 },
@@ -547,6 +795,170 @@ class ConsensusServiceApi(object):
         kwargs['body'] = \
             body
         return self.consensus_service_consensus_endpoint.call_with_http_info(**kwargs)
+
+    def consensus_service_consensus_active(
+        self,
+        body,
+        **kwargs
+    ):
+        """consensus_service_consensus_active  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.consensus_service_consensus_active(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumConsensusActiveRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumConsensusActiveResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.consensus_service_consensus_active_endpoint.call_with_http_info(**kwargs)
+
+    def consensus_service_consensus_decision(
+        self,
+        body,
+        **kwargs
+    ):
+        """consensus_service_consensus_decision  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.consensus_service_consensus_decision(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumConsensusDecisionRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumMessageResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.consensus_service_consensus_decision_endpoint.call_with_http_info(**kwargs)
 
     def consensus_service_consensus_explorer_instrument_details(
         self,
@@ -779,6 +1191,88 @@ class ConsensusServiceApi(object):
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
         return self.consensus_service_consensus_explorer_table_endpoint.call_with_http_info(**kwargs)
 
+    def consensus_service_consensus_history(
+        self,
+        body,
+        **kwargs
+    ):
+        """consensus_service_consensus_history  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.consensus_service_consensus_history(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumConsensusHistoryRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumConsensusHistoryResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.consensus_service_consensus_history_endpoint.call_with_http_info(**kwargs)
+
     def consensus_service_consensus_outliers(
         self,
         body,
@@ -860,6 +1354,88 @@ class ConsensusServiceApi(object):
         kwargs['body'] = \
             body
         return self.consensus_service_consensus_outliers_endpoint.call_with_http_info(**kwargs)
+
+    def consensus_service_consensus_publish(
+        self,
+        body,
+        **kwargs
+    ):
+        """consensus_service_consensus_publish  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.consensus_service_consensus_publish(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumConsensusPublishRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumMessageResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.consensus_service_consensus_publish_endpoint.call_with_http_info(**kwargs)
 
     def consensus_service_consensus_result_set_values(
         self,
@@ -1025,6 +1601,88 @@ class ConsensusServiceApi(object):
         kwargs['body'] = \
             body
         return self.consensus_service_consensus_timestamps_endpoint.call_with_http_info(**kwargs)
+
+    def consensus_service_consensus_to_publish(
+        self,
+        body,
+        **kwargs
+    ):
+        """consensus_service_consensus_to_publish  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.consensus_service_consensus_to_publish(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumConsensusToPublishRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumConsensusToPublishResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.consensus_service_consensus_to_publish_endpoint.call_with_http_info(**kwargs)
 
     def consensus_service_evaluated_price(
         self,

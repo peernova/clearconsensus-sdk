@@ -4,8 +4,10 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
+| [**userServiceAddUser**](UserServiceApi.md#userServiceAddUser) | **POST** /api/v1/user/add |  |
 | [**userServiceAddUserNotification**](UserServiceApi.md#userServiceAddUserNotification) | **POST** /api/v1/user/notifications/add |  |
 | [**userServiceCreate**](UserServiceApi.md#userServiceCreate) | **POST** /api/v1/user-management/users/create |  |
+| [**userServiceDeleteUser**](UserServiceApi.md#userServiceDeleteUser) | **POST** /api/v1/user/delete |  |
 | [**userServiceDeleteUserNotification**](UserServiceApi.md#userServiceDeleteUserNotification) | **POST** /api/v1/user/notifications/delete |  |
 | [**userServiceGetAll**](UserServiceApi.md#userServiceGetAll) | **POST** /api/v1/user-management/users/getAll |  |
 | [**userServiceGetById**](UserServiceApi.md#userServiceGetById) | **POST** /api/v1/user-management/users/getById |  |
@@ -14,8 +16,70 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 | [**userServiceGetUserNotificationsByMarket**](UserServiceApi.md#userServiceGetUserNotificationsByMarket) | **POST** /api/v1/user/notifications/market |  |
 | [**userServiceGetUserPermissions**](UserServiceApi.md#userServiceGetUserPermissions) | **POST** /api/v1/user/permissions |  |
 | [**userServiceUpdate**](UserServiceApi.md#userServiceUpdate) | **POST** /api/v1/user-management/users/update |  |
+| [**userServiceUpdateUser**](UserServiceApi.md#userServiceUpdateUser) | **POST** /api/v1/user/update |  |
 | [**userServiceUpdateUserNotification**](UserServiceApi.md#userServiceUpdateUserNotification) | **POST** /api/v1/user/notifications/update |  |
 
+
+<a name="userServiceAddUser"></a>
+# **userServiceAddUser**
+> TitaniumUserResponse userServiceAddUser(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.UserServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    UserServiceApi apiInstance = new UserServiceApi(defaultClient);
+    TitaniumUserRequest body = new TitaniumUserRequest(); // TitaniumUserRequest | 
+    try {
+      TitaniumUserResponse result = apiInstance.userServiceAddUser(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserServiceApi#userServiceAddUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | |
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
 
 <a name="userServiceAddUserNotification"></a>
 # **userServiceAddUserNotification**
@@ -123,6 +187,67 @@ public class Example {
 ### Return type
 
 [**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="userServiceDeleteUser"></a>
+# **userServiceDeleteUser**
+> TitaniumUserResponse userServiceDeleteUser(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.UserServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    UserServiceApi apiInstance = new UserServiceApi(defaultClient);
+    TitaniumUserRequest body = new TitaniumUserRequest(); // TitaniumUserRequest | 
+    try {
+      TitaniumUserResponse result = apiInstance.userServiceDeleteUser(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserServiceApi#userServiceDeleteUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | |
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
 
 ### Authorization
 
@@ -611,6 +736,67 @@ public class Example {
 ### Return type
 
 [**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="userServiceUpdateUser"></a>
+# **userServiceUpdateUser**
+> TitaniumUserResponse userServiceUpdateUser(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.UserServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    UserServiceApi apiInstance = new UserServiceApi(defaultClient);
+    TitaniumUserRequest body = new TitaniumUserRequest(); // TitaniumUserRequest | 
+    try {
+      TitaniumUserResponse result = apiInstance.userServiceUpdateUser(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UserServiceApi#userServiceUpdateUser");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | |
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
 
 ### Authorization
 

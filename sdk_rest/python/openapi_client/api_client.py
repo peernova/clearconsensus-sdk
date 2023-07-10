@@ -801,11 +801,11 @@ class Endpoint(object):
         """ This method is invoked when endpoints are called
         Example:
 
-        api_instance = AnalyticsControllerApi()
-        api_instance.analytics_controller_find_consensus_analytics  # this is an instance of the class Endpoint
-        api_instance.analytics_controller_find_consensus_analytics()  # this invokes api_instance.analytics_controller_find_consensus_analytics.__call__()
+        api_instance = AdminServiceApi()
+        api_instance.admin_service_on_board  # this is an instance of the class Endpoint
+        api_instance.admin_service_on_board()  # this invokes api_instance.admin_service_on_board.__call__()
         which then invokes the callable functions stored in that endpoint at
-        api_instance.analytics_controller_find_consensus_analytics.callable or self.callable in this class
+        api_instance.admin_service_on_board.callable or self.callable in this class
 
         """
         return self.callable(self, *args, **kwargs)

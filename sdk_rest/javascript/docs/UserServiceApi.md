@@ -4,8 +4,10 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**userServiceAddUser**](UserServiceApi.md#userServiceAddUser) | **POST** /api/v1/user/add | 
 [**userServiceAddUserNotification**](UserServiceApi.md#userServiceAddUserNotification) | **POST** /api/v1/user/notifications/add | 
 [**userServiceCreate**](UserServiceApi.md#userServiceCreate) | **POST** /api/v1/user-management/users/create | 
+[**userServiceDeleteUser**](UserServiceApi.md#userServiceDeleteUser) | **POST** /api/v1/user/delete | 
 [**userServiceDeleteUserNotification**](UserServiceApi.md#userServiceDeleteUserNotification) | **POST** /api/v1/user/notifications/delete | 
 [**userServiceGetAll**](UserServiceApi.md#userServiceGetAll) | **POST** /api/v1/user-management/users/getAll | 
 [**userServiceGetById**](UserServiceApi.md#userServiceGetById) | **POST** /api/v1/user-management/users/getById | 
@@ -14,8 +16,52 @@ Method | HTTP request | Description
 [**userServiceGetUserNotificationsByMarket**](UserServiceApi.md#userServiceGetUserNotificationsByMarket) | **POST** /api/v1/user/notifications/market | 
 [**userServiceGetUserPermissions**](UserServiceApi.md#userServiceGetUserPermissions) | **POST** /api/v1/user/permissions | 
 [**userServiceUpdate**](UserServiceApi.md#userServiceUpdate) | **POST** /api/v1/user-management/users/update | 
+[**userServiceUpdateUser**](UserServiceApi.md#userServiceUpdateUser) | **POST** /api/v1/user/update | 
 [**userServiceUpdateUserNotification**](UserServiceApi.md#userServiceUpdateUserNotification) | **POST** /api/v1/user/notifications/update | 
 
+
+
+## userServiceAddUser
+
+> TitaniumUserResponse userServiceAddUser(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.UserServiceApi();
+let body = new ClearconsensusSdk.TitaniumUserRequest(); // TitaniumUserRequest | 
+apiInstance.userServiceAddUser(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | 
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
 
 
 ## userServiceAddUserNotification
@@ -93,6 +139,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## userServiceDeleteUser
+
+> TitaniumUserResponse userServiceDeleteUser(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.UserServiceApi();
+let body = new ClearconsensusSdk.TitaniumUserRequest(); // TitaniumUserRequest | 
+apiInstance.userServiceDeleteUser(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | 
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
 
 ### Authorization
 
@@ -437,6 +526,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## userServiceUpdateUser
+
+> TitaniumUserResponse userServiceUpdateUser(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.UserServiceApi();
+let body = new ClearconsensusSdk.TitaniumUserRequest(); // TitaniumUserRequest | 
+apiInstance.userServiceUpdateUser(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | 
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
 
 ### Authorization
 

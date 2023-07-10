@@ -22,15 +22,24 @@ from openapi_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_challenge_active_request import TitaniumChallengeActiveRequest
+from openapi_client.model.titanium_challenge_active_response import TitaniumChallengeActiveResponse
 from openapi_client.model.titanium_challenge_create_request import TitaniumChallengeCreateRequest
 from openapi_client.model.titanium_challenge_create_response import TitaniumChallengeCreateResponse
+from openapi_client.model.titanium_challenge_decision_request import TitaniumChallengeDecisionRequest
 from openapi_client.model.titanium_challenge_form_meta_request import TitaniumChallengeFormMetaRequest
 from openapi_client.model.titanium_challenge_form_meta_response import TitaniumChallengeFormMetaResponse
+from openapi_client.model.titanium_challenge_freeze_action_request import TitaniumChallengeFreezeActionRequest
 from openapi_client.model.titanium_challenge_freeze_status_request import TitaniumChallengeFreezeStatusRequest
+from openapi_client.model.titanium_challenge_history_request import TitaniumChallengeHistoryRequest
+from openapi_client.model.titanium_challenge_history_response import TitaniumChallengeHistoryResponse
+from openapi_client.model.titanium_challenge_list_request import TitaniumChallengeListRequest
+from openapi_client.model.titanium_challenge_list_response import TitaniumChallengeListResponse
 from openapi_client.model.titanium_get_attachment_upload_url_request import TitaniumGetAttachmentUploadUrlRequest
 from openapi_client.model.titanium_get_attachment_upload_url_response import TitaniumGetAttachmentUploadUrlResponse
 from openapi_client.model.titanium_get_challenge_details_request import TitaniumGetChallengeDetailsRequest
 from openapi_client.model.titanium_get_challenge_details_response import TitaniumGetChallengeDetailsResponse
+from openapi_client.model.titanium_message_response import TitaniumMessageResponse
 from openapi_client.model.titanium_status_response import TitaniumStatusResponse
 
 
@@ -45,6 +54,54 @@ class ChallengeServiceApi(object):
         if api_client is None:
             api_client = ApiClient()
         self.api_client = api_client
+        self.challenge_service_challenge_active_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumChallengeActiveResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/challenge/active',
+                'operation_id': 'challenge_service_challenge_active',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumChallengeActiveRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.challenge_service_challenge_create_endpoint = _Endpoint(
             settings={
                 'response_type': (TitaniumChallengeCreateResponse,),
@@ -76,6 +133,54 @@ class ChallengeServiceApi(object):
                 'openapi_types': {
                     'body':
                         (TitaniumChallengeCreateRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.challenge_service_challenge_decision_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumMessageResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/challenge/decision',
+                'operation_id': 'challenge_service_challenge_decision',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumChallengeDecisionRequest,),
                 },
                 'attribute_map': {
                 },
@@ -141,6 +246,54 @@ class ChallengeServiceApi(object):
             },
             api_client=api_client
         )
+        self.challenge_service_challenge_freeze_action_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumMessageResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/challenge/freeze',
+                'operation_id': 'challenge_service_challenge_freeze_action',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumChallengeFreezeActionRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
         self.challenge_service_challenge_freeze_status_endpoint = _Endpoint(
             settings={
                 'response_type': (TitaniumStatusResponse,),
@@ -172,6 +325,102 @@ class ChallengeServiceApi(object):
                 'openapi_types': {
                     'body':
                         (TitaniumChallengeFreezeStatusRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.challenge_service_challenge_history_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumChallengeHistoryResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/challenge/history',
+                'operation_id': 'challenge_service_challenge_history',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumChallengeHistoryRequest,),
+                },
+                'attribute_map': {
+                },
+                'location_map': {
+                    'body': 'body',
+                },
+                'collection_format_map': {
+                }
+            },
+            headers_map={
+                'accept': [
+                    '*/*'
+                ],
+                'content_type': [],
+            },
+            api_client=api_client
+        )
+        self.challenge_service_challenge_list_endpoint = _Endpoint(
+            settings={
+                'response_type': (TitaniumChallengeListResponse,),
+                'auth': [],
+                'endpoint_path': '/api/v1/operator/challenge/list',
+                'operation_id': 'challenge_service_challenge_list',
+                'http_method': 'POST',
+                'servers': None,
+            },
+            params_map={
+                'all': [
+                    'body',
+                ],
+                'required': [
+                    'body',
+                ],
+                'nullable': [
+                ],
+                'enum': [
+                ],
+                'validation': [
+                ]
+            },
+            root_map={
+                'validations': {
+                },
+                'allowed_values': {
+                },
+                'openapi_types': {
+                    'body':
+                        (TitaniumChallengeListRequest,),
                 },
                 'attribute_map': {
                 },
@@ -286,6 +535,88 @@ class ChallengeServiceApi(object):
             api_client=api_client
         )
 
+    def challenge_service_challenge_active(
+        self,
+        body,
+        **kwargs
+    ):
+        """ChallengeActive returns active challenges(according to request) in active status(challenge process is active).  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.challenge_service_challenge_active(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumChallengeActiveRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumChallengeActiveResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.challenge_service_challenge_active_endpoint.call_with_http_info(**kwargs)
+
     def challenge_service_challenge_create(
         self,
         body,
@@ -367,6 +698,88 @@ class ChallengeServiceApi(object):
         kwargs['body'] = \
             body
         return self.challenge_service_challenge_create_endpoint.call_with_http_info(**kwargs)
+
+    def challenge_service_challenge_decision(
+        self,
+        body,
+        **kwargs
+    ):
+        """ChallengeDecision sets decision of the challenge according to request.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.challenge_service_challenge_decision(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumChallengeDecisionRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumMessageResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.challenge_service_challenge_decision_endpoint.call_with_http_info(**kwargs)
 
     def challenge_service_challenge_form_meta(
         self,
@@ -450,6 +863,88 @@ class ChallengeServiceApi(object):
             body
         return self.challenge_service_challenge_form_meta_endpoint.call_with_http_info(**kwargs)
 
+    def challenge_service_challenge_freeze_action(
+        self,
+        body,
+        **kwargs
+    ):
+        """ChallengeFreezeAction makes challenge process stopped or not according to request.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.challenge_service_challenge_freeze_action(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumChallengeFreezeActionRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumMessageResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.challenge_service_challenge_freeze_action_endpoint.call_with_http_info(**kwargs)
+
     def challenge_service_challenge_freeze_status(
         self,
         body,
@@ -531,6 +1026,170 @@ class ChallengeServiceApi(object):
         kwargs['body'] = \
             body
         return self.challenge_service_challenge_freeze_status_endpoint.call_with_http_info(**kwargs)
+
+    def challenge_service_challenge_history(
+        self,
+        body,
+        **kwargs
+    ):
+        """ChallengeHistory return already closed challenges according to request.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.challenge_service_challenge_history(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumChallengeHistoryRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumChallengeHistoryResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.challenge_service_challenge_history_endpoint.call_with_http_info(**kwargs)
+
+    def challenge_service_challenge_list(
+        self,
+        body,
+        **kwargs
+    ):
+        """ChallengeList returns list of challenges according to request.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.challenge_service_challenge_list(body, async_req=True)
+        >>> result = thread.get()
+
+        Args:
+            body (TitaniumChallengeListRequest):
+
+        Keyword Args:
+            _return_http_data_only (bool): response data without head status
+                code and headers. Default is True.
+            _preload_content (bool): if False, the urllib3.HTTPResponse object
+                will be returned without reading/decoding response data.
+                Default is True.
+            _request_timeout (int/float/tuple): timeout setting for this request. If
+                one number provided, it will be total request timeout. It can also
+                be a pair (tuple) of (connection, read) timeouts.
+                Default is None.
+            _check_input_type (bool): specifies if type checking
+                should be done one the data sent to the server.
+                Default is True.
+            _check_return_type (bool): specifies if type checking
+                should be done one the data received from the server.
+                Default is True.
+            _spec_property_naming (bool): True if the variable names in the input data
+                are serialized names, as specified in the OpenAPI document.
+                False if the variable names in the input data
+                are pythonic names, e.g. snake case (default)
+            _content_type (str/None): force body content-type.
+                Default is None and content-type will be predicted by allowed
+                content-types and body.
+            _host_index (int/None): specifies the index of the server
+                that we want to use.
+                Default is read from the configuration.
+            _request_auths (list): set to override the auth_settings for an a single
+                request; this effectively ignores the authentication
+                in the spec for a single request.
+                Default is None
+            async_req (bool): execute request asynchronously
+
+        Returns:
+            TitaniumChallengeListResponse
+                If the method is called asynchronously, returns the request
+                thread.
+        """
+        kwargs['async_req'] = kwargs.get(
+            'async_req', False
+        )
+        kwargs['_return_http_data_only'] = kwargs.get(
+            '_return_http_data_only', True
+        )
+        kwargs['_preload_content'] = kwargs.get(
+            '_preload_content', True
+        )
+        kwargs['_request_timeout'] = kwargs.get(
+            '_request_timeout', None
+        )
+        kwargs['_check_input_type'] = kwargs.get(
+            '_check_input_type', True
+        )
+        kwargs['_check_return_type'] = kwargs.get(
+            '_check_return_type', True
+        )
+        kwargs['_spec_property_naming'] = kwargs.get(
+            '_spec_property_naming', False
+        )
+        kwargs['_content_type'] = kwargs.get(
+            '_content_type')
+        kwargs['_host_index'] = kwargs.get('_host_index')
+        kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['body'] = \
+            body
+        return self.challenge_service_challenge_list_endpoint.call_with_http_info(**kwargs)
 
     def challenge_service_get_challenge_attachment_upload_url(
         self,

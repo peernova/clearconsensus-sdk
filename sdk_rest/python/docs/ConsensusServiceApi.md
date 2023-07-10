@@ -5,12 +5,17 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**consensus_service_consensus**](ConsensusServiceApi.md#consensus_service_consensus) | **POST** /api/v1/consensus | Consensus return information about consensus according to request. Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition) Returns ConsensusResponse that contains information about column and rows related to consensus.
+[**consensus_service_consensus_active**](ConsensusServiceApi.md#consensus_service_consensus_active) | **POST** /api/v1/operator/consensus/active | 
+[**consensus_service_consensus_decision**](ConsensusServiceApi.md#consensus_service_consensus_decision) | **POST** /api/v1/operator/consensus/decision | 
 [**consensus_service_consensus_explorer_instrument_details**](ConsensusServiceApi.md#consensus_service_consensus_explorer_instrument_details) | **POST** /api/v1/consensus-explorer/details | 
 [**consensus_service_consensus_explorer_ranges**](ConsensusServiceApi.md#consensus_service_consensus_explorer_ranges) | **POST** /api/v1/consensus-explorer/range | 
 [**consensus_service_consensus_explorer_table**](ConsensusServiceApi.md#consensus_service_consensus_explorer_table) | **POST** /api/v1/consensus-explorer/table | 
+[**consensus_service_consensus_history**](ConsensusServiceApi.md#consensus_service_consensus_history) | **POST** /api/v1/operator/consensus/history | 
 [**consensus_service_consensus_outliers**](ConsensusServiceApi.md#consensus_service_consensus_outliers) | **POST** /api/v1/outliers-list | ConsensusOutliers return list of outliers according to specified consensus. Need to identify consensus tun timestamp and etc.(Described in OutliersListRequest) Return ConsensusActiveResponse that contains active consensuses with specified run timestamp.
+[**consensus_service_consensus_publish**](ConsensusServiceApi.md#consensus_service_consensus_publish) | **POST** /api/v1/operator/consensus/publish | 
 [**consensus_service_consensus_result_set_values**](ConsensusServiceApi.md#consensus_service_consensus_result_set_values) | **POST** /api/v1/consensus-result-set-view | 
 [**consensus_service_consensus_timestamps**](ConsensusServiceApi.md#consensus_service_consensus_timestamps) | **POST** /api/v1/consensus/timestamps | ConsensusTimestamps returns timestamps when it was submitted. Need to specify asset ID and trace name. Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
+[**consensus_service_consensus_to_publish**](ConsensusServiceApi.md#consensus_service_consensus_to_publish) | **POST** /api/v1/operator/consensus/to-publish | 
 [**consensus_service_evaluated_price**](ConsensusServiceApi.md#consensus_service_evaluated_price) | **POST** /api/v1/evaluated-price | 
 [**consensus_service_get_consensus_runs**](ConsensusServiceApi.md#consensus_service_get_consensus_runs) | **POST** /api/v1/consensus-runs-view | Get Consensus Run&#39;s consensus result sets
 
@@ -79,6 +84,153 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumConsensusResponse**](TitaniumConsensusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consensus_service_consensus_active**
+> TitaniumConsensusActiveResponse consensus_service_consensus_active(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import consensus_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_consensus_active_response import TitaniumConsensusActiveResponse
+from openapi_client.model.titanium_consensus_active_request import TitaniumConsensusActiveRequest
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = consensus_service_api.ConsensusServiceApi(api_client)
+    body = TitaniumConsensusActiveRequest(
+        filter="filter_example",
+        limit=TitaniumLimit(
+            value=1,
+        ),
+        offset=1,
+        order_by=TitaniumOrderBy(
+            column="column_example",
+            order="order_example",
+        ),
+    ) # TitaniumConsensusActiveRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.consensus_service_consensus_active(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling ConsensusServiceApi->consensus_service_consensus_active: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusActiveRequest**](TitaniumConsensusActiveRequest.md)|  |
+
+### Return type
+
+[**TitaniumConsensusActiveResponse**](TitaniumConsensusActiveResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consensus_service_consensus_decision**
+> TitaniumMessageResponse consensus_service_consensus_decision(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import consensus_service_api
+from openapi_client.model.titanium_message_response import TitaniumMessageResponse
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_consensus_decision_request import TitaniumConsensusDecisionRequest
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = consensus_service_api.ConsensusServiceApi(api_client)
+    body = TitaniumConsensusDecisionRequest(
+        consensus_tracking_id="consensus_tracking_id_example",
+        decision="decision_example",
+    ) # TitaniumConsensusDecisionRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.consensus_service_consensus_decision(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling ConsensusServiceApi->consensus_service_consensus_decision: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusDecisionRequest**](TitaniumConsensusDecisionRequest.md)|  |
+
+### Return type
+
+[**TitaniumMessageResponse**](TitaniumMessageResponse.md)
 
 ### Authorization
 
@@ -285,6 +437,83 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **consensus_service_consensus_history**
+> TitaniumConsensusHistoryResponse consensus_service_consensus_history(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import consensus_service_api
+from openapi_client.model.titanium_consensus_history_request import TitaniumConsensusHistoryRequest
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_consensus_history_response import TitaniumConsensusHistoryResponse
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = consensus_service_api.ConsensusServiceApi(api_client)
+    body = TitaniumConsensusHistoryRequest(
+        filter="filter_example",
+        limit=TitaniumLimit(
+            value=1,
+        ),
+        offset=1,
+        order_by=TitaniumOrderBy(
+            column="column_example",
+            order="order_example",
+        ),
+    ) # TitaniumConsensusHistoryRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.consensus_service_consensus_history(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling ConsensusServiceApi->consensus_service_consensus_history: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusHistoryRequest**](TitaniumConsensusHistoryRequest.md)|  |
+
+### Return type
+
+[**TitaniumConsensusHistoryResponse**](TitaniumConsensusHistoryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **consensus_service_consensus_outliers**
 > TitaniumConsensusActiveResponse consensus_service_consensus_outliers(body)
 
@@ -348,6 +577,77 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumConsensusActiveResponse**](TitaniumConsensusActiveResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consensus_service_consensus_publish**
+> TitaniumMessageResponse consensus_service_consensus_publish(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import consensus_service_api
+from openapi_client.model.titanium_message_response import TitaniumMessageResponse
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_consensus_publish_request import TitaniumConsensusPublishRequest
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = consensus_service_api.ConsensusServiceApi(api_client)
+    body = TitaniumConsensusPublishRequest(
+        asset_id="asset_id_example",
+        consensus_tracking_id="consensus_tracking_id_example",
+        trace_name="trace_name_example",
+    ) # TitaniumConsensusPublishRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.consensus_service_consensus_publish(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling ConsensusServiceApi->consensus_service_consensus_publish: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusPublishRequest**](TitaniumConsensusPublishRequest.md)|  |
+
+### Return type
+
+[**TitaniumMessageResponse**](TitaniumMessageResponse.md)
 
 ### Authorization
 
@@ -516,6 +816,83 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumConsensusTimestampsResponse**](TitaniumConsensusTimestampsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **consensus_service_consensus_to_publish**
+> TitaniumConsensusToPublishResponse consensus_service_consensus_to_publish(body)
+
+
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import consensus_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_consensus_to_publish_response import TitaniumConsensusToPublishResponse
+from openapi_client.model.titanium_consensus_to_publish_request import TitaniumConsensusToPublishRequest
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = consensus_service_api.ConsensusServiceApi(api_client)
+    body = TitaniumConsensusToPublishRequest(
+        filter="filter_example",
+        limit=TitaniumLimit(
+            value=1,
+        ),
+        offset=1,
+        order_by=TitaniumOrderBy(
+            column="column_example",
+            order="order_example",
+        ),
+    ) # TitaniumConsensusToPublishRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        api_response = api_instance.consensus_service_consensus_to_publish(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling ConsensusServiceApi->consensus_service_consensus_to_publish: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusToPublishRequest**](TitaniumConsensusToPublishRequest.md)|  |
+
+### Return type
+
+[**TitaniumConsensusToPublishResponse**](TitaniumConsensusToPublishResponse.md)
 
 ### Authorization
 

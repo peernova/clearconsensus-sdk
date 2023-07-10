@@ -4,10 +4,87 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**data_service_authorize_upload**](DataServiceApi.md#data_service_authorize_upload) | **POST** /api/v1/internal/upload/authorize | AuthorizeUpload shows availability of uploading for user.
 [**data_service_export**](DataServiceApi.md#data_service_export) | **POST** /api/v1/export | Export exports data according to the request.
+[**data_service_notify_upload**](DataServiceApi.md#data_service_notify_upload) | **POST** /api/v1/internal/upload/notify | NotifyUpload returns message with notify that data was uploaded according to url in request.
 [**data_service_submitted**](DataServiceApi.md#data_service_submitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
 [**data_service_upload_url**](DataServiceApi.md#data_service_upload_url) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
 
+
+# **data_service_authorize_upload**
+> TitaniumUploadAuthorizationResponse data_service_authorize_upload(body)
+
+AuthorizeUpload shows availability of uploading for user.
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import data_service_api
+from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.titanium_upload_authorization_response import TitaniumUploadAuthorizationResponse
+from openapi_client.model.titanium_upload_url_request import TitaniumUploadURLRequest
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_service_api.DataServiceApi(api_client)
+    body = TitaniumUploadURLRequest(
+        asset_id="asset_id_example",
+        client="client_example",
+        date="date_example",
+        descriptor_name="descriptor_name_example",
+        file_name="file_name_example",
+        trace_name="trace_name_example",
+    ) # TitaniumUploadURLRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # AuthorizeUpload shows availability of uploading for user.
+        api_response = api_instance.data_service_authorize_upload(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling DataServiceApi->data_service_authorize_upload: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUploadURLRequest**](TitaniumUploadURLRequest.md)|  |
+
+### Return type
+
+[**TitaniumUploadAuthorizationResponse**](TitaniumUploadAuthorizationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **data_service_export**
 > TitaniumExportResponse data_service_export(body)
@@ -87,6 +164,78 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumExportResponse**](TitaniumExportResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **data_service_notify_upload**
+> TitaniumMessageResponse data_service_notify_upload(body)
+
+NotifyUpload returns message with notify that data was uploaded according to url in request.
+
+### Example
+
+
+```python
+import time
+import openapi_client
+from openapi_client.api import data_service_api
+from openapi_client.model.titanium_message_response import TitaniumMessageResponse
+from openapi_client.model.titanium_upload_notify_request import TitaniumUploadNotifyRequest
+from openapi_client.model.rpc_status import RpcStatus
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = data_service_api.DataServiceApi(api_client)
+    body = TitaniumUploadNotifyRequest(
+        current_path="current_path_example",
+        target_path="target_path_example",
+        uuid="uuid_example",
+    ) # TitaniumUploadNotifyRequest | 
+
+    # example passing only required values which don't have defaults set
+    try:
+        # NotifyUpload returns message with notify that data was uploaded according to url in request.
+        api_response = api_instance.data_service_notify_upload(body)
+        pprint(api_response)
+    except openapi_client.ApiException as e:
+        print("Exception when calling DataServiceApi->data_service_notify_upload: %s\n" % e)
+```
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUploadNotifyRequest**](TitaniumUploadNotifyRequest.md)|  |
+
+### Return type
+
+[**TitaniumMessageResponse**](TitaniumMessageResponse.md)
 
 ### Authorization
 

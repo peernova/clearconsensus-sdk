@@ -30,8 +30,11 @@ import java.io.IOException;
 import org.openapitools.client.model.RpcStatus;
 import org.openapitools.client.model.TitaniumExportRequest;
 import org.openapitools.client.model.TitaniumExportResponse;
+import org.openapitools.client.model.TitaniumMessageResponse;
 import org.openapitools.client.model.TitaniumSubmittedRequest;
 import org.openapitools.client.model.TitaniumSubmittedResponse;
+import org.openapitools.client.model.TitaniumUploadAuthorizationResponse;
+import org.openapitools.client.model.TitaniumUploadNotifyRequest;
 import org.openapitools.client.model.TitaniumUploadURLRequest;
 import org.openapitools.client.model.TitaniumUploadURLResponse;
 
@@ -79,6 +82,136 @@ public class DataServiceApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for dataServiceAuthorizeUpload
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call dataServiceAuthorizeUploadCall(TitaniumUploadURLRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/internal/upload/authorize";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call dataServiceAuthorizeUploadValidateBeforeCall(TitaniumUploadURLRequest body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling dataServiceAuthorizeUpload(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = dataServiceAuthorizeUploadCall(body, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * AuthorizeUpload shows availability of uploading for user.
+     * 
+     * @param body  (required)
+     * @return TitaniumUploadAuthorizationResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TitaniumUploadAuthorizationResponse dataServiceAuthorizeUpload(TitaniumUploadURLRequest body) throws ApiException {
+        ApiResponse<TitaniumUploadAuthorizationResponse> localVarResp = dataServiceAuthorizeUploadWithHttpInfo(body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * AuthorizeUpload shows availability of uploading for user.
+     * 
+     * @param body  (required)
+     * @return ApiResponse&lt;TitaniumUploadAuthorizationResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TitaniumUploadAuthorizationResponse> dataServiceAuthorizeUploadWithHttpInfo(TitaniumUploadURLRequest body) throws ApiException {
+        okhttp3.Call localVarCall = dataServiceAuthorizeUploadValidateBeforeCall(body, null);
+        Type localVarReturnType = new TypeToken<TitaniumUploadAuthorizationResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * AuthorizeUpload shows availability of uploading for user. (asynchronously)
+     * 
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call dataServiceAuthorizeUploadAsync(TitaniumUploadURLRequest body, final ApiCallback<TitaniumUploadAuthorizationResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = dataServiceAuthorizeUploadValidateBeforeCall(body, _callback);
+        Type localVarReturnType = new TypeToken<TitaniumUploadAuthorizationResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for dataServiceExport
      * @param body  (required)
@@ -206,6 +339,136 @@ public class DataServiceApi {
 
         okhttp3.Call localVarCall = dataServiceExportValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<TitaniumExportResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for dataServiceNotifyUpload
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call dataServiceNotifyUploadCall(TitaniumUploadNotifyRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/internal/upload/notify";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call dataServiceNotifyUploadValidateBeforeCall(TitaniumUploadNotifyRequest body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling dataServiceNotifyUpload(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = dataServiceNotifyUploadCall(body, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * NotifyUpload returns message with notify that data was uploaded according to url in request.
+     * 
+     * @param body  (required)
+     * @return TitaniumMessageResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TitaniumMessageResponse dataServiceNotifyUpload(TitaniumUploadNotifyRequest body) throws ApiException {
+        ApiResponse<TitaniumMessageResponse> localVarResp = dataServiceNotifyUploadWithHttpInfo(body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * NotifyUpload returns message with notify that data was uploaded according to url in request.
+     * 
+     * @param body  (required)
+     * @return ApiResponse&lt;TitaniumMessageResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TitaniumMessageResponse> dataServiceNotifyUploadWithHttpInfo(TitaniumUploadNotifyRequest body) throws ApiException {
+        okhttp3.Call localVarCall = dataServiceNotifyUploadValidateBeforeCall(body, null);
+        Type localVarReturnType = new TypeToken<TitaniumMessageResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * NotifyUpload returns message with notify that data was uploaded according to url in request. (asynchronously)
+     * 
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call dataServiceNotifyUploadAsync(TitaniumUploadNotifyRequest body, final ApiCallback<TitaniumMessageResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = dataServiceNotifyUploadValidateBeforeCall(body, _callback);
+        Type localVarReturnType = new TypeToken<TitaniumMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

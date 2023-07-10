@@ -5,12 +5,17 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**consensusServiceConsensus**](ConsensusServiceApi.md#consensusServiceConsensus) | **POST** /api/v1/consensus | Consensus return information about consensus according to request. Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition) Returns ConsensusResponse that contains information about column and rows related to consensus.
+[**consensusServiceConsensusActive**](ConsensusServiceApi.md#consensusServiceConsensusActive) | **POST** /api/v1/operator/consensus/active | 
+[**consensusServiceConsensusDecision**](ConsensusServiceApi.md#consensusServiceConsensusDecision) | **POST** /api/v1/operator/consensus/decision | 
 [**consensusServiceConsensusExplorerInstrumentDetails**](ConsensusServiceApi.md#consensusServiceConsensusExplorerInstrumentDetails) | **POST** /api/v1/consensus-explorer/details | 
 [**consensusServiceConsensusExplorerRanges**](ConsensusServiceApi.md#consensusServiceConsensusExplorerRanges) | **POST** /api/v1/consensus-explorer/range | 
 [**consensusServiceConsensusExplorerTable**](ConsensusServiceApi.md#consensusServiceConsensusExplorerTable) | **POST** /api/v1/consensus-explorer/table | 
+[**consensusServiceConsensusHistory**](ConsensusServiceApi.md#consensusServiceConsensusHistory) | **POST** /api/v1/operator/consensus/history | 
 [**consensusServiceConsensusOutliers**](ConsensusServiceApi.md#consensusServiceConsensusOutliers) | **POST** /api/v1/outliers-list | ConsensusOutliers return list of outliers according to specified consensus. Need to identify consensus tun timestamp and etc.(Described in OutliersListRequest) Return ConsensusActiveResponse that contains active consensuses with specified run timestamp.
+[**consensusServiceConsensusPublish**](ConsensusServiceApi.md#consensusServiceConsensusPublish) | **POST** /api/v1/operator/consensus/publish | 
 [**consensusServiceConsensusResultSetValues**](ConsensusServiceApi.md#consensusServiceConsensusResultSetValues) | **POST** /api/v1/consensus-result-set-view | 
 [**consensusServiceConsensusTimestamps**](ConsensusServiceApi.md#consensusServiceConsensusTimestamps) | **POST** /api/v1/consensus/timestamps | ConsensusTimestamps returns timestamps when it was submitted. Need to specify asset ID and trace name. Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
+[**consensusServiceConsensusToPublish**](ConsensusServiceApi.md#consensusServiceConsensusToPublish) | **POST** /api/v1/operator/consensus/to-publish | 
 [**consensusServiceEvaluatedPrice**](ConsensusServiceApi.md#consensusServiceEvaluatedPrice) | **POST** /api/v1/evaluated-price | 
 [**consensusServiceGetConsensusRuns**](ConsensusServiceApi.md#consensusServiceGetConsensusRuns) | **POST** /api/v1/consensus-runs-view | Get Consensus Run&#39;s consensus result sets
 
@@ -50,6 +55,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumConsensusResponse**](TitaniumConsensusResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## consensusServiceConsensusActive
+
+> TitaniumConsensusActiveResponse consensusServiceConsensusActive(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.ConsensusServiceApi();
+let body = new ClearconsensusSdk.TitaniumConsensusActiveRequest(); // TitaniumConsensusActiveRequest | 
+apiInstance.consensusServiceConsensusActive(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusActiveRequest**](TitaniumConsensusActiveRequest.md)|  | 
+
+### Return type
+
+[**TitaniumConsensusActiveResponse**](TitaniumConsensusActiveResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## consensusServiceConsensusDecision
+
+> TitaniumMessageResponse consensusServiceConsensusDecision(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.ConsensusServiceApi();
+let body = new ClearconsensusSdk.TitaniumConsensusDecisionRequest(); // TitaniumConsensusDecisionRequest | 
+apiInstance.consensusServiceConsensusDecision(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusDecisionRequest**](TitaniumConsensusDecisionRequest.md)|  | 
+
+### Return type
+
+[**TitaniumMessageResponse**](TitaniumMessageResponse.md)
 
 ### Authorization
 
@@ -178,6 +269,49 @@ No authorization required
 - **Accept**: */*
 
 
+## consensusServiceConsensusHistory
+
+> TitaniumConsensusHistoryResponse consensusServiceConsensusHistory(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.ConsensusServiceApi();
+let body = new ClearconsensusSdk.TitaniumConsensusHistoryRequest(); // TitaniumConsensusHistoryRequest | 
+apiInstance.consensusServiceConsensusHistory(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusHistoryRequest**](TitaniumConsensusHistoryRequest.md)|  | 
+
+### Return type
+
+[**TitaniumConsensusHistoryResponse**](TitaniumConsensusHistoryResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
 ## consensusServiceConsensusOutliers
 
 > TitaniumConsensusActiveResponse consensusServiceConsensusOutliers(body)
@@ -210,6 +344,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumConsensusActiveResponse**](TitaniumConsensusActiveResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## consensusServiceConsensusPublish
+
+> TitaniumMessageResponse consensusServiceConsensusPublish(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.ConsensusServiceApi();
+let body = new ClearconsensusSdk.TitaniumConsensusPublishRequest(); // TitaniumConsensusPublishRequest | 
+apiInstance.consensusServiceConsensusPublish(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusPublishRequest**](TitaniumConsensusPublishRequest.md)|  | 
+
+### Return type
+
+[**TitaniumMessageResponse**](TitaniumMessageResponse.md)
 
 ### Authorization
 
@@ -298,6 +475,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumConsensusTimestampsResponse**](TitaniumConsensusTimestampsResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## consensusServiceConsensusToPublish
+
+> TitaniumConsensusToPublishResponse consensusServiceConsensusToPublish(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.ConsensusServiceApi();
+let body = new ClearconsensusSdk.TitaniumConsensusToPublishRequest(); // TitaniumConsensusToPublishRequest | 
+apiInstance.consensusServiceConsensusToPublish(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumConsensusToPublishRequest**](TitaniumConsensusToPublishRequest.md)|  | 
+
+### Return type
+
+[**TitaniumConsensusToPublishResponse**](TitaniumConsensusToPublishResponse.md)
 
 ### Authorization
 

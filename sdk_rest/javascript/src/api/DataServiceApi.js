@@ -16,8 +16,11 @@ import ApiClient from "../ApiClient";
 import RpcStatus from '../model/RpcStatus';
 import TitaniumExportRequest from '../model/TitaniumExportRequest';
 import TitaniumExportResponse from '../model/TitaniumExportResponse';
+import TitaniumMessageResponse from '../model/TitaniumMessageResponse';
 import TitaniumSubmittedRequest from '../model/TitaniumSubmittedRequest';
 import TitaniumSubmittedResponse from '../model/TitaniumSubmittedResponse';
+import TitaniumUploadAuthorizationResponse from '../model/TitaniumUploadAuthorizationResponse';
+import TitaniumUploadNotifyRequest from '../model/TitaniumUploadNotifyRequest';
 import TitaniumUploadURLRequest from '../model/TitaniumUploadURLRequest';
 import TitaniumUploadURLResponse from '../model/TitaniumUploadURLResponse';
 
@@ -39,6 +42,47 @@ export default class DataServiceApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the dataServiceAuthorizeUpload operation.
+     * @callback module:api/DataServiceApi~dataServiceAuthorizeUploadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumUploadAuthorizationResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * AuthorizeUpload shows availability of uploading for user.
+     * @param {module:model/TitaniumUploadURLRequest} body 
+     * @param {module:api/DataServiceApi~dataServiceAuthorizeUploadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumUploadAuthorizationResponse}
+     */
+    dataServiceAuthorizeUpload(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dataServiceAuthorizeUpload");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumUploadAuthorizationResponse;
+      return this.apiClient.callApi(
+        '/api/v1/internal/upload/authorize', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the dataServiceExport operation.
@@ -76,6 +120,47 @@ export default class DataServiceApi {
       let returnType = TitaniumExportResponse;
       return this.apiClient.callApi(
         '/api/v1/export', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the dataServiceNotifyUpload operation.
+     * @callback module:api/DataServiceApi~dataServiceNotifyUploadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumMessageResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * NotifyUpload returns message with notify that data was uploaded according to url in request.
+     * @param {module:model/TitaniumUploadNotifyRequest} body 
+     * @param {module:api/DataServiceApi~dataServiceNotifyUploadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumMessageResponse}
+     */
+    dataServiceNotifyUpload(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dataServiceNotifyUpload");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumMessageResponse;
+      return this.apiClient.callApi(
+        '/api/v1/internal/upload/notify', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

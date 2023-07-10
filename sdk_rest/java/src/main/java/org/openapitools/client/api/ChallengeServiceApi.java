@@ -28,15 +28,24 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.RpcStatus;
+import org.openapitools.client.model.TitaniumChallengeActiveRequest;
+import org.openapitools.client.model.TitaniumChallengeActiveResponse;
 import org.openapitools.client.model.TitaniumChallengeCreateRequest;
 import org.openapitools.client.model.TitaniumChallengeCreateResponse;
+import org.openapitools.client.model.TitaniumChallengeDecisionRequest;
 import org.openapitools.client.model.TitaniumChallengeFormMetaRequest;
 import org.openapitools.client.model.TitaniumChallengeFormMetaResponse;
+import org.openapitools.client.model.TitaniumChallengeFreezeActionRequest;
 import org.openapitools.client.model.TitaniumChallengeFreezeStatusRequest;
+import org.openapitools.client.model.TitaniumChallengeHistoryRequest;
+import org.openapitools.client.model.TitaniumChallengeHistoryResponse;
+import org.openapitools.client.model.TitaniumChallengeListRequest;
+import org.openapitools.client.model.TitaniumChallengeListResponse;
 import org.openapitools.client.model.TitaniumGetAttachmentUploadUrlRequest;
 import org.openapitools.client.model.TitaniumGetAttachmentUploadUrlResponse;
 import org.openapitools.client.model.TitaniumGetChallengeDetailsRequest;
 import org.openapitools.client.model.TitaniumGetChallengeDetailsResponse;
+import org.openapitools.client.model.TitaniumMessageResponse;
 import org.openapitools.client.model.TitaniumStatusResponse;
 
 import java.lang.reflect.Type;
@@ -83,6 +92,136 @@ public class ChallengeServiceApi {
         this.localCustomBaseUrl = customBaseUrl;
     }
 
+    /**
+     * Build call for challengeServiceChallengeActive
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeActiveCall(TitaniumChallengeActiveRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/operator/challenge/active";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call challengeServiceChallengeActiveValidateBeforeCall(TitaniumChallengeActiveRequest body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling challengeServiceChallengeActive(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = challengeServiceChallengeActiveCall(body, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * ChallengeActive returns active challenges(according to request) in active status(challenge process is active).
+     * 
+     * @param body  (required)
+     * @return TitaniumChallengeActiveResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TitaniumChallengeActiveResponse challengeServiceChallengeActive(TitaniumChallengeActiveRequest body) throws ApiException {
+        ApiResponse<TitaniumChallengeActiveResponse> localVarResp = challengeServiceChallengeActiveWithHttpInfo(body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * ChallengeActive returns active challenges(according to request) in active status(challenge process is active).
+     * 
+     * @param body  (required)
+     * @return ApiResponse&lt;TitaniumChallengeActiveResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TitaniumChallengeActiveResponse> challengeServiceChallengeActiveWithHttpInfo(TitaniumChallengeActiveRequest body) throws ApiException {
+        okhttp3.Call localVarCall = challengeServiceChallengeActiveValidateBeforeCall(body, null);
+        Type localVarReturnType = new TypeToken<TitaniumChallengeActiveResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * ChallengeActive returns active challenges(according to request) in active status(challenge process is active). (asynchronously)
+     * 
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeActiveAsync(TitaniumChallengeActiveRequest body, final ApiCallback<TitaniumChallengeActiveResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = challengeServiceChallengeActiveValidateBeforeCall(body, _callback);
+        Type localVarReturnType = new TypeToken<TitaniumChallengeActiveResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for challengeServiceChallengeCreate
      * @param body  (required)
@@ -210,6 +349,136 @@ public class ChallengeServiceApi {
 
         okhttp3.Call localVarCall = challengeServiceChallengeCreateValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<TitaniumChallengeCreateResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for challengeServiceChallengeDecision
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeDecisionCall(TitaniumChallengeDecisionRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/operator/challenge/decision";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call challengeServiceChallengeDecisionValidateBeforeCall(TitaniumChallengeDecisionRequest body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling challengeServiceChallengeDecision(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = challengeServiceChallengeDecisionCall(body, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * ChallengeDecision sets decision of the challenge according to request.
+     * 
+     * @param body  (required)
+     * @return TitaniumMessageResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TitaniumMessageResponse challengeServiceChallengeDecision(TitaniumChallengeDecisionRequest body) throws ApiException {
+        ApiResponse<TitaniumMessageResponse> localVarResp = challengeServiceChallengeDecisionWithHttpInfo(body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * ChallengeDecision sets decision of the challenge according to request.
+     * 
+     * @param body  (required)
+     * @return ApiResponse&lt;TitaniumMessageResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TitaniumMessageResponse> challengeServiceChallengeDecisionWithHttpInfo(TitaniumChallengeDecisionRequest body) throws ApiException {
+        okhttp3.Call localVarCall = challengeServiceChallengeDecisionValidateBeforeCall(body, null);
+        Type localVarReturnType = new TypeToken<TitaniumMessageResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * ChallengeDecision sets decision of the challenge according to request. (asynchronously)
+     * 
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeDecisionAsync(TitaniumChallengeDecisionRequest body, final ApiCallback<TitaniumMessageResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = challengeServiceChallengeDecisionValidateBeforeCall(body, _callback);
+        Type localVarReturnType = new TypeToken<TitaniumMessageResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -344,6 +613,136 @@ public class ChallengeServiceApi {
         return localVarCall;
     }
     /**
+     * Build call for challengeServiceChallengeFreezeAction
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeFreezeActionCall(TitaniumChallengeFreezeActionRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/operator/challenge/freeze";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call challengeServiceChallengeFreezeActionValidateBeforeCall(TitaniumChallengeFreezeActionRequest body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling challengeServiceChallengeFreezeAction(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = challengeServiceChallengeFreezeActionCall(body, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * ChallengeFreezeAction makes challenge process stopped or not according to request.
+     * 
+     * @param body  (required)
+     * @return TitaniumMessageResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TitaniumMessageResponse challengeServiceChallengeFreezeAction(TitaniumChallengeFreezeActionRequest body) throws ApiException {
+        ApiResponse<TitaniumMessageResponse> localVarResp = challengeServiceChallengeFreezeActionWithHttpInfo(body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * ChallengeFreezeAction makes challenge process stopped or not according to request.
+     * 
+     * @param body  (required)
+     * @return ApiResponse&lt;TitaniumMessageResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TitaniumMessageResponse> challengeServiceChallengeFreezeActionWithHttpInfo(TitaniumChallengeFreezeActionRequest body) throws ApiException {
+        okhttp3.Call localVarCall = challengeServiceChallengeFreezeActionValidateBeforeCall(body, null);
+        Type localVarReturnType = new TypeToken<TitaniumMessageResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * ChallengeFreezeAction makes challenge process stopped or not according to request. (asynchronously)
+     * 
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeFreezeActionAsync(TitaniumChallengeFreezeActionRequest body, final ApiCallback<TitaniumMessageResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = challengeServiceChallengeFreezeActionValidateBeforeCall(body, _callback);
+        Type localVarReturnType = new TypeToken<TitaniumMessageResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for challengeServiceChallengeFreezeStatus
      * @param body  (required)
      * @param _callback Callback for upload/download progress
@@ -470,6 +869,266 @@ public class ChallengeServiceApi {
 
         okhttp3.Call localVarCall = challengeServiceChallengeFreezeStatusValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<TitaniumStatusResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for challengeServiceChallengeHistory
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeHistoryCall(TitaniumChallengeHistoryRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/operator/challenge/history";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call challengeServiceChallengeHistoryValidateBeforeCall(TitaniumChallengeHistoryRequest body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling challengeServiceChallengeHistory(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = challengeServiceChallengeHistoryCall(body, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * ChallengeHistory return already closed challenges according to request.
+     * 
+     * @param body  (required)
+     * @return TitaniumChallengeHistoryResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TitaniumChallengeHistoryResponse challengeServiceChallengeHistory(TitaniumChallengeHistoryRequest body) throws ApiException {
+        ApiResponse<TitaniumChallengeHistoryResponse> localVarResp = challengeServiceChallengeHistoryWithHttpInfo(body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * ChallengeHistory return already closed challenges according to request.
+     * 
+     * @param body  (required)
+     * @return ApiResponse&lt;TitaniumChallengeHistoryResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TitaniumChallengeHistoryResponse> challengeServiceChallengeHistoryWithHttpInfo(TitaniumChallengeHistoryRequest body) throws ApiException {
+        okhttp3.Call localVarCall = challengeServiceChallengeHistoryValidateBeforeCall(body, null);
+        Type localVarReturnType = new TypeToken<TitaniumChallengeHistoryResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * ChallengeHistory return already closed challenges according to request. (asynchronously)
+     * 
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeHistoryAsync(TitaniumChallengeHistoryRequest body, final ApiCallback<TitaniumChallengeHistoryResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = challengeServiceChallengeHistoryValidateBeforeCall(body, _callback);
+        Type localVarReturnType = new TypeToken<TitaniumChallengeHistoryResponse>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for challengeServiceChallengeList
+     * @param body  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeListCall(TitaniumChallengeListRequest body, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = body;
+
+        // create path and map variables
+        String localVarPath = "/api/v1/operator/challenge/list";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "*/*"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call challengeServiceChallengeListValidateBeforeCall(TitaniumChallengeListRequest body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'body' is set
+        if (body == null) {
+            throw new ApiException("Missing the required parameter 'body' when calling challengeServiceChallengeList(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = challengeServiceChallengeListCall(body, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * ChallengeList returns list of challenges according to request.
+     * 
+     * @param body  (required)
+     * @return TitaniumChallengeListResponse
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public TitaniumChallengeListResponse challengeServiceChallengeList(TitaniumChallengeListRequest body) throws ApiException {
+        ApiResponse<TitaniumChallengeListResponse> localVarResp = challengeServiceChallengeListWithHttpInfo(body);
+        return localVarResp.getData();
+    }
+
+    /**
+     * ChallengeList returns list of challenges according to request.
+     * 
+     * @param body  (required)
+     * @return ApiResponse&lt;TitaniumChallengeListResponse&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<TitaniumChallengeListResponse> challengeServiceChallengeListWithHttpInfo(TitaniumChallengeListRequest body) throws ApiException {
+        okhttp3.Call localVarCall = challengeServiceChallengeListValidateBeforeCall(body, null);
+        Type localVarReturnType = new TypeToken<TitaniumChallengeListResponse>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * ChallengeList returns list of challenges according to request. (asynchronously)
+     * 
+     * @param body  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> A successful response. </td><td>  -  </td></tr>
+        <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call challengeServiceChallengeListAsync(TitaniumChallengeListRequest body, final ApiCallback<TitaniumChallengeListResponse> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = challengeServiceChallengeListValidateBeforeCall(body, _callback);
+        Type localVarReturnType = new TypeToken<TitaniumChallengeListResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

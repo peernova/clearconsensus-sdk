@@ -101,8 +101,8 @@ Please follow the [installation](#installation) instruction and execute the foll
 var ClearconsensusSdk = require('clearconsensus_sdk');
 
 
-var api = new ClearconsensusSdk.AnalyticsControllerApi()
-var body = new ClearconsensusSdk.TitaniumGenericChartMetadataDataQuality(); // {TitaniumGenericChartMetadataDataQuality} 
+var api = new ClearconsensusSdk.AdminServiceApi()
+var body = new ClearconsensusSdk.TitaniumOnBoardRequest(); // {TitaniumOnBoardRequest} 
 var callback = function(error, data, response) {
   if (error) {
     console.error(error);
@@ -110,7 +110,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.analyticsControllerFindConsensusAnalytics(body, callback);
+api.adminServiceOnBoard(body, callback);
 
 ```
 
@@ -120,6 +120,10 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*ClearconsensusSdk.AdminServiceApi* | [**adminServiceOnBoard**](docs/AdminServiceApi.md#adminServiceOnBoard) | **POST** /api/v1/onboard | 
+*ClearconsensusSdk.AdminServiceApi* | [**adminServiceRunCalculator**](docs/AdminServiceApi.md#adminServiceRunCalculator) | **POST** /api/v1/calculator/run | 
+*ClearconsensusSdk.AdminServiceApi* | [**adminServiceRunConsensus**](docs/AdminServiceApi.md#adminServiceRunConsensus) | **POST** /api/v1/consensus/run | 
+*ClearconsensusSdk.AdminServiceApi* | [**adminServiceUploadEvaluatedPrice**](docs/AdminServiceApi.md#adminServiceUploadEvaluatedPrice) | **POST** /api/v1/upload/evaluated-price | 
 *ClearconsensusSdk.AnalyticsControllerApi* | [**analyticsControllerFindConsensusAnalytics**](docs/AnalyticsControllerApi.md#analyticsControllerFindConsensusAnalytics) | **POST** /api/v1/analytics/consensus/find | FindConsensusAnalytics returns analytics related to specific consensus according to request.
 *ClearconsensusSdk.AnalyticsControllerApi* | [**analyticsControllerFindDataQualityErrors**](docs/AnalyticsControllerApi.md#analyticsControllerFindDataQualityErrors) | **POST** /api/v1/analytics/data-quality-errors/find | FindDataQualityErrors returns data quality errors according to request.
 *ClearconsensusSdk.AnalyticsControllerApi* | [**analyticsControllerGetAllConsensusAnalytics**](docs/AnalyticsControllerApi.md#analyticsControllerGetAllConsensusAnalytics) | **POST** /api/v1/analytics/consensus/get-all | GetAllConsensusAnalytics returns analytics related to all consensuses.
@@ -130,21 +134,31 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.AssetsServiceApi* | [**assetsServiceAssetsList**](docs/AssetsServiceApi.md#assetsServiceAssetsList) | **POST** /api/v1/assets/list | AssetsList return list of assets according to snap time.
 *ClearconsensusSdk.AssetsServiceApi* | [**assetsServiceRecentAssets**](docs/AssetsServiceApi.md#assetsServiceRecentAssets) | **POST** /api/v1/recentassets | RecentAssets returns recent added assets according to request.
 *ClearconsensusSdk.AssetsServiceApi* | [**assetsServiceSupportedAssets**](docs/AssetsServiceApi.md#assetsServiceSupportedAssets) | **GET** /api/v1/supported/assets | 
+*ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeActive**](docs/ChallengeServiceApi.md#challengeServiceChallengeActive) | **POST** /api/v1/operator/challenge/active | ChallengeActive returns active challenges(according to request) in active status(challenge process is active).
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeCreate**](docs/ChallengeServiceApi.md#challengeServiceChallengeCreate) | **POST** /api/v1/challenge/create | ChallengeCreate creates challenge in the system.(Initiate process by dealer) To create \&quot;challenger\&quot; needs to be authorised and challenge can be created only if one of their own submitted data points has been declared an outlier in the published Consensus. Need to specify asset and fill out evidence information. Returns response that contains ticket ID of the Challenge or the Error.
+*ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeDecision**](docs/ChallengeServiceApi.md#challengeServiceChallengeDecision) | **POST** /api/v1/operator/challenge/decision | ChallengeDecision sets decision of the challenge according to request.
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeFormMeta**](docs/ChallengeServiceApi.md#challengeServiceChallengeFormMeta) | **POST** /api/v1/challenge/form-meta | ChallengeFormMeta is used to request information(template) about the form fields required to submit a challenge for a specific asset and evidence type. Returns response with template with pre-filled data.
+*ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeFreezeAction**](docs/ChallengeServiceApi.md#challengeServiceChallengeFreezeAction) | **POST** /api/v1/operator/challenge/freeze | ChallengeFreezeAction makes challenge process stopped or not according to request.
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeFreezeStatus**](docs/ChallengeServiceApi.md#challengeServiceChallengeFreezeStatus) | **POST** /api/v1/challenge/freeze/status | ChallengeFreezeStatus returns StatusResponse that contains string that represents freeze status of challenges if the challenge process is stopped and nothing if the one is not. Challenge can be stopped by operator.Dealer can see the freeze status using this method. Need to specify consensus(where outliers exists) run timestamp.
+*ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeHistory**](docs/ChallengeServiceApi.md#challengeServiceChallengeHistory) | **POST** /api/v1/operator/challenge/history | ChallengeHistory return already closed challenges according to request.
+*ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceChallengeList**](docs/ChallengeServiceApi.md#challengeServiceChallengeList) | **POST** /api/v1/operator/challenge/list | ChallengeList returns list of challenges according to request.
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceGetChallengeAttachmentUploadUrl**](docs/ChallengeServiceApi.md#challengeServiceGetChallengeAttachmentUploadUrl) | **POST** /api/v1/challenge/attachment_upload_urls | GetChallengeAttachmentUploadUrl returns string that represents s3 URL that can be used to upload attachment for the challenge. The file in attachment can be any file that provides additional information about the disputable outlier. Need to specify asset ID, submitted ID and file name.
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceGetChallengeDetails**](docs/ChallengeServiceApi.md#challengeServiceGetChallengeDetails) | **POST** /api/v1/challenge-details | 
 *ClearconsensusSdk.ChartServiceApi* | [**chartServiceGetChartData**](docs/ChartServiceApi.md#chartServiceGetChartData) | **POST** /api/v1/analytics/chart-data | 
 *ClearconsensusSdk.ChartsServiceApi* | [**chartsServiceCharts**](docs/ChartsServiceApi.md#chartsServiceCharts) | **POST** /api/v1/charts | Charts returns information about specific chart related to the specific asset.
 *ClearconsensusSdk.ChartsServiceApi* | [**chartsServiceChartsCurrencies**](docs/ChartsServiceApi.md#chartsServiceChartsCurrencies) | **POST** /api/v1/charts/currencies | ChartsCurrencies returns information about the chart related to specific currency pair.
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensus**](docs/ConsensusServiceApi.md#consensusServiceConsensus) | **POST** /api/v1/consensus | Consensus return information about consensus according to request. Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition) Returns ConsensusResponse that contains information about column and rows related to consensus.
+*ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusActive**](docs/ConsensusServiceApi.md#consensusServiceConsensusActive) | **POST** /api/v1/operator/consensus/active | 
+*ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusDecision**](docs/ConsensusServiceApi.md#consensusServiceConsensusDecision) | **POST** /api/v1/operator/consensus/decision | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusExplorerInstrumentDetails**](docs/ConsensusServiceApi.md#consensusServiceConsensusExplorerInstrumentDetails) | **POST** /api/v1/consensus-explorer/details | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusExplorerRanges**](docs/ConsensusServiceApi.md#consensusServiceConsensusExplorerRanges) | **POST** /api/v1/consensus-explorer/range | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusExplorerTable**](docs/ConsensusServiceApi.md#consensusServiceConsensusExplorerTable) | **POST** /api/v1/consensus-explorer/table | 
+*ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusHistory**](docs/ConsensusServiceApi.md#consensusServiceConsensusHistory) | **POST** /api/v1/operator/consensus/history | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusOutliers**](docs/ConsensusServiceApi.md#consensusServiceConsensusOutliers) | **POST** /api/v1/outliers-list | ConsensusOutliers return list of outliers according to specified consensus. Need to identify consensus tun timestamp and etc.(Described in OutliersListRequest) Return ConsensusActiveResponse that contains active consensuses with specified run timestamp.
+*ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusPublish**](docs/ConsensusServiceApi.md#consensusServiceConsensusPublish) | **POST** /api/v1/operator/consensus/publish | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusResultSetValues**](docs/ConsensusServiceApi.md#consensusServiceConsensusResultSetValues) | **POST** /api/v1/consensus-result-set-view | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusTimestamps**](docs/ConsensusServiceApi.md#consensusServiceConsensusTimestamps) | **POST** /api/v1/consensus/timestamps | ConsensusTimestamps returns timestamps when it was submitted. Need to specify asset ID and trace name. Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
+*ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusToPublish**](docs/ConsensusServiceApi.md#consensusServiceConsensusToPublish) | **POST** /api/v1/operator/consensus/to-publish | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceEvaluatedPrice**](docs/ConsensusServiceApi.md#consensusServiceEvaluatedPrice) | **POST** /api/v1/evaluated-price | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceGetConsensusRuns**](docs/ConsensusServiceApi.md#consensusServiceGetConsensusRuns) | **POST** /api/v1/consensus-runs-view | Get Consensus Run&#39;s consensus result sets
 *ClearconsensusSdk.CustomFunctionServiceApi* | [**customFunctionServiceAddCustomFunction**](docs/CustomFunctionServiceApi.md#customFunctionServiceAddCustomFunction) | **POST** /api/v1/customfunction/add | AddCustomFunction allows the user to create a new custom function by sending a CustomFunction message. It returns an AcknowledgeResponse indicating whether the custom function was successfully added or not.
@@ -154,7 +168,9 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.DataProcessingAppServiceApi* | [**dataProcessingAppServiceRunDataProcessingApp**](docs/DataProcessingAppServiceApi.md#dataProcessingAppServiceRunDataProcessingApp) | **POST** /api/v1/dataprocessingapp/run | RunDataProcessingApp triggers jobs that are responsible to processing of received data.
 *ClearconsensusSdk.DataQualityServiceApi* | [**dataQualityServiceDQErrors**](docs/DataQualityServiceApi.md#dataQualityServiceDQErrors) | **POST** /api/v1/dqerrors | 
 *ClearconsensusSdk.DataQualityServiceApi* | [**dataQualityServiceGetDataQualityErrors**](docs/DataQualityServiceApi.md#dataQualityServiceGetDataQualityErrors) | **POST** /api/v1/data-quality-errors | 
+*ClearconsensusSdk.DataServiceApi* | [**dataServiceAuthorizeUpload**](docs/DataServiceApi.md#dataServiceAuthorizeUpload) | **POST** /api/v1/internal/upload/authorize | AuthorizeUpload shows availability of uploading for user.
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceExport**](docs/DataServiceApi.md#dataServiceExport) | **POST** /api/v1/export | Export exports data according to the request.
+*ClearconsensusSdk.DataServiceApi* | [**dataServiceNotifyUpload**](docs/DataServiceApi.md#dataServiceNotifyUpload) | **POST** /api/v1/internal/upload/notify | NotifyUpload returns message with notify that data was uploaded according to url in request.
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceSubmitted**](docs/DataServiceApi.md#dataServiceSubmitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceUploadURL**](docs/DataServiceApi.md#dataServiceUploadURL) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceAddDbDescriptor**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceAddDbDescriptor) | **POST** /api/v1/db/descriptor/add | 
@@ -219,6 +235,20 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.NormalizationServiceApi* | [**normalizationServiceGetNormalizationRuleVersion**](docs/NormalizationServiceApi.md#normalizationServiceGetNormalizationRuleVersion) | **GET** /api/v1/normalization/rule/version/{descriptorName}/{versionId} | 
 *ClearconsensusSdk.NormalizationServiceApi* | [**normalizationServiceListNormalizationRuleVersions**](docs/NormalizationServiceApi.md#normalizationServiceListNormalizationRuleVersions) | **POST** /api/v1/normalization/rule/versions | 
 *ClearconsensusSdk.NormalizationServiceApi* | [**normalizationServiceListNormalizationRules**](docs/NormalizationServiceApi.md#normalizationServiceListNormalizationRules) | **POST** /api/v1/normalization/rule/list | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateAddAsset**](docs/OperatorServicePrivateApi.md#operatorServicePrivateAddAsset) | **POST** /api/v1/operator/assets/add | AddAsset adds asset to the system.
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateAddClient**](docs/OperatorServicePrivateApi.md#operatorServicePrivateAddClient) | **POST** /api/v1/operator/client/add | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateAddSupportedFields**](docs/OperatorServicePrivateApi.md#operatorServicePrivateAddSupportedFields) | **POST** /api/v1/operator/add/field-values | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateAssets**](docs/OperatorServicePrivateApi.md#operatorServicePrivateAssets) | **POST** /api/v1/operator/assets | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateCreateSupportedFields**](docs/OperatorServicePrivateApi.md#operatorServicePrivateCreateSupportedFields) | **POST** /api/v1/operator/create/field-values | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateDeleteSupportedFields**](docs/OperatorServicePrivateApi.md#operatorServicePrivateDeleteSupportedFields) | **POST** /api/v1/operator/delete/field-values | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateEvpStatuses**](docs/OperatorServicePrivateApi.md#operatorServicePrivateEvpStatuses) | **POST** /api/v1/operator/evaluated-prices/slice | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateExportReport**](docs/OperatorServicePrivateApi.md#operatorServicePrivateExportReport) | **POST** /api/v1/operator/report | ExportReport returns pre signed s3 urls which can be used for export report(and compression type)
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateListClients**](docs/OperatorServicePrivateApi.md#operatorServicePrivateListClients) | **GET** /api/v1/operator/client/list | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateOperatorOutliers**](docs/OperatorServicePrivateApi.md#operatorServicePrivateOperatorOutliers) | **POST** /api/v1/operator-outliers | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateOutliers**](docs/OperatorServicePrivateApi.md#operatorServicePrivateOutliers) | **POST** /api/v1/operator/outliers | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateRecentAssets**](docs/OperatorServicePrivateApi.md#operatorServicePrivateRecentAssets) | **POST** /api/v1/operator/recentassets | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateUploadDTCC**](docs/OperatorServicePrivateApi.md#operatorServicePrivateUploadDTCC) | **POST** /api/v1/operator/dtcc-trades/upload | 
+*ClearconsensusSdk.OperatorServicePrivateApi* | [**operatorServicePrivateUploadEVP**](docs/OperatorServicePrivateApi.md#operatorServicePrivateUploadEVP) | **POST** /api/v1/operator/evp/upload | 
 *ClearconsensusSdk.OutliersServiceApi* | [**outliersServiceOutliers**](docs/OutliersServiceApi.md#outliersServiceOutliers) | **POST** /api/v1/outliers | Outliers returns outliers according to request.
 *ClearconsensusSdk.PolicyServiceApi* | [**policyServiceCheckPolicy**](docs/PolicyServiceApi.md#policyServiceCheckPolicy) | **POST** /api/v1/user-management/policies/checkPolicy | 
 *ClearconsensusSdk.PolicyServiceApi* | [**policyServiceCreate**](docs/PolicyServiceApi.md#policyServiceCreate) | **POST** /api/v1/user-management/policies/create | 
@@ -239,8 +269,10 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceGetUniqueKeyVersion**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceGetUniqueKeyVersion) | **GET** /api/v1/uniquekey/version/{scope}/{name}/{versionId} | GetUniqueKeyVersion is used to retrieve a specific version of a unique key definition by its scope, name, and version ID. Response: {    \&quot;data\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;,        \&quot;scope\&quot;: \&quot;global\&quot;,        \&quot;uniqueKey\&quot;: [            \&quot;asset\&quot;,            \&quot;service\&quot;,            \&quot;sub-asset\&quot;,            \&quot;instrument_type\&quot;,            \&quot;tenor\&quot;,            \&quot;snap_date\&quot;,            \&quot;snap_time\&quot;,            \&quot;curr_1\&quot;,            \&quot;curr_2\&quot;,            \&quot;onshore_offshore_curr_1\&quot;,            \&quot;onshore_offshore_curr_2\&quot;        ],        \&quot;orderBy\&quot;: [            \&quot;__input_row_num\&quot;        ],        \&quot;order\&quot;: \&quot;ASC\&quot;    } }
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceListUniqueKeyVersions**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceListUniqueKeyVersions) | **POST** /api/v1/uniquekey/versions | ListUniqueKeyVersions is used to retrieve a list of all versions of a specific unique key definition by its scope and name. Request: {   \&quot;scope\&quot;:\&quot;global\&quot;,   \&quot;identifier\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceListUniqueKeys**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceListUniqueKeys) | **POST** /api/v1/uniquekey/list | ListUniqueKeys is used to retrieve a list of all unique key definitions in the system. Request: {   \&quot;scope\&quot;:\&quot;global\&quot; }
+*ClearconsensusSdk.UserServiceApi* | [**userServiceAddUser**](docs/UserServiceApi.md#userServiceAddUser) | **POST** /api/v1/user/add | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceAddUserNotification**](docs/UserServiceApi.md#userServiceAddUserNotification) | **POST** /api/v1/user/notifications/add | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceCreate**](docs/UserServiceApi.md#userServiceCreate) | **POST** /api/v1/user-management/users/create | 
+*ClearconsensusSdk.UserServiceApi* | [**userServiceDeleteUser**](docs/UserServiceApi.md#userServiceDeleteUser) | **POST** /api/v1/user/delete | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceDeleteUserNotification**](docs/UserServiceApi.md#userServiceDeleteUserNotification) | **POST** /api/v1/user/notifications/delete | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceGetAll**](docs/UserServiceApi.md#userServiceGetAll) | **POST** /api/v1/user-management/users/getAll | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceGetById**](docs/UserServiceApi.md#userServiceGetById) | **POST** /api/v1/user-management/users/getById | 
@@ -249,6 +281,7 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.UserServiceApi* | [**userServiceGetUserNotificationsByMarket**](docs/UserServiceApi.md#userServiceGetUserNotificationsByMarket) | **POST** /api/v1/user/notifications/market | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceGetUserPermissions**](docs/UserServiceApi.md#userServiceGetUserPermissions) | **POST** /api/v1/user/permissions | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceUpdate**](docs/UserServiceApi.md#userServiceUpdate) | **POST** /api/v1/user-management/users/update | 
+*ClearconsensusSdk.UserServiceApi* | [**userServiceUpdateUser**](docs/UserServiceApi.md#userServiceUpdateUser) | **POST** /api/v1/user/update | 
 *ClearconsensusSdk.UserServiceApi* | [**userServiceUpdateUserNotification**](docs/UserServiceApi.md#userServiceUpdateUserNotification) | **POST** /api/v1/user/notifications/update | 
 *ClearconsensusSdk.ValidatorServiceApi* | [**validatorServiceAddValidationRule**](docs/ValidatorServiceApi.md#validatorServiceAddValidationRule) | **POST** /api/v1/validation/rule/add | AddValidationRule is a method used to add a validation rule to the system. Backoffice users can create a new validation ruleset in the &#39;global&#39; scope, for each asset class. Participant users can create a new validation ruleset in its own scope, for each asset class. Backoffice users can represent any participant and create a new validation ruleset in that participant&#39;s scope. The default scope is used if no scope is given in the request (&#39;global&#39; for the operator, participant scope for that participant user). The authorization will be fetched from the user&#39;s token. It will do an update if a validation rule with the same name already exists.
 *ClearconsensusSdk.ValidatorServiceApi* | [**validatorServiceDisableValidationRule**](docs/ValidatorServiceApi.md#validatorServiceDisableValidationRule) | **POST** /api/v1/validation/rule/disable | DisableValidationRule method disables a validation rule in the system. The request includes the descriptor name and scope of the rule. Example of Request: { \&quot;descriptor_name\&quot; : \&quot;foreign_exchange-vanilla-forwards\&quot;, \&quot;scope\&quot;: \&quot;global\&quot; }
@@ -286,6 +319,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.ProtobufAny](docs/ProtobufAny.md)
  - [ClearconsensusSdk.RpcStatus](docs/RpcStatus.md)
  - [ClearconsensusSdk.TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)
+ - [ClearconsensusSdk.TitaniumAddAssetRequest](docs/TitaniumAddAssetRequest.md)
  - [ClearconsensusSdk.TitaniumAddLookupTableRequest](docs/TitaniumAddLookupTableRequest.md)
  - [ClearconsensusSdk.TitaniumAllParticipantExplorerTableColumn](docs/TitaniumAllParticipantExplorerTableColumn.md)
  - [ClearconsensusSdk.TitaniumAsset](docs/TitaniumAsset.md)
@@ -298,9 +332,14 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumAttachment](docs/TitaniumAttachment.md)
  - [ClearconsensusSdk.TitaniumAvailableTrades](docs/TitaniumAvailableTrades.md)
  - [ClearconsensusSdk.TitaniumBenchmarkMetadata](docs/TitaniumBenchmarkMetadata.md)
+ - [ClearconsensusSdk.TitaniumChallengeActiveRequest](docs/TitaniumChallengeActiveRequest.md)
+ - [ClearconsensusSdk.TitaniumChallengeActiveResponse](docs/TitaniumChallengeActiveResponse.md)
+ - [ClearconsensusSdk.TitaniumChallengeActiveResponseData](docs/TitaniumChallengeActiveResponseData.md)
+ - [ClearconsensusSdk.TitaniumChallengeConsensusMetadata](docs/TitaniumChallengeConsensusMetadata.md)
  - [ClearconsensusSdk.TitaniumChallengeCreateRequest](docs/TitaniumChallengeCreateRequest.md)
  - [ClearconsensusSdk.TitaniumChallengeCreateResponse](docs/TitaniumChallengeCreateResponse.md)
  - [ClearconsensusSdk.TitaniumChallengeCreateResponseData](docs/TitaniumChallengeCreateResponseData.md)
+ - [ClearconsensusSdk.TitaniumChallengeDecisionRequest](docs/TitaniumChallengeDecisionRequest.md)
  - [ClearconsensusSdk.TitaniumChallengeFormGeneralRow](docs/TitaniumChallengeFormGeneralRow.md)
  - [ClearconsensusSdk.TitaniumChallengeFormGeneralRowMax](docs/TitaniumChallengeFormGeneralRowMax.md)
  - [ClearconsensusSdk.TitaniumChallengeFormGeneralRowMaxLength](docs/TitaniumChallengeFormGeneralRowMaxLength.md)
@@ -311,7 +350,15 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumChallengeFormMetaResponse](docs/TitaniumChallengeFormMetaResponse.md)
  - [ClearconsensusSdk.TitaniumChallengeFormMetaResponseData](docs/TitaniumChallengeFormMetaResponseData.md)
  - [ClearconsensusSdk.TitaniumChallengeFormOneOfFields](docs/TitaniumChallengeFormOneOfFields.md)
+ - [ClearconsensusSdk.TitaniumChallengeFreezeActionRequest](docs/TitaniumChallengeFreezeActionRequest.md)
  - [ClearconsensusSdk.TitaniumChallengeFreezeStatusRequest](docs/TitaniumChallengeFreezeStatusRequest.md)
+ - [ClearconsensusSdk.TitaniumChallengeHistoryRequest](docs/TitaniumChallengeHistoryRequest.md)
+ - [ClearconsensusSdk.TitaniumChallengeHistoryResponse](docs/TitaniumChallengeHistoryResponse.md)
+ - [ClearconsensusSdk.TitaniumChallengeHistoryResponseData](docs/TitaniumChallengeHistoryResponseData.md)
+ - [ClearconsensusSdk.TitaniumChallengeListMetadata](docs/TitaniumChallengeListMetadata.md)
+ - [ClearconsensusSdk.TitaniumChallengeListRequest](docs/TitaniumChallengeListRequest.md)
+ - [ClearconsensusSdk.TitaniumChallengeListResponse](docs/TitaniumChallengeListResponse.md)
+ - [ClearconsensusSdk.TitaniumChallengeListResponseData](docs/TitaniumChallengeListResponseData.md)
  - [ClearconsensusSdk.TitaniumChart](docs/TitaniumChart.md)
  - [ClearconsensusSdk.TitaniumChartDataResponse](docs/TitaniumChartDataResponse.md)
  - [ClearconsensusSdk.TitaniumChartPoint](docs/TitaniumChartPoint.md)
@@ -323,10 +370,13 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumChartsRequest](docs/TitaniumChartsRequest.md)
  - [ClearconsensusSdk.TitaniumChartsResponse](docs/TitaniumChartsResponse.md)
  - [ClearconsensusSdk.TitaniumChartsResponseData](docs/TitaniumChartsResponseData.md)
+ - [ClearconsensusSdk.TitaniumClientName](docs/TitaniumClientName.md)
  - [ClearconsensusSdk.TitaniumColDependency](docs/TitaniumColDependency.md)
  - [ClearconsensusSdk.TitaniumColumnInfo](docs/TitaniumColumnInfo.md)
  - [ClearconsensusSdk.TitaniumComparisonTable](docs/TitaniumComparisonTable.md)
+ - [ClearconsensusSdk.TitaniumConsensusActiveRequest](docs/TitaniumConsensusActiveRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusActiveResponse](docs/TitaniumConsensusActiveResponse.md)
+ - [ClearconsensusSdk.TitaniumConsensusDecisionRequest](docs/TitaniumConsensusDecisionRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusDensityScore](docs/TitaniumConsensusDensityScore.md)
  - [ClearconsensusSdk.TitaniumConsensusDetail](docs/TitaniumConsensusDetail.md)
  - [ClearconsensusSdk.TitaniumConsensusExplorerInstrumentDetailsData](docs/TitaniumConsensusExplorerInstrumentDetailsData.md)
@@ -336,6 +386,10 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumConsensusExplorerTableData](docs/TitaniumConsensusExplorerTableData.md)
  - [ClearconsensusSdk.TitaniumConsensusExplorerTableResponse](docs/TitaniumConsensusExplorerTableResponse.md)
  - [ClearconsensusSdk.TitaniumConsensusHistogram](docs/TitaniumConsensusHistogram.md)
+ - [ClearconsensusSdk.TitaniumConsensusHistoryRequest](docs/TitaniumConsensusHistoryRequest.md)
+ - [ClearconsensusSdk.TitaniumConsensusHistoryResponse](docs/TitaniumConsensusHistoryResponse.md)
+ - [ClearconsensusSdk.TitaniumConsensusHistoryResponseData](docs/TitaniumConsensusHistoryResponseData.md)
+ - [ClearconsensusSdk.TitaniumConsensusPublishRequest](docs/TitaniumConsensusPublishRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusRequest](docs/TitaniumConsensusRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusResponse](docs/TitaniumConsensusResponse.md)
  - [ClearconsensusSdk.TitaniumConsensusResponseData](docs/TitaniumConsensusResponseData.md)
@@ -349,6 +403,9 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumConsensusTimestampsRequest](docs/TitaniumConsensusTimestampsRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusTimestampsResponse](docs/TitaniumConsensusTimestampsResponse.md)
  - [ClearconsensusSdk.TitaniumConsensusTimestampsResponseData](docs/TitaniumConsensusTimestampsResponseData.md)
+ - [ClearconsensusSdk.TitaniumConsensusToPublishRequest](docs/TitaniumConsensusToPublishRequest.md)
+ - [ClearconsensusSdk.TitaniumConsensusToPublishResponse](docs/TitaniumConsensusToPublishResponse.md)
+ - [ClearconsensusSdk.TitaniumConsensusToPublishResponseData](docs/TitaniumConsensusToPublishResponseData.md)
  - [ClearconsensusSdk.TitaniumCriteriaDefinition](docs/TitaniumCriteriaDefinition.md)
  - [ClearconsensusSdk.TitaniumCustomFunction](docs/TitaniumCustomFunction.md)
  - [ClearconsensusSdk.TitaniumCustomFunctionDefinitionResponse](docs/TitaniumCustomFunctionDefinitionResponse.md)
@@ -390,10 +447,16 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumEvpAlignmentScoreWithDate](docs/TitaniumEvpAlignmentScoreWithDate.md)
  - [ClearconsensusSdk.TitaniumEvpExplorerTableColumn](docs/TitaniumEvpExplorerTableColumn.md)
  - [ClearconsensusSdk.TitaniumEvpQualityScore](docs/TitaniumEvpQualityScore.md)
+ - [ClearconsensusSdk.TitaniumEvpStatus](docs/TitaniumEvpStatus.md)
+ - [ClearconsensusSdk.TitaniumEvpStatuses](docs/TitaniumEvpStatuses.md)
+ - [ClearconsensusSdk.TitaniumEvpStatusesRequest](docs/TitaniumEvpStatusesRequest.md)
+ - [ClearconsensusSdk.TitaniumEvpStatusesResponse](docs/TitaniumEvpStatusesResponse.md)
+ - [ClearconsensusSdk.TitaniumEvpStatusesResponseData](docs/TitaniumEvpStatusesResponseData.md)
  - [ClearconsensusSdk.TitaniumExpertExplorerTableColumn](docs/TitaniumExpertExplorerTableColumn.md)
  - [ClearconsensusSdk.TitaniumExpertiseScore](docs/TitaniumExpertiseScore.md)
  - [ClearconsensusSdk.TitaniumExpertiseScoreWithDate](docs/TitaniumExpertiseScoreWithDate.md)
  - [ClearconsensusSdk.TitaniumExportPresignedUrlResponseResponseData](docs/TitaniumExportPresignedUrlResponseResponseData.md)
+ - [ClearconsensusSdk.TitaniumExportReportRequest](docs/TitaniumExportReportRequest.md)
  - [ClearconsensusSdk.TitaniumExportRequest](docs/TitaniumExportRequest.md)
  - [ClearconsensusSdk.TitaniumExportResponse](docs/TitaniumExportResponse.md)
  - [ClearconsensusSdk.TitaniumFields](docs/TitaniumFields.md)
@@ -454,6 +517,8 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumKVRequest](docs/TitaniumKVRequest.md)
  - [ClearconsensusSdk.TitaniumKeyAndValue](docs/TitaniumKeyAndValue.md)
  - [ClearconsensusSdk.TitaniumLimit](docs/TitaniumLimit.md)
+ - [ClearconsensusSdk.TitaniumListClientsResponse](docs/TitaniumListClientsResponse.md)
+ - [ClearconsensusSdk.TitaniumListClientsResponseData](docs/TitaniumListClientsResponseData.md)
  - [ClearconsensusSdk.TitaniumListCustomFunctionRequest](docs/TitaniumListCustomFunctionRequest.md)
  - [ClearconsensusSdk.TitaniumListCustomFunctionResponse](docs/TitaniumListCustomFunctionResponse.md)
  - [ClearconsensusSdk.TitaniumListKVRequest](docs/TitaniumListKVRequest.md)
@@ -483,6 +548,10 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumNameAliasPair](docs/TitaniumNameAliasPair.md)
  - [ClearconsensusSdk.TitaniumNormalizationRuleDefinition](docs/TitaniumNormalizationRuleDefinition.md)
  - [ClearconsensusSdk.TitaniumNormalizationRuleResponse](docs/TitaniumNormalizationRuleResponse.md)
+ - [ClearconsensusSdk.TitaniumOnBoardRequest](docs/TitaniumOnBoardRequest.md)
+ - [ClearconsensusSdk.TitaniumOperatorOutliersRequest](docs/TitaniumOperatorOutliersRequest.md)
+ - [ClearconsensusSdk.TitaniumOperatorOutliersResponse](docs/TitaniumOperatorOutliersResponse.md)
+ - [ClearconsensusSdk.TitaniumOperatorOutliersResponseData](docs/TitaniumOperatorOutliersResponseData.md)
  - [ClearconsensusSdk.TitaniumOrderBy](docs/TitaniumOrderBy.md)
  - [ClearconsensusSdk.TitaniumOutlierMetadata](docs/TitaniumOutlierMetadata.md)
  - [ClearconsensusSdk.TitaniumOutliersListRequest](docs/TitaniumOutliersListRequest.md)
@@ -507,6 +576,8 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumResultsList](docs/TitaniumResultsList.md)
  - [ClearconsensusSdk.TitaniumRuleDefinition](docs/TitaniumRuleDefinition.md)
  - [ClearconsensusSdk.TitaniumRulesetDefinition](docs/TitaniumRulesetDefinition.md)
+ - [ClearconsensusSdk.TitaniumRunCalculatorRequest](docs/TitaniumRunCalculatorRequest.md)
+ - [ClearconsensusSdk.TitaniumRunConsensusRequest](docs/TitaniumRunConsensusRequest.md)
  - [ClearconsensusSdk.TitaniumRunDataProcessingAppRequest](docs/TitaniumRunDataProcessingAppRequest.md)
  - [ClearconsensusSdk.TitaniumRunDataProcessingAppResponse](docs/TitaniumRunDataProcessingAppResponse.md)
  - [ClearconsensusSdk.TitaniumScopeExistResponse](docs/TitaniumScopeExistResponse.md)
@@ -517,6 +588,8 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumSetFileDelimiterRequest](docs/TitaniumSetFileDelimiterRequest.md)
  - [ClearconsensusSdk.TitaniumSetFileDescriptorRequest](docs/TitaniumSetFileDescriptorRequest.md)
  - [ClearconsensusSdk.TitaniumSeverityToDataQuality](docs/TitaniumSeverityToDataQuality.md)
+ - [ClearconsensusSdk.TitaniumSlice](docs/TitaniumSlice.md)
+ - [ClearconsensusSdk.TitaniumSliceRequestData](docs/TitaniumSliceRequestData.md)
  - [ClearconsensusSdk.TitaniumSnapTimes](docs/TitaniumSnapTimes.md)
  - [ClearconsensusSdk.TitaniumStatusResponse](docs/TitaniumStatusResponse.md)
  - [ClearconsensusSdk.TitaniumStatusResponseData](docs/TitaniumStatusResponseData.md)
@@ -531,6 +604,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumSubmittedResponseData](docs/TitaniumSubmittedResponseData.md)
  - [ClearconsensusSdk.TitaniumSubmittedRow](docs/TitaniumSubmittedRow.md)
  - [ClearconsensusSdk.TitaniumSupportedField](docs/TitaniumSupportedField.md)
+ - [ClearconsensusSdk.TitaniumSupportedFieldsValues](docs/TitaniumSupportedFieldsValues.md)
  - [ClearconsensusSdk.TitaniumTradePeriodMetrics](docs/TitaniumTradePeriodMetrics.md)
  - [ClearconsensusSdk.TitaniumTradePeriodsWithMetrics](docs/TitaniumTradePeriodsWithMetrics.md)
  - [ClearconsensusSdk.TitaniumTradeRangesData](docs/TitaniumTradeRangesData.md)
@@ -538,6 +612,11 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumUniqueKeyDefinition](docs/TitaniumUniqueKeyDefinition.md)
  - [ClearconsensusSdk.TitaniumUniqueKeyDefinitionResponse](docs/TitaniumUniqueKeyDefinitionResponse.md)
  - [ClearconsensusSdk.TitaniumUniqueKeyList](docs/TitaniumUniqueKeyList.md)
+ - [ClearconsensusSdk.TitaniumUploadAuthorizationResponse](docs/TitaniumUploadAuthorizationResponse.md)
+ - [ClearconsensusSdk.TitaniumUploadDTCCRequest](docs/TitaniumUploadDTCCRequest.md)
+ - [ClearconsensusSdk.TitaniumUploadEVPRequest](docs/TitaniumUploadEVPRequest.md)
+ - [ClearconsensusSdk.TitaniumUploadEvaluatedPriceRequest](docs/TitaniumUploadEvaluatedPriceRequest.md)
+ - [ClearconsensusSdk.TitaniumUploadNotifyRequest](docs/TitaniumUploadNotifyRequest.md)
  - [ClearconsensusSdk.TitaniumUploadURLRequest](docs/TitaniumUploadURLRequest.md)
  - [ClearconsensusSdk.TitaniumUploadURLResponse](docs/TitaniumUploadURLResponse.md)
  - [ClearconsensusSdk.TitaniumUsage](docs/TitaniumUsage.md)
@@ -550,6 +629,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumUserPermission](docs/TitaniumUserPermission.md)
  - [ClearconsensusSdk.TitaniumUserPermissions](docs/TitaniumUserPermissions.md)
  - [ClearconsensusSdk.TitaniumUserPermissionsResponse](docs/TitaniumUserPermissionsResponse.md)
+ - [ClearconsensusSdk.TitaniumUserRequest](docs/TitaniumUserRequest.md)
  - [ClearconsensusSdk.TitaniumUserResponse](docs/TitaniumUserResponse.md)
  - [ClearconsensusSdk.TitaniumValidationRuleDefinition](docs/TitaniumValidationRuleDefinition.md)
  - [ClearconsensusSdk.TitaniumValues](docs/TitaniumValues.md)

@@ -4,8 +4,10 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**user_service_add_user**](UserServiceApi.md#user_service_add_user) | **POST** /api/v1/user/add | 
 [**user_service_add_user_notification**](UserServiceApi.md#user_service_add_user_notification) | **POST** /api/v1/user/notifications/add | 
 [**user_service_create**](UserServiceApi.md#user_service_create) | **POST** /api/v1/user-management/users/create | 
+[**user_service_delete_user**](UserServiceApi.md#user_service_delete_user) | **POST** /api/v1/user/delete | 
 [**user_service_delete_user_notification**](UserServiceApi.md#user_service_delete_user_notification) | **POST** /api/v1/user/notifications/delete | 
 [**user_service_get_all**](UserServiceApi.md#user_service_get_all) | **POST** /api/v1/user-management/users/getAll | 
 [**user_service_get_by_id**](UserServiceApi.md#user_service_get_by_id) | **POST** /api/v1/user-management/users/getById | 
@@ -14,8 +16,69 @@ Method | HTTP request | Description
 [**user_service_get_user_notifications_by_market**](UserServiceApi.md#user_service_get_user_notifications_by_market) | **POST** /api/v1/user/notifications/market | 
 [**user_service_get_user_permissions**](UserServiceApi.md#user_service_get_user_permissions) | **POST** /api/v1/user/permissions | 
 [**user_service_update**](UserServiceApi.md#user_service_update) | **POST** /api/v1/user-management/users/update | 
+[**user_service_update_user**](UserServiceApi.md#user_service_update_user) | **POST** /api/v1/user/update | 
 [**user_service_update_user_notification**](UserServiceApi.md#user_service_update_user_notification) | **POST** /api/v1/user/notifications/update | 
 
+
+# **user_service_add_user**
+> TitaniumUserResponse user_service_add_user(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.UserServiceApi(api_client)
+    body = openapi_client.TitaniumUserRequest() # TitaniumUserRequest | 
+
+    try:
+        api_response = api_instance.user_service_add_user(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserServiceApi->user_service_add_user: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | 
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_add_user_notification**
 > TitaniumUserNotificationResponse user_service_add_user_notification(body)
@@ -119,6 +182,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_service_delete_user**
+> TitaniumUserResponse user_service_delete_user(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.UserServiceApi(api_client)
+    body = openapi_client.TitaniumUserRequest() # TitaniumUserRequest | 
+
+    try:
+        api_response = api_instance.user_service_delete_user(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserServiceApi->user_service_delete_user: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | 
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
 
 ### Authorization
 
@@ -599,6 +722,66 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ProtoServiceResponse**](ProtoServiceResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | A successful response. |  -  |
+**0** | An unexpected error response. |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **user_service_update_user**
+> TitaniumUserResponse user_service_update_user(body)
+
+
+
+### Example
+
+```python
+from __future__ import print_function
+import time
+import openapi_client
+from openapi_client.rest import ApiException
+from pprint import pprint
+# Defining the host is optional and defaults to http://api-dev.clearconsensus.io
+# See configuration.py for a list of all supported configuration parameters.
+configuration = openapi_client.Configuration(
+    host = "http://api-dev.clearconsensus.io"
+)
+
+
+# Enter a context with an instance of the API client
+with openapi_client.ApiClient() as api_client:
+    # Create an instance of the API class
+    api_instance = openapi_client.UserServiceApi(api_client)
+    body = openapi_client.TitaniumUserRequest() # TitaniumUserRequest | 
+
+    try:
+        api_response = api_instance.user_service_update_user(body)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserServiceApi->user_service_update_user: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUserRequest**](TitaniumUserRequest.md)|  | 
+
+### Return type
+
+[**TitaniumUserResponse**](TitaniumUserResponse.md)
 
 ### Authorization
 

@@ -63,15 +63,14 @@ configuration = openapi_client.Configuration(
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.AnalyticsControllerApi(api_client)
-    body = openapi_client.TitaniumGenericChartMetadataDataQuality() # TitaniumGenericChartMetadataDataQuality | 
+    api_instance = openapi_client.AdminServiceApi(api_client)
+    body = openapi_client.TitaniumOnBoardRequest() # TitaniumOnBoardRequest | 
 
     try:
-        # FindConsensusAnalytics returns analytics related to specific consensus according to request.
-        api_response = api_instance.analytics_controller_find_consensus_analytics(body)
+        api_response = api_instance.admin_service_on_board(body)
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AnalyticsControllerApi->analytics_controller_find_consensus_analytics: %s\n" % e)
+        print("Exception when calling AdminServiceApi->admin_service_on_board: %s\n" % e)
     
 ```
 
@@ -81,6 +80,10 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AdminServiceApi* | [**admin_service_on_board**](docs/AdminServiceApi.md#admin_service_on_board) | **POST** /api/v1/onboard | 
+*AdminServiceApi* | [**admin_service_run_calculator**](docs/AdminServiceApi.md#admin_service_run_calculator) | **POST** /api/v1/calculator/run | 
+*AdminServiceApi* | [**admin_service_run_consensus**](docs/AdminServiceApi.md#admin_service_run_consensus) | **POST** /api/v1/consensus/run | 
+*AdminServiceApi* | [**admin_service_upload_evaluated_price**](docs/AdminServiceApi.md#admin_service_upload_evaluated_price) | **POST** /api/v1/upload/evaluated-price | 
 *AnalyticsControllerApi* | [**analytics_controller_find_consensus_analytics**](docs/AnalyticsControllerApi.md#analytics_controller_find_consensus_analytics) | **POST** /api/v1/analytics/consensus/find | FindConsensusAnalytics returns analytics related to specific consensus according to request.
 *AnalyticsControllerApi* | [**analytics_controller_find_data_quality_errors**](docs/AnalyticsControllerApi.md#analytics_controller_find_data_quality_errors) | **POST** /api/v1/analytics/data-quality-errors/find | FindDataQualityErrors returns data quality errors according to request.
 *AnalyticsControllerApi* | [**analytics_controller_get_all_consensus_analytics**](docs/AnalyticsControllerApi.md#analytics_controller_get_all_consensus_analytics) | **POST** /api/v1/analytics/consensus/get-all | GetAllConsensusAnalytics returns analytics related to all consensuses.
@@ -91,21 +94,31 @@ Class | Method | HTTP request | Description
 *AssetsServiceApi* | [**assets_service_assets_list**](docs/AssetsServiceApi.md#assets_service_assets_list) | **POST** /api/v1/assets/list | AssetsList return list of assets according to snap time.
 *AssetsServiceApi* | [**assets_service_recent_assets**](docs/AssetsServiceApi.md#assets_service_recent_assets) | **POST** /api/v1/recentassets | RecentAssets returns recent added assets according to request.
 *AssetsServiceApi* | [**assets_service_supported_assets**](docs/AssetsServiceApi.md#assets_service_supported_assets) | **GET** /api/v1/supported/assets | 
+*ChallengeServiceApi* | [**challenge_service_challenge_active**](docs/ChallengeServiceApi.md#challenge_service_challenge_active) | **POST** /api/v1/operator/challenge/active | ChallengeActive returns active challenges(according to request) in active status(challenge process is active).
 *ChallengeServiceApi* | [**challenge_service_challenge_create**](docs/ChallengeServiceApi.md#challenge_service_challenge_create) | **POST** /api/v1/challenge/create | ChallengeCreate creates challenge in the system.(Initiate process by dealer) To create \&quot;challenger\&quot; needs to be authorised and challenge can be created only if one of their own submitted data points has been declared an outlier in the published Consensus. Need to specify asset and fill out evidence information. Returns response that contains ticket ID of the Challenge or the Error.
+*ChallengeServiceApi* | [**challenge_service_challenge_decision**](docs/ChallengeServiceApi.md#challenge_service_challenge_decision) | **POST** /api/v1/operator/challenge/decision | ChallengeDecision sets decision of the challenge according to request.
 *ChallengeServiceApi* | [**challenge_service_challenge_form_meta**](docs/ChallengeServiceApi.md#challenge_service_challenge_form_meta) | **POST** /api/v1/challenge/form-meta | ChallengeFormMeta is used to request information(template) about the form fields required to submit a challenge for a specific asset and evidence type. Returns response with template with pre-filled data.
+*ChallengeServiceApi* | [**challenge_service_challenge_freeze_action**](docs/ChallengeServiceApi.md#challenge_service_challenge_freeze_action) | **POST** /api/v1/operator/challenge/freeze | ChallengeFreezeAction makes challenge process stopped or not according to request.
 *ChallengeServiceApi* | [**challenge_service_challenge_freeze_status**](docs/ChallengeServiceApi.md#challenge_service_challenge_freeze_status) | **POST** /api/v1/challenge/freeze/status | ChallengeFreezeStatus returns StatusResponse that contains string that represents freeze status of challenges if the challenge process is stopped and nothing if the one is not. Challenge can be stopped by operator.Dealer can see the freeze status using this method. Need to specify consensus(where outliers exists) run timestamp.
+*ChallengeServiceApi* | [**challenge_service_challenge_history**](docs/ChallengeServiceApi.md#challenge_service_challenge_history) | **POST** /api/v1/operator/challenge/history | ChallengeHistory return already closed challenges according to request.
+*ChallengeServiceApi* | [**challenge_service_challenge_list**](docs/ChallengeServiceApi.md#challenge_service_challenge_list) | **POST** /api/v1/operator/challenge/list | ChallengeList returns list of challenges according to request.
 *ChallengeServiceApi* | [**challenge_service_get_challenge_attachment_upload_url**](docs/ChallengeServiceApi.md#challenge_service_get_challenge_attachment_upload_url) | **POST** /api/v1/challenge/attachment_upload_urls | GetChallengeAttachmentUploadUrl returns string that represents s3 URL that can be used to upload attachment for the challenge. The file in attachment can be any file that provides additional information about the disputable outlier. Need to specify asset ID, submitted ID and file name.
 *ChallengeServiceApi* | [**challenge_service_get_challenge_details**](docs/ChallengeServiceApi.md#challenge_service_get_challenge_details) | **POST** /api/v1/challenge-details | 
 *ChartServiceApi* | [**chart_service_get_chart_data**](docs/ChartServiceApi.md#chart_service_get_chart_data) | **POST** /api/v1/analytics/chart-data | 
 *ChartsServiceApi* | [**charts_service_charts**](docs/ChartsServiceApi.md#charts_service_charts) | **POST** /api/v1/charts | Charts returns information about specific chart related to the specific asset.
 *ChartsServiceApi* | [**charts_service_charts_currencies**](docs/ChartsServiceApi.md#charts_service_charts_currencies) | **POST** /api/v1/charts/currencies | ChartsCurrencies returns information about the chart related to specific currency pair.
 *ConsensusServiceApi* | [**consensus_service_consensus**](docs/ConsensusServiceApi.md#consensus_service_consensus) | **POST** /api/v1/consensus | Consensus return information about consensus according to request. Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition) Returns ConsensusResponse that contains information about column and rows related to consensus.
+*ConsensusServiceApi* | [**consensus_service_consensus_active**](docs/ConsensusServiceApi.md#consensus_service_consensus_active) | **POST** /api/v1/operator/consensus/active | 
+*ConsensusServiceApi* | [**consensus_service_consensus_decision**](docs/ConsensusServiceApi.md#consensus_service_consensus_decision) | **POST** /api/v1/operator/consensus/decision | 
 *ConsensusServiceApi* | [**consensus_service_consensus_explorer_instrument_details**](docs/ConsensusServiceApi.md#consensus_service_consensus_explorer_instrument_details) | **POST** /api/v1/consensus-explorer/details | 
 *ConsensusServiceApi* | [**consensus_service_consensus_explorer_ranges**](docs/ConsensusServiceApi.md#consensus_service_consensus_explorer_ranges) | **POST** /api/v1/consensus-explorer/range | 
 *ConsensusServiceApi* | [**consensus_service_consensus_explorer_table**](docs/ConsensusServiceApi.md#consensus_service_consensus_explorer_table) | **POST** /api/v1/consensus-explorer/table | 
+*ConsensusServiceApi* | [**consensus_service_consensus_history**](docs/ConsensusServiceApi.md#consensus_service_consensus_history) | **POST** /api/v1/operator/consensus/history | 
 *ConsensusServiceApi* | [**consensus_service_consensus_outliers**](docs/ConsensusServiceApi.md#consensus_service_consensus_outliers) | **POST** /api/v1/outliers-list | ConsensusOutliers return list of outliers according to specified consensus. Need to identify consensus tun timestamp and etc.(Described in OutliersListRequest) Return ConsensusActiveResponse that contains active consensuses with specified run timestamp.
+*ConsensusServiceApi* | [**consensus_service_consensus_publish**](docs/ConsensusServiceApi.md#consensus_service_consensus_publish) | **POST** /api/v1/operator/consensus/publish | 
 *ConsensusServiceApi* | [**consensus_service_consensus_result_set_values**](docs/ConsensusServiceApi.md#consensus_service_consensus_result_set_values) | **POST** /api/v1/consensus-result-set-view | 
 *ConsensusServiceApi* | [**consensus_service_consensus_timestamps**](docs/ConsensusServiceApi.md#consensus_service_consensus_timestamps) | **POST** /api/v1/consensus/timestamps | ConsensusTimestamps returns timestamps when it was submitted. Need to specify asset ID and trace name. Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
+*ConsensusServiceApi* | [**consensus_service_consensus_to_publish**](docs/ConsensusServiceApi.md#consensus_service_consensus_to_publish) | **POST** /api/v1/operator/consensus/to-publish | 
 *ConsensusServiceApi* | [**consensus_service_evaluated_price**](docs/ConsensusServiceApi.md#consensus_service_evaluated_price) | **POST** /api/v1/evaluated-price | 
 *ConsensusServiceApi* | [**consensus_service_get_consensus_runs**](docs/ConsensusServiceApi.md#consensus_service_get_consensus_runs) | **POST** /api/v1/consensus-runs-view | Get Consensus Run&#39;s consensus result sets
 *CustomFunctionServiceApi* | [**custom_function_service_add_custom_function**](docs/CustomFunctionServiceApi.md#custom_function_service_add_custom_function) | **POST** /api/v1/customfunction/add | AddCustomFunction allows the user to create a new custom function by sending a CustomFunction message. It returns an AcknowledgeResponse indicating whether the custom function was successfully added or not.
@@ -115,7 +128,9 @@ Class | Method | HTTP request | Description
 *DataProcessingAppServiceApi* | [**data_processing_app_service_run_data_processing_app**](docs/DataProcessingAppServiceApi.md#data_processing_app_service_run_data_processing_app) | **POST** /api/v1/dataprocessingapp/run | RunDataProcessingApp triggers jobs that are responsible to processing of received data.
 *DataQualityServiceApi* | [**data_quality_service_dq_errors**](docs/DataQualityServiceApi.md#data_quality_service_dq_errors) | **POST** /api/v1/dqerrors | 
 *DataQualityServiceApi* | [**data_quality_service_get_data_quality_errors**](docs/DataQualityServiceApi.md#data_quality_service_get_data_quality_errors) | **POST** /api/v1/data-quality-errors | 
+*DataServiceApi* | [**data_service_authorize_upload**](docs/DataServiceApi.md#data_service_authorize_upload) | **POST** /api/v1/internal/upload/authorize | AuthorizeUpload shows availability of uploading for user.
 *DataServiceApi* | [**data_service_export**](docs/DataServiceApi.md#data_service_export) | **POST** /api/v1/export | Export exports data according to the request.
+*DataServiceApi* | [**data_service_notify_upload**](docs/DataServiceApi.md#data_service_notify_upload) | **POST** /api/v1/internal/upload/notify | NotifyUpload returns message with notify that data was uploaded according to url in request.
 *DataServiceApi* | [**data_service_submitted**](docs/DataServiceApi.md#data_service_submitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
 *DataServiceApi* | [**data_service_upload_url**](docs/DataServiceApi.md#data_service_upload_url) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
 *DbDescriptorServiceApi* | [**db_descriptor_service_add_db_descriptor**](docs/DbDescriptorServiceApi.md#db_descriptor_service_add_db_descriptor) | **POST** /api/v1/db/descriptor/add | 
@@ -180,6 +195,20 @@ Class | Method | HTTP request | Description
 *NormalizationServiceApi* | [**normalization_service_get_normalization_rule_version**](docs/NormalizationServiceApi.md#normalization_service_get_normalization_rule_version) | **GET** /api/v1/normalization/rule/version/{descriptorName}/{versionId} | 
 *NormalizationServiceApi* | [**normalization_service_list_normalization_rule_versions**](docs/NormalizationServiceApi.md#normalization_service_list_normalization_rule_versions) | **POST** /api/v1/normalization/rule/versions | 
 *NormalizationServiceApi* | [**normalization_service_list_normalization_rules**](docs/NormalizationServiceApi.md#normalization_service_list_normalization_rules) | **POST** /api/v1/normalization/rule/list | 
+*OperatorServicePrivateApi* | [**operator_service_private_add_asset**](docs/OperatorServicePrivateApi.md#operator_service_private_add_asset) | **POST** /api/v1/operator/assets/add | AddAsset adds asset to the system.
+*OperatorServicePrivateApi* | [**operator_service_private_add_client**](docs/OperatorServicePrivateApi.md#operator_service_private_add_client) | **POST** /api/v1/operator/client/add | 
+*OperatorServicePrivateApi* | [**operator_service_private_add_supported_fields**](docs/OperatorServicePrivateApi.md#operator_service_private_add_supported_fields) | **POST** /api/v1/operator/add/field-values | 
+*OperatorServicePrivateApi* | [**operator_service_private_assets**](docs/OperatorServicePrivateApi.md#operator_service_private_assets) | **POST** /api/v1/operator/assets | 
+*OperatorServicePrivateApi* | [**operator_service_private_create_supported_fields**](docs/OperatorServicePrivateApi.md#operator_service_private_create_supported_fields) | **POST** /api/v1/operator/create/field-values | 
+*OperatorServicePrivateApi* | [**operator_service_private_delete_supported_fields**](docs/OperatorServicePrivateApi.md#operator_service_private_delete_supported_fields) | **POST** /api/v1/operator/delete/field-values | 
+*OperatorServicePrivateApi* | [**operator_service_private_evp_statuses**](docs/OperatorServicePrivateApi.md#operator_service_private_evp_statuses) | **POST** /api/v1/operator/evaluated-prices/slice | 
+*OperatorServicePrivateApi* | [**operator_service_private_export_report**](docs/OperatorServicePrivateApi.md#operator_service_private_export_report) | **POST** /api/v1/operator/report | ExportReport returns pre signed s3 urls which can be used for export report(and compression type)
+*OperatorServicePrivateApi* | [**operator_service_private_list_clients**](docs/OperatorServicePrivateApi.md#operator_service_private_list_clients) | **GET** /api/v1/operator/client/list | 
+*OperatorServicePrivateApi* | [**operator_service_private_operator_outliers**](docs/OperatorServicePrivateApi.md#operator_service_private_operator_outliers) | **POST** /api/v1/operator-outliers | 
+*OperatorServicePrivateApi* | [**operator_service_private_outliers**](docs/OperatorServicePrivateApi.md#operator_service_private_outliers) | **POST** /api/v1/operator/outliers | 
+*OperatorServicePrivateApi* | [**operator_service_private_recent_assets**](docs/OperatorServicePrivateApi.md#operator_service_private_recent_assets) | **POST** /api/v1/operator/recentassets | 
+*OperatorServicePrivateApi* | [**operator_service_private_upload_dtcc**](docs/OperatorServicePrivateApi.md#operator_service_private_upload_dtcc) | **POST** /api/v1/operator/dtcc-trades/upload | 
+*OperatorServicePrivateApi* | [**operator_service_private_upload_evp**](docs/OperatorServicePrivateApi.md#operator_service_private_upload_evp) | **POST** /api/v1/operator/evp/upload | 
 *OutliersServiceApi* | [**outliers_service_outliers**](docs/OutliersServiceApi.md#outliers_service_outliers) | **POST** /api/v1/outliers | Outliers returns outliers according to request.
 *PolicyServiceApi* | [**policy_service_check_policy**](docs/PolicyServiceApi.md#policy_service_check_policy) | **POST** /api/v1/user-management/policies/checkPolicy | 
 *PolicyServiceApi* | [**policy_service_create**](docs/PolicyServiceApi.md#policy_service_create) | **POST** /api/v1/user-management/policies/create | 
@@ -200,8 +229,10 @@ Class | Method | HTTP request | Description
 *UniqueKeyServiceApi* | [**unique_key_service_get_unique_key_version**](docs/UniqueKeyServiceApi.md#unique_key_service_get_unique_key_version) | **GET** /api/v1/uniquekey/version/{scope}/{name}/{versionId} | GetUniqueKeyVersion is used to retrieve a specific version of a unique key definition by its scope, name, and version ID. Response: {    \&quot;data\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;,        \&quot;scope\&quot;: \&quot;global\&quot;,        \&quot;uniqueKey\&quot;: [            \&quot;asset\&quot;,            \&quot;service\&quot;,            \&quot;sub-asset\&quot;,            \&quot;instrument_type\&quot;,            \&quot;tenor\&quot;,            \&quot;snap_date\&quot;,            \&quot;snap_time\&quot;,            \&quot;curr_1\&quot;,            \&quot;curr_2\&quot;,            \&quot;onshore_offshore_curr_1\&quot;,            \&quot;onshore_offshore_curr_2\&quot;        ],        \&quot;orderBy\&quot;: [            \&quot;__input_row_num\&quot;        ],        \&quot;order\&quot;: \&quot;ASC\&quot;    } }
 *UniqueKeyServiceApi* | [**unique_key_service_list_unique_key_versions**](docs/UniqueKeyServiceApi.md#unique_key_service_list_unique_key_versions) | **POST** /api/v1/uniquekey/versions | ListUniqueKeyVersions is used to retrieve a list of all versions of a specific unique key definition by its scope and name. Request: {   \&quot;scope\&quot;:\&quot;global\&quot;,   \&quot;identifier\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
 *UniqueKeyServiceApi* | [**unique_key_service_list_unique_keys**](docs/UniqueKeyServiceApi.md#unique_key_service_list_unique_keys) | **POST** /api/v1/uniquekey/list | ListUniqueKeys is used to retrieve a list of all unique key definitions in the system. Request: {   \&quot;scope\&quot;:\&quot;global\&quot; }
+*UserServiceApi* | [**user_service_add_user**](docs/UserServiceApi.md#user_service_add_user) | **POST** /api/v1/user/add | 
 *UserServiceApi* | [**user_service_add_user_notification**](docs/UserServiceApi.md#user_service_add_user_notification) | **POST** /api/v1/user/notifications/add | 
 *UserServiceApi* | [**user_service_create**](docs/UserServiceApi.md#user_service_create) | **POST** /api/v1/user-management/users/create | 
+*UserServiceApi* | [**user_service_delete_user**](docs/UserServiceApi.md#user_service_delete_user) | **POST** /api/v1/user/delete | 
 *UserServiceApi* | [**user_service_delete_user_notification**](docs/UserServiceApi.md#user_service_delete_user_notification) | **POST** /api/v1/user/notifications/delete | 
 *UserServiceApi* | [**user_service_get_all**](docs/UserServiceApi.md#user_service_get_all) | **POST** /api/v1/user-management/users/getAll | 
 *UserServiceApi* | [**user_service_get_by_id**](docs/UserServiceApi.md#user_service_get_by_id) | **POST** /api/v1/user-management/users/getById | 
@@ -210,6 +241,7 @@ Class | Method | HTTP request | Description
 *UserServiceApi* | [**user_service_get_user_notifications_by_market**](docs/UserServiceApi.md#user_service_get_user_notifications_by_market) | **POST** /api/v1/user/notifications/market | 
 *UserServiceApi* | [**user_service_get_user_permissions**](docs/UserServiceApi.md#user_service_get_user_permissions) | **POST** /api/v1/user/permissions | 
 *UserServiceApi* | [**user_service_update**](docs/UserServiceApi.md#user_service_update) | **POST** /api/v1/user-management/users/update | 
+*UserServiceApi* | [**user_service_update_user**](docs/UserServiceApi.md#user_service_update_user) | **POST** /api/v1/user/update | 
 *UserServiceApi* | [**user_service_update_user_notification**](docs/UserServiceApi.md#user_service_update_user_notification) | **POST** /api/v1/user/notifications/update | 
 *ValidatorServiceApi* | [**validator_service_add_validation_rule**](docs/ValidatorServiceApi.md#validator_service_add_validation_rule) | **POST** /api/v1/validation/rule/add | AddValidationRule is a method used to add a validation rule to the system. Backoffice users can create a new validation ruleset in the &#39;global&#39; scope, for each asset class. Participant users can create a new validation ruleset in its own scope, for each asset class. Backoffice users can represent any participant and create a new validation ruleset in that participant&#39;s scope. The default scope is used if no scope is given in the request (&#39;global&#39; for the operator, participant scope for that participant user). The authorization will be fetched from the user&#39;s token. It will do an update if a validation rule with the same name already exists.
 *ValidatorServiceApi* | [**validator_service_disable_validation_rule**](docs/ValidatorServiceApi.md#validator_service_disable_validation_rule) | **POST** /api/v1/validation/rule/disable | DisableValidationRule method disables a validation rule in the system. The request includes the descriptor name and scope of the rule. Example of Request: { \&quot;descriptor_name\&quot; : \&quot;foreign_exchange-vanilla-forwards\&quot;, \&quot;scope\&quot;: \&quot;global\&quot; }
@@ -247,6 +279,7 @@ Class | Method | HTTP request | Description
  - [ProtobufAny](docs/ProtobufAny.md)
  - [RpcStatus](docs/RpcStatus.md)
  - [TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)
+ - [TitaniumAddAssetRequest](docs/TitaniumAddAssetRequest.md)
  - [TitaniumAddLookupTableRequest](docs/TitaniumAddLookupTableRequest.md)
  - [TitaniumAllParticipantExplorerTableColumn](docs/TitaniumAllParticipantExplorerTableColumn.md)
  - [TitaniumAsset](docs/TitaniumAsset.md)
@@ -259,9 +292,14 @@ Class | Method | HTTP request | Description
  - [TitaniumAttachment](docs/TitaniumAttachment.md)
  - [TitaniumAvailableTrades](docs/TitaniumAvailableTrades.md)
  - [TitaniumBenchmarkMetadata](docs/TitaniumBenchmarkMetadata.md)
+ - [TitaniumChallengeActiveRequest](docs/TitaniumChallengeActiveRequest.md)
+ - [TitaniumChallengeActiveResponse](docs/TitaniumChallengeActiveResponse.md)
+ - [TitaniumChallengeActiveResponseData](docs/TitaniumChallengeActiveResponseData.md)
+ - [TitaniumChallengeConsensusMetadata](docs/TitaniumChallengeConsensusMetadata.md)
  - [TitaniumChallengeCreateRequest](docs/TitaniumChallengeCreateRequest.md)
  - [TitaniumChallengeCreateResponse](docs/TitaniumChallengeCreateResponse.md)
  - [TitaniumChallengeCreateResponseData](docs/TitaniumChallengeCreateResponseData.md)
+ - [TitaniumChallengeDecisionRequest](docs/TitaniumChallengeDecisionRequest.md)
  - [TitaniumChallengeFormGeneralRow](docs/TitaniumChallengeFormGeneralRow.md)
  - [TitaniumChallengeFormGeneralRowMax](docs/TitaniumChallengeFormGeneralRowMax.md)
  - [TitaniumChallengeFormGeneralRowMaxLength](docs/TitaniumChallengeFormGeneralRowMaxLength.md)
@@ -272,7 +310,15 @@ Class | Method | HTTP request | Description
  - [TitaniumChallengeFormMetaResponse](docs/TitaniumChallengeFormMetaResponse.md)
  - [TitaniumChallengeFormMetaResponseData](docs/TitaniumChallengeFormMetaResponseData.md)
  - [TitaniumChallengeFormOneOfFields](docs/TitaniumChallengeFormOneOfFields.md)
+ - [TitaniumChallengeFreezeActionRequest](docs/TitaniumChallengeFreezeActionRequest.md)
  - [TitaniumChallengeFreezeStatusRequest](docs/TitaniumChallengeFreezeStatusRequest.md)
+ - [TitaniumChallengeHistoryRequest](docs/TitaniumChallengeHistoryRequest.md)
+ - [TitaniumChallengeHistoryResponse](docs/TitaniumChallengeHistoryResponse.md)
+ - [TitaniumChallengeHistoryResponseData](docs/TitaniumChallengeHistoryResponseData.md)
+ - [TitaniumChallengeListMetadata](docs/TitaniumChallengeListMetadata.md)
+ - [TitaniumChallengeListRequest](docs/TitaniumChallengeListRequest.md)
+ - [TitaniumChallengeListResponse](docs/TitaniumChallengeListResponse.md)
+ - [TitaniumChallengeListResponseData](docs/TitaniumChallengeListResponseData.md)
  - [TitaniumChart](docs/TitaniumChart.md)
  - [TitaniumChartDataResponse](docs/TitaniumChartDataResponse.md)
  - [TitaniumChartPoint](docs/TitaniumChartPoint.md)
@@ -284,10 +330,13 @@ Class | Method | HTTP request | Description
  - [TitaniumChartsRequest](docs/TitaniumChartsRequest.md)
  - [TitaniumChartsResponse](docs/TitaniumChartsResponse.md)
  - [TitaniumChartsResponseData](docs/TitaniumChartsResponseData.md)
+ - [TitaniumClientName](docs/TitaniumClientName.md)
  - [TitaniumColDependency](docs/TitaniumColDependency.md)
  - [TitaniumColumnInfo](docs/TitaniumColumnInfo.md)
  - [TitaniumComparisonTable](docs/TitaniumComparisonTable.md)
+ - [TitaniumConsensusActiveRequest](docs/TitaniumConsensusActiveRequest.md)
  - [TitaniumConsensusActiveResponse](docs/TitaniumConsensusActiveResponse.md)
+ - [TitaniumConsensusDecisionRequest](docs/TitaniumConsensusDecisionRequest.md)
  - [TitaniumConsensusDensityScore](docs/TitaniumConsensusDensityScore.md)
  - [TitaniumConsensusDetail](docs/TitaniumConsensusDetail.md)
  - [TitaniumConsensusExplorerInstrumentDetailsData](docs/TitaniumConsensusExplorerInstrumentDetailsData.md)
@@ -297,6 +346,10 @@ Class | Method | HTTP request | Description
  - [TitaniumConsensusExplorerTableData](docs/TitaniumConsensusExplorerTableData.md)
  - [TitaniumConsensusExplorerTableResponse](docs/TitaniumConsensusExplorerTableResponse.md)
  - [TitaniumConsensusHistogram](docs/TitaniumConsensusHistogram.md)
+ - [TitaniumConsensusHistoryRequest](docs/TitaniumConsensusHistoryRequest.md)
+ - [TitaniumConsensusHistoryResponse](docs/TitaniumConsensusHistoryResponse.md)
+ - [TitaniumConsensusHistoryResponseData](docs/TitaniumConsensusHistoryResponseData.md)
+ - [TitaniumConsensusPublishRequest](docs/TitaniumConsensusPublishRequest.md)
  - [TitaniumConsensusRequest](docs/TitaniumConsensusRequest.md)
  - [TitaniumConsensusResponse](docs/TitaniumConsensusResponse.md)
  - [TitaniumConsensusResponseData](docs/TitaniumConsensusResponseData.md)
@@ -310,6 +363,9 @@ Class | Method | HTTP request | Description
  - [TitaniumConsensusTimestampsRequest](docs/TitaniumConsensusTimestampsRequest.md)
  - [TitaniumConsensusTimestampsResponse](docs/TitaniumConsensusTimestampsResponse.md)
  - [TitaniumConsensusTimestampsResponseData](docs/TitaniumConsensusTimestampsResponseData.md)
+ - [TitaniumConsensusToPublishRequest](docs/TitaniumConsensusToPublishRequest.md)
+ - [TitaniumConsensusToPublishResponse](docs/TitaniumConsensusToPublishResponse.md)
+ - [TitaniumConsensusToPublishResponseData](docs/TitaniumConsensusToPublishResponseData.md)
  - [TitaniumCriteriaDefinition](docs/TitaniumCriteriaDefinition.md)
  - [TitaniumCustomFunction](docs/TitaniumCustomFunction.md)
  - [TitaniumCustomFunctionDefinitionResponse](docs/TitaniumCustomFunctionDefinitionResponse.md)
@@ -351,10 +407,16 @@ Class | Method | HTTP request | Description
  - [TitaniumEvpAlignmentScoreWithDate](docs/TitaniumEvpAlignmentScoreWithDate.md)
  - [TitaniumEvpExplorerTableColumn](docs/TitaniumEvpExplorerTableColumn.md)
  - [TitaniumEvpQualityScore](docs/TitaniumEvpQualityScore.md)
+ - [TitaniumEvpStatus](docs/TitaniumEvpStatus.md)
+ - [TitaniumEvpStatuses](docs/TitaniumEvpStatuses.md)
+ - [TitaniumEvpStatusesRequest](docs/TitaniumEvpStatusesRequest.md)
+ - [TitaniumEvpStatusesResponse](docs/TitaniumEvpStatusesResponse.md)
+ - [TitaniumEvpStatusesResponseData](docs/TitaniumEvpStatusesResponseData.md)
  - [TitaniumExpertExplorerTableColumn](docs/TitaniumExpertExplorerTableColumn.md)
  - [TitaniumExpertiseScore](docs/TitaniumExpertiseScore.md)
  - [TitaniumExpertiseScoreWithDate](docs/TitaniumExpertiseScoreWithDate.md)
  - [TitaniumExportPresignedUrlResponseResponseData](docs/TitaniumExportPresignedUrlResponseResponseData.md)
+ - [TitaniumExportReportRequest](docs/TitaniumExportReportRequest.md)
  - [TitaniumExportRequest](docs/TitaniumExportRequest.md)
  - [TitaniumExportResponse](docs/TitaniumExportResponse.md)
  - [TitaniumFields](docs/TitaniumFields.md)
@@ -415,6 +477,8 @@ Class | Method | HTTP request | Description
  - [TitaniumKVRequest](docs/TitaniumKVRequest.md)
  - [TitaniumKeyAndValue](docs/TitaniumKeyAndValue.md)
  - [TitaniumLimit](docs/TitaniumLimit.md)
+ - [TitaniumListClientsResponse](docs/TitaniumListClientsResponse.md)
+ - [TitaniumListClientsResponseData](docs/TitaniumListClientsResponseData.md)
  - [TitaniumListCustomFunctionRequest](docs/TitaniumListCustomFunctionRequest.md)
  - [TitaniumListCustomFunctionResponse](docs/TitaniumListCustomFunctionResponse.md)
  - [TitaniumListKVRequest](docs/TitaniumListKVRequest.md)
@@ -444,6 +508,10 @@ Class | Method | HTTP request | Description
  - [TitaniumNameAliasPair](docs/TitaniumNameAliasPair.md)
  - [TitaniumNormalizationRuleDefinition](docs/TitaniumNormalizationRuleDefinition.md)
  - [TitaniumNormalizationRuleResponse](docs/TitaniumNormalizationRuleResponse.md)
+ - [TitaniumOnBoardRequest](docs/TitaniumOnBoardRequest.md)
+ - [TitaniumOperatorOutliersRequest](docs/TitaniumOperatorOutliersRequest.md)
+ - [TitaniumOperatorOutliersResponse](docs/TitaniumOperatorOutliersResponse.md)
+ - [TitaniumOperatorOutliersResponseData](docs/TitaniumOperatorOutliersResponseData.md)
  - [TitaniumOrderBy](docs/TitaniumOrderBy.md)
  - [TitaniumOutlierMetadata](docs/TitaniumOutlierMetadata.md)
  - [TitaniumOutliersListRequest](docs/TitaniumOutliersListRequest.md)
@@ -468,6 +536,8 @@ Class | Method | HTTP request | Description
  - [TitaniumResultsList](docs/TitaniumResultsList.md)
  - [TitaniumRuleDefinition](docs/TitaniumRuleDefinition.md)
  - [TitaniumRulesetDefinition](docs/TitaniumRulesetDefinition.md)
+ - [TitaniumRunCalculatorRequest](docs/TitaniumRunCalculatorRequest.md)
+ - [TitaniumRunConsensusRequest](docs/TitaniumRunConsensusRequest.md)
  - [TitaniumRunDataProcessingAppRequest](docs/TitaniumRunDataProcessingAppRequest.md)
  - [TitaniumRunDataProcessingAppResponse](docs/TitaniumRunDataProcessingAppResponse.md)
  - [TitaniumScopeExistResponse](docs/TitaniumScopeExistResponse.md)
@@ -478,6 +548,8 @@ Class | Method | HTTP request | Description
  - [TitaniumSetFileDelimiterRequest](docs/TitaniumSetFileDelimiterRequest.md)
  - [TitaniumSetFileDescriptorRequest](docs/TitaniumSetFileDescriptorRequest.md)
  - [TitaniumSeverityToDataQuality](docs/TitaniumSeverityToDataQuality.md)
+ - [TitaniumSlice](docs/TitaniumSlice.md)
+ - [TitaniumSliceRequestData](docs/TitaniumSliceRequestData.md)
  - [TitaniumSnapTimes](docs/TitaniumSnapTimes.md)
  - [TitaniumStatusResponse](docs/TitaniumStatusResponse.md)
  - [TitaniumStatusResponseData](docs/TitaniumStatusResponseData.md)
@@ -492,6 +564,7 @@ Class | Method | HTTP request | Description
  - [TitaniumSubmittedResponseData](docs/TitaniumSubmittedResponseData.md)
  - [TitaniumSubmittedRow](docs/TitaniumSubmittedRow.md)
  - [TitaniumSupportedField](docs/TitaniumSupportedField.md)
+ - [TitaniumSupportedFieldsValues](docs/TitaniumSupportedFieldsValues.md)
  - [TitaniumTradePeriodMetrics](docs/TitaniumTradePeriodMetrics.md)
  - [TitaniumTradePeriodsWithMetrics](docs/TitaniumTradePeriodsWithMetrics.md)
  - [TitaniumTradeRangesData](docs/TitaniumTradeRangesData.md)
@@ -499,6 +572,11 @@ Class | Method | HTTP request | Description
  - [TitaniumUniqueKeyDefinition](docs/TitaniumUniqueKeyDefinition.md)
  - [TitaniumUniqueKeyDefinitionResponse](docs/TitaniumUniqueKeyDefinitionResponse.md)
  - [TitaniumUniqueKeyList](docs/TitaniumUniqueKeyList.md)
+ - [TitaniumUploadAuthorizationResponse](docs/TitaniumUploadAuthorizationResponse.md)
+ - [TitaniumUploadDTCCRequest](docs/TitaniumUploadDTCCRequest.md)
+ - [TitaniumUploadEVPRequest](docs/TitaniumUploadEVPRequest.md)
+ - [TitaniumUploadEvaluatedPriceRequest](docs/TitaniumUploadEvaluatedPriceRequest.md)
+ - [TitaniumUploadNotifyRequest](docs/TitaniumUploadNotifyRequest.md)
  - [TitaniumUploadURLRequest](docs/TitaniumUploadURLRequest.md)
  - [TitaniumUploadURLResponse](docs/TitaniumUploadURLResponse.md)
  - [TitaniumUsage](docs/TitaniumUsage.md)
@@ -511,6 +589,7 @@ Class | Method | HTTP request | Description
  - [TitaniumUserPermission](docs/TitaniumUserPermission.md)
  - [TitaniumUserPermissions](docs/TitaniumUserPermissions.md)
  - [TitaniumUserPermissionsResponse](docs/TitaniumUserPermissionsResponse.md)
+ - [TitaniumUserRequest](docs/TitaniumUserRequest.md)
  - [TitaniumUserResponse](docs/TitaniumUserResponse.md)
  - [TitaniumValidationRuleDefinition](docs/TitaniumValidationRuleDefinition.md)
  - [TitaniumValues](docs/TitaniumValues.md)
