@@ -5,6 +5,7 @@
 
 var public_consensus_service_pb = require("../public/consensus_service_pb");
 var common_gateway_base_pb = require("../common/gateway_base_pb");
+var common_consensus_pb = require("../common/consensus_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var ConsensusService = (function () {
@@ -18,8 +19,8 @@ ConsensusService.ConsensusTimestamps = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: public_consensus_service_pb.ConsensusTimestampsRequest,
-  responseType: public_consensus_service_pb.ConsensusTimestampsResponse
+  requestType: common_consensus_pb.ConsensusTimestampsRequest,
+  responseType: common_consensus_pb.ConsensusTimestampsResponse
 };
 
 ConsensusService.Consensus = {
@@ -27,8 +28,8 @@ ConsensusService.Consensus = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: public_consensus_service_pb.ConsensusRequest,
-  responseType: public_consensus_service_pb.ConsensusResponse
+  requestType: common_consensus_pb.ConsensusRequest,
+  responseType: common_consensus_pb.ConsensusResponse
 };
 
 ConsensusService.EvaluatedPrice = {
@@ -36,8 +37,8 @@ ConsensusService.EvaluatedPrice = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: public_consensus_service_pb.EVPRequest,
-  responseType: public_consensus_service_pb.EVPResponse
+  requestType: common_consensus_pb.EVPRequest,
+  responseType: common_consensus_pb.EVPResponse
 };
 
 ConsensusService.ConsensusOutliers = {
@@ -54,8 +55,8 @@ ConsensusService.GetConsensusRuns = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: public_consensus_service_pb.GetConsensusRunsRequest,
-  responseType: public_consensus_service_pb.GetConsensusRunsResponse
+  requestType: common_consensus_pb.GetConsensusRunsRequest,
+  responseType: common_consensus_pb.GetConsensusRunsResponse
 };
 
 ConsensusService.ConsensusResultSetValues = {
@@ -63,8 +64,8 @@ ConsensusService.ConsensusResultSetValues = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: public_consensus_service_pb.ConsensusResultSetValuesRequest,
-  responseType: public_consensus_service_pb.ConsensusResultSetValuesResponse
+  requestType: common_consensus_pb.ConsensusResultSetValuesRequest,
+  responseType: common_consensus_pb.ConsensusResultSetValuesResponse
 };
 
 ConsensusService.ConsensusExplorerInstrumentDetails = {
@@ -72,8 +73,8 @@ ConsensusService.ConsensusExplorerInstrumentDetails = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
-  responseType: public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse
+  requestType: common_consensus_pb.ConsensusExplorerRequest,
+  responseType: common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse
 };
 
 ConsensusService.ConsensusExplorerTable = {
@@ -81,8 +82,8 @@ ConsensusService.ConsensusExplorerTable = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
-  responseType: public_consensus_service_pb.ConsensusExplorerTableResponse
+  requestType: common_consensus_pb.ConsensusExplorerRequest,
+  responseType: common_consensus_pb.ConsensusExplorerTableResponse
 };
 
 ConsensusService.ConsensusExplorerRanges = {
@@ -90,8 +91,53 @@ ConsensusService.ConsensusExplorerRanges = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
-  responseType: public_consensus_service_pb.ConsensusExplorerRangeResponse
+  requestType: common_consensus_pb.ConsensusExplorerRequest,
+  responseType: common_consensus_pb.ConsensusExplorerRangeResponse
+};
+
+ConsensusService.ConsensusActive = {
+  methodName: "ConsensusActive",
+  service: ConsensusService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_consensus_pb.ConsensusActiveRequest,
+  responseType: common_gateway_base_pb.ConsensusActiveResponse
+};
+
+ConsensusService.ConsensusToPublish = {
+  methodName: "ConsensusToPublish",
+  service: ConsensusService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_consensus_pb.ConsensusToPublishRequest,
+  responseType: common_consensus_pb.ConsensusToPublishResponse
+};
+
+ConsensusService.ConsensusPublish = {
+  methodName: "ConsensusPublish",
+  service: ConsensusService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_consensus_pb.ConsensusPublishRequest,
+  responseType: common_gateway_base_pb.MessageResponse
+};
+
+ConsensusService.ConsensusHistory = {
+  methodName: "ConsensusHistory",
+  service: ConsensusService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_consensus_pb.ConsensusHistoryRequest,
+  responseType: common_consensus_pb.ConsensusHistoryResponse
+};
+
+ConsensusService.ConsensusDecision = {
+  methodName: "ConsensusDecision",
+  service: ConsensusService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_consensus_pb.ConsensusDecisionRequest,
+  responseType: common_gateway_base_pb.MessageResponse
 };
 
 exports.ConsensusService = ConsensusService;
@@ -354,6 +400,161 @@ ConsensusServiceClient.prototype.consensusExplorerRanges = function consensusExp
     callback = arguments[1];
   }
   var client = grpc.unary(ConsensusService.ConsensusExplorerRanges, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ConsensusServiceClient.prototype.consensusActive = function consensusActive(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ConsensusService.ConsensusActive, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ConsensusServiceClient.prototype.consensusToPublish = function consensusToPublish(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ConsensusService.ConsensusToPublish, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ConsensusServiceClient.prototype.consensusPublish = function consensusPublish(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ConsensusService.ConsensusPublish, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ConsensusServiceClient.prototype.consensusHistory = function consensusHistory(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ConsensusService.ConsensusHistory, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ConsensusServiceClient.prototype.consensusDecision = function consensusDecision(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ConsensusService.ConsensusDecision, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

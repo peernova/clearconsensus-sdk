@@ -25,6 +25,10 @@ type DataServiceClient interface {
 	Export(ctx context.Context, in *common.ExportRequest, opts ...grpc.CallOption) (*common.ExportResponse, error)
 	// UploadURL returns a pre-signed S3 URL for uploading data.
 	UploadURL(ctx context.Context, in *common.UploadURLRequest, opts ...grpc.CallOption) (*common.UploadURLResponse, error)
+	// AuthorizeUpload shows availability of uploading for user.
+	AuthorizeUpload(ctx context.Context, in *common.UploadURLRequest, opts ...grpc.CallOption) (*common.UploadAuthorizationResponse, error)
+	// NotifyUpload returns message with notify that data was uploaded according to url in request.
+	NotifyUpload(ctx context.Context, in *common.UploadNotifyRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
 }
 
 type dataServiceClient struct {
@@ -62,6 +66,24 @@ func (c *dataServiceClient) UploadURL(ctx context.Context, in *common.UploadURLR
 	return out, nil
 }
 
+func (c *dataServiceClient) AuthorizeUpload(ctx context.Context, in *common.UploadURLRequest, opts ...grpc.CallOption) (*common.UploadAuthorizationResponse, error) {
+	out := new(common.UploadAuthorizationResponse)
+	err := c.cc.Invoke(ctx, "/titanium.DataService/AuthorizeUpload", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *dataServiceClient) NotifyUpload(ctx context.Context, in *common.UploadNotifyRequest, opts ...grpc.CallOption) (*common.MessageResponse, error) {
+	out := new(common.MessageResponse)
+	err := c.cc.Invoke(ctx, "/titanium.DataService/NotifyUpload", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // DataServiceServer is the server API for DataService service.
 // All implementations must embed UnimplementedDataServiceServer
 // for forward compatibility
@@ -72,6 +94,10 @@ type DataServiceServer interface {
 	Export(context.Context, *common.ExportRequest) (*common.ExportResponse, error)
 	// UploadURL returns a pre-signed S3 URL for uploading data.
 	UploadURL(context.Context, *common.UploadURLRequest) (*common.UploadURLResponse, error)
+	// AuthorizeUpload shows availability of uploading for user.
+	AuthorizeUpload(context.Context, *common.UploadURLRequest) (*common.UploadAuthorizationResponse, error)
+	// NotifyUpload returns message with notify that data was uploaded according to url in request.
+	NotifyUpload(context.Context, *common.UploadNotifyRequest) (*common.MessageResponse, error)
 	mustEmbedUnimplementedDataServiceServer()
 }
 
@@ -87,6 +113,12 @@ func (UnimplementedDataServiceServer) Export(context.Context, *common.ExportRequ
 }
 func (UnimplementedDataServiceServer) UploadURL(context.Context, *common.UploadURLRequest) (*common.UploadURLResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UploadURL not implemented")
+}
+func (UnimplementedDataServiceServer) AuthorizeUpload(context.Context, *common.UploadURLRequest) (*common.UploadAuthorizationResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AuthorizeUpload not implemented")
+}
+func (UnimplementedDataServiceServer) NotifyUpload(context.Context, *common.UploadNotifyRequest) (*common.MessageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method NotifyUpload not implemented")
 }
 func (UnimplementedDataServiceServer) mustEmbedUnimplementedDataServiceServer() {}
 
@@ -155,6 +187,42 @@ func _DataService_UploadURL_Handler(srv interface{}, ctx context.Context, dec fu
 	return interceptor(ctx, in, info, handler)
 }
 
+func _DataService_AuthorizeUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.UploadURLRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).AuthorizeUpload(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.DataService/AuthorizeUpload",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).AuthorizeUpload(ctx, req.(*common.UploadURLRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _DataService_NotifyUpload_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.UploadNotifyRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(DataServiceServer).NotifyUpload(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.DataService/NotifyUpload",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(DataServiceServer).NotifyUpload(ctx, req.(*common.UploadNotifyRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // DataService_ServiceDesc is the grpc.ServiceDesc for DataService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -173,6 +241,14 @@ var DataService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UploadURL",
 			Handler:    _DataService_UploadURL_Handler,
+		},
+		{
+			MethodName: "AuthorizeUpload",
+			Handler:    _DataService_AuthorizeUpload_Handler,
+		},
+		{
+			MethodName: "NotifyUpload",
+			Handler:    _DataService_NotifyUpload_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

@@ -21,3 +21,19429 @@ var common_gateway_base_pb = require('../common/gateway_base_pb.js');
 goog.object.extend(proto, common_gateway_base_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
+goog.exportSymbol('proto.titanium.AllParticipantExplorerTableColumn', null, global);
+goog.exportSymbol('proto.titanium.AvailableTrades', null, global);
+goog.exportSymbol('proto.titanium.ChartRanges', null, global);
+goog.exportSymbol('proto.titanium.ComparisonTable', null, global);
+goog.exportSymbol('proto.titanium.ConsensusActiveRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusDecisionRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusDensityScore', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerInstrumentDetailsData', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerInstrumentDetailsRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerInstrumentDetailsRequest.IdCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerInstrumentDetailsResponse', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerInstrumentDetailsResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerRangeData', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerRangeRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerRangeResponse', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerRangeResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerRequest.IdCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerTableData', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerTableResponse', null, global);
+goog.exportSymbol('proto.titanium.ConsensusExplorerTableResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusHistoryRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusHistoryResponse', null, global);
+goog.exportSymbol('proto.titanium.ConsensusHistoryResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusHistoryResponseData', null, global);
+goog.exportSymbol('proto.titanium.ConsensusPublishRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusResponse', null, global);
+goog.exportSymbol('proto.titanium.ConsensusResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusResponseData', null, global);
+goog.exportSymbol('proto.titanium.ConsensusResultSet', null, global);
+goog.exportSymbol('proto.titanium.ConsensusResultSetValues', null, global);
+goog.exportSymbol('proto.titanium.ConsensusResultSetValuesRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusResultSetValuesResponse', null, global);
+goog.exportSymbol('proto.titanium.ConsensusResultSetValuesResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusScores', null, global);
+goog.exportSymbol('proto.titanium.ConsensusTimestampMeta', null, global);
+goog.exportSymbol('proto.titanium.ConsensusTimestampsRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusTimestampsResponse', null, global);
+goog.exportSymbol('proto.titanium.ConsensusTimestampsResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusTimestampsResponseData', null, global);
+goog.exportSymbol('proto.titanium.ConsensusToPublishRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusToPublishResponse', null, global);
+goog.exportSymbol('proto.titanium.ConsensusToPublishResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.ConsensusToPublishResponseData', null, global);
+goog.exportSymbol('proto.titanium.DateAndValue', null, global);
+goog.exportSymbol('proto.titanium.EVPRequest', null, global);
+goog.exportSymbol('proto.titanium.EVPResponse', null, global);
+goog.exportSymbol('proto.titanium.EVPResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.EVPResponseData', null, global);
+goog.exportSymbol('proto.titanium.EvpAlignmentScore', null, global);
+goog.exportSymbol('proto.titanium.EvpAlignmentScoreWithDate', null, global);
+goog.exportSymbol('proto.titanium.EvpExplorerTableColumn', null, global);
+goog.exportSymbol('proto.titanium.EvpQualityScore', null, global);
+goog.exportSymbol('proto.titanium.ExpertExplorerTableColumn', null, global);
+goog.exportSymbol('proto.titanium.ExpertiseScore', null, global);
+goog.exportSymbol('proto.titanium.ExpertiseScoreWithDate', null, global);
+goog.exportSymbol('proto.titanium.GetConsensusRunsData', null, global);
+goog.exportSymbol('proto.titanium.GetConsensusRunsRequest', null, global);
+goog.exportSymbol('proto.titanium.GetConsensusRunsResponse', null, global);
+goog.exportSymbol('proto.titanium.GetConsensusRunsResponse.ResponseCase', null, global);
+goog.exportSymbol('proto.titanium.InstrumentSubmissionStatus', null, global);
+goog.exportSymbol('proto.titanium.Range', null, global);
+goog.exportSymbol('proto.titanium.RangePoint', null, global);
+goog.exportSymbol('proto.titanium.SubmissionExplorerTableColumn', null, global);
+goog.exportSymbol('proto.titanium.SubmissionStatisticsExplorerTableColumn', null, global);
+goog.exportSymbol('proto.titanium.TradePeriodMetrics', null, global);
+goog.exportSymbol('proto.titanium.TradePeriodsWithMetrics', null, global);
+goog.exportSymbol('proto.titanium.TradeRangesData', null, global);
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusActiveRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusActiveRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusActiveRequest.displayName = 'proto.titanium.ConsensusActiveRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusToPublishRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusToPublishRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusToPublishRequest.displayName = 'proto.titanium.ConsensusToPublishRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusToPublishResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusToPublishResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusToPublishResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusToPublishResponse.displayName = 'proto.titanium.ConsensusToPublishResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusToPublishResponseData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusToPublishResponseData.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusToPublishResponseData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusToPublishResponseData.displayName = 'proto.titanium.ConsensusToPublishResponseData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusPublishRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusPublishRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusPublishRequest.displayName = 'proto.titanium.ConsensusPublishRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusHistoryRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusHistoryRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusHistoryRequest.displayName = 'proto.titanium.ConsensusHistoryRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusHistoryResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusHistoryResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusHistoryResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusHistoryResponse.displayName = 'proto.titanium.ConsensusHistoryResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusHistoryResponseData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusHistoryResponseData.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusHistoryResponseData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusHistoryResponseData.displayName = 'proto.titanium.ConsensusHistoryResponseData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusDecisionRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusDecisionRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusDecisionRequest.displayName = 'proto.titanium.ConsensusDecisionRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusTimestampsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusTimestampsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusTimestampsRequest.displayName = 'proto.titanium.ConsensusTimestampsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusTimestampsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusTimestampsResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusTimestampsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusTimestampsResponse.displayName = 'proto.titanium.ConsensusTimestampsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusTimestampsResponseData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusTimestampsResponseData.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusTimestampsResponseData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusTimestampsResponseData.displayName = 'proto.titanium.ConsensusTimestampsResponseData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusTimestampMeta = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusTimestampMeta.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusTimestampMeta, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusTimestampMeta.displayName = 'proto.titanium.ConsensusTimestampMeta';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusRequest.displayName = 'proto.titanium.ConsensusRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusResponse.displayName = 'proto.titanium.ConsensusResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusResponseData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusResponseData.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusResponseData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusResponseData.displayName = 'proto.titanium.ConsensusResponseData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.GetConsensusRunsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.GetConsensusRunsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.GetConsensusRunsRequest.displayName = 'proto.titanium.GetConsensusRunsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.GetConsensusRunsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.GetConsensusRunsResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.GetConsensusRunsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.GetConsensusRunsResponse.displayName = 'proto.titanium.GetConsensusRunsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.GetConsensusRunsData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.GetConsensusRunsData.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.GetConsensusRunsData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.GetConsensusRunsData.displayName = 'proto.titanium.GetConsensusRunsData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusResultSet = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusResultSet.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusResultSet, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusResultSet.displayName = 'proto.titanium.ConsensusResultSet';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusResultSetValuesRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusResultSetValuesRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusResultSetValuesRequest.displayName = 'proto.titanium.ConsensusResultSetValuesRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusResultSetValuesResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusResultSetValuesResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusResultSetValuesResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusResultSetValuesResponse.displayName = 'proto.titanium.ConsensusResultSetValuesResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusResultSetValues = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusResultSetValues.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusResultSetValues, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusResultSetValues.displayName = 'proto.titanium.ConsensusResultSetValues';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusExplorerInstrumentDetailsRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerInstrumentDetailsRequest.displayName = 'proto.titanium.ConsensusExplorerInstrumentDetailsRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerRangeRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusExplorerRangeRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerRangeRequest.displayName = 'proto.titanium.ConsensusExplorerRangeRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.Range = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.Range, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.Range.displayName = 'proto.titanium.Range';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.RangePoint = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.RangePoint, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.RangePoint.displayName = 'proto.titanium.RangePoint';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.EVPRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.EVPRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.EVPRequest.displayName = 'proto.titanium.EVPRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.EVPResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.EVPResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.EVPResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.EVPResponse.displayName = 'proto.titanium.EVPResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.EVPResponseData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.EVPResponseData.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.EVPResponseData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.EVPResponseData.displayName = 'proto.titanium.EVPResponseData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerRequest = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusExplorerRequest.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusExplorerRequest, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerRequest.displayName = 'proto.titanium.ConsensusExplorerRequest';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusExplorerInstrumentDetailsResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusExplorerInstrumentDetailsResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerInstrumentDetailsResponse.displayName = 'proto.titanium.ConsensusExplorerInstrumentDetailsResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusExplorerInstrumentDetailsData.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusExplorerInstrumentDetailsData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerInstrumentDetailsData.displayName = 'proto.titanium.ConsensusExplorerInstrumentDetailsData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.InstrumentSubmissionStatus = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.InstrumentSubmissionStatus.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.InstrumentSubmissionStatus, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.InstrumentSubmissionStatus.displayName = 'proto.titanium.InstrumentSubmissionStatus';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.DateAndValue = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.DateAndValue, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.DateAndValue.displayName = 'proto.titanium.DateAndValue';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ExpertiseScoreWithDate = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ExpertiseScoreWithDate, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ExpertiseScoreWithDate.displayName = 'proto.titanium.ExpertiseScoreWithDate';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.EvpAlignmentScoreWithDate = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.EvpAlignmentScoreWithDate, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.EvpAlignmentScoreWithDate.displayName = 'proto.titanium.EvpAlignmentScoreWithDate';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusScores = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusScores, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusScores.displayName = 'proto.titanium.ConsensusScores';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusDensityScore = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ConsensusDensityScore.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ConsensusDensityScore, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusDensityScore.displayName = 'proto.titanium.ConsensusDensityScore';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ExpertiseScore = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.ExpertiseScore.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.ExpertiseScore, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ExpertiseScore.displayName = 'proto.titanium.ExpertiseScore';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.EvpQualityScore = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.EvpQualityScore.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.EvpQualityScore, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.EvpQualityScore.displayName = 'proto.titanium.EvpQualityScore';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.EvpAlignmentScore = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.EvpAlignmentScore.repeatedFields_, null);
+};
+goog.inherits(proto.titanium.EvpAlignmentScore, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.EvpAlignmentScore.displayName = 'proto.titanium.EvpAlignmentScore';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerRangeResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusExplorerRangeResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusExplorerRangeResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerRangeResponse.displayName = 'proto.titanium.ConsensusExplorerRangeResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerRangeData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusExplorerRangeData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerRangeData.displayName = 'proto.titanium.ConsensusExplorerRangeData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ChartRanges = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ChartRanges, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ChartRanges.displayName = 'proto.titanium.ChartRanges';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.TradeRangesData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.TradeRangesData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.TradeRangesData.displayName = 'proto.titanium.TradeRangesData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.TradePeriodsWithMetrics = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.TradePeriodsWithMetrics, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.TradePeriodsWithMetrics.displayName = 'proto.titanium.TradePeriodsWithMetrics';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.TradePeriodMetrics = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.TradePeriodMetrics, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.TradePeriodMetrics.displayName = 'proto.titanium.TradePeriodMetrics';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerTableResponse = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusExplorerTableResponse.oneofGroups_);
+};
+goog.inherits(proto.titanium.ConsensusExplorerTableResponse, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerTableResponse.displayName = 'proto.titanium.ConsensusExplorerTableResponse';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ConsensusExplorerTableData = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ConsensusExplorerTableData, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ConsensusExplorerTableData.displayName = 'proto.titanium.ConsensusExplorerTableData';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ComparisonTable = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ComparisonTable, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ComparisonTable.displayName = 'proto.titanium.ComparisonTable';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.SubmissionExplorerTableColumn = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.SubmissionExplorerTableColumn, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.SubmissionExplorerTableColumn.displayName = 'proto.titanium.SubmissionExplorerTableColumn';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.SubmissionStatisticsExplorerTableColumn, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.SubmissionStatisticsExplorerTableColumn.displayName = 'proto.titanium.SubmissionStatisticsExplorerTableColumn';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.AllParticipantExplorerTableColumn = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.AllParticipantExplorerTableColumn, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.AllParticipantExplorerTableColumn.displayName = 'proto.titanium.AllParticipantExplorerTableColumn';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.EvpExplorerTableColumn = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.EvpExplorerTableColumn, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.EvpExplorerTableColumn.displayName = 'proto.titanium.EvpExplorerTableColumn';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.ExpertExplorerTableColumn = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.ExpertExplorerTableColumn, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.ExpertExplorerTableColumn.displayName = 'proto.titanium.ExpertExplorerTableColumn';
+}
+/**
+ * Generated by JsPbCodeGenerator.
+ * @param {Array=} opt_data Optional initial data array, typically from a
+ * server response, or constructed directly in Javascript. The array is used
+ * in place and becomes part of the constructed object. It is not cloned.
+ * If no data is provided, the constructed object will be empty, but still
+ * valid.
+ * @extends {jspb.Message}
+ * @constructor
+ */
+proto.titanium.AvailableTrades = function(opt_data) {
+  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+};
+goog.inherits(proto.titanium.AvailableTrades, jspb.Message);
+if (goog.DEBUG && !COMPILED) {
+  /**
+   * @public
+   * @override
+   */
+  proto.titanium.AvailableTrades.displayName = 'proto.titanium.AvailableTrades';
+}
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusActiveRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusActiveRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusActiveRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusActiveRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filter: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
+    limit: (f = msg.getLimit()) && common_gateway_base_pb.Limit.toObject(includeInstance, f),
+    offset: jspb.Message.getFieldWithDefault(msg, 4, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusActiveRequest}
+ */
+proto.titanium.ConsensusActiveRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusActiveRequest;
+  return proto.titanium.ConsensusActiveRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusActiveRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusActiveRequest}
+ */
+proto.titanium.ConsensusActiveRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.OrderBy;
+      reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
+      msg.setOrderby(value);
+      break;
+    case 3:
+      var value = new common_gateway_base_pb.Limit;
+      reader.readMessage(value,common_gateway_base_pb.Limit.deserializeBinaryFromReader);
+      msg.setLimit(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOffset(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusActiveRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusActiveRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusActiveRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusActiveRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getOrderby();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+    );
+  }
+  f = message.getLimit();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_gateway_base_pb.Limit.serializeBinaryToWriter
+    );
+  }
+  f = message.getOffset();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string filter = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusActiveRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusActiveRequest} returns this
+ */
+proto.titanium.ConsensusActiveRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional OrderBy orderBy = 2;
+ * @return {?proto.titanium.OrderBy}
+ */
+proto.titanium.ConsensusActiveRequest.prototype.getOrderby = function() {
+  return /** @type{?proto.titanium.OrderBy} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.OrderBy|undefined} value
+ * @return {!proto.titanium.ConsensusActiveRequest} returns this
+*/
+proto.titanium.ConsensusActiveRequest.prototype.setOrderby = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusActiveRequest} returns this
+ */
+proto.titanium.ConsensusActiveRequest.prototype.clearOrderby = function() {
+  return this.setOrderby(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusActiveRequest.prototype.hasOrderby = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Limit limit = 3;
+ * @return {?proto.titanium.Limit}
+ */
+proto.titanium.ConsensusActiveRequest.prototype.getLimit = function() {
+  return /** @type{?proto.titanium.Limit} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Limit, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.Limit|undefined} value
+ * @return {!proto.titanium.ConsensusActiveRequest} returns this
+*/
+proto.titanium.ConsensusActiveRequest.prototype.setLimit = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusActiveRequest} returns this
+ */
+proto.titanium.ConsensusActiveRequest.prototype.clearLimit = function() {
+  return this.setLimit(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusActiveRequest.prototype.hasLimit = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 offset = 4;
+ * @return {number}
+ */
+proto.titanium.ConsensusActiveRequest.prototype.getOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.ConsensusActiveRequest} returns this
+ */
+proto.titanium.ConsensusActiveRequest.prototype.setOffset = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusToPublishRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusToPublishRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusToPublishRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filter: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
+    limit: (f = msg.getLimit()) && common_gateway_base_pb.Limit.toObject(includeInstance, f),
+    offset: jspb.Message.getFieldWithDefault(msg, 4, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusToPublishRequest}
+ */
+proto.titanium.ConsensusToPublishRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusToPublishRequest;
+  return proto.titanium.ConsensusToPublishRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusToPublishRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusToPublishRequest}
+ */
+proto.titanium.ConsensusToPublishRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.OrderBy;
+      reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
+      msg.setOrderby(value);
+      break;
+    case 3:
+      var value = new common_gateway_base_pb.Limit;
+      reader.readMessage(value,common_gateway_base_pb.Limit.deserializeBinaryFromReader);
+      msg.setLimit(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOffset(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusToPublishRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusToPublishRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusToPublishRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getOrderby();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+    );
+  }
+  f = message.getLimit();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_gateway_base_pb.Limit.serializeBinaryToWriter
+    );
+  }
+  f = message.getOffset();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string filter = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusToPublishRequest} returns this
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional OrderBy orderBy = 2;
+ * @return {?proto.titanium.OrderBy}
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.getOrderby = function() {
+  return /** @type{?proto.titanium.OrderBy} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.OrderBy|undefined} value
+ * @return {!proto.titanium.ConsensusToPublishRequest} returns this
+*/
+proto.titanium.ConsensusToPublishRequest.prototype.setOrderby = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusToPublishRequest} returns this
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.clearOrderby = function() {
+  return this.setOrderby(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.hasOrderby = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Limit limit = 3;
+ * @return {?proto.titanium.Limit}
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.getLimit = function() {
+  return /** @type{?proto.titanium.Limit} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Limit, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.Limit|undefined} value
+ * @return {!proto.titanium.ConsensusToPublishRequest} returns this
+*/
+proto.titanium.ConsensusToPublishRequest.prototype.setLimit = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusToPublishRequest} returns this
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.clearLimit = function() {
+  return this.setLimit(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.hasLimit = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 offset = 4;
+ * @return {number}
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.getOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.ConsensusToPublishRequest} returns this
+ */
+proto.titanium.ConsensusToPublishRequest.prototype.setOffset = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusToPublishResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusToPublishResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.ConsensusToPublishResponse.ResponseCase}
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.ConsensusToPublishResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusToPublishResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusToPublishResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusToPublishResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusToPublishResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.ConsensusToPublishResponseData.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusToPublishResponse}
+ */
+proto.titanium.ConsensusToPublishResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusToPublishResponse;
+  return proto.titanium.ConsensusToPublishResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusToPublishResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusToPublishResponse}
+ */
+proto.titanium.ConsensusToPublishResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusToPublishResponseData;
+      reader.readMessage(value,proto.titanium.ConsensusToPublishResponseData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusToPublishResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusToPublishResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusToPublishResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusToPublishResponseData.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusToPublishResponseData data = 1;
+ * @return {?proto.titanium.ConsensusToPublishResponseData}
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.ConsensusToPublishResponseData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusToPublishResponseData, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusToPublishResponseData|undefined} value
+ * @return {!proto.titanium.ConsensusToPublishResponse} returns this
+*/
+proto.titanium.ConsensusToPublishResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.ConsensusToPublishResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusToPublishResponse} returns this
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.ConsensusToPublishResponse} returns this
+*/
+proto.titanium.ConsensusToPublishResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.ConsensusToPublishResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusToPublishResponse} returns this
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusToPublishResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusToPublishResponseData.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusToPublishResponseData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusToPublishResponseData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusToPublishResponseData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
+    common_gateway_base_pb.ColumnInfo.toObject, includeInstance),
+    rowsList: jspb.Message.toObjectList(msg.getRowsList(),
+    common_gateway_base_pb.ValuesRow.toObject, includeInstance),
+    totalRows: jspb.Message.getFieldWithDefault(msg, 3, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusToPublishResponseData}
+ */
+proto.titanium.ConsensusToPublishResponseData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusToPublishResponseData;
+  return proto.titanium.ConsensusToPublishResponseData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusToPublishResponseData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusToPublishResponseData}
+ */
+proto.titanium.ConsensusToPublishResponseData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_gateway_base_pb.ColumnInfo;
+      reader.readMessage(value,common_gateway_base_pb.ColumnInfo.deserializeBinaryFromReader);
+      msg.addColumns(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.ValuesRow;
+      reader.readMessage(value,common_gateway_base_pb.ValuesRow.deserializeBinaryFromReader);
+      msg.addRows(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTotalRows(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusToPublishResponseData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusToPublishResponseData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusToPublishResponseData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      common_gateway_base_pb.ColumnInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getRowsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      common_gateway_base_pb.ValuesRow.serializeBinaryToWriter
+    );
+  }
+  f = message.getTotalRows();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated ColumnInfo columns = 1;
+ * @return {!Array<!proto.titanium.ColumnInfo>}
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.titanium.ColumnInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ColumnInfo, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ColumnInfo>} value
+ * @return {!proto.titanium.ConsensusToPublishResponseData} returns this
+*/
+proto.titanium.ConsensusToPublishResponseData.prototype.setColumnsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ColumnInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ColumnInfo}
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.titanium.ColumnInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusToPublishResponseData} returns this
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * repeated ValuesRow rows = 2;
+ * @return {!Array<!proto.titanium.ValuesRow>}
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.getRowsList = function() {
+  return /** @type{!Array<!proto.titanium.ValuesRow>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ValuesRow, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ValuesRow>} value
+ * @return {!proto.titanium.ConsensusToPublishResponseData} returns this
+*/
+proto.titanium.ConsensusToPublishResponseData.prototype.setRowsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ValuesRow=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ValuesRow}
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.addRows = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.titanium.ValuesRow, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusToPublishResponseData} returns this
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.clearRowsList = function() {
+  return this.setRowsList([]);
+};
+
+
+/**
+ * optional int32 total_rows = 3;
+ * @return {number}
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.getTotalRows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.ConsensusToPublishResponseData} returns this
+ */
+proto.titanium.ConsensusToPublishResponseData.prototype.setTotalRows = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusPublishRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusPublishRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusPublishRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusPublishRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    consensusTrackingId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    assetId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    traceName: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusPublishRequest}
+ */
+proto.titanium.ConsensusPublishRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusPublishRequest;
+  return proto.titanium.ConsensusPublishRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusPublishRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusPublishRequest}
+ */
+proto.titanium.ConsensusPublishRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusTrackingId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusPublishRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusPublishRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusPublishRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusPublishRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getConsensusTrackingId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string consensus_tracking_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusPublishRequest.prototype.getConsensusTrackingId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusPublishRequest} returns this
+ */
+proto.titanium.ConsensusPublishRequest.prototype.setConsensusTrackingId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string asset_id = 2;
+ * @return {string}
+ */
+proto.titanium.ConsensusPublishRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusPublishRequest} returns this
+ */
+proto.titanium.ConsensusPublishRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string trace_name = 3;
+ * @return {string}
+ */
+proto.titanium.ConsensusPublishRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusPublishRequest} returns this
+ */
+proto.titanium.ConsensusPublishRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusHistoryRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusHistoryRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusHistoryRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    filter: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
+    limit: (f = msg.getLimit()) && common_gateway_base_pb.Limit.toObject(includeInstance, f),
+    offset: jspb.Message.getFieldWithDefault(msg, 4, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusHistoryRequest}
+ */
+proto.titanium.ConsensusHistoryRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusHistoryRequest;
+  return proto.titanium.ConsensusHistoryRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusHistoryRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusHistoryRequest}
+ */
+proto.titanium.ConsensusHistoryRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.OrderBy;
+      reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
+      msg.setOrderby(value);
+      break;
+    case 3:
+      var value = new common_gateway_base_pb.Limit;
+      reader.readMessage(value,common_gateway_base_pb.Limit.deserializeBinaryFromReader);
+      msg.setLimit(value);
+      break;
+    case 4:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOffset(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusHistoryRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusHistoryRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusHistoryRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getOrderby();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+    );
+  }
+  f = message.getLimit();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_gateway_base_pb.Limit.serializeBinaryToWriter
+    );
+  }
+  f = message.getOffset();
+  if (f !== 0) {
+    writer.writeInt32(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string filter = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusHistoryRequest} returns this
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional OrderBy orderBy = 2;
+ * @return {?proto.titanium.OrderBy}
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.getOrderby = function() {
+  return /** @type{?proto.titanium.OrderBy} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.OrderBy|undefined} value
+ * @return {!proto.titanium.ConsensusHistoryRequest} returns this
+*/
+proto.titanium.ConsensusHistoryRequest.prototype.setOrderby = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusHistoryRequest} returns this
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.clearOrderby = function() {
+  return this.setOrderby(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.hasOrderby = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Limit limit = 3;
+ * @return {?proto.titanium.Limit}
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.getLimit = function() {
+  return /** @type{?proto.titanium.Limit} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Limit, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.Limit|undefined} value
+ * @return {!proto.titanium.ConsensusHistoryRequest} returns this
+*/
+proto.titanium.ConsensusHistoryRequest.prototype.setLimit = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusHistoryRequest} returns this
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.clearLimit = function() {
+  return this.setLimit(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.hasLimit = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional int32 offset = 4;
+ * @return {number}
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.getOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 4, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.ConsensusHistoryRequest} returns this
+ */
+proto.titanium.ConsensusHistoryRequest.prototype.setOffset = function(value) {
+  return jspb.Message.setProto3IntField(this, 4, value);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusHistoryResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusHistoryResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.ConsensusHistoryResponse.ResponseCase}
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.ConsensusHistoryResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusHistoryResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusHistoryResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusHistoryResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusHistoryResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.ConsensusHistoryResponseData.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusHistoryResponse}
+ */
+proto.titanium.ConsensusHistoryResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusHistoryResponse;
+  return proto.titanium.ConsensusHistoryResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusHistoryResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusHistoryResponse}
+ */
+proto.titanium.ConsensusHistoryResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusHistoryResponseData;
+      reader.readMessage(value,proto.titanium.ConsensusHistoryResponseData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusHistoryResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusHistoryResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusHistoryResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusHistoryResponseData.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusHistoryResponseData data = 1;
+ * @return {?proto.titanium.ConsensusHistoryResponseData}
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.ConsensusHistoryResponseData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusHistoryResponseData, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusHistoryResponseData|undefined} value
+ * @return {!proto.titanium.ConsensusHistoryResponse} returns this
+*/
+proto.titanium.ConsensusHistoryResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.ConsensusHistoryResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusHistoryResponse} returns this
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.ConsensusHistoryResponse} returns this
+*/
+proto.titanium.ConsensusHistoryResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.ConsensusHistoryResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusHistoryResponse} returns this
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusHistoryResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusHistoryResponseData.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusHistoryResponseData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusHistoryResponseData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusHistoryResponseData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
+    common_gateway_base_pb.ColumnInfo.toObject, includeInstance),
+    rowsList: jspb.Message.toObjectList(msg.getRowsList(),
+    common_gateway_base_pb.ValuesRow.toObject, includeInstance),
+    totalRows: jspb.Message.getFieldWithDefault(msg, 3, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusHistoryResponseData}
+ */
+proto.titanium.ConsensusHistoryResponseData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusHistoryResponseData;
+  return proto.titanium.ConsensusHistoryResponseData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusHistoryResponseData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusHistoryResponseData}
+ */
+proto.titanium.ConsensusHistoryResponseData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_gateway_base_pb.ColumnInfo;
+      reader.readMessage(value,common_gateway_base_pb.ColumnInfo.deserializeBinaryFromReader);
+      msg.addColumns(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.ValuesRow;
+      reader.readMessage(value,common_gateway_base_pb.ValuesRow.deserializeBinaryFromReader);
+      msg.addRows(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTotalRows(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusHistoryResponseData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusHistoryResponseData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusHistoryResponseData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      common_gateway_base_pb.ColumnInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getRowsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      common_gateway_base_pb.ValuesRow.serializeBinaryToWriter
+    );
+  }
+  f = message.getTotalRows();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated ColumnInfo columns = 1;
+ * @return {!Array<!proto.titanium.ColumnInfo>}
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.titanium.ColumnInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ColumnInfo, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ColumnInfo>} value
+ * @return {!proto.titanium.ConsensusHistoryResponseData} returns this
+*/
+proto.titanium.ConsensusHistoryResponseData.prototype.setColumnsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ColumnInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ColumnInfo}
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.titanium.ColumnInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusHistoryResponseData} returns this
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * repeated ValuesRow rows = 2;
+ * @return {!Array<!proto.titanium.ValuesRow>}
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.getRowsList = function() {
+  return /** @type{!Array<!proto.titanium.ValuesRow>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ValuesRow, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ValuesRow>} value
+ * @return {!proto.titanium.ConsensusHistoryResponseData} returns this
+*/
+proto.titanium.ConsensusHistoryResponseData.prototype.setRowsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ValuesRow=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ValuesRow}
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.addRows = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.titanium.ValuesRow, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusHistoryResponseData} returns this
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.clearRowsList = function() {
+  return this.setRowsList([]);
+};
+
+
+/**
+ * optional int32 total_rows = 3;
+ * @return {number}
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.getTotalRows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.ConsensusHistoryResponseData} returns this
+ */
+proto.titanium.ConsensusHistoryResponseData.prototype.setTotalRows = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusDecisionRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusDecisionRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusDecisionRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusDecisionRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    consensusTrackingId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    decision: jspb.Message.getFieldWithDefault(msg, 2, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusDecisionRequest}
+ */
+proto.titanium.ConsensusDecisionRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusDecisionRequest;
+  return proto.titanium.ConsensusDecisionRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusDecisionRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusDecisionRequest}
+ */
+proto.titanium.ConsensusDecisionRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusTrackingId(value);
+      break;
+    case 2:
+      var value = /** @type {!proto.titanium.Decision} */ (reader.readEnum());
+      msg.setDecision(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusDecisionRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusDecisionRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusDecisionRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusDecisionRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getConsensusTrackingId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getDecision();
+  if (f !== 0.0) {
+    writer.writeEnum(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string consensus_tracking_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusDecisionRequest.prototype.getConsensusTrackingId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusDecisionRequest} returns this
+ */
+proto.titanium.ConsensusDecisionRequest.prototype.setConsensusTrackingId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional Decision decision = 2;
+ * @return {!proto.titanium.Decision}
+ */
+proto.titanium.ConsensusDecisionRequest.prototype.getDecision = function() {
+  return /** @type {!proto.titanium.Decision} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+};
+
+
+/**
+ * @param {!proto.titanium.Decision} value
+ * @return {!proto.titanium.ConsensusDecisionRequest} returns this
+ */
+proto.titanium.ConsensusDecisionRequest.prototype.setDecision = function(value) {
+  return jspb.Message.setProto3EnumField(this, 2, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusTimestampsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusTimestampsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusTimestampsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusTimestampsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    traceName: jspb.Message.getFieldWithDefault(msg, 2, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusTimestampsRequest}
+ */
+proto.titanium.ConsensusTimestampsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusTimestampsRequest;
+  return proto.titanium.ConsensusTimestampsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusTimestampsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusTimestampsRequest}
+ */
+proto.titanium.ConsensusTimestampsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusTimestampsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusTimestampsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusTimestampsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusTimestampsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string asset_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusTimestampsRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusTimestampsRequest} returns this
+ */
+proto.titanium.ConsensusTimestampsRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string trace_name = 2;
+ * @return {string}
+ */
+proto.titanium.ConsensusTimestampsRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusTimestampsRequest} returns this
+ */
+proto.titanium.ConsensusTimestampsRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusTimestampsResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusTimestampsResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.ConsensusTimestampsResponse.ResponseCase}
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.ConsensusTimestampsResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusTimestampsResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusTimestampsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusTimestampsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusTimestampsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.ConsensusTimestampsResponseData.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusTimestampsResponse}
+ */
+proto.titanium.ConsensusTimestampsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusTimestampsResponse;
+  return proto.titanium.ConsensusTimestampsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusTimestampsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusTimestampsResponse}
+ */
+proto.titanium.ConsensusTimestampsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusTimestampsResponseData;
+      reader.readMessage(value,proto.titanium.ConsensusTimestampsResponseData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusTimestampsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusTimestampsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusTimestampsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusTimestampsResponseData.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusTimestampsResponseData data = 1;
+ * @return {?proto.titanium.ConsensusTimestampsResponseData}
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.ConsensusTimestampsResponseData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusTimestampsResponseData, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusTimestampsResponseData|undefined} value
+ * @return {!proto.titanium.ConsensusTimestampsResponse} returns this
+*/
+proto.titanium.ConsensusTimestampsResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.ConsensusTimestampsResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusTimestampsResponse} returns this
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.ConsensusTimestampsResponse} returns this
+*/
+proto.titanium.ConsensusTimestampsResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.ConsensusTimestampsResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusTimestampsResponse} returns this
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusTimestampsResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusTimestampsResponseData.repeatedFields_ = [1];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusTimestampsResponseData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusTimestampsResponseData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusTimestampsResponseData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusTimestampsResponseData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    timestampsList: jspb.Message.toObjectList(msg.getTimestampsList(),
+    proto.titanium.ConsensusTimestampMeta.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusTimestampsResponseData}
+ */
+proto.titanium.ConsensusTimestampsResponseData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusTimestampsResponseData;
+  return proto.titanium.ConsensusTimestampsResponseData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusTimestampsResponseData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusTimestampsResponseData}
+ */
+proto.titanium.ConsensusTimestampsResponseData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusTimestampMeta;
+      reader.readMessage(value,proto.titanium.ConsensusTimestampMeta.deserializeBinaryFromReader);
+      msg.addTimestamps(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusTimestampsResponseData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusTimestampsResponseData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusTimestampsResponseData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusTimestampsResponseData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getTimestampsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      proto.titanium.ConsensusTimestampMeta.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ConsensusTimestampMeta timestamps = 1;
+ * @return {!Array<!proto.titanium.ConsensusTimestampMeta>}
+ */
+proto.titanium.ConsensusTimestampsResponseData.prototype.getTimestampsList = function() {
+  return /** @type{!Array<!proto.titanium.ConsensusTimestampMeta>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.ConsensusTimestampMeta, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ConsensusTimestampMeta>} value
+ * @return {!proto.titanium.ConsensusTimestampsResponseData} returns this
+*/
+proto.titanium.ConsensusTimestampsResponseData.prototype.setTimestampsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ConsensusTimestampMeta=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ConsensusTimestampMeta}
+ */
+proto.titanium.ConsensusTimestampsResponseData.prototype.addTimestamps = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.titanium.ConsensusTimestampMeta, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusTimestampsResponseData} returns this
+ */
+proto.titanium.ConsensusTimestampsResponseData.prototype.clearTimestampsList = function() {
+  return this.setTimestampsList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusTimestampMeta.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusTimestampMeta.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusTimestampMeta.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusTimestampMeta} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusTimestampMeta.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    submittedDatesList: (f = jspb.Message.getRepeatedField(msg, 2)) == null ? undefined : f
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusTimestampMeta}
+ */
+proto.titanium.ConsensusTimestampMeta.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusTimestampMeta;
+  return proto.titanium.ConsensusTimestampMeta.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusTimestampMeta} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusTimestampMeta}
+ */
+proto.titanium.ConsensusTimestampMeta.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunTimestamp(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addSubmittedDates(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusTimestampMeta.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusTimestampMeta.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusTimestampMeta} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusTimestampMeta.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getConsensusRunTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getSubmittedDatesList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      2,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string consensus_run_timestamp = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusTimestampMeta.prototype.getConsensusRunTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusTimestampMeta} returns this
+ */
+proto.titanium.ConsensusTimestampMeta.prototype.setConsensusRunTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * repeated string submitted_dates = 2;
+ * @return {!Array<string>}
+ */
+proto.titanium.ConsensusTimestampMeta.prototype.getSubmittedDatesList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 2));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.titanium.ConsensusTimestampMeta} returns this
+ */
+proto.titanium.ConsensusTimestampMeta.prototype.setSubmittedDatesList = function(value) {
+  return jspb.Message.setField(this, 2, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ConsensusTimestampMeta} returns this
+ */
+proto.titanium.ConsensusTimestampMeta.prototype.addSubmittedDates = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 2, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusTimestampMeta} returns this
+ */
+proto.titanium.ConsensusTimestampMeta.prototype.clearSubmittedDatesList = function() {
+  return this.setSubmittedDatesList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    submittedDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    filter: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
+    limit: (f = msg.getLimit()) && common_gateway_base_pb.Limit.toObject(includeInstance, f),
+    offset: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    traceName: jspb.Message.getFieldWithDefault(msg, 8, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusRequest}
+ */
+proto.titanium.ConsensusRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusRequest;
+  return proto.titanium.ConsensusRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusRequest}
+ */
+proto.titanium.ConsensusRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmittedDate(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunTimestamp(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setFilter(value);
+      break;
+    case 5:
+      var value = new common_gateway_base_pb.OrderBy;
+      reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
+      msg.setOrderby(value);
+      break;
+    case 6:
+      var value = new common_gateway_base_pb.Limit;
+      reader.readMessage(value,common_gateway_base_pb.Limit.deserializeBinaryFromReader);
+      msg.setLimit(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setOffset(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getSubmittedDate();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getConsensusRunTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getFilter();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getOrderby();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+    );
+  }
+  f = message.getLimit();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_gateway_base_pb.Limit.serializeBinaryToWriter
+    );
+  }
+  f = message.getOffset();
+  if (f !== 0) {
+    writer.writeInt32(
+      7,
+      f
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      8,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string asset_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusRequest} returns this
+ */
+proto.titanium.ConsensusRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string submitted_date = 2;
+ * @return {string}
+ */
+proto.titanium.ConsensusRequest.prototype.getSubmittedDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusRequest} returns this
+ */
+proto.titanium.ConsensusRequest.prototype.setSubmittedDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string consensus_run_timestamp = 3;
+ * @return {string}
+ */
+proto.titanium.ConsensusRequest.prototype.getConsensusRunTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusRequest} returns this
+ */
+proto.titanium.ConsensusRequest.prototype.setConsensusRunTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string filter = 4;
+ * @return {string}
+ */
+proto.titanium.ConsensusRequest.prototype.getFilter = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusRequest} returns this
+ */
+proto.titanium.ConsensusRequest.prototype.setFilter = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional OrderBy orderBy = 5;
+ * @return {?proto.titanium.OrderBy}
+ */
+proto.titanium.ConsensusRequest.prototype.getOrderby = function() {
+  return /** @type{?proto.titanium.OrderBy} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 5));
+};
+
+
+/**
+ * @param {?proto.titanium.OrderBy|undefined} value
+ * @return {!proto.titanium.ConsensusRequest} returns this
+*/
+proto.titanium.ConsensusRequest.prototype.setOrderby = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusRequest} returns this
+ */
+proto.titanium.ConsensusRequest.prototype.clearOrderby = function() {
+  return this.setOrderby(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusRequest.prototype.hasOrderby = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional Limit limit = 6;
+ * @return {?proto.titanium.Limit}
+ */
+proto.titanium.ConsensusRequest.prototype.getLimit = function() {
+  return /** @type{?proto.titanium.Limit} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Limit, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.Limit|undefined} value
+ * @return {!proto.titanium.ConsensusRequest} returns this
+*/
+proto.titanium.ConsensusRequest.prototype.setLimit = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusRequest} returns this
+ */
+proto.titanium.ConsensusRequest.prototype.clearLimit = function() {
+  return this.setLimit(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusRequest.prototype.hasLimit = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int32 offset = 7;
+ * @return {number}
+ */
+proto.titanium.ConsensusRequest.prototype.getOffset = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.ConsensusRequest} returns this
+ */
+proto.titanium.ConsensusRequest.prototype.setOffset = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional string trace_name = 8;
+ * @return {string}
+ */
+proto.titanium.ConsensusRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusRequest} returns this
+ */
+proto.titanium.ConsensusRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 8, value);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.ConsensusResponse.ResponseCase}
+ */
+proto.titanium.ConsensusResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.ConsensusResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.ConsensusResponseData.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusResponse}
+ */
+proto.titanium.ConsensusResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusResponse;
+  return proto.titanium.ConsensusResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusResponse}
+ */
+proto.titanium.ConsensusResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusResponseData;
+      reader.readMessage(value,proto.titanium.ConsensusResponseData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusResponseData.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusResponseData data = 1;
+ * @return {?proto.titanium.ConsensusResponseData}
+ */
+proto.titanium.ConsensusResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.ConsensusResponseData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusResponseData, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusResponseData|undefined} value
+ * @return {!proto.titanium.ConsensusResponse} returns this
+*/
+proto.titanium.ConsensusResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.ConsensusResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusResponse} returns this
+ */
+proto.titanium.ConsensusResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.ConsensusResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.ConsensusResponse} returns this
+*/
+proto.titanium.ConsensusResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.ConsensusResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusResponse} returns this
+ */
+proto.titanium.ConsensusResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusResponseData.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusResponseData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusResponseData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusResponseData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResponseData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
+    common_gateway_base_pb.ColumnInfo.toObject, includeInstance),
+    rowsList: jspb.Message.toObjectList(msg.getRowsList(),
+    common_gateway_base_pb.ValuesRow.toObject, includeInstance),
+    totalRows: jspb.Message.getFieldWithDefault(msg, 3, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusResponseData}
+ */
+proto.titanium.ConsensusResponseData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusResponseData;
+  return proto.titanium.ConsensusResponseData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusResponseData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusResponseData}
+ */
+proto.titanium.ConsensusResponseData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_gateway_base_pb.ColumnInfo;
+      reader.readMessage(value,common_gateway_base_pb.ColumnInfo.deserializeBinaryFromReader);
+      msg.addColumns(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.ValuesRow;
+      reader.readMessage(value,common_gateway_base_pb.ValuesRow.deserializeBinaryFromReader);
+      msg.addRows(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readInt32());
+      msg.setTotalRows(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusResponseData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusResponseData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusResponseData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResponseData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      common_gateway_base_pb.ColumnInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getRowsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      common_gateway_base_pb.ValuesRow.serializeBinaryToWriter
+    );
+  }
+  f = message.getTotalRows();
+  if (f !== 0) {
+    writer.writeInt32(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * repeated ColumnInfo columns = 1;
+ * @return {!Array<!proto.titanium.ColumnInfo>}
+ */
+proto.titanium.ConsensusResponseData.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.titanium.ColumnInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ColumnInfo, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ColumnInfo>} value
+ * @return {!proto.titanium.ConsensusResponseData} returns this
+*/
+proto.titanium.ConsensusResponseData.prototype.setColumnsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ColumnInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ColumnInfo}
+ */
+proto.titanium.ConsensusResponseData.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.titanium.ColumnInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusResponseData} returns this
+ */
+proto.titanium.ConsensusResponseData.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * repeated ValuesRow rows = 2;
+ * @return {!Array<!proto.titanium.ValuesRow>}
+ */
+proto.titanium.ConsensusResponseData.prototype.getRowsList = function() {
+  return /** @type{!Array<!proto.titanium.ValuesRow>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ValuesRow, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ValuesRow>} value
+ * @return {!proto.titanium.ConsensusResponseData} returns this
+*/
+proto.titanium.ConsensusResponseData.prototype.setRowsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ValuesRow=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ValuesRow}
+ */
+proto.titanium.ConsensusResponseData.prototype.addRows = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.titanium.ValuesRow, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusResponseData} returns this
+ */
+proto.titanium.ConsensusResponseData.prototype.clearRowsList = function() {
+  return this.setRowsList([]);
+};
+
+
+/**
+ * optional int32 total_rows = 3;
+ * @return {number}
+ */
+proto.titanium.ConsensusResponseData.prototype.getTotalRows = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.ConsensusResponseData} returns this
+ */
+proto.titanium.ConsensusResponseData.prototype.setTotalRows = function(value) {
+  return jspb.Message.setProto3IntField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.GetConsensusRunsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.GetConsensusRunsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.GetConsensusRunsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    traceName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    snapDateFrom: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    snapDateTo: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    participant: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    showArchived: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    filterPack: (f = msg.getFilterPack()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f),
+    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f),
+    orderBy: (f = msg.getOrderBy()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.GetConsensusRunsRequest}
+ */
+proto.titanium.GetConsensusRunsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.GetConsensusRunsRequest;
+  return proto.titanium.GetConsensusRunsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.GetConsensusRunsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.GetConsensusRunsRequest}
+ */
+proto.titanium.GetConsensusRunsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSnapDateFrom(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSnapDateTo(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParticipant(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setShowArchived(value);
+      break;
+    case 7:
+      var value = new common_gateway_base_pb.FilterPack;
+      reader.readMessage(value,common_gateway_base_pb.FilterPack.deserializeBinaryFromReader);
+      msg.setFilterPack(value);
+      break;
+    case 8:
+      var value = new common_gateway_base_pb.Page;
+      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
+      msg.setPage(value);
+      break;
+    case 9:
+      var value = new common_gateway_base_pb.OrderBy;
+      reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
+      msg.setOrderBy(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.GetConsensusRunsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.GetConsensusRunsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.GetConsensusRunsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getSnapDateFrom();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getSnapDateTo();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getParticipant();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getShowArchived();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = message.getFilterPack();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      common_gateway_base_pb.FilterPack.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      common_gateway_base_pb.Page.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrderBy();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string asset_id = 1;
+ * @return {string}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string trace_name = 2;
+ * @return {string}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string snap_date_from = 3;
+ * @return {string}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getSnapDateFrom = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.setSnapDateFrom = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string snap_date_to = 4;
+ * @return {string}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getSnapDateTo = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.setSnapDateTo = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string participant = 5;
+ * @return {string}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getParticipant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.setParticipant = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bool show_archived = 6;
+ * @return {boolean}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getShowArchived = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.setShowArchived = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional FilterPack filter_pack = 7;
+ * @return {?proto.titanium.FilterPack}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getFilterPack = function() {
+  return /** @type{?proto.titanium.FilterPack} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.FilterPack, 7));
+};
+
+
+/**
+ * @param {?proto.titanium.FilterPack|undefined} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+*/
+proto.titanium.GetConsensusRunsRequest.prototype.setFilterPack = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.clearFilterPack = function() {
+  return this.setFilterPack(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.hasFilterPack = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional Page page = 8;
+ * @return {?proto.titanium.Page}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getPage = function() {
+  return /** @type{?proto.titanium.Page} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 8));
+};
+
+
+/**
+ * @param {?proto.titanium.Page|undefined} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+*/
+proto.titanium.GetConsensusRunsRequest.prototype.setPage = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.clearPage = function() {
+  return this.setPage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.hasPage = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional OrderBy order_by = 9;
+ * @return {?proto.titanium.OrderBy}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.getOrderBy = function() {
+  return /** @type{?proto.titanium.OrderBy} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 9));
+};
+
+
+/**
+ * @param {?proto.titanium.OrderBy|undefined} value
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+*/
+proto.titanium.GetConsensusRunsRequest.prototype.setOrderBy = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.GetConsensusRunsRequest} returns this
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.clearOrderBy = function() {
+  return this.setOrderBy(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.GetConsensusRunsRequest.prototype.hasOrderBy = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.GetConsensusRunsResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.GetConsensusRunsResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  ERROR: 1,
+  DATA: 2
+};
+
+/**
+ * @return {proto.titanium.GetConsensusRunsResponse.ResponseCase}
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.GetConsensusRunsResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.GetConsensusRunsResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.GetConsensusRunsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.GetConsensusRunsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.GetConsensusRunsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f),
+    data: (f = msg.getData()) && proto.titanium.GetConsensusRunsData.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.GetConsensusRunsResponse}
+ */
+proto.titanium.GetConsensusRunsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.GetConsensusRunsResponse;
+  return proto.titanium.GetConsensusRunsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.GetConsensusRunsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.GetConsensusRunsResponse}
+ */
+proto.titanium.GetConsensusRunsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    case 2:
+      var value = new proto.titanium.GetConsensusRunsData;
+      reader.readMessage(value,proto.titanium.GetConsensusRunsData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.GetConsensusRunsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.GetConsensusRunsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.GetConsensusRunsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.titanium.GetConsensusRunsData.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Error error = 1;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.GetConsensusRunsResponse} returns this
+*/
+proto.titanium.GetConsensusRunsResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.GetConsensusRunsResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.GetConsensusRunsResponse} returns this
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional GetConsensusRunsData data = 2;
+ * @return {?proto.titanium.GetConsensusRunsData}
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.GetConsensusRunsData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.GetConsensusRunsData, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.GetConsensusRunsData|undefined} value
+ * @return {!proto.titanium.GetConsensusRunsResponse} returns this
+*/
+proto.titanium.GetConsensusRunsResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.GetConsensusRunsResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.GetConsensusRunsResponse} returns this
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.GetConsensusRunsResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.GetConsensusRunsData.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.GetConsensusRunsData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.GetConsensusRunsData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.GetConsensusRunsData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.GetConsensusRunsData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
+    common_gateway_base_pb.ColumnInfo.toObject, includeInstance),
+    rowsList: jspb.Message.toObjectList(msg.getRowsList(),
+    common_gateway_base_pb.ValuesRow.toObject, includeInstance),
+    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.GetConsensusRunsData}
+ */
+proto.titanium.GetConsensusRunsData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.GetConsensusRunsData;
+  return proto.titanium.GetConsensusRunsData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.GetConsensusRunsData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.GetConsensusRunsData}
+ */
+proto.titanium.GetConsensusRunsData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_gateway_base_pb.ColumnInfo;
+      reader.readMessage(value,common_gateway_base_pb.ColumnInfo.deserializeBinaryFromReader);
+      msg.addColumns(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.ValuesRow;
+      reader.readMessage(value,common_gateway_base_pb.ValuesRow.deserializeBinaryFromReader);
+      msg.addRows(value);
+      break;
+    case 3:
+      var value = new common_gateway_base_pb.Page;
+      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
+      msg.setPage(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.GetConsensusRunsData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.GetConsensusRunsData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.GetConsensusRunsData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.GetConsensusRunsData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      common_gateway_base_pb.ColumnInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getRowsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      common_gateway_base_pb.ValuesRow.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_gateway_base_pb.Page.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ColumnInfo columns = 1;
+ * @return {!Array<!proto.titanium.ColumnInfo>}
+ */
+proto.titanium.GetConsensusRunsData.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.titanium.ColumnInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ColumnInfo, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ColumnInfo>} value
+ * @return {!proto.titanium.GetConsensusRunsData} returns this
+*/
+proto.titanium.GetConsensusRunsData.prototype.setColumnsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ColumnInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ColumnInfo}
+ */
+proto.titanium.GetConsensusRunsData.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.titanium.ColumnInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.GetConsensusRunsData} returns this
+ */
+proto.titanium.GetConsensusRunsData.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * repeated ValuesRow rows = 2;
+ * @return {!Array<!proto.titanium.ValuesRow>}
+ */
+proto.titanium.GetConsensusRunsData.prototype.getRowsList = function() {
+  return /** @type{!Array<!proto.titanium.ValuesRow>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ValuesRow, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ValuesRow>} value
+ * @return {!proto.titanium.GetConsensusRunsData} returns this
+*/
+proto.titanium.GetConsensusRunsData.prototype.setRowsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ValuesRow=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ValuesRow}
+ */
+proto.titanium.GetConsensusRunsData.prototype.addRows = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.titanium.ValuesRow, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.GetConsensusRunsData} returns this
+ */
+proto.titanium.GetConsensusRunsData.prototype.clearRowsList = function() {
+  return this.setRowsList([]);
+};
+
+
+/**
+ * optional Page page = 3;
+ * @return {?proto.titanium.Page}
+ */
+proto.titanium.GetConsensusRunsData.prototype.getPage = function() {
+  return /** @type{?proto.titanium.Page} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.Page|undefined} value
+ * @return {!proto.titanium.GetConsensusRunsData} returns this
+*/
+proto.titanium.GetConsensusRunsData.prototype.setPage = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.GetConsensusRunsData} returns this
+ */
+proto.titanium.GetConsensusRunsData.prototype.clearPage = function() {
+  return this.setPage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.GetConsensusRunsData.prototype.hasPage = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusResultSet.repeatedFields_ = [8];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusResultSet.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusResultSet.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusResultSet} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResultSet.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    consensusRunId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    consensusResultSetId: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    submissionTimestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    consensusRunStatus: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    cohortName: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    dataContent: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 7, ""),
+    participantsList: (f = jspb.Message.getRepeatedField(msg, 8)) == null ? undefined : f,
+    participant: jspb.Message.getFieldWithDefault(msg, 9, ""),
+    status: jspb.Message.getFieldWithDefault(msg, 10, ""),
+    consensusNotes: jspb.Message.getFieldWithDefault(msg, 11, ""),
+    consensusResultSetLabel: jspb.Message.getFieldWithDefault(msg, 12, ""),
+    runBy: jspb.Message.getFieldWithDefault(msg, 13, ""),
+    jobId: jspb.Message.getFieldWithDefault(msg, 14, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusResultSet}
+ */
+proto.titanium.ConsensusResultSet.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusResultSet;
+  return proto.titanium.ConsensusResultSet.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusResultSet} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusResultSet}
+ */
+proto.titanium.ConsensusResultSet.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusResultSetId(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmissionTimestamp(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunStatus(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCohortName(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDataContent(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunTimestamp(value);
+      break;
+    case 8:
+      var value = /** @type {string} */ (reader.readString());
+      msg.addParticipants(value);
+      break;
+    case 9:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParticipant(value);
+      break;
+    case 10:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setStatus(value);
+      break;
+    case 11:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusNotes(value);
+      break;
+    case 12:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusResultSetLabel(value);
+      break;
+    case 13:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setRunBy(value);
+      break;
+    case 14:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setJobId(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusResultSet.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusResultSet.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusResultSet} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResultSet.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getConsensusRunId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getConsensusResultSetId();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getSubmissionTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getConsensusRunStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getCohortName();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getDataContent();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getConsensusRunTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+  f = message.getParticipantsList();
+  if (f.length > 0) {
+    writer.writeRepeatedString(
+      8,
+      f
+    );
+  }
+  f = message.getParticipant();
+  if (f.length > 0) {
+    writer.writeString(
+      9,
+      f
+    );
+  }
+  f = message.getStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      10,
+      f
+    );
+  }
+  f = message.getConsensusNotes();
+  if (f.length > 0) {
+    writer.writeString(
+      11,
+      f
+    );
+  }
+  f = message.getConsensusResultSetLabel();
+  if (f.length > 0) {
+    writer.writeString(
+      12,
+      f
+    );
+  }
+  f = message.getRunBy();
+  if (f.length > 0) {
+    writer.writeString(
+      13,
+      f
+    );
+  }
+  f = message.getJobId();
+  if (f.length > 0) {
+    writer.writeString(
+      14,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string consensus_run_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getConsensusRunId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setConsensusRunId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string consensus_result_set_id = 2;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getConsensusResultSetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setConsensusResultSetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string submission_timestamp = 3;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getSubmissionTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setSubmissionTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string consensus_run_status = 4;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getConsensusRunStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setConsensusRunStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string cohort_name = 5;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getCohortName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setCohortName = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string data_content = 6;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getDataContent = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setDataContent = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string consensus_run_timestamp = 7;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getConsensusRunTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setConsensusRunTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+/**
+ * repeated string participants = 8;
+ * @return {!Array<string>}
+ */
+proto.titanium.ConsensusResultSet.prototype.getParticipantsList = function() {
+  return /** @type {!Array<string>} */ (jspb.Message.getRepeatedField(this, 8));
+};
+
+
+/**
+ * @param {!Array<string>} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setParticipantsList = function(value) {
+  return jspb.Message.setField(this, 8, value || []);
+};
+
+
+/**
+ * @param {string} value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.addParticipants = function(value, opt_index) {
+  return jspb.Message.addToRepeatedField(this, 8, value, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.clearParticipantsList = function() {
+  return this.setParticipantsList([]);
+};
+
+
+/**
+ * optional string participant = 9;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getParticipant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 9, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setParticipant = function(value) {
+  return jspb.Message.setProto3StringField(this, 9, value);
+};
+
+
+/**
+ * optional string status = 10;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 10, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 10, value);
+};
+
+
+/**
+ * optional string consensus_notes = 11;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getConsensusNotes = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 11, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setConsensusNotes = function(value) {
+  return jspb.Message.setProto3StringField(this, 11, value);
+};
+
+
+/**
+ * optional string consensus_result_set_label = 12;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getConsensusResultSetLabel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 12, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setConsensusResultSetLabel = function(value) {
+  return jspb.Message.setProto3StringField(this, 12, value);
+};
+
+
+/**
+ * optional string run_by = 13;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getRunBy = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 13, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setRunBy = function(value) {
+  return jspb.Message.setProto3StringField(this, 13, value);
+};
+
+
+/**
+ * optional string job_id = 14;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSet.prototype.getJobId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 14, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSet} returns this
+ */
+proto.titanium.ConsensusResultSet.prototype.setJobId = function(value) {
+  return jspb.Message.setProto3StringField(this, 14, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusResultSetValuesRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusResultSetValuesRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResultSetValuesRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    traceName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    submittedDate: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    client: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    filterPack: (f = msg.getFilterPack()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f),
+    orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
+    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusResultSetValuesRequest;
+  return proto.titanium.ConsensusResultSetValuesRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusResultSetValuesRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmittedDate(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunTimestamp(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setClient(value);
+      break;
+    case 6:
+      var value = new common_gateway_base_pb.FilterPack;
+      reader.readMessage(value,common_gateway_base_pb.FilterPack.deserializeBinaryFromReader);
+      msg.setFilterPack(value);
+      break;
+    case 7:
+      var value = new common_gateway_base_pb.OrderBy;
+      reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
+      msg.setOrderby(value);
+      break;
+    case 8:
+      var value = new common_gateway_base_pb.Page;
+      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
+      msg.setPage(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusResultSetValuesRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusResultSetValuesRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResultSetValuesRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getSubmittedDate();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getConsensusRunTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getClient();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getFilterPack();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_gateway_base_pb.FilterPack.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrderby();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      common_gateway_base_pb.Page.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string asset_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string trace_name = 2;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string submitted_date = 3;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.getSubmittedDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.setSubmittedDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string consensus_run_timestamp = 4;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.getConsensusRunTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.setConsensusRunTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string client = 5;
+ * @return {string}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.getClient = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.setClient = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional FilterPack filter_pack = 6;
+ * @return {?proto.titanium.FilterPack}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.getFilterPack = function() {
+  return /** @type{?proto.titanium.FilterPack} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.FilterPack, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.FilterPack|undefined} value
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+*/
+proto.titanium.ConsensusResultSetValuesRequest.prototype.setFilterPack = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.clearFilterPack = function() {
+  return this.setFilterPack(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.hasFilterPack = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional OrderBy orderBy = 7;
+ * @return {?proto.titanium.OrderBy}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.getOrderby = function() {
+  return /** @type{?proto.titanium.OrderBy} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 7));
+};
+
+
+/**
+ * @param {?proto.titanium.OrderBy|undefined} value
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+*/
+proto.titanium.ConsensusResultSetValuesRequest.prototype.setOrderby = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.clearOrderby = function() {
+  return this.setOrderby(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.hasOrderby = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional Page page = 8;
+ * @return {?proto.titanium.Page}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.getPage = function() {
+  return /** @type{?proto.titanium.Page} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 8));
+};
+
+
+/**
+ * @param {?proto.titanium.Page|undefined} value
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+*/
+proto.titanium.ConsensusResultSetValuesRequest.prototype.setPage = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusResultSetValuesRequest} returns this
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.clearPage = function() {
+  return this.setPage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusResultSetValuesRequest.prototype.hasPage = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusResultSetValuesResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.ConsensusResultSetValuesResponse.ResponseCase}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.ConsensusResultSetValuesResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusResultSetValuesResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusResultSetValuesResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusResultSetValuesResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResultSetValuesResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.ConsensusResultSetValues.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusResultSetValuesResponse}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusResultSetValuesResponse;
+  return proto.titanium.ConsensusResultSetValuesResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusResultSetValuesResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusResultSetValuesResponse}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusResultSetValues;
+      reader.readMessage(value,proto.titanium.ConsensusResultSetValues.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusResultSetValuesResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusResultSetValuesResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResultSetValuesResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusResultSetValues.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusResultSetValues data = 1;
+ * @return {?proto.titanium.ConsensusResultSetValues}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.ConsensusResultSetValues} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusResultSetValues, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusResultSetValues|undefined} value
+ * @return {!proto.titanium.ConsensusResultSetValuesResponse} returns this
+*/
+proto.titanium.ConsensusResultSetValuesResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.ConsensusResultSetValuesResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusResultSetValuesResponse} returns this
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.ConsensusResultSetValuesResponse} returns this
+*/
+proto.titanium.ConsensusResultSetValuesResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.ConsensusResultSetValuesResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusResultSetValuesResponse} returns this
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusResultSetValuesResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusResultSetValues.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusResultSetValues.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusResultSetValues.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusResultSetValues} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResultSetValues.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
+    common_gateway_base_pb.ColumnInfo.toObject, includeInstance),
+    rowsList: jspb.Message.toObjectList(msg.getRowsList(),
+    common_gateway_base_pb.ValuesRow.toObject, includeInstance),
+    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusResultSetValues}
+ */
+proto.titanium.ConsensusResultSetValues.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusResultSetValues;
+  return proto.titanium.ConsensusResultSetValues.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusResultSetValues} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusResultSetValues}
+ */
+proto.titanium.ConsensusResultSetValues.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_gateway_base_pb.ColumnInfo;
+      reader.readMessage(value,common_gateway_base_pb.ColumnInfo.deserializeBinaryFromReader);
+      msg.addColumns(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.ValuesRow;
+      reader.readMessage(value,common_gateway_base_pb.ValuesRow.deserializeBinaryFromReader);
+      msg.addRows(value);
+      break;
+    case 3:
+      var value = new common_gateway_base_pb.Page;
+      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
+      msg.setPage(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusResultSetValues.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusResultSetValues.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusResultSetValues} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusResultSetValues.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      common_gateway_base_pb.ColumnInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getRowsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      common_gateway_base_pb.ValuesRow.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_gateway_base_pb.Page.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ColumnInfo columns = 1;
+ * @return {!Array<!proto.titanium.ColumnInfo>}
+ */
+proto.titanium.ConsensusResultSetValues.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.titanium.ColumnInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ColumnInfo, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ColumnInfo>} value
+ * @return {!proto.titanium.ConsensusResultSetValues} returns this
+*/
+proto.titanium.ConsensusResultSetValues.prototype.setColumnsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ColumnInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ColumnInfo}
+ */
+proto.titanium.ConsensusResultSetValues.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.titanium.ColumnInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusResultSetValues} returns this
+ */
+proto.titanium.ConsensusResultSetValues.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * repeated ValuesRow rows = 2;
+ * @return {!Array<!proto.titanium.ValuesRow>}
+ */
+proto.titanium.ConsensusResultSetValues.prototype.getRowsList = function() {
+  return /** @type{!Array<!proto.titanium.ValuesRow>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ValuesRow, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ValuesRow>} value
+ * @return {!proto.titanium.ConsensusResultSetValues} returns this
+*/
+proto.titanium.ConsensusResultSetValues.prototype.setRowsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ValuesRow=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ValuesRow}
+ */
+proto.titanium.ConsensusResultSetValues.prototype.addRows = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.titanium.ValuesRow, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusResultSetValues} returns this
+ */
+proto.titanium.ConsensusResultSetValues.prototype.clearRowsList = function() {
+  return this.setRowsList([]);
+};
+
+
+/**
+ * optional Page page = 3;
+ * @return {?proto.titanium.Page}
+ */
+proto.titanium.ConsensusResultSetValues.prototype.getPage = function() {
+  return /** @type{?proto.titanium.Page} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.Page|undefined} value
+ * @return {!proto.titanium.ConsensusResultSetValues} returns this
+*/
+proto.titanium.ConsensusResultSetValues.prototype.setPage = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusResultSetValues} returns this
+ */
+proto.titanium.ConsensusResultSetValues.prototype.clearPage = function() {
+  return this.setPage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusResultSetValues.prototype.hasPage = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_ = [[4,5,6]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.IdCase = {
+  ID_NOT_SET: 0,
+  SUBMITTED_ID: 4,
+  CONSENSUS_ID: 5,
+  EVALUATED_PRICE_ID: 6
+};
+
+/**
+ * @return {proto.titanium.ConsensusExplorerInstrumentDetailsRequest.IdCase}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.getIdCase = function() {
+  return /** @type {proto.titanium.ConsensusExplorerInstrumentDetailsRequest.IdCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerInstrumentDetailsRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    submittedDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    consensusResultSetId: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    submittedId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    consensusId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    evaluatedPriceId: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    traceName: jspb.Message.getFieldWithDefault(msg, 7, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerInstrumentDetailsRequest;
+  return proto.titanium.ConsensusExplorerInstrumentDetailsRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmittedDate(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusResultSetId(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmittedId(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusId(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setEvaluatedPriceId(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerInstrumentDetailsRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getSubmittedDate();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getConsensusResultSetId();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 4));
+  if (f != null) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 6));
+  if (f != null) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string asset_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string submitted_date = 2;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.getSubmittedDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.setSubmittedDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string consensus_result_set_id = 3;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.getConsensusResultSetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.setConsensusResultSetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string submitted_id = 4;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.getSubmittedId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.setSubmittedId = function(value) {
+  return jspb.Message.setOneofField(this, 4, proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.clearSubmittedId = function() {
+  return jspb.Message.setOneofField(this, 4, proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.hasSubmittedId = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string consensus_id = 5;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.getConsensusId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.setConsensusId = function(value) {
+  return jspb.Message.setOneofField(this, 5, proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.clearConsensusId = function() {
+  return jspb.Message.setOneofField(this, 5, proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.hasConsensusId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional string evaluated_price_id = 6;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.getEvaluatedPriceId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.setEvaluatedPriceId = function(value) {
+  return jspb.Message.setOneofField(this, 6, proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.clearEvaluatedPriceId = function() {
+  return jspb.Message.setOneofField(this, 6, proto.titanium.ConsensusExplorerInstrumentDetailsRequest.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.hasEvaluatedPriceId = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string trace_name = 7;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsRequest} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerRangeRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerRangeRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerRangeRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    submittedDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    participant: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    submissionId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    expert: jspb.Message.getBooleanFieldWithDefault(msg, 6, false),
+    traceName: jspb.Message.getFieldWithDefault(msg, 7, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerRangeRequest;
+  return proto.titanium.ConsensusExplorerRangeRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerRangeRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmittedDate(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParticipant(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunTimestamp(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmissionId(value);
+      break;
+    case 6:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setExpert(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerRangeRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerRangeRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerRangeRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getSubmittedDate();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getParticipant();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getConsensusRunTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getSubmissionId();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getExpert();
+  if (f) {
+    writer.writeBool(
+      6,
+      f
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string asset_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string submitted_date = 2;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.getSubmittedDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.setSubmittedDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string participant = 3;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.getParticipant = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.setParticipant = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string consensus_run_timestamp = 4;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.getConsensusRunTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.setConsensusRunTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string submission_id = 5;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.getSubmissionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.setSubmissionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional bool expert = 6;
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.getExpert = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 6, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.setExpert = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 6, value);
+};
+
+
+/**
+ * optional string trace_name = 7;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRangeRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRangeRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.Range.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.Range.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.Range} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.Range.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    min: (f = msg.getMin()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    max: (f = msg.getMax()) && proto.titanium.RangePoint.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.Range}
+ */
+proto.titanium.Range.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.Range;
+  return proto.titanium.Range.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.Range} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.Range}
+ */
+proto.titanium.Range.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setMin(value);
+      break;
+    case 2:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setMax(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.Range.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.Range.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.Range} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.Range.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMin();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getMax();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional RangePoint min = 1;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.Range.prototype.getMin = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.Range} returns this
+*/
+proto.titanium.Range.prototype.setMin = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.Range} returns this
+ */
+proto.titanium.Range.prototype.clearMin = function() {
+  return this.setMin(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.Range.prototype.hasMin = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional RangePoint max = 2;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.Range.prototype.getMax = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.Range} returns this
+*/
+proto.titanium.Range.prototype.setMax = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.Range} returns this
+ */
+proto.titanium.Range.prototype.clearMax = function() {
+  return this.setMax(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.Range.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.RangePoint.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.RangePoint.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.RangePoint} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.RangePoint.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    label: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    value: (f = msg.getValue()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.RangePoint}
+ */
+proto.titanium.RangePoint.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.RangePoint;
+  return proto.titanium.RangePoint.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.RangePoint} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.RangePoint}
+ */
+proto.titanium.RangePoint.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setLabel(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setValue(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.RangePoint.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.RangePoint.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.RangePoint} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.RangePoint.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getLabel();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getValue();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string label = 1;
+ * @return {string}
+ */
+proto.titanium.RangePoint.prototype.getLabel = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.RangePoint} returns this
+ */
+proto.titanium.RangePoint.prototype.setLabel = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Value value = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.RangePoint.prototype.getValue = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.RangePoint} returns this
+*/
+proto.titanium.RangePoint.prototype.setValue = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.RangePoint} returns this
+ */
+proto.titanium.RangePoint.prototype.clearValue = function() {
+  return this.setValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.RangePoint.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.EVPRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.EVPRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.EVPRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EVPRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    submittedDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    filterPack: (f = msg.getFilterPack()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f),
+    orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
+    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f),
+    traceName: jspb.Message.getFieldWithDefault(msg, 7, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.EVPRequest}
+ */
+proto.titanium.EVPRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.EVPRequest;
+  return proto.titanium.EVPRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.EVPRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.EVPRequest}
+ */
+proto.titanium.EVPRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmittedDate(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunTimestamp(value);
+      break;
+    case 4:
+      var value = new common_gateway_base_pb.FilterPack;
+      reader.readMessage(value,common_gateway_base_pb.FilterPack.deserializeBinaryFromReader);
+      msg.setFilterPack(value);
+      break;
+    case 5:
+      var value = new common_gateway_base_pb.OrderBy;
+      reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
+      msg.setOrderby(value);
+      break;
+    case 6:
+      var value = new common_gateway_base_pb.Page;
+      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
+      msg.setPage(value);
+      break;
+    case 7:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.EVPRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.EVPRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.EVPRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EVPRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getSubmittedDate();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getConsensusRunTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getFilterPack();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      common_gateway_base_pb.FilterPack.serializeBinaryToWriter
+    );
+  }
+  f = message.getOrderby();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_gateway_base_pb.Page.serializeBinaryToWriter
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string asset_id = 1;
+ * @return {string}
+ */
+proto.titanium.EVPRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EVPRequest} returns this
+ */
+proto.titanium.EVPRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string submitted_date = 2;
+ * @return {string}
+ */
+proto.titanium.EVPRequest.prototype.getSubmittedDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EVPRequest} returns this
+ */
+proto.titanium.EVPRequest.prototype.setSubmittedDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string consensus_run_timestamp = 3;
+ * @return {string}
+ */
+proto.titanium.EVPRequest.prototype.getConsensusRunTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EVPRequest} returns this
+ */
+proto.titanium.EVPRequest.prototype.setConsensusRunTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional FilterPack filter_pack = 4;
+ * @return {?proto.titanium.FilterPack}
+ */
+proto.titanium.EVPRequest.prototype.getFilterPack = function() {
+  return /** @type{?proto.titanium.FilterPack} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.FilterPack, 4));
+};
+
+
+/**
+ * @param {?proto.titanium.FilterPack|undefined} value
+ * @return {!proto.titanium.EVPRequest} returns this
+*/
+proto.titanium.EVPRequest.prototype.setFilterPack = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EVPRequest} returns this
+ */
+proto.titanium.EVPRequest.prototype.clearFilterPack = function() {
+  return this.setFilterPack(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EVPRequest.prototype.hasFilterPack = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional OrderBy orderBy = 5;
+ * @return {?proto.titanium.OrderBy}
+ */
+proto.titanium.EVPRequest.prototype.getOrderby = function() {
+  return /** @type{?proto.titanium.OrderBy} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 5));
+};
+
+
+/**
+ * @param {?proto.titanium.OrderBy|undefined} value
+ * @return {!proto.titanium.EVPRequest} returns this
+*/
+proto.titanium.EVPRequest.prototype.setOrderby = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EVPRequest} returns this
+ */
+proto.titanium.EVPRequest.prototype.clearOrderby = function() {
+  return this.setOrderby(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EVPRequest.prototype.hasOrderby = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional Page page = 6;
+ * @return {?proto.titanium.Page}
+ */
+proto.titanium.EVPRequest.prototype.getPage = function() {
+  return /** @type{?proto.titanium.Page} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.Page|undefined} value
+ * @return {!proto.titanium.EVPRequest} returns this
+*/
+proto.titanium.EVPRequest.prototype.setPage = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EVPRequest} returns this
+ */
+proto.titanium.EVPRequest.prototype.clearPage = function() {
+  return this.setPage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EVPRequest.prototype.hasPage = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional string trace_name = 7;
+ * @return {string}
+ */
+proto.titanium.EVPRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EVPRequest} returns this
+ */
+proto.titanium.EVPRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.EVPResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.EVPResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.EVPResponse.ResponseCase}
+ */
+proto.titanium.EVPResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.EVPResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.EVPResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.EVPResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.EVPResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.EVPResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EVPResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.EVPResponseData.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.EVPResponse}
+ */
+proto.titanium.EVPResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.EVPResponse;
+  return proto.titanium.EVPResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.EVPResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.EVPResponse}
+ */
+proto.titanium.EVPResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.EVPResponseData;
+      reader.readMessage(value,proto.titanium.EVPResponseData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.EVPResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.EVPResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.EVPResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EVPResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.EVPResponseData.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional EVPResponseData data = 1;
+ * @return {?proto.titanium.EVPResponseData}
+ */
+proto.titanium.EVPResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.EVPResponseData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.EVPResponseData, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.EVPResponseData|undefined} value
+ * @return {!proto.titanium.EVPResponse} returns this
+*/
+proto.titanium.EVPResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.EVPResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EVPResponse} returns this
+ */
+proto.titanium.EVPResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EVPResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.EVPResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.EVPResponse} returns this
+*/
+proto.titanium.EVPResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.EVPResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EVPResponse} returns this
+ */
+proto.titanium.EVPResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EVPResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.EVPResponseData.repeatedFields_ = [1,2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.EVPResponseData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.EVPResponseData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.EVPResponseData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EVPResponseData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    columnsList: jspb.Message.toObjectList(msg.getColumnsList(),
+    common_gateway_base_pb.ColumnInfo.toObject, includeInstance),
+    rowsList: jspb.Message.toObjectList(msg.getRowsList(),
+    common_gateway_base_pb.ValuesRow.toObject, includeInstance),
+    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.EVPResponseData}
+ */
+proto.titanium.EVPResponseData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.EVPResponseData;
+  return proto.titanium.EVPResponseData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.EVPResponseData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.EVPResponseData}
+ */
+proto.titanium.EVPResponseData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new common_gateway_base_pb.ColumnInfo;
+      reader.readMessage(value,common_gateway_base_pb.ColumnInfo.deserializeBinaryFromReader);
+      msg.addColumns(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.ValuesRow;
+      reader.readMessage(value,common_gateway_base_pb.ValuesRow.deserializeBinaryFromReader);
+      msg.addRows(value);
+      break;
+    case 3:
+      var value = new common_gateway_base_pb.Page;
+      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
+      msg.setPage(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.EVPResponseData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.EVPResponseData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.EVPResponseData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EVPResponseData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getColumnsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      1,
+      f,
+      common_gateway_base_pb.ColumnInfo.serializeBinaryToWriter
+    );
+  }
+  f = message.getRowsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      common_gateway_base_pb.ValuesRow.serializeBinaryToWriter
+    );
+  }
+  f = message.getPage();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      common_gateway_base_pb.Page.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * repeated ColumnInfo columns = 1;
+ * @return {!Array<!proto.titanium.ColumnInfo>}
+ */
+proto.titanium.EVPResponseData.prototype.getColumnsList = function() {
+  return /** @type{!Array<!proto.titanium.ColumnInfo>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ColumnInfo, 1));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ColumnInfo>} value
+ * @return {!proto.titanium.EVPResponseData} returns this
+*/
+proto.titanium.EVPResponseData.prototype.setColumnsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 1, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ColumnInfo=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ColumnInfo}
+ */
+proto.titanium.EVPResponseData.prototype.addColumns = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 1, opt_value, proto.titanium.ColumnInfo, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.EVPResponseData} returns this
+ */
+proto.titanium.EVPResponseData.prototype.clearColumnsList = function() {
+  return this.setColumnsList([]);
+};
+
+
+/**
+ * repeated ValuesRow rows = 2;
+ * @return {!Array<!proto.titanium.ValuesRow>}
+ */
+proto.titanium.EVPResponseData.prototype.getRowsList = function() {
+  return /** @type{!Array<!proto.titanium.ValuesRow>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.ValuesRow, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ValuesRow>} value
+ * @return {!proto.titanium.EVPResponseData} returns this
+*/
+proto.titanium.EVPResponseData.prototype.setRowsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ValuesRow=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ValuesRow}
+ */
+proto.titanium.EVPResponseData.prototype.addRows = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.titanium.ValuesRow, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.EVPResponseData} returns this
+ */
+proto.titanium.EVPResponseData.prototype.clearRowsList = function() {
+  return this.setRowsList([]);
+};
+
+
+/**
+ * optional Page page = 3;
+ * @return {?proto.titanium.Page}
+ */
+proto.titanium.EVPResponseData.prototype.getPage = function() {
+  return /** @type{?proto.titanium.Page} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.Page|undefined} value
+ * @return {!proto.titanium.EVPResponseData} returns this
+*/
+proto.titanium.EVPResponseData.prototype.setPage = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EVPResponseData} returns this
+ */
+proto.titanium.EVPResponseData.prototype.clearPage = function() {
+  return this.setPage(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EVPResponseData.prototype.hasPage = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusExplorerRequest.oneofGroups_ = [[5,6]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusExplorerRequest.IdCase = {
+  ID_NOT_SET: 0,
+  SUBMISSION_ID: 5,
+  GROUP_KEYS: 6
+};
+
+/**
+ * @return {proto.titanium.ConsensusExplorerRequest.IdCase}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.getIdCase = function() {
+  return /** @type {proto.titanium.ConsensusExplorerRequest.IdCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusExplorerRequest.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerRequest.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerRequest} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerRequest.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    traceName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    submittedDate: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    submissionId: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    groupKeys: (f = msg.getGroupKeys()) && common_gateway_base_pb.ListOfKeys.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerRequest}
+ */
+proto.titanium.ConsensusExplorerRequest.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerRequest;
+  return proto.titanium.ConsensusExplorerRequest.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerRequest} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerRequest}
+ */
+proto.titanium.ConsensusExplorerRequest.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setAssetId(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTraceName(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmittedDate(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusRunTimestamp(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmissionId(value);
+      break;
+    case 6:
+      var value = new common_gateway_base_pb.ListOfKeys;
+      reader.readMessage(value,common_gateway_base_pb.ListOfKeys.deserializeBinaryFromReader);
+      msg.setGroupKeys(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerRequest.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerRequest} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerRequest.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getAssetId();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getTraceName();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getSubmittedDate();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getConsensusRunTimestamp();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = /** @type {string} */ (jspb.Message.getField(message, 5));
+  if (f != null) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getGroupKeys();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      common_gateway_base_pb.ListOfKeys.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string asset_id = 1;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.getAssetId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.setAssetId = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string trace_name = 2;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.getTraceName = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string submitted_date = 3;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.getSubmittedDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.setSubmittedDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string consensus_run_timestamp = 4;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.getConsensusRunTimestamp = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.setConsensusRunTimestamp = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string submission_id = 5;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.getSubmissionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.setSubmissionId = function(value) {
+  return jspb.Message.setOneofField(this, 5, proto.titanium.ConsensusExplorerRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.clearSubmissionId = function() {
+  return jspb.Message.setOneofField(this, 5, proto.titanium.ConsensusExplorerRequest.oneofGroups_[0], undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.hasSubmissionId = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional ListOfKeys group_keys = 6;
+ * @return {?proto.titanium.ListOfKeys}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.getGroupKeys = function() {
+  return /** @type{?proto.titanium.ListOfKeys} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.ListOfKeys, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.ListOfKeys|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRequest} returns this
+*/
+proto.titanium.ConsensusExplorerRequest.prototype.setGroupKeys = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 6, proto.titanium.ConsensusExplorerRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRequest} returns this
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.clearGroupKeys = function() {
+  return this.setGroupKeys(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRequest.prototype.hasGroupKeys = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.ConsensusExplorerInstrumentDetailsResponse.ResponseCase}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.ConsensusExplorerInstrumentDetailsResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusExplorerInstrumentDetailsResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerInstrumentDetailsResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.ConsensusExplorerInstrumentDetailsData.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerInstrumentDetailsResponse;
+  return proto.titanium.ConsensusExplorerInstrumentDetailsResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusExplorerInstrumentDetailsData;
+      reader.readMessage(value,proto.titanium.ConsensusExplorerInstrumentDetailsData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerInstrumentDetailsResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusExplorerInstrumentDetailsData.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusExplorerInstrumentDetailsData data = 1;
+ * @return {?proto.titanium.ConsensusExplorerInstrumentDetailsData}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.ConsensusExplorerInstrumentDetailsData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusExplorerInstrumentDetailsData, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusExplorerInstrumentDetailsData|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse} returns this
+*/
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.ConsensusExplorerInstrumentDetailsResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse} returns this
+*/
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.ConsensusExplorerInstrumentDetailsResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsResponse} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.repeatedFields_ = [2];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerInstrumentDetailsData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    isExpert: jspb.Message.getBooleanFieldWithDefault(msg, 1, false),
+    instrumentDetailsList: jspb.Message.toObjectList(msg.getInstrumentDetailsList(),
+    common_gateway_base_pb.StringKeyVal.toObject, includeInstance),
+    instrumentSubmissionStatus: (f = msg.getInstrumentSubmissionStatus()) && proto.titanium.InstrumentSubmissionStatus.toObject(includeInstance, f),
+    consensusScores: (f = msg.getConsensusScores()) && proto.titanium.ConsensusScores.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerInstrumentDetailsData;
+  return proto.titanium.ConsensusExplorerInstrumentDetailsData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setIsExpert(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.StringKeyVal;
+      reader.readMessage(value,common_gateway_base_pb.StringKeyVal.deserializeBinaryFromReader);
+      msg.addInstrumentDetails(value);
+      break;
+    case 3:
+      var value = new proto.titanium.InstrumentSubmissionStatus;
+      reader.readMessage(value,proto.titanium.InstrumentSubmissionStatus.deserializeBinaryFromReader);
+      msg.setInstrumentSubmissionStatus(value);
+      break;
+    case 4:
+      var value = new proto.titanium.ConsensusScores;
+      reader.readMessage(value,proto.titanium.ConsensusScores.deserializeBinaryFromReader);
+      msg.setConsensusScores(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerInstrumentDetailsData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerInstrumentDetailsData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getIsExpert();
+  if (f) {
+    writer.writeBool(
+      1,
+      f
+    );
+  }
+  f = message.getInstrumentDetailsList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      2,
+      f,
+      common_gateway_base_pb.StringKeyVal.serializeBinaryToWriter
+    );
+  }
+  f = message.getInstrumentSubmissionStatus();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.titanium.InstrumentSubmissionStatus.serializeBinaryToWriter
+    );
+  }
+  f = message.getConsensusScores();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.titanium.ConsensusScores.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional bool is_expert = 1;
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.getIsExpert = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 1, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.setIsExpert = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 1, value);
+};
+
+
+/**
+ * repeated StringKeyVal instrument_details = 2;
+ * @return {!Array<!proto.titanium.StringKeyVal>}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.getInstrumentDetailsList = function() {
+  return /** @type{!Array<!proto.titanium.StringKeyVal>} */ (
+    jspb.Message.getRepeatedWrapperField(this, common_gateway_base_pb.StringKeyVal, 2));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.StringKeyVal>} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData} returns this
+*/
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.setInstrumentDetailsList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 2, value);
+};
+
+
+/**
+ * @param {!proto.titanium.StringKeyVal=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.StringKeyVal}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.addInstrumentDetails = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 2, opt_value, proto.titanium.StringKeyVal, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.clearInstrumentDetailsList = function() {
+  return this.setInstrumentDetailsList([]);
+};
+
+
+/**
+ * optional InstrumentSubmissionStatus instrument_submission_status = 3;
+ * @return {?proto.titanium.InstrumentSubmissionStatus}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.getInstrumentSubmissionStatus = function() {
+  return /** @type{?proto.titanium.InstrumentSubmissionStatus} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.InstrumentSubmissionStatus, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.InstrumentSubmissionStatus|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData} returns this
+*/
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.setInstrumentSubmissionStatus = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.clearInstrumentSubmissionStatus = function() {
+  return this.setInstrumentSubmissionStatus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.hasInstrumentSubmissionStatus = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional ConsensusScores consensus_scores = 4;
+ * @return {?proto.titanium.ConsensusScores}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.getConsensusScores = function() {
+  return /** @type{?proto.titanium.ConsensusScores} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusScores, 4));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusScores|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData} returns this
+*/
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.setConsensusScores = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.clearConsensusScores = function() {
+  return this.setConsensusScores(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.hasConsensusScores = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.InstrumentSubmissionStatus.repeatedFields_ = [7,8,9,10,11,12];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.InstrumentSubmissionStatus.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.InstrumentSubmissionStatus} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.InstrumentSubmissionStatus.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    highestDqe: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    consensusStatus: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    consensusStatusDetails: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    participantConsensusStatus: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    participantConsensusStatusDetails: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    bimodality: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    dqeHistoryList: jspb.Message.toObjectList(msg.getDqeHistoryList(),
+    proto.titanium.DateAndValue.toObject, includeInstance),
+    consensusStatusHistoryList: jspb.Message.toObjectList(msg.getConsensusStatusHistoryList(),
+    proto.titanium.DateAndValue.toObject, includeInstance),
+    consensusStatusDetailsHistoryList: jspb.Message.toObjectList(msg.getConsensusStatusDetailsHistoryList(),
+    proto.titanium.DateAndValue.toObject, includeInstance),
+    participantConsensusStatusHistoryList: jspb.Message.toObjectList(msg.getParticipantConsensusStatusHistoryList(),
+    proto.titanium.DateAndValue.toObject, includeInstance),
+    participantConsensusStatusDetailsHistoryList: jspb.Message.toObjectList(msg.getParticipantConsensusStatusDetailsHistoryList(),
+    proto.titanium.DateAndValue.toObject, includeInstance),
+    bimodalityHistoryList: jspb.Message.toObjectList(msg.getBimodalityHistoryList(),
+    proto.titanium.DateAndValue.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.InstrumentSubmissionStatus}
+ */
+proto.titanium.InstrumentSubmissionStatus.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.InstrumentSubmissionStatus;
+  return proto.titanium.InstrumentSubmissionStatus.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.InstrumentSubmissionStatus} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.InstrumentSubmissionStatus}
+ */
+proto.titanium.InstrumentSubmissionStatus.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setHighestDqe(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusStatus(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setConsensusStatusDetails(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParticipantConsensusStatus(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setParticipantConsensusStatusDetails(value);
+      break;
+    case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setBimodality(value);
+      break;
+    case 7:
+      var value = new proto.titanium.DateAndValue;
+      reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
+      msg.addDqeHistory(value);
+      break;
+    case 8:
+      var value = new proto.titanium.DateAndValue;
+      reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
+      msg.addConsensusStatusHistory(value);
+      break;
+    case 9:
+      var value = new proto.titanium.DateAndValue;
+      reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
+      msg.addConsensusStatusDetailsHistory(value);
+      break;
+    case 10:
+      var value = new proto.titanium.DateAndValue;
+      reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
+      msg.addParticipantConsensusStatusHistory(value);
+      break;
+    case 11:
+      var value = new proto.titanium.DateAndValue;
+      reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
+      msg.addParticipantConsensusStatusDetailsHistory(value);
+      break;
+    case 12:
+      var value = new proto.titanium.DateAndValue;
+      reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
+      msg.addBimodalityHistory(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.InstrumentSubmissionStatus.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.InstrumentSubmissionStatus} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.InstrumentSubmissionStatus.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getHighestDqe();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getConsensusStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getConsensusStatusDetails();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getParticipantConsensusStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getParticipantConsensusStatusDetails();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
+      f
+    );
+  }
+  f = message.getBimodality();
+  if (f.length > 0) {
+    writer.writeString(
+      6,
+      f
+    );
+  }
+  f = message.getDqeHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
+      f,
+      proto.titanium.DateAndValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getConsensusStatusHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      8,
+      f,
+      proto.titanium.DateAndValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getConsensusStatusDetailsHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      9,
+      f,
+      proto.titanium.DateAndValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getParticipantConsensusStatusHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
+      f,
+      proto.titanium.DateAndValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getParticipantConsensusStatusDetailsHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      11,
+      f,
+      proto.titanium.DateAndValue.serializeBinaryToWriter
+    );
+  }
+  f = message.getBimodalityHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      12,
+      f,
+      proto.titanium.DateAndValue.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string highest_dqe = 1;
+ * @return {string}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getHighestDqe = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.setHighestDqe = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional string consensus_status = 2;
+ * @return {string}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getConsensusStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.setConsensusStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string consensus_status_details = 3;
+ * @return {string}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getConsensusStatusDetails = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.setConsensusStatusDetails = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string participant_consensus_status = 4;
+ * @return {string}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getParticipantConsensusStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.setParticipantConsensusStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * optional string participant_consensus_status_details = 5;
+ * @return {string}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getParticipantConsensusStatusDetails = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.setParticipantConsensusStatusDetails = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * optional string bimodality = 6;
+ * @return {string}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getBimodality = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.setBimodality = function(value) {
+  return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * repeated DateAndValue dqe_history = 7;
+ * @return {!Array<!proto.titanium.DateAndValue>}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getDqeHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 7));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.DateAndValue>} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+*/
+proto.titanium.InstrumentSubmissionStatus.prototype.setDqeHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.titanium.DateAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.addDqeHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.titanium.DateAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.clearDqeHistoryList = function() {
+  return this.setDqeHistoryList([]);
+};
+
+
+/**
+ * repeated DateAndValue consensus_status_history = 8;
+ * @return {!Array<!proto.titanium.DateAndValue>}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getConsensusStatusHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 8));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.DateAndValue>} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+*/
+proto.titanium.InstrumentSubmissionStatus.prototype.setConsensusStatusHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 8, value);
+};
+
+
+/**
+ * @param {!proto.titanium.DateAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.addConsensusStatusHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 8, opt_value, proto.titanium.DateAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.clearConsensusStatusHistoryList = function() {
+  return this.setConsensusStatusHistoryList([]);
+};
+
+
+/**
+ * repeated DateAndValue consensus_status_details_history = 9;
+ * @return {!Array<!proto.titanium.DateAndValue>}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getConsensusStatusDetailsHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 9));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.DateAndValue>} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+*/
+proto.titanium.InstrumentSubmissionStatus.prototype.setConsensusStatusDetailsHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+/**
+ * @param {!proto.titanium.DateAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.addConsensusStatusDetailsHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.titanium.DateAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.clearConsensusStatusDetailsHistoryList = function() {
+  return this.setConsensusStatusDetailsHistoryList([]);
+};
+
+
+/**
+ * repeated DateAndValue participant_consensus_status_history = 10;
+ * @return {!Array<!proto.titanium.DateAndValue>}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getParticipantConsensusStatusHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 10));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.DateAndValue>} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+*/
+proto.titanium.InstrumentSubmissionStatus.prototype.setParticipantConsensusStatusHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+/**
+ * @param {!proto.titanium.DateAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.addParticipantConsensusStatusHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.titanium.DateAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.clearParticipantConsensusStatusHistoryList = function() {
+  return this.setParticipantConsensusStatusHistoryList([]);
+};
+
+
+/**
+ * repeated DateAndValue participant_consensus_status_details_history = 11;
+ * @return {!Array<!proto.titanium.DateAndValue>}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getParticipantConsensusStatusDetailsHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 11));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.DateAndValue>} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+*/
+proto.titanium.InstrumentSubmissionStatus.prototype.setParticipantConsensusStatusDetailsHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 11, value);
+};
+
+
+/**
+ * @param {!proto.titanium.DateAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.addParticipantConsensusStatusDetailsHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 11, opt_value, proto.titanium.DateAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.clearParticipantConsensusStatusDetailsHistoryList = function() {
+  return this.setParticipantConsensusStatusDetailsHistoryList([]);
+};
+
+
+/**
+ * repeated DateAndValue bimodality_history = 12;
+ * @return {!Array<!proto.titanium.DateAndValue>}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.getBimodalityHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 12));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.DateAndValue>} value
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+*/
+proto.titanium.InstrumentSubmissionStatus.prototype.setBimodalityHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 12, value);
+};
+
+
+/**
+ * @param {!proto.titanium.DateAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.addBimodalityHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 12, opt_value, proto.titanium.DateAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.InstrumentSubmissionStatus} returns this
+ */
+proto.titanium.InstrumentSubmissionStatus.prototype.clearBimodalityHistoryList = function() {
+  return this.setBimodalityHistoryList([]);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.DateAndValue.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.DateAndValue.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.DateAndValue} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.DateAndValue.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    date: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    value: (f = msg.getValue()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.DateAndValue.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.DateAndValue;
+  return proto.titanium.DateAndValue.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.DateAndValue} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.DateAndValue.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDate(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setValue(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.DateAndValue.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.DateAndValue.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.DateAndValue} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.DateAndValue.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDate();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getValue();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string date = 1;
+ * @return {string}
+ */
+proto.titanium.DateAndValue.prototype.getDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.DateAndValue} returns this
+ */
+proto.titanium.DateAndValue.prototype.setDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Value value = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.DateAndValue.prototype.getValue = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.DateAndValue} returns this
+*/
+proto.titanium.DateAndValue.prototype.setValue = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.DateAndValue} returns this
+ */
+proto.titanium.DateAndValue.prototype.clearValue = function() {
+  return this.setValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.DateAndValue.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ExpertiseScoreWithDate.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ExpertiseScoreWithDate} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ExpertiseScoreWithDate.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    date: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    expertiseRank: (f = msg.getExpertiseRank()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    expertsCount: (f = msg.getExpertsCount()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ExpertiseScoreWithDate}
+ */
+proto.titanium.ExpertiseScoreWithDate.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ExpertiseScoreWithDate;
+  return proto.titanium.ExpertiseScoreWithDate.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ExpertiseScoreWithDate} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ExpertiseScoreWithDate}
+ */
+proto.titanium.ExpertiseScoreWithDate.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDate(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setScore(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setExpertiseRank(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setExpertsCount(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ExpertiseScoreWithDate.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ExpertiseScoreWithDate} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ExpertiseScoreWithDate.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDate();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getScore();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertiseRank();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertsCount();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional string date = 1;
+ * @return {string}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.getDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ExpertiseScoreWithDate} returns this
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.setDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Value score = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.getScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScoreWithDate} returns this
+*/
+proto.titanium.ExpertiseScoreWithDate.prototype.setScore = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScoreWithDate} returns this
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.clearScore = function() {
+  return this.setScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.hasScore = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value expertise_rank = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.getExpertiseRank = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScoreWithDate} returns this
+*/
+proto.titanium.ExpertiseScoreWithDate.prototype.setExpertiseRank = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScoreWithDate} returns this
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.clearExpertiseRank = function() {
+  return this.setExpertiseRank(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.hasExpertiseRank = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value experts_count = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.getExpertsCount = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScoreWithDate} returns this
+*/
+proto.titanium.ExpertiseScoreWithDate.prototype.setExpertsCount = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScoreWithDate} returns this
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.clearExpertsCount = function() {
+  return this.setExpertsCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScoreWithDate.prototype.hasExpertsCount = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.EvpAlignmentScoreWithDate.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.EvpAlignmentScoreWithDate} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EvpAlignmentScoreWithDate.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    date: jspb.Message.getFieldWithDefault(msg, 1, ""),
+    score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    scoreStatus: jspb.Message.getFieldWithDefault(msg, 3, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.EvpAlignmentScoreWithDate}
+ */
+proto.titanium.EvpAlignmentScoreWithDate.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.EvpAlignmentScoreWithDate;
+  return proto.titanium.EvpAlignmentScoreWithDate.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.EvpAlignmentScoreWithDate} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.EvpAlignmentScoreWithDate}
+ */
+proto.titanium.EvpAlignmentScoreWithDate.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setDate(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setScore(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setScoreStatus(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.EvpAlignmentScoreWithDate.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.EvpAlignmentScoreWithDate} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EvpAlignmentScoreWithDate.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getDate();
+  if (f.length > 0) {
+    writer.writeString(
+      1,
+      f
+    );
+  }
+  f = message.getScore();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getScoreStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional string date = 1;
+ * @return {string}
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.getDate = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 1, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EvpAlignmentScoreWithDate} returns this
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.setDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 1, value);
+};
+
+
+/**
+ * optional google.protobuf.Value score = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.getScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpAlignmentScoreWithDate} returns this
+*/
+proto.titanium.EvpAlignmentScoreWithDate.prototype.setScore = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpAlignmentScoreWithDate} returns this
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.clearScore = function() {
+  return this.setScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.hasScore = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional string score_status = 3;
+ * @return {string}
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.getScoreStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EvpAlignmentScoreWithDate} returns this
+ */
+proto.titanium.EvpAlignmentScoreWithDate.prototype.setScoreStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusScores.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusScores.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusScores} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusScores.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    consensusDensityScore: (f = msg.getConsensusDensityScore()) && proto.titanium.ConsensusDensityScore.toObject(includeInstance, f),
+    expertiseScore: (f = msg.getExpertiseScore()) && proto.titanium.ExpertiseScore.toObject(includeInstance, f),
+    evpQualityScore: (f = msg.getEvpQualityScore()) && proto.titanium.EvpQualityScore.toObject(includeInstance, f),
+    evpAlignmentScore: (f = msg.getEvpAlignmentScore()) && proto.titanium.EvpAlignmentScore.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusScores}
+ */
+proto.titanium.ConsensusScores.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusScores;
+  return proto.titanium.ConsensusScores.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusScores} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusScores}
+ */
+proto.titanium.ConsensusScores.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusDensityScore;
+      reader.readMessage(value,proto.titanium.ConsensusDensityScore.deserializeBinaryFromReader);
+      msg.setConsensusDensityScore(value);
+      break;
+    case 3:
+      var value = new proto.titanium.ExpertiseScore;
+      reader.readMessage(value,proto.titanium.ExpertiseScore.deserializeBinaryFromReader);
+      msg.setExpertiseScore(value);
+      break;
+    case 2:
+      var value = new proto.titanium.EvpQualityScore;
+      reader.readMessage(value,proto.titanium.EvpQualityScore.deserializeBinaryFromReader);
+      msg.setEvpQualityScore(value);
+      break;
+    case 4:
+      var value = new proto.titanium.EvpAlignmentScore;
+      reader.readMessage(value,proto.titanium.EvpAlignmentScore.deserializeBinaryFromReader);
+      msg.setEvpAlignmentScore(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusScores.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusScores.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusScores} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusScores.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getConsensusDensityScore();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusDensityScore.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertiseScore();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.titanium.ExpertiseScore.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpQualityScore();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.titanium.EvpQualityScore.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpAlignmentScore();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.titanium.EvpAlignmentScore.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusDensityScore consensus_density_score = 1;
+ * @return {?proto.titanium.ConsensusDensityScore}
+ */
+proto.titanium.ConsensusScores.prototype.getConsensusDensityScore = function() {
+  return /** @type{?proto.titanium.ConsensusDensityScore} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusDensityScore, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusDensityScore|undefined} value
+ * @return {!proto.titanium.ConsensusScores} returns this
+*/
+proto.titanium.ConsensusScores.prototype.setConsensusDensityScore = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusScores} returns this
+ */
+proto.titanium.ConsensusScores.prototype.clearConsensusDensityScore = function() {
+  return this.setConsensusDensityScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusScores.prototype.hasConsensusDensityScore = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional ExpertiseScore expertise_score = 3;
+ * @return {?proto.titanium.ExpertiseScore}
+ */
+proto.titanium.ConsensusScores.prototype.getExpertiseScore = function() {
+  return /** @type{?proto.titanium.ExpertiseScore} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ExpertiseScore, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.ExpertiseScore|undefined} value
+ * @return {!proto.titanium.ConsensusScores} returns this
+*/
+proto.titanium.ConsensusScores.prototype.setExpertiseScore = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusScores} returns this
+ */
+proto.titanium.ConsensusScores.prototype.clearExpertiseScore = function() {
+  return this.setExpertiseScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusScores.prototype.hasExpertiseScore = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional EvpQualityScore evp_quality_score = 2;
+ * @return {?proto.titanium.EvpQualityScore}
+ */
+proto.titanium.ConsensusScores.prototype.getEvpQualityScore = function() {
+  return /** @type{?proto.titanium.EvpQualityScore} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.EvpQualityScore, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.EvpQualityScore|undefined} value
+ * @return {!proto.titanium.ConsensusScores} returns this
+*/
+proto.titanium.ConsensusScores.prototype.setEvpQualityScore = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusScores} returns this
+ */
+proto.titanium.ConsensusScores.prototype.clearEvpQualityScore = function() {
+  return this.setEvpQualityScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusScores.prototype.hasEvpQualityScore = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional EvpAlignmentScore evp_alignment_score = 4;
+ * @return {?proto.titanium.EvpAlignmentScore}
+ */
+proto.titanium.ConsensusScores.prototype.getEvpAlignmentScore = function() {
+  return /** @type{?proto.titanium.EvpAlignmentScore} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.EvpAlignmentScore, 4));
+};
+
+
+/**
+ * @param {?proto.titanium.EvpAlignmentScore|undefined} value
+ * @return {!proto.titanium.ConsensusScores} returns this
+*/
+proto.titanium.ConsensusScores.prototype.setEvpAlignmentScore = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusScores} returns this
+ */
+proto.titanium.ConsensusScores.prototype.clearEvpAlignmentScore = function() {
+  return this.setEvpAlignmentScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusScores.prototype.hasEvpAlignmentScore = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ConsensusDensityScore.repeatedFields_ = [9];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusDensityScore.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusDensityScore.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusDensityScore} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusDensityScore.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    outlierVolume: (f = msg.getOutlierVolume()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    bimodality: (f = msg.getBimodality()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    dispersion: (f = msg.getDispersion()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    evpAlignmentScore: (f = msg.getEvpAlignmentScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    evpQuality: (f = msg.getEvpQuality()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    numberOfParticipants: (f = msg.getNumberOfParticipants()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    challengeQuality: (f = msg.getChallengeQuality()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    historyList: jspb.Message.toObjectList(msg.getHistoryList(),
+    proto.titanium.DateAndValue.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusDensityScore}
+ */
+proto.titanium.ConsensusDensityScore.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusDensityScore;
+  return proto.titanium.ConsensusDensityScore.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusDensityScore} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusDensityScore}
+ */
+proto.titanium.ConsensusDensityScore.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setScore(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setOutlierVolume(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setBimodality(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setDispersion(value);
+      break;
+    case 5:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setEvpAlignmentScore(value);
+      break;
+    case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setEvpQuality(value);
+      break;
+    case 7:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setNumberOfParticipants(value);
+      break;
+    case 8:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setChallengeQuality(value);
+      break;
+    case 9:
+      var value = new proto.titanium.DateAndValue;
+      reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
+      msg.addHistory(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusDensityScore.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusDensityScore.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusDensityScore} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusDensityScore.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getScore();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getOutlierVolume();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getBimodality();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getDispersion();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpAlignmentScore();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpQuality();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getNumberOfParticipants();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getChallengeQuality();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      9,
+      f,
+      proto.titanium.DateAndValue.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value score = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setScore = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearScore = function() {
+  return this.setScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasScore = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value outlier_volume = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getOutlierVolume = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setOutlierVolume = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearOutlierVolume = function() {
+  return this.setOutlierVolume(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasOutlierVolume = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value bimodality = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getBimodality = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setBimodality = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearBimodality = function() {
+  return this.setBimodality(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasBimodality = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value dispersion = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getDispersion = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setDispersion = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearDispersion = function() {
+  return this.setDispersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasDispersion = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value evp_alignment_score = 5;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getEvpAlignmentScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setEvpAlignmentScore = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearEvpAlignmentScore = function() {
+  return this.setEvpAlignmentScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasEvpAlignmentScore = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value evp_quality = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getEvpQuality = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setEvpQuality = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearEvpQuality = function() {
+  return this.setEvpQuality(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasEvpQuality = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value number_of_participants = 7;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getNumberOfParticipants = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setNumberOfParticipants = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearNumberOfParticipants = function() {
+  return this.setNumberOfParticipants(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasNumberOfParticipants = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value challenge_quality = 8;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getChallengeQuality = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setChallengeQuality = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearChallengeQuality = function() {
+  return this.setChallengeQuality(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasChallengeQuality = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * repeated DateAndValue history = 9;
+ * @return {!Array<!proto.titanium.DateAndValue>}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 9));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.DateAndValue>} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 9, value);
+};
+
+
+/**
+ * @param {!proto.titanium.DateAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.ConsensusDensityScore.prototype.addHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 9, opt_value, proto.titanium.DateAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearHistoryList = function() {
+  return this.setHistoryList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.ExpertiseScore.repeatedFields_ = [10];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ExpertiseScore.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ExpertiseScore.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ExpertiseScore} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ExpertiseScore.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    expertiseRank: (f = msg.getExpertiseRank()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    expertsCount: (f = msg.getExpertsCount()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    submittedScore: (f = msg.getSubmittedScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    consensusScore: (f = msg.getConsensusScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    dimensionCreditScore: (f = msg.getDimensionCreditScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    challengeScore: (f = msg.getChallengeScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    consensusDistanceScore: (f = msg.getConsensusDistanceScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    proximitytopostchallengeconsensusmean: (f = msg.getProximitytopostchallengeconsensusmean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    historyList: jspb.Message.toObjectList(msg.getHistoryList(),
+    proto.titanium.ExpertiseScoreWithDate.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ExpertiseScore}
+ */
+proto.titanium.ExpertiseScore.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ExpertiseScore;
+  return proto.titanium.ExpertiseScore.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ExpertiseScore} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ExpertiseScore}
+ */
+proto.titanium.ExpertiseScore.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setScore(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setExpertiseRank(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setExpertsCount(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setSubmittedScore(value);
+      break;
+    case 5:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setConsensusScore(value);
+      break;
+    case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setDimensionCreditScore(value);
+      break;
+    case 7:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setChallengeScore(value);
+      break;
+    case 8:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setConsensusDistanceScore(value);
+      break;
+    case 9:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setProximitytopostchallengeconsensusmean(value);
+      break;
+    case 10:
+      var value = new proto.titanium.ExpertiseScoreWithDate;
+      reader.readMessage(value,proto.titanium.ExpertiseScoreWithDate.deserializeBinaryFromReader);
+      msg.addHistory(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ExpertiseScore.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ExpertiseScore.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ExpertiseScore} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ExpertiseScore.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getScore();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertiseRank();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertsCount();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmittedScore();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getConsensusScore();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getDimensionCreditScore();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getChallengeScore();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getConsensusDistanceScore();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getProximitytopostchallengeconsensusmean();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      10,
+      f,
+      proto.titanium.ExpertiseScoreWithDate.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value score = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setScore = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearScore = function() {
+  return this.setScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasScore = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value expertise_rank = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getExpertiseRank = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setExpertiseRank = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearExpertiseRank = function() {
+  return this.setExpertiseRank(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasExpertiseRank = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value experts_count = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getExpertsCount = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setExpertsCount = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearExpertsCount = function() {
+  return this.setExpertsCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasExpertsCount = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value submitted_score = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getSubmittedScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setSubmittedScore = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearSubmittedScore = function() {
+  return this.setSubmittedScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasSubmittedScore = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value consensus_score = 5;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getConsensusScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setConsensusScore = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearConsensusScore = function() {
+  return this.setConsensusScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasConsensusScore = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value dimension_credit_score = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getDimensionCreditScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setDimensionCreditScore = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearDimensionCreditScore = function() {
+  return this.setDimensionCreditScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasDimensionCreditScore = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value challenge_score = 7;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getChallengeScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setChallengeScore = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearChallengeScore = function() {
+  return this.setChallengeScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasChallengeScore = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value consensus_distance_score = 8;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getConsensusDistanceScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setConsensusDistanceScore = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearConsensusDistanceScore = function() {
+  return this.setConsensusDistanceScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasConsensusDistanceScore = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value proximityToPostChallengeConsensusMean = 9;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertiseScore.prototype.getProximitytopostchallengeconsensusmean = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setProximitytopostchallengeconsensusmean = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearProximitytopostchallengeconsensusmean = function() {
+  return this.setProximitytopostchallengeconsensusmean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseScore.prototype.hasProximitytopostchallengeconsensusmean = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * repeated ExpertiseScoreWithDate history = 10;
+ * @return {!Array<!proto.titanium.ExpertiseScoreWithDate>}
+ */
+proto.titanium.ExpertiseScore.prototype.getHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.ExpertiseScoreWithDate>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.ExpertiseScoreWithDate, 10));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.ExpertiseScoreWithDate>} value
+ * @return {!proto.titanium.ExpertiseScore} returns this
+*/
+proto.titanium.ExpertiseScore.prototype.setHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 10, value);
+};
+
+
+/**
+ * @param {!proto.titanium.ExpertiseScoreWithDate=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.ExpertiseScoreWithDate}
+ */
+proto.titanium.ExpertiseScore.prototype.addHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 10, opt_value, proto.titanium.ExpertiseScoreWithDate, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.ExpertiseScore} returns this
+ */
+proto.titanium.ExpertiseScore.prototype.clearHistoryList = function() {
+  return this.setHistoryList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.EvpQualityScore.repeatedFields_ = [5];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.EvpQualityScore.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.EvpQualityScore.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.EvpQualityScore} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EvpQualityScore.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    tradeCount: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    orderCount: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    indicativeCount: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    historyList: jspb.Message.toObjectList(msg.getHistoryList(),
+    proto.titanium.DateAndValue.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.EvpQualityScore}
+ */
+proto.titanium.EvpQualityScore.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.EvpQualityScore;
+  return proto.titanium.EvpQualityScore.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.EvpQualityScore} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.EvpQualityScore}
+ */
+proto.titanium.EvpQualityScore.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setScore(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTradeCount(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setOrderCount(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setIndicativeCount(value);
+      break;
+    case 5:
+      var value = new proto.titanium.DateAndValue;
+      reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
+      msg.addHistory(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.EvpQualityScore.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.EvpQualityScore.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.EvpQualityScore} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EvpQualityScore.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getScore();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getTradeCount();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getOrderCount();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getIndicativeCount();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+  f = message.getHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      5,
+      f,
+      proto.titanium.DateAndValue.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value score = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpQualityScore.prototype.getScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpQualityScore} returns this
+*/
+proto.titanium.EvpQualityScore.prototype.setScore = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpQualityScore} returns this
+ */
+proto.titanium.EvpQualityScore.prototype.clearScore = function() {
+  return this.setScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpQualityScore.prototype.hasScore = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string trade_count = 2;
+ * @return {string}
+ */
+proto.titanium.EvpQualityScore.prototype.getTradeCount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EvpQualityScore} returns this
+ */
+proto.titanium.EvpQualityScore.prototype.setTradeCount = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional string order_count = 3;
+ * @return {string}
+ */
+proto.titanium.EvpQualityScore.prototype.getOrderCount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EvpQualityScore} returns this
+ */
+proto.titanium.EvpQualityScore.prototype.setOrderCount = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string indicative_count = 4;
+ * @return {string}
+ */
+proto.titanium.EvpQualityScore.prototype.getIndicativeCount = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EvpQualityScore} returns this
+ */
+proto.titanium.EvpQualityScore.prototype.setIndicativeCount = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+/**
+ * repeated DateAndValue history = 5;
+ * @return {!Array<!proto.titanium.DateAndValue>}
+ */
+proto.titanium.EvpQualityScore.prototype.getHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 5));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.DateAndValue>} value
+ * @return {!proto.titanium.EvpQualityScore} returns this
+*/
+proto.titanium.EvpQualityScore.prototype.setHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+};
+
+
+/**
+ * @param {!proto.titanium.DateAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.DateAndValue}
+ */
+proto.titanium.EvpQualityScore.prototype.addHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.titanium.DateAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.EvpQualityScore} returns this
+ */
+proto.titanium.EvpQualityScore.prototype.clearHistoryList = function() {
+  return this.setHistoryList([]);
+};
+
+
+
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.EvpAlignmentScore.repeatedFields_ = [7];
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.EvpAlignmentScore.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.EvpAlignmentScore.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.EvpAlignmentScore} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EvpAlignmentScore.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    scoreStatus: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    evpMid: (f = msg.getEvpMid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    submissionMean: (f = msg.getSubmissionMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    submissionStdDev: (f = msg.getSubmissionStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    evpAlignmentDispersionScore: (f = msg.getEvpAlignmentDispersionScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    historyList: jspb.Message.toObjectList(msg.getHistoryList(),
+    proto.titanium.EvpAlignmentScoreWithDate.toObject, includeInstance)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.EvpAlignmentScore}
+ */
+proto.titanium.EvpAlignmentScore.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.EvpAlignmentScore;
+  return proto.titanium.EvpAlignmentScore.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.EvpAlignmentScore} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.EvpAlignmentScore}
+ */
+proto.titanium.EvpAlignmentScore.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setScore(value);
+      break;
+    case 2:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setScoreStatus(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setEvpMid(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setSubmissionMean(value);
+      break;
+    case 5:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setSubmissionStdDev(value);
+      break;
+    case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setEvpAlignmentDispersionScore(value);
+      break;
+    case 7:
+      var value = new proto.titanium.EvpAlignmentScoreWithDate;
+      reader.readMessage(value,proto.titanium.EvpAlignmentScoreWithDate.deserializeBinaryFromReader);
+      msg.addHistory(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.EvpAlignmentScore.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.EvpAlignmentScore.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.EvpAlignmentScore} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EvpAlignmentScore.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getScore();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getScoreStatus();
+  if (f.length > 0) {
+    writer.writeString(
+      2,
+      f
+    );
+  }
+  f = message.getEvpMid();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmissionMean();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmissionStdDev();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpAlignmentDispersionScore();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getHistoryList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      7,
+      f,
+      proto.titanium.EvpAlignmentScoreWithDate.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value score = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpAlignmentScore.prototype.getScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+*/
+proto.titanium.EvpAlignmentScore.prototype.setScore = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+ */
+proto.titanium.EvpAlignmentScore.prototype.clearScore = function() {
+  return this.setScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpAlignmentScore.prototype.hasScore = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional string score_status = 2;
+ * @return {string}
+ */
+proto.titanium.EvpAlignmentScore.prototype.getScoreStatus = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+ */
+proto.titanium.EvpAlignmentScore.prototype.setScoreStatus = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
+};
+
+
+/**
+ * optional google.protobuf.Value evp_mid = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpAlignmentScore.prototype.getEvpMid = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+*/
+proto.titanium.EvpAlignmentScore.prototype.setEvpMid = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+ */
+proto.titanium.EvpAlignmentScore.prototype.clearEvpMid = function() {
+  return this.setEvpMid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpAlignmentScore.prototype.hasEvpMid = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value submission_mean = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpAlignmentScore.prototype.getSubmissionMean = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+*/
+proto.titanium.EvpAlignmentScore.prototype.setSubmissionMean = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+ */
+proto.titanium.EvpAlignmentScore.prototype.clearSubmissionMean = function() {
+  return this.setSubmissionMean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpAlignmentScore.prototype.hasSubmissionMean = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value submission_std_dev = 5;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpAlignmentScore.prototype.getSubmissionStdDev = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+*/
+proto.titanium.EvpAlignmentScore.prototype.setSubmissionStdDev = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+ */
+proto.titanium.EvpAlignmentScore.prototype.clearSubmissionStdDev = function() {
+  return this.setSubmissionStdDev(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpAlignmentScore.prototype.hasSubmissionStdDev = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value evp_alignment_dispersion_score = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpAlignmentScore.prototype.getEvpAlignmentDispersionScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+*/
+proto.titanium.EvpAlignmentScore.prototype.setEvpAlignmentDispersionScore = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+ */
+proto.titanium.EvpAlignmentScore.prototype.clearEvpAlignmentDispersionScore = function() {
+  return this.setEvpAlignmentDispersionScore(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpAlignmentScore.prototype.hasEvpAlignmentDispersionScore = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * repeated EvpAlignmentScoreWithDate history = 7;
+ * @return {!Array<!proto.titanium.EvpAlignmentScoreWithDate>}
+ */
+proto.titanium.EvpAlignmentScore.prototype.getHistoryList = function() {
+  return /** @type{!Array<!proto.titanium.EvpAlignmentScoreWithDate>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.EvpAlignmentScoreWithDate, 7));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.EvpAlignmentScoreWithDate>} value
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+*/
+proto.titanium.EvpAlignmentScore.prototype.setHistoryList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
+};
+
+
+/**
+ * @param {!proto.titanium.EvpAlignmentScoreWithDate=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.EvpAlignmentScoreWithDate}
+ */
+proto.titanium.EvpAlignmentScore.prototype.addHistory = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.titanium.EvpAlignmentScoreWithDate, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.EvpAlignmentScore} returns this
+ */
+proto.titanium.EvpAlignmentScore.prototype.clearHistoryList = function() {
+  return this.setHistoryList([]);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusExplorerRangeResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.ConsensusExplorerRangeResponse.ResponseCase}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.ConsensusExplorerRangeResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusExplorerRangeResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerRangeResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerRangeResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerRangeResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.ConsensusExplorerRangeData.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerRangeResponse}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerRangeResponse;
+  return proto.titanium.ConsensusExplorerRangeResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerRangeResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerRangeResponse}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusExplorerRangeData;
+      reader.readMessage(value,proto.titanium.ConsensusExplorerRangeData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerRangeResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerRangeResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerRangeResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusExplorerRangeData data = 1;
+ * @return {?proto.titanium.ConsensusExplorerRangeData}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.ConsensusExplorerRangeData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusExplorerRangeData, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusExplorerRangeData|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeResponse} returns this
+*/
+proto.titanium.ConsensusExplorerRangeResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.ConsensusExplorerRangeResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeResponse} returns this
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeResponse} returns this
+*/
+proto.titanium.ConsensusExplorerRangeResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.ConsensusExplorerRangeResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeResponse} returns this
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerRangeData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerRangeData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerRangeData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    chartRanges: (f = msg.getChartRanges()) && proto.titanium.ChartRanges.toObject(includeInstance, f),
+    submissionPoint: (f = msg.getSubmissionPoint()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    submissionMeanPoint: (f = msg.getSubmissionMeanPoint()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    evpMid: (f = msg.getEvpMid()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    allParticipantCrsConsensusPrice: (f = msg.getAllParticipantCrsConsensusPrice()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    marketDataCrsConsensusPrice: (f = msg.getMarketDataCrsConsensusPrice()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    challengeOverlayCrsConsensusPrice: (f = msg.getChallengeOverlayCrsConsensusPrice()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    expertPreChallengeConsensusPrice: (f = msg.getExpertPreChallengeConsensusPrice()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    expertPostChallengeConsensusPrice: (f = msg.getExpertPostChallengeConsensusPrice()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    bimodalLeftMean: (f = msg.getBimodalLeftMean()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    bimodalRightMean: (f = msg.getBimodalRightMean()) && proto.titanium.RangePoint.toObject(includeInstance, f),
+    tradeRangesData: (f = msg.getTradeRangesData()) && proto.titanium.TradeRangesData.toObject(includeInstance, f),
+    tradePeriodsWithMetrics: (f = msg.getTradePeriodsWithMetrics()) && proto.titanium.TradePeriodsWithMetrics.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerRangeData}
+ */
+proto.titanium.ConsensusExplorerRangeData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerRangeData;
+  return proto.titanium.ConsensusExplorerRangeData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerRangeData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerRangeData}
+ */
+proto.titanium.ConsensusExplorerRangeData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ChartRanges;
+      reader.readMessage(value,proto.titanium.ChartRanges.deserializeBinaryFromReader);
+      msg.setChartRanges(value);
+      break;
+    case 2:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setSubmissionPoint(value);
+      break;
+    case 3:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setSubmissionMeanPoint(value);
+      break;
+    case 4:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setEvpMid(value);
+      break;
+    case 5:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setAllParticipantCrsConsensusPrice(value);
+      break;
+    case 6:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setMarketDataCrsConsensusPrice(value);
+      break;
+    case 7:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setChallengeOverlayCrsConsensusPrice(value);
+      break;
+    case 8:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setExpertPreChallengeConsensusPrice(value);
+      break;
+    case 9:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setExpertPostChallengeConsensusPrice(value);
+      break;
+    case 10:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setBimodalLeftMean(value);
+      break;
+    case 11:
+      var value = new proto.titanium.RangePoint;
+      reader.readMessage(value,proto.titanium.RangePoint.deserializeBinaryFromReader);
+      msg.setBimodalRightMean(value);
+      break;
+    case 12:
+      var value = new proto.titanium.TradeRangesData;
+      reader.readMessage(value,proto.titanium.TradeRangesData.deserializeBinaryFromReader);
+      msg.setTradeRangesData(value);
+      break;
+    case 13:
+      var value = new proto.titanium.TradePeriodsWithMetrics;
+      reader.readMessage(value,proto.titanium.TradePeriodsWithMetrics.deserializeBinaryFromReader);
+      msg.setTradePeriodsWithMetrics(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerRangeData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getChartRanges();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ChartRanges.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmissionPoint();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmissionMeanPoint();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpMid();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllParticipantCrsConsensusPrice();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getMarketDataCrsConsensusPrice();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getChallengeOverlayCrsConsensusPrice();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertPreChallengeConsensusPrice();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertPostChallengeConsensusPrice();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getBimodalLeftMean();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getBimodalRightMean();
+  if (f != null) {
+    writer.writeMessage(
+      11,
+      f,
+      proto.titanium.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getTradeRangesData();
+  if (f != null) {
+    writer.writeMessage(
+      12,
+      f,
+      proto.titanium.TradeRangesData.serializeBinaryToWriter
+    );
+  }
+  f = message.getTradePeriodsWithMetrics();
+  if (f != null) {
+    writer.writeMessage(
+      13,
+      f,
+      proto.titanium.TradePeriodsWithMetrics.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ChartRanges chart_ranges = 1;
+ * @return {?proto.titanium.ChartRanges}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getChartRanges = function() {
+  return /** @type{?proto.titanium.ChartRanges} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ChartRanges, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ChartRanges|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setChartRanges = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearChartRanges = function() {
+  return this.setChartRanges(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasChartRanges = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional RangePoint submission_point = 2;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getSubmissionPoint = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setSubmissionPoint = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearSubmissionPoint = function() {
+  return this.setSubmissionPoint(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasSubmissionPoint = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional RangePoint submission_mean_point = 3;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getSubmissionMeanPoint = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setSubmissionMeanPoint = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearSubmissionMeanPoint = function() {
+  return this.setSubmissionMeanPoint(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasSubmissionMeanPoint = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional RangePoint evp_mid = 4;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getEvpMid = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 4));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setEvpMid = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearEvpMid = function() {
+  return this.setEvpMid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasEvpMid = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional RangePoint all_participant_crs_consensus_price = 5;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getAllParticipantCrsConsensusPrice = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 5));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setAllParticipantCrsConsensusPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearAllParticipantCrsConsensusPrice = function() {
+  return this.setAllParticipantCrsConsensusPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasAllParticipantCrsConsensusPrice = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional RangePoint market_data_crs_consensus_price = 6;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getMarketDataCrsConsensusPrice = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setMarketDataCrsConsensusPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearMarketDataCrsConsensusPrice = function() {
+  return this.setMarketDataCrsConsensusPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasMarketDataCrsConsensusPrice = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional RangePoint challenge_overlay_crs_consensus_price = 7;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getChallengeOverlayCrsConsensusPrice = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 7));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setChallengeOverlayCrsConsensusPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearChallengeOverlayCrsConsensusPrice = function() {
+  return this.setChallengeOverlayCrsConsensusPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasChallengeOverlayCrsConsensusPrice = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional RangePoint expert_pre_challenge_consensus_price = 8;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getExpertPreChallengeConsensusPrice = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 8));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setExpertPreChallengeConsensusPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearExpertPreChallengeConsensusPrice = function() {
+  return this.setExpertPreChallengeConsensusPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasExpertPreChallengeConsensusPrice = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional RangePoint expert_post_challenge_consensus_price = 9;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getExpertPostChallengeConsensusPrice = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 9));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setExpertPostChallengeConsensusPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearExpertPostChallengeConsensusPrice = function() {
+  return this.setExpertPostChallengeConsensusPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasExpertPostChallengeConsensusPrice = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional RangePoint bimodal_left_mean = 10;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getBimodalLeftMean = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 10));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setBimodalLeftMean = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearBimodalLeftMean = function() {
+  return this.setBimodalLeftMean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasBimodalLeftMean = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+/**
+ * optional RangePoint bimodal_right_mean = 11;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getBimodalRightMean = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.RangePoint, 11));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setBimodalRightMean = function(value) {
+  return jspb.Message.setWrapperField(this, 11, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearBimodalRightMean = function() {
+  return this.setBimodalRightMean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasBimodalRightMean = function() {
+  return jspb.Message.getField(this, 11) != null;
+};
+
+
+/**
+ * optional TradeRangesData trade_ranges_data = 12;
+ * @return {?proto.titanium.TradeRangesData}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getTradeRangesData = function() {
+  return /** @type{?proto.titanium.TradeRangesData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.TradeRangesData, 12));
+};
+
+
+/**
+ * @param {?proto.titanium.TradeRangesData|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setTradeRangesData = function(value) {
+  return jspb.Message.setWrapperField(this, 12, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearTradeRangesData = function() {
+  return this.setTradeRangesData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasTradeRangesData = function() {
+  return jspb.Message.getField(this, 12) != null;
+};
+
+
+/**
+ * optional TradePeriodsWithMetrics trade_periods_with_metrics = 13;
+ * @return {?proto.titanium.TradePeriodsWithMetrics}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getTradePeriodsWithMetrics = function() {
+  return /** @type{?proto.titanium.TradePeriodsWithMetrics} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.TradePeriodsWithMetrics, 13));
+};
+
+
+/**
+ * @param {?proto.titanium.TradePeriodsWithMetrics|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setTradePeriodsWithMetrics = function(value) {
+  return jspb.Message.setWrapperField(this, 13, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearTradePeriodsWithMetrics = function() {
+  return this.setTradePeriodsWithMetrics(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasTradePeriodsWithMetrics = function() {
+  return jspb.Message.getField(this, 13) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ChartRanges.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ChartRanges.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ChartRanges} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ChartRanges.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    submissionMinMax: (f = msg.getSubmissionMinMax()) && proto.titanium.Range.toObject(includeInstance, f),
+    submissionMeanMedian: (f = msg.getSubmissionMeanMedian()) && proto.titanium.Range.toObject(includeInstance, f),
+    evp: (f = msg.getEvp()) && proto.titanium.Range.toObject(includeInstance, f),
+    submissionOnlyConsensus: (f = msg.getSubmissionOnlyConsensus()) && proto.titanium.Range.toObject(includeInstance, f),
+    marketDataOverlayConsensus: (f = msg.getMarketDataOverlayConsensus()) && proto.titanium.Range.toObject(includeInstance, f),
+    challengeOverlayConsensus: (f = msg.getChallengeOverlayConsensus()) && proto.titanium.Range.toObject(includeInstance, f),
+    expertPreChallenge: (f = msg.getExpertPreChallenge()) && proto.titanium.Range.toObject(includeInstance, f),
+    expertPostChallenge: (f = msg.getExpertPostChallenge()) && proto.titanium.Range.toObject(includeInstance, f),
+    bimodalLeftPopulation: (f = msg.getBimodalLeftPopulation()) && proto.titanium.Range.toObject(includeInstance, f),
+    bimodalRightPopulation: (f = msg.getBimodalRightPopulation()) && proto.titanium.Range.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ChartRanges}
+ */
+proto.titanium.ChartRanges.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ChartRanges;
+  return proto.titanium.ChartRanges.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ChartRanges} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ChartRanges}
+ */
+proto.titanium.ChartRanges.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setSubmissionMinMax(value);
+      break;
+    case 2:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setSubmissionMeanMedian(value);
+      break;
+    case 3:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setEvp(value);
+      break;
+    case 4:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setSubmissionOnlyConsensus(value);
+      break;
+    case 5:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setMarketDataOverlayConsensus(value);
+      break;
+    case 6:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setChallengeOverlayConsensus(value);
+      break;
+    case 7:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setExpertPreChallenge(value);
+      break;
+    case 8:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setExpertPostChallenge(value);
+      break;
+    case 9:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setBimodalLeftPopulation(value);
+      break;
+    case 10:
+      var value = new proto.titanium.Range;
+      reader.readMessage(value,proto.titanium.Range.deserializeBinaryFromReader);
+      msg.setBimodalRightPopulation(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ChartRanges.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ChartRanges.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ChartRanges} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ChartRanges.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSubmissionMinMax();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmissionMeanMedian();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvp();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmissionOnlyConsensus();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getMarketDataOverlayConsensus();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getChallengeOverlayConsensus();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertPreChallenge();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertPostChallenge();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getBimodalLeftPopulation();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+  f = message.getBimodalRightPopulation();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      proto.titanium.Range.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional Range submission_min_max = 1;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getSubmissionMinMax = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setSubmissionMinMax = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearSubmissionMinMax = function() {
+  return this.setSubmissionMinMax(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasSubmissionMinMax = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Range submission_mean_median = 2;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getSubmissionMeanMedian = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setSubmissionMeanMedian = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearSubmissionMeanMedian = function() {
+  return this.setSubmissionMeanMedian(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasSubmissionMeanMedian = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional Range evp = 3;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getEvp = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setEvp = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearEvp = function() {
+  return this.setEvp(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasEvp = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional Range submission_only_consensus = 4;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getSubmissionOnlyConsensus = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 4));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setSubmissionOnlyConsensus = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearSubmissionOnlyConsensus = function() {
+  return this.setSubmissionOnlyConsensus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasSubmissionOnlyConsensus = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional Range market_data_overlay_consensus = 5;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getMarketDataOverlayConsensus = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 5));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setMarketDataOverlayConsensus = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearMarketDataOverlayConsensus = function() {
+  return this.setMarketDataOverlayConsensus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasMarketDataOverlayConsensus = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional Range challenge_overlay_consensus = 6;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getChallengeOverlayConsensus = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setChallengeOverlayConsensus = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearChallengeOverlayConsensus = function() {
+  return this.setChallengeOverlayConsensus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasChallengeOverlayConsensus = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional Range expert_pre_challenge = 7;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getExpertPreChallenge = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 7));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setExpertPreChallenge = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearExpertPreChallenge = function() {
+  return this.setExpertPreChallenge(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasExpertPreChallenge = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional Range expert_post_challenge = 8;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getExpertPostChallenge = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 8));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setExpertPostChallenge = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearExpertPostChallenge = function() {
+  return this.setExpertPostChallenge(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasExpertPostChallenge = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional Range bimodal_left_population = 9;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getBimodalLeftPopulation = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 9));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setBimodalLeftPopulation = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearBimodalLeftPopulation = function() {
+  return this.setBimodalLeftPopulation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasBimodalLeftPopulation = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional Range bimodal_right_population = 10;
+ * @return {?proto.titanium.Range}
+ */
+proto.titanium.ChartRanges.prototype.getBimodalRightPopulation = function() {
+  return /** @type{?proto.titanium.Range} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.Range, 10));
+};
+
+
+/**
+ * @param {?proto.titanium.Range|undefined} value
+ * @return {!proto.titanium.ChartRanges} returns this
+*/
+proto.titanium.ChartRanges.prototype.setBimodalRightPopulation = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ChartRanges} returns this
+ */
+proto.titanium.ChartRanges.prototype.clearBimodalRightPopulation = function() {
+  return this.setBimodalRightPopulation(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ChartRanges.prototype.hasBimodalRightPopulation = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.TradeRangesData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.TradeRangesData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.TradeRangesData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.TradeRangesData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    latestTradePrice: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
+    notional: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    tradeExecutionTime: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    pricingRecency: jspb.Message.getFieldWithDefault(msg, 4, "")
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.TradeRangesData}
+ */
+proto.titanium.TradeRangesData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.TradeRangesData;
+  return proto.titanium.TradeRangesData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.TradeRangesData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.TradeRangesData}
+ */
+proto.titanium.TradeRangesData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setLatestTradePrice(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setNotional(value);
+      break;
+    case 3:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setTradeExecutionTime(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPricingRecency(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.TradeRangesData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.TradeRangesData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.TradeRangesData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.TradeRangesData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getLatestTradePrice();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      1,
+      f
+    );
+  }
+  f = message.getNotional();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      2,
+      f
+    );
+  }
+  f = message.getTradeExecutionTime();
+  if (f.length > 0) {
+    writer.writeString(
+      3,
+      f
+    );
+  }
+  f = message.getPricingRecency();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional double latest_trade_price = 1;
+ * @return {number}
+ */
+proto.titanium.TradeRangesData.prototype.getLatestTradePrice = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.TradeRangesData} returns this
+ */
+proto.titanium.TradeRangesData.prototype.setLatestTradePrice = function(value) {
+  return jspb.Message.setProto3FloatField(this, 1, value);
+};
+
+
+/**
+ * optional double notional = 2;
+ * @return {number}
+ */
+proto.titanium.TradeRangesData.prototype.getNotional = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.TradeRangesData} returns this
+ */
+proto.titanium.TradeRangesData.prototype.setNotional = function(value) {
+  return jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+/**
+ * optional string trade_execution_time = 3;
+ * @return {string}
+ */
+proto.titanium.TradeRangesData.prototype.getTradeExecutionTime = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.TradeRangesData} returns this
+ */
+proto.titanium.TradeRangesData.prototype.setTradeExecutionTime = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
+};
+
+
+/**
+ * optional string pricing_recency = 4;
+ * @return {string}
+ */
+proto.titanium.TradeRangesData.prototype.getPricingRecency = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.TradeRangesData} returns this
+ */
+proto.titanium.TradeRangesData.prototype.setPricingRecency = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.TradePeriodsWithMetrics.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.TradePeriodsWithMetrics} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.TradePeriodsWithMetrics.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    lessDay: (f = msg.getLessDay()) && proto.titanium.TradePeriodMetrics.toObject(includeInstance, f),
+    lessWeek: (f = msg.getLessWeek()) && proto.titanium.TradePeriodMetrics.toObject(includeInstance, f),
+    lessMonth: (f = msg.getLessMonth()) && proto.titanium.TradePeriodMetrics.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.TradePeriodsWithMetrics}
+ */
+proto.titanium.TradePeriodsWithMetrics.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.TradePeriodsWithMetrics;
+  return proto.titanium.TradePeriodsWithMetrics.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.TradePeriodsWithMetrics} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.TradePeriodsWithMetrics}
+ */
+proto.titanium.TradePeriodsWithMetrics.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.TradePeriodMetrics;
+      reader.readMessage(value,proto.titanium.TradePeriodMetrics.deserializeBinaryFromReader);
+      msg.setLessDay(value);
+      break;
+    case 2:
+      var value = new proto.titanium.TradePeriodMetrics;
+      reader.readMessage(value,proto.titanium.TradePeriodMetrics.deserializeBinaryFromReader);
+      msg.setLessWeek(value);
+      break;
+    case 3:
+      var value = new proto.titanium.TradePeriodMetrics;
+      reader.readMessage(value,proto.titanium.TradePeriodMetrics.deserializeBinaryFromReader);
+      msg.setLessMonth(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.TradePeriodsWithMetrics.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.TradePeriodsWithMetrics} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.TradePeriodsWithMetrics.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getLessDay();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.TradePeriodMetrics.serializeBinaryToWriter
+    );
+  }
+  f = message.getLessWeek();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.titanium.TradePeriodMetrics.serializeBinaryToWriter
+    );
+  }
+  f = message.getLessMonth();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.titanium.TradePeriodMetrics.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional TradePeriodMetrics less_day = 1;
+ * @return {?proto.titanium.TradePeriodMetrics}
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.getLessDay = function() {
+  return /** @type{?proto.titanium.TradePeriodMetrics} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.TradePeriodMetrics, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.TradePeriodMetrics|undefined} value
+ * @return {!proto.titanium.TradePeriodsWithMetrics} returns this
+*/
+proto.titanium.TradePeriodsWithMetrics.prototype.setLessDay = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.TradePeriodsWithMetrics} returns this
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.clearLessDay = function() {
+  return this.setLessDay(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.hasLessDay = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional TradePeriodMetrics less_week = 2;
+ * @return {?proto.titanium.TradePeriodMetrics}
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.getLessWeek = function() {
+  return /** @type{?proto.titanium.TradePeriodMetrics} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.TradePeriodMetrics, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.TradePeriodMetrics|undefined} value
+ * @return {!proto.titanium.TradePeriodsWithMetrics} returns this
+*/
+proto.titanium.TradePeriodsWithMetrics.prototype.setLessWeek = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.TradePeriodsWithMetrics} returns this
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.clearLessWeek = function() {
+  return this.setLessWeek(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.hasLessWeek = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional TradePeriodMetrics less_month = 3;
+ * @return {?proto.titanium.TradePeriodMetrics}
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.getLessMonth = function() {
+  return /** @type{?proto.titanium.TradePeriodMetrics} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.TradePeriodMetrics, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.TradePeriodMetrics|undefined} value
+ * @return {!proto.titanium.TradePeriodsWithMetrics} returns this
+*/
+proto.titanium.TradePeriodsWithMetrics.prototype.setLessMonth = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.TradePeriodsWithMetrics} returns this
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.clearLessMonth = function() {
+  return this.setLessMonth(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.TradePeriodsWithMetrics.prototype.hasLessMonth = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.TradePeriodMetrics.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.TradePeriodMetrics.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.TradePeriodMetrics} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.TradePeriodMetrics.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    tradeCount: jspb.Message.getFieldWithDefault(msg, 1, 0),
+    minNotionalAmount: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
+    maxNotionalAmount: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.TradePeriodMetrics}
+ */
+proto.titanium.TradePeriodMetrics.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.TradePeriodMetrics;
+  return proto.titanium.TradePeriodMetrics.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.TradePeriodMetrics} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.TradePeriodMetrics}
+ */
+proto.titanium.TradePeriodMetrics.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setTradeCount(value);
+      break;
+    case 2:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMinNotionalAmount(value);
+      break;
+    case 3:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setMaxNotionalAmount(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.TradePeriodMetrics.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.TradePeriodMetrics.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.TradePeriodMetrics} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.TradePeriodMetrics.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getTradeCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      1,
+      f
+    );
+  }
+  f = message.getMinNotionalAmount();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      2,
+      f
+    );
+  }
+  f = message.getMaxNotionalAmount();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      3,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional int64 trade_count = 1;
+ * @return {number}
+ */
+proto.titanium.TradePeriodMetrics.prototype.getTradeCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 1, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.TradePeriodMetrics} returns this
+ */
+proto.titanium.TradePeriodMetrics.prototype.setTradeCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 1, value);
+};
+
+
+/**
+ * optional double min_notional_amount = 2;
+ * @return {number}
+ */
+proto.titanium.TradePeriodMetrics.prototype.getMinNotionalAmount = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.TradePeriodMetrics} returns this
+ */
+proto.titanium.TradePeriodMetrics.prototype.setMinNotionalAmount = function(value) {
+  return jspb.Message.setProto3FloatField(this, 2, value);
+};
+
+
+/**
+ * optional double max_notional_amount = 3;
+ * @return {number}
+ */
+proto.titanium.TradePeriodMetrics.prototype.getMaxNotionalAmount = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.TradePeriodMetrics} returns this
+ */
+proto.titanium.TradePeriodMetrics.prototype.setMaxNotionalAmount = function(value) {
+  return jspb.Message.setProto3FloatField(this, 3, value);
+};
+
+
+
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusExplorerTableResponse.oneofGroups_ = [[1,2]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusExplorerTableResponse.ResponseCase = {
+  RESPONSE_NOT_SET: 0,
+  DATA: 1,
+  ERROR: 2
+};
+
+/**
+ * @return {proto.titanium.ConsensusExplorerTableResponse.ResponseCase}
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.getResponseCase = function() {
+  return /** @type {proto.titanium.ConsensusExplorerTableResponse.ResponseCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusExplorerTableResponse.oneofGroups_[0]));
+};
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerTableResponse.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerTableResponse} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerTableResponse.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    data: (f = msg.getData()) && proto.titanium.ConsensusExplorerTableData.toObject(includeInstance, f),
+    error: (f = msg.getError()) && common_gateway_base_pb.Error.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerTableResponse}
+ */
+proto.titanium.ConsensusExplorerTableResponse.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerTableResponse;
+  return proto.titanium.ConsensusExplorerTableResponse.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerTableResponse} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerTableResponse}
+ */
+proto.titanium.ConsensusExplorerTableResponse.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ConsensusExplorerTableData;
+      reader.readMessage(value,proto.titanium.ConsensusExplorerTableData.deserializeBinaryFromReader);
+      msg.setData(value);
+      break;
+    case 2:
+      var value = new common_gateway_base_pb.Error;
+      reader.readMessage(value,common_gateway_base_pb.Error.deserializeBinaryFromReader);
+      msg.setError(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerTableResponse.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerTableResponse} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerTableResponse.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getData();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ConsensusExplorerTableData.serializeBinaryToWriter
+    );
+  }
+  f = message.getError();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      common_gateway_base_pb.Error.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ConsensusExplorerTableData data = 1;
+ * @return {?proto.titanium.ConsensusExplorerTableData}
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.getData = function() {
+  return /** @type{?proto.titanium.ConsensusExplorerTableData} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ConsensusExplorerTableData, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ConsensusExplorerTableData|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerTableResponse} returns this
+*/
+proto.titanium.ConsensusExplorerTableResponse.prototype.setData = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 1, proto.titanium.ConsensusExplorerTableResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerTableResponse} returns this
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.clearData = function() {
+  return this.setData(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.hasData = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional Error error = 2;
+ * @return {?proto.titanium.Error}
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.getError = function() {
+  return /** @type{?proto.titanium.Error} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.Error, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.Error|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerTableResponse} returns this
+*/
+proto.titanium.ConsensusExplorerTableResponse.prototype.setError = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 2, proto.titanium.ConsensusExplorerTableResponse.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerTableResponse} returns this
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.clearError = function() {
+  return this.setError(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerTableResponse.prototype.hasError = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ConsensusExplorerTableData.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ConsensusExplorerTableData.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ConsensusExplorerTableData} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerTableData.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    comparisonTable: (f = msg.getComparisonTable()) && proto.titanium.ComparisonTable.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ConsensusExplorerTableData}
+ */
+proto.titanium.ConsensusExplorerTableData.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ConsensusExplorerTableData;
+  return proto.titanium.ConsensusExplorerTableData.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ConsensusExplorerTableData} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ConsensusExplorerTableData}
+ */
+proto.titanium.ConsensusExplorerTableData.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.ComparisonTable;
+      reader.readMessage(value,proto.titanium.ComparisonTable.deserializeBinaryFromReader);
+      msg.setComparisonTable(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ConsensusExplorerTableData.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ConsensusExplorerTableData.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ConsensusExplorerTableData} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ConsensusExplorerTableData.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getComparisonTable();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.ComparisonTable.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional ComparisonTable comparison_table = 1;
+ * @return {?proto.titanium.ComparisonTable}
+ */
+proto.titanium.ConsensusExplorerTableData.prototype.getComparisonTable = function() {
+  return /** @type{?proto.titanium.ComparisonTable} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ComparisonTable, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.ComparisonTable|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerTableData} returns this
+*/
+proto.titanium.ConsensusExplorerTableData.prototype.setComparisonTable = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerTableData} returns this
+ */
+proto.titanium.ConsensusExplorerTableData.prototype.clearComparisonTable = function() {
+  return this.setComparisonTable(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerTableData.prototype.hasComparisonTable = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ComparisonTable.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ComparisonTable.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ComparisonTable} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ComparisonTable.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    submission: (f = msg.getSubmission()) && proto.titanium.SubmissionExplorerTableColumn.toObject(includeInstance, f),
+    submissionStatistics: (f = msg.getSubmissionStatistics()) && proto.titanium.SubmissionStatisticsExplorerTableColumn.toObject(includeInstance, f),
+    allParticipantCohortConsensus: (f = msg.getAllParticipantCohortConsensus()) && proto.titanium.AllParticipantExplorerTableColumn.toObject(includeInstance, f),
+    evaluatedPrice: (f = msg.getEvaluatedPrice()) && proto.titanium.EvpExplorerTableColumn.toObject(includeInstance, f),
+    expertCohortConsensus: (f = msg.getExpertCohortConsensus()) && proto.titanium.ExpertExplorerTableColumn.toObject(includeInstance, f),
+    availableTrades: (f = msg.getAvailableTrades()) && proto.titanium.AvailableTrades.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ComparisonTable}
+ */
+proto.titanium.ComparisonTable.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ComparisonTable;
+  return proto.titanium.ComparisonTable.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ComparisonTable} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ComparisonTable}
+ */
+proto.titanium.ComparisonTable.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new proto.titanium.SubmissionExplorerTableColumn;
+      reader.readMessage(value,proto.titanium.SubmissionExplorerTableColumn.deserializeBinaryFromReader);
+      msg.setSubmission(value);
+      break;
+    case 2:
+      var value = new proto.titanium.SubmissionStatisticsExplorerTableColumn;
+      reader.readMessage(value,proto.titanium.SubmissionStatisticsExplorerTableColumn.deserializeBinaryFromReader);
+      msg.setSubmissionStatistics(value);
+      break;
+    case 3:
+      var value = new proto.titanium.AllParticipantExplorerTableColumn;
+      reader.readMessage(value,proto.titanium.AllParticipantExplorerTableColumn.deserializeBinaryFromReader);
+      msg.setAllParticipantCohortConsensus(value);
+      break;
+    case 4:
+      var value = new proto.titanium.EvpExplorerTableColumn;
+      reader.readMessage(value,proto.titanium.EvpExplorerTableColumn.deserializeBinaryFromReader);
+      msg.setEvaluatedPrice(value);
+      break;
+    case 5:
+      var value = new proto.titanium.ExpertExplorerTableColumn;
+      reader.readMessage(value,proto.titanium.ExpertExplorerTableColumn.deserializeBinaryFromReader);
+      msg.setExpertCohortConsensus(value);
+      break;
+    case 6:
+      var value = new proto.titanium.AvailableTrades;
+      reader.readMessage(value,proto.titanium.AvailableTrades.deserializeBinaryFromReader);
+      msg.setAvailableTrades(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ComparisonTable.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ComparisonTable.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ComparisonTable} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ComparisonTable.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSubmission();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      proto.titanium.SubmissionExplorerTableColumn.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmissionStatistics();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter
+    );
+  }
+  f = message.getAllParticipantCohortConsensus();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      proto.titanium.AllParticipantExplorerTableColumn.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvaluatedPrice();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      proto.titanium.EvpExplorerTableColumn.serializeBinaryToWriter
+    );
+  }
+  f = message.getExpertCohortConsensus();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      proto.titanium.ExpertExplorerTableColumn.serializeBinaryToWriter
+    );
+  }
+  f = message.getAvailableTrades();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      proto.titanium.AvailableTrades.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional SubmissionExplorerTableColumn submission = 1;
+ * @return {?proto.titanium.SubmissionExplorerTableColumn}
+ */
+proto.titanium.ComparisonTable.prototype.getSubmission = function() {
+  return /** @type{?proto.titanium.SubmissionExplorerTableColumn} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.SubmissionExplorerTableColumn, 1));
+};
+
+
+/**
+ * @param {?proto.titanium.SubmissionExplorerTableColumn|undefined} value
+ * @return {!proto.titanium.ComparisonTable} returns this
+*/
+proto.titanium.ComparisonTable.prototype.setSubmission = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ComparisonTable} returns this
+ */
+proto.titanium.ComparisonTable.prototype.clearSubmission = function() {
+  return this.setSubmission(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ComparisonTable.prototype.hasSubmission = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional SubmissionStatisticsExplorerTableColumn submission_statistics = 2;
+ * @return {?proto.titanium.SubmissionStatisticsExplorerTableColumn}
+ */
+proto.titanium.ComparisonTable.prototype.getSubmissionStatistics = function() {
+  return /** @type{?proto.titanium.SubmissionStatisticsExplorerTableColumn} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.SubmissionStatisticsExplorerTableColumn, 2));
+};
+
+
+/**
+ * @param {?proto.titanium.SubmissionStatisticsExplorerTableColumn|undefined} value
+ * @return {!proto.titanium.ComparisonTable} returns this
+*/
+proto.titanium.ComparisonTable.prototype.setSubmissionStatistics = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ComparisonTable} returns this
+ */
+proto.titanium.ComparisonTable.prototype.clearSubmissionStatistics = function() {
+  return this.setSubmissionStatistics(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ComparisonTable.prototype.hasSubmissionStatistics = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional AllParticipantExplorerTableColumn all_participant_cohort_consensus = 3;
+ * @return {?proto.titanium.AllParticipantExplorerTableColumn}
+ */
+proto.titanium.ComparisonTable.prototype.getAllParticipantCohortConsensus = function() {
+  return /** @type{?proto.titanium.AllParticipantExplorerTableColumn} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.AllParticipantExplorerTableColumn, 3));
+};
+
+
+/**
+ * @param {?proto.titanium.AllParticipantExplorerTableColumn|undefined} value
+ * @return {!proto.titanium.ComparisonTable} returns this
+*/
+proto.titanium.ComparisonTable.prototype.setAllParticipantCohortConsensus = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ComparisonTable} returns this
+ */
+proto.titanium.ComparisonTable.prototype.clearAllParticipantCohortConsensus = function() {
+  return this.setAllParticipantCohortConsensus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ComparisonTable.prototype.hasAllParticipantCohortConsensus = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional EvpExplorerTableColumn evaluated_price = 4;
+ * @return {?proto.titanium.EvpExplorerTableColumn}
+ */
+proto.titanium.ComparisonTable.prototype.getEvaluatedPrice = function() {
+  return /** @type{?proto.titanium.EvpExplorerTableColumn} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.EvpExplorerTableColumn, 4));
+};
+
+
+/**
+ * @param {?proto.titanium.EvpExplorerTableColumn|undefined} value
+ * @return {!proto.titanium.ComparisonTable} returns this
+*/
+proto.titanium.ComparisonTable.prototype.setEvaluatedPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ComparisonTable} returns this
+ */
+proto.titanium.ComparisonTable.prototype.clearEvaluatedPrice = function() {
+  return this.setEvaluatedPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ComparisonTable.prototype.hasEvaluatedPrice = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional ExpertExplorerTableColumn expert_cohort_consensus = 5;
+ * @return {?proto.titanium.ExpertExplorerTableColumn}
+ */
+proto.titanium.ComparisonTable.prototype.getExpertCohortConsensus = function() {
+  return /** @type{?proto.titanium.ExpertExplorerTableColumn} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.ExpertExplorerTableColumn, 5));
+};
+
+
+/**
+ * @param {?proto.titanium.ExpertExplorerTableColumn|undefined} value
+ * @return {!proto.titanium.ComparisonTable} returns this
+*/
+proto.titanium.ComparisonTable.prototype.setExpertCohortConsensus = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ComparisonTable} returns this
+ */
+proto.titanium.ComparisonTable.prototype.clearExpertCohortConsensus = function() {
+  return this.setExpertCohortConsensus(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ComparisonTable.prototype.hasExpertCohortConsensus = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional AvailableTrades available_trades = 6;
+ * @return {?proto.titanium.AvailableTrades}
+ */
+proto.titanium.ComparisonTable.prototype.getAvailableTrades = function() {
+  return /** @type{?proto.titanium.AvailableTrades} */ (
+    jspb.Message.getWrapperField(this, proto.titanium.AvailableTrades, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.AvailableTrades|undefined} value
+ * @return {!proto.titanium.ComparisonTable} returns this
+*/
+proto.titanium.ComparisonTable.prototype.setAvailableTrades = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ComparisonTable} returns this
+ */
+proto.titanium.ComparisonTable.prototype.clearAvailableTrades = function() {
+  return this.setAvailableTrades(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ComparisonTable.prototype.hasAvailableTrades = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.SubmissionExplorerTableColumn.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.SubmissionExplorerTableColumn.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.SubmissionExplorerTableColumn} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.SubmissionExplorerTableColumn.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    submissionPrice: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.SubmissionExplorerTableColumn}
+ */
+proto.titanium.SubmissionExplorerTableColumn.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.SubmissionExplorerTableColumn;
+  return proto.titanium.SubmissionExplorerTableColumn.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.SubmissionExplorerTableColumn} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.SubmissionExplorerTableColumn}
+ */
+proto.titanium.SubmissionExplorerTableColumn.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = /** @type {number} */ (reader.readDouble());
+      msg.setSubmissionPrice(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.SubmissionExplorerTableColumn.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.SubmissionExplorerTableColumn.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.SubmissionExplorerTableColumn} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.SubmissionExplorerTableColumn.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getSubmissionPrice();
+  if (f !== 0.0) {
+    writer.writeDouble(
+      1,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional double submission_price = 1;
+ * @return {number}
+ */
+proto.titanium.SubmissionExplorerTableColumn.prototype.getSubmissionPrice = function() {
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.SubmissionExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionExplorerTableColumn.prototype.setSubmissionPrice = function(value) {
+  return jspb.Message.setProto3FloatField(this, 1, value);
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.SubmissionStatisticsExplorerTableColumn.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.SubmissionStatisticsExplorerTableColumn} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    statisticalMean: (f = msg.getStatisticalMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    absDiffFromStatisticalMean: (f = msg.getAbsDiffFromStatisticalMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    subPriceDiff: (f = msg.getSubPriceDiff()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    statMeanAbsDiffFromLatestTrade: (f = msg.getStatMeanAbsDiffFromLatestTrade()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    lowerBoundary: (f = msg.getLowerBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    upperBoundary: (f = msg.getUpperBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    subValidPointsCount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    min: (f = msg.getMin()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    max: (f = msg.getMax()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.SubmissionStatisticsExplorerTableColumn;
+  return proto.titanium.SubmissionStatisticsExplorerTableColumn.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.SubmissionStatisticsExplorerTableColumn} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setStatisticalMean(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setAbsDiffFromStatisticalMean(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setSubPriceDiff(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setStatMeanAbsDiffFromLatestTrade(value);
+      break;
+    case 5:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setLowerBoundary(value);
+      break;
+    case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setUpperBoundary(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setSubValidPointsCount(value);
+      break;
+    case 8:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setStdDev(value);
+      break;
+    case 9:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMin(value);
+      break;
+    case 10:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMax(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.SubmissionStatisticsExplorerTableColumn} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getStatisticalMean();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getAbsDiffFromStatisticalMean();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubPriceDiff();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getStatMeanAbsDiffFromLatestTrade();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getLowerBoundary();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpperBoundary();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubValidPointsCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      7,
+      f
+    );
+  }
+  f = message.getStdDev();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMin();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMax();
+  if (f != null) {
+    writer.writeMessage(
+      10,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value statistical_mean = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getStatisticalMean = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setStatisticalMean = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearStatisticalMean = function() {
+  return this.setStatisticalMean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasStatisticalMean = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value abs_diff_from_statistical_mean = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getAbsDiffFromStatisticalMean = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setAbsDiffFromStatisticalMean = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearAbsDiffFromStatisticalMean = function() {
+  return this.setAbsDiffFromStatisticalMean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasAbsDiffFromStatisticalMean = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value sub_price_diff = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getSubPriceDiff = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubPriceDiff = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearSubPriceDiff = function() {
+  return this.setSubPriceDiff(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasSubPriceDiff = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value stat_mean_abs_diff_from_latest_trade = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getStatMeanAbsDiffFromLatestTrade = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setStatMeanAbsDiffFromLatestTrade = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearStatMeanAbsDiffFromLatestTrade = function() {
+  return this.setStatMeanAbsDiffFromLatestTrade(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasStatMeanAbsDiffFromLatestTrade = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value lower_boundary = 5;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getLowerBoundary = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setLowerBoundary = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearLowerBoundary = function() {
+  return this.setLowerBoundary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasLowerBoundary = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value upper_boundary = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getUpperBoundary = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setUpperBoundary = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearUpperBoundary = function() {
+  return this.setUpperBoundary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasUpperBoundary = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int64 sub_valid_points_count = 7;
+ * @return {number}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getSubValidPointsCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubValidPointsCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional google.protobuf.Value std_dev = 8;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getStdDev = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setStdDev = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearStdDev = function() {
+  return this.setStdDev(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasStdDev = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value min = 9;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getMin = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setMin = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearMin = function() {
+  return this.setMin(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasMin = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value max = 10;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getMax = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 10));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setMax = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearMax = function() {
+  return this.setMax(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 10) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.AllParticipantExplorerTableColumn.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.AllParticipantExplorerTableColumn} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.AllParticipantExplorerTableColumn.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    consensusPrice: (f = msg.getConsensusPrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    absDiffFromConsensusPrice: (f = msg.getAbsDiffFromConsensusPrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    subPriceDiff: (f = msg.getSubPriceDiff()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    conPriceAbsDiffFromLatestTrade: (f = msg.getConPriceAbsDiffFromLatestTrade()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    lowerBoundary: (f = msg.getLowerBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    upperBoundary: (f = msg.getUpperBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    participantsCount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.AllParticipantExplorerTableColumn;
+  return proto.titanium.AllParticipantExplorerTableColumn.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.AllParticipantExplorerTableColumn} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setConsensusPrice(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setAbsDiffFromConsensusPrice(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setSubPriceDiff(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setConPriceAbsDiffFromLatestTrade(value);
+      break;
+    case 5:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setLowerBoundary(value);
+      break;
+    case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setUpperBoundary(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setParticipantsCount(value);
+      break;
+    case 8:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setStdDev(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.AllParticipantExplorerTableColumn.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.AllParticipantExplorerTableColumn} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.AllParticipantExplorerTableColumn.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getConsensusPrice();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getAbsDiffFromConsensusPrice();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubPriceDiff();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getConPriceAbsDiffFromLatestTrade();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getLowerBoundary();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getUpperBoundary();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getParticipantsCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      7,
+      f
+    );
+  }
+  f = message.getStdDev();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value consensus_price = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.getConsensusPrice = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+*/
+proto.titanium.AllParticipantExplorerTableColumn.prototype.setConsensusPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.clearConsensusPrice = function() {
+  return this.setConsensusPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.hasConsensusPrice = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value abs_diff_from_consensus_price = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.getAbsDiffFromConsensusPrice = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+*/
+proto.titanium.AllParticipantExplorerTableColumn.prototype.setAbsDiffFromConsensusPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.clearAbsDiffFromConsensusPrice = function() {
+  return this.setAbsDiffFromConsensusPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.hasAbsDiffFromConsensusPrice = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value sub_price_diff = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.getSubPriceDiff = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+*/
+proto.titanium.AllParticipantExplorerTableColumn.prototype.setSubPriceDiff = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.clearSubPriceDiff = function() {
+  return this.setSubPriceDiff(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.hasSubPriceDiff = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value con_price_abs_diff_from_latest_trade = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.getConPriceAbsDiffFromLatestTrade = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+*/
+proto.titanium.AllParticipantExplorerTableColumn.prototype.setConPriceAbsDiffFromLatestTrade = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.clearConPriceAbsDiffFromLatestTrade = function() {
+  return this.setConPriceAbsDiffFromLatestTrade(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.hasConPriceAbsDiffFromLatestTrade = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value lower_boundary = 5;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.getLowerBoundary = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+*/
+proto.titanium.AllParticipantExplorerTableColumn.prototype.setLowerBoundary = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.clearLowerBoundary = function() {
+  return this.setLowerBoundary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.hasLowerBoundary = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value upper_boundary = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.getUpperBoundary = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+*/
+proto.titanium.AllParticipantExplorerTableColumn.prototype.setUpperBoundary = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.clearUpperBoundary = function() {
+  return this.setUpperBoundary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.hasUpperBoundary = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int64 participants_count = 7;
+ * @return {number}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.getParticipantsCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.setParticipantsCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional google.protobuf.Value std_dev = 8;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.getStdDev = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+*/
+proto.titanium.AllParticipantExplorerTableColumn.prototype.setStdDev = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AllParticipantExplorerTableColumn} returns this
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.clearStdDev = function() {
+  return this.setStdDev(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AllParticipantExplorerTableColumn.prototype.hasStdDev = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.EvpExplorerTableColumn.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.EvpExplorerTableColumn} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EvpExplorerTableColumn.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    mid: (f = msg.getMid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    bid: (f = msg.getBid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    ask: (f = msg.getAsk()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    absDiffFromEvpMid: (f = msg.getAbsDiffFromEvpMid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    subPriceDiff: (f = msg.getSubPriceDiff()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    evpMidAbsDiffFromLatestTrade: (f = msg.getEvpMidAbsDiffFromLatestTrade()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    evpLowerBoundary: (f = msg.getEvpLowerBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    evpUpperBoundary: (f = msg.getEvpUpperBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    tradesOrOrdersCount: (f = msg.getTradesOrOrdersCount()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.EvpExplorerTableColumn}
+ */
+proto.titanium.EvpExplorerTableColumn.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.EvpExplorerTableColumn;
+  return proto.titanium.EvpExplorerTableColumn.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.EvpExplorerTableColumn} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.EvpExplorerTableColumn}
+ */
+proto.titanium.EvpExplorerTableColumn.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMid(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setBid(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setAsk(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setAbsDiffFromEvpMid(value);
+      break;
+    case 5:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setSubPriceDiff(value);
+      break;
+    case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setEvpMidAbsDiffFromLatestTrade(value);
+      break;
+    case 7:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setEvpLowerBoundary(value);
+      break;
+    case 8:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setEvpUpperBoundary(value);
+      break;
+    case 9:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setTradesOrOrdersCount(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.EvpExplorerTableColumn.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.EvpExplorerTableColumn} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.EvpExplorerTableColumn.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMid();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getBid();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getAsk();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getAbsDiffFromEvpMid();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubPriceDiff();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpMidAbsDiffFromLatestTrade();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpLowerBoundary();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getEvpUpperBoundary();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getTradesOrOrdersCount();
+  if (f != null) {
+    writer.writeMessage(
+      9,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value mid = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getMid = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setMid = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearMid = function() {
+  return this.setMid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasMid = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value bid = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getBid = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setBid = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearBid = function() {
+  return this.setBid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasBid = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value ask = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getAsk = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setAsk = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearAsk = function() {
+  return this.setAsk(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasAsk = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value abs_diff_from_evp_mid = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getAbsDiffFromEvpMid = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setAbsDiffFromEvpMid = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearAbsDiffFromEvpMid = function() {
+  return this.setAbsDiffFromEvpMid(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasAbsDiffFromEvpMid = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value sub_price_diff = 5;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getSubPriceDiff = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setSubPriceDiff = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearSubPriceDiff = function() {
+  return this.setSubPriceDiff(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasSubPriceDiff = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value evp_mid_abs_diff_from_latest_trade = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getEvpMidAbsDiffFromLatestTrade = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setEvpMidAbsDiffFromLatestTrade = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearEvpMidAbsDiffFromLatestTrade = function() {
+  return this.setEvpMidAbsDiffFromLatestTrade(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasEvpMidAbsDiffFromLatestTrade = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value evp_lower_boundary = 7;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getEvpLowerBoundary = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setEvpLowerBoundary = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearEvpLowerBoundary = function() {
+  return this.setEvpLowerBoundary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasEvpLowerBoundary = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value evp_upper_boundary = 8;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getEvpUpperBoundary = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setEvpUpperBoundary = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearEvpUpperBoundary = function() {
+  return this.setEvpUpperBoundary(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasEvpUpperBoundary = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value trades_or_orders_count = 9;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.getTradesOrOrdersCount = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 9));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+*/
+proto.titanium.EvpExplorerTableColumn.prototype.setTradesOrOrdersCount = function(value) {
+  return jspb.Message.setWrapperField(this, 9, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpExplorerTableColumn} returns this
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.clearTradesOrOrdersCount = function() {
+  return this.setTradesOrOrdersCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpExplorerTableColumn.prototype.hasTradesOrOrdersCount = function() {
+  return jspb.Message.getField(this, 9) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.ExpertExplorerTableColumn.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.ExpertExplorerTableColumn} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ExpertExplorerTableColumn.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    mean: (f = msg.getMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    absDiffFromExpertCohortMean: (f = msg.getAbsDiffFromExpertCohortMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    subPriceDiff: (f = msg.getSubPriceDiff()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    conPriceAbsDiffFromLatestTrade: (f = msg.getConPriceAbsDiffFromLatestTrade()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    participantInstrumentsCount: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    min: (f = msg.getMin()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    max: (f = msg.getMax()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.ExpertExplorerTableColumn}
+ */
+proto.titanium.ExpertExplorerTableColumn.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.ExpertExplorerTableColumn;
+  return proto.titanium.ExpertExplorerTableColumn.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.ExpertExplorerTableColumn} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.ExpertExplorerTableColumn}
+ */
+proto.titanium.ExpertExplorerTableColumn.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMean(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setAbsDiffFromExpertCohortMean(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setSubPriceDiff(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setConPriceAbsDiffFromLatestTrade(value);
+      break;
+    case 5:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setParticipantInstrumentsCount(value);
+      break;
+    case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setStdDev(value);
+      break;
+    case 7:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMin(value);
+      break;
+    case 8:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMax(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.ExpertExplorerTableColumn.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.ExpertExplorerTableColumn} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.ExpertExplorerTableColumn.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getMean();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getAbsDiffFromExpertCohortMean();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubPriceDiff();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getConPriceAbsDiffFromLatestTrade();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getParticipantInstrumentsCount();
+  if (f !== 0) {
+    writer.writeInt64(
+      5,
+      f
+    );
+  }
+  f = message.getStdDev();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMin();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMax();
+  if (f != null) {
+    writer.writeMessage(
+      8,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value mean = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.getMean = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+*/
+proto.titanium.ExpertExplorerTableColumn.prototype.setMean = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.clearMean = function() {
+  return this.setMean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.hasMean = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value abs_diff_from_expert_cohort_mean = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.getAbsDiffFromExpertCohortMean = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+*/
+proto.titanium.ExpertExplorerTableColumn.prototype.setAbsDiffFromExpertCohortMean = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.clearAbsDiffFromExpertCohortMean = function() {
+  return this.setAbsDiffFromExpertCohortMean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.hasAbsDiffFromExpertCohortMean = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value sub_price_diff = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.getSubPriceDiff = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+*/
+proto.titanium.ExpertExplorerTableColumn.prototype.setSubPriceDiff = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.clearSubPriceDiff = function() {
+  return this.setSubPriceDiff(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.hasSubPriceDiff = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value con_price_abs_diff_from_latest_trade = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.getConPriceAbsDiffFromLatestTrade = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+*/
+proto.titanium.ExpertExplorerTableColumn.prototype.setConPriceAbsDiffFromLatestTrade = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.clearConPriceAbsDiffFromLatestTrade = function() {
+  return this.setConPriceAbsDiffFromLatestTrade(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.hasConPriceAbsDiffFromLatestTrade = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional int64 participant_instruments_count = 5;
+ * @return {number}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.getParticipantInstrumentsCount = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.setParticipantInstrumentsCount = function(value) {
+  return jspb.Message.setProto3IntField(this, 5, value);
+};
+
+
+/**
+ * optional google.protobuf.Value std_dev = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.getStdDev = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+*/
+proto.titanium.ExpertExplorerTableColumn.prototype.setStdDev = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.clearStdDev = function() {
+  return this.setStdDev(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.hasStdDev = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value min = 7;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.getMin = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 7));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+*/
+proto.titanium.ExpertExplorerTableColumn.prototype.setMin = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.clearMin = function() {
+  return this.setMin(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.hasMin = function() {
+  return jspb.Message.getField(this, 7) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value max = 8;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.getMax = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 8));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+*/
+proto.titanium.ExpertExplorerTableColumn.prototype.setMax = function(value) {
+  return jspb.Message.setWrapperField(this, 8, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ExpertExplorerTableColumn} returns this
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.clearMax = function() {
+  return this.setMax(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertExplorerTableColumn.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 8) != null;
+};
+
+
+
+
+
+if (jspb.Message.GENERATE_TO_OBJECT) {
+/**
+ * Creates an object representation of this proto.
+ * Field names that are reserved in JavaScript and will be renamed to pb_name.
+ * Optional fields that are not set will be set to undefined.
+ * To access a reserved field use, foo.pb_<name>, eg, foo.pb_default.
+ * For the list of reserved names please see:
+ *     net/proto2/compiler/js/internal/generator.cc#kKeyword.
+ * @param {boolean=} opt_includeInstance Deprecated. whether to include the
+ *     JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @return {!Object}
+ */
+proto.titanium.AvailableTrades.prototype.toObject = function(opt_includeInstance) {
+  return proto.titanium.AvailableTrades.toObject(opt_includeInstance, this);
+};
+
+
+/**
+ * Static version of the {@see toObject} method.
+ * @param {boolean|undefined} includeInstance Deprecated. Whether to include
+ *     the JSPB instance for transitional soy proto support:
+ *     http://goto/soy-param-migration
+ * @param {!proto.titanium.AvailableTrades} msg The msg instance to transform.
+ * @return {!Object}
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.AvailableTrades.toObject = function(includeInstance, msg) {
+  var f, obj = {
+    latestTradePrice: (f = msg.getLatestTradePrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    absDiffFromConsensusPrice: (f = msg.getAbsDiffFromConsensusPrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    absDiffFromExpertCohortPrice: (f = msg.getAbsDiffFromExpertCohortPrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    subPriceAbsDiffFromLatestTrade: (f = msg.getSubPriceAbsDiffFromLatestTrade()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    min: (f = msg.getMin()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    max: (f = msg.getMax()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    daytradenumber: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    weektradenumber: jspb.Message.getFieldWithDefault(msg, 8, 0),
+    monthtradenumber: jspb.Message.getFieldWithDefault(msg, 9, 0)
+  };
+
+  if (includeInstance) {
+    obj.$jspbMessageInstance = msg;
+  }
+  return obj;
+};
+}
+
+
+/**
+ * Deserializes binary data (in protobuf wire format).
+ * @param {jspb.ByteSource} bytes The bytes to deserialize.
+ * @return {!proto.titanium.AvailableTrades}
+ */
+proto.titanium.AvailableTrades.deserializeBinary = function(bytes) {
+  var reader = new jspb.BinaryReader(bytes);
+  var msg = new proto.titanium.AvailableTrades;
+  return proto.titanium.AvailableTrades.deserializeBinaryFromReader(msg, reader);
+};
+
+
+/**
+ * Deserializes binary data (in protobuf wire format) from the
+ * given reader into the given message object.
+ * @param {!proto.titanium.AvailableTrades} msg The message object to deserialize into.
+ * @param {!jspb.BinaryReader} reader The BinaryReader to use.
+ * @return {!proto.titanium.AvailableTrades}
+ */
+proto.titanium.AvailableTrades.deserializeBinaryFromReader = function(msg, reader) {
+  while (reader.nextField()) {
+    if (reader.isEndGroup()) {
+      break;
+    }
+    var field = reader.getFieldNumber();
+    switch (field) {
+    case 1:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setLatestTradePrice(value);
+      break;
+    case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setAbsDiffFromConsensusPrice(value);
+      break;
+    case 3:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setAbsDiffFromExpertCohortPrice(value);
+      break;
+    case 4:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setSubPriceAbsDiffFromLatestTrade(value);
+      break;
+    case 5:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMin(value);
+      break;
+    case 6:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMax(value);
+      break;
+    case 7:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setDaytradenumber(value);
+      break;
+    case 8:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setWeektradenumber(value);
+      break;
+    case 9:
+      var value = /** @type {number} */ (reader.readInt64());
+      msg.setMonthtradenumber(value);
+      break;
+    default:
+      reader.skipField();
+      break;
+    }
+  }
+  return msg;
+};
+
+
+/**
+ * Serializes the message to binary data (in protobuf wire format).
+ * @return {!Uint8Array}
+ */
+proto.titanium.AvailableTrades.prototype.serializeBinary = function() {
+  var writer = new jspb.BinaryWriter();
+  proto.titanium.AvailableTrades.serializeBinaryToWriter(this, writer);
+  return writer.getResultBuffer();
+};
+
+
+/**
+ * Serializes the given message to binary data (in protobuf wire
+ * format), writing to the given BinaryWriter.
+ * @param {!proto.titanium.AvailableTrades} message
+ * @param {!jspb.BinaryWriter} writer
+ * @suppress {unusedLocalVariables} f is only used for nested messages
+ */
+proto.titanium.AvailableTrades.serializeBinaryToWriter = function(message, writer) {
+  var f = undefined;
+  f = message.getLatestTradePrice();
+  if (f != null) {
+    writer.writeMessage(
+      1,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getAbsDiffFromConsensusPrice();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getAbsDiffFromExpertCohortPrice();
+  if (f != null) {
+    writer.writeMessage(
+      3,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubPriceAbsDiffFromLatestTrade();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMin();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMax();
+  if (f != null) {
+    writer.writeMessage(
+      6,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getDaytradenumber();
+  if (f !== 0) {
+    writer.writeInt64(
+      7,
+      f
+    );
+  }
+  f = message.getWeektradenumber();
+  if (f !== 0) {
+    writer.writeInt64(
+      8,
+      f
+    );
+  }
+  f = message.getMonthtradenumber();
+  if (f !== 0) {
+    writer.writeInt64(
+      9,
+      f
+    );
+  }
+};
+
+
+/**
+ * optional google.protobuf.Value latest_trade_price = 1;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AvailableTrades.prototype.getLatestTradePrice = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+*/
+proto.titanium.AvailableTrades.prototype.setLatestTradePrice = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.clearLatestTradePrice = function() {
+  return this.setLatestTradePrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AvailableTrades.prototype.hasLatestTradePrice = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value abs_diff_from_consensus_price = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AvailableTrades.prototype.getAbsDiffFromConsensusPrice = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+*/
+proto.titanium.AvailableTrades.prototype.setAbsDiffFromConsensusPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.clearAbsDiffFromConsensusPrice = function() {
+  return this.setAbsDiffFromConsensusPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AvailableTrades.prototype.hasAbsDiffFromConsensusPrice = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value abs_diff_from_expert_cohort_price = 3;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AvailableTrades.prototype.getAbsDiffFromExpertCohortPrice = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+*/
+proto.titanium.AvailableTrades.prototype.setAbsDiffFromExpertCohortPrice = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.clearAbsDiffFromExpertCohortPrice = function() {
+  return this.setAbsDiffFromExpertCohortPrice(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AvailableTrades.prototype.hasAbsDiffFromExpertCohortPrice = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value sub_price_abs_diff_from_latest_trade = 4;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AvailableTrades.prototype.getSubPriceAbsDiffFromLatestTrade = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+*/
+proto.titanium.AvailableTrades.prototype.setSubPriceAbsDiffFromLatestTrade = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.clearSubPriceAbsDiffFromLatestTrade = function() {
+  return this.setSubPriceAbsDiffFromLatestTrade(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AvailableTrades.prototype.hasSubPriceAbsDiffFromLatestTrade = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value min = 5;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AvailableTrades.prototype.getMin = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+*/
+proto.titanium.AvailableTrades.prototype.setMin = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.clearMin = function() {
+  return this.setMin(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AvailableTrades.prototype.hasMin = function() {
+  return jspb.Message.getField(this, 5) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value max = 6;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.AvailableTrades.prototype.getMax = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 6));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+*/
+proto.titanium.AvailableTrades.prototype.setMax = function(value) {
+  return jspb.Message.setWrapperField(this, 6, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.clearMax = function() {
+  return this.setMax(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.AvailableTrades.prototype.hasMax = function() {
+  return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional int64 dayTradeNumber = 7;
+ * @return {number}
+ */
+proto.titanium.AvailableTrades.prototype.getDaytradenumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.setDaytradenumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 7, value);
+};
+
+
+/**
+ * optional int64 weekTradeNumber = 8;
+ * @return {number}
+ */
+proto.titanium.AvailableTrades.prototype.getWeektradenumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 8, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.setWeektradenumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 8, value);
+};
+
+
+/**
+ * optional int64 monthTradeNumber = 9;
+ * @return {number}
+ */
+proto.titanium.AvailableTrades.prototype.getMonthtradenumber = function() {
+  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 9, 0));
+};
+
+
+/**
+ * @param {number} value
+ * @return {!proto.titanium.AvailableTrades} returns this
+ */
+proto.titanium.AvailableTrades.prototype.setMonthtradenumber = function(value) {
+  return jspb.Message.setProto3IntField(this, 9, value);
+};
+
+
+goog.object.extend(exports, proto.titanium);

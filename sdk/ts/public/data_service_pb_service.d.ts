@@ -35,11 +35,31 @@ type DataServiceUploadURL = {
   readonly responseType: typeof common_gateway_base_pb.UploadURLResponse;
 };
 
+type DataServiceAuthorizeUpload = {
+  readonly methodName: string;
+  readonly service: typeof DataService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_data_pb.UploadURLRequest;
+  readonly responseType: typeof common_data_pb.UploadAuthorizationResponse;
+};
+
+type DataServiceNotifyUpload = {
+  readonly methodName: string;
+  readonly service: typeof DataService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_data_pb.UploadNotifyRequest;
+  readonly responseType: typeof common_gateway_base_pb.MessageResponse;
+};
+
 export class DataService {
   static readonly serviceName: string;
   static readonly Submitted: DataServiceSubmitted;
   static readonly Export: DataServiceExport;
   static readonly UploadURL: DataServiceUploadURL;
+  static readonly AuthorizeUpload: DataServiceAuthorizeUpload;
+  static readonly NotifyUpload: DataServiceNotifyUpload;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -100,6 +120,24 @@ export class DataServiceClient {
   uploadURL(
     requestMessage: common_data_pb.UploadURLRequest,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.UploadURLResponse|null) => void
+  ): UnaryResponse;
+  authorizeUpload(
+    requestMessage: common_data_pb.UploadURLRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_data_pb.UploadAuthorizationResponse|null) => void
+  ): UnaryResponse;
+  authorizeUpload(
+    requestMessage: common_data_pb.UploadURLRequest,
+    callback: (error: ServiceError|null, responseMessage: common_data_pb.UploadAuthorizationResponse|null) => void
+  ): UnaryResponse;
+  notifyUpload(
+    requestMessage: common_data_pb.UploadNotifyRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  notifyUpload(
+    requestMessage: common_data_pb.UploadNotifyRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
 }
 

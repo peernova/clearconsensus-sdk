@@ -59,6 +59,51 @@ ChallengeService.GetChallengeAttachmentUploadUrl = {
   responseType: common_challenge_pb.GetAttachmentUploadUrlResponse
 };
 
+ChallengeService.ChallengeActive = {
+  methodName: "ChallengeActive",
+  service: ChallengeService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_challenge_pb.ChallengeActiveRequest,
+  responseType: common_challenge_pb.ChallengeActiveResponse
+};
+
+ChallengeService.ChallengeList = {
+  methodName: "ChallengeList",
+  service: ChallengeService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_challenge_pb.ChallengeListRequest,
+  responseType: common_challenge_pb.ChallengeListResponse
+};
+
+ChallengeService.ChallengeHistory = {
+  methodName: "ChallengeHistory",
+  service: ChallengeService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_challenge_pb.ChallengeHistoryRequest,
+  responseType: common_challenge_pb.ChallengeHistoryResponse
+};
+
+ChallengeService.ChallengeDecision = {
+  methodName: "ChallengeDecision",
+  service: ChallengeService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_challenge_pb.ChallengeDecisionRequest,
+  responseType: common_gateway_base_pb.MessageResponse
+};
+
+ChallengeService.ChallengeFreezeAction = {
+  methodName: "ChallengeFreezeAction",
+  service: ChallengeService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_challenge_pb.ChallengeFreezeActionRequest,
+  responseType: common_gateway_base_pb.MessageResponse
+};
+
 exports.ChallengeService = ChallengeService;
 
 function ChallengeServiceClient(serviceHost, options) {
@@ -195,6 +240,161 @@ ChallengeServiceClient.prototype.getChallengeAttachmentUploadUrl = function getC
     callback = arguments[1];
   }
   var client = grpc.unary(ChallengeService.GetChallengeAttachmentUploadUrl, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ChallengeServiceClient.prototype.challengeActive = function challengeActive(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ChallengeService.ChallengeActive, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ChallengeServiceClient.prototype.challengeList = function challengeList(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ChallengeService.ChallengeList, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ChallengeServiceClient.prototype.challengeHistory = function challengeHistory(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ChallengeService.ChallengeHistory, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ChallengeServiceClient.prototype.challengeDecision = function challengeDecision(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ChallengeService.ChallengeDecision, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ChallengeServiceClient.prototype.challengeFreezeAction = function challengeFreezeAction(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ChallengeService.ChallengeFreezeAction, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

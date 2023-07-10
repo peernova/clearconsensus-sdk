@@ -41,6 +41,24 @@ DataService.UploadURL = {
   responseType: common_gateway_base_pb.UploadURLResponse
 };
 
+DataService.AuthorizeUpload = {
+  methodName: "AuthorizeUpload",
+  service: DataService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_data_pb.UploadURLRequest,
+  responseType: common_data_pb.UploadAuthorizationResponse
+};
+
+DataService.NotifyUpload = {
+  methodName: "NotifyUpload",
+  service: DataService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_data_pb.UploadNotifyRequest,
+  responseType: common_gateway_base_pb.MessageResponse
+};
+
 exports.DataService = DataService;
 
 function DataServiceClient(serviceHost, options) {
@@ -115,6 +133,68 @@ DataServiceClient.prototype.uploadURL = function uploadURL(requestMessage, metad
     callback = arguments[1];
   }
   var client = grpc.unary(DataService.UploadURL, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DataServiceClient.prototype.authorizeUpload = function authorizeUpload(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DataService.AuthorizeUpload, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+DataServiceClient.prototype.notifyUpload = function notifyUpload(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(DataService.NotifyUpload, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

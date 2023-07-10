@@ -5,6 +5,7 @@
 
 import * as public_consensus_service_pb from "../public/consensus_service_pb";
 import * as common_gateway_base_pb from "../common/gateway_base_pb";
+import * as common_consensus_pb from "../common/consensus_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type ConsensusServiceConsensusTimestamps = {
@@ -12,8 +13,8 @@ type ConsensusServiceConsensusTimestamps = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof public_consensus_service_pb.ConsensusTimestampsRequest;
-  readonly responseType: typeof public_consensus_service_pb.ConsensusTimestampsResponse;
+  readonly requestType: typeof common_consensus_pb.ConsensusTimestampsRequest;
+  readonly responseType: typeof common_consensus_pb.ConsensusTimestampsResponse;
 };
 
 type ConsensusServiceConsensus = {
@@ -21,8 +22,8 @@ type ConsensusServiceConsensus = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof public_consensus_service_pb.ConsensusRequest;
-  readonly responseType: typeof public_consensus_service_pb.ConsensusResponse;
+  readonly requestType: typeof common_consensus_pb.ConsensusRequest;
+  readonly responseType: typeof common_consensus_pb.ConsensusResponse;
 };
 
 type ConsensusServiceEvaluatedPrice = {
@@ -30,8 +31,8 @@ type ConsensusServiceEvaluatedPrice = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof public_consensus_service_pb.EVPRequest;
-  readonly responseType: typeof public_consensus_service_pb.EVPResponse;
+  readonly requestType: typeof common_consensus_pb.EVPRequest;
+  readonly responseType: typeof common_consensus_pb.EVPResponse;
 };
 
 type ConsensusServiceConsensusOutliers = {
@@ -48,8 +49,8 @@ type ConsensusServiceGetConsensusRuns = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof public_consensus_service_pb.GetConsensusRunsRequest;
-  readonly responseType: typeof public_consensus_service_pb.GetConsensusRunsResponse;
+  readonly requestType: typeof common_consensus_pb.GetConsensusRunsRequest;
+  readonly responseType: typeof common_consensus_pb.GetConsensusRunsResponse;
 };
 
 type ConsensusServiceConsensusResultSetValues = {
@@ -57,8 +58,8 @@ type ConsensusServiceConsensusResultSetValues = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof public_consensus_service_pb.ConsensusResultSetValuesRequest;
-  readonly responseType: typeof public_consensus_service_pb.ConsensusResultSetValuesResponse;
+  readonly requestType: typeof common_consensus_pb.ConsensusResultSetValuesRequest;
+  readonly responseType: typeof common_consensus_pb.ConsensusResultSetValuesResponse;
 };
 
 type ConsensusServiceConsensusExplorerInstrumentDetails = {
@@ -66,8 +67,8 @@ type ConsensusServiceConsensusExplorerInstrumentDetails = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof public_consensus_service_pb.ConsensusExplorerRequest;
-  readonly responseType: typeof public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse;
+  readonly requestType: typeof common_consensus_pb.ConsensusExplorerRequest;
+  readonly responseType: typeof common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse;
 };
 
 type ConsensusServiceConsensusExplorerTable = {
@@ -75,8 +76,8 @@ type ConsensusServiceConsensusExplorerTable = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof public_consensus_service_pb.ConsensusExplorerRequest;
-  readonly responseType: typeof public_consensus_service_pb.ConsensusExplorerTableResponse;
+  readonly requestType: typeof common_consensus_pb.ConsensusExplorerRequest;
+  readonly responseType: typeof common_consensus_pb.ConsensusExplorerTableResponse;
 };
 
 type ConsensusServiceConsensusExplorerRanges = {
@@ -84,8 +85,53 @@ type ConsensusServiceConsensusExplorerRanges = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof public_consensus_service_pb.ConsensusExplorerRequest;
-  readonly responseType: typeof public_consensus_service_pb.ConsensusExplorerRangeResponse;
+  readonly requestType: typeof common_consensus_pb.ConsensusExplorerRequest;
+  readonly responseType: typeof common_consensus_pb.ConsensusExplorerRangeResponse;
+};
+
+type ConsensusServiceConsensusActive = {
+  readonly methodName: string;
+  readonly service: typeof ConsensusService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_consensus_pb.ConsensusActiveRequest;
+  readonly responseType: typeof common_gateway_base_pb.ConsensusActiveResponse;
+};
+
+type ConsensusServiceConsensusToPublish = {
+  readonly methodName: string;
+  readonly service: typeof ConsensusService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_consensus_pb.ConsensusToPublishRequest;
+  readonly responseType: typeof common_consensus_pb.ConsensusToPublishResponse;
+};
+
+type ConsensusServiceConsensusPublish = {
+  readonly methodName: string;
+  readonly service: typeof ConsensusService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_consensus_pb.ConsensusPublishRequest;
+  readonly responseType: typeof common_gateway_base_pb.MessageResponse;
+};
+
+type ConsensusServiceConsensusHistory = {
+  readonly methodName: string;
+  readonly service: typeof ConsensusService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_consensus_pb.ConsensusHistoryRequest;
+  readonly responseType: typeof common_consensus_pb.ConsensusHistoryResponse;
+};
+
+type ConsensusServiceConsensusDecision = {
+  readonly methodName: string;
+  readonly service: typeof ConsensusService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_consensus_pb.ConsensusDecisionRequest;
+  readonly responseType: typeof common_gateway_base_pb.MessageResponse;
 };
 
 export class ConsensusService {
@@ -99,6 +145,11 @@ export class ConsensusService {
   static readonly ConsensusExplorerInstrumentDetails: ConsensusServiceConsensusExplorerInstrumentDetails;
   static readonly ConsensusExplorerTable: ConsensusServiceConsensusExplorerTable;
   static readonly ConsensusExplorerRanges: ConsensusServiceConsensusExplorerRanges;
+  static readonly ConsensusActive: ConsensusServiceConsensusActive;
+  static readonly ConsensusToPublish: ConsensusServiceConsensusToPublish;
+  static readonly ConsensusPublish: ConsensusServiceConsensusPublish;
+  static readonly ConsensusHistory: ConsensusServiceConsensusHistory;
+  static readonly ConsensusDecision: ConsensusServiceConsensusDecision;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -134,31 +185,31 @@ export class ConsensusServiceClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   consensusTimestamps(
-    requestMessage: public_consensus_service_pb.ConsensusTimestampsRequest,
+    requestMessage: common_consensus_pb.ConsensusTimestampsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusTimestampsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusTimestampsResponse|null) => void
   ): UnaryResponse;
   consensusTimestamps(
-    requestMessage: public_consensus_service_pb.ConsensusTimestampsRequest,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusTimestampsResponse|null) => void
+    requestMessage: common_consensus_pb.ConsensusTimestampsRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusTimestampsResponse|null) => void
   ): UnaryResponse;
   consensus(
-    requestMessage: public_consensus_service_pb.ConsensusRequest,
+    requestMessage: common_consensus_pb.ConsensusRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusResponse|null) => void
   ): UnaryResponse;
   consensus(
-    requestMessage: public_consensus_service_pb.ConsensusRequest,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusResponse|null) => void
+    requestMessage: common_consensus_pb.ConsensusRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusResponse|null) => void
   ): UnaryResponse;
   evaluatedPrice(
-    requestMessage: public_consensus_service_pb.EVPRequest,
+    requestMessage: common_consensus_pb.EVPRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.EVPResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.EVPResponse|null) => void
   ): UnaryResponse;
   evaluatedPrice(
-    requestMessage: public_consensus_service_pb.EVPRequest,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.EVPResponse|null) => void
+    requestMessage: common_consensus_pb.EVPRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.EVPResponse|null) => void
   ): UnaryResponse;
   consensusOutliers(
     requestMessage: common_gateway_base_pb.OutliersListRequest,
@@ -170,49 +221,94 @@ export class ConsensusServiceClient {
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.ConsensusActiveResponse|null) => void
   ): UnaryResponse;
   getConsensusRuns(
-    requestMessage: public_consensus_service_pb.GetConsensusRunsRequest,
+    requestMessage: common_consensus_pb.GetConsensusRunsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.GetConsensusRunsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.GetConsensusRunsResponse|null) => void
   ): UnaryResponse;
   getConsensusRuns(
-    requestMessage: public_consensus_service_pb.GetConsensusRunsRequest,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.GetConsensusRunsResponse|null) => void
+    requestMessage: common_consensus_pb.GetConsensusRunsRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.GetConsensusRunsResponse|null) => void
   ): UnaryResponse;
   consensusResultSetValues(
-    requestMessage: public_consensus_service_pb.ConsensusResultSetValuesRequest,
+    requestMessage: common_consensus_pb.ConsensusResultSetValuesRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusResultSetValuesResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusResultSetValuesResponse|null) => void
   ): UnaryResponse;
   consensusResultSetValues(
-    requestMessage: public_consensus_service_pb.ConsensusResultSetValuesRequest,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusResultSetValuesResponse|null) => void
+    requestMessage: common_consensus_pb.ConsensusResultSetValuesRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusResultSetValuesResponse|null) => void
   ): UnaryResponse;
   consensusExplorerInstrumentDetails(
-    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
+    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse|null) => void
   ): UnaryResponse;
   consensusExplorerInstrumentDetails(
-    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse|null) => void
+    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse|null) => void
   ): UnaryResponse;
   consensusExplorerTable(
-    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
+    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerTableResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerTableResponse|null) => void
   ): UnaryResponse;
   consensusExplorerTable(
-    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerTableResponse|null) => void
+    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerTableResponse|null) => void
   ): UnaryResponse;
   consensusExplorerRanges(
-    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
+    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerRangeResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerRangeResponse|null) => void
   ): UnaryResponse;
   consensusExplorerRanges(
-    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
-    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerRangeResponse|null) => void
+    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerRangeResponse|null) => void
+  ): UnaryResponse;
+  consensusActive(
+    requestMessage: common_consensus_pb.ConsensusActiveRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.ConsensusActiveResponse|null) => void
+  ): UnaryResponse;
+  consensusActive(
+    requestMessage: common_consensus_pb.ConsensusActiveRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.ConsensusActiveResponse|null) => void
+  ): UnaryResponse;
+  consensusToPublish(
+    requestMessage: common_consensus_pb.ConsensusToPublishRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusToPublishResponse|null) => void
+  ): UnaryResponse;
+  consensusToPublish(
+    requestMessage: common_consensus_pb.ConsensusToPublishRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusToPublishResponse|null) => void
+  ): UnaryResponse;
+  consensusPublish(
+    requestMessage: common_consensus_pb.ConsensusPublishRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  consensusPublish(
+    requestMessage: common_consensus_pb.ConsensusPublishRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  consensusHistory(
+    requestMessage: common_consensus_pb.ConsensusHistoryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusHistoryResponse|null) => void
+  ): UnaryResponse;
+  consensusHistory(
+    requestMessage: common_consensus_pb.ConsensusHistoryRequest,
+    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusHistoryResponse|null) => void
+  ): UnaryResponse;
+  consensusDecision(
+    requestMessage: common_consensus_pb.ConsensusDecisionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  consensusDecision(
+    requestMessage: common_consensus_pb.ConsensusDecisionRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
 }
 

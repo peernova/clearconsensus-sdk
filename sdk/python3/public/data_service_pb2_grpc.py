@@ -16,6 +16,8 @@ class DataServiceStub(object):
         self.Submitted = channel.unary_unary('/titanium.DataService/Submitted', request_serializer=common_dot_data__pb2.SubmittedRequest.SerializeToString, response_deserializer=common_dot_data__pb2.SubmittedResponse.FromString)
         self.Export = channel.unary_unary('/titanium.DataService/Export', request_serializer=common_dot_data__pb2.ExportRequest.SerializeToString, response_deserializer=common_dot_data__pb2.ExportResponse.FromString)
         self.UploadURL = channel.unary_unary('/titanium.DataService/UploadURL', request_serializer=common_dot_data__pb2.UploadURLRequest.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.UploadURLResponse.FromString)
+        self.AuthorizeUpload = channel.unary_unary('/titanium.DataService/AuthorizeUpload', request_serializer=common_dot_data__pb2.UploadURLRequest.SerializeToString, response_deserializer=common_dot_data__pb2.UploadAuthorizationResponse.FromString)
+        self.NotifyUpload = channel.unary_unary('/titanium.DataService/NotifyUpload', request_serializer=common_dot_data__pb2.UploadNotifyRequest.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.MessageResponse.FromString)
 
 class DataServiceServicer(object):
     """DataService is a utility service that provides operations on data.
@@ -42,8 +44,22 @@ class DataServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AuthorizeUpload(self, request, context):
+        """AuthorizeUpload shows availability of uploading for user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def NotifyUpload(self, request, context):
+        """NotifyUpload returns message with notify that data was uploaded according to url in request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_DataServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'Submitted': grpc.unary_unary_rpc_method_handler(servicer.Submitted, request_deserializer=common_dot_data__pb2.SubmittedRequest.FromString, response_serializer=common_dot_data__pb2.SubmittedResponse.SerializeToString), 'Export': grpc.unary_unary_rpc_method_handler(servicer.Export, request_deserializer=common_dot_data__pb2.ExportRequest.FromString, response_serializer=common_dot_data__pb2.ExportResponse.SerializeToString), 'UploadURL': grpc.unary_unary_rpc_method_handler(servicer.UploadURL, request_deserializer=common_dot_data__pb2.UploadURLRequest.FromString, response_serializer=common_dot_gateway__base__pb2.UploadURLResponse.SerializeToString)}
+    rpc_method_handlers = {'Submitted': grpc.unary_unary_rpc_method_handler(servicer.Submitted, request_deserializer=common_dot_data__pb2.SubmittedRequest.FromString, response_serializer=common_dot_data__pb2.SubmittedResponse.SerializeToString), 'Export': grpc.unary_unary_rpc_method_handler(servicer.Export, request_deserializer=common_dot_data__pb2.ExportRequest.FromString, response_serializer=common_dot_data__pb2.ExportResponse.SerializeToString), 'UploadURL': grpc.unary_unary_rpc_method_handler(servicer.UploadURL, request_deserializer=common_dot_data__pb2.UploadURLRequest.FromString, response_serializer=common_dot_gateway__base__pb2.UploadURLResponse.SerializeToString), 'AuthorizeUpload': grpc.unary_unary_rpc_method_handler(servicer.AuthorizeUpload, request_deserializer=common_dot_data__pb2.UploadURLRequest.FromString, response_serializer=common_dot_data__pb2.UploadAuthorizationResponse.SerializeToString), 'NotifyUpload': grpc.unary_unary_rpc_method_handler(servicer.NotifyUpload, request_deserializer=common_dot_data__pb2.UploadNotifyRequest.FromString, response_serializer=common_dot_gateway__base__pb2.MessageResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('titanium.DataService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -62,3 +78,11 @@ class DataService(object):
     @staticmethod
     def UploadURL(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/titanium.DataService/UploadURL', common_dot_data__pb2.UploadURLRequest.SerializeToString, common_dot_gateway__base__pb2.UploadURLResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AuthorizeUpload(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.DataService/AuthorizeUpload', common_dot_data__pb2.UploadURLRequest.SerializeToString, common_dot_data__pb2.UploadAuthorizationResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def NotifyUpload(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.DataService/NotifyUpload', common_dot_data__pb2.UploadNotifyRequest.SerializeToString, common_dot_gateway__base__pb2.MessageResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

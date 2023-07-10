@@ -70,6 +70,33 @@ type UserServiceDeleteUserNotification = {
   readonly responseType: typeof common_user_controller_pb.UserNotificationResponse;
 };
 
+type UserServiceAddUser = {
+  readonly methodName: string;
+  readonly service: typeof UserService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_user_controller_pb.UserRequest;
+  readonly responseType: typeof common_user_controller_pb.UserResponse;
+};
+
+type UserServiceUpdateUser = {
+  readonly methodName: string;
+  readonly service: typeof UserService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_user_controller_pb.UserRequest;
+  readonly responseType: typeof common_user_controller_pb.UserResponse;
+};
+
+type UserServiceDeleteUser = {
+  readonly methodName: string;
+  readonly service: typeof UserService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_user_controller_pb.UserRequest;
+  readonly responseType: typeof common_user_controller_pb.UserResponse;
+};
+
 export class UserService {
   static readonly serviceName: string;
   static readonly GetUser: UserServiceGetUser;
@@ -79,6 +106,9 @@ export class UserService {
   static readonly UpdateUserNotification: UserServiceUpdateUserNotification;
   static readonly AddUserNotification: UserServiceAddUserNotification;
   static readonly DeleteUserNotification: UserServiceDeleteUserNotification;
+  static readonly AddUser: UserServiceAddUser;
+  static readonly UpdateUser: UserServiceUpdateUser;
+  static readonly DeleteUser: UserServiceDeleteUser;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -175,6 +205,33 @@ export class UserServiceClient {
   deleteUserNotification(
     requestMessage: common_user_controller_pb.UserNotificationRequest,
     callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationResponse|null) => void
+  ): UnaryResponse;
+  addUser(
+    requestMessage: common_user_controller_pb.UserRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+  ): UnaryResponse;
+  addUser(
+    requestMessage: common_user_controller_pb.UserRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+  ): UnaryResponse;
+  updateUser(
+    requestMessage: common_user_controller_pb.UserRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+  ): UnaryResponse;
+  updateUser(
+    requestMessage: common_user_controller_pb.UserRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+  ): UnaryResponse;
+  deleteUser(
+    requestMessage: common_user_controller_pb.UserRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+  ): UnaryResponse;
+  deleteUser(
+    requestMessage: common_user_controller_pb.UserRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
   ): UnaryResponse;
 }
 

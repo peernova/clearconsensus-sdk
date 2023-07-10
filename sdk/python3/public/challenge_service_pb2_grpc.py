@@ -39,6 +39,11 @@ class ChallengeServiceStub(object):
         self.ChallengeFreezeStatus = channel.unary_unary('/titanium.ChallengeService/ChallengeFreezeStatus', request_serializer=common_dot_challenge__pb2.ChallengeFreezeStatusRequest.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.StatusResponse.FromString)
         self.GetChallengeDetails = channel.unary_unary('/titanium.ChallengeService/GetChallengeDetails', request_serializer=common_dot_challenge__pb2.GetChallengeDetailsRequest.SerializeToString, response_deserializer=common_dot_challenge__pb2.GetChallengeDetailsResponse.FromString)
         self.GetChallengeAttachmentUploadUrl = channel.unary_unary('/titanium.ChallengeService/GetChallengeAttachmentUploadUrl', request_serializer=common_dot_challenge__pb2.GetAttachmentUploadUrlRequest.SerializeToString, response_deserializer=common_dot_challenge__pb2.GetAttachmentUploadUrlResponse.FromString)
+        self.ChallengeActive = channel.unary_unary('/titanium.ChallengeService/ChallengeActive', request_serializer=common_dot_challenge__pb2.ChallengeActiveRequest.SerializeToString, response_deserializer=common_dot_challenge__pb2.ChallengeActiveResponse.FromString)
+        self.ChallengeList = channel.unary_unary('/titanium.ChallengeService/ChallengeList', request_serializer=common_dot_challenge__pb2.ChallengeListRequest.SerializeToString, response_deserializer=common_dot_challenge__pb2.ChallengeListResponse.FromString)
+        self.ChallengeHistory = channel.unary_unary('/titanium.ChallengeService/ChallengeHistory', request_serializer=common_dot_challenge__pb2.ChallengeHistoryRequest.SerializeToString, response_deserializer=common_dot_challenge__pb2.ChallengeHistoryResponse.FromString)
+        self.ChallengeDecision = channel.unary_unary('/titanium.ChallengeService/ChallengeDecision', request_serializer=common_dot_challenge__pb2.ChallengeDecisionRequest.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.MessageResponse.FromString)
+        self.ChallengeFreezeAction = channel.unary_unary('/titanium.ChallengeService/ChallengeFreezeAction', request_serializer=common_dot_challenge__pb2.ChallengeFreezeActionRequest.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.MessageResponse.FromString)
 
 class ChallengeServiceServicer(object):
     """
@@ -107,8 +112,43 @@ class ChallengeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ChallengeActive(self, request, context):
+        """ChallengeActive returns active challenges(according to request) in active status(challenge process is active).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ChallengeList(self, request, context):
+        """ChallengeList returns list of challenges according to request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ChallengeHistory(self, request, context):
+        """ChallengeHistory return already closed challenges according to request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ChallengeDecision(self, request, context):
+        """ChallengeDecision sets decision of the challenge according to request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ChallengeFreezeAction(self, request, context):
+        """ChallengeFreezeAction makes challenge process stopped or not according to request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_ChallengeServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'ChallengeFormMeta': grpc.unary_unary_rpc_method_handler(servicer.ChallengeFormMeta, request_deserializer=common_dot_challenge__pb2.ChallengeFormMetaRequest.FromString, response_serializer=common_dot_challenge__pb2.ChallengeFormMetaResponse.SerializeToString), 'ChallengeCreate': grpc.unary_unary_rpc_method_handler(servicer.ChallengeCreate, request_deserializer=common_dot_challenge__pb2.ChallengeCreateRequest.FromString, response_serializer=common_dot_challenge__pb2.ChallengeCreateResponse.SerializeToString), 'ChallengeFreezeStatus': grpc.unary_unary_rpc_method_handler(servicer.ChallengeFreezeStatus, request_deserializer=common_dot_challenge__pb2.ChallengeFreezeStatusRequest.FromString, response_serializer=common_dot_gateway__base__pb2.StatusResponse.SerializeToString), 'GetChallengeDetails': grpc.unary_unary_rpc_method_handler(servicer.GetChallengeDetails, request_deserializer=common_dot_challenge__pb2.GetChallengeDetailsRequest.FromString, response_serializer=common_dot_challenge__pb2.GetChallengeDetailsResponse.SerializeToString), 'GetChallengeAttachmentUploadUrl': grpc.unary_unary_rpc_method_handler(servicer.GetChallengeAttachmentUploadUrl, request_deserializer=common_dot_challenge__pb2.GetAttachmentUploadUrlRequest.FromString, response_serializer=common_dot_challenge__pb2.GetAttachmentUploadUrlResponse.SerializeToString)}
+    rpc_method_handlers = {'ChallengeFormMeta': grpc.unary_unary_rpc_method_handler(servicer.ChallengeFormMeta, request_deserializer=common_dot_challenge__pb2.ChallengeFormMetaRequest.FromString, response_serializer=common_dot_challenge__pb2.ChallengeFormMetaResponse.SerializeToString), 'ChallengeCreate': grpc.unary_unary_rpc_method_handler(servicer.ChallengeCreate, request_deserializer=common_dot_challenge__pb2.ChallengeCreateRequest.FromString, response_serializer=common_dot_challenge__pb2.ChallengeCreateResponse.SerializeToString), 'ChallengeFreezeStatus': grpc.unary_unary_rpc_method_handler(servicer.ChallengeFreezeStatus, request_deserializer=common_dot_challenge__pb2.ChallengeFreezeStatusRequest.FromString, response_serializer=common_dot_gateway__base__pb2.StatusResponse.SerializeToString), 'GetChallengeDetails': grpc.unary_unary_rpc_method_handler(servicer.GetChallengeDetails, request_deserializer=common_dot_challenge__pb2.GetChallengeDetailsRequest.FromString, response_serializer=common_dot_challenge__pb2.GetChallengeDetailsResponse.SerializeToString), 'GetChallengeAttachmentUploadUrl': grpc.unary_unary_rpc_method_handler(servicer.GetChallengeAttachmentUploadUrl, request_deserializer=common_dot_challenge__pb2.GetAttachmentUploadUrlRequest.FromString, response_serializer=common_dot_challenge__pb2.GetAttachmentUploadUrlResponse.SerializeToString), 'ChallengeActive': grpc.unary_unary_rpc_method_handler(servicer.ChallengeActive, request_deserializer=common_dot_challenge__pb2.ChallengeActiveRequest.FromString, response_serializer=common_dot_challenge__pb2.ChallengeActiveResponse.SerializeToString), 'ChallengeList': grpc.unary_unary_rpc_method_handler(servicer.ChallengeList, request_deserializer=common_dot_challenge__pb2.ChallengeListRequest.FromString, response_serializer=common_dot_challenge__pb2.ChallengeListResponse.SerializeToString), 'ChallengeHistory': grpc.unary_unary_rpc_method_handler(servicer.ChallengeHistory, request_deserializer=common_dot_challenge__pb2.ChallengeHistoryRequest.FromString, response_serializer=common_dot_challenge__pb2.ChallengeHistoryResponse.SerializeToString), 'ChallengeDecision': grpc.unary_unary_rpc_method_handler(servicer.ChallengeDecision, request_deserializer=common_dot_challenge__pb2.ChallengeDecisionRequest.FromString, response_serializer=common_dot_gateway__base__pb2.MessageResponse.SerializeToString), 'ChallengeFreezeAction': grpc.unary_unary_rpc_method_handler(servicer.ChallengeFreezeAction, request_deserializer=common_dot_challenge__pb2.ChallengeFreezeActionRequest.FromString, response_serializer=common_dot_gateway__base__pb2.MessageResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('titanium.ChallengeService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -156,3 +196,23 @@ class ChallengeService(object):
     @staticmethod
     def GetChallengeAttachmentUploadUrl(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/titanium.ChallengeService/GetChallengeAttachmentUploadUrl', common_dot_challenge__pb2.GetAttachmentUploadUrlRequest.SerializeToString, common_dot_challenge__pb2.GetAttachmentUploadUrlResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChallengeActive(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.ChallengeService/ChallengeActive', common_dot_challenge__pb2.ChallengeActiveRequest.SerializeToString, common_dot_challenge__pb2.ChallengeActiveResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChallengeList(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.ChallengeService/ChallengeList', common_dot_challenge__pb2.ChallengeListRequest.SerializeToString, common_dot_challenge__pb2.ChallengeListResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChallengeHistory(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.ChallengeService/ChallengeHistory', common_dot_challenge__pb2.ChallengeHistoryRequest.SerializeToString, common_dot_challenge__pb2.ChallengeHistoryResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChallengeDecision(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.ChallengeService/ChallengeDecision', common_dot_challenge__pb2.ChallengeDecisionRequest.SerializeToString, common_dot_gateway__base__pb2.MessageResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ChallengeFreezeAction(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.ChallengeService/ChallengeFreezeAction', common_dot_challenge__pb2.ChallengeFreezeActionRequest.SerializeToString, common_dot_gateway__base__pb2.MessageResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

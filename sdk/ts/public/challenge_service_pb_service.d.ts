@@ -53,6 +53,51 @@ type ChallengeServiceGetChallengeAttachmentUploadUrl = {
   readonly responseType: typeof common_challenge_pb.GetAttachmentUploadUrlResponse;
 };
 
+type ChallengeServiceChallengeActive = {
+  readonly methodName: string;
+  readonly service: typeof ChallengeService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_challenge_pb.ChallengeActiveRequest;
+  readonly responseType: typeof common_challenge_pb.ChallengeActiveResponse;
+};
+
+type ChallengeServiceChallengeList = {
+  readonly methodName: string;
+  readonly service: typeof ChallengeService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_challenge_pb.ChallengeListRequest;
+  readonly responseType: typeof common_challenge_pb.ChallengeListResponse;
+};
+
+type ChallengeServiceChallengeHistory = {
+  readonly methodName: string;
+  readonly service: typeof ChallengeService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_challenge_pb.ChallengeHistoryRequest;
+  readonly responseType: typeof common_challenge_pb.ChallengeHistoryResponse;
+};
+
+type ChallengeServiceChallengeDecision = {
+  readonly methodName: string;
+  readonly service: typeof ChallengeService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_challenge_pb.ChallengeDecisionRequest;
+  readonly responseType: typeof common_gateway_base_pb.MessageResponse;
+};
+
+type ChallengeServiceChallengeFreezeAction = {
+  readonly methodName: string;
+  readonly service: typeof ChallengeService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_challenge_pb.ChallengeFreezeActionRequest;
+  readonly responseType: typeof common_gateway_base_pb.MessageResponse;
+};
+
 export class ChallengeService {
   static readonly serviceName: string;
   static readonly ChallengeFormMeta: ChallengeServiceChallengeFormMeta;
@@ -60,6 +105,11 @@ export class ChallengeService {
   static readonly ChallengeFreezeStatus: ChallengeServiceChallengeFreezeStatus;
   static readonly GetChallengeDetails: ChallengeServiceGetChallengeDetails;
   static readonly GetChallengeAttachmentUploadUrl: ChallengeServiceGetChallengeAttachmentUploadUrl;
+  static readonly ChallengeActive: ChallengeServiceChallengeActive;
+  static readonly ChallengeList: ChallengeServiceChallengeList;
+  static readonly ChallengeHistory: ChallengeServiceChallengeHistory;
+  static readonly ChallengeDecision: ChallengeServiceChallengeDecision;
+  static readonly ChallengeFreezeAction: ChallengeServiceChallengeFreezeAction;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -138,6 +188,51 @@ export class ChallengeServiceClient {
   getChallengeAttachmentUploadUrl(
     requestMessage: common_challenge_pb.GetAttachmentUploadUrlRequest,
     callback: (error: ServiceError|null, responseMessage: common_challenge_pb.GetAttachmentUploadUrlResponse|null) => void
+  ): UnaryResponse;
+  challengeActive(
+    requestMessage: common_challenge_pb.ChallengeActiveRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_challenge_pb.ChallengeActiveResponse|null) => void
+  ): UnaryResponse;
+  challengeActive(
+    requestMessage: common_challenge_pb.ChallengeActiveRequest,
+    callback: (error: ServiceError|null, responseMessage: common_challenge_pb.ChallengeActiveResponse|null) => void
+  ): UnaryResponse;
+  challengeList(
+    requestMessage: common_challenge_pb.ChallengeListRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_challenge_pb.ChallengeListResponse|null) => void
+  ): UnaryResponse;
+  challengeList(
+    requestMessage: common_challenge_pb.ChallengeListRequest,
+    callback: (error: ServiceError|null, responseMessage: common_challenge_pb.ChallengeListResponse|null) => void
+  ): UnaryResponse;
+  challengeHistory(
+    requestMessage: common_challenge_pb.ChallengeHistoryRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_challenge_pb.ChallengeHistoryResponse|null) => void
+  ): UnaryResponse;
+  challengeHistory(
+    requestMessage: common_challenge_pb.ChallengeHistoryRequest,
+    callback: (error: ServiceError|null, responseMessage: common_challenge_pb.ChallengeHistoryResponse|null) => void
+  ): UnaryResponse;
+  challengeDecision(
+    requestMessage: common_challenge_pb.ChallengeDecisionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  challengeDecision(
+    requestMessage: common_challenge_pb.ChallengeDecisionRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  challengeFreezeAction(
+    requestMessage: common_challenge_pb.ChallengeFreezeActionRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  challengeFreezeAction(
+    requestMessage: common_challenge_pb.ChallengeFreezeActionRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
 }
 

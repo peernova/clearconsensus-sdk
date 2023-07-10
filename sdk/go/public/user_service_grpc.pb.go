@@ -26,6 +26,9 @@ type UserServiceClient interface {
 	UpdateUserNotification(ctx context.Context, in *common.UserNotificationRequest, opts ...grpc.CallOption) (*common.UserNotificationResponse, error)
 	AddUserNotification(ctx context.Context, in *common.UserNotificationRequest, opts ...grpc.CallOption) (*common.UserNotificationResponse, error)
 	DeleteUserNotification(ctx context.Context, in *common.UserNotificationRequest, opts ...grpc.CallOption) (*common.UserNotificationResponse, error)
+	AddUser(ctx context.Context, in *common.UserRequest, opts ...grpc.CallOption) (*common.UserResponse, error)
+	UpdateUser(ctx context.Context, in *common.UserRequest, opts ...grpc.CallOption) (*common.UserResponse, error)
+	DeleteUser(ctx context.Context, in *common.UserRequest, opts ...grpc.CallOption) (*common.UserResponse, error)
 }
 
 type userServiceClient struct {
@@ -99,6 +102,33 @@ func (c *userServiceClient) DeleteUserNotification(ctx context.Context, in *comm
 	return out, nil
 }
 
+func (c *userServiceClient) AddUser(ctx context.Context, in *common.UserRequest, opts ...grpc.CallOption) (*common.UserResponse, error) {
+	out := new(common.UserResponse)
+	err := c.cc.Invoke(ctx, "/titanium.UserService/AddUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) UpdateUser(ctx context.Context, in *common.UserRequest, opts ...grpc.CallOption) (*common.UserResponse, error) {
+	out := new(common.UserResponse)
+	err := c.cc.Invoke(ctx, "/titanium.UserService/UpdateUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *userServiceClient) DeleteUser(ctx context.Context, in *common.UserRequest, opts ...grpc.CallOption) (*common.UserResponse, error) {
+	out := new(common.UserResponse)
+	err := c.cc.Invoke(ctx, "/titanium.UserService/DeleteUser", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // UserServiceServer is the server API for UserService service.
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility
@@ -110,6 +140,9 @@ type UserServiceServer interface {
 	UpdateUserNotification(context.Context, *common.UserNotificationRequest) (*common.UserNotificationResponse, error)
 	AddUserNotification(context.Context, *common.UserNotificationRequest) (*common.UserNotificationResponse, error)
 	DeleteUserNotification(context.Context, *common.UserNotificationRequest) (*common.UserNotificationResponse, error)
+	AddUser(context.Context, *common.UserRequest) (*common.UserResponse, error)
+	UpdateUser(context.Context, *common.UserRequest) (*common.UserResponse, error)
+	DeleteUser(context.Context, *common.UserRequest) (*common.UserResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -137,6 +170,15 @@ func (UnimplementedUserServiceServer) AddUserNotification(context.Context, *comm
 }
 func (UnimplementedUserServiceServer) DeleteUserNotification(context.Context, *common.UserNotificationRequest) (*common.UserNotificationResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method DeleteUserNotification not implemented")
+}
+func (UnimplementedUserServiceServer) AddUser(context.Context, *common.UserRequest) (*common.UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method AddUser not implemented")
+}
+func (UnimplementedUserServiceServer) UpdateUser(context.Context, *common.UserRequest) (*common.UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UpdateUser not implemented")
+}
+func (UnimplementedUserServiceServer) DeleteUser(context.Context, *common.UserRequest) (*common.UserResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DeleteUser not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
 
@@ -277,6 +319,60 @@ func _UserService_DeleteUserNotification_Handler(srv interface{}, ctx context.Co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UserService_AddUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).AddUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.UserService/AddUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).AddUser(ctx, req.(*common.UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_UpdateUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).UpdateUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.UserService/UpdateUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).UpdateUser(ctx, req.(*common.UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UserService_DeleteUser_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.UserRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UserServiceServer).DeleteUser(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.UserService/DeleteUser",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UserServiceServer).DeleteUser(ctx, req.(*common.UserRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UserService_ServiceDesc is the grpc.ServiceDesc for UserService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -311,6 +407,18 @@ var UserService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "DeleteUserNotification",
 			Handler:    _UserService_DeleteUserNotification_Handler,
+		},
+		{
+			MethodName: "AddUser",
+			Handler:    _UserService_AddUser_Handler,
+		},
+		{
+			MethodName: "UpdateUser",
+			Handler:    _UserService_UpdateUser_Handler,
+		},
+		{
+			MethodName: "DeleteUser",
+			Handler:    _UserService_DeleteUser_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

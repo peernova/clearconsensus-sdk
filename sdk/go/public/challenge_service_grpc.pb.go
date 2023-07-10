@@ -36,6 +36,16 @@ type ChallengeServiceClient interface {
 	// The file in attachment can be any file that provides additional information about the disputable outlier.
 	// Need to specify asset ID, submitted ID and file name.
 	GetChallengeAttachmentUploadUrl(ctx context.Context, in *common.GetAttachmentUploadUrlRequest, opts ...grpc.CallOption) (*common.GetAttachmentUploadUrlResponse, error)
+	// ChallengeActive returns active challenges(according to request) in active status(challenge process is active).
+	ChallengeActive(ctx context.Context, in *common.ChallengeActiveRequest, opts ...grpc.CallOption) (*common.ChallengeActiveResponse, error)
+	// ChallengeList returns list of challenges according to request.
+	ChallengeList(ctx context.Context, in *common.ChallengeListRequest, opts ...grpc.CallOption) (*common.ChallengeListResponse, error)
+	// ChallengeHistory return already closed challenges according to request.
+	ChallengeHistory(ctx context.Context, in *common.ChallengeHistoryRequest, opts ...grpc.CallOption) (*common.ChallengeHistoryResponse, error)
+	// ChallengeDecision sets decision of the challenge according to request.
+	ChallengeDecision(ctx context.Context, in *common.ChallengeDecisionRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
+	// ChallengeFreezeAction makes challenge process stopped or not according to request.
+	ChallengeFreezeAction(ctx context.Context, in *common.ChallengeFreezeActionRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
 }
 
 type challengeServiceClient struct {
@@ -91,6 +101,51 @@ func (c *challengeServiceClient) GetChallengeAttachmentUploadUrl(ctx context.Con
 	return out, nil
 }
 
+func (c *challengeServiceClient) ChallengeActive(ctx context.Context, in *common.ChallengeActiveRequest, opts ...grpc.CallOption) (*common.ChallengeActiveResponse, error) {
+	out := new(common.ChallengeActiveResponse)
+	err := c.cc.Invoke(ctx, "/titanium.ChallengeService/ChallengeActive", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *challengeServiceClient) ChallengeList(ctx context.Context, in *common.ChallengeListRequest, opts ...grpc.CallOption) (*common.ChallengeListResponse, error) {
+	out := new(common.ChallengeListResponse)
+	err := c.cc.Invoke(ctx, "/titanium.ChallengeService/ChallengeList", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *challengeServiceClient) ChallengeHistory(ctx context.Context, in *common.ChallengeHistoryRequest, opts ...grpc.CallOption) (*common.ChallengeHistoryResponse, error) {
+	out := new(common.ChallengeHistoryResponse)
+	err := c.cc.Invoke(ctx, "/titanium.ChallengeService/ChallengeHistory", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *challengeServiceClient) ChallengeDecision(ctx context.Context, in *common.ChallengeDecisionRequest, opts ...grpc.CallOption) (*common.MessageResponse, error) {
+	out := new(common.MessageResponse)
+	err := c.cc.Invoke(ctx, "/titanium.ChallengeService/ChallengeDecision", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *challengeServiceClient) ChallengeFreezeAction(ctx context.Context, in *common.ChallengeFreezeActionRequest, opts ...grpc.CallOption) (*common.MessageResponse, error) {
+	out := new(common.MessageResponse)
+	err := c.cc.Invoke(ctx, "/titanium.ChallengeService/ChallengeFreezeAction", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ChallengeServiceServer is the server API for ChallengeService service.
 // All implementations must embed UnimplementedChallengeServiceServer
 // for forward compatibility
@@ -112,6 +167,16 @@ type ChallengeServiceServer interface {
 	// The file in attachment can be any file that provides additional information about the disputable outlier.
 	// Need to specify asset ID, submitted ID and file name.
 	GetChallengeAttachmentUploadUrl(context.Context, *common.GetAttachmentUploadUrlRequest) (*common.GetAttachmentUploadUrlResponse, error)
+	// ChallengeActive returns active challenges(according to request) in active status(challenge process is active).
+	ChallengeActive(context.Context, *common.ChallengeActiveRequest) (*common.ChallengeActiveResponse, error)
+	// ChallengeList returns list of challenges according to request.
+	ChallengeList(context.Context, *common.ChallengeListRequest) (*common.ChallengeListResponse, error)
+	// ChallengeHistory return already closed challenges according to request.
+	ChallengeHistory(context.Context, *common.ChallengeHistoryRequest) (*common.ChallengeHistoryResponse, error)
+	// ChallengeDecision sets decision of the challenge according to request.
+	ChallengeDecision(context.Context, *common.ChallengeDecisionRequest) (*common.MessageResponse, error)
+	// ChallengeFreezeAction makes challenge process stopped or not according to request.
+	ChallengeFreezeAction(context.Context, *common.ChallengeFreezeActionRequest) (*common.MessageResponse, error)
 	mustEmbedUnimplementedChallengeServiceServer()
 }
 
@@ -133,6 +198,21 @@ func (UnimplementedChallengeServiceServer) GetChallengeDetails(context.Context, 
 }
 func (UnimplementedChallengeServiceServer) GetChallengeAttachmentUploadUrl(context.Context, *common.GetAttachmentUploadUrlRequest) (*common.GetAttachmentUploadUrlResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetChallengeAttachmentUploadUrl not implemented")
+}
+func (UnimplementedChallengeServiceServer) ChallengeActive(context.Context, *common.ChallengeActiveRequest) (*common.ChallengeActiveResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChallengeActive not implemented")
+}
+func (UnimplementedChallengeServiceServer) ChallengeList(context.Context, *common.ChallengeListRequest) (*common.ChallengeListResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChallengeList not implemented")
+}
+func (UnimplementedChallengeServiceServer) ChallengeHistory(context.Context, *common.ChallengeHistoryRequest) (*common.ChallengeHistoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChallengeHistory not implemented")
+}
+func (UnimplementedChallengeServiceServer) ChallengeDecision(context.Context, *common.ChallengeDecisionRequest) (*common.MessageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChallengeDecision not implemented")
+}
+func (UnimplementedChallengeServiceServer) ChallengeFreezeAction(context.Context, *common.ChallengeFreezeActionRequest) (*common.MessageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ChallengeFreezeAction not implemented")
 }
 func (UnimplementedChallengeServiceServer) mustEmbedUnimplementedChallengeServiceServer() {}
 
@@ -237,6 +317,96 @@ func _ChallengeService_GetChallengeAttachmentUploadUrl_Handler(srv interface{}, 
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ChallengeService_ChallengeActive_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.ChallengeActiveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChallengeServiceServer).ChallengeActive(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.ChallengeService/ChallengeActive",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChallengeServiceServer).ChallengeActive(ctx, req.(*common.ChallengeActiveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ChallengeService_ChallengeList_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.ChallengeListRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChallengeServiceServer).ChallengeList(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.ChallengeService/ChallengeList",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChallengeServiceServer).ChallengeList(ctx, req.(*common.ChallengeListRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ChallengeService_ChallengeHistory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.ChallengeHistoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChallengeServiceServer).ChallengeHistory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.ChallengeService/ChallengeHistory",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChallengeServiceServer).ChallengeHistory(ctx, req.(*common.ChallengeHistoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ChallengeService_ChallengeDecision_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.ChallengeDecisionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChallengeServiceServer).ChallengeDecision(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.ChallengeService/ChallengeDecision",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChallengeServiceServer).ChallengeDecision(ctx, req.(*common.ChallengeDecisionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ChallengeService_ChallengeFreezeAction_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.ChallengeFreezeActionRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChallengeServiceServer).ChallengeFreezeAction(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.ChallengeService/ChallengeFreezeAction",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChallengeServiceServer).ChallengeFreezeAction(ctx, req.(*common.ChallengeFreezeActionRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ChallengeService_ServiceDesc is the grpc.ServiceDesc for ChallengeService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -263,6 +433,26 @@ var ChallengeService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetChallengeAttachmentUploadUrl",
 			Handler:    _ChallengeService_GetChallengeAttachmentUploadUrl_Handler,
+		},
+		{
+			MethodName: "ChallengeActive",
+			Handler:    _ChallengeService_ChallengeActive_Handler,
+		},
+		{
+			MethodName: "ChallengeList",
+			Handler:    _ChallengeService_ChallengeList_Handler,
+		},
+		{
+			MethodName: "ChallengeHistory",
+			Handler:    _ChallengeService_ChallengeHistory_Handler,
+		},
+		{
+			MethodName: "ChallengeDecision",
+			Handler:    _ChallengeService_ChallengeDecision_Handler,
+		},
+		{
+			MethodName: "ChallengeFreezeAction",
+			Handler:    _ChallengeService_ChallengeFreezeAction_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

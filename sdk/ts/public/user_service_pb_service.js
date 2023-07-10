@@ -76,6 +76,33 @@ UserService.DeleteUserNotification = {
   responseType: common_user_controller_pb.UserNotificationResponse
 };
 
+UserService.AddUser = {
+  methodName: "AddUser",
+  service: UserService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_user_controller_pb.UserRequest,
+  responseType: common_user_controller_pb.UserResponse
+};
+
+UserService.UpdateUser = {
+  methodName: "UpdateUser",
+  service: UserService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_user_controller_pb.UserRequest,
+  responseType: common_user_controller_pb.UserResponse
+};
+
+UserService.DeleteUser = {
+  methodName: "DeleteUser",
+  service: UserService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_user_controller_pb.UserRequest,
+  responseType: common_user_controller_pb.UserResponse
+};
+
 exports.UserService = UserService;
 
 function UserServiceClient(serviceHost, options) {
@@ -274,6 +301,99 @@ UserServiceClient.prototype.deleteUserNotification = function deleteUserNotifica
     callback = arguments[1];
   }
   var client = grpc.unary(UserService.DeleteUserNotification, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UserServiceClient.prototype.addUser = function addUser(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UserService.AddUser, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UserServiceClient.prototype.updateUser = function updateUser(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UserService.UpdateUser, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UserServiceClient.prototype.deleteUser = function deleteUser(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UserService.DeleteUser, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

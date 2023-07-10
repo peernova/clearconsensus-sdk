@@ -7,6 +7,62 @@ import * as jspb from "google-protobuf";
 import * as google_protobuf_struct_pb from "google-protobuf/google/protobuf/struct_pb";
 import * as common_gateway_base_pb from "../common/gateway_base_pb";
 
+export class UploadAuthorizationResponse extends jspb.Message {
+  getIsValid(): boolean;
+  setIsValid(value: boolean): void;
+
+  getUuid(): string;
+  setUuid(value: string): void;
+
+  getTargetPath(): string;
+  setTargetPath(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadAuthorizationResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadAuthorizationResponse): UploadAuthorizationResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadAuthorizationResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadAuthorizationResponse;
+  static deserializeBinaryFromReader(message: UploadAuthorizationResponse, reader: jspb.BinaryReader): UploadAuthorizationResponse;
+}
+
+export namespace UploadAuthorizationResponse {
+  export type AsObject = {
+    isValid: boolean,
+    uuid: string,
+    targetPath: string,
+  }
+}
+
+export class UploadNotifyRequest extends jspb.Message {
+  getUuid(): string;
+  setUuid(value: string): void;
+
+  getCurrentPath(): string;
+  setCurrentPath(value: string): void;
+
+  getTargetPath(): string;
+  setTargetPath(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadNotifyRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadNotifyRequest): UploadNotifyRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadNotifyRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadNotifyRequest;
+  static deserializeBinaryFromReader(message: UploadNotifyRequest, reader: jspb.BinaryReader): UploadNotifyRequest;
+}
+
+export namespace UploadNotifyRequest {
+  export type AsObject = {
+    uuid: string,
+    currentPath: string,
+    targetPath: string,
+  }
+}
+
 export class SubmittedRequest extends jspb.Message {
   getAssetId(): string;
   setAssetId(value: string): void;
