@@ -73,8 +73,8 @@ ConsensusService.ConsensusExplorerInstrumentDetails = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusExplorerRequest,
-  responseType: common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse
+  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
+  responseType: public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse
 };
 
 ConsensusService.ConsensusExplorerTable = {
@@ -82,8 +82,8 @@ ConsensusService.ConsensusExplorerTable = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusExplorerRequest,
-  responseType: common_consensus_pb.ConsensusExplorerTableResponse
+  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
+  responseType: public_consensus_service_pb.ConsensusExplorerTableResponse
 };
 
 ConsensusService.ConsensusExplorerRanges = {
@@ -91,8 +91,8 @@ ConsensusService.ConsensusExplorerRanges = {
   service: ConsensusService,
   requestStream: false,
   responseStream: false,
-  requestType: common_consensus_pb.ConsensusExplorerRequest,
-  responseType: common_consensus_pb.ConsensusExplorerRangeResponse
+  requestType: public_consensus_service_pb.ConsensusExplorerRequest,
+  responseType: public_consensus_service_pb.ConsensusExplorerRangeResponse
 };
 
 ConsensusService.ConsensusActive = {

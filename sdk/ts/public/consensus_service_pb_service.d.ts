@@ -67,8 +67,8 @@ type ConsensusServiceConsensusExplorerInstrumentDetails = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_consensus_pb.ConsensusExplorerRequest;
-  readonly responseType: typeof common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse;
+  readonly requestType: typeof public_consensus_service_pb.ConsensusExplorerRequest;
+  readonly responseType: typeof public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse;
 };
 
 type ConsensusServiceConsensusExplorerTable = {
@@ -76,8 +76,8 @@ type ConsensusServiceConsensusExplorerTable = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_consensus_pb.ConsensusExplorerRequest;
-  readonly responseType: typeof common_consensus_pb.ConsensusExplorerTableResponse;
+  readonly requestType: typeof public_consensus_service_pb.ConsensusExplorerRequest;
+  readonly responseType: typeof public_consensus_service_pb.ConsensusExplorerTableResponse;
 };
 
 type ConsensusServiceConsensusExplorerRanges = {
@@ -85,8 +85,8 @@ type ConsensusServiceConsensusExplorerRanges = {
   readonly service: typeof ConsensusService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_consensus_pb.ConsensusExplorerRequest;
-  readonly responseType: typeof common_consensus_pb.ConsensusExplorerRangeResponse;
+  readonly requestType: typeof public_consensus_service_pb.ConsensusExplorerRequest;
+  readonly responseType: typeof public_consensus_service_pb.ConsensusExplorerRangeResponse;
 };
 
 type ConsensusServiceConsensusActive = {
@@ -239,31 +239,31 @@ export class ConsensusServiceClient {
     callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusResultSetValuesResponse|null) => void
   ): UnaryResponse;
   consensusExplorerInstrumentDetails(
-    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
+    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse|null) => void
   ): UnaryResponse;
   consensusExplorerInstrumentDetails(
-    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
-    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerInstrumentDetailsResponse|null) => void
+    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
+    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerInstrumentDetailsResponse|null) => void
   ): UnaryResponse;
   consensusExplorerTable(
-    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
+    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerTableResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerTableResponse|null) => void
   ): UnaryResponse;
   consensusExplorerTable(
-    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
-    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerTableResponse|null) => void
+    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
+    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerTableResponse|null) => void
   ): UnaryResponse;
   consensusExplorerRanges(
-    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
+    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerRangeResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerRangeResponse|null) => void
   ): UnaryResponse;
   consensusExplorerRanges(
-    requestMessage: common_consensus_pb.ConsensusExplorerRequest,
-    callback: (error: ServiceError|null, responseMessage: common_consensus_pb.ConsensusExplorerRangeResponse|null) => void
+    requestMessage: public_consensus_service_pb.ConsensusExplorerRequest,
+    callback: (error: ServiceError|null, responseMessage: public_consensus_service_pb.ConsensusExplorerRangeResponse|null) => void
   ): UnaryResponse;
   consensusActive(
     requestMessage: common_consensus_pb.ConsensusActiveRequest,

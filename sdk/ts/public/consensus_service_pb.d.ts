@@ -9,3 +9,1524 @@ import * as common_gateway_base_pb from "../common/gateway_base_pb";
 import * as common_consensus_pb from "../common/consensus_pb";
 import * as google_protobuf_struct_pb from "google-protobuf/google/protobuf/struct_pb";
 
+export class ConsensusExplorerRequest extends jspb.Message {
+  getAssetId(): string;
+  setAssetId(value: string): void;
+
+  getTraceName(): string;
+  setTraceName(value: string): void;
+
+  getSubmittedDate(): string;
+  setSubmittedDate(value: string): void;
+
+  getConsensusRunTimestamp(): string;
+  setConsensusRunTimestamp(value: string): void;
+
+  hasSubmissionId(): boolean;
+  clearSubmissionId(): void;
+  getSubmissionId(): string;
+  setSubmissionId(value: string): void;
+
+  hasGroupKeys(): boolean;
+  clearGroupKeys(): void;
+  getGroupKeys(): common_gateway_base_pb.FilterPack | undefined;
+  setGroupKeys(value?: common_gateway_base_pb.FilterPack): void;
+
+  getIdCase(): ConsensusExplorerRequest.IdCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusExplorerRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusExplorerRequest): ConsensusExplorerRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusExplorerRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusExplorerRequest;
+  static deserializeBinaryFromReader(message: ConsensusExplorerRequest, reader: jspb.BinaryReader): ConsensusExplorerRequest;
+}
+
+export namespace ConsensusExplorerRequest {
+  export type AsObject = {
+    assetId: string,
+    traceName: string,
+    submittedDate: string,
+    consensusRunTimestamp: string,
+    submissionId: string,
+    groupKeys?: common_gateway_base_pb.FilterPack.AsObject,
+  }
+
+  export enum IdCase {
+    ID_NOT_SET = 0,
+    SUBMISSION_ID = 5,
+    GROUP_KEYS = 6,
+  }
+}
+
+export class ConsensusExplorerInstrumentDetailsResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): ConsensusExplorerInstrumentDetailsData | undefined;
+  setData(value?: ConsensusExplorerInstrumentDetailsData): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_gateway_base_pb.Error | undefined;
+  setError(value?: common_gateway_base_pb.Error): void;
+
+  getResponseCase(): ConsensusExplorerInstrumentDetailsResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusExplorerInstrumentDetailsResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusExplorerInstrumentDetailsResponse): ConsensusExplorerInstrumentDetailsResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusExplorerInstrumentDetailsResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusExplorerInstrumentDetailsResponse;
+  static deserializeBinaryFromReader(message: ConsensusExplorerInstrumentDetailsResponse, reader: jspb.BinaryReader): ConsensusExplorerInstrumentDetailsResponse;
+}
+
+export namespace ConsensusExplorerInstrumentDetailsResponse {
+  export type AsObject = {
+    data?: ConsensusExplorerInstrumentDetailsData.AsObject,
+    error?: common_gateway_base_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+
+export class ConsensusExplorerInstrumentDetailsData extends jspb.Message {
+  clearInstrumentDetailsList(): void;
+  getInstrumentDetailsList(): Array<common_gateway_base_pb.StringKeyVal>;
+  setInstrumentDetailsList(value: Array<common_gateway_base_pb.StringKeyVal>): void;
+  addInstrumentDetails(value?: common_gateway_base_pb.StringKeyVal, index?: number): common_gateway_base_pb.StringKeyVal;
+
+  hasInstrumentSubmissionStatus(): boolean;
+  clearInstrumentSubmissionStatus(): void;
+  getInstrumentSubmissionStatus(): InstrumentSubmissionStatus | undefined;
+  setInstrumentSubmissionStatus(value?: InstrumentSubmissionStatus): void;
+
+  hasConsensusScores(): boolean;
+  clearConsensusScores(): void;
+  getConsensusScores(): ConsensusScores | undefined;
+  setConsensusScores(value?: ConsensusScores): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusExplorerInstrumentDetailsData.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusExplorerInstrumentDetailsData): ConsensusExplorerInstrumentDetailsData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusExplorerInstrumentDetailsData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusExplorerInstrumentDetailsData;
+  static deserializeBinaryFromReader(message: ConsensusExplorerInstrumentDetailsData, reader: jspb.BinaryReader): ConsensusExplorerInstrumentDetailsData;
+}
+
+export namespace ConsensusExplorerInstrumentDetailsData {
+  export type AsObject = {
+    instrumentDetailsList: Array<common_gateway_base_pb.StringKeyVal.AsObject>,
+    instrumentSubmissionStatus?: InstrumentSubmissionStatus.AsObject,
+    consensusScores?: ConsensusScores.AsObject,
+  }
+}
+
+export class InstrumentSubmissionStatus extends jspb.Message {
+  getHighestDqe(): string;
+  setHighestDqe(value: string): void;
+
+  getConsensusStatus(): string;
+  setConsensusStatus(value: string): void;
+
+  getConsensusStatusDetails(): string;
+  setConsensusStatusDetails(value: string): void;
+
+  getParticipantCohortConsensusStatus(): string;
+  setParticipantCohortConsensusStatus(value: string): void;
+
+  getParticipantSubmissionsEvidenceStatus(): string;
+  setParticipantSubmissionsEvidenceStatus(value: string): void;
+
+  clearDqeHistoryList(): void;
+  getDqeHistoryList(): Array<DateAndValue>;
+  setDqeHistoryList(value: Array<DateAndValue>): void;
+  addDqeHistory(value?: DateAndValue, index?: number): DateAndValue;
+
+  clearConsensusStatusHistoryList(): void;
+  getConsensusStatusHistoryList(): Array<DateAndValue>;
+  setConsensusStatusHistoryList(value: Array<DateAndValue>): void;
+  addConsensusStatusHistory(value?: DateAndValue, index?: number): DateAndValue;
+
+  clearConsensusStatusDetailsHistoryList(): void;
+  getConsensusStatusDetailsHistoryList(): Array<DateAndValue>;
+  setConsensusStatusDetailsHistoryList(value: Array<DateAndValue>): void;
+  addConsensusStatusDetailsHistory(value?: DateAndValue, index?: number): DateAndValue;
+
+  clearParticipantCohortConsensusStatusHistoryList(): void;
+  getParticipantCohortConsensusStatusHistoryList(): Array<DateAndValue>;
+  setParticipantCohortConsensusStatusHistoryList(value: Array<DateAndValue>): void;
+  addParticipantCohortConsensusStatusHistory(value?: DateAndValue, index?: number): DateAndValue;
+
+  clearParticipantSubmissionsEvidenceStatusHistoryList(): void;
+  getParticipantSubmissionsEvidenceStatusHistoryList(): Array<DateAndValue>;
+  setParticipantSubmissionsEvidenceStatusHistoryList(value: Array<DateAndValue>): void;
+  addParticipantSubmissionsEvidenceStatusHistory(value?: DateAndValue, index?: number): DateAndValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): InstrumentSubmissionStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: InstrumentSubmissionStatus): InstrumentSubmissionStatus.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: InstrumentSubmissionStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): InstrumentSubmissionStatus;
+  static deserializeBinaryFromReader(message: InstrumentSubmissionStatus, reader: jspb.BinaryReader): InstrumentSubmissionStatus;
+}
+
+export namespace InstrumentSubmissionStatus {
+  export type AsObject = {
+    highestDqe: string,
+    consensusStatus: string,
+    consensusStatusDetails: string,
+    participantCohortConsensusStatus: string,
+    participantSubmissionsEvidenceStatus: string,
+    dqeHistoryList: Array<DateAndValue.AsObject>,
+    consensusStatusHistoryList: Array<DateAndValue.AsObject>,
+    consensusStatusDetailsHistoryList: Array<DateAndValue.AsObject>,
+    participantCohortConsensusStatusHistoryList: Array<DateAndValue.AsObject>,
+    participantSubmissionsEvidenceStatusHistoryList: Array<DateAndValue.AsObject>,
+  }
+}
+
+export class DateAndValue extends jspb.Message {
+  getDate(): string;
+  setDate(value: string): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): google_protobuf_struct_pb.Value | undefined;
+  setValue(value?: google_protobuf_struct_pb.Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): DateAndValue.AsObject;
+  static toObject(includeInstance: boolean, msg: DateAndValue): DateAndValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: DateAndValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): DateAndValue;
+  static deserializeBinaryFromReader(message: DateAndValue, reader: jspb.BinaryReader): DateAndValue;
+}
+
+export namespace DateAndValue {
+  export type AsObject = {
+    date: string,
+    value?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
+export class ConsensusScores extends jspb.Message {
+  hasExpertiseRank(): boolean;
+  clearExpertiseRank(): void;
+  getExpertiseRank(): ExpertiseRank | undefined;
+  setExpertiseRank(value?: ExpertiseRank): void;
+
+  hasConsensusDensityScore(): boolean;
+  clearConsensusDensityScore(): void;
+  getConsensusDensityScore(): ConsensusDensityScore | undefined;
+  setConsensusDensityScore(value?: ConsensusDensityScore): void;
+
+  hasTradeAlignmentScore(): boolean;
+  clearTradeAlignmentScore(): void;
+  getTradeAlignmentScore(): TradeAlignmentScore | undefined;
+  setTradeAlignmentScore(value?: TradeAlignmentScore): void;
+
+  hasEvpAlignmentScore(): boolean;
+  clearEvpAlignmentScore(): void;
+  getEvpAlignmentScore(): EvpAlignmentScore | undefined;
+  setEvpAlignmentScore(value?: EvpAlignmentScore): void;
+
+  hasBimodality(): boolean;
+  clearBimodality(): void;
+  getBimodality(): Bimodality | undefined;
+  setBimodality(value?: Bimodality): void;
+
+  hasEvpQualityScore(): boolean;
+  clearEvpQualityScore(): void;
+  getEvpQualityScore(): EvpQualityScore | undefined;
+  setEvpQualityScore(value?: EvpQualityScore): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusScores.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusScores): ConsensusScores.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusScores, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusScores;
+  static deserializeBinaryFromReader(message: ConsensusScores, reader: jspb.BinaryReader): ConsensusScores;
+}
+
+export namespace ConsensusScores {
+  export type AsObject = {
+    expertiseRank?: ExpertiseRank.AsObject,
+    consensusDensityScore?: ConsensusDensityScore.AsObject,
+    tradeAlignmentScore?: TradeAlignmentScore.AsObject,
+    evpAlignmentScore?: EvpAlignmentScore.AsObject,
+    bimodality?: Bimodality.AsObject,
+    evpQualityScore?: EvpQualityScore.AsObject,
+  }
+}
+
+export class ExpertiseRank extends jspb.Message {
+  hasRank(): boolean;
+  clearRank(): void;
+  getRank(): google_protobuf_struct_pb.Value | undefined;
+  setRank(value?: google_protobuf_struct_pb.Value): void;
+
+  getExpertsCount(): number;
+  setExpertsCount(value: number): void;
+
+  hasSubmissionPrice(): boolean;
+  clearSubmissionPrice(): void;
+  getSubmissionPrice(): google_protobuf_struct_pb.Value | undefined;
+  setSubmissionPrice(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAnchorPrice(): boolean;
+  clearAnchorPrice(): void;
+  getAnchorPrice(): google_protobuf_struct_pb.Value | undefined;
+  setAnchorPrice(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAbsDistanceToAnchor(): boolean;
+  clearAbsDistanceToAnchor(): void;
+  getAbsDistanceToAnchor(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDistanceToAnchor(value?: google_protobuf_struct_pb.Value): void;
+
+  hasExpertiseScore(): boolean;
+  clearExpertiseScore(): void;
+  getExpertiseScore(): google_protobuf_struct_pb.Value | undefined;
+  setExpertiseScore(value?: google_protobuf_struct_pb.Value): void;
+
+  clearHistoryList(): void;
+  getHistoryList(): Array<ExpertiseRankHistoryElement>;
+  setHistoryList(value: Array<ExpertiseRankHistoryElement>): void;
+  addHistory(value?: ExpertiseRankHistoryElement, index?: number): ExpertiseRankHistoryElement;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExpertiseRank.AsObject;
+  static toObject(includeInstance: boolean, msg: ExpertiseRank): ExpertiseRank.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExpertiseRank, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExpertiseRank;
+  static deserializeBinaryFromReader(message: ExpertiseRank, reader: jspb.BinaryReader): ExpertiseRank;
+}
+
+export namespace ExpertiseRank {
+  export type AsObject = {
+    rank?: google_protobuf_struct_pb.Value.AsObject,
+    expertsCount: number,
+    submissionPrice?: google_protobuf_struct_pb.Value.AsObject,
+    anchorPrice?: google_protobuf_struct_pb.Value.AsObject,
+    absDistanceToAnchor?: google_protobuf_struct_pb.Value.AsObject,
+    expertiseScore?: google_protobuf_struct_pb.Value.AsObject,
+    historyList: Array<ExpertiseRankHistoryElement.AsObject>,
+  }
+}
+
+export class ExpertiseRankHistoryElement extends jspb.Message {
+  getDate(): string;
+  setDate(value: string): void;
+
+  hasRank(): boolean;
+  clearRank(): void;
+  getRank(): google_protobuf_struct_pb.Value | undefined;
+  setRank(value?: google_protobuf_struct_pb.Value): void;
+
+  getExpertsCount(): number;
+  setExpertsCount(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ExpertiseRankHistoryElement.AsObject;
+  static toObject(includeInstance: boolean, msg: ExpertiseRankHistoryElement): ExpertiseRankHistoryElement.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ExpertiseRankHistoryElement, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ExpertiseRankHistoryElement;
+  static deserializeBinaryFromReader(message: ExpertiseRankHistoryElement, reader: jspb.BinaryReader): ExpertiseRankHistoryElement;
+}
+
+export namespace ExpertiseRankHistoryElement {
+  export type AsObject = {
+    date: string,
+    rank?: google_protobuf_struct_pb.Value.AsObject,
+    expertsCount: number,
+  }
+}
+
+export class ConsensusDensityScore extends jspb.Message {
+  hasScore(): boolean;
+  clearScore(): void;
+  getScore(): google_protobuf_struct_pb.Value | undefined;
+  setScore(value?: google_protobuf_struct_pb.Value): void;
+
+  hasBimodalityScore(): boolean;
+  clearBimodalityScore(): void;
+  getBimodalityScore(): google_protobuf_struct_pb.Value | undefined;
+  setBimodalityScore(value?: google_protobuf_struct_pb.Value): void;
+
+  hasTradeAlignmentScore(): boolean;
+  clearTradeAlignmentScore(): void;
+  getTradeAlignmentScore(): google_protobuf_struct_pb.Value | undefined;
+  setTradeAlignmentScore(value?: google_protobuf_struct_pb.Value): void;
+
+  hasEvpAlignmentScore(): boolean;
+  clearEvpAlignmentScore(): void;
+  getEvpAlignmentScore(): google_protobuf_struct_pb.Value | undefined;
+  setEvpAlignmentScore(value?: google_protobuf_struct_pb.Value): void;
+
+  clearHistoryList(): void;
+  getHistoryList(): Array<DateAndValue>;
+  setHistoryList(value: Array<DateAndValue>): void;
+  addHistory(value?: DateAndValue, index?: number): DateAndValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusDensityScore.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusDensityScore): ConsensusDensityScore.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusDensityScore, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusDensityScore;
+  static deserializeBinaryFromReader(message: ConsensusDensityScore, reader: jspb.BinaryReader): ConsensusDensityScore;
+}
+
+export namespace ConsensusDensityScore {
+  export type AsObject = {
+    score?: google_protobuf_struct_pb.Value.AsObject,
+    bimodalityScore?: google_protobuf_struct_pb.Value.AsObject,
+    tradeAlignmentScore?: google_protobuf_struct_pb.Value.AsObject,
+    evpAlignmentScore?: google_protobuf_struct_pb.Value.AsObject,
+    historyList: Array<DateAndValue.AsObject>,
+  }
+}
+
+export class TradeAlignmentScore extends jspb.Message {
+  hasScore(): boolean;
+  clearScore(): void;
+  getScore(): google_protobuf_struct_pb.Value | undefined;
+  setScore(value?: google_protobuf_struct_pb.Value): void;
+
+  getScoreStatus(): string;
+  setScoreStatus(value: string): void;
+
+  hasLatestTradePrice(): boolean;
+  clearLatestTradePrice(): void;
+  getLatestTradePrice(): google_protobuf_struct_pb.Value | undefined;
+  setLatestTradePrice(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubmissionMean(): boolean;
+  clearSubmissionMean(): void;
+  getSubmissionMean(): google_protobuf_struct_pb.Value | undefined;
+  setSubmissionMean(value?: google_protobuf_struct_pb.Value): void;
+
+  hasStdDev(): boolean;
+  clearStdDev(): void;
+  getStdDev(): google_protobuf_struct_pb.Value | undefined;
+  setStdDev(value?: google_protobuf_struct_pb.Value): void;
+
+  clearHistoryList(): void;
+  getHistoryList(): Array<TradeAligmentDateAndValue>;
+  setHistoryList(value: Array<TradeAligmentDateAndValue>): void;
+  addHistory(value?: TradeAligmentDateAndValue, index?: number): TradeAligmentDateAndValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TradeAlignmentScore.AsObject;
+  static toObject(includeInstance: boolean, msg: TradeAlignmentScore): TradeAlignmentScore.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TradeAlignmentScore, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TradeAlignmentScore;
+  static deserializeBinaryFromReader(message: TradeAlignmentScore, reader: jspb.BinaryReader): TradeAlignmentScore;
+}
+
+export namespace TradeAlignmentScore {
+  export type AsObject = {
+    score?: google_protobuf_struct_pb.Value.AsObject,
+    scoreStatus: string,
+    latestTradePrice?: google_protobuf_struct_pb.Value.AsObject,
+    submissionMean?: google_protobuf_struct_pb.Value.AsObject,
+    stdDev?: google_protobuf_struct_pb.Value.AsObject,
+    historyList: Array<TradeAligmentDateAndValue.AsObject>,
+  }
+}
+
+export class TradeAligmentDateAndValue extends jspb.Message {
+  getDate(): string;
+  setDate(value: string): void;
+
+  hasScore(): boolean;
+  clearScore(): void;
+  getScore(): google_protobuf_struct_pb.Value | undefined;
+  setScore(value?: google_protobuf_struct_pb.Value): void;
+
+  getScoreStatus(): string;
+  setScoreStatus(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TradeAligmentDateAndValue.AsObject;
+  static toObject(includeInstance: boolean, msg: TradeAligmentDateAndValue): TradeAligmentDateAndValue.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TradeAligmentDateAndValue, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TradeAligmentDateAndValue;
+  static deserializeBinaryFromReader(message: TradeAligmentDateAndValue, reader: jspb.BinaryReader): TradeAligmentDateAndValue;
+}
+
+export namespace TradeAligmentDateAndValue {
+  export type AsObject = {
+    date: string,
+    score?: google_protobuf_struct_pb.Value.AsObject,
+    scoreStatus: string,
+  }
+}
+
+export class EvpAlignmentScore extends jspb.Message {
+  hasScore(): boolean;
+  clearScore(): void;
+  getScore(): google_protobuf_struct_pb.Value | undefined;
+  setScore(value?: google_protobuf_struct_pb.Value): void;
+
+  getScoreStatus(): string;
+  setScoreStatus(value: string): void;
+
+  hasEvpMid(): boolean;
+  clearEvpMid(): void;
+  getEvpMid(): google_protobuf_struct_pb.Value | undefined;
+  setEvpMid(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubmissionMean(): boolean;
+  clearSubmissionMean(): void;
+  getSubmissionMean(): google_protobuf_struct_pb.Value | undefined;
+  setSubmissionMean(value?: google_protobuf_struct_pb.Value): void;
+
+  hasStdDev(): boolean;
+  clearStdDev(): void;
+  getStdDev(): google_protobuf_struct_pb.Value | undefined;
+  setStdDev(value?: google_protobuf_struct_pb.Value): void;
+
+  clearHistoryList(): void;
+  getHistoryList(): Array<TradeAligmentDateAndValue>;
+  setHistoryList(value: Array<TradeAligmentDateAndValue>): void;
+  addHistory(value?: TradeAligmentDateAndValue, index?: number): TradeAligmentDateAndValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvpAlignmentScore.AsObject;
+  static toObject(includeInstance: boolean, msg: EvpAlignmentScore): EvpAlignmentScore.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EvpAlignmentScore, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvpAlignmentScore;
+  static deserializeBinaryFromReader(message: EvpAlignmentScore, reader: jspb.BinaryReader): EvpAlignmentScore;
+}
+
+export namespace EvpAlignmentScore {
+  export type AsObject = {
+    score?: google_protobuf_struct_pb.Value.AsObject,
+    scoreStatus: string,
+    evpMid?: google_protobuf_struct_pb.Value.AsObject,
+    submissionMean?: google_protobuf_struct_pb.Value.AsObject,
+    stdDev?: google_protobuf_struct_pb.Value.AsObject,
+    historyList: Array<TradeAligmentDateAndValue.AsObject>,
+  }
+}
+
+export class Bimodality extends jspb.Message {
+  getValue(): string;
+  setValue(value: string): void;
+
+  hasBimodalityIndex(): boolean;
+  clearBimodalityIndex(): void;
+  getBimodalityIndex(): google_protobuf_struct_pb.Value | undefined;
+  setBimodalityIndex(value?: google_protobuf_struct_pb.Value): void;
+
+  clearHistoryList(): void;
+  getHistoryList(): Array<DateAndValue>;
+  setHistoryList(value: Array<DateAndValue>): void;
+  addHistory(value?: DateAndValue, index?: number): DateAndValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Bimodality.AsObject;
+  static toObject(includeInstance: boolean, msg: Bimodality): Bimodality.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Bimodality, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Bimodality;
+  static deserializeBinaryFromReader(message: Bimodality, reader: jspb.BinaryReader): Bimodality;
+}
+
+export namespace Bimodality {
+  export type AsObject = {
+    value: string,
+    bimodalityIndex?: google_protobuf_struct_pb.Value.AsObject,
+    historyList: Array<DateAndValue.AsObject>,
+  }
+}
+
+export class EvpQualityScore extends jspb.Message {
+  hasScore(): boolean;
+  clearScore(): void;
+  getScore(): google_protobuf_struct_pb.Value | undefined;
+  setScore(value?: google_protobuf_struct_pb.Value): void;
+
+  getTradeCount(): string;
+  setTradeCount(value: string): void;
+
+  getOrderCount(): string;
+  setOrderCount(value: string): void;
+
+  getIndicativeCount(): string;
+  setIndicativeCount(value: string): void;
+
+  clearHistoryList(): void;
+  getHistoryList(): Array<DateAndValue>;
+  setHistoryList(value: Array<DateAndValue>): void;
+  addHistory(value?: DateAndValue, index?: number): DateAndValue;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvpQualityScore.AsObject;
+  static toObject(includeInstance: boolean, msg: EvpQualityScore): EvpQualityScore.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EvpQualityScore, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvpQualityScore;
+  static deserializeBinaryFromReader(message: EvpQualityScore, reader: jspb.BinaryReader): EvpQualityScore;
+}
+
+export namespace EvpQualityScore {
+  export type AsObject = {
+    score?: google_protobuf_struct_pb.Value.AsObject,
+    tradeCount: string,
+    orderCount: string,
+    indicativeCount: string,
+    historyList: Array<DateAndValue.AsObject>,
+  }
+}
+
+export class ConsensusExplorerRangeResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): ConsensusExplorerRangeData | undefined;
+  setData(value?: ConsensusExplorerRangeData): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_gateway_base_pb.Error | undefined;
+  setError(value?: common_gateway_base_pb.Error): void;
+
+  getResponseCase(): ConsensusExplorerRangeResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusExplorerRangeResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusExplorerRangeResponse): ConsensusExplorerRangeResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusExplorerRangeResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusExplorerRangeResponse;
+  static deserializeBinaryFromReader(message: ConsensusExplorerRangeResponse, reader: jspb.BinaryReader): ConsensusExplorerRangeResponse;
+}
+
+export namespace ConsensusExplorerRangeResponse {
+  export type AsObject = {
+    data?: ConsensusExplorerRangeData.AsObject,
+    error?: common_gateway_base_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+
+export class ConsensusExplorerRangeData extends jspb.Message {
+  hasChartRanges(): boolean;
+  clearChartRanges(): void;
+  getChartRanges(): ChartRanges | undefined;
+  setChartRanges(value?: ChartRanges): void;
+
+  hasSubmissionPoint(): boolean;
+  clearSubmissionPoint(): void;
+  getSubmissionPoint(): common_gateway_base_pb.RangePoint | undefined;
+  setSubmissionPoint(value?: common_gateway_base_pb.RangePoint): void;
+
+  hasAnchorPoint(): boolean;
+  clearAnchorPoint(): void;
+  getAnchorPoint(): common_gateway_base_pb.RangePoint | undefined;
+  setAnchorPoint(value?: common_gateway_base_pb.RangePoint): void;
+
+  hasEvpMid(): boolean;
+  clearEvpMid(): void;
+  getEvpMid(): common_gateway_base_pb.RangePoint | undefined;
+  setEvpMid(value?: common_gateway_base_pb.RangePoint): void;
+
+  hasSubmissionEvidencePrice(): boolean;
+  clearSubmissionEvidencePrice(): void;
+  getSubmissionEvidencePrice(): common_gateway_base_pb.RangePoint | undefined;
+  setSubmissionEvidencePrice(value?: common_gateway_base_pb.RangePoint): void;
+
+  hasCohortConsensusPrice(): boolean;
+  clearCohortConsensusPrice(): void;
+  getCohortConsensusPrice(): common_gateway_base_pb.RangePoint | undefined;
+  setCohortConsensusPrice(value?: common_gateway_base_pb.RangePoint): void;
+
+  hasBimodalLeftMean(): boolean;
+  clearBimodalLeftMean(): void;
+  getBimodalLeftMean(): common_gateway_base_pb.RangePoint | undefined;
+  setBimodalLeftMean(value?: common_gateway_base_pb.RangePoint): void;
+
+  hasBimodalRightMean(): boolean;
+  clearBimodalRightMean(): void;
+  getBimodalRightMean(): common_gateway_base_pb.RangePoint | undefined;
+  setBimodalRightMean(value?: common_gateway_base_pb.RangePoint): void;
+
+  hasCohortConsensusRangeTabData(): boolean;
+  clearCohortConsensusRangeTabData(): void;
+  getCohortConsensusRangeTabData(): CohortConsensusRangeTabData | undefined;
+  setCohortConsensusRangeTabData(value?: CohortConsensusRangeTabData): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusExplorerRangeData.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusExplorerRangeData): ConsensusExplorerRangeData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusExplorerRangeData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusExplorerRangeData;
+  static deserializeBinaryFromReader(message: ConsensusExplorerRangeData, reader: jspb.BinaryReader): ConsensusExplorerRangeData;
+}
+
+export namespace ConsensusExplorerRangeData {
+  export type AsObject = {
+    chartRanges?: ChartRanges.AsObject,
+    submissionPoint?: common_gateway_base_pb.RangePoint.AsObject,
+    anchorPoint?: common_gateway_base_pb.RangePoint.AsObject,
+    evpMid?: common_gateway_base_pb.RangePoint.AsObject,
+    submissionEvidencePrice?: common_gateway_base_pb.RangePoint.AsObject,
+    cohortConsensusPrice?: common_gateway_base_pb.RangePoint.AsObject,
+    bimodalLeftMean?: common_gateway_base_pb.RangePoint.AsObject,
+    bimodalRightMean?: common_gateway_base_pb.RangePoint.AsObject,
+    cohortConsensusRangeTabData?: CohortConsensusRangeTabData.AsObject,
+  }
+}
+
+export class ChartRanges extends jspb.Message {
+  hasSubmissionMinMax(): boolean;
+  clearSubmissionMinMax(): void;
+  getSubmissionMinMax(): common_gateway_base_pb.Range | undefined;
+  setSubmissionMinMax(value?: common_gateway_base_pb.Range): void;
+
+  hasEvp(): boolean;
+  clearEvp(): void;
+  getEvp(): common_gateway_base_pb.Range | undefined;
+  setEvp(value?: common_gateway_base_pb.Range): void;
+
+  hasSubmissionEvidence(): boolean;
+  clearSubmissionEvidence(): void;
+  getSubmissionEvidence(): common_gateway_base_pb.Range | undefined;
+  setSubmissionEvidence(value?: common_gateway_base_pb.Range): void;
+
+  hasCohortConsensus(): boolean;
+  clearCohortConsensus(): void;
+  getCohortConsensus(): common_gateway_base_pb.Range | undefined;
+  setCohortConsensus(value?: common_gateway_base_pb.Range): void;
+
+  hasBimodalLeftPopulation(): boolean;
+  clearBimodalLeftPopulation(): void;
+  getBimodalLeftPopulation(): common_gateway_base_pb.Range | undefined;
+  setBimodalLeftPopulation(value?: common_gateway_base_pb.Range): void;
+
+  hasBimodalRightPopulation(): boolean;
+  clearBimodalRightPopulation(): void;
+  getBimodalRightPopulation(): common_gateway_base_pb.Range | undefined;
+  setBimodalRightPopulation(value?: common_gateway_base_pb.Range): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ChartRanges.AsObject;
+  static toObject(includeInstance: boolean, msg: ChartRanges): ChartRanges.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ChartRanges, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ChartRanges;
+  static deserializeBinaryFromReader(message: ChartRanges, reader: jspb.BinaryReader): ChartRanges;
+}
+
+export namespace ChartRanges {
+  export type AsObject = {
+    submissionMinMax?: common_gateway_base_pb.Range.AsObject,
+    evp?: common_gateway_base_pb.Range.AsObject,
+    submissionEvidence?: common_gateway_base_pb.Range.AsObject,
+    cohortConsensus?: common_gateway_base_pb.Range.AsObject,
+    bimodalLeftPopulation?: common_gateway_base_pb.Range.AsObject,
+    bimodalRightPopulation?: common_gateway_base_pb.Range.AsObject,
+  }
+}
+
+export class CohortConsensusRangeTabData extends jspb.Message {
+  hasExpertiseRank(): boolean;
+  clearExpertiseRank(): void;
+  getExpertiseRank(): google_protobuf_struct_pb.Value | undefined;
+  setExpertiseRank(value?: google_protobuf_struct_pb.Value): void;
+
+  getExpertsCount(): number;
+  setExpertsCount(value: number): void;
+
+  hasExpertiseScore(): boolean;
+  clearExpertiseScore(): void;
+  getExpertiseScore(): google_protobuf_struct_pb.Value | undefined;
+  setExpertiseScore(value?: google_protobuf_struct_pb.Value): void;
+
+  hasDistanceToAnchor(): boolean;
+  clearDistanceToAnchor(): void;
+  getDistanceToAnchor(): google_protobuf_struct_pb.Value | undefined;
+  setDistanceToAnchor(value?: google_protobuf_struct_pb.Value): void;
+
+  hasDistanceToConsensus(): boolean;
+  clearDistanceToConsensus(): void;
+  getDistanceToConsensus(): google_protobuf_struct_pb.Value | undefined;
+  setDistanceToConsensus(value?: google_protobuf_struct_pb.Value): void;
+
+  hasTradePeriodsWithMetrics(): boolean;
+  clearTradePeriodsWithMetrics(): void;
+  getTradePeriodsWithMetrics(): TradePeriodsWithMetrics | undefined;
+  setTradePeriodsWithMetrics(value?: TradePeriodsWithMetrics): void;
+
+  hasTradeAnchorDetails(): boolean;
+  clearTradeAnchorDetails(): void;
+  getTradeAnchorDetails(): TradeAnchorDetails | undefined;
+  setTradeAnchorDetails(value?: TradeAnchorDetails): void;
+
+  hasEvpAnchorDetails(): boolean;
+  clearEvpAnchorDetails(): void;
+  getEvpAnchorDetails(): EvpAnchorDetails | undefined;
+  setEvpAnchorDetails(value?: EvpAnchorDetails): void;
+
+  hasSubmissionEvidenceAnchorDetails(): boolean;
+  clearSubmissionEvidenceAnchorDetails(): void;
+  getSubmissionEvidenceAnchorDetails(): SubmissionEvidenceAnchorDetails | undefined;
+  setSubmissionEvidenceAnchorDetails(value?: SubmissionEvidenceAnchorDetails): void;
+
+  getAnchorDetailsCase(): CohortConsensusRangeTabData.AnchorDetailsCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CohortConsensusRangeTabData.AsObject;
+  static toObject(includeInstance: boolean, msg: CohortConsensusRangeTabData): CohortConsensusRangeTabData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CohortConsensusRangeTabData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CohortConsensusRangeTabData;
+  static deserializeBinaryFromReader(message: CohortConsensusRangeTabData, reader: jspb.BinaryReader): CohortConsensusRangeTabData;
+}
+
+export namespace CohortConsensusRangeTabData {
+  export type AsObject = {
+    expertiseRank?: google_protobuf_struct_pb.Value.AsObject,
+    expertsCount: number,
+    expertiseScore?: google_protobuf_struct_pb.Value.AsObject,
+    distanceToAnchor?: google_protobuf_struct_pb.Value.AsObject,
+    distanceToConsensus?: google_protobuf_struct_pb.Value.AsObject,
+    tradePeriodsWithMetrics?: TradePeriodsWithMetrics.AsObject,
+    tradeAnchorDetails?: TradeAnchorDetails.AsObject,
+    evpAnchorDetails?: EvpAnchorDetails.AsObject,
+    submissionEvidenceAnchorDetails?: SubmissionEvidenceAnchorDetails.AsObject,
+  }
+
+  export enum AnchorDetailsCase {
+    ANCHOR_DETAILS_NOT_SET = 0,
+    TRADE_ANCHOR_DETAILS = 7,
+    EVP_ANCHOR_DETAILS = 8,
+    SUBMISSION_EVIDENCE_ANCHOR_DETAILS = 9,
+  }
+}
+
+export class TradeAnchorDetails extends jspb.Message {
+  getLatestTradePrice(): number;
+  setLatestTradePrice(value: number): void;
+
+  getDistanceToConsensus(): number;
+  setDistanceToConsensus(value: number): void;
+
+  getNotional(): number;
+  setNotional(value: number): void;
+
+  getTradeExecutionTime(): string;
+  setTradeExecutionTime(value: string): void;
+
+  getPricingAge(): string;
+  setPricingAge(value: string): void;
+
+  getSource(): string;
+  setSource(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TradeAnchorDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: TradeAnchorDetails): TradeAnchorDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TradeAnchorDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TradeAnchorDetails;
+  static deserializeBinaryFromReader(message: TradeAnchorDetails, reader: jspb.BinaryReader): TradeAnchorDetails;
+}
+
+export namespace TradeAnchorDetails {
+  export type AsObject = {
+    latestTradePrice: number,
+    distanceToConsensus: number,
+    notional: number,
+    tradeExecutionTime: string,
+    pricingAge: string,
+    source: string,
+  }
+}
+
+export class EvpAnchorDetails extends jspb.Message {
+  getMid(): number;
+  setMid(value: number): void;
+
+  getDistanceToConsensus(): number;
+  setDistanceToConsensus(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvpAnchorDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: EvpAnchorDetails): EvpAnchorDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EvpAnchorDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvpAnchorDetails;
+  static deserializeBinaryFromReader(message: EvpAnchorDetails, reader: jspb.BinaryReader): EvpAnchorDetails;
+}
+
+export namespace EvpAnchorDetails {
+  export type AsObject = {
+    mid: number,
+    distanceToConsensus: number,
+  }
+}
+
+export class SubmissionEvidenceAnchorDetails extends jspb.Message {
+  getSubmissionEvidence(): number;
+  setSubmissionEvidence(value: number): void;
+
+  getDistanceToConsensus(): number;
+  setDistanceToConsensus(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubmissionEvidenceAnchorDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmissionEvidenceAnchorDetails): SubmissionEvidenceAnchorDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubmissionEvidenceAnchorDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmissionEvidenceAnchorDetails;
+  static deserializeBinaryFromReader(message: SubmissionEvidenceAnchorDetails, reader: jspb.BinaryReader): SubmissionEvidenceAnchorDetails;
+}
+
+export namespace SubmissionEvidenceAnchorDetails {
+  export type AsObject = {
+    submissionEvidence: number,
+    distanceToConsensus: number,
+  }
+}
+
+export class TradePeriodsWithMetrics extends jspb.Message {
+  hasLessDay(): boolean;
+  clearLessDay(): void;
+  getLessDay(): TradePeriodMetrics | undefined;
+  setLessDay(value?: TradePeriodMetrics): void;
+
+  hasLessWeek(): boolean;
+  clearLessWeek(): void;
+  getLessWeek(): TradePeriodMetrics | undefined;
+  setLessWeek(value?: TradePeriodMetrics): void;
+
+  hasLessMonth(): boolean;
+  clearLessMonth(): void;
+  getLessMonth(): TradePeriodMetrics | undefined;
+  setLessMonth(value?: TradePeriodMetrics): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TradePeriodsWithMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: TradePeriodsWithMetrics): TradePeriodsWithMetrics.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TradePeriodsWithMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TradePeriodsWithMetrics;
+  static deserializeBinaryFromReader(message: TradePeriodsWithMetrics, reader: jspb.BinaryReader): TradePeriodsWithMetrics;
+}
+
+export namespace TradePeriodsWithMetrics {
+  export type AsObject = {
+    lessDay?: TradePeriodMetrics.AsObject,
+    lessWeek?: TradePeriodMetrics.AsObject,
+    lessMonth?: TradePeriodMetrics.AsObject,
+  }
+}
+
+export class TradePeriodMetrics extends jspb.Message {
+  getTradeCount(): number;
+  setTradeCount(value: number): void;
+
+  getMinNotionalAmount(): number;
+  setMinNotionalAmount(value: number): void;
+
+  getMaxNotionalAmount(): number;
+  setMaxNotionalAmount(value: number): void;
+
+  getTotalLiquidity(): number;
+  setTotalLiquidity(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TradePeriodMetrics.AsObject;
+  static toObject(includeInstance: boolean, msg: TradePeriodMetrics): TradePeriodMetrics.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TradePeriodMetrics, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TradePeriodMetrics;
+  static deserializeBinaryFromReader(message: TradePeriodMetrics, reader: jspb.BinaryReader): TradePeriodMetrics;
+}
+
+export namespace TradePeriodMetrics {
+  export type AsObject = {
+    tradeCount: number,
+    minNotionalAmount: number,
+    maxNotionalAmount: number,
+    totalLiquidity: number,
+  }
+}
+
+export class ConsensusExplorerTableResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): ConsensusExplorerTableData | undefined;
+  setData(value?: ConsensusExplorerTableData): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_gateway_base_pb.Error | undefined;
+  setError(value?: common_gateway_base_pb.Error): void;
+
+  getResponseCase(): ConsensusExplorerTableResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusExplorerTableResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusExplorerTableResponse): ConsensusExplorerTableResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusExplorerTableResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusExplorerTableResponse;
+  static deserializeBinaryFromReader(message: ConsensusExplorerTableResponse, reader: jspb.BinaryReader): ConsensusExplorerTableResponse;
+}
+
+export namespace ConsensusExplorerTableResponse {
+  export type AsObject = {
+    data?: ConsensusExplorerTableData.AsObject,
+    error?: common_gateway_base_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+
+export class ConsensusExplorerTableData extends jspb.Message {
+  hasComparisonTable(): boolean;
+  clearComparisonTable(): void;
+  getComparisonTable(): ComparisonTable | undefined;
+  setComparisonTable(value?: ComparisonTable): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusExplorerTableData.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusExplorerTableData): ConsensusExplorerTableData.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusExplorerTableData, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusExplorerTableData;
+  static deserializeBinaryFromReader(message: ConsensusExplorerTableData, reader: jspb.BinaryReader): ConsensusExplorerTableData;
+}
+
+export namespace ConsensusExplorerTableData {
+  export type AsObject = {
+    comparisonTable?: ComparisonTable.AsObject,
+  }
+}
+
+export class ComparisonTable extends jspb.Message {
+  hasCohortConsensusColumn(): boolean;
+  clearCohortConsensusColumn(): void;
+  getCohortConsensusColumn(): CohortConsensusColumn | undefined;
+  setCohortConsensusColumn(value?: CohortConsensusColumn): void;
+
+  hasSubmission(): boolean;
+  clearSubmission(): void;
+  getSubmission(): SubmissionExplorerTableColumn | undefined;
+  setSubmission(value?: SubmissionExplorerTableColumn): void;
+
+  hasSubmissionStatistics(): boolean;
+  clearSubmissionStatistics(): void;
+  getSubmissionStatistics(): SubmissionStatisticsExplorerTableColumn | undefined;
+  setSubmissionStatistics(value?: SubmissionStatisticsExplorerTableColumn): void;
+
+  hasSubmissionEvidence(): boolean;
+  clearSubmissionEvidence(): void;
+  getSubmissionEvidence(): SubmissionEvidenceTableColumn | undefined;
+  setSubmissionEvidence(value?: SubmissionEvidenceTableColumn): void;
+
+  hasEvidentialpricing(): boolean;
+  clearEvidentialpricing(): void;
+  getEvidentialpricing(): EvidentalPricing | undefined;
+  setEvidentialpricing(value?: EvidentalPricing): void;
+
+  hasAvailableTrades(): boolean;
+  clearAvailableTrades(): void;
+  getAvailableTrades(): AvailableTrades | undefined;
+  setAvailableTrades(value?: AvailableTrades): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ComparisonTable.AsObject;
+  static toObject(includeInstance: boolean, msg: ComparisonTable): ComparisonTable.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ComparisonTable, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ComparisonTable;
+  static deserializeBinaryFromReader(message: ComparisonTable, reader: jspb.BinaryReader): ComparisonTable;
+}
+
+export namespace ComparisonTable {
+  export type AsObject = {
+    cohortConsensusColumn?: CohortConsensusColumn.AsObject,
+    submission?: SubmissionExplorerTableColumn.AsObject,
+    submissionStatistics?: SubmissionStatisticsExplorerTableColumn.AsObject,
+    submissionEvidence?: SubmissionEvidenceTableColumn.AsObject,
+    evidentialpricing?: EvidentalPricing.AsObject,
+    availableTrades?: AvailableTrades.AsObject,
+  }
+}
+
+export class CohortConsensusColumn extends jspb.Message {
+  hasCohortConsensusPrice(): boolean;
+  clearCohortConsensusPrice(): void;
+  getCohortConsensusPrice(): google_protobuf_struct_pb.Value | undefined;
+  setCohortConsensusPrice(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAbsDiffFromConsensus(): boolean;
+  clearAbsDiffFromConsensus(): void;
+  getAbsDiffFromConsensus(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDiffFromConsensus(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubPriceDiff(): boolean;
+  clearSubPriceDiff(): void;
+  getSubPriceDiff(): google_protobuf_struct_pb.Value | undefined;
+  setSubPriceDiff(value?: google_protobuf_struct_pb.Value): void;
+
+  hasConsAbsDiffFromAnchorTrade(): boolean;
+  clearConsAbsDiffFromAnchorTrade(): void;
+  getConsAbsDiffFromAnchorTrade(): google_protobuf_struct_pb.Value | undefined;
+  setConsAbsDiffFromAnchorTrade(value?: google_protobuf_struct_pb.Value): void;
+
+  hasConsAbsDiffFromAnchorEvpMid(): boolean;
+  clearConsAbsDiffFromAnchorEvpMid(): void;
+  getConsAbsDiffFromAnchorEvpMid(): google_protobuf_struct_pb.Value | undefined;
+  setConsAbsDiffFromAnchorEvpMid(value?: google_protobuf_struct_pb.Value): void;
+
+  hasConsAbsDiffFromAnchorEvpMidCalc(): boolean;
+  clearConsAbsDiffFromAnchorEvpMidCalc(): void;
+  getConsAbsDiffFromAnchorEvpMidCalc(): google_protobuf_struct_pb.Value | undefined;
+  setConsAbsDiffFromAnchorEvpMidCalc(value?: google_protobuf_struct_pb.Value): void;
+
+  hasConsAbsDiffFromAnchorSub(): boolean;
+  clearConsAbsDiffFromAnchorSub(): void;
+  getConsAbsDiffFromAnchorSub(): google_protobuf_struct_pb.Value | undefined;
+  setConsAbsDiffFromAnchorSub(value?: google_protobuf_struct_pb.Value): void;
+
+  hasLowerBoundary(): boolean;
+  clearLowerBoundary(): void;
+  getLowerBoundary(): google_protobuf_struct_pb.Value | undefined;
+  setLowerBoundary(value?: google_protobuf_struct_pb.Value): void;
+
+  hasUpperBoundary(): boolean;
+  clearUpperBoundary(): void;
+  getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
+  setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
+
+  getNumberOfInstruments(): number;
+  setNumberOfInstruments(value: number): void;
+
+  hasStdDev(): boolean;
+  clearStdDev(): void;
+  getStdDev(): google_protobuf_struct_pb.Value | undefined;
+  setStdDev(value?: google_protobuf_struct_pb.Value): void;
+
+  getAnchorDiffCase(): CohortConsensusColumn.AnchorDiffCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CohortConsensusColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: CohortConsensusColumn): CohortConsensusColumn.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CohortConsensusColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CohortConsensusColumn;
+  static deserializeBinaryFromReader(message: CohortConsensusColumn, reader: jspb.BinaryReader): CohortConsensusColumn;
+}
+
+export namespace CohortConsensusColumn {
+  export type AsObject = {
+    cohortConsensusPrice?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromConsensus?: google_protobuf_struct_pb.Value.AsObject,
+    subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
+    consAbsDiffFromAnchorTrade?: google_protobuf_struct_pb.Value.AsObject,
+    consAbsDiffFromAnchorEvpMid?: google_protobuf_struct_pb.Value.AsObject,
+    consAbsDiffFromAnchorEvpMidCalc?: google_protobuf_struct_pb.Value.AsObject,
+    consAbsDiffFromAnchorSub?: google_protobuf_struct_pb.Value.AsObject,
+    lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    numberOfInstruments: number,
+    stdDev?: google_protobuf_struct_pb.Value.AsObject,
+  }
+
+  export enum AnchorDiffCase {
+    ANCHOR_DIFF_NOT_SET = 0,
+    CONS_ABS_DIFF_FROM_ANCHOR_TRADE = 4,
+    CONS_ABS_DIFF_FROM_ANCHOR_EVP_MID = 5,
+    CONS_ABS_DIFF_FROM_ANCHOR_EVP_MID_CALC = 6,
+    CONS_ABS_DIFF_FROM_ANCHOR_SUB = 7,
+  }
+}
+
+export class SubmissionExplorerTableColumn extends jspb.Message {
+  hasSubmissionPrice(): boolean;
+  clearSubmissionPrice(): void;
+  getSubmissionPrice(): google_protobuf_struct_pb.Value | undefined;
+  setSubmissionPrice(value?: google_protobuf_struct_pb.Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubmissionExplorerTableColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmissionExplorerTableColumn): SubmissionExplorerTableColumn.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubmissionExplorerTableColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmissionExplorerTableColumn;
+  static deserializeBinaryFromReader(message: SubmissionExplorerTableColumn, reader: jspb.BinaryReader): SubmissionExplorerTableColumn;
+}
+
+export namespace SubmissionExplorerTableColumn {
+  export type AsObject = {
+    submissionPrice?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
+export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
+  hasMean(): boolean;
+  clearMean(): void;
+  getMean(): google_protobuf_struct_pb.Value | undefined;
+  setMean(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAbsDiffFromStatisticalMean(): boolean;
+  clearAbsDiffFromStatisticalMean(): void;
+  getAbsDiffFromStatisticalMean(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDiffFromStatisticalMean(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubPriceDiff(): boolean;
+  clearSubPriceDiff(): void;
+  getSubPriceDiff(): google_protobuf_struct_pb.Value | undefined;
+  setSubPriceDiff(value?: google_protobuf_struct_pb.Value): void;
+
+  hasStatMeanAbsDiffFromLatestTrade(): boolean;
+  clearStatMeanAbsDiffFromLatestTrade(): void;
+  getStatMeanAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
+  setStatMeanAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
+
+  hasLowerBoundary(): boolean;
+  clearLowerBoundary(): void;
+  getLowerBoundary(): google_protobuf_struct_pb.Value | undefined;
+  setLowerBoundary(value?: google_protobuf_struct_pb.Value): void;
+
+  hasUpperBoundary(): boolean;
+  clearUpperBoundary(): void;
+  getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
+  setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
+
+  getSubValidPointsCount(): number;
+  setSubValidPointsCount(value: number): void;
+
+  hasStdDev(): boolean;
+  clearStdDev(): void;
+  getStdDev(): google_protobuf_struct_pb.Value | undefined;
+  setStdDev(value?: google_protobuf_struct_pb.Value): void;
+
+  hasMin(): boolean;
+  clearMin(): void;
+  getMin(): google_protobuf_struct_pb.Value | undefined;
+  setMin(value?: google_protobuf_struct_pb.Value): void;
+
+  hasMax(): boolean;
+  clearMax(): void;
+  getMax(): google_protobuf_struct_pb.Value | undefined;
+  setMax(value?: google_protobuf_struct_pb.Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubmissionStatisticsExplorerTableColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmissionStatisticsExplorerTableColumn): SubmissionStatisticsExplorerTableColumn.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubmissionStatisticsExplorerTableColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmissionStatisticsExplorerTableColumn;
+  static deserializeBinaryFromReader(message: SubmissionStatisticsExplorerTableColumn, reader: jspb.BinaryReader): SubmissionStatisticsExplorerTableColumn;
+}
+
+export namespace SubmissionStatisticsExplorerTableColumn {
+  export type AsObject = {
+    mean?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromStatisticalMean?: google_protobuf_struct_pb.Value.AsObject,
+    subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
+    statMeanAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
+    lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    subValidPointsCount: number,
+    stdDev?: google_protobuf_struct_pb.Value.AsObject,
+    min?: google_protobuf_struct_pb.Value.AsObject,
+    max?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
+export class SubmissionEvidenceTableColumn extends jspb.Message {
+  hasEvidence(): boolean;
+  clearEvidence(): void;
+  getEvidence(): google_protobuf_struct_pb.Value | undefined;
+  setEvidence(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAbsDiffFromEvidence(): boolean;
+  clearAbsDiffFromEvidence(): void;
+  getAbsDiffFromEvidence(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDiffFromEvidence(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubPriceDiff(): boolean;
+  clearSubPriceDiff(): void;
+  getSubPriceDiff(): google_protobuf_struct_pb.Value | undefined;
+  setSubPriceDiff(value?: google_protobuf_struct_pb.Value): void;
+
+  hasEviPriceAbsDiffFromLatestTrade(): boolean;
+  clearEviPriceAbsDiffFromLatestTrade(): void;
+  getEviPriceAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
+  setEviPriceAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
+
+  hasLowerBoundary(): boolean;
+  clearLowerBoundary(): void;
+  getLowerBoundary(): google_protobuf_struct_pb.Value | undefined;
+  setLowerBoundary(value?: google_protobuf_struct_pb.Value): void;
+
+  hasUpperBoundary(): boolean;
+  clearUpperBoundary(): void;
+  getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
+  setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
+
+  getParticipantsCount(): number;
+  setParticipantsCount(value: number): void;
+
+  hasStdDev(): boolean;
+  clearStdDev(): void;
+  getStdDev(): google_protobuf_struct_pb.Value | undefined;
+  setStdDev(value?: google_protobuf_struct_pb.Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubmissionEvidenceTableColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmissionEvidenceTableColumn): SubmissionEvidenceTableColumn.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubmissionEvidenceTableColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmissionEvidenceTableColumn;
+  static deserializeBinaryFromReader(message: SubmissionEvidenceTableColumn, reader: jspb.BinaryReader): SubmissionEvidenceTableColumn;
+}
+
+export namespace SubmissionEvidenceTableColumn {
+  export type AsObject = {
+    evidence?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromEvidence?: google_protobuf_struct_pb.Value.AsObject,
+    subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
+    eviPriceAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
+    lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    participantsCount: number,
+    stdDev?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
+export class EvidentalPricing extends jspb.Message {
+  hasMid(): boolean;
+  clearMid(): void;
+  getMid(): google_protobuf_struct_pb.Value | undefined;
+  setMid(value?: google_protobuf_struct_pb.Value): void;
+
+  hasBid(): boolean;
+  clearBid(): void;
+  getBid(): google_protobuf_struct_pb.Value | undefined;
+  setBid(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAsk(): boolean;
+  clearAsk(): void;
+  getAsk(): google_protobuf_struct_pb.Value | undefined;
+  setAsk(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAbsDiffFromEvpMid(): boolean;
+  clearAbsDiffFromEvpMid(): void;
+  getAbsDiffFromEvpMid(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDiffFromEvpMid(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubPriceDiff(): boolean;
+  clearSubPriceDiff(): void;
+  getSubPriceDiff(): google_protobuf_struct_pb.Value | undefined;
+  setSubPriceDiff(value?: google_protobuf_struct_pb.Value): void;
+
+  hasEvpMidAbsDiffFromLatestTrade(): boolean;
+  clearEvpMidAbsDiffFromLatestTrade(): void;
+  getEvpMidAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
+  setEvpMidAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
+
+  hasEvpLowerBoundary(): boolean;
+  clearEvpLowerBoundary(): void;
+  getEvpLowerBoundary(): google_protobuf_struct_pb.Value | undefined;
+  setEvpLowerBoundary(value?: google_protobuf_struct_pb.Value): void;
+
+  hasEvpUpperBoundary(): boolean;
+  clearEvpUpperBoundary(): void;
+  getEvpUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
+  setEvpUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
+
+  hasTradesOrOrdersCount(): boolean;
+  clearTradesOrOrdersCount(): void;
+  getTradesOrOrdersCount(): google_protobuf_struct_pb.Value | undefined;
+  setTradesOrOrdersCount(value?: google_protobuf_struct_pb.Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EvidentalPricing.AsObject;
+  static toObject(includeInstance: boolean, msg: EvidentalPricing): EvidentalPricing.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EvidentalPricing, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EvidentalPricing;
+  static deserializeBinaryFromReader(message: EvidentalPricing, reader: jspb.BinaryReader): EvidentalPricing;
+}
+
+export namespace EvidentalPricing {
+  export type AsObject = {
+    mid?: google_protobuf_struct_pb.Value.AsObject,
+    bid?: google_protobuf_struct_pb.Value.AsObject,
+    ask?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromEvpMid?: google_protobuf_struct_pb.Value.AsObject,
+    subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
+    evpMidAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
+    evpLowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    evpUpperBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    tradesOrOrdersCount?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
+export class AvailableTrades extends jspb.Message {
+  hasLatestTradePrice(): boolean;
+  clearLatestTradePrice(): void;
+  getLatestTradePrice(): google_protobuf_struct_pb.Value | undefined;
+  setLatestTradePrice(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAbsDiffFromLatestTrade(): boolean;
+  clearAbsDiffFromLatestTrade(): void;
+  getAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubPriceDiff(): boolean;
+  clearSubPriceDiff(): void;
+  getSubPriceDiff(): google_protobuf_struct_pb.Value | undefined;
+  setSubPriceDiff(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubPriceAbsDiffFromLatestTrade(): boolean;
+  clearSubPriceAbsDiffFromLatestTrade(): void;
+  getSubPriceAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
+  setSubPriceAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
+
+  hasMin(): boolean;
+  clearMin(): void;
+  getMin(): google_protobuf_struct_pb.Value | undefined;
+  setMin(value?: google_protobuf_struct_pb.Value): void;
+
+  hasMax(): boolean;
+  clearMax(): void;
+  getMax(): google_protobuf_struct_pb.Value | undefined;
+  setMax(value?: google_protobuf_struct_pb.Value): void;
+
+  getDaytradenumber(): number;
+  setDaytradenumber(value: number): void;
+
+  getWeektradenumber(): number;
+  setWeektradenumber(value: number): void;
+
+  getMonthtradenumber(): number;
+  setMonthtradenumber(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AvailableTrades.AsObject;
+  static toObject(includeInstance: boolean, msg: AvailableTrades): AvailableTrades.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AvailableTrades, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AvailableTrades;
+  static deserializeBinaryFromReader(message: AvailableTrades, reader: jspb.BinaryReader): AvailableTrades;
+}
+
+export namespace AvailableTrades {
+  export type AsObject = {
+    latestTradePrice?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
+    subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
+    subPriceAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
+    min?: google_protobuf_struct_pb.Value.AsObject,
+    max?: google_protobuf_struct_pb.Value.AsObject,
+    daytradenumber: number,
+    weektradenumber: number,
+    monthtradenumber: number,
+  }
+}
+
+export class ConsensusTabRequest extends jspb.Message {
+  getAssetId(): string;
+  setAssetId(value: string): void;
+
+  getTraceName(): string;
+  setTraceName(value: string): void;
+
+  getConsensusRunTimestamp(): string;
+  setConsensusRunTimestamp(value: string): void;
+
+  hasFilterPack(): boolean;
+  clearFilterPack(): void;
+  getFilterPack(): common_gateway_base_pb.FilterPack | undefined;
+  setFilterPack(value?: common_gateway_base_pb.FilterPack): void;
+
+  hasOrderby(): boolean;
+  clearOrderby(): void;
+  getOrderby(): common_gateway_base_pb.OrderBy | undefined;
+  setOrderby(value?: common_gateway_base_pb.OrderBy): void;
+
+  hasPage(): boolean;
+  clearPage(): void;
+  getPage(): common_gateway_base_pb.Page | undefined;
+  setPage(value?: common_gateway_base_pb.Page): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ConsensusTabRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusTabRequest): ConsensusTabRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ConsensusTabRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusTabRequest;
+  static deserializeBinaryFromReader(message: ConsensusTabRequest, reader: jspb.BinaryReader): ConsensusTabRequest;
+}
+
+export namespace ConsensusTabRequest {
+  export type AsObject = {
+    assetId: string,
+    traceName: string,
+    consensusRunTimestamp: string,
+    filterPack?: common_gateway_base_pb.FilterPack.AsObject,
+    orderby?: common_gateway_base_pb.OrderBy.AsObject,
+    page?: common_gateway_base_pb.Page.AsObject,
+  }
+}
+

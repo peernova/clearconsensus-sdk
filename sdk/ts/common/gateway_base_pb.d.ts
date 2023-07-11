@@ -30,6 +30,32 @@ export namespace Error {
   }
 }
 
+export class RangePoint extends jspb.Message {
+  getLabel(): string;
+  setLabel(value: string): void;
+
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): google_protobuf_struct_pb.Value | undefined;
+  setValue(value?: google_protobuf_struct_pb.Value): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): RangePoint.AsObject;
+  static toObject(includeInstance: boolean, msg: RangePoint): RangePoint.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: RangePoint, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): RangePoint;
+  static deserializeBinaryFromReader(message: RangePoint, reader: jspb.BinaryReader): RangePoint;
+}
+
+export namespace RangePoint {
+  export type AsObject = {
+    label: string,
+    value?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
 export class Identifier extends jspb.Message {
   getUid(): string;
   setUid(value: string): void;
@@ -1667,6 +1693,34 @@ export namespace KeyAndValue {
   export type AsObject = {
     key: string,
     value?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
+export class Range extends jspb.Message {
+  hasMin(): boolean;
+  clearMin(): void;
+  getMin(): RangePoint | undefined;
+  setMin(value?: RangePoint): void;
+
+  hasMax(): boolean;
+  clearMax(): void;
+  getMax(): RangePoint | undefined;
+  setMax(value?: RangePoint): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Range.AsObject;
+  static toObject(includeInstance: boolean, msg: Range): Range.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Range, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Range;
+  static deserializeBinaryFromReader(message: Range, reader: jspb.BinaryReader): Range;
+}
+
+export namespace Range {
+  export type AsObject = {
+    min?: RangePoint.AsObject,
+    max?: RangePoint.AsObject,
   }
 }
 
