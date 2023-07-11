@@ -23,6 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.TitaniumFilterPack;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,19 +48,15 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetDataQualityErrorsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T14:52:12.519521Z[UTC]")
 public class TitaniumGetDataQualityErrorsRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
   private String assetId;
 
-  public static final String SERIALIZED_NAME_CONSENSUS_ID = "consensusId";
-  @SerializedName(SERIALIZED_NAME_CONSENSUS_ID)
-  private String consensusId;
-
-  public static final String SERIALIZED_NAME_EVALUATED_PRICE_ID = "evaluatedPriceId";
-  @SerializedName(SERIALIZED_NAME_EVALUATED_PRICE_ID)
-  private String evaluatedPriceId;
+  public static final String SERIALIZED_NAME_GROUP_KEYS = "groupKeys";
+  @SerializedName(SERIALIZED_NAME_GROUP_KEYS)
+  private TitaniumFilterPack groupKeys;
 
   public static final String SERIALIZED_NAME_SUBMISSION_ID = "submissionId";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_ID)
@@ -99,49 +96,26 @@ public class TitaniumGetDataQualityErrorsRequest {
   }
 
 
-  public TitaniumGetDataQualityErrorsRequest consensusId(String consensusId) {
+  public TitaniumGetDataQualityErrorsRequest groupKeys(TitaniumFilterPack groupKeys) {
     
-    this.consensusId = consensusId;
+    this.groupKeys = groupKeys;
     return this;
   }
 
    /**
-   * Get consensusId
-   * @return consensusId
+   * Get groupKeys
+   * @return groupKeys
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getConsensusId() {
-    return consensusId;
+  public TitaniumFilterPack getGroupKeys() {
+    return groupKeys;
   }
 
 
-  public void setConsensusId(String consensusId) {
-    this.consensusId = consensusId;
-  }
-
-
-  public TitaniumGetDataQualityErrorsRequest evaluatedPriceId(String evaluatedPriceId) {
-    
-    this.evaluatedPriceId = evaluatedPriceId;
-    return this;
-  }
-
-   /**
-   * Get evaluatedPriceId
-   * @return evaluatedPriceId
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getEvaluatedPriceId() {
-    return evaluatedPriceId;
-  }
-
-
-  public void setEvaluatedPriceId(String evaluatedPriceId) {
-    this.evaluatedPriceId = evaluatedPriceId;
+  public void setGroupKeys(TitaniumFilterPack groupKeys) {
+    this.groupKeys = groupKeys;
   }
 
 
@@ -225,8 +199,7 @@ public class TitaniumGetDataQualityErrorsRequest {
     }
     TitaniumGetDataQualityErrorsRequest titaniumGetDataQualityErrorsRequest = (TitaniumGetDataQualityErrorsRequest) o;
     return Objects.equals(this.assetId, titaniumGetDataQualityErrorsRequest.assetId) &&
-        Objects.equals(this.consensusId, titaniumGetDataQualityErrorsRequest.consensusId) &&
-        Objects.equals(this.evaluatedPriceId, titaniumGetDataQualityErrorsRequest.evaluatedPriceId) &&
+        Objects.equals(this.groupKeys, titaniumGetDataQualityErrorsRequest.groupKeys) &&
         Objects.equals(this.submissionId, titaniumGetDataQualityErrorsRequest.submissionId) &&
         Objects.equals(this.submittedDate, titaniumGetDataQualityErrorsRequest.submittedDate) &&
         Objects.equals(this.traceName, titaniumGetDataQualityErrorsRequest.traceName);
@@ -234,7 +207,7 @@ public class TitaniumGetDataQualityErrorsRequest {
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, consensusId, evaluatedPriceId, submissionId, submittedDate, traceName);
+    return Objects.hash(assetId, groupKeys, submissionId, submittedDate, traceName);
   }
 
   @Override
@@ -242,8 +215,7 @@ public class TitaniumGetDataQualityErrorsRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumGetDataQualityErrorsRequest {\n");
     sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
-    sb.append("    consensusId: ").append(toIndentedString(consensusId)).append("\n");
-    sb.append("    evaluatedPriceId: ").append(toIndentedString(evaluatedPriceId)).append("\n");
+    sb.append("    groupKeys: ").append(toIndentedString(groupKeys)).append("\n");
     sb.append("    submissionId: ").append(toIndentedString(submissionId)).append("\n");
     sb.append("    submittedDate: ").append(toIndentedString(submittedDate)).append("\n");
     sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
@@ -270,8 +242,7 @@ public class TitaniumGetDataQualityErrorsRequest {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("assetId");
-    openapiFields.add("consensusId");
-    openapiFields.add("evaluatedPriceId");
+    openapiFields.add("groupKeys");
     openapiFields.add("submissionId");
     openapiFields.add("submittedDate");
     openapiFields.add("traceName");
@@ -305,11 +276,9 @@ public class TitaniumGetDataQualityErrorsRequest {
       if (jsonObj.get("assetId") != null && !jsonObj.get("assetId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `assetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetId").toString()));
       }
-      if (jsonObj.get("consensusId") != null && !jsonObj.get("consensusId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `consensusId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("consensusId").toString()));
-      }
-      if (jsonObj.get("evaluatedPriceId") != null && !jsonObj.get("evaluatedPriceId").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `evaluatedPriceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("evaluatedPriceId").toString()));
+      // validate the optional field `groupKeys`
+      if (jsonObj.getAsJsonObject("groupKeys") != null) {
+        TitaniumFilterPack.validateJsonObject(jsonObj.getAsJsonObject("groupKeys"));
       }
       if (jsonObj.get("submissionId") != null && !jsonObj.get("submissionId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `submissionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("submissionId").toString()));

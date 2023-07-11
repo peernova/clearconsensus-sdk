@@ -248,7 +248,7 @@ No authorization required
 import ClearconsensusSdk from 'clearconsensus_sdk';
 
 let apiInstance = new ClearconsensusSdk.UserServiceApi();
-let body = true; // Boolean | 
+let body = new ClearconsensusSdk.ProtoUserEnabled(); // ProtoUserEnabled | 
 apiInstance.userServiceGetAll(body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -263,7 +263,7 @@ apiInstance.userServiceGetAll(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Boolean**|  | 
+ **body** | [**ProtoUserEnabled**](ProtoUserEnabled.md)|  | 
 
 ### Return type
 
@@ -291,7 +291,7 @@ No authorization required
 import ClearconsensusSdk from 'clearconsensus_sdk';
 
 let apiInstance = new ClearconsensusSdk.UserServiceApi();
-let body = "body_example"; // String | 
+let body = new ClearconsensusSdk.ProtoUserId(); // ProtoUserId | 
 apiInstance.userServiceGetById(body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -306,7 +306,7 @@ apiInstance.userServiceGetById(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**|  | 
+ **body** | [**ProtoUserId**](ProtoUserId.md)|  | 
 
 ### Return type
 

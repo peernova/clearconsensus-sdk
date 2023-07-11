@@ -5,6 +5,8 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**lookupTableServiceAddLookupTable**](LookupTableServiceApi.md#lookupTableServiceAddLookupTable) | **POST** /api/v1/lookuptable/add |  |
+| [**lookupTableServiceDisableLookupTable**](LookupTableServiceApi.md#lookupTableServiceDisableLookupTable) | **POST** /api/v1/lookuptable/disable |  |
+| [**lookupTableServiceEnableLookupTable**](LookupTableServiceApi.md#lookupTableServiceEnableLookupTable) | **POST** /api/v1/lookuptable/enable |  |
 | [**lookupTableServiceGetLookupTable**](LookupTableServiceApi.md#lookupTableServiceGetLookupTable) | **POST** /api/v1/lookuptable/get |  |
 | [**lookupTableServiceListLookupTableVersions**](LookupTableServiceApi.md#lookupTableServiceListLookupTableVersions) | **POST** /api/v1/lookuptable/versions |  |
 | [**lookupTableServiceListLookupTables**](LookupTableServiceApi.md#lookupTableServiceListLookupTables) | **POST** /api/v1/lookuptable/list |  |
@@ -51,6 +53,128 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**TitaniumAddLookupTableRequest**](TitaniumAddLookupTableRequest.md)|  | |
+
+### Return type
+
+[**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="lookupTableServiceDisableLookupTable"></a>
+# **lookupTableServiceDisableLookupTable**
+> TitaniumAcknowledgeResponse lookupTableServiceDisableLookupTable(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.LookupTableServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    LookupTableServiceApi apiInstance = new LookupTableServiceApi(defaultClient);
+    TitaniumEnableDisableRequest body = new TitaniumEnableDisableRequest(); // TitaniumEnableDisableRequest | 
+    try {
+      TitaniumAcknowledgeResponse result = apiInstance.lookupTableServiceDisableLookupTable(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LookupTableServiceApi#lookupTableServiceDisableLookupTable");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumEnableDisableRequest**](TitaniumEnableDisableRequest.md)|  | |
+
+### Return type
+
+[**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="lookupTableServiceEnableLookupTable"></a>
+# **lookupTableServiceEnableLookupTable**
+> TitaniumAcknowledgeResponse lookupTableServiceEnableLookupTable(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.LookupTableServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    LookupTableServiceApi apiInstance = new LookupTableServiceApi(defaultClient);
+    TitaniumEnableDisableRequest body = new TitaniumEnableDisableRequest(); // TitaniumEnableDisableRequest | 
+    try {
+      TitaniumAcknowledgeResponse result = apiInstance.lookupTableServiceEnableLookupTable(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling LookupTableServiceApi#lookupTableServiceEnableLookupTable");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumEnableDisableRequest**](TitaniumEnableDisableRequest.md)|  | |
 
 ### Return type
 

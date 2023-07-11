@@ -28,6 +28,7 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ProtoGroupPolicies;
+import org.openapitools.client.model.ProtoPolicyType;
 import org.openapitools.client.model.ProtoServiceResponse;
 import org.openapitools.client.model.RpcStatus;
 
@@ -218,7 +219,7 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call groupPolicyServiceGetPoliciesCall(String body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call groupPolicyServiceGetPoliciesCall(ProtoPolicyType body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -264,7 +265,7 @@ public class GroupPolicyServiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call groupPolicyServiceGetPoliciesValidateBeforeCall(String body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call groupPolicyServiceGetPoliciesValidateBeforeCall(ProtoPolicyType body, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -290,7 +291,7 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse groupPolicyServiceGetPolicies(String body) throws ApiException {
+    public ProtoServiceResponse groupPolicyServiceGetPolicies(ProtoPolicyType body) throws ApiException {
         ApiResponse<ProtoServiceResponse> localVarResp = groupPolicyServiceGetPoliciesWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -308,7 +309,7 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> groupPolicyServiceGetPoliciesWithHttpInfo(String body) throws ApiException {
+    public ApiResponse<ProtoServiceResponse> groupPolicyServiceGetPoliciesWithHttpInfo(ProtoPolicyType body) throws ApiException {
         okhttp3.Call localVarCall = groupPolicyServiceGetPoliciesValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -328,7 +329,7 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call groupPolicyServiceGetPoliciesAsync(String body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call groupPolicyServiceGetPoliciesAsync(ProtoPolicyType body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = groupPolicyServiceGetPoliciesValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();

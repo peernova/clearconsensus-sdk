@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_id** | **str** |  | [optional] 
 **filter_pack** | [**TitaniumFilterPack**](TitaniumFilterPack.md) |  | [optional] 
-**group_keys** | [**TitaniumListOfKeys**](TitaniumListOfKeys.md) |  | [optional] 
 **order_by** | [**TitaniumOrderBy**](TitaniumOrderBy.md) |  | [optional] 
 **page** | [**TitaniumPage**](TitaniumPage.md) |  | [optional] 
 **snap_date** | **str** |  | [optional] 
+**sub_group_key_search** | [**TitaniumSubGroupKeySearch**](TitaniumSubGroupKeySearch.md) |  | [optional] 
 **submission_id** | **str** |  | [optional] 
 **trace_name** | **str** |  | [optional] 
 

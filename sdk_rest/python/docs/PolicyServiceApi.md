@@ -389,6 +389,7 @@ No authorization required
 import time
 import openapi_client
 from openapi_client.api import policy_service_api
+from openapi_client.model.proto_policy_type import ProtoPolicyType
 from openapi_client.model.rpc_status import RpcStatus
 from openapi_client.model.proto_service_response import ProtoServiceResponse
 from pprint import pprint
@@ -403,7 +404,9 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = policy_service_api.PolicyServiceApi(api_client)
-    body = "body_example" # str | 
+    body = ProtoPolicyType(
+        type="type_example",
+    ) # ProtoPolicyType | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -418,7 +421,7 @@ with openapi_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **str**|  |
+ **body** | [**ProtoPolicyType**](ProtoPolicyType.md)|  |
 
 ### Return type
 

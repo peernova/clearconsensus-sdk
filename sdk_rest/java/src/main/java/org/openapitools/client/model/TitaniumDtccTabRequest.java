@@ -24,9 +24,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.TitaniumFilterPack;
-import org.openapitools.client.model.TitaniumListOfKeys;
 import org.openapitools.client.model.TitaniumOrderBy;
 import org.openapitools.client.model.TitaniumPage;
+import org.openapitools.client.model.TitaniumSubGroupKeySearch;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumDtccTabRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T14:52:12.519521Z[UTC]")
 public class TitaniumDtccTabRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -60,10 +60,6 @@ public class TitaniumDtccTabRequest {
   public static final String SERIALIZED_NAME_FILTER_PACK = "filterPack";
   @SerializedName(SERIALIZED_NAME_FILTER_PACK)
   private TitaniumFilterPack filterPack;
-
-  public static final String SERIALIZED_NAME_GROUP_KEYS = "groupKeys";
-  @SerializedName(SERIALIZED_NAME_GROUP_KEYS)
-  private TitaniumListOfKeys groupKeys;
 
   public static final String SERIALIZED_NAME_ORDER_BY = "orderBy";
   @SerializedName(SERIALIZED_NAME_ORDER_BY)
@@ -76,6 +72,10 @@ public class TitaniumDtccTabRequest {
   public static final String SERIALIZED_NAME_SNAP_DATE = "snapDate";
   @SerializedName(SERIALIZED_NAME_SNAP_DATE)
   private String snapDate;
+
+  public static final String SERIALIZED_NAME_SUB_GROUP_KEY_SEARCH = "subGroupKeySearch";
+  @SerializedName(SERIALIZED_NAME_SUB_GROUP_KEY_SEARCH)
+  private TitaniumSubGroupKeySearch subGroupKeySearch;
 
   public static final String SERIALIZED_NAME_SUBMISSION_ID = "submissionId";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_ID)
@@ -131,29 +131,6 @@ public class TitaniumDtccTabRequest {
 
   public void setFilterPack(TitaniumFilterPack filterPack) {
     this.filterPack = filterPack;
-  }
-
-
-  public TitaniumDtccTabRequest groupKeys(TitaniumListOfKeys groupKeys) {
-    
-    this.groupKeys = groupKeys;
-    return this;
-  }
-
-   /**
-   * Get groupKeys
-   * @return groupKeys
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumListOfKeys getGroupKeys() {
-    return groupKeys;
-  }
-
-
-  public void setGroupKeys(TitaniumListOfKeys groupKeys) {
-    this.groupKeys = groupKeys;
   }
 
 
@@ -226,6 +203,29 @@ public class TitaniumDtccTabRequest {
   }
 
 
+  public TitaniumDtccTabRequest subGroupKeySearch(TitaniumSubGroupKeySearch subGroupKeySearch) {
+    
+    this.subGroupKeySearch = subGroupKeySearch;
+    return this;
+  }
+
+   /**
+   * Get subGroupKeySearch
+   * @return subGroupKeySearch
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumSubGroupKeySearch getSubGroupKeySearch() {
+    return subGroupKeySearch;
+  }
+
+
+  public void setSubGroupKeySearch(TitaniumSubGroupKeySearch subGroupKeySearch) {
+    this.subGroupKeySearch = subGroupKeySearch;
+  }
+
+
   public TitaniumDtccTabRequest submissionId(String submissionId) {
     
     this.submissionId = submissionId;
@@ -284,17 +284,17 @@ public class TitaniumDtccTabRequest {
     TitaniumDtccTabRequest titaniumDtccTabRequest = (TitaniumDtccTabRequest) o;
     return Objects.equals(this.assetId, titaniumDtccTabRequest.assetId) &&
         Objects.equals(this.filterPack, titaniumDtccTabRequest.filterPack) &&
-        Objects.equals(this.groupKeys, titaniumDtccTabRequest.groupKeys) &&
         Objects.equals(this.orderBy, titaniumDtccTabRequest.orderBy) &&
         Objects.equals(this.page, titaniumDtccTabRequest.page) &&
         Objects.equals(this.snapDate, titaniumDtccTabRequest.snapDate) &&
+        Objects.equals(this.subGroupKeySearch, titaniumDtccTabRequest.subGroupKeySearch) &&
         Objects.equals(this.submissionId, titaniumDtccTabRequest.submissionId) &&
         Objects.equals(this.traceName, titaniumDtccTabRequest.traceName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, filterPack, groupKeys, orderBy, page, snapDate, submissionId, traceName);
+    return Objects.hash(assetId, filterPack, orderBy, page, snapDate, subGroupKeySearch, submissionId, traceName);
   }
 
   @Override
@@ -303,10 +303,10 @@ public class TitaniumDtccTabRequest {
     sb.append("class TitaniumDtccTabRequest {\n");
     sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
     sb.append("    filterPack: ").append(toIndentedString(filterPack)).append("\n");
-    sb.append("    groupKeys: ").append(toIndentedString(groupKeys)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    page: ").append(toIndentedString(page)).append("\n");
     sb.append("    snapDate: ").append(toIndentedString(snapDate)).append("\n");
+    sb.append("    subGroupKeySearch: ").append(toIndentedString(subGroupKeySearch)).append("\n");
     sb.append("    submissionId: ").append(toIndentedString(submissionId)).append("\n");
     sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
     sb.append("}");
@@ -333,10 +333,10 @@ public class TitaniumDtccTabRequest {
     openapiFields = new HashSet<String>();
     openapiFields.add("assetId");
     openapiFields.add("filterPack");
-    openapiFields.add("groupKeys");
     openapiFields.add("orderBy");
     openapiFields.add("page");
     openapiFields.add("snapDate");
+    openapiFields.add("subGroupKeySearch");
     openapiFields.add("submissionId");
     openapiFields.add("traceName");
 
@@ -373,10 +373,6 @@ public class TitaniumDtccTabRequest {
       if (jsonObj.getAsJsonObject("filterPack") != null) {
         TitaniumFilterPack.validateJsonObject(jsonObj.getAsJsonObject("filterPack"));
       }
-      // validate the optional field `groupKeys`
-      if (jsonObj.getAsJsonObject("groupKeys") != null) {
-        TitaniumListOfKeys.validateJsonObject(jsonObj.getAsJsonObject("groupKeys"));
-      }
       // validate the optional field `orderBy`
       if (jsonObj.getAsJsonObject("orderBy") != null) {
         TitaniumOrderBy.validateJsonObject(jsonObj.getAsJsonObject("orderBy"));
@@ -387,6 +383,10 @@ public class TitaniumDtccTabRequest {
       }
       if (jsonObj.get("snapDate") != null && !jsonObj.get("snapDate").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `snapDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("snapDate").toString()));
+      }
+      // validate the optional field `subGroupKeySearch`
+      if (jsonObj.getAsJsonObject("subGroupKeySearch") != null) {
+        TitaniumSubGroupKeySearch.validateJsonObject(jsonObj.getAsJsonObject("subGroupKeySearch"));
       }
       if (jsonObj.get("submissionId") != null && !jsonObj.get("submissionId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `submissionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("submissionId").toString()));

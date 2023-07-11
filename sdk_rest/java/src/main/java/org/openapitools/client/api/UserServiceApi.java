@@ -29,6 +29,8 @@ import java.io.IOException;
 
 import org.openapitools.client.model.ProtoServiceResponse;
 import org.openapitools.client.model.ProtoUserDto;
+import org.openapitools.client.model.ProtoUserEnabled;
+import org.openapitools.client.model.ProtoUserId;
 import org.openapitools.client.model.RpcStatus;
 import org.openapitools.client.model.TitaniumGetUserNotificationByMarketRequest;
 import org.openapitools.client.model.TitaniumGetUserNotificationRequest;
@@ -748,7 +750,7 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call userServiceGetAllCall(Boolean body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call userServiceGetAllCall(ProtoUserEnabled body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -794,7 +796,7 @@ public class UserServiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call userServiceGetAllValidateBeforeCall(Boolean body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call userServiceGetAllValidateBeforeCall(ProtoUserEnabled body, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -820,7 +822,7 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse userServiceGetAll(Boolean body) throws ApiException {
+    public ProtoServiceResponse userServiceGetAll(ProtoUserEnabled body) throws ApiException {
         ApiResponse<ProtoServiceResponse> localVarResp = userServiceGetAllWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -838,7 +840,7 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> userServiceGetAllWithHttpInfo(Boolean body) throws ApiException {
+    public ApiResponse<ProtoServiceResponse> userServiceGetAllWithHttpInfo(ProtoUserEnabled body) throws ApiException {
         okhttp3.Call localVarCall = userServiceGetAllValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -858,7 +860,7 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call userServiceGetAllAsync(Boolean body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call userServiceGetAllAsync(ProtoUserEnabled body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = userServiceGetAllValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
@@ -878,7 +880,7 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call userServiceGetByIdCall(String body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call userServiceGetByIdCall(ProtoUserId body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -924,7 +926,7 @@ public class UserServiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call userServiceGetByIdValidateBeforeCall(String body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call userServiceGetByIdValidateBeforeCall(ProtoUserId body, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -950,7 +952,7 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse userServiceGetById(String body) throws ApiException {
+    public ProtoServiceResponse userServiceGetById(ProtoUserId body) throws ApiException {
         ApiResponse<ProtoServiceResponse> localVarResp = userServiceGetByIdWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -968,7 +970,7 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> userServiceGetByIdWithHttpInfo(String body) throws ApiException {
+    public ApiResponse<ProtoServiceResponse> userServiceGetByIdWithHttpInfo(ProtoUserId body) throws ApiException {
         okhttp3.Call localVarCall = userServiceGetByIdValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -988,7 +990,7 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call userServiceGetByIdAsync(String body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call userServiceGetByIdAsync(ProtoUserId body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = userServiceGetByIdValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();

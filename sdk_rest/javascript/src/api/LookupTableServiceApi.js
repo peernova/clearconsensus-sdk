@@ -16,6 +16,7 @@ import ApiClient from "../ApiClient";
 import RpcStatus from '../model/RpcStatus';
 import TitaniumAcknowledgeResponse from '../model/TitaniumAcknowledgeResponse';
 import TitaniumAddLookupTableRequest from '../model/TitaniumAddLookupTableRequest';
+import TitaniumEnableDisableRequest from '../model/TitaniumEnableDisableRequest';
 import TitaniumGetDefinition from '../model/TitaniumGetDefinition';
 import TitaniumGetLookupTableResponse from '../model/TitaniumGetLookupTableResponse';
 import TitaniumListLookupTableResponse from '../model/TitaniumListLookupTableResponse';
@@ -76,6 +77,86 @@ export default class LookupTableServiceApi {
       let returnType = TitaniumAcknowledgeResponse;
       return this.apiClient.callApi(
         '/api/v1/lookuptable/add', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the lookupTableServiceDisableLookupTable operation.
+     * @callback module:api/LookupTableServiceApi~lookupTableServiceDisableLookupTableCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumAcknowledgeResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumEnableDisableRequest} body 
+     * @param {module:api/LookupTableServiceApi~lookupTableServiceDisableLookupTableCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumAcknowledgeResponse}
+     */
+    lookupTableServiceDisableLookupTable(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling lookupTableServiceDisableLookupTable");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumAcknowledgeResponse;
+      return this.apiClient.callApi(
+        '/api/v1/lookuptable/disable', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the lookupTableServiceEnableLookupTable operation.
+     * @callback module:api/LookupTableServiceApi~lookupTableServiceEnableLookupTableCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumAcknowledgeResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumEnableDisableRequest} body 
+     * @param {module:api/LookupTableServiceApi~lookupTableServiceEnableLookupTableCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumAcknowledgeResponse}
+     */
+    lookupTableServiceEnableLookupTable(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling lookupTableServiceEnableLookupTable");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumAcknowledgeResponse;
+      return this.apiClient.callApi(
+        '/api/v1/lookuptable/enable', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

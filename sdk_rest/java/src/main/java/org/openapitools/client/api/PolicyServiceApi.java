@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import org.openapitools.client.model.ProtoPolicies;
 import org.openapitools.client.model.ProtoPolicyDto;
+import org.openapitools.client.model.ProtoPolicyType;
 import org.openapitools.client.model.ProtoServiceResponse;
 import org.openapitools.client.model.ProtoUsernamePermissionRequest;
 import org.openapitools.client.model.RpcStatus;
@@ -740,7 +741,7 @@ public class PolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call policyServiceGetPoliciesCall(String body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call policyServiceGetPoliciesCall(ProtoPolicyType body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -786,7 +787,7 @@ public class PolicyServiceApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call policyServiceGetPoliciesValidateBeforeCall(String body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call policyServiceGetPoliciesValidateBeforeCall(ProtoPolicyType body, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -812,7 +813,7 @@ public class PolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse policyServiceGetPolicies(String body) throws ApiException {
+    public ProtoServiceResponse policyServiceGetPolicies(ProtoPolicyType body) throws ApiException {
         ApiResponse<ProtoServiceResponse> localVarResp = policyServiceGetPoliciesWithHttpInfo(body);
         return localVarResp.getData();
     }
@@ -830,7 +831,7 @@ public class PolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> policyServiceGetPoliciesWithHttpInfo(String body) throws ApiException {
+    public ApiResponse<ProtoServiceResponse> policyServiceGetPoliciesWithHttpInfo(ProtoPolicyType body) throws ApiException {
         okhttp3.Call localVarCall = policyServiceGetPoliciesValidateBeforeCall(body, null);
         Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -850,7 +851,7 @@ public class PolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call policyServiceGetPoliciesAsync(String body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call policyServiceGetPoliciesAsync(ProtoPolicyType body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = policyServiceGetPoliciesValidateBeforeCall(body, _callback);
         Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();

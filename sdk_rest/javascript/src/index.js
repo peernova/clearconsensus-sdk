@@ -25,11 +25,14 @@ import ProtoGroupPolicies from './model/ProtoGroupPolicies';
 import ProtoGroupPolicyDto from './model/ProtoGroupPolicyDto';
 import ProtoPolicies from './model/ProtoPolicies';
 import ProtoPolicyDto from './model/ProtoPolicyDto';
+import ProtoPolicyType from './model/ProtoPolicyType';
 import ProtoSearchCriteria from './model/ProtoSearchCriteria';
 import ProtoSearchCriteriaLimit from './model/ProtoSearchCriteriaLimit';
 import ProtoSearchCriteriaOrderBy from './model/ProtoSearchCriteriaOrderBy';
 import ProtoServiceResponse from './model/ProtoServiceResponse';
 import ProtoUserDto from './model/ProtoUserDto';
+import ProtoUserEnabled from './model/ProtoUserEnabled';
+import ProtoUserId from './model/ProtoUserId';
 import ProtoUsernamePermissionRequest from './model/ProtoUsernamePermissionRequest';
 import ProtobufAny from './model/ProtobufAny';
 import RpcStatus from './model/RpcStatus';
@@ -112,10 +115,10 @@ import TitaniumConsensusResponse from './model/TitaniumConsensusResponse';
 import TitaniumConsensusResponseData from './model/TitaniumConsensusResponseData';
 import TitaniumConsensusResultSetInfo from './model/TitaniumConsensusResultSetInfo';
 import TitaniumConsensusResultSetValues from './model/TitaniumConsensusResultSetValues';
-import TitaniumConsensusResultSetValuesRequest from './model/TitaniumConsensusResultSetValuesRequest';
 import TitaniumConsensusResultSetValuesResponse from './model/TitaniumConsensusResultSetValuesResponse';
 import TitaniumConsensusRunInfo from './model/TitaniumConsensusRunInfo';
 import TitaniumConsensusScores from './model/TitaniumConsensusScores';
+import TitaniumConsensusTabRequest from './model/TitaniumConsensusTabRequest';
 import TitaniumConsensusTimestampMeta from './model/TitaniumConsensusTimestampMeta';
 import TitaniumConsensusTimestampsRequest from './model/TitaniumConsensusTimestampsRequest';
 import TitaniumConsensusTimestampsResponse from './model/TitaniumConsensusTimestampsResponse';
@@ -217,6 +220,7 @@ import TitaniumGetSubmissionFilesRequest from './model/TitaniumGetSubmissionFile
 import TitaniumGetSubmissionFilesResponse from './model/TitaniumGetSubmissionFilesResponse';
 import TitaniumGetSupportedFields from './model/TitaniumGetSupportedFields';
 import TitaniumGetSupportedFieldsResponse from './model/TitaniumGetSupportedFieldsResponse';
+import TitaniumGetTableResponse from './model/TitaniumGetTableResponse';
 import TitaniumGetUserNotificationByMarketRequest from './model/TitaniumGetUserNotificationByMarketRequest';
 import TitaniumGetUserNotificationRequest from './model/TitaniumGetUserNotificationRequest';
 import TitaniumGetUserPermissionsRequest from './model/TitaniumGetUserPermissionsRequest';
@@ -231,7 +235,6 @@ import TitaniumKVList from './model/TitaniumKVList';
 import TitaniumKVListAsset from './model/TitaniumKVListAsset';
 import TitaniumKVOperationResponse from './model/TitaniumKVOperationResponse';
 import TitaniumKVRequest from './model/TitaniumKVRequest';
-import TitaniumKeyAndValue from './model/TitaniumKeyAndValue';
 import TitaniumLimit from './model/TitaniumLimit';
 import TitaniumListClientsResponse from './model/TitaniumListClientsResponse';
 import TitaniumListClientsResponseData from './model/TitaniumListClientsResponseData';
@@ -240,7 +243,6 @@ import TitaniumListCustomFunctionResponse from './model/TitaniumListCustomFuncti
 import TitaniumListKVRequest from './model/TitaniumListKVRequest';
 import TitaniumListKVResponse from './model/TitaniumListKVResponse';
 import TitaniumListLookupTableResponse from './model/TitaniumListLookupTableResponse';
-import TitaniumListOfKeys from './model/TitaniumListOfKeys';
 import TitaniumListRequest from './model/TitaniumListRequest';
 import TitaniumListRuleResponse from './model/TitaniumListRuleResponse';
 import TitaniumListUniqueKeysResponse from './model/TitaniumListUniqueKeysResponse';
@@ -311,6 +313,7 @@ import TitaniumStatusResponse from './model/TitaniumStatusResponse';
 import TitaniumStatusResponseData from './model/TitaniumStatusResponseData';
 import TitaniumStringKeyVal from './model/TitaniumStringKeyVal';
 import TitaniumSubAsset from './model/TitaniumSubAsset';
+import TitaniumSubGroupKeySearch from './model/TitaniumSubGroupKeySearch';
 import TitaniumSubmissionEvidenceAnchorDetails from './model/TitaniumSubmissionEvidenceAnchorDetails';
 import TitaniumSubmissionEvidenceTableColumn from './model/TitaniumSubmissionEvidenceTableColumn';
 import TitaniumSubmissionExplorerTableColumn from './model/TitaniumSubmissionExplorerTableColumn';
@@ -323,6 +326,9 @@ import TitaniumSubmittedResponseData from './model/TitaniumSubmittedResponseData
 import TitaniumSubmittedRow from './model/TitaniumSubmittedRow';
 import TitaniumSupportedField from './model/TitaniumSupportedField';
 import TitaniumSupportedFieldsValues from './model/TitaniumSupportedFieldsValues';
+import TitaniumTable from './model/TitaniumTable';
+import TitaniumTableColumn from './model/TitaniumTableColumn';
+import TitaniumTableRow from './model/TitaniumTableRow';
 import TitaniumTradeAligmentDateAndValue from './model/TitaniumTradeAligmentDateAndValue';
 import TitaniumTradeAlignmentScore from './model/TitaniumTradeAlignmentScore';
 import TitaniumTradeAnchorDetails from './model/TitaniumTradeAnchorDetails';
@@ -504,6 +510,12 @@ export {
     ProtoPolicyDto,
 
     /**
+     * The ProtoPolicyType model constructor.
+     * @property {module:model/ProtoPolicyType}
+     */
+    ProtoPolicyType,
+
+    /**
      * The ProtoSearchCriteria model constructor.
      * @property {module:model/ProtoSearchCriteria}
      */
@@ -532,6 +544,18 @@ export {
      * @property {module:model/ProtoUserDto}
      */
     ProtoUserDto,
+
+    /**
+     * The ProtoUserEnabled model constructor.
+     * @property {module:model/ProtoUserEnabled}
+     */
+    ProtoUserEnabled,
+
+    /**
+     * The ProtoUserId model constructor.
+     * @property {module:model/ProtoUserId}
+     */
+    ProtoUserId,
 
     /**
      * The ProtoUsernamePermissionRequest model constructor.
@@ -1026,12 +1050,6 @@ export {
     TitaniumConsensusResultSetValues,
 
     /**
-     * The TitaniumConsensusResultSetValuesRequest model constructor.
-     * @property {module:model/TitaniumConsensusResultSetValuesRequest}
-     */
-    TitaniumConsensusResultSetValuesRequest,
-
-    /**
      * The TitaniumConsensusResultSetValuesResponse model constructor.
      * @property {module:model/TitaniumConsensusResultSetValuesResponse}
      */
@@ -1048,6 +1066,12 @@ export {
      * @property {module:model/TitaniumConsensusScores}
      */
     TitaniumConsensusScores,
+
+    /**
+     * The TitaniumConsensusTabRequest model constructor.
+     * @property {module:model/TitaniumConsensusTabRequest}
+     */
+    TitaniumConsensusTabRequest,
 
     /**
      * The TitaniumConsensusTimestampMeta model constructor.
@@ -1656,6 +1680,12 @@ export {
     TitaniumGetSupportedFieldsResponse,
 
     /**
+     * The TitaniumGetTableResponse model constructor.
+     * @property {module:model/TitaniumGetTableResponse}
+     */
+    TitaniumGetTableResponse,
+
+    /**
      * The TitaniumGetUserNotificationByMarketRequest model constructor.
      * @property {module:model/TitaniumGetUserNotificationByMarketRequest}
      */
@@ -1740,12 +1770,6 @@ export {
     TitaniumKVRequest,
 
     /**
-     * The TitaniumKeyAndValue model constructor.
-     * @property {module:model/TitaniumKeyAndValue}
-     */
-    TitaniumKeyAndValue,
-
-    /**
      * The TitaniumLimit model constructor.
      * @property {module:model/TitaniumLimit}
      */
@@ -1792,12 +1816,6 @@ export {
      * @property {module:model/TitaniumListLookupTableResponse}
      */
     TitaniumListLookupTableResponse,
-
-    /**
-     * The TitaniumListOfKeys model constructor.
-     * @property {module:model/TitaniumListOfKeys}
-     */
-    TitaniumListOfKeys,
 
     /**
      * The TitaniumListRequest model constructor.
@@ -2220,6 +2238,12 @@ export {
     TitaniumSubAsset,
 
     /**
+     * The TitaniumSubGroupKeySearch model constructor.
+     * @property {module:model/TitaniumSubGroupKeySearch}
+     */
+    TitaniumSubGroupKeySearch,
+
+    /**
      * The TitaniumSubmissionEvidenceAnchorDetails model constructor.
      * @property {module:model/TitaniumSubmissionEvidenceAnchorDetails}
      */
@@ -2290,6 +2314,24 @@ export {
      * @property {module:model/TitaniumSupportedFieldsValues}
      */
     TitaniumSupportedFieldsValues,
+
+    /**
+     * The TitaniumTable model constructor.
+     * @property {module:model/TitaniumTable}
+     */
+    TitaniumTable,
+
+    /**
+     * The TitaniumTableColumn model constructor.
+     * @property {module:model/TitaniumTableColumn}
+     */
+    TitaniumTableColumn,
+
+    /**
+     * The TitaniumTableRow model constructor.
+     * @property {module:model/TitaniumTableRow}
+     */
+    TitaniumTableRow,
 
     /**
      * The TitaniumTradeAligmentDateAndValue model constructor.

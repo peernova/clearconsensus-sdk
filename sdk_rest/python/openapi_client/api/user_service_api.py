@@ -23,6 +23,8 @@ from openapi_client.model_utils import (  # noqa: F401
 )
 from openapi_client.model.proto_service_response import ProtoServiceResponse
 from openapi_client.model.proto_user_dto import ProtoUserDto
+from openapi_client.model.proto_user_enabled import ProtoUserEnabled
+from openapi_client.model.proto_user_id import ProtoUserId
 from openapi_client.model.rpc_status import RpcStatus
 from openapi_client.model.titanium_get_user_notification_by_market_request import TitaniumGetUserNotificationByMarketRequest
 from openapi_client.model.titanium_get_user_notification_request import TitaniumGetUserNotificationRequest
@@ -317,7 +319,7 @@ class UserServiceApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (bool,),
+                        (ProtoUserEnabled,),
                 },
                 'attribute_map': {
                 },
@@ -365,7 +367,7 @@ class UserServiceApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (str,),
+                        (ProtoUserId,),
                 },
                 'attribute_map': {
                 },
@@ -1144,7 +1146,7 @@ class UserServiceApi(object):
         >>> result = thread.get()
 
         Args:
-            body (bool):
+            body (ProtoUserEnabled):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -1226,7 +1228,7 @@ class UserServiceApi(object):
         >>> result = thread.get()
 
         Args:
-            body (str):
+            body (ProtoUserId):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

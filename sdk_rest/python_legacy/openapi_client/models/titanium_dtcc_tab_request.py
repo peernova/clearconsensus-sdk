@@ -38,10 +38,10 @@ class TitaniumDtccTabRequest(object):
     openapi_types = {
         'asset_id': 'str',
         'filter_pack': 'TitaniumFilterPack',
-        'group_keys': 'TitaniumListOfKeys',
         'order_by': 'TitaniumOrderBy',
         'page': 'TitaniumPage',
         'snap_date': 'str',
+        'sub_group_key_search': 'TitaniumSubGroupKeySearch',
         'submission_id': 'str',
         'trace_name': 'str'
     }
@@ -49,15 +49,15 @@ class TitaniumDtccTabRequest(object):
     attribute_map = {
         'asset_id': 'assetId',
         'filter_pack': 'filterPack',
-        'group_keys': 'groupKeys',
         'order_by': 'orderBy',
         'page': 'page',
         'snap_date': 'snapDate',
+        'sub_group_key_search': 'subGroupKeySearch',
         'submission_id': 'submissionId',
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, filter_pack=None, group_keys=None, order_by=None, page=None, snap_date=None, submission_id=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, filter_pack=None, order_by=None, page=None, snap_date=None, sub_group_key_search=None, submission_id=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumDtccTabRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -65,10 +65,10 @@ class TitaniumDtccTabRequest(object):
 
         self._asset_id = None
         self._filter_pack = None
-        self._group_keys = None
         self._order_by = None
         self._page = None
         self._snap_date = None
+        self._sub_group_key_search = None
         self._submission_id = None
         self._trace_name = None
         self.discriminator = None
@@ -77,14 +77,14 @@ class TitaniumDtccTabRequest(object):
             self.asset_id = asset_id
         if filter_pack is not None:
             self.filter_pack = filter_pack
-        if group_keys is not None:
-            self.group_keys = group_keys
         if order_by is not None:
             self.order_by = order_by
         if page is not None:
             self.page = page
         if snap_date is not None:
             self.snap_date = snap_date
+        if sub_group_key_search is not None:
+            self.sub_group_key_search = sub_group_key_search
         if submission_id is not None:
             self.submission_id = submission_id
         if trace_name is not None:
@@ -131,27 +131,6 @@ class TitaniumDtccTabRequest(object):
         """
 
         self._filter_pack = filter_pack
-
-    @property
-    def group_keys(self):
-        """Gets the group_keys of this TitaniumDtccTabRequest.  # noqa: E501
-
-
-        :return: The group_keys of this TitaniumDtccTabRequest.  # noqa: E501
-        :rtype: TitaniumListOfKeys
-        """
-        return self._group_keys
-
-    @group_keys.setter
-    def group_keys(self, group_keys):
-        """Sets the group_keys of this TitaniumDtccTabRequest.
-
-
-        :param group_keys: The group_keys of this TitaniumDtccTabRequest.  # noqa: E501
-        :type group_keys: TitaniumListOfKeys
-        """
-
-        self._group_keys = group_keys
 
     @property
     def order_by(self):
@@ -215,6 +194,27 @@ class TitaniumDtccTabRequest(object):
         """
 
         self._snap_date = snap_date
+
+    @property
+    def sub_group_key_search(self):
+        """Gets the sub_group_key_search of this TitaniumDtccTabRequest.  # noqa: E501
+
+
+        :return: The sub_group_key_search of this TitaniumDtccTabRequest.  # noqa: E501
+        :rtype: TitaniumSubGroupKeySearch
+        """
+        return self._sub_group_key_search
+
+    @sub_group_key_search.setter
+    def sub_group_key_search(self, sub_group_key_search):
+        """Sets the sub_group_key_search of this TitaniumDtccTabRequest.
+
+
+        :param sub_group_key_search: The sub_group_key_search of this TitaniumDtccTabRequest.  # noqa: E501
+        :type sub_group_key_search: TitaniumSubGroupKeySearch
+        """
+
+        self._sub_group_key_search = sub_group_key_search
 
     @property
     def submission_id(self):

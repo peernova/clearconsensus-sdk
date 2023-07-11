@@ -49,14 +49,6 @@ with openapi_client.ApiClient() as api_client:
             ],
             logical_operation="logical_operation_example",
         ),
-        group_keys=TitaniumListOfKeys(
-            list=[
-                TitaniumKeyAndValue(
-                    key="key_example",
-                    value={},
-                ),
-            ],
-        ),
         order_by=TitaniumOrderBy(
             column="column_example",
             order="order_example",
@@ -67,6 +59,22 @@ with openapi_client.ApiClient() as api_client:
             total_number_of_elements="total_number_of_elements_example",
         ),
         snap_date="snap_date_example",
+        sub_group_key_search=TitaniumSubGroupKeySearch(
+            group_keys=TitaniumFilterPack(
+                filter_packs=[
+                    TitaniumFilterPack(),
+                ],
+                filters=[
+                    TitaniumFilter(
+                        key="key_example",
+                        operator="operator_example",
+                        value={},
+                    ),
+                ],
+                logical_operation="logical_operation_example",
+            ),
+            sub_submitted_date="sub_submitted_date_example",
+        ),
         submission_id="submission_id_example",
         trace_name="trace_name_example",
     ) # TitaniumDtccTabRequest | 

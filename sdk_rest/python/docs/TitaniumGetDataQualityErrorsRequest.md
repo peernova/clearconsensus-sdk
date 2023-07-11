@@ -5,8 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **asset_id** | **str** |  | [optional] 
-**consensus_id** | **str** |  | [optional] 
-**evaluated_price_id** | **str** |  | [optional] 
+**group_keys** | [**TitaniumFilterPack**](TitaniumFilterPack.md) |  | [optional] 
 **submission_id** | **str** |  | [optional] 
 **submitted_date** | **str** |  | [optional] 
 **trace_name** | **str** |  | [optional] 

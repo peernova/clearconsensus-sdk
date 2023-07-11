@@ -25,8 +25,8 @@ import TitaniumConsensusHistoryResponse from '../model/TitaniumConsensusHistoryR
 import TitaniumConsensusPublishRequest from '../model/TitaniumConsensusPublishRequest';
 import TitaniumConsensusRequest from '../model/TitaniumConsensusRequest';
 import TitaniumConsensusResponse from '../model/TitaniumConsensusResponse';
-import TitaniumConsensusResultSetValuesRequest from '../model/TitaniumConsensusResultSetValuesRequest';
 import TitaniumConsensusResultSetValuesResponse from '../model/TitaniumConsensusResultSetValuesResponse';
+import TitaniumConsensusTabRequest from '../model/TitaniumConsensusTabRequest';
 import TitaniumConsensusTimestampsRequest from '../model/TitaniumConsensusTimestampsRequest';
 import TitaniumConsensusTimestampsResponse from '../model/TitaniumConsensusTimestampsResponse';
 import TitaniumConsensusToPublishRequest from '../model/TitaniumConsensusToPublishRequest';
@@ -56,6 +56,46 @@ export default class ConsensusServiceApi {
         this.apiClient = apiClient || ApiClient.instance;
     }
 
+
+    /**
+     * Callback function to receive the result of the consensusServiceCohortConsensusTab operation.
+     * @callback module:api/ConsensusServiceApi~consensusServiceCohortConsensusTabCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumConsensusResultSetValuesResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumConsensusTabRequest} body 
+     * @param {module:api/ConsensusServiceApi~consensusServiceCohortConsensusTabCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumConsensusResultSetValuesResponse}
+     */
+    consensusServiceCohortConsensusTab(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling consensusServiceCohortConsensusTab");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumConsensusResultSetValuesResponse;
+      return this.apiClient.callApi(
+        '/api/v1/consensus-result-set-view', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
 
     /**
      * Callback function to receive the result of the consensusServiceConsensus operation.
@@ -406,46 +446,6 @@ export default class ConsensusServiceApi {
     }
 
     /**
-     * Callback function to receive the result of the consensusServiceConsensusResultSetValues operation.
-     * @callback module:api/ConsensusServiceApi~consensusServiceConsensusResultSetValuesCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/TitaniumConsensusResultSetValuesResponse} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * @param {module:model/TitaniumConsensusResultSetValuesRequest} body 
-     * @param {module:api/ConsensusServiceApi~consensusServiceConsensusResultSetValuesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TitaniumConsensusResultSetValuesResponse}
-     */
-    consensusServiceConsensusResultSetValues(body, callback) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling consensusServiceConsensusResultSetValues");
-      }
-
-      let pathParams = {
-      };
-      let queryParams = {
-      };
-      let headerParams = {
-      };
-      let formParams = {
-      };
-
-      let authNames = [];
-      let contentTypes = [];
-      let accepts = ['*/*'];
-      let returnType = TitaniumConsensusResultSetValuesResponse;
-      return this.apiClient.callApi(
-        '/api/v1/consensus-result-set-view', 'POST',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, null, callback
-      );
-    }
-
-    /**
      * Callback function to receive the result of the consensusServiceConsensusTimestamps operation.
      * @callback module:api/ConsensusServiceApi~consensusServiceConsensusTimestampsCallback
      * @param {String} error Error message, if any.
@@ -603,6 +603,46 @@ export default class ConsensusServiceApi {
       let returnType = TitaniumGetConsensusRunsResponse;
       return this.apiClient.callApi(
         '/api/v1/consensus-runs-view', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the consensusServiceSubmissionEvidenceTab operation.
+     * @callback module:api/ConsensusServiceApi~consensusServiceSubmissionEvidenceTabCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumConsensusResultSetValuesResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumConsensusTabRequest} body 
+     * @param {module:api/ConsensusServiceApi~consensusServiceSubmissionEvidenceTabCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumConsensusResultSetValuesResponse}
+     */
+    consensusServiceSubmissionEvidenceTab(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling consensusServiceSubmissionEvidenceTab");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumConsensusResultSetValuesResponse;
+      return this.apiClient.callApi(
+        '/api/v1/consensus-result-set-view/submission-evidence', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

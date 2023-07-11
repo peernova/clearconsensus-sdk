@@ -37,8 +37,7 @@ class TitaniumGetDataQualityErrorsRequest(object):
     """
     openapi_types = {
         'asset_id': 'str',
-        'consensus_id': 'str',
-        'evaluated_price_id': 'str',
+        'group_keys': 'TitaniumFilterPack',
         'submission_id': 'str',
         'submitted_date': 'str',
         'trace_name': 'str'
@@ -46,22 +45,20 @@ class TitaniumGetDataQualityErrorsRequest(object):
 
     attribute_map = {
         'asset_id': 'assetId',
-        'consensus_id': 'consensusId',
-        'evaluated_price_id': 'evaluatedPriceId',
+        'group_keys': 'groupKeys',
         'submission_id': 'submissionId',
         'submitted_date': 'submittedDate',
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, consensus_id=None, evaluated_price_id=None, submission_id=None, submitted_date=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, group_keys=None, submission_id=None, submitted_date=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumGetDataQualityErrorsRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._asset_id = None
-        self._consensus_id = None
-        self._evaluated_price_id = None
+        self._group_keys = None
         self._submission_id = None
         self._submitted_date = None
         self._trace_name = None
@@ -69,10 +66,8 @@ class TitaniumGetDataQualityErrorsRequest(object):
 
         if asset_id is not None:
             self.asset_id = asset_id
-        if consensus_id is not None:
-            self.consensus_id = consensus_id
-        if evaluated_price_id is not None:
-            self.evaluated_price_id = evaluated_price_id
+        if group_keys is not None:
+            self.group_keys = group_keys
         if submission_id is not None:
             self.submission_id = submission_id
         if submitted_date is not None:
@@ -102,46 +97,25 @@ class TitaniumGetDataQualityErrorsRequest(object):
         self._asset_id = asset_id
 
     @property
-    def consensus_id(self):
-        """Gets the consensus_id of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
+    def group_keys(self):
+        """Gets the group_keys of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
 
 
-        :return: The consensus_id of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
-        :rtype: str
+        :return: The group_keys of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
+        :rtype: TitaniumFilterPack
         """
-        return self._consensus_id
+        return self._group_keys
 
-    @consensus_id.setter
-    def consensus_id(self, consensus_id):
-        """Sets the consensus_id of this TitaniumGetDataQualityErrorsRequest.
-
-
-        :param consensus_id: The consensus_id of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
-        :type consensus_id: str
-        """
-
-        self._consensus_id = consensus_id
-
-    @property
-    def evaluated_price_id(self):
-        """Gets the evaluated_price_id of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
+    @group_keys.setter
+    def group_keys(self, group_keys):
+        """Sets the group_keys of this TitaniumGetDataQualityErrorsRequest.
 
 
-        :return: The evaluated_price_id of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._evaluated_price_id
-
-    @evaluated_price_id.setter
-    def evaluated_price_id(self, evaluated_price_id):
-        """Sets the evaluated_price_id of this TitaniumGetDataQualityErrorsRequest.
-
-
-        :param evaluated_price_id: The evaluated_price_id of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
-        :type evaluated_price_id: str
+        :param group_keys: The group_keys of this TitaniumGetDataQualityErrorsRequest.  # noqa: E501
+        :type group_keys: TitaniumFilterPack
         """
 
-        self._evaluated_price_id = evaluated_price_id
+        self._group_keys = group_keys
 
     @property
     def submission_id(self):

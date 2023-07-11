@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumFilterPack from './TitaniumFilterPack';
 
 /**
  * The TitaniumGetDataQualityErrorsRequest model module.
@@ -50,11 +51,8 @@ class TitaniumGetDataQualityErrorsRequest {
             if (data.hasOwnProperty('assetId')) {
                 obj['assetId'] = ApiClient.convertToType(data['assetId'], 'String');
             }
-            if (data.hasOwnProperty('consensusId')) {
-                obj['consensusId'] = ApiClient.convertToType(data['consensusId'], 'String');
-            }
-            if (data.hasOwnProperty('evaluatedPriceId')) {
-                obj['evaluatedPriceId'] = ApiClient.convertToType(data['evaluatedPriceId'], 'String');
+            if (data.hasOwnProperty('groupKeys')) {
+                obj['groupKeys'] = TitaniumFilterPack.constructFromObject(data['groupKeys']);
             }
             if (data.hasOwnProperty('submissionId')) {
                 obj['submissionId'] = ApiClient.convertToType(data['submissionId'], 'String');
@@ -78,14 +76,9 @@ class TitaniumGetDataQualityErrorsRequest {
 TitaniumGetDataQualityErrorsRequest.prototype['assetId'] = undefined;
 
 /**
- * @member {String} consensusId
+ * @member {module:model/TitaniumFilterPack} groupKeys
  */
-TitaniumGetDataQualityErrorsRequest.prototype['consensusId'] = undefined;
-
-/**
- * @member {String} evaluatedPriceId
- */
-TitaniumGetDataQualityErrorsRequest.prototype['evaluatedPriceId'] = undefined;
+TitaniumGetDataQualityErrorsRequest.prototype['groupKeys'] = undefined;
 
 /**
  * @member {String} submissionId

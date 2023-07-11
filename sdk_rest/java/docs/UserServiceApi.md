@@ -346,7 +346,7 @@ public class Example {
     defaultClient.setBasePath("http://api-dev.clearconsensus.io");
 
     UserServiceApi apiInstance = new UserServiceApi(defaultClient);
-    Boolean body = true; // Boolean | 
+    ProtoUserEnabled body = new ProtoUserEnabled(); // ProtoUserEnabled | 
     try {
       ProtoServiceResponse result = apiInstance.userServiceGetAll(body);
       System.out.println(result);
@@ -365,7 +365,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **Boolean**|  | |
+| **body** | [**ProtoUserEnabled**](ProtoUserEnabled.md)|  | |
 
 ### Return type
 
@@ -407,7 +407,7 @@ public class Example {
     defaultClient.setBasePath("http://api-dev.clearconsensus.io");
 
     UserServiceApi apiInstance = new UserServiceApi(defaultClient);
-    String body = "body_example"; // String | 
+    ProtoUserId body = new ProtoUserId(); // ProtoUserId | 
     try {
       ProtoServiceResponse result = apiInstance.userServiceGetById(body);
       System.out.println(result);
@@ -426,7 +426,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **String**|  | |
+| **body** | [**ProtoUserId**](ProtoUserId.md)|  | |
 
 ### Return type
 

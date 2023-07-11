@@ -13,9 +13,9 @@
 
 import ApiClient from '../ApiClient';
 import TitaniumFilterPack from './TitaniumFilterPack';
-import TitaniumListOfKeys from './TitaniumListOfKeys';
 import TitaniumOrderBy from './TitaniumOrderBy';
 import TitaniumPage from './TitaniumPage';
+import TitaniumSubGroupKeySearch from './TitaniumSubGroupKeySearch';
 
 /**
  * The TitaniumDtccTabRequest model module.
@@ -57,9 +57,6 @@ class TitaniumDtccTabRequest {
             if (data.hasOwnProperty('filterPack')) {
                 obj['filterPack'] = TitaniumFilterPack.constructFromObject(data['filterPack']);
             }
-            if (data.hasOwnProperty('groupKeys')) {
-                obj['groupKeys'] = TitaniumListOfKeys.constructFromObject(data['groupKeys']);
-            }
             if (data.hasOwnProperty('orderBy')) {
                 obj['orderBy'] = TitaniumOrderBy.constructFromObject(data['orderBy']);
             }
@@ -68,6 +65,9 @@ class TitaniumDtccTabRequest {
             }
             if (data.hasOwnProperty('snapDate')) {
                 obj['snapDate'] = ApiClient.convertToType(data['snapDate'], 'String');
+            }
+            if (data.hasOwnProperty('subGroupKeySearch')) {
+                obj['subGroupKeySearch'] = TitaniumSubGroupKeySearch.constructFromObject(data['subGroupKeySearch']);
             }
             if (data.hasOwnProperty('submissionId')) {
                 obj['submissionId'] = ApiClient.convertToType(data['submissionId'], 'String');
@@ -93,11 +93,6 @@ TitaniumDtccTabRequest.prototype['assetId'] = undefined;
 TitaniumDtccTabRequest.prototype['filterPack'] = undefined;
 
 /**
- * @member {module:model/TitaniumListOfKeys} groupKeys
- */
-TitaniumDtccTabRequest.prototype['groupKeys'] = undefined;
-
-/**
  * @member {module:model/TitaniumOrderBy} orderBy
  */
 TitaniumDtccTabRequest.prototype['orderBy'] = undefined;
@@ -111,6 +106,11 @@ TitaniumDtccTabRequest.prototype['page'] = undefined;
  * @member {String} snapDate
  */
 TitaniumDtccTabRequest.prototype['snapDate'] = undefined;
+
+/**
+ * @member {module:model/TitaniumSubGroupKeySearch} subGroupKeySearch
+ */
+TitaniumDtccTabRequest.prototype['subGroupKeySearch'] = undefined;
 
 /**
  * @member {String} submissionId

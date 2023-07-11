@@ -241,7 +241,7 @@ No authorization required
 import ClearconsensusSdk from 'clearconsensus_sdk';
 
 let apiInstance = new ClearconsensusSdk.PolicyServiceApi();
-let body = "body_example"; // String | 
+let body = new ClearconsensusSdk.ProtoPolicyType(); // ProtoPolicyType | 
 apiInstance.policyServiceGetPolicies(body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -256,7 +256,7 @@ apiInstance.policyServiceGetPolicies(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**|  | 
+ **body** | [**ProtoPolicyType**](ProtoPolicyType.md)|  | 
 
 ### Return type
 

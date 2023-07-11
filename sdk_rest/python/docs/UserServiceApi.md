@@ -459,6 +459,7 @@ import openapi_client
 from openapi_client.api import user_service_api
 from openapi_client.model.rpc_status import RpcStatus
 from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_user_enabled import ProtoUserEnabled
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -471,7 +472,9 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_service_api.UserServiceApi(api_client)
-    body = True # bool | 
+    body = ProtoUserEnabled(
+        enabled=True,
+    ) # ProtoUserEnabled | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -486,7 +489,7 @@ with openapi_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **bool**|  |
+ **body** | [**ProtoUserEnabled**](ProtoUserEnabled.md)|  |
 
 ### Return type
 
@@ -524,6 +527,7 @@ import time
 import openapi_client
 from openapi_client.api import user_service_api
 from openapi_client.model.rpc_status import RpcStatus
+from openapi_client.model.proto_user_id import ProtoUserId
 from openapi_client.model.proto_service_response import ProtoServiceResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
@@ -537,7 +541,9 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = user_service_api.UserServiceApi(api_client)
-    body = "body_example" # str | 
+    body = ProtoUserId(
+        id="id_example",
+    ) # ProtoUserId | 
 
     # example passing only required values which don't have defaults set
     try:
@@ -552,7 +558,7 @@ with openapi_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **str**|  |
+ **body** | [**ProtoUserId**](ProtoUserId.md)|  |
 
 ### Return type
 

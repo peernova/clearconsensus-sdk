@@ -145,8 +145,10 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceGetChallengeAttachmentUploadUrl**](docs/ChallengeServiceApi.md#challengeServiceGetChallengeAttachmentUploadUrl) | **POST** /api/v1/challenge/attachment_upload_urls | GetChallengeAttachmentUploadUrl returns string that represents s3 URL that can be used to upload attachment for the challenge. The file in attachment can be any file that provides additional information about the disputable outlier. Need to specify asset ID, submitted ID and file name.
 *ClearconsensusSdk.ChallengeServiceApi* | [**challengeServiceGetChallengeDetails**](docs/ChallengeServiceApi.md#challengeServiceGetChallengeDetails) | **POST** /api/v1/challenge-details | 
 *ClearconsensusSdk.ChartServiceApi* | [**chartServiceGetChartData**](docs/ChartServiceApi.md#chartServiceGetChartData) | **POST** /api/v1/analytics/chart-data | 
+*ClearconsensusSdk.ChartServiceApi* | [**chartServiceGetTableData**](docs/ChartServiceApi.md#chartServiceGetTableData) | **POST** /api/v1/analytics/table | 
 *ClearconsensusSdk.ChartsServiceApi* | [**chartsServiceCharts**](docs/ChartsServiceApi.md#chartsServiceCharts) | **POST** /api/v1/charts | Charts returns information about specific chart related to the specific asset.
 *ClearconsensusSdk.ChartsServiceApi* | [**chartsServiceChartsCurrencies**](docs/ChartsServiceApi.md#chartsServiceChartsCurrencies) | **POST** /api/v1/charts/currencies | ChartsCurrencies returns information about the chart related to specific currency pair.
+*ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceCohortConsensusTab**](docs/ConsensusServiceApi.md#consensusServiceCohortConsensusTab) | **POST** /api/v1/consensus-result-set-view | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensus**](docs/ConsensusServiceApi.md#consensusServiceConsensus) | **POST** /api/v1/consensus | Consensus return information about consensus according to request. Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition) Returns ConsensusResponse that contains information about column and rows related to consensus.
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusActive**](docs/ConsensusServiceApi.md#consensusServiceConsensusActive) | **POST** /api/v1/operator/consensus/active | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusDecision**](docs/ConsensusServiceApi.md#consensusServiceConsensusDecision) | **POST** /api/v1/operator/consensus/decision | 
@@ -156,11 +158,11 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusHistory**](docs/ConsensusServiceApi.md#consensusServiceConsensusHistory) | **POST** /api/v1/operator/consensus/history | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusOutliers**](docs/ConsensusServiceApi.md#consensusServiceConsensusOutliers) | **POST** /api/v1/outliers-list | ConsensusOutliers return list of outliers according to specified consensus. Need to identify consensus tun timestamp and etc.(Described in OutliersListRequest) Return ConsensusActiveResponse that contains active consensuses with specified run timestamp.
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusPublish**](docs/ConsensusServiceApi.md#consensusServiceConsensusPublish) | **POST** /api/v1/operator/consensus/publish | 
-*ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusResultSetValues**](docs/ConsensusServiceApi.md#consensusServiceConsensusResultSetValues) | **POST** /api/v1/consensus-result-set-view | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusTimestamps**](docs/ConsensusServiceApi.md#consensusServiceConsensusTimestamps) | **POST** /api/v1/consensus/timestamps | ConsensusTimestamps returns timestamps when it was submitted. Need to specify asset ID and trace name. Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceConsensusToPublish**](docs/ConsensusServiceApi.md#consensusServiceConsensusToPublish) | **POST** /api/v1/operator/consensus/to-publish | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceEvaluatedPrice**](docs/ConsensusServiceApi.md#consensusServiceEvaluatedPrice) | **POST** /api/v1/evaluated-price | 
 *ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceGetConsensusRuns**](docs/ConsensusServiceApi.md#consensusServiceGetConsensusRuns) | **POST** /api/v1/consensus-runs-view | Get Consensus Run&#39;s consensus result sets
+*ClearconsensusSdk.ConsensusServiceApi* | [**consensusServiceSubmissionEvidenceTab**](docs/ConsensusServiceApi.md#consensusServiceSubmissionEvidenceTab) | **POST** /api/v1/consensus-result-set-view/submission-evidence | 
 *ClearconsensusSdk.CustomFunctionServiceApi* | [**customFunctionServiceAddCustomFunction**](docs/CustomFunctionServiceApi.md#customFunctionServiceAddCustomFunction) | **POST** /api/v1/customfunction/add | AddCustomFunction allows the user to create a new custom function by sending a CustomFunction message. It returns an AcknowledgeResponse indicating whether the custom function was successfully added or not.
 *ClearconsensusSdk.CustomFunctionServiceApi* | [**customFunctionServiceGetCustomFunction**](docs/CustomFunctionServiceApi.md#customFunctionServiceGetCustomFunction) | **POST** /api/v1/customfunction/get | GetCustomFunction retrieves the definition of a specific custom function. The custom function is specified in the CustomFunctionGetDefinition message, which includes its ID and scope. The method returns a CustomFunctionDefinitionResponse that contains either the custom function definition or an error.
 *ClearconsensusSdk.CustomFunctionServiceApi* | [**customFunctionServiceListCustomFunctionVersions**](docs/CustomFunctionServiceApi.md#customFunctionServiceListCustomFunctionVersions) | **POST** /api/v1/customfunction/versions | ListCustomFunctionVersions lists all the versions of a specific custom function. The custom function is specified in the GetDefinition message, which includes its ID and scope. The method returns a ListVersionResponse that contains either a list of versions or an error.
@@ -213,6 +215,8 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.KVServiceApi* | [**kVServiceUpdateKey**](docs/KVServiceApi.md#kVServiceUpdateKey) | **POST** /api/v1/kv/update | 
 *ClearconsensusSdk.LoginServiceApi* | [**loginServiceLogin**](docs/LoginServiceApi.md#loginServiceLogin) | **POST** /api/v1/login | 
 *ClearconsensusSdk.LookupTableServiceApi* | [**lookupTableServiceAddLookupTable**](docs/LookupTableServiceApi.md#lookupTableServiceAddLookupTable) | **POST** /api/v1/lookuptable/add | 
+*ClearconsensusSdk.LookupTableServiceApi* | [**lookupTableServiceDisableLookupTable**](docs/LookupTableServiceApi.md#lookupTableServiceDisableLookupTable) | **POST** /api/v1/lookuptable/disable | 
+*ClearconsensusSdk.LookupTableServiceApi* | [**lookupTableServiceEnableLookupTable**](docs/LookupTableServiceApi.md#lookupTableServiceEnableLookupTable) | **POST** /api/v1/lookuptable/enable | 
 *ClearconsensusSdk.LookupTableServiceApi* | [**lookupTableServiceGetLookupTable**](docs/LookupTableServiceApi.md#lookupTableServiceGetLookupTable) | **POST** /api/v1/lookuptable/get | 
 *ClearconsensusSdk.LookupTableServiceApi* | [**lookupTableServiceListLookupTableVersions**](docs/LookupTableServiceApi.md#lookupTableServiceListLookupTableVersions) | **POST** /api/v1/lookuptable/versions | 
 *ClearconsensusSdk.LookupTableServiceApi* | [**lookupTableServiceListLookupTables**](docs/LookupTableServiceApi.md#lookupTableServiceListLookupTables) | **POST** /api/v1/lookuptable/list | 
@@ -310,11 +314,14 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.ProtoGroupPolicyDto](docs/ProtoGroupPolicyDto.md)
  - [ClearconsensusSdk.ProtoPolicies](docs/ProtoPolicies.md)
  - [ClearconsensusSdk.ProtoPolicyDto](docs/ProtoPolicyDto.md)
+ - [ClearconsensusSdk.ProtoPolicyType](docs/ProtoPolicyType.md)
  - [ClearconsensusSdk.ProtoSearchCriteria](docs/ProtoSearchCriteria.md)
  - [ClearconsensusSdk.ProtoSearchCriteriaLimit](docs/ProtoSearchCriteriaLimit.md)
  - [ClearconsensusSdk.ProtoSearchCriteriaOrderBy](docs/ProtoSearchCriteriaOrderBy.md)
  - [ClearconsensusSdk.ProtoServiceResponse](docs/ProtoServiceResponse.md)
  - [ClearconsensusSdk.ProtoUserDto](docs/ProtoUserDto.md)
+ - [ClearconsensusSdk.ProtoUserEnabled](docs/ProtoUserEnabled.md)
+ - [ClearconsensusSdk.ProtoUserId](docs/ProtoUserId.md)
  - [ClearconsensusSdk.ProtoUsernamePermissionRequest](docs/ProtoUsernamePermissionRequest.md)
  - [ClearconsensusSdk.ProtobufAny](docs/ProtobufAny.md)
  - [ClearconsensusSdk.RpcStatus](docs/RpcStatus.md)
@@ -397,10 +404,10 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumConsensusResponseData](docs/TitaniumConsensusResponseData.md)
  - [ClearconsensusSdk.TitaniumConsensusResultSetInfo](docs/TitaniumConsensusResultSetInfo.md)
  - [ClearconsensusSdk.TitaniumConsensusResultSetValues](docs/TitaniumConsensusResultSetValues.md)
- - [ClearconsensusSdk.TitaniumConsensusResultSetValuesRequest](docs/TitaniumConsensusResultSetValuesRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusResultSetValuesResponse](docs/TitaniumConsensusResultSetValuesResponse.md)
  - [ClearconsensusSdk.TitaniumConsensusRunInfo](docs/TitaniumConsensusRunInfo.md)
  - [ClearconsensusSdk.TitaniumConsensusScores](docs/TitaniumConsensusScores.md)
+ - [ClearconsensusSdk.TitaniumConsensusTabRequest](docs/TitaniumConsensusTabRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusTimestampMeta](docs/TitaniumConsensusTimestampMeta.md)
  - [ClearconsensusSdk.TitaniumConsensusTimestampsRequest](docs/TitaniumConsensusTimestampsRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusTimestampsResponse](docs/TitaniumConsensusTimestampsResponse.md)
@@ -502,6 +509,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumGetSubmissionFilesResponse](docs/TitaniumGetSubmissionFilesResponse.md)
  - [ClearconsensusSdk.TitaniumGetSupportedFields](docs/TitaniumGetSupportedFields.md)
  - [ClearconsensusSdk.TitaniumGetSupportedFieldsResponse](docs/TitaniumGetSupportedFieldsResponse.md)
+ - [ClearconsensusSdk.TitaniumGetTableResponse](docs/TitaniumGetTableResponse.md)
  - [ClearconsensusSdk.TitaniumGetUserNotificationByMarketRequest](docs/TitaniumGetUserNotificationByMarketRequest.md)
  - [ClearconsensusSdk.TitaniumGetUserNotificationRequest](docs/TitaniumGetUserNotificationRequest.md)
  - [ClearconsensusSdk.TitaniumGetUserPermissionsRequest](docs/TitaniumGetUserPermissionsRequest.md)
@@ -516,7 +524,6 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumKVListAsset](docs/TitaniumKVListAsset.md)
  - [ClearconsensusSdk.TitaniumKVOperationResponse](docs/TitaniumKVOperationResponse.md)
  - [ClearconsensusSdk.TitaniumKVRequest](docs/TitaniumKVRequest.md)
- - [ClearconsensusSdk.TitaniumKeyAndValue](docs/TitaniumKeyAndValue.md)
  - [ClearconsensusSdk.TitaniumLimit](docs/TitaniumLimit.md)
  - [ClearconsensusSdk.TitaniumListClientsResponse](docs/TitaniumListClientsResponse.md)
  - [ClearconsensusSdk.TitaniumListClientsResponseData](docs/TitaniumListClientsResponseData.md)
@@ -525,7 +532,6 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumListKVRequest](docs/TitaniumListKVRequest.md)
  - [ClearconsensusSdk.TitaniumListKVResponse](docs/TitaniumListKVResponse.md)
  - [ClearconsensusSdk.TitaniumListLookupTableResponse](docs/TitaniumListLookupTableResponse.md)
- - [ClearconsensusSdk.TitaniumListOfKeys](docs/TitaniumListOfKeys.md)
  - [ClearconsensusSdk.TitaniumListRequest](docs/TitaniumListRequest.md)
  - [ClearconsensusSdk.TitaniumListRuleResponse](docs/TitaniumListRuleResponse.md)
  - [ClearconsensusSdk.TitaniumListUniqueKeysResponse](docs/TitaniumListUniqueKeysResponse.md)
@@ -596,6 +602,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumStatusResponseData](docs/TitaniumStatusResponseData.md)
  - [ClearconsensusSdk.TitaniumStringKeyVal](docs/TitaniumStringKeyVal.md)
  - [ClearconsensusSdk.TitaniumSubAsset](docs/TitaniumSubAsset.md)
+ - [ClearconsensusSdk.TitaniumSubGroupKeySearch](docs/TitaniumSubGroupKeySearch.md)
  - [ClearconsensusSdk.TitaniumSubmissionEvidenceAnchorDetails](docs/TitaniumSubmissionEvidenceAnchorDetails.md)
  - [ClearconsensusSdk.TitaniumSubmissionEvidenceTableColumn](docs/TitaniumSubmissionEvidenceTableColumn.md)
  - [ClearconsensusSdk.TitaniumSubmissionExplorerTableColumn](docs/TitaniumSubmissionExplorerTableColumn.md)
@@ -608,6 +615,9 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumSubmittedRow](docs/TitaniumSubmittedRow.md)
  - [ClearconsensusSdk.TitaniumSupportedField](docs/TitaniumSupportedField.md)
  - [ClearconsensusSdk.TitaniumSupportedFieldsValues](docs/TitaniumSupportedFieldsValues.md)
+ - [ClearconsensusSdk.TitaniumTable](docs/TitaniumTable.md)
+ - [ClearconsensusSdk.TitaniumTableColumn](docs/TitaniumTableColumn.md)
+ - [ClearconsensusSdk.TitaniumTableRow](docs/TitaniumTableRow.md)
  - [ClearconsensusSdk.TitaniumTradeAligmentDateAndValue](docs/TitaniumTradeAligmentDateAndValue.md)
  - [ClearconsensusSdk.TitaniumTradeAlignmentScore](docs/TitaniumTradeAlignmentScore.md)
  - [ClearconsensusSdk.TitaniumTradeAnchorDetails](docs/TitaniumTradeAnchorDetails.md)

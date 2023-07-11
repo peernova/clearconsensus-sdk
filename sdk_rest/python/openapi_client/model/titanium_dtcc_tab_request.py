@@ -31,13 +31,13 @@ from openapi_client.exceptions import ApiAttributeError
 
 def lazy_import():
     from openapi_client.model.titanium_filter_pack import TitaniumFilterPack
-    from openapi_client.model.titanium_list_of_keys import TitaniumListOfKeys
     from openapi_client.model.titanium_order_by import TitaniumOrderBy
     from openapi_client.model.titanium_page import TitaniumPage
+    from openapi_client.model.titanium_sub_group_key_search import TitaniumSubGroupKeySearch
     globals()['TitaniumFilterPack'] = TitaniumFilterPack
-    globals()['TitaniumListOfKeys'] = TitaniumListOfKeys
     globals()['TitaniumOrderBy'] = TitaniumOrderBy
     globals()['TitaniumPage'] = TitaniumPage
+    globals()['TitaniumSubGroupKeySearch'] = TitaniumSubGroupKeySearch
 
 
 class TitaniumDtccTabRequest(ModelNormal):
@@ -95,10 +95,10 @@ class TitaniumDtccTabRequest(ModelNormal):
         return {
             'asset_id': (str,),  # noqa: E501
             'filter_pack': (TitaniumFilterPack,),  # noqa: E501
-            'group_keys': (TitaniumListOfKeys,),  # noqa: E501
             'order_by': (TitaniumOrderBy,),  # noqa: E501
             'page': (TitaniumPage,),  # noqa: E501
             'snap_date': (str,),  # noqa: E501
+            'sub_group_key_search': (TitaniumSubGroupKeySearch,),  # noqa: E501
             'submission_id': (str,),  # noqa: E501
             'trace_name': (str,),  # noqa: E501
         }
@@ -111,10 +111,10 @@ class TitaniumDtccTabRequest(ModelNormal):
     attribute_map = {
         'asset_id': 'assetId',  # noqa: E501
         'filter_pack': 'filterPack',  # noqa: E501
-        'group_keys': 'groupKeys',  # noqa: E501
         'order_by': 'orderBy',  # noqa: E501
         'page': 'page',  # noqa: E501
         'snap_date': 'snapDate',  # noqa: E501
+        'sub_group_key_search': 'subGroupKeySearch',  # noqa: E501
         'submission_id': 'submissionId',  # noqa: E501
         'trace_name': 'traceName',  # noqa: E501
     }
@@ -162,10 +162,10 @@ class TitaniumDtccTabRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             asset_id (str): [optional]  # noqa: E501
             filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
-            group_keys (TitaniumListOfKeys): [optional]  # noqa: E501
             order_by (TitaniumOrderBy): [optional]  # noqa: E501
             page (TitaniumPage): [optional]  # noqa: E501
             snap_date (str): [optional]  # noqa: E501
+            sub_group_key_search (TitaniumSubGroupKeySearch): [optional]  # noqa: E501
             submission_id (str): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """
@@ -255,10 +255,10 @@ class TitaniumDtccTabRequest(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             asset_id (str): [optional]  # noqa: E501
             filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
-            group_keys (TitaniumListOfKeys): [optional]  # noqa: E501
             order_by (TitaniumOrderBy): [optional]  # noqa: E501
             page (TitaniumPage): [optional]  # noqa: E501
             snap_date (str): [optional]  # noqa: E501
+            sub_group_key_search (TitaniumSubGroupKeySearch): [optional]  # noqa: E501
             submission_id (str): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """

@@ -14,6 +14,7 @@
 
 import ApiClient from "../ApiClient";
 import ProtoGroupPolicies from '../model/ProtoGroupPolicies';
+import ProtoPolicyType from '../model/ProtoPolicyType';
 import ProtoServiceResponse from '../model/ProtoServiceResponse';
 import RpcStatus from '../model/RpcStatus';
 
@@ -85,7 +86,7 @@ export default class GroupPolicyServiceApi {
      */
 
     /**
-     * @param {String} body 
+     * @param {module:model/ProtoPolicyType} body 
      * @param {module:api/GroupPolicyServiceApi~groupPolicyServiceGetPoliciesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProtoServiceResponse}
      */

@@ -15,6 +15,7 @@
 import ApiClient from "../ApiClient";
 import ProtoPolicies from '../model/ProtoPolicies';
 import ProtoPolicyDto from '../model/ProtoPolicyDto';
+import ProtoPolicyType from '../model/ProtoPolicyType';
 import ProtoServiceResponse from '../model/ProtoServiceResponse';
 import ProtoUsernamePermissionRequest from '../model/ProtoUsernamePermissionRequest';
 import RpcStatus from '../model/RpcStatus';
@@ -247,7 +248,7 @@ export default class PolicyServiceApi {
      */
 
     /**
-     * @param {String} body 
+     * @param {module:model/ProtoPolicyType} body 
      * @param {module:api/PolicyServiceApi~policyServiceGetPoliciesCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProtoServiceResponse}
      */

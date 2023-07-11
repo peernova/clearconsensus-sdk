@@ -105,8 +105,10 @@ Class | Method | HTTP request | Description
 *ChallengeServiceApi* | [**challenge_service_get_challenge_attachment_upload_url**](docs/ChallengeServiceApi.md#challenge_service_get_challenge_attachment_upload_url) | **POST** /api/v1/challenge/attachment_upload_urls | GetChallengeAttachmentUploadUrl returns string that represents s3 URL that can be used to upload attachment for the challenge. The file in attachment can be any file that provides additional information about the disputable outlier. Need to specify asset ID, submitted ID and file name.
 *ChallengeServiceApi* | [**challenge_service_get_challenge_details**](docs/ChallengeServiceApi.md#challenge_service_get_challenge_details) | **POST** /api/v1/challenge-details | 
 *ChartServiceApi* | [**chart_service_get_chart_data**](docs/ChartServiceApi.md#chart_service_get_chart_data) | **POST** /api/v1/analytics/chart-data | 
+*ChartServiceApi* | [**chart_service_get_table_data**](docs/ChartServiceApi.md#chart_service_get_table_data) | **POST** /api/v1/analytics/table | 
 *ChartsServiceApi* | [**charts_service_charts**](docs/ChartsServiceApi.md#charts_service_charts) | **POST** /api/v1/charts | Charts returns information about specific chart related to the specific asset.
 *ChartsServiceApi* | [**charts_service_charts_currencies**](docs/ChartsServiceApi.md#charts_service_charts_currencies) | **POST** /api/v1/charts/currencies | ChartsCurrencies returns information about the chart related to specific currency pair.
+*ConsensusServiceApi* | [**consensus_service_cohort_consensus_tab**](docs/ConsensusServiceApi.md#consensus_service_cohort_consensus_tab) | **POST** /api/v1/consensus-result-set-view | 
 *ConsensusServiceApi* | [**consensus_service_consensus**](docs/ConsensusServiceApi.md#consensus_service_consensus) | **POST** /api/v1/consensus | Consensus return information about consensus according to request. Need to specify consensus run timestamp, asset ID and etc.(See ConsensusRequest definition) Returns ConsensusResponse that contains information about column and rows related to consensus.
 *ConsensusServiceApi* | [**consensus_service_consensus_active**](docs/ConsensusServiceApi.md#consensus_service_consensus_active) | **POST** /api/v1/operator/consensus/active | 
 *ConsensusServiceApi* | [**consensus_service_consensus_decision**](docs/ConsensusServiceApi.md#consensus_service_consensus_decision) | **POST** /api/v1/operator/consensus/decision | 
@@ -116,11 +118,11 @@ Class | Method | HTTP request | Description
 *ConsensusServiceApi* | [**consensus_service_consensus_history**](docs/ConsensusServiceApi.md#consensus_service_consensus_history) | **POST** /api/v1/operator/consensus/history | 
 *ConsensusServiceApi* | [**consensus_service_consensus_outliers**](docs/ConsensusServiceApi.md#consensus_service_consensus_outliers) | **POST** /api/v1/outliers-list | ConsensusOutliers return list of outliers according to specified consensus. Need to identify consensus tun timestamp and etc.(Described in OutliersListRequest) Return ConsensusActiveResponse that contains active consensuses with specified run timestamp.
 *ConsensusServiceApi* | [**consensus_service_consensus_publish**](docs/ConsensusServiceApi.md#consensus_service_consensus_publish) | **POST** /api/v1/operator/consensus/publish | 
-*ConsensusServiceApi* | [**consensus_service_consensus_result_set_values**](docs/ConsensusServiceApi.md#consensus_service_consensus_result_set_values) | **POST** /api/v1/consensus-result-set-view | 
 *ConsensusServiceApi* | [**consensus_service_consensus_timestamps**](docs/ConsensusServiceApi.md#consensus_service_consensus_timestamps) | **POST** /api/v1/consensus/timestamps | ConsensusTimestamps returns timestamps when it was submitted. Need to specify asset ID and trace name. Returns ConsensusTimestampsResponse that contains all the timestamps related to specified asset ID.
 *ConsensusServiceApi* | [**consensus_service_consensus_to_publish**](docs/ConsensusServiceApi.md#consensus_service_consensus_to_publish) | **POST** /api/v1/operator/consensus/to-publish | 
 *ConsensusServiceApi* | [**consensus_service_evaluated_price**](docs/ConsensusServiceApi.md#consensus_service_evaluated_price) | **POST** /api/v1/evaluated-price | 
 *ConsensusServiceApi* | [**consensus_service_get_consensus_runs**](docs/ConsensusServiceApi.md#consensus_service_get_consensus_runs) | **POST** /api/v1/consensus-runs-view | Get Consensus Run&#39;s consensus result sets
+*ConsensusServiceApi* | [**consensus_service_submission_evidence_tab**](docs/ConsensusServiceApi.md#consensus_service_submission_evidence_tab) | **POST** /api/v1/consensus-result-set-view/submission-evidence | 
 *CustomFunctionServiceApi* | [**custom_function_service_add_custom_function**](docs/CustomFunctionServiceApi.md#custom_function_service_add_custom_function) | **POST** /api/v1/customfunction/add | AddCustomFunction allows the user to create a new custom function by sending a CustomFunction message. It returns an AcknowledgeResponse indicating whether the custom function was successfully added or not.
 *CustomFunctionServiceApi* | [**custom_function_service_get_custom_function**](docs/CustomFunctionServiceApi.md#custom_function_service_get_custom_function) | **POST** /api/v1/customfunction/get | GetCustomFunction retrieves the definition of a specific custom function. The custom function is specified in the CustomFunctionGetDefinition message, which includes its ID and scope. The method returns a CustomFunctionDefinitionResponse that contains either the custom function definition or an error.
 *CustomFunctionServiceApi* | [**custom_function_service_list_custom_function_versions**](docs/CustomFunctionServiceApi.md#custom_function_service_list_custom_function_versions) | **POST** /api/v1/customfunction/versions | ListCustomFunctionVersions lists all the versions of a specific custom function. The custom function is specified in the GetDefinition message, which includes its ID and scope. The method returns a ListVersionResponse that contains either a list of versions or an error.
@@ -173,6 +175,8 @@ Class | Method | HTTP request | Description
 *KVServiceApi* | [**k_v_service_update_key**](docs/KVServiceApi.md#k_v_service_update_key) | **POST** /api/v1/kv/update | 
 *LoginServiceApi* | [**login_service_login**](docs/LoginServiceApi.md#login_service_login) | **POST** /api/v1/login | 
 *LookupTableServiceApi* | [**lookup_table_service_add_lookup_table**](docs/LookupTableServiceApi.md#lookup_table_service_add_lookup_table) | **POST** /api/v1/lookuptable/add | 
+*LookupTableServiceApi* | [**lookup_table_service_disable_lookup_table**](docs/LookupTableServiceApi.md#lookup_table_service_disable_lookup_table) | **POST** /api/v1/lookuptable/disable | 
+*LookupTableServiceApi* | [**lookup_table_service_enable_lookup_table**](docs/LookupTableServiceApi.md#lookup_table_service_enable_lookup_table) | **POST** /api/v1/lookuptable/enable | 
 *LookupTableServiceApi* | [**lookup_table_service_get_lookup_table**](docs/LookupTableServiceApi.md#lookup_table_service_get_lookup_table) | **POST** /api/v1/lookuptable/get | 
 *LookupTableServiceApi* | [**lookup_table_service_list_lookup_table_versions**](docs/LookupTableServiceApi.md#lookup_table_service_list_lookup_table_versions) | **POST** /api/v1/lookuptable/versions | 
 *LookupTableServiceApi* | [**lookup_table_service_list_lookup_tables**](docs/LookupTableServiceApi.md#lookup_table_service_list_lookup_tables) | **POST** /api/v1/lookuptable/list | 
@@ -270,11 +274,14 @@ Class | Method | HTTP request | Description
  - [ProtoGroupPolicyDto](docs/ProtoGroupPolicyDto.md)
  - [ProtoPolicies](docs/ProtoPolicies.md)
  - [ProtoPolicyDto](docs/ProtoPolicyDto.md)
+ - [ProtoPolicyType](docs/ProtoPolicyType.md)
  - [ProtoSearchCriteria](docs/ProtoSearchCriteria.md)
  - [ProtoSearchCriteriaLimit](docs/ProtoSearchCriteriaLimit.md)
  - [ProtoSearchCriteriaOrderBy](docs/ProtoSearchCriteriaOrderBy.md)
  - [ProtoServiceResponse](docs/ProtoServiceResponse.md)
  - [ProtoUserDto](docs/ProtoUserDto.md)
+ - [ProtoUserEnabled](docs/ProtoUserEnabled.md)
+ - [ProtoUserId](docs/ProtoUserId.md)
  - [ProtoUsernamePermissionRequest](docs/ProtoUsernamePermissionRequest.md)
  - [ProtobufAny](docs/ProtobufAny.md)
  - [RpcStatus](docs/RpcStatus.md)
@@ -357,10 +364,10 @@ Class | Method | HTTP request | Description
  - [TitaniumConsensusResponseData](docs/TitaniumConsensusResponseData.md)
  - [TitaniumConsensusResultSetInfo](docs/TitaniumConsensusResultSetInfo.md)
  - [TitaniumConsensusResultSetValues](docs/TitaniumConsensusResultSetValues.md)
- - [TitaniumConsensusResultSetValuesRequest](docs/TitaniumConsensusResultSetValuesRequest.md)
  - [TitaniumConsensusResultSetValuesResponse](docs/TitaniumConsensusResultSetValuesResponse.md)
  - [TitaniumConsensusRunInfo](docs/TitaniumConsensusRunInfo.md)
  - [TitaniumConsensusScores](docs/TitaniumConsensusScores.md)
+ - [TitaniumConsensusTabRequest](docs/TitaniumConsensusTabRequest.md)
  - [TitaniumConsensusTimestampMeta](docs/TitaniumConsensusTimestampMeta.md)
  - [TitaniumConsensusTimestampsRequest](docs/TitaniumConsensusTimestampsRequest.md)
  - [TitaniumConsensusTimestampsResponse](docs/TitaniumConsensusTimestampsResponse.md)
@@ -462,6 +469,7 @@ Class | Method | HTTP request | Description
  - [TitaniumGetSubmissionFilesResponse](docs/TitaniumGetSubmissionFilesResponse.md)
  - [TitaniumGetSupportedFields](docs/TitaniumGetSupportedFields.md)
  - [TitaniumGetSupportedFieldsResponse](docs/TitaniumGetSupportedFieldsResponse.md)
+ - [TitaniumGetTableResponse](docs/TitaniumGetTableResponse.md)
  - [TitaniumGetUserNotificationByMarketRequest](docs/TitaniumGetUserNotificationByMarketRequest.md)
  - [TitaniumGetUserNotificationRequest](docs/TitaniumGetUserNotificationRequest.md)
  - [TitaniumGetUserPermissionsRequest](docs/TitaniumGetUserPermissionsRequest.md)
@@ -476,7 +484,6 @@ Class | Method | HTTP request | Description
  - [TitaniumKVListAsset](docs/TitaniumKVListAsset.md)
  - [TitaniumKVOperationResponse](docs/TitaniumKVOperationResponse.md)
  - [TitaniumKVRequest](docs/TitaniumKVRequest.md)
- - [TitaniumKeyAndValue](docs/TitaniumKeyAndValue.md)
  - [TitaniumLimit](docs/TitaniumLimit.md)
  - [TitaniumListClientsResponse](docs/TitaniumListClientsResponse.md)
  - [TitaniumListClientsResponseData](docs/TitaniumListClientsResponseData.md)
@@ -485,7 +492,6 @@ Class | Method | HTTP request | Description
  - [TitaniumListKVRequest](docs/TitaniumListKVRequest.md)
  - [TitaniumListKVResponse](docs/TitaniumListKVResponse.md)
  - [TitaniumListLookupTableResponse](docs/TitaniumListLookupTableResponse.md)
- - [TitaniumListOfKeys](docs/TitaniumListOfKeys.md)
  - [TitaniumListRequest](docs/TitaniumListRequest.md)
  - [TitaniumListRuleResponse](docs/TitaniumListRuleResponse.md)
  - [TitaniumListUniqueKeysResponse](docs/TitaniumListUniqueKeysResponse.md)
@@ -556,6 +562,7 @@ Class | Method | HTTP request | Description
  - [TitaniumStatusResponseData](docs/TitaniumStatusResponseData.md)
  - [TitaniumStringKeyVal](docs/TitaniumStringKeyVal.md)
  - [TitaniumSubAsset](docs/TitaniumSubAsset.md)
+ - [TitaniumSubGroupKeySearch](docs/TitaniumSubGroupKeySearch.md)
  - [TitaniumSubmissionEvidenceAnchorDetails](docs/TitaniumSubmissionEvidenceAnchorDetails.md)
  - [TitaniumSubmissionEvidenceTableColumn](docs/TitaniumSubmissionEvidenceTableColumn.md)
  - [TitaniumSubmissionExplorerTableColumn](docs/TitaniumSubmissionExplorerTableColumn.md)
@@ -568,6 +575,9 @@ Class | Method | HTTP request | Description
  - [TitaniumSubmittedRow](docs/TitaniumSubmittedRow.md)
  - [TitaniumSupportedField](docs/TitaniumSupportedField.md)
  - [TitaniumSupportedFieldsValues](docs/TitaniumSupportedFieldsValues.md)
+ - [TitaniumTable](docs/TitaniumTable.md)
+ - [TitaniumTableColumn](docs/TitaniumTableColumn.md)
+ - [TitaniumTableRow](docs/TitaniumTableRow.md)
  - [TitaniumTradeAligmentDateAndValue](docs/TitaniumTradeAligmentDateAndValue.md)
  - [TitaniumTradeAlignmentScore](docs/TitaniumTradeAlignmentScore.md)
  - [TitaniumTradeAnchorDetails](docs/TitaniumTradeAnchorDetails.md)

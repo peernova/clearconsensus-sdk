@@ -132,8 +132,19 @@ with openapi_client.ApiClient() as api_client:
     api_instance = data_quality_service_api.DataQualityServiceApi(api_client)
     body = TitaniumGetDataQualityErrorsRequest(
         asset_id="asset_id_example",
-        consensus_id="consensus_id_example",
-        evaluated_price_id="evaluated_price_id_example",
+        group_keys=TitaniumFilterPack(
+            filter_packs=[
+                TitaniumFilterPack(),
+            ],
+            filters=[
+                TitaniumFilter(
+                    key="key_example",
+                    operator="operator_example",
+                    value={},
+                ),
+            ],
+            logical_operation="logical_operation_example",
+        ),
         submission_id="submission_id_example",
         submitted_date="submitted_date_example",
         trace_name="trace_name_example",

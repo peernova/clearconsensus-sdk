@@ -15,6 +15,8 @@
 import ApiClient from "../ApiClient";
 import ProtoServiceResponse from '../model/ProtoServiceResponse';
 import ProtoUserDto from '../model/ProtoUserDto';
+import ProtoUserEnabled from '../model/ProtoUserEnabled';
+import ProtoUserId from '../model/ProtoUserId';
 import RpcStatus from '../model/RpcStatus';
 import TitaniumGetUserNotificationByMarketRequest from '../model/TitaniumGetUserNotificationByMarketRequest';
 import TitaniumGetUserNotificationRequest from '../model/TitaniumGetUserNotificationRequest';
@@ -255,7 +257,7 @@ export default class UserServiceApi {
      */
 
     /**
-     * @param {Boolean} body 
+     * @param {module:model/ProtoUserEnabled} body 
      * @param {module:api/UserServiceApi~userServiceGetAllCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProtoServiceResponse}
      */
@@ -295,7 +297,7 @@ export default class UserServiceApi {
      */
 
     /**
-     * @param {String} body 
+     * @param {module:model/ProtoUserId} body 
      * @param {module:api/UserServiceApi~userServiceGetByIdCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/ProtoServiceResponse}
      */

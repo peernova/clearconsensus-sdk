@@ -5,6 +5,8 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**lookupTableServiceAddLookupTable**](LookupTableServiceApi.md#lookupTableServiceAddLookupTable) | **POST** /api/v1/lookuptable/add | 
+[**lookupTableServiceDisableLookupTable**](LookupTableServiceApi.md#lookupTableServiceDisableLookupTable) | **POST** /api/v1/lookuptable/disable | 
+[**lookupTableServiceEnableLookupTable**](LookupTableServiceApi.md#lookupTableServiceEnableLookupTable) | **POST** /api/v1/lookuptable/enable | 
 [**lookupTableServiceGetLookupTable**](LookupTableServiceApi.md#lookupTableServiceGetLookupTable) | **POST** /api/v1/lookuptable/get | 
 [**lookupTableServiceListLookupTableVersions**](LookupTableServiceApi.md#lookupTableServiceListLookupTableVersions) | **POST** /api/v1/lookuptable/versions | 
 [**lookupTableServiceListLookupTables**](LookupTableServiceApi.md#lookupTableServiceListLookupTables) | **POST** /api/v1/lookuptable/list | 
@@ -39,6 +41,92 @@ apiInstance.lookupTableServiceAddLookupTable(body, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**TitaniumAddLookupTableRequest**](TitaniumAddLookupTableRequest.md)|  | 
+
+### Return type
+
+[**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## lookupTableServiceDisableLookupTable
+
+> TitaniumAcknowledgeResponse lookupTableServiceDisableLookupTable(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.LookupTableServiceApi();
+let body = new ClearconsensusSdk.TitaniumEnableDisableRequest(); // TitaniumEnableDisableRequest | 
+apiInstance.lookupTableServiceDisableLookupTable(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumEnableDisableRequest**](TitaniumEnableDisableRequest.md)|  | 
+
+### Return type
+
+[**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## lookupTableServiceEnableLookupTable
+
+> TitaniumAcknowledgeResponse lookupTableServiceEnableLookupTable(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.LookupTableServiceApi();
+let body = new ClearconsensusSdk.TitaniumEnableDisableRequest(); // TitaniumEnableDisableRequest | 
+apiInstance.lookupTableServiceEnableLookupTable(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumEnableDisableRequest**](TitaniumEnableDisableRequest.md)|  | 
 
 ### Return type
 

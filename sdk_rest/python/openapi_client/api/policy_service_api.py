@@ -23,6 +23,7 @@ from openapi_client.model_utils import (  # noqa: F401
 )
 from openapi_client.model.proto_policies import ProtoPolicies
 from openapi_client.model.proto_policy_dto import ProtoPolicyDto
+from openapi_client.model.proto_policy_type import ProtoPolicyType
 from openapi_client.model.proto_service_response import ProtoServiceResponse
 from openapi_client.model.proto_username_permission_request import ProtoUsernamePermissionRequest
 from openapi_client.model.rpc_status import RpcStatus
@@ -309,7 +310,7 @@ class PolicyServiceApi(object):
                 },
                 'openapi_types': {
                     'body':
-                        (str,),
+                        (ProtoPolicyType,),
                 },
                 'attribute_map': {
                 },
@@ -800,7 +801,7 @@ class PolicyServiceApi(object):
         >>> result = thread.get()
 
         Args:
-            body (str):
+            body (ProtoPolicyType):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status

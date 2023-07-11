@@ -90,7 +90,7 @@ public class Example {
     defaultClient.setBasePath("http://api-dev.clearconsensus.io");
 
     GroupPolicyServiceApi apiInstance = new GroupPolicyServiceApi(defaultClient);
-    String body = "body_example"; // String | 
+    ProtoPolicyType body = new ProtoPolicyType(); // ProtoPolicyType | 
     try {
       ProtoServiceResponse result = apiInstance.groupPolicyServiceGetPolicies(body);
       System.out.println(result);
@@ -109,7 +109,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **String**|  | |
+| **body** | [**ProtoPolicyType**](ProtoPolicyType.md)|  | |
 
 ### Return type
 

@@ -16,6 +16,7 @@ import ApiClient from "../ApiClient";
 import RpcStatus from '../model/RpcStatus';
 import TitaniumGetChartDataRequest from '../model/TitaniumGetChartDataRequest';
 import TitaniumGetChartDataResponse from '../model/TitaniumGetChartDataResponse';
+import TitaniumGetTableResponse from '../model/TitaniumGetTableResponse';
 
 /**
 * ChartService service.
@@ -71,6 +72,46 @@ export default class ChartServiceApi {
       let returnType = TitaniumGetChartDataResponse;
       return this.apiClient.callApi(
         '/api/v1/analytics/chart-data', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the chartServiceGetTableData operation.
+     * @callback module:api/ChartServiceApi~chartServiceGetTableDataCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumGetTableResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumGetChartDataRequest} body 
+     * @param {module:api/ChartServiceApi~chartServiceGetTableDataCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumGetTableResponse}
+     */
+    chartServiceGetTableData(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling chartServiceGetTableData");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumGetTableResponse;
+      return this.apiClient.callApi(
+        '/api/v1/analytics/table', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

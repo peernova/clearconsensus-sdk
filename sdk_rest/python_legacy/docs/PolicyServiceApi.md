@@ -337,7 +337,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.PolicyServiceApi(api_client)
-    body = 'body_example' # str | 
+    body = openapi_client.ProtoPolicyType() # ProtoPolicyType | 
 
     try:
         api_response = api_instance.policy_service_get_policies(body)
@@ -350,7 +350,7 @@ with openapi_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **str**|  | 
+ **body** | [**ProtoPolicyType**](ProtoPolicyType.md)|  | 
 
 ### Return type
 

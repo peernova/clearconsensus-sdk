@@ -171,6 +171,33 @@ paths:
       tags:
       - AnalyticsController
       x-accepts: '*/*'
+  /api/v1/analytics/table:
+    post:
+      operationId: ChartService_getTableData
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumGetChartDataRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumGetTableResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - ChartService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
   /api/v1/assets:
     post:
       operationId: AssetsService_Assets
@@ -558,12 +585,39 @@ paths:
       x-accepts: '*/*'
   /api/v1/consensus-result-set-view:
     post:
-      operationId: ConsensusService_ConsensusResultSetValues
+      operationId: ConsensusService_CohortConsensusTab
       requestBody:
         content:
           '*/*':
             schema:
-              $ref: '#/components/schemas/titaniumConsensusResultSetValuesRequest'
+              $ref: '#/components/schemas/titaniumConsensusTabRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumConsensusResultSetValuesResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - ConsensusService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/consensus-result-set-view/submission-evidence:
+    post:
+      operationId: ConsensusService_SubmissionEvidenceTab
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumConsensusTabRequest'
         required: true
       responses:
         "200":
@@ -2186,6 +2240,60 @@ paths:
           '*/*':
             schema:
               $ref: '#/components/schemas/titaniumAddLookupTableRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumAcknowledgeResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - LookupTableService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/lookuptable/disable:
+    post:
+      operationId: LookupTableService_DisableLookupTable
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumEnableDisableRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumAcknowledgeResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - LookupTableService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/lookuptable/enable:
+    post:
+      operationId: LookupTableService_EnableLookupTable
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumEnableDisableRequest'
         required: true
       responses:
         "200":
@@ -4289,7 +4397,7 @@ paths:
         content:
           '*/*':
             schema:
-              type: string
+              $ref: '#/components/schemas/protoPolicyType'
         required: true
       responses:
         "200":
@@ -4451,7 +4559,7 @@ paths:
         content:
           '*/*':
             schema:
-              type: string
+              $ref: '#/components/schemas/protoPolicyType'
         required: true
       responses:
         "200":
@@ -4532,7 +4640,7 @@ paths:
         content:
           '*/*':
             schema:
-              type: boolean
+              $ref: '#/components/schemas/protoUserEnabled'
         required: true
       responses:
         "200":
@@ -4559,7 +4667,7 @@ paths:
         content:
           '*/*':
             schema:
-              type: string
+              $ref: '#/components/schemas/protoUserId'
         required: true
       responses:
         "200":
@@ -5582,6 +5690,11 @@ components:
         username:
           type: string
       type: object
+    protoPolicyType:
+      properties:
+        type:
+          type: string
+      type: object
     protoSearchCriteria:
       properties:
         filter:
@@ -5637,6 +5750,16 @@ components:
         id:
           type: string
         lastName:
+          type: string
+      type: object
+    protoUserEnabled:
+      properties:
+        enabled:
+          type: boolean
+      type: object
+    protoUserId:
+      properties:
+        id:
           type: string
       type: object
     protoUsernamePermissionRequest:
@@ -8015,25 +8138,6 @@ components:
             $ref: '#/components/schemas/titaniumValuesRow'
           type: array
       type: object
-    titaniumConsensusResultSetValuesRequest:
-      properties:
-        assetId:
-          type: string
-        client:
-          type: string
-        consensusRunTimestamp:
-          type: string
-        filterPack:
-          $ref: '#/components/schemas/titaniumFilterPack'
-        orderBy:
-          $ref: '#/components/schemas/titaniumOrderBy'
-        page:
-          $ref: '#/components/schemas/titaniumPage'
-        submittedDate:
-          type: string
-        traceName:
-          type: string
-      type: object
     titaniumConsensusResultSetValuesResponse:
       example:
         data:
@@ -8181,6 +8285,21 @@ components:
           $ref: '#/components/schemas/titaniumExpertiseRank'
         tradeAlignmentScore:
           $ref: '#/components/schemas/titaniumTradeAlignmentScore'
+      type: object
+    titaniumConsensusTabRequest:
+      properties:
+        assetId:
+          type: string
+        consensusRunTimestamp:
+          type: string
+        filterPack:
+          $ref: '#/components/schemas/titaniumFilterPack'
+        orderBy:
+          $ref: '#/components/schemas/titaniumOrderBy'
+        page:
+          $ref: '#/components/schemas/titaniumPage'
+        traceName:
+          type: string
       type: object
     titaniumConsensusTimestampMeta:
       example:
@@ -8932,14 +9051,14 @@ components:
           type: string
         filterPack:
           $ref: '#/components/schemas/titaniumFilterPack'
-        groupKeys:
-          $ref: '#/components/schemas/titaniumListOfKeys'
         orderBy:
           $ref: '#/components/schemas/titaniumOrderBy'
         page:
           $ref: '#/components/schemas/titaniumPage'
         snapDate:
           type: string
+        subGroupKeySearch:
+          $ref: '#/components/schemas/titaniumSubGroupKeySearch'
         submissionId:
           type: string
         traceName:
@@ -10281,10 +10400,8 @@ components:
       properties:
         assetId:
           type: string
-        consensusId:
-          type: string
-        evaluatedPriceId:
-          type: string
+        groupKeys:
+          $ref: '#/components/schemas/titaniumFilterPack'
         submissionId:
           type: string
         submittedDate:
@@ -10591,6 +10708,33 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/titaniumFields'
+        error:
+          $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumGetTableResponse:
+      example:
+        data:
+          columns:
+          - columnType: columnType
+            rawColumnName: rawColumnName
+            columnName: columnName
+          - columnType: columnType
+            rawColumnName: rawColumnName
+            columnName: columnName
+          totalRows: totalRows
+          rows:
+          - values:
+            - "{}"
+            - "{}"
+          - values:
+            - "{}"
+            - "{}"
+        error:
+          code: 0
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/titaniumTable'
         error:
           $ref: '#/components/schemas/titaniumError'
       type: object
@@ -11004,14 +11148,6 @@ components:
         key:
           type: string
       type: object
-    titaniumKeyAndValue:
-      properties:
-        key:
-          type: string
-        value:
-          properties: {}
-          type: object
-      type: object
     titaniumLimit:
       properties:
         value:
@@ -11149,13 +11285,6 @@ components:
           $ref: '#/components/schemas/titaniumLookupTableList'
         error:
           $ref: '#/components/schemas/titaniumError'
-      type: object
-    titaniumListOfKeys:
-      properties:
-        list:
-          items:
-            $ref: '#/components/schemas/titaniumKeyAndValue'
-          type: array
       type: object
     titaniumListRequest:
       properties:
@@ -12671,6 +12800,13 @@ components:
         traceName:
           type: string
       type: object
+    titaniumSubGroupKeySearch:
+      properties:
+        groupKeys:
+          $ref: '#/components/schemas/titaniumFilterPack'
+        subSubmittedDate:
+          type: string
+      type: object
     titaniumSubmissionEvidenceAnchorDetails:
       example:
         submissionEvidence: 5.637376656633329
@@ -12989,6 +13125,60 @@ components:
       type: object
     titaniumTTLTypes:
       type: string
+    titaniumTable:
+      example:
+        columns:
+        - columnType: columnType
+          rawColumnName: rawColumnName
+          columnName: columnName
+        - columnType: columnType
+          rawColumnName: rawColumnName
+          columnName: columnName
+        totalRows: totalRows
+        rows:
+        - values:
+          - "{}"
+          - "{}"
+        - values:
+          - "{}"
+          - "{}"
+      properties:
+        columns:
+          items:
+            $ref: '#/components/schemas/titaniumTableColumn'
+          type: array
+        rows:
+          items:
+            $ref: '#/components/schemas/titaniumTableRow'
+          type: array
+        totalRows:
+          type: string
+      type: object
+    titaniumTableColumn:
+      example:
+        columnType: columnType
+        rawColumnName: rawColumnName
+        columnName: columnName
+      properties:
+        columnName:
+          type: string
+        columnType:
+          type: string
+        rawColumnName:
+          type: string
+      type: object
+    titaniumTableRow:
+      example:
+        values:
+        - "{}"
+        - "{}"
+      properties:
+        values:
+          items:
+            properties: {}
+            type: object
+          type: array
+      type: object
     titaniumTradeAligmentDateAndValue:
       example:
         date: date

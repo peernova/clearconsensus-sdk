@@ -344,7 +344,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.UserServiceApi(api_client)
-    body = True # bool | 
+    body = openapi_client.ProtoUserEnabled() # ProtoUserEnabled | 
 
     try:
         api_response = api_instance.user_service_get_all(body)
@@ -357,7 +357,7 @@ with openapi_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **bool**|  | 
+ **body** | [**ProtoUserEnabled**](ProtoUserEnabled.md)|  | 
 
 ### Return type
 
@@ -404,7 +404,7 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.UserServiceApi(api_client)
-    body = 'body_example' # str | 
+    body = openapi_client.ProtoUserId() # ProtoUserId | 
 
     try:
         api_response = api_instance.user_service_get_by_id(body)
@@ -417,7 +417,7 @@ with openapi_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **str**|  | 
+ **body** | [**ProtoUserId**](ProtoUserId.md)|  | 
 
 ### Return type
 
