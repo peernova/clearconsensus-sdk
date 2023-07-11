@@ -53,10 +53,11 @@ type ConsensusServiceClient interface {
 	ConsensusOutliers(ctx context.Context, in *common.OutliersListRequest, opts ...grpc.CallOption) (*common.ConsensusActiveResponse, error)
 	// Get Consensus Run's consensus result sets
 	GetConsensusRuns(ctx context.Context, in *common.GetConsensusRunsRequest, opts ...grpc.CallOption) (*common.GetConsensusRunsResponse, error)
-	ConsensusResultSetValues(ctx context.Context, in *common.ConsensusResultSetValuesRequest, opts ...grpc.CallOption) (*common.ConsensusResultSetValuesResponse, error)
 	ConsensusExplorerInstrumentDetails(ctx context.Context, in *ConsensusExplorerRequest, opts ...grpc.CallOption) (*ConsensusExplorerInstrumentDetailsResponse, error)
 	ConsensusExplorerTable(ctx context.Context, in *ConsensusExplorerRequest, opts ...grpc.CallOption) (*ConsensusExplorerTableResponse, error)
 	ConsensusExplorerRanges(ctx context.Context, in *ConsensusExplorerRequest, opts ...grpc.CallOption) (*ConsensusExplorerRangeResponse, error)
+	CohortConsensusTab(ctx context.Context, in *ConsensusTabRequest, opts ...grpc.CallOption) (*common.ConsensusResultSetValuesResponse, error)
+	SubmissionEvidenceTab(ctx context.Context, in *ConsensusTabRequest, opts ...grpc.CallOption) (*common.ConsensusResultSetValuesResponse, error)
 	ConsensusActive(ctx context.Context, in *common.ConsensusActiveRequest, opts ...grpc.CallOption) (*common.ConsensusActiveResponse, error)
 	ConsensusToPublish(ctx context.Context, in *common.ConsensusToPublishRequest, opts ...grpc.CallOption) (*common.ConsensusToPublishResponse, error)
 	ConsensusPublish(ctx context.Context, in *common.ConsensusPublishRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
@@ -117,15 +118,6 @@ func (c *consensusServiceClient) GetConsensusRuns(ctx context.Context, in *commo
 	return out, nil
 }
 
-func (c *consensusServiceClient) ConsensusResultSetValues(ctx context.Context, in *common.ConsensusResultSetValuesRequest, opts ...grpc.CallOption) (*common.ConsensusResultSetValuesResponse, error) {
-	out := new(common.ConsensusResultSetValuesResponse)
-	err := c.cc.Invoke(ctx, "/titanium.ConsensusService/ConsensusResultSetValues", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
 func (c *consensusServiceClient) ConsensusExplorerInstrumentDetails(ctx context.Context, in *ConsensusExplorerRequest, opts ...grpc.CallOption) (*ConsensusExplorerInstrumentDetailsResponse, error) {
 	out := new(ConsensusExplorerInstrumentDetailsResponse)
 	err := c.cc.Invoke(ctx, "/titanium.ConsensusService/ConsensusExplorerInstrumentDetails", in, out, opts...)
@@ -147,6 +139,24 @@ func (c *consensusServiceClient) ConsensusExplorerTable(ctx context.Context, in 
 func (c *consensusServiceClient) ConsensusExplorerRanges(ctx context.Context, in *ConsensusExplorerRequest, opts ...grpc.CallOption) (*ConsensusExplorerRangeResponse, error) {
 	out := new(ConsensusExplorerRangeResponse)
 	err := c.cc.Invoke(ctx, "/titanium.ConsensusService/ConsensusExplorerRanges", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *consensusServiceClient) CohortConsensusTab(ctx context.Context, in *ConsensusTabRequest, opts ...grpc.CallOption) (*common.ConsensusResultSetValuesResponse, error) {
+	out := new(common.ConsensusResultSetValuesResponse)
+	err := c.cc.Invoke(ctx, "/titanium.ConsensusService/CohortConsensusTab", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *consensusServiceClient) SubmissionEvidenceTab(ctx context.Context, in *ConsensusTabRequest, opts ...grpc.CallOption) (*common.ConsensusResultSetValuesResponse, error) {
+	out := new(common.ConsensusResultSetValuesResponse)
+	err := c.cc.Invoke(ctx, "/titanium.ConsensusService/SubmissionEvidenceTab", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -236,10 +246,11 @@ type ConsensusServiceServer interface {
 	ConsensusOutliers(context.Context, *common.OutliersListRequest) (*common.ConsensusActiveResponse, error)
 	// Get Consensus Run's consensus result sets
 	GetConsensusRuns(context.Context, *common.GetConsensusRunsRequest) (*common.GetConsensusRunsResponse, error)
-	ConsensusResultSetValues(context.Context, *common.ConsensusResultSetValuesRequest) (*common.ConsensusResultSetValuesResponse, error)
 	ConsensusExplorerInstrumentDetails(context.Context, *ConsensusExplorerRequest) (*ConsensusExplorerInstrumentDetailsResponse, error)
 	ConsensusExplorerTable(context.Context, *ConsensusExplorerRequest) (*ConsensusExplorerTableResponse, error)
 	ConsensusExplorerRanges(context.Context, *ConsensusExplorerRequest) (*ConsensusExplorerRangeResponse, error)
+	CohortConsensusTab(context.Context, *ConsensusTabRequest) (*common.ConsensusResultSetValuesResponse, error)
+	SubmissionEvidenceTab(context.Context, *ConsensusTabRequest) (*common.ConsensusResultSetValuesResponse, error)
 	ConsensusActive(context.Context, *common.ConsensusActiveRequest) (*common.ConsensusActiveResponse, error)
 	ConsensusToPublish(context.Context, *common.ConsensusToPublishRequest) (*common.ConsensusToPublishResponse, error)
 	ConsensusPublish(context.Context, *common.ConsensusPublishRequest) (*common.MessageResponse, error)
@@ -267,9 +278,6 @@ func (UnimplementedConsensusServiceServer) ConsensusOutliers(context.Context, *c
 func (UnimplementedConsensusServiceServer) GetConsensusRuns(context.Context, *common.GetConsensusRunsRequest) (*common.GetConsensusRunsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetConsensusRuns not implemented")
 }
-func (UnimplementedConsensusServiceServer) ConsensusResultSetValues(context.Context, *common.ConsensusResultSetValuesRequest) (*common.ConsensusResultSetValuesResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ConsensusResultSetValues not implemented")
-}
 func (UnimplementedConsensusServiceServer) ConsensusExplorerInstrumentDetails(context.Context, *ConsensusExplorerRequest) (*ConsensusExplorerInstrumentDetailsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConsensusExplorerInstrumentDetails not implemented")
 }
@@ -278,6 +286,12 @@ func (UnimplementedConsensusServiceServer) ConsensusExplorerTable(context.Contex
 }
 func (UnimplementedConsensusServiceServer) ConsensusExplorerRanges(context.Context, *ConsensusExplorerRequest) (*ConsensusExplorerRangeResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConsensusExplorerRanges not implemented")
+}
+func (UnimplementedConsensusServiceServer) CohortConsensusTab(context.Context, *ConsensusTabRequest) (*common.ConsensusResultSetValuesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CohortConsensusTab not implemented")
+}
+func (UnimplementedConsensusServiceServer) SubmissionEvidenceTab(context.Context, *ConsensusTabRequest) (*common.ConsensusResultSetValuesResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmissionEvidenceTab not implemented")
 }
 func (UnimplementedConsensusServiceServer) ConsensusActive(context.Context, *common.ConsensusActiveRequest) (*common.ConsensusActiveResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ConsensusActive not implemented")
@@ -397,24 +411,6 @@ func _ConsensusService_GetConsensusRuns_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _ConsensusService_ConsensusResultSetValues_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(common.ConsensusResultSetValuesRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(ConsensusServiceServer).ConsensusResultSetValues(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/titanium.ConsensusService/ConsensusResultSetValues",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(ConsensusServiceServer).ConsensusResultSetValues(ctx, req.(*common.ConsensusResultSetValuesRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _ConsensusService_ConsensusExplorerInstrumentDetails_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(ConsensusExplorerRequest)
 	if err := dec(in); err != nil {
@@ -465,6 +461,42 @@ func _ConsensusService_ConsensusExplorerRanges_Handler(srv interface{}, ctx cont
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(ConsensusServiceServer).ConsensusExplorerRanges(ctx, req.(*ConsensusExplorerRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ConsensusService_CohortConsensusTab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConsensusTabRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ConsensusServiceServer).CohortConsensusTab(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.ConsensusService/CohortConsensusTab",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ConsensusServiceServer).CohortConsensusTab(ctx, req.(*ConsensusTabRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _ConsensusService_SubmissionEvidenceTab_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ConsensusTabRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ConsensusServiceServer).SubmissionEvidenceTab(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.ConsensusService/SubmissionEvidenceTab",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ConsensusServiceServer).SubmissionEvidenceTab(ctx, req.(*ConsensusTabRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -587,10 +619,6 @@ var ConsensusService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _ConsensusService_GetConsensusRuns_Handler,
 		},
 		{
-			MethodName: "ConsensusResultSetValues",
-			Handler:    _ConsensusService_ConsensusResultSetValues_Handler,
-		},
-		{
 			MethodName: "ConsensusExplorerInstrumentDetails",
 			Handler:    _ConsensusService_ConsensusExplorerInstrumentDetails_Handler,
 		},
@@ -601,6 +629,14 @@ var ConsensusService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ConsensusExplorerRanges",
 			Handler:    _ConsensusService_ConsensusExplorerRanges_Handler,
+		},
+		{
+			MethodName: "CohortConsensusTab",
+			Handler:    _ConsensusService_CohortConsensusTab_Handler,
+		},
+		{
+			MethodName: "SubmissionEvidenceTab",
+			Handler:    _ConsensusService_SubmissionEvidenceTab_Handler,
 		},
 		{
 			MethodName: "ConsensusActive",

@@ -6,7 +6,6 @@
 import * as public_usermanagement_user_service_pb from "../public/usermanagement_user_service_pb";
 import * as common_usermanagement_user_pb from "../common/usermanagement_user_pb";
 import * as common_usermanagement_fe_specific_pb from "../common/usermanagement_fe_specific_pb";
-import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type UserServicecreate = {
@@ -32,7 +31,7 @@ type UserServicegetById = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_wrappers_pb.StringValue;
+  readonly requestType: typeof common_usermanagement_user_pb.UserId;
   readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
 };
 
@@ -41,7 +40,7 @@ type UserServicegetAll = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_wrappers_pb.BoolValue;
+  readonly requestType: typeof common_usermanagement_user_pb.UserEnabled;
   readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
 };
 
@@ -104,21 +103,21 @@ export class UserServiceClient {
     callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
   ): UnaryResponse;
   getById(
-    requestMessage: google_protobuf_wrappers_pb.StringValue,
+    requestMessage: common_usermanagement_user_pb.UserId,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
   ): UnaryResponse;
   getById(
-    requestMessage: google_protobuf_wrappers_pb.StringValue,
+    requestMessage: common_usermanagement_user_pb.UserId,
     callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
   ): UnaryResponse;
   getAll(
-    requestMessage: google_protobuf_wrappers_pb.BoolValue,
+    requestMessage: common_usermanagement_user_pb.UserEnabled,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
   ): UnaryResponse;
   getAll(
-    requestMessage: google_protobuf_wrappers_pb.BoolValue,
+    requestMessage: common_usermanagement_user_pb.UserEnabled,
     callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
   ): UnaryResponse;
 }

@@ -8,7 +8,6 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	wrapperspb "google.golang.org/protobuf/types/known/wrapperspb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -21,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GroupPolicyServiceClient interface {
 	Create(ctx context.Context, in *common.GroupPolicies, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetPolicies(ctx context.Context, in *wrapperspb.StringValue, opts ...grpc.CallOption) (*common.ServiceResponse, error)
+	GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.ServiceResponse, error)
 }
 
 type groupPolicyServiceClient struct {
@@ -41,7 +40,7 @@ func (c *groupPolicyServiceClient) Create(ctx context.Context, in *common.GroupP
 	return out, nil
 }
 
-func (c *groupPolicyServiceClient) GetPolicies(ctx context.Context, in *wrapperspb.StringValue, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
+func (c *groupPolicyServiceClient) GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
 	out := new(common.ServiceResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.GroupPolicyService/getPolicies", in, out, opts...)
 	if err != nil {
@@ -55,7 +54,7 @@ func (c *groupPolicyServiceClient) GetPolicies(ctx context.Context, in *wrappers
 // for forward compatibility
 type GroupPolicyServiceServer interface {
 	Create(context.Context, *common.GroupPolicies) (*common.ServiceResponse, error)
-	GetPolicies(context.Context, *wrapperspb.StringValue) (*common.ServiceResponse, error)
+	GetPolicies(context.Context, *common.PolicyType) (*common.ServiceResponse, error)
 	mustEmbedUnimplementedGroupPolicyServiceServer()
 }
 
@@ -66,7 +65,7 @@ type UnimplementedGroupPolicyServiceServer struct {
 func (UnimplementedGroupPolicyServiceServer) Create(context.Context, *common.GroupPolicies) (*common.ServiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedGroupPolicyServiceServer) GetPolicies(context.Context, *wrapperspb.StringValue) (*common.ServiceResponse, error) {
+func (UnimplementedGroupPolicyServiceServer) GetPolicies(context.Context, *common.PolicyType) (*common.ServiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPolicies not implemented")
 }
 func (UnimplementedGroupPolicyServiceServer) mustEmbedUnimplementedGroupPolicyServiceServer() {}
@@ -101,7 +100,7 @@ func _GroupPolicyService_Create_Handler(srv interface{}, ctx context.Context, de
 }
 
 func _GroupPolicyService_GetPolicies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(wrapperspb.StringValue)
+	in := new(common.PolicyType)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -113,7 +112,7 @@ func _GroupPolicyService_GetPolicies_Handler(srv interface{}, ctx context.Contex
 		FullMethod: "/com.peernova.titanium.casbin.management.grpc.service.GroupPolicyService/getPolicies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(GroupPolicyServiceServer).GetPolicies(ctx, req.(*wrapperspb.StringValue))
+		return srv.(GroupPolicyServiceServer).GetPolicies(ctx, req.(*common.PolicyType))
 	}
 	return interceptor(ctx, in, info, handler)
 }

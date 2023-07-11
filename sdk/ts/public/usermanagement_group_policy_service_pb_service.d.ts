@@ -6,7 +6,7 @@
 import * as public_usermanagement_group_policy_service_pb from "../public/usermanagement_group_policy_service_pb";
 import * as common_usermanagement_group_policy_pb from "../common/usermanagement_group_policy_pb";
 import * as common_usermanagement_fe_specific_pb from "../common/usermanagement_fe_specific_pb";
-import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
+import * as common_usermanagement_policy_pb from "../common/usermanagement_policy_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type GroupPolicyServicecreate = {
@@ -23,7 +23,7 @@ type GroupPolicyServicegetPolicies = {
   readonly service: typeof GroupPolicyService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_wrappers_pb.StringValue;
+  readonly requestType: typeof common_usermanagement_policy_pb.PolicyType;
   readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
 };
 
@@ -75,12 +75,12 @@ export class GroupPolicyServiceClient {
     callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
   ): UnaryResponse;
   getPolicies(
-    requestMessage: google_protobuf_wrappers_pb.StringValue,
+    requestMessage: common_usermanagement_policy_pb.PolicyType,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
   ): UnaryResponse;
   getPolicies(
-    requestMessage: google_protobuf_wrappers_pb.StringValue,
+    requestMessage: common_usermanagement_policy_pb.PolicyType,
     callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
   ): UnaryResponse;
 }

@@ -728,60 +728,6 @@ export namespace ConsensusResultSet {
   }
 }
 
-export class ConsensusResultSetValuesRequest extends jspb.Message {
-  getAssetId(): string;
-  setAssetId(value: string): void;
-
-  getTraceName(): string;
-  setTraceName(value: string): void;
-
-  getSubmittedDate(): string;
-  setSubmittedDate(value: string): void;
-
-  getConsensusRunTimestamp(): string;
-  setConsensusRunTimestamp(value: string): void;
-
-  getClient(): string;
-  setClient(value: string): void;
-
-  hasFilterPack(): boolean;
-  clearFilterPack(): void;
-  getFilterPack(): common_gateway_base_pb.FilterPack | undefined;
-  setFilterPack(value?: common_gateway_base_pb.FilterPack): void;
-
-  hasOrderby(): boolean;
-  clearOrderby(): void;
-  getOrderby(): common_gateway_base_pb.OrderBy | undefined;
-  setOrderby(value?: common_gateway_base_pb.OrderBy): void;
-
-  hasPage(): boolean;
-  clearPage(): void;
-  getPage(): common_gateway_base_pb.Page | undefined;
-  setPage(value?: common_gateway_base_pb.Page): void;
-
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): ConsensusResultSetValuesRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: ConsensusResultSetValuesRequest): ConsensusResultSetValuesRequest.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: ConsensusResultSetValuesRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): ConsensusResultSetValuesRequest;
-  static deserializeBinaryFromReader(message: ConsensusResultSetValuesRequest, reader: jspb.BinaryReader): ConsensusResultSetValuesRequest;
-}
-
-export namespace ConsensusResultSetValuesRequest {
-  export type AsObject = {
-    assetId: string,
-    traceName: string,
-    submittedDate: string,
-    consensusRunTimestamp: string,
-    client: string,
-    filterPack?: common_gateway_base_pb.FilterPack.AsObject,
-    orderby?: common_gateway_base_pb.OrderBy.AsObject,
-    page?: common_gateway_base_pb.Page.AsObject,
-  }
-}
-
 export class ConsensusResultSetValuesResponse extends jspb.Message {
   hasData(): boolean;
   clearData(): void;

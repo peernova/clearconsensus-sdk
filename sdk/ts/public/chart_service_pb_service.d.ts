@@ -15,9 +15,19 @@ type ChartServicegetChartData = {
   readonly responseType: typeof public_chart_service_pb.GetChartDataResponse;
 };
 
+type ChartServicegetTableData = {
+  readonly methodName: string;
+  readonly service: typeof ChartService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof public_chart_service_pb.GetChartDataRequest;
+  readonly responseType: typeof public_chart_service_pb.GetTableResponse;
+};
+
 export class ChartService {
   static readonly serviceName: string;
   static readonly getChartData: ChartServicegetChartData;
+  static readonly getTableData: ChartServicegetTableData;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -60,6 +70,15 @@ export class ChartServiceClient {
   getChartData(
     requestMessage: public_chart_service_pb.GetChartDataRequest,
     callback: (error: ServiceError|null, responseMessage: public_chart_service_pb.GetChartDataResponse|null) => void
+  ): UnaryResponse;
+  getTableData(
+    requestMessage: public_chart_service_pb.GetChartDataRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: public_chart_service_pb.GetTableResponse|null) => void
+  ): UnaryResponse;
+  getTableData(
+    requestMessage: public_chart_service_pb.GetChartDataRequest,
+    callback: (error: ServiceError|null, responseMessage: public_chart_service_pb.GetTableResponse|null) => void
   ): UnaryResponse;
 }
 

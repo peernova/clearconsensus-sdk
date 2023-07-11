@@ -21,6 +21,8 @@ var common_usermanagement_group_policy_pb = require('../common/usermanagement_gr
 goog.object.extend(proto, common_usermanagement_group_policy_pb);
 var common_usermanagement_fe_specific_pb = require('../common/usermanagement_fe_specific_pb.js');
 goog.object.extend(proto, common_usermanagement_fe_specific_pb);
+var common_usermanagement_policy_pb = require('../common/usermanagement_policy_pb.js');
+goog.object.extend(proto, common_usermanagement_policy_pb);
 var google_api_annotations_pb = require('../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var google_protobuf_wrappers_pb = require('google-protobuf/google/protobuf/wrappers_pb.js');

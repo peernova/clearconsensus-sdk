@@ -21,8 +21,8 @@ const _ = grpc.SupportPackageIsVersion7
 type AdminServiceClient interface {
 	OnBoard(ctx context.Context, in *OnBoardRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
 	RunCalculator(ctx context.Context, in *RunCalculatorRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
-	UploadEvaluatedPrice(ctx context.Context, in *UploadEvaluatedPriceRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
 	RunConsensus(ctx context.Context, in *RunConsensusRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
+	UploadEvaluatedPrice(ctx context.Context, in *UploadEvaluatedPriceRequest, opts ...grpc.CallOption) (*common.MessageResponse, error)
 }
 
 type adminServiceClient struct {
@@ -51,18 +51,18 @@ func (c *adminServiceClient) RunCalculator(ctx context.Context, in *RunCalculato
 	return out, nil
 }
 
-func (c *adminServiceClient) UploadEvaluatedPrice(ctx context.Context, in *UploadEvaluatedPriceRequest, opts ...grpc.CallOption) (*common.MessageResponse, error) {
+func (c *adminServiceClient) RunConsensus(ctx context.Context, in *RunConsensusRequest, opts ...grpc.CallOption) (*common.MessageResponse, error) {
 	out := new(common.MessageResponse)
-	err := c.cc.Invoke(ctx, "/titanium.AdminService/UploadEvaluatedPrice", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/titanium.AdminService/RunConsensus", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *adminServiceClient) RunConsensus(ctx context.Context, in *RunConsensusRequest, opts ...grpc.CallOption) (*common.MessageResponse, error) {
+func (c *adminServiceClient) UploadEvaluatedPrice(ctx context.Context, in *UploadEvaluatedPriceRequest, opts ...grpc.CallOption) (*common.MessageResponse, error) {
 	out := new(common.MessageResponse)
-	err := c.cc.Invoke(ctx, "/titanium.AdminService/RunConsensus", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/titanium.AdminService/UploadEvaluatedPrice", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -75,8 +75,8 @@ func (c *adminServiceClient) RunConsensus(ctx context.Context, in *RunConsensusR
 type AdminServiceServer interface {
 	OnBoard(context.Context, *OnBoardRequest) (*common.MessageResponse, error)
 	RunCalculator(context.Context, *RunCalculatorRequest) (*common.MessageResponse, error)
-	UploadEvaluatedPrice(context.Context, *UploadEvaluatedPriceRequest) (*common.MessageResponse, error)
 	RunConsensus(context.Context, *RunConsensusRequest) (*common.MessageResponse, error)
+	UploadEvaluatedPrice(context.Context, *UploadEvaluatedPriceRequest) (*common.MessageResponse, error)
 	mustEmbedUnimplementedAdminServiceServer()
 }
 
@@ -90,11 +90,11 @@ func (UnimplementedAdminServiceServer) OnBoard(context.Context, *OnBoardRequest)
 func (UnimplementedAdminServiceServer) RunCalculator(context.Context, *RunCalculatorRequest) (*common.MessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RunCalculator not implemented")
 }
-func (UnimplementedAdminServiceServer) UploadEvaluatedPrice(context.Context, *UploadEvaluatedPriceRequest) (*common.MessageResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UploadEvaluatedPrice not implemented")
-}
 func (UnimplementedAdminServiceServer) RunConsensus(context.Context, *RunConsensusRequest) (*common.MessageResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RunConsensus not implemented")
+}
+func (UnimplementedAdminServiceServer) UploadEvaluatedPrice(context.Context, *UploadEvaluatedPriceRequest) (*common.MessageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method UploadEvaluatedPrice not implemented")
 }
 func (UnimplementedAdminServiceServer) mustEmbedUnimplementedAdminServiceServer() {}
 
@@ -145,24 +145,6 @@ func _AdminService_RunCalculator_Handler(srv interface{}, ctx context.Context, d
 	return interceptor(ctx, in, info, handler)
 }
 
-func _AdminService_UploadEvaluatedPrice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UploadEvaluatedPriceRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(AdminServiceServer).UploadEvaluatedPrice(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/titanium.AdminService/UploadEvaluatedPrice",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(AdminServiceServer).UploadEvaluatedPrice(ctx, req.(*UploadEvaluatedPriceRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
 func _AdminService_RunConsensus_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RunConsensusRequest)
 	if err := dec(in); err != nil {
@@ -177,6 +159,24 @@ func _AdminService_RunConsensus_Handler(srv interface{}, ctx context.Context, de
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(AdminServiceServer).RunConsensus(ctx, req.(*RunConsensusRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _AdminService_UploadEvaluatedPrice_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(UploadEvaluatedPriceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(AdminServiceServer).UploadEvaluatedPrice(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.AdminService/UploadEvaluatedPrice",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(AdminServiceServer).UploadEvaluatedPrice(ctx, req.(*UploadEvaluatedPriceRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -197,12 +197,12 @@ var AdminService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _AdminService_RunCalculator_Handler,
 		},
 		{
-			MethodName: "UploadEvaluatedPrice",
-			Handler:    _AdminService_UploadEvaluatedPrice_Handler,
-		},
-		{
 			MethodName: "RunConsensus",
 			Handler:    _AdminService_RunConsensus_Handler,
+		},
+		{
+			MethodName: "UploadEvaluatedPrice",
+			Handler:    _AdminService_UploadEvaluatedPrice_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

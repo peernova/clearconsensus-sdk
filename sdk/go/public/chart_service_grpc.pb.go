@@ -19,6 +19,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ChartServiceClient interface {
 	GetChartData(ctx context.Context, in *GetChartDataRequest, opts ...grpc.CallOption) (*GetChartDataResponse, error)
+	GetTableData(ctx context.Context, in *GetChartDataRequest, opts ...grpc.CallOption) (*GetTableResponse, error)
 }
 
 type chartServiceClient struct {
@@ -38,11 +39,21 @@ func (c *chartServiceClient) GetChartData(ctx context.Context, in *GetChartDataR
 	return out, nil
 }
 
+func (c *chartServiceClient) GetTableData(ctx context.Context, in *GetChartDataRequest, opts ...grpc.CallOption) (*GetTableResponse, error) {
+	out := new(GetTableResponse)
+	err := c.cc.Invoke(ctx, "/titanium.ChartService/getTableData", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ChartServiceServer is the server API for ChartService service.
 // All implementations must embed UnimplementedChartServiceServer
 // for forward compatibility
 type ChartServiceServer interface {
 	GetChartData(context.Context, *GetChartDataRequest) (*GetChartDataResponse, error)
+	GetTableData(context.Context, *GetChartDataRequest) (*GetTableResponse, error)
 	mustEmbedUnimplementedChartServiceServer()
 }
 
@@ -52,6 +63,9 @@ type UnimplementedChartServiceServer struct {
 
 func (UnimplementedChartServiceServer) GetChartData(context.Context, *GetChartDataRequest) (*GetChartDataResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetChartData not implemented")
+}
+func (UnimplementedChartServiceServer) GetTableData(context.Context, *GetChartDataRequest) (*GetTableResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetTableData not implemented")
 }
 func (UnimplementedChartServiceServer) mustEmbedUnimplementedChartServiceServer() {}
 
@@ -84,6 +98,24 @@ func _ChartService_GetChartData_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _ChartService_GetTableData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetChartDataRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ChartServiceServer).GetTableData(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.ChartService/getTableData",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ChartServiceServer).GetTableData(ctx, req.(*GetChartDataRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // ChartService_ServiceDesc is the grpc.ServiceDesc for ChartService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -94,6 +126,10 @@ var ChartService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "getChartData",
 			Handler:    _ChartService_GetChartData_Handler,
+		},
+		{
+			MethodName: "getTableData",
+			Handler:    _ChartService_GetTableData_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

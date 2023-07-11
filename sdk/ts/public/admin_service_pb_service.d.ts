@@ -25,15 +25,6 @@ type AdminServiceRunCalculator = {
   readonly responseType: typeof common_gateway_base_pb.MessageResponse;
 };
 
-type AdminServiceUploadEvaluatedPrice = {
-  readonly methodName: string;
-  readonly service: typeof AdminService;
-  readonly requestStream: false;
-  readonly responseStream: false;
-  readonly requestType: typeof public_admin_service_pb.UploadEvaluatedPriceRequest;
-  readonly responseType: typeof common_gateway_base_pb.MessageResponse;
-};
-
 type AdminServiceRunConsensus = {
   readonly methodName: string;
   readonly service: typeof AdminService;
@@ -43,12 +34,21 @@ type AdminServiceRunConsensus = {
   readonly responseType: typeof common_gateway_base_pb.MessageResponse;
 };
 
+type AdminServiceUploadEvaluatedPrice = {
+  readonly methodName: string;
+  readonly service: typeof AdminService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof public_admin_service_pb.UploadEvaluatedPriceRequest;
+  readonly responseType: typeof common_gateway_base_pb.MessageResponse;
+};
+
 export class AdminService {
   static readonly serviceName: string;
   static readonly OnBoard: AdminServiceOnBoard;
   static readonly RunCalculator: AdminServiceRunCalculator;
-  static readonly UploadEvaluatedPrice: AdminServiceUploadEvaluatedPrice;
   static readonly RunConsensus: AdminServiceRunConsensus;
+  static readonly UploadEvaluatedPrice: AdminServiceUploadEvaluatedPrice;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -101,15 +101,6 @@ export class AdminServiceClient {
     requestMessage: public_admin_service_pb.RunCalculatorRequest,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
-  uploadEvaluatedPrice(
-    requestMessage: public_admin_service_pb.UploadEvaluatedPriceRequest,
-    metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
-  ): UnaryResponse;
-  uploadEvaluatedPrice(
-    requestMessage: public_admin_service_pb.UploadEvaluatedPriceRequest,
-    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
-  ): UnaryResponse;
   runConsensus(
     requestMessage: public_admin_service_pb.RunConsensusRequest,
     metadata: grpc.Metadata,
@@ -117,6 +108,15 @@ export class AdminServiceClient {
   ): UnaryResponse;
   runConsensus(
     requestMessage: public_admin_service_pb.RunConsensusRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  uploadEvaluatedPrice(
+    requestMessage: public_admin_service_pb.UploadEvaluatedPriceRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  uploadEvaluatedPrice(
+    requestMessage: public_admin_service_pb.UploadEvaluatedPriceRequest,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
 }

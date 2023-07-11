@@ -6,7 +6,6 @@
 var public_usermanagement_policy_service_pb = require("../public/usermanagement_policy_service_pb");
 var common_usermanagement_policy_pb = require("../common/usermanagement_policy_pb");
 var common_usermanagement_fe_specific_pb = require("../common/usermanagement_fe_specific_pb");
-var google_protobuf_wrappers_pb = require("google-protobuf/google/protobuf/wrappers_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var PolicyService = (function () {
@@ -29,7 +28,7 @@ PolicyService.getPolicies = {
   service: PolicyService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_wrappers_pb.StringValue,
+  requestType: common_usermanagement_policy_pb.PolicyType,
   responseType: common_usermanagement_fe_specific_pb.ServiceResponse
 };
 

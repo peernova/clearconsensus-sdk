@@ -44,12 +44,32 @@ type LookupTableServiceListLookupTableVersions = {
   readonly responseType: typeof common_gateway_base_pb.ListVersionResponse;
 };
 
+type LookupTableServiceEnableLookupTable = {
+  readonly methodName: string;
+  readonly service: typeof LookupTableService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_gateway_base_pb.EnableDisableRequest;
+  readonly responseType: typeof common_gateway_base_pb.AcknowledgeResponse;
+};
+
+type LookupTableServiceDisableLookupTable = {
+  readonly methodName: string;
+  readonly service: typeof LookupTableService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_gateway_base_pb.EnableDisableRequest;
+  readonly responseType: typeof common_gateway_base_pb.AcknowledgeResponse;
+};
+
 export class LookupTableService {
   static readonly serviceName: string;
   static readonly AddLookupTable: LookupTableServiceAddLookupTable;
   static readonly GetLookupTable: LookupTableServiceGetLookupTable;
   static readonly ListLookupTables: LookupTableServiceListLookupTables;
   static readonly ListLookupTableVersions: LookupTableServiceListLookupTableVersions;
+  static readonly EnableLookupTable: LookupTableServiceEnableLookupTable;
+  static readonly DisableLookupTable: LookupTableServiceDisableLookupTable;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -119,6 +139,24 @@ export class LookupTableServiceClient {
   listLookupTableVersions(
     requestMessage: common_gateway_base_pb.GetDefinition,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.ListVersionResponse|null) => void
+  ): UnaryResponse;
+  enableLookupTable(
+    requestMessage: common_gateway_base_pb.EnableDisableRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
+  ): UnaryResponse;
+  enableLookupTable(
+    requestMessage: common_gateway_base_pb.EnableDisableRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
+  ): UnaryResponse;
+  disableLookupTable(
+    requestMessage: common_gateway_base_pb.EnableDisableRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
+  ): UnaryResponse;
+  disableLookupTable(
+    requestMessage: common_gateway_base_pb.EnableDisableRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
   ): UnaryResponse;
 }
 

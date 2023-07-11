@@ -6,7 +6,7 @@
 var public_usermanagement_group_policy_service_pb = require("../public/usermanagement_group_policy_service_pb");
 var common_usermanagement_group_policy_pb = require("../common/usermanagement_group_policy_pb");
 var common_usermanagement_fe_specific_pb = require("../common/usermanagement_fe_specific_pb");
-var google_protobuf_wrappers_pb = require("google-protobuf/google/protobuf/wrappers_pb");
+var common_usermanagement_policy_pb = require("../common/usermanagement_policy_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var GroupPolicyService = (function () {
@@ -29,7 +29,7 @@ GroupPolicyService.getPolicies = {
   service: GroupPolicyService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_wrappers_pb.StringValue,
+  requestType: common_usermanagement_policy_pb.PolicyType,
   responseType: common_usermanagement_fe_specific_pb.ServiceResponse
 };
 

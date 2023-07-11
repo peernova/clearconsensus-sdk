@@ -154,6 +154,100 @@ func (x *UsersDto) GetUser() []*UserDto {
 	return nil
 }
 
+type UserEnabled struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Enabled bool `protobuf:"varint,1,opt,name=enabled,proto3" json:"enabled,omitempty"`
+}
+
+func (x *UserEnabled) Reset() {
+	*x = UserEnabled{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_usermanagement_user_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserEnabled) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserEnabled) ProtoMessage() {}
+
+func (x *UserEnabled) ProtoReflect() protoreflect.Message {
+	mi := &file_common_usermanagement_user_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserEnabled.ProtoReflect.Descriptor instead.
+func (*UserEnabled) Descriptor() ([]byte, []int) {
+	return file_common_usermanagement_user_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *UserEnabled) GetEnabled() bool {
+	if x != nil {
+		return x.Enabled
+	}
+	return false
+}
+
+type UserId struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Id string `protobuf:"bytes,1,opt,name=id,proto3" json:"id,omitempty"`
+}
+
+func (x *UserId) Reset() {
+	*x = UserId{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_usermanagement_user_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UserId) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UserId) ProtoMessage() {}
+
+func (x *UserId) ProtoReflect() protoreflect.Message {
+	mi := &file_common_usermanagement_user_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UserId.ProtoReflect.Descriptor instead.
+func (*UserId) Descriptor() ([]byte, []int) {
+	return file_common_usermanagement_user_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *UserId) GetId() string {
+	if x != nil {
+		return x.Id
+	}
+	return ""
+}
+
 var File_common_usermanagement_user_proto protoreflect.FileDescriptor
 
 var file_common_usermanagement_user_proto_rawDesc = []byte{
@@ -186,15 +280,19 @@ var file_common_usermanagement_user_proto_rawDesc = []byte{
 	0x2e, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69,
 	0x75, 0x6d, 0x2e, 0x63, 0x61, 0x73, 0x62, 0x69, 0x6e, 0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65,
 	0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x2e,
-	0x55, 0x73, 0x65, 0x72, 0x44, 0x74, 0x6f, 0x52, 0x04, 0x75, 0x73, 0x65, 0x72, 0x42, 0x6c, 0x0a,
-	0x32, 0x63, 0x6f, 0x6d, 0x2e, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2e, 0x74, 0x69,
-	0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x63, 0x61, 0x73, 0x62, 0x69, 0x6e, 0x2e, 0x6d, 0x61,
-	0x6e, 0x61, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x67, 0x72, 0x70, 0x63, 0x2e, 0x70, 0x72,
-	0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f,
-	0x6d, 0x2f, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2f, 0x63, 0x6c, 0x65, 0x61, 0x72,
-	0x63, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x73, 0x75, 0x73, 0x2d, 0x73, 0x64, 0x6b, 0x2f, 0x73, 0x64,
-	0x6b, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x33,
+	0x55, 0x73, 0x65, 0x72, 0x44, 0x74, 0x6f, 0x52, 0x04, 0x75, 0x73, 0x65, 0x72, 0x22, 0x27, 0x0a,
+	0x0b, 0x55, 0x73, 0x65, 0x72, 0x45, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x12, 0x18, 0x0a, 0x07,
+	0x65, 0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x08, 0x52, 0x07, 0x65,
+	0x6e, 0x61, 0x62, 0x6c, 0x65, 0x64, 0x22, 0x18, 0x0a, 0x06, 0x55, 0x73, 0x65, 0x72, 0x49, 0x64,
+	0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x02, 0x69, 0x64,
+	0x42, 0x6c, 0x0a, 0x32, 0x63, 0x6f, 0x6d, 0x2e, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61,
+	0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x63, 0x61, 0x73, 0x62, 0x69, 0x6e,
+	0x2e, 0x6d, 0x61, 0x6e, 0x61, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x2e, 0x67, 0x72, 0x70, 0x63,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2f, 0x63, 0x6c,
+	0x65, 0x61, 0x72, 0x63, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x73, 0x75, 0x73, 0x2d, 0x73, 0x64, 0x6b,
+	0x2f, 0x73, 0x64, 0x6b, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -209,14 +307,16 @@ func file_common_usermanagement_user_proto_rawDescGZIP() []byte {
 	return file_common_usermanagement_user_proto_rawDescData
 }
 
-var file_common_usermanagement_user_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_common_usermanagement_user_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
 var file_common_usermanagement_user_proto_goTypes = []interface{}{
-	(*UserDto)(nil),   // 0: com.peernova.titanium.casbin.management.grpc.proto.UserDto
-	(*UsersDto)(nil),  // 1: com.peernova.titanium.casbin.management.grpc.proto.UsersDto
-	(*EntityDto)(nil), // 2: com.peernova.titanium.casbin.management.grpc.proto.EntityDto
+	(*UserDto)(nil),     // 0: com.peernova.titanium.casbin.management.grpc.proto.UserDto
+	(*UsersDto)(nil),    // 1: com.peernova.titanium.casbin.management.grpc.proto.UsersDto
+	(*UserEnabled)(nil), // 2: com.peernova.titanium.casbin.management.grpc.proto.UserEnabled
+	(*UserId)(nil),      // 3: com.peernova.titanium.casbin.management.grpc.proto.UserId
+	(*EntityDto)(nil),   // 4: com.peernova.titanium.casbin.management.grpc.proto.EntityDto
 }
 var file_common_usermanagement_user_proto_depIdxs = []int32{
-	2, // 0: com.peernova.titanium.casbin.management.grpc.proto.UserDto.entity:type_name -> com.peernova.titanium.casbin.management.grpc.proto.EntityDto
+	4, // 0: com.peernova.titanium.casbin.management.grpc.proto.UserDto.entity:type_name -> com.peernova.titanium.casbin.management.grpc.proto.EntityDto
 	0, // 1: com.peernova.titanium.casbin.management.grpc.proto.UsersDto.user:type_name -> com.peernova.titanium.casbin.management.grpc.proto.UserDto
 	2, // [2:2] is the sub-list for method output_type
 	2, // [2:2] is the sub-list for method input_type
@@ -257,6 +357,30 @@ func file_common_usermanagement_user_proto_init() {
 				return nil
 			}
 		}
+		file_common_usermanagement_user_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserEnabled); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_common_usermanagement_user_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UserId); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -264,7 +388,7 @@ func file_common_usermanagement_user_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_common_usermanagement_user_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

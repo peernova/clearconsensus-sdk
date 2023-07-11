@@ -210,16 +210,15 @@ if (goog.DEBUG && !COMPILED) {
  * @private {!Array<!Array<number>>}
  * @const
  */
-proto.titanium.GetDataQualityErrorsRequest.oneofGroups_ = [[2,3,4]];
+proto.titanium.GetDataQualityErrorsRequest.oneofGroups_ = [[4,5]];
 
 /**
  * @enum {number}
  */
 proto.titanium.GetDataQualityErrorsRequest.IdCase = {
   ID_NOT_SET: 0,
-  SUBMISSION_ID: 2,
-  CONSENSUS_ID: 3,
-  EVALUATED_PRICE_ID: 4
+  SUBMISSION_ID: 4,
+  GROUP_KEYS: 5
 };
 
 /**
@@ -261,11 +260,10 @@ proto.titanium.GetDataQualityErrorsRequest.prototype.toObject = function(opt_inc
 proto.titanium.GetDataQualityErrorsRequest.toObject = function(includeInstance, msg) {
   var f, obj = {
     assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
-    submissionId: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    consensusId: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    evaluatedPriceId: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    submittedDate: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    traceName: jspb.Message.getFieldWithDefault(msg, 6, "")
+    traceName: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    submittedDate: jspb.Message.getFieldWithDefault(msg, 3, ""),
+    submissionId: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    groupKeys: (f = msg.getGroupKeys()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -308,23 +306,20 @@ proto.titanium.GetDataQualityErrorsRequest.deserializeBinaryFromReader = functio
       break;
     case 2:
       var value = /** @type {string} */ (reader.readString());
-      msg.setSubmissionId(value);
+      msg.setTraceName(value);
       break;
     case 3:
       var value = /** @type {string} */ (reader.readString());
-      msg.setConsensusId(value);
+      msg.setSubmittedDate(value);
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setEvaluatedPriceId(value);
+      msg.setSubmissionId(value);
       break;
     case 5:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setSubmittedDate(value);
-      break;
-    case 6:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setTraceName(value);
+      var value = new common_gateway_base_pb.FilterPack;
+      reader.readMessage(value,common_gateway_base_pb.FilterPack.deserializeBinaryFromReader);
+      msg.setGroupKeys(value);
       break;
     default:
       reader.skipField();
@@ -362,15 +357,15 @@ proto.titanium.GetDataQualityErrorsRequest.serializeBinaryToWriter = function(me
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 2));
-  if (f != null) {
+  f = message.getTraceName();
+  if (f.length > 0) {
     writer.writeString(
       2,
       f
     );
   }
-  f = /** @type {string} */ (jspb.Message.getField(message, 3));
-  if (f != null) {
+  f = message.getSubmittedDate();
+  if (f.length > 0) {
     writer.writeString(
       3,
       f
@@ -383,18 +378,12 @@ proto.titanium.GetDataQualityErrorsRequest.serializeBinaryToWriter = function(me
       f
     );
   }
-  f = message.getSubmittedDate();
-  if (f.length > 0) {
-    writer.writeString(
+  f = message.getGroupKeys();
+  if (f != null) {
+    writer.writeMessage(
       5,
-      f
-    );
-  }
-  f = message.getTraceName();
-  if (f.length > 0) {
-    writer.writeString(
-      6,
-      f
+      f,
+      common_gateway_base_pb.FilterPack.serializeBinaryToWriter
     );
   }
 };
@@ -419,10 +408,10 @@ proto.titanium.GetDataQualityErrorsRequest.prototype.setAssetId = function(value
 
 
 /**
- * optional string submission_id = 2;
+ * optional string trace_name = 2;
  * @return {string}
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.getSubmissionId = function() {
+proto.titanium.GetDataQualityErrorsRequest.prototype.getTraceName = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
 };
 
@@ -431,34 +420,16 @@ proto.titanium.GetDataQualityErrorsRequest.prototype.getSubmissionId = function(
  * @param {string} value
  * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.setSubmissionId = function(value) {
-  return jspb.Message.setOneofField(this, 2, proto.titanium.GetDataQualityErrorsRequest.oneofGroups_[0], value);
+proto.titanium.GetDataQualityErrorsRequest.prototype.setTraceName = function(value) {
+  return jspb.Message.setProto3StringField(this, 2, value);
 };
 
 
 /**
- * Clears the field making it undefined.
- * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
- */
-proto.titanium.GetDataQualityErrorsRequest.prototype.clearSubmissionId = function() {
-  return jspb.Message.setOneofField(this, 2, proto.titanium.GetDataQualityErrorsRequest.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.titanium.GetDataQualityErrorsRequest.prototype.hasSubmissionId = function() {
-  return jspb.Message.getField(this, 2) != null;
-};
-
-
-/**
- * optional string consensus_id = 3;
+ * optional string submitted_date = 3;
  * @return {string}
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.getConsensusId = function() {
+proto.titanium.GetDataQualityErrorsRequest.prototype.getSubmittedDate = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 3, ""));
 };
 
@@ -467,34 +438,16 @@ proto.titanium.GetDataQualityErrorsRequest.prototype.getConsensusId = function()
  * @param {string} value
  * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.setConsensusId = function(value) {
-  return jspb.Message.setOneofField(this, 3, proto.titanium.GetDataQualityErrorsRequest.oneofGroups_[0], value);
+proto.titanium.GetDataQualityErrorsRequest.prototype.setSubmittedDate = function(value) {
+  return jspb.Message.setProto3StringField(this, 3, value);
 };
 
 
 /**
- * Clears the field making it undefined.
- * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
- */
-proto.titanium.GetDataQualityErrorsRequest.prototype.clearConsensusId = function() {
-  return jspb.Message.setOneofField(this, 3, proto.titanium.GetDataQualityErrorsRequest.oneofGroups_[0], undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.titanium.GetDataQualityErrorsRequest.prototype.hasConsensusId = function() {
-  return jspb.Message.getField(this, 3) != null;
-};
-
-
-/**
- * optional string evaluated_price_id = 4;
+ * optional string submission_id = 4;
  * @return {string}
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.getEvaluatedPriceId = function() {
+proto.titanium.GetDataQualityErrorsRequest.prototype.getSubmissionId = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -503,7 +456,7 @@ proto.titanium.GetDataQualityErrorsRequest.prototype.getEvaluatedPriceId = funct
  * @param {string} value
  * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.setEvaluatedPriceId = function(value) {
+proto.titanium.GetDataQualityErrorsRequest.prototype.setSubmissionId = function(value) {
   return jspb.Message.setOneofField(this, 4, proto.titanium.GetDataQualityErrorsRequest.oneofGroups_[0], value);
 };
 
@@ -512,7 +465,7 @@ proto.titanium.GetDataQualityErrorsRequest.prototype.setEvaluatedPriceId = funct
  * Clears the field making it undefined.
  * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.clearEvaluatedPriceId = function() {
+proto.titanium.GetDataQualityErrorsRequest.prototype.clearSubmissionId = function() {
   return jspb.Message.setOneofField(this, 4, proto.titanium.GetDataQualityErrorsRequest.oneofGroups_[0], undefined);
 };
 
@@ -521,44 +474,45 @@ proto.titanium.GetDataQualityErrorsRequest.prototype.clearEvaluatedPriceId = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.hasEvaluatedPriceId = function() {
+proto.titanium.GetDataQualityErrorsRequest.prototype.hasSubmissionId = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional string submitted_date = 5;
- * @return {string}
+ * optional FilterPack group_keys = 5;
+ * @return {?proto.titanium.FilterPack}
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.getSubmittedDate = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+proto.titanium.GetDataQualityErrorsRequest.prototype.getGroupKeys = function() {
+  return /** @type{?proto.titanium.FilterPack} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.FilterPack, 5));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.titanium.FilterPack|undefined} value
+ * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
+*/
+proto.titanium.GetDataQualityErrorsRequest.prototype.setGroupKeys = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 5, proto.titanium.GetDataQualityErrorsRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.setSubmittedDate = function(value) {
-  return jspb.Message.setProto3StringField(this, 5, value);
+proto.titanium.GetDataQualityErrorsRequest.prototype.clearGroupKeys = function() {
+  return this.setGroupKeys(undefined);
 };
 
 
 /**
- * optional string trace_name = 6;
- * @return {string}
+ * Returns whether this field is set.
+ * @return {boolean}
  */
-proto.titanium.GetDataQualityErrorsRequest.prototype.getTraceName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.titanium.GetDataQualityErrorsRequest} returns this
- */
-proto.titanium.GetDataQualityErrorsRequest.prototype.setTraceName = function(value) {
-  return jspb.Message.setProto3StringField(this, 6, value);
+proto.titanium.GetDataQualityErrorsRequest.prototype.hasGroupKeys = function() {
+  return jspb.Message.getField(this, 5) != null;
 };
 
 

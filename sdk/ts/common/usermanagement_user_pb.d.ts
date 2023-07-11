@@ -71,3 +71,43 @@ export namespace UsersDto {
   }
 }
 
+export class UserEnabled extends jspb.Message {
+  getEnabled(): boolean;
+  setEnabled(value: boolean): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserEnabled.AsObject;
+  static toObject(includeInstance: boolean, msg: UserEnabled): UserEnabled.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UserEnabled, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserEnabled;
+  static deserializeBinaryFromReader(message: UserEnabled, reader: jspb.BinaryReader): UserEnabled;
+}
+
+export namespace UserEnabled {
+  export type AsObject = {
+    enabled: boolean,
+  }
+}
+
+export class UserId extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserId.AsObject;
+  static toObject(includeInstance: boolean, msg: UserId): UserId.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UserId, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserId;
+  static deserializeBinaryFromReader(message: UserId, reader: jspb.BinaryReader): UserId;
+}
+
+export namespace UserId {
+  export type AsObject = {
+    id: string,
+  }
+}
+

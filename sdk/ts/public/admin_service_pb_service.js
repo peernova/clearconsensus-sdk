@@ -31,21 +31,21 @@ AdminService.RunCalculator = {
   responseType: common_gateway_base_pb.MessageResponse
 };
 
-AdminService.UploadEvaluatedPrice = {
-  methodName: "UploadEvaluatedPrice",
-  service: AdminService,
-  requestStream: false,
-  responseStream: false,
-  requestType: public_admin_service_pb.UploadEvaluatedPriceRequest,
-  responseType: common_gateway_base_pb.MessageResponse
-};
-
 AdminService.RunConsensus = {
   methodName: "RunConsensus",
   service: AdminService,
   requestStream: false,
   responseStream: false,
   requestType: public_admin_service_pb.RunConsensusRequest,
+  responseType: common_gateway_base_pb.MessageResponse
+};
+
+AdminService.UploadEvaluatedPrice = {
+  methodName: "UploadEvaluatedPrice",
+  service: AdminService,
+  requestStream: false,
+  responseStream: false,
+  requestType: public_admin_service_pb.UploadEvaluatedPriceRequest,
   responseType: common_gateway_base_pb.MessageResponse
 };
 
@@ -118,11 +118,11 @@ AdminServiceClient.prototype.runCalculator = function runCalculator(requestMessa
   };
 };
 
-AdminServiceClient.prototype.uploadEvaluatedPrice = function uploadEvaluatedPrice(requestMessage, metadata, callback) {
+AdminServiceClient.prototype.runConsensus = function runConsensus(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AdminService.UploadEvaluatedPrice, {
+  var client = grpc.unary(AdminService.RunConsensus, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,
@@ -149,11 +149,11 @@ AdminServiceClient.prototype.uploadEvaluatedPrice = function uploadEvaluatedPric
   };
 };
 
-AdminServiceClient.prototype.runConsensus = function runConsensus(requestMessage, metadata, callback) {
+AdminServiceClient.prototype.uploadEvaluatedPrice = function uploadEvaluatedPrice(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
   }
-  var client = grpc.unary(AdminService.RunConsensus, {
+  var client = grpc.unary(AdminService.UploadEvaluatedPrice, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

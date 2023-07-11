@@ -21,6 +21,15 @@ ChartService.getChartData = {
   responseType: public_chart_service_pb.GetChartDataResponse
 };
 
+ChartService.getTableData = {
+  methodName: "getTableData",
+  service: ChartService,
+  requestStream: false,
+  responseStream: false,
+  requestType: public_chart_service_pb.GetChartDataRequest,
+  responseType: public_chart_service_pb.GetTableResponse
+};
+
 exports.ChartService = ChartService;
 
 function ChartServiceClient(serviceHost, options) {
@@ -33,6 +42,37 @@ ChartServiceClient.prototype.getChartData = function getChartData(requestMessage
     callback = arguments[1];
   }
   var client = grpc.unary(ChartService.getChartData, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ChartServiceClient.prototype.getTableData = function getTableData(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ChartService.getTableData, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

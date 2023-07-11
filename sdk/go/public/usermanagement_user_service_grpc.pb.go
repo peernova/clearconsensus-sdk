@@ -8,7 +8,6 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	wrapperspb "google.golang.org/protobuf/types/known/wrapperspb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -22,8 +21,8 @@ const _ = grpc.SupportPackageIsVersion7
 type UserServiceClient interface {
 	Create(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
 	Update(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetById(ctx context.Context, in *wrapperspb.StringValue, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetAll(ctx context.Context, in *wrapperspb.BoolValue, opts ...grpc.CallOption) (*common.ServiceResponse, error)
+	GetById(ctx context.Context, in *common.UserId, opts ...grpc.CallOption) (*common.ServiceResponse, error)
+	GetAll(ctx context.Context, in *common.UserEnabled, opts ...grpc.CallOption) (*common.ServiceResponse, error)
 }
 
 type userServiceClient struct {
@@ -52,7 +51,7 @@ func (c *userServiceClient) Update(ctx context.Context, in *common.UserDto, opts
 	return out, nil
 }
 
-func (c *userServiceClient) GetById(ctx context.Context, in *wrapperspb.StringValue, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
+func (c *userServiceClient) GetById(ctx context.Context, in *common.UserId, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
 	out := new(common.ServiceResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.UserService/getById", in, out, opts...)
 	if err != nil {
@@ -61,7 +60,7 @@ func (c *userServiceClient) GetById(ctx context.Context, in *wrapperspb.StringVa
 	return out, nil
 }
 
-func (c *userServiceClient) GetAll(ctx context.Context, in *wrapperspb.BoolValue, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
+func (c *userServiceClient) GetAll(ctx context.Context, in *common.UserEnabled, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
 	out := new(common.ServiceResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.UserService/getAll", in, out, opts...)
 	if err != nil {
@@ -76,8 +75,8 @@ func (c *userServiceClient) GetAll(ctx context.Context, in *wrapperspb.BoolValue
 type UserServiceServer interface {
 	Create(context.Context, *common.UserDto) (*common.ServiceResponse, error)
 	Update(context.Context, *common.UserDto) (*common.ServiceResponse, error)
-	GetById(context.Context, *wrapperspb.StringValue) (*common.ServiceResponse, error)
-	GetAll(context.Context, *wrapperspb.BoolValue) (*common.ServiceResponse, error)
+	GetById(context.Context, *common.UserId) (*common.ServiceResponse, error)
+	GetAll(context.Context, *common.UserEnabled) (*common.ServiceResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -91,10 +90,10 @@ func (UnimplementedUserServiceServer) Create(context.Context, *common.UserDto) (
 func (UnimplementedUserServiceServer) Update(context.Context, *common.UserDto) (*common.ServiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedUserServiceServer) GetById(context.Context, *wrapperspb.StringValue) (*common.ServiceResponse, error) {
+func (UnimplementedUserServiceServer) GetById(context.Context, *common.UserId) (*common.ServiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetById not implemented")
 }
-func (UnimplementedUserServiceServer) GetAll(context.Context, *wrapperspb.BoolValue) (*common.ServiceResponse, error) {
+func (UnimplementedUserServiceServer) GetAll(context.Context, *common.UserEnabled) (*common.ServiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}
@@ -147,7 +146,7 @@ func _UserService_Update_Handler(srv interface{}, ctx context.Context, dec func(
 }
 
 func _UserService_GetById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(wrapperspb.StringValue)
+	in := new(common.UserId)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -159,13 +158,13 @@ func _UserService_GetById_Handler(srv interface{}, ctx context.Context, dec func
 		FullMethod: "/com.peernova.titanium.casbin.management.grpc.service.UserService/getById",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetById(ctx, req.(*wrapperspb.StringValue))
+		return srv.(UserServiceServer).GetById(ctx, req.(*common.UserId))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _UserService_GetAll_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(wrapperspb.BoolValue)
+	in := new(common.UserEnabled)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -177,7 +176,7 @@ func _UserService_GetAll_Handler(srv interface{}, ctx context.Context, dec func(
 		FullMethod: "/com.peernova.titanium.casbin.management.grpc.service.UserService/getAll",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(UserServiceServer).GetAll(ctx, req.(*wrapperspb.BoolValue))
+		return srv.(UserServiceServer).GetAll(ctx, req.(*common.UserEnabled))
 	}
 	return interceptor(ctx, in, info, handler)
 }

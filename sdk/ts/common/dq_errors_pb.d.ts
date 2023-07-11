@@ -11,26 +11,21 @@ export class GetDataQualityErrorsRequest extends jspb.Message {
   getAssetId(): string;
   setAssetId(value: string): void;
 
+  getTraceName(): string;
+  setTraceName(value: string): void;
+
+  getSubmittedDate(): string;
+  setSubmittedDate(value: string): void;
+
   hasSubmissionId(): boolean;
   clearSubmissionId(): void;
   getSubmissionId(): string;
   setSubmissionId(value: string): void;
 
-  hasConsensusId(): boolean;
-  clearConsensusId(): void;
-  getConsensusId(): string;
-  setConsensusId(value: string): void;
-
-  hasEvaluatedPriceId(): boolean;
-  clearEvaluatedPriceId(): void;
-  getEvaluatedPriceId(): string;
-  setEvaluatedPriceId(value: string): void;
-
-  getSubmittedDate(): string;
-  setSubmittedDate(value: string): void;
-
-  getTraceName(): string;
-  setTraceName(value: string): void;
+  hasGroupKeys(): boolean;
+  clearGroupKeys(): void;
+  getGroupKeys(): common_gateway_base_pb.FilterPack | undefined;
+  setGroupKeys(value?: common_gateway_base_pb.FilterPack): void;
 
   getIdCase(): GetDataQualityErrorsRequest.IdCase;
   serializeBinary(): Uint8Array;
@@ -46,18 +41,16 @@ export class GetDataQualityErrorsRequest extends jspb.Message {
 export namespace GetDataQualityErrorsRequest {
   export type AsObject = {
     assetId: string,
-    submissionId: string,
-    consensusId: string,
-    evaluatedPriceId: string,
-    submittedDate: string,
     traceName: string,
+    submittedDate: string,
+    submissionId: string,
+    groupKeys?: common_gateway_base_pb.FilterPack.AsObject,
   }
 
   export enum IdCase {
     ID_NOT_SET = 0,
-    SUBMISSION_ID = 2,
-    CONSENSUS_ID = 3,
-    EVALUATED_PRICE_ID = 4,
+    SUBMISSION_ID = 4,
+    GROUP_KEYS = 5,
   }
 }
 

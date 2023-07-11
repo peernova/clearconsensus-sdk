@@ -179,3 +179,120 @@ export namespace Metadata {
   }
 }
 
+export class Table extends jspb.Message {
+  clearColumnsList(): void;
+  getColumnsList(): Array<Table.Column>;
+  setColumnsList(value: Array<Table.Column>): void;
+  addColumns(value?: Table.Column, index?: number): Table.Column;
+
+  clearRowsList(): void;
+  getRowsList(): Array<Table.Row>;
+  setRowsList(value: Array<Table.Row>): void;
+  addRows(value?: Table.Row, index?: number): Table.Row;
+
+  getTotalRows(): number;
+  setTotalRows(value: number): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Table.AsObject;
+  static toObject(includeInstance: boolean, msg: Table): Table.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Table, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Table;
+  static deserializeBinaryFromReader(message: Table, reader: jspb.BinaryReader): Table;
+}
+
+export namespace Table {
+  export type AsObject = {
+    columnsList: Array<Table.Column.AsObject>,
+    rowsList: Array<Table.Row.AsObject>,
+    totalRows: number,
+  }
+
+  export class Column extends jspb.Message {
+    getColumnName(): string;
+    setColumnName(value: string): void;
+
+    getRawColumnName(): string;
+    setRawColumnName(value: string): void;
+
+    getColumnType(): string;
+    setColumnType(value: string): void;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Column.AsObject;
+    static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Column, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Column;
+    static deserializeBinaryFromReader(message: Column, reader: jspb.BinaryReader): Column;
+  }
+
+  export namespace Column {
+    export type AsObject = {
+      columnName: string,
+      rawColumnName: string,
+      columnType: string,
+    }
+  }
+
+  export class Row extends jspb.Message {
+    clearValuesList(): void;
+    getValuesList(): Array<google_protobuf_struct_pb.Value>;
+    setValuesList(value: Array<google_protobuf_struct_pb.Value>): void;
+    addValues(value?: google_protobuf_struct_pb.Value, index?: number): google_protobuf_struct_pb.Value;
+
+    serializeBinary(): Uint8Array;
+    toObject(includeInstance?: boolean): Row.AsObject;
+    static toObject(includeInstance: boolean, msg: Row): Row.AsObject;
+    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+    static serializeBinaryToWriter(message: Row, writer: jspb.BinaryWriter): void;
+    static deserializeBinary(bytes: Uint8Array): Row;
+    static deserializeBinaryFromReader(message: Row, reader: jspb.BinaryReader): Row;
+  }
+
+  export namespace Row {
+    export type AsObject = {
+      valuesList: Array<google_protobuf_struct_pb.Value.AsObject>,
+    }
+  }
+}
+
+export class GetTableResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): Table | undefined;
+  setData(value?: Table): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_gateway_base_pb.Error | undefined;
+  setError(value?: common_gateway_base_pb.Error): void;
+
+  getResponseCase(): GetTableResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): GetTableResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: GetTableResponse): GetTableResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: GetTableResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): GetTableResponse;
+  static deserializeBinaryFromReader(message: GetTableResponse, reader: jspb.BinaryReader): GetTableResponse;
+}
+
+export namespace GetTableResponse {
+  export type AsObject = {
+    data?: Table.AsObject,
+    error?: common_gateway_base_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+

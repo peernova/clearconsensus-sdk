@@ -6,7 +6,6 @@
 var public_usermanagement_user_service_pb = require("../public/usermanagement_user_service_pb");
 var common_usermanagement_user_pb = require("../common/usermanagement_user_pb");
 var common_usermanagement_fe_specific_pb = require("../common/usermanagement_fe_specific_pb");
-var google_protobuf_wrappers_pb = require("google-protobuf/google/protobuf/wrappers_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var UserService = (function () {
@@ -38,7 +37,7 @@ UserService.getById = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_wrappers_pb.StringValue,
+  requestType: common_usermanagement_user_pb.UserId,
   responseType: common_usermanagement_fe_specific_pb.ServiceResponse
 };
 
@@ -47,7 +46,7 @@ UserService.getAll = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_wrappers_pb.BoolValue,
+  requestType: common_usermanagement_user_pb.UserEnabled,
   responseType: common_usermanagement_fe_specific_pb.ServiceResponse
 };
 

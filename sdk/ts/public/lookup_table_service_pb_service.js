@@ -50,6 +50,24 @@ LookupTableService.ListLookupTableVersions = {
   responseType: common_gateway_base_pb.ListVersionResponse
 };
 
+LookupTableService.EnableLookupTable = {
+  methodName: "EnableLookupTable",
+  service: LookupTableService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_gateway_base_pb.EnableDisableRequest,
+  responseType: common_gateway_base_pb.AcknowledgeResponse
+};
+
+LookupTableService.DisableLookupTable = {
+  methodName: "DisableLookupTable",
+  service: LookupTableService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_gateway_base_pb.EnableDisableRequest,
+  responseType: common_gateway_base_pb.AcknowledgeResponse
+};
+
 exports.LookupTableService = LookupTableService;
 
 function LookupTableServiceClient(serviceHost, options) {
@@ -155,6 +173,68 @@ LookupTableServiceClient.prototype.listLookupTableVersions = function listLookup
     callback = arguments[1];
   }
   var client = grpc.unary(LookupTableService.ListLookupTableVersions, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LookupTableServiceClient.prototype.enableLookupTable = function enableLookupTable(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LookupTableService.EnableLookupTable, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+LookupTableServiceClient.prototype.disableLookupTable = function disableLookupTable(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(LookupTableService.DisableLookupTable, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

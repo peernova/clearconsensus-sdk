@@ -72,6 +72,26 @@ export namespace Policies {
   }
 }
 
+export class PolicyType extends jspb.Message {
+  getType(): string;
+  setType(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PolicyType.AsObject;
+  static toObject(includeInstance: boolean, msg: PolicyType): PolicyType.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PolicyType, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PolicyType;
+  static deserializeBinaryFromReader(message: PolicyType, reader: jspb.BinaryReader): PolicyType;
+}
+
+export namespace PolicyType {
+  export type AsObject = {
+    type: string,
+  }
+}
+
 export class UsernamePermissionRequest extends jspb.Message {
   getUsername(): string;
   setUsername(value: string): void;

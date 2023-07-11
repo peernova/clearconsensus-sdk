@@ -38,10 +38,10 @@ export class DtccTabRequest extends jspb.Message {
   getSubmissionId(): string;
   setSubmissionId(value: string): void;
 
-  hasGroupKeys(): boolean;
-  clearGroupKeys(): void;
-  getGroupKeys(): common_gateway_base_pb.ListOfKeys | undefined;
-  setGroupKeys(value?: common_gateway_base_pb.ListOfKeys): void;
+  hasSubGroupKeySearch(): boolean;
+  clearSubGroupKeySearch(): void;
+  getSubGroupKeySearch(): SubGroupKeySearch | undefined;
+  setSubGroupKeySearch(value?: SubGroupKeySearch): void;
 
   getIdCase(): DtccTabRequest.IdCase;
   serializeBinary(): Uint8Array;
@@ -63,13 +63,39 @@ export namespace DtccTabRequest {
     orderby?: common_gateway_base_pb.OrderBy.AsObject,
     page?: common_gateway_base_pb.Page.AsObject,
     submissionId: string,
-    groupKeys?: common_gateway_base_pb.ListOfKeys.AsObject,
+    subGroupKeySearch?: SubGroupKeySearch.AsObject,
   }
 
   export enum IdCase {
     ID_NOT_SET = 0,
     SUBMISSION_ID = 7,
-    GROUP_KEYS = 8,
+    SUB_GROUP_KEY_SEARCH = 8,
+  }
+}
+
+export class SubGroupKeySearch extends jspb.Message {
+  getSubSubmittedDate(): string;
+  setSubSubmittedDate(value: string): void;
+
+  hasGroupKeys(): boolean;
+  clearGroupKeys(): void;
+  getGroupKeys(): common_gateway_base_pb.FilterPack | undefined;
+  setGroupKeys(value?: common_gateway_base_pb.FilterPack): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubGroupKeySearch.AsObject;
+  static toObject(includeInstance: boolean, msg: SubGroupKeySearch): SubGroupKeySearch.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubGroupKeySearch, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubGroupKeySearch;
+  static deserializeBinaryFromReader(message: SubGroupKeySearch, reader: jspb.BinaryReader): SubGroupKeySearch;
+}
+
+export namespace SubGroupKeySearch {
+  export type AsObject = {
+    subSubmittedDate: string,
+    groupKeys?: common_gateway_base_pb.FilterPack.AsObject,
   }
 }
 

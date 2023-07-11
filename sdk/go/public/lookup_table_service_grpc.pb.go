@@ -23,6 +23,8 @@ type LookupTableServiceClient interface {
 	GetLookupTable(ctx context.Context, in *common.GetDefinition, opts ...grpc.CallOption) (*common.GetLookupTableResponse, error)
 	ListLookupTables(ctx context.Context, in *common.ListRequest, opts ...grpc.CallOption) (*common.ListLookupTableResponse, error)
 	ListLookupTableVersions(ctx context.Context, in *common.GetDefinition, opts ...grpc.CallOption) (*common.ListVersionResponse, error)
+	EnableLookupTable(ctx context.Context, in *common.EnableDisableRequest, opts ...grpc.CallOption) (*common.AcknowledgeResponse, error)
+	DisableLookupTable(ctx context.Context, in *common.EnableDisableRequest, opts ...grpc.CallOption) (*common.AcknowledgeResponse, error)
 }
 
 type lookupTableServiceClient struct {
@@ -69,6 +71,24 @@ func (c *lookupTableServiceClient) ListLookupTableVersions(ctx context.Context, 
 	return out, nil
 }
 
+func (c *lookupTableServiceClient) EnableLookupTable(ctx context.Context, in *common.EnableDisableRequest, opts ...grpc.CallOption) (*common.AcknowledgeResponse, error) {
+	out := new(common.AcknowledgeResponse)
+	err := c.cc.Invoke(ctx, "/titanium.LookupTableService/EnableLookupTable", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *lookupTableServiceClient) DisableLookupTable(ctx context.Context, in *common.EnableDisableRequest, opts ...grpc.CallOption) (*common.AcknowledgeResponse, error) {
+	out := new(common.AcknowledgeResponse)
+	err := c.cc.Invoke(ctx, "/titanium.LookupTableService/DisableLookupTable", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // LookupTableServiceServer is the server API for LookupTableService service.
 // All implementations must embed UnimplementedLookupTableServiceServer
 // for forward compatibility
@@ -77,6 +97,8 @@ type LookupTableServiceServer interface {
 	GetLookupTable(context.Context, *common.GetDefinition) (*common.GetLookupTableResponse, error)
 	ListLookupTables(context.Context, *common.ListRequest) (*common.ListLookupTableResponse, error)
 	ListLookupTableVersions(context.Context, *common.GetDefinition) (*common.ListVersionResponse, error)
+	EnableLookupTable(context.Context, *common.EnableDisableRequest) (*common.AcknowledgeResponse, error)
+	DisableLookupTable(context.Context, *common.EnableDisableRequest) (*common.AcknowledgeResponse, error)
 	mustEmbedUnimplementedLookupTableServiceServer()
 }
 
@@ -95,6 +117,12 @@ func (UnimplementedLookupTableServiceServer) ListLookupTables(context.Context, *
 }
 func (UnimplementedLookupTableServiceServer) ListLookupTableVersions(context.Context, *common.GetDefinition) (*common.ListVersionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListLookupTableVersions not implemented")
+}
+func (UnimplementedLookupTableServiceServer) EnableLookupTable(context.Context, *common.EnableDisableRequest) (*common.AcknowledgeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableLookupTable not implemented")
+}
+func (UnimplementedLookupTableServiceServer) DisableLookupTable(context.Context, *common.EnableDisableRequest) (*common.AcknowledgeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DisableLookupTable not implemented")
 }
 func (UnimplementedLookupTableServiceServer) mustEmbedUnimplementedLookupTableServiceServer() {}
 
@@ -181,6 +209,42 @@ func _LookupTableService_ListLookupTableVersions_Handler(srv interface{}, ctx co
 	return interceptor(ctx, in, info, handler)
 }
 
+func _LookupTableService_EnableLookupTable_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.EnableDisableRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LookupTableServiceServer).EnableLookupTable(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.LookupTableService/EnableLookupTable",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LookupTableServiceServer).EnableLookupTable(ctx, req.(*common.EnableDisableRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _LookupTableService_DisableLookupTable_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.EnableDisableRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(LookupTableServiceServer).DisableLookupTable(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.LookupTableService/DisableLookupTable",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(LookupTableServiceServer).DisableLookupTable(ctx, req.(*common.EnableDisableRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // LookupTableService_ServiceDesc is the grpc.ServiceDesc for LookupTableService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -203,6 +267,14 @@ var LookupTableService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListLookupTableVersions",
 			Handler:    _LookupTableService_ListLookupTableVersions_Handler,
+		},
+		{
+			MethodName: "EnableLookupTable",
+			Handler:    _LookupTableService_EnableLookupTable_Handler,
+		},
+		{
+			MethodName: "DisableLookupTable",
+			Handler:    _LookupTableService_DisableLookupTable_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

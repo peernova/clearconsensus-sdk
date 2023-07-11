@@ -8,7 +8,6 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	wrapperspb "google.golang.org/protobuf/types/known/wrapperspb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -21,7 +20,7 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PolicyServiceClient interface {
 	Create(ctx context.Context, in *common.Policies, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetPolicies(ctx context.Context, in *wrapperspb.StringValue, opts ...grpc.CallOption) (*common.ServiceResponse, error)
+	GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.ServiceResponse, error)
 	RemovePolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
 	CheckPolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
 	GetAssets(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.ServiceResponse, error)
@@ -46,7 +45,7 @@ func (c *policyServiceClient) Create(ctx context.Context, in *common.Policies, o
 	return out, nil
 }
 
-func (c *policyServiceClient) GetPolicies(ctx context.Context, in *wrapperspb.StringValue, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
+func (c *policyServiceClient) GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
 	out := new(common.ServiceResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/getPolicies", in, out, opts...)
 	if err != nil {
@@ -105,7 +104,7 @@ func (c *policyServiceClient) GetAddons(ctx context.Context, in *common.Username
 // for forward compatibility
 type PolicyServiceServer interface {
 	Create(context.Context, *common.Policies) (*common.ServiceResponse, error)
-	GetPolicies(context.Context, *wrapperspb.StringValue) (*common.ServiceResponse, error)
+	GetPolicies(context.Context, *common.PolicyType) (*common.ServiceResponse, error)
 	RemovePolicy(context.Context, *common.PolicyDto) (*common.ServiceResponse, error)
 	CheckPolicy(context.Context, *common.PolicyDto) (*common.ServiceResponse, error)
 	GetAssets(context.Context, *common.UsernamePermissionRequest) (*common.ServiceResponse, error)
@@ -121,7 +120,7 @@ type UnimplementedPolicyServiceServer struct {
 func (UnimplementedPolicyServiceServer) Create(context.Context, *common.Policies) (*common.ServiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedPolicyServiceServer) GetPolicies(context.Context, *wrapperspb.StringValue) (*common.ServiceResponse, error) {
+func (UnimplementedPolicyServiceServer) GetPolicies(context.Context, *common.PolicyType) (*common.ServiceResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPolicies not implemented")
 }
 func (UnimplementedPolicyServiceServer) RemovePolicy(context.Context, *common.PolicyDto) (*common.ServiceResponse, error) {
@@ -171,7 +170,7 @@ func _PolicyService_Create_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 func _PolicyService_GetPolicies_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(wrapperspb.StringValue)
+	in := new(common.PolicyType)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -183,7 +182,7 @@ func _PolicyService_GetPolicies_Handler(srv interface{}, ctx context.Context, de
 		FullMethod: "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/getPolicies",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(PolicyServiceServer).GetPolicies(ctx, req.(*wrapperspb.StringValue))
+		return srv.(PolicyServiceServer).GetPolicies(ctx, req.(*common.PolicyType))
 	}
 	return interceptor(ctx, in, info, handler)
 }

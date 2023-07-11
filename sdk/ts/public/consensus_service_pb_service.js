@@ -59,15 +59,6 @@ ConsensusService.GetConsensusRuns = {
   responseType: common_consensus_pb.GetConsensusRunsResponse
 };
 
-ConsensusService.ConsensusResultSetValues = {
-  methodName: "ConsensusResultSetValues",
-  service: ConsensusService,
-  requestStream: false,
-  responseStream: false,
-  requestType: common_consensus_pb.ConsensusResultSetValuesRequest,
-  responseType: common_consensus_pb.ConsensusResultSetValuesResponse
-};
-
 ConsensusService.ConsensusExplorerInstrumentDetails = {
   methodName: "ConsensusExplorerInstrumentDetails",
   service: ConsensusService,
@@ -93,6 +84,24 @@ ConsensusService.ConsensusExplorerRanges = {
   responseStream: false,
   requestType: public_consensus_service_pb.ConsensusExplorerRequest,
   responseType: public_consensus_service_pb.ConsensusExplorerRangeResponse
+};
+
+ConsensusService.CohortConsensusTab = {
+  methodName: "CohortConsensusTab",
+  service: ConsensusService,
+  requestStream: false,
+  responseStream: false,
+  requestType: public_consensus_service_pb.ConsensusTabRequest,
+  responseType: common_consensus_pb.ConsensusResultSetValuesResponse
+};
+
+ConsensusService.SubmissionEvidenceTab = {
+  methodName: "SubmissionEvidenceTab",
+  service: ConsensusService,
+  requestStream: false,
+  responseStream: false,
+  requestType: public_consensus_service_pb.ConsensusTabRequest,
+  responseType: common_consensus_pb.ConsensusResultSetValuesResponse
 };
 
 ConsensusService.ConsensusActive = {
@@ -302,37 +311,6 @@ ConsensusServiceClient.prototype.getConsensusRuns = function getConsensusRuns(re
   };
 };
 
-ConsensusServiceClient.prototype.consensusResultSetValues = function consensusResultSetValues(requestMessage, metadata, callback) {
-  if (arguments.length === 2) {
-    callback = arguments[1];
-  }
-  var client = grpc.unary(ConsensusService.ConsensusResultSetValues, {
-    request: requestMessage,
-    host: this.serviceHost,
-    metadata: metadata,
-    transport: this.options.transport,
-    debug: this.options.debug,
-    onEnd: function (response) {
-      if (callback) {
-        if (response.status !== grpc.Code.OK) {
-          var err = new Error(response.statusMessage);
-          err.code = response.status;
-          err.metadata = response.trailers;
-          callback(err, null);
-        } else {
-          callback(null, response.message);
-        }
-      }
-    }
-  });
-  return {
-    cancel: function () {
-      callback = null;
-      client.close();
-    }
-  };
-};
-
 ConsensusServiceClient.prototype.consensusExplorerInstrumentDetails = function consensusExplorerInstrumentDetails(requestMessage, metadata, callback) {
   if (arguments.length === 2) {
     callback = arguments[1];
@@ -400,6 +378,68 @@ ConsensusServiceClient.prototype.consensusExplorerRanges = function consensusExp
     callback = arguments[1];
   }
   var client = grpc.unary(ConsensusService.ConsensusExplorerRanges, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ConsensusServiceClient.prototype.cohortConsensusTab = function cohortConsensusTab(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ConsensusService.CohortConsensusTab, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+ConsensusServiceClient.prototype.submissionEvidenceTab = function submissionEvidenceTab(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(ConsensusService.SubmissionEvidenceTab, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

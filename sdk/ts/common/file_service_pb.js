@@ -3620,7 +3620,9 @@ proto.titanium.GetFileExportUrlResponse.prototype.hasError = function() {
 proto.titanium.ExportType = {
   EXPORT_TYPE_UNSPECIFIED: 0,
   EXPORT_TYPE_ORIGINALLY_SUBMITTED_FILE: 1,
-  EXPORT_TYPE_PARSING_ERRORS_FILE: 2
+  EXPORT_TYPE_PARSING_ERRORS_FILE: 2,
+  EXPORT_TYPE_EXPORT_FILE: 3,
+  EXPORT_TYPE_REPORT_FILE: 4
 };
 
 goog.object.extend(exports, proto.titanium);
