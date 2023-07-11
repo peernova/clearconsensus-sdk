@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusScores
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-10T17:17:04.398283Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
 public class TitaniumConsensusScores {
   public static final String SERIALIZED_NAME_CONSENSUS_DENSITY_SCORE = "consensusDensityScore";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_DENSITY_SCORE)
