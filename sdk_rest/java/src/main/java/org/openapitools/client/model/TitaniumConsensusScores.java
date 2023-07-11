@@ -23,10 +23,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import org.openapitools.client.model.TitaniumBimodality;
 import org.openapitools.client.model.TitaniumConsensusDensityScore;
 import org.openapitools.client.model.TitaniumEvpAlignmentScore;
 import org.openapitools.client.model.TitaniumEvpQualityScore;
-import org.openapitools.client.model.TitaniumExpertiseScore;
+import org.openapitools.client.model.TitaniumExpertiseRank;
+import org.openapitools.client.model.TitaniumTradeAlignmentScore;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,8 +53,12 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusScores
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumConsensusScores {
+  public static final String SERIALIZED_NAME_BIMODALITY = "bimodality";
+  @SerializedName(SERIALIZED_NAME_BIMODALITY)
+  private TitaniumBimodality bimodality;
+
   public static final String SERIALIZED_NAME_CONSENSUS_DENSITY_SCORE = "consensusDensityScore";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_DENSITY_SCORE)
   private TitaniumConsensusDensityScore consensusDensityScore;
@@ -65,12 +71,39 @@ public class TitaniumConsensusScores {
   @SerializedName(SERIALIZED_NAME_EVP_QUALITY_SCORE)
   private TitaniumEvpQualityScore evpQualityScore;
 
-  public static final String SERIALIZED_NAME_EXPERTISE_SCORE = "expertiseScore";
-  @SerializedName(SERIALIZED_NAME_EXPERTISE_SCORE)
-  private TitaniumExpertiseScore expertiseScore;
+  public static final String SERIALIZED_NAME_EXPERTISE_RANK = "expertiseRank";
+  @SerializedName(SERIALIZED_NAME_EXPERTISE_RANK)
+  private TitaniumExpertiseRank expertiseRank;
+
+  public static final String SERIALIZED_NAME_TRADE_ALIGNMENT_SCORE = "tradeAlignmentScore";
+  @SerializedName(SERIALIZED_NAME_TRADE_ALIGNMENT_SCORE)
+  private TitaniumTradeAlignmentScore tradeAlignmentScore;
 
   public TitaniumConsensusScores() { 
   }
+
+  public TitaniumConsensusScores bimodality(TitaniumBimodality bimodality) {
+    
+    this.bimodality = bimodality;
+    return this;
+  }
+
+   /**
+   * Get bimodality
+   * @return bimodality
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumBimodality getBimodality() {
+    return bimodality;
+  }
+
+
+  public void setBimodality(TitaniumBimodality bimodality) {
+    this.bimodality = bimodality;
+  }
+
 
   public TitaniumConsensusScores consensusDensityScore(TitaniumConsensusDensityScore consensusDensityScore) {
     
@@ -141,26 +174,49 @@ public class TitaniumConsensusScores {
   }
 
 
-  public TitaniumConsensusScores expertiseScore(TitaniumExpertiseScore expertiseScore) {
+  public TitaniumConsensusScores expertiseRank(TitaniumExpertiseRank expertiseRank) {
     
-    this.expertiseScore = expertiseScore;
+    this.expertiseRank = expertiseRank;
     return this;
   }
 
    /**
-   * Get expertiseScore
-   * @return expertiseScore
+   * Get expertiseRank
+   * @return expertiseRank
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumExpertiseScore getExpertiseScore() {
-    return expertiseScore;
+  public TitaniumExpertiseRank getExpertiseRank() {
+    return expertiseRank;
   }
 
 
-  public void setExpertiseScore(TitaniumExpertiseScore expertiseScore) {
-    this.expertiseScore = expertiseScore;
+  public void setExpertiseRank(TitaniumExpertiseRank expertiseRank) {
+    this.expertiseRank = expertiseRank;
+  }
+
+
+  public TitaniumConsensusScores tradeAlignmentScore(TitaniumTradeAlignmentScore tradeAlignmentScore) {
+    
+    this.tradeAlignmentScore = tradeAlignmentScore;
+    return this;
+  }
+
+   /**
+   * Get tradeAlignmentScore
+   * @return tradeAlignmentScore
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumTradeAlignmentScore getTradeAlignmentScore() {
+    return tradeAlignmentScore;
+  }
+
+
+  public void setTradeAlignmentScore(TitaniumTradeAlignmentScore tradeAlignmentScore) {
+    this.tradeAlignmentScore = tradeAlignmentScore;
   }
 
 
@@ -174,25 +230,29 @@ public class TitaniumConsensusScores {
       return false;
     }
     TitaniumConsensusScores titaniumConsensusScores = (TitaniumConsensusScores) o;
-    return Objects.equals(this.consensusDensityScore, titaniumConsensusScores.consensusDensityScore) &&
+    return Objects.equals(this.bimodality, titaniumConsensusScores.bimodality) &&
+        Objects.equals(this.consensusDensityScore, titaniumConsensusScores.consensusDensityScore) &&
         Objects.equals(this.evpAlignmentScore, titaniumConsensusScores.evpAlignmentScore) &&
         Objects.equals(this.evpQualityScore, titaniumConsensusScores.evpQualityScore) &&
-        Objects.equals(this.expertiseScore, titaniumConsensusScores.expertiseScore);
+        Objects.equals(this.expertiseRank, titaniumConsensusScores.expertiseRank) &&
+        Objects.equals(this.tradeAlignmentScore, titaniumConsensusScores.tradeAlignmentScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(consensusDensityScore, evpAlignmentScore, evpQualityScore, expertiseScore);
+    return Objects.hash(bimodality, consensusDensityScore, evpAlignmentScore, evpQualityScore, expertiseRank, tradeAlignmentScore);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumConsensusScores {\n");
+    sb.append("    bimodality: ").append(toIndentedString(bimodality)).append("\n");
     sb.append("    consensusDensityScore: ").append(toIndentedString(consensusDensityScore)).append("\n");
     sb.append("    evpAlignmentScore: ").append(toIndentedString(evpAlignmentScore)).append("\n");
     sb.append("    evpQualityScore: ").append(toIndentedString(evpQualityScore)).append("\n");
-    sb.append("    expertiseScore: ").append(toIndentedString(expertiseScore)).append("\n");
+    sb.append("    expertiseRank: ").append(toIndentedString(expertiseRank)).append("\n");
+    sb.append("    tradeAlignmentScore: ").append(toIndentedString(tradeAlignmentScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -215,10 +275,12 @@ public class TitaniumConsensusScores {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("bimodality");
     openapiFields.add("consensusDensityScore");
     openapiFields.add("evpAlignmentScore");
     openapiFields.add("evpQualityScore");
-    openapiFields.add("expertiseScore");
+    openapiFields.add("expertiseRank");
+    openapiFields.add("tradeAlignmentScore");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -246,6 +308,10 @@ public class TitaniumConsensusScores {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumConsensusScores` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
+      // validate the optional field `bimodality`
+      if (jsonObj.getAsJsonObject("bimodality") != null) {
+        TitaniumBimodality.validateJsonObject(jsonObj.getAsJsonObject("bimodality"));
+      }
       // validate the optional field `consensusDensityScore`
       if (jsonObj.getAsJsonObject("consensusDensityScore") != null) {
         TitaniumConsensusDensityScore.validateJsonObject(jsonObj.getAsJsonObject("consensusDensityScore"));
@@ -258,9 +324,13 @@ public class TitaniumConsensusScores {
       if (jsonObj.getAsJsonObject("evpQualityScore") != null) {
         TitaniumEvpQualityScore.validateJsonObject(jsonObj.getAsJsonObject("evpQualityScore"));
       }
-      // validate the optional field `expertiseScore`
-      if (jsonObj.getAsJsonObject("expertiseScore") != null) {
-        TitaniumExpertiseScore.validateJsonObject(jsonObj.getAsJsonObject("expertiseScore"));
+      // validate the optional field `expertiseRank`
+      if (jsonObj.getAsJsonObject("expertiseRank") != null) {
+        TitaniumExpertiseRank.validateJsonObject(jsonObj.getAsJsonObject("expertiseRank"));
+      }
+      // validate the optional field `tradeAlignmentScore`
+      if (jsonObj.getAsJsonObject("tradeAlignmentScore") != null) {
+        TitaniumTradeAlignmentScore.validateJsonObject(jsonObj.getAsJsonObject("tradeAlignmentScore"));
       }
   }
 

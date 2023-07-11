@@ -24,9 +24,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.TitaniumChartRanges;
+import org.openapitools.client.model.TitaniumCohortConsensusRangeTabData;
 import org.openapitools.client.model.TitaniumRangePoint;
-import org.openapitools.client.model.TitaniumTradePeriodsWithMetrics;
-import org.openapitools.client.model.TitaniumTradeRangesData;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,11 +50,11 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusExplorerRangeData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumConsensusExplorerRangeData {
-  public static final String SERIALIZED_NAME_ALL_PARTICIPANT_CRS_CONSENSUS_PRICE = "allParticipantCrsConsensusPrice";
-  @SerializedName(SERIALIZED_NAME_ALL_PARTICIPANT_CRS_CONSENSUS_PRICE)
-  private TitaniumRangePoint allParticipantCrsConsensusPrice;
+  public static final String SERIALIZED_NAME_ANCHOR_POINT = "anchorPoint";
+  @SerializedName(SERIALIZED_NAME_ANCHOR_POINT)
+  private TitaniumRangePoint anchorPoint;
 
   public static final String SERIALIZED_NAME_BIMODAL_LEFT_MEAN = "bimodalLeftMean";
   @SerializedName(SERIALIZED_NAME_BIMODAL_LEFT_MEAN)
@@ -65,69 +64,53 @@ public class TitaniumConsensusExplorerRangeData {
   @SerializedName(SERIALIZED_NAME_BIMODAL_RIGHT_MEAN)
   private TitaniumRangePoint bimodalRightMean;
 
-  public static final String SERIALIZED_NAME_CHALLENGE_OVERLAY_CRS_CONSENSUS_PRICE = "challengeOverlayCrsConsensusPrice";
-  @SerializedName(SERIALIZED_NAME_CHALLENGE_OVERLAY_CRS_CONSENSUS_PRICE)
-  private TitaniumRangePoint challengeOverlayCrsConsensusPrice;
-
   public static final String SERIALIZED_NAME_CHART_RANGES = "chartRanges";
   @SerializedName(SERIALIZED_NAME_CHART_RANGES)
   private TitaniumChartRanges chartRanges;
+
+  public static final String SERIALIZED_NAME_COHORT_CONSENSUS_PRICE = "cohortConsensusPrice";
+  @SerializedName(SERIALIZED_NAME_COHORT_CONSENSUS_PRICE)
+  private TitaniumRangePoint cohortConsensusPrice;
+
+  public static final String SERIALIZED_NAME_COHORT_CONSENSUS_RANGE_TAB_DATA = "cohortConsensusRangeTabData";
+  @SerializedName(SERIALIZED_NAME_COHORT_CONSENSUS_RANGE_TAB_DATA)
+  private TitaniumCohortConsensusRangeTabData cohortConsensusRangeTabData;
 
   public static final String SERIALIZED_NAME_EVP_MID = "evpMid";
   @SerializedName(SERIALIZED_NAME_EVP_MID)
   private TitaniumRangePoint evpMid;
 
-  public static final String SERIALIZED_NAME_EXPERT_POST_CHALLENGE_CONSENSUS_PRICE = "expertPostChallengeConsensusPrice";
-  @SerializedName(SERIALIZED_NAME_EXPERT_POST_CHALLENGE_CONSENSUS_PRICE)
-  private TitaniumRangePoint expertPostChallengeConsensusPrice;
-
-  public static final String SERIALIZED_NAME_EXPERT_PRE_CHALLENGE_CONSENSUS_PRICE = "expertPreChallengeConsensusPrice";
-  @SerializedName(SERIALIZED_NAME_EXPERT_PRE_CHALLENGE_CONSENSUS_PRICE)
-  private TitaniumRangePoint expertPreChallengeConsensusPrice;
-
-  public static final String SERIALIZED_NAME_MARKET_DATA_CRS_CONSENSUS_PRICE = "marketDataCrsConsensusPrice";
-  @SerializedName(SERIALIZED_NAME_MARKET_DATA_CRS_CONSENSUS_PRICE)
-  private TitaniumRangePoint marketDataCrsConsensusPrice;
-
-  public static final String SERIALIZED_NAME_SUBMISSION_MEAN_POINT = "submissionMeanPoint";
-  @SerializedName(SERIALIZED_NAME_SUBMISSION_MEAN_POINT)
-  private TitaniumRangePoint submissionMeanPoint;
+  public static final String SERIALIZED_NAME_SUBMISSION_EVIDENCE_PRICE = "submissionEvidencePrice";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_EVIDENCE_PRICE)
+  private TitaniumRangePoint submissionEvidencePrice;
 
   public static final String SERIALIZED_NAME_SUBMISSION_POINT = "submissionPoint";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_POINT)
   private TitaniumRangePoint submissionPoint;
 
-  public static final String SERIALIZED_NAME_TRADE_PERIODS_WITH_METRICS = "tradePeriodsWithMetrics";
-  @SerializedName(SERIALIZED_NAME_TRADE_PERIODS_WITH_METRICS)
-  private TitaniumTradePeriodsWithMetrics tradePeriodsWithMetrics;
-
-  public static final String SERIALIZED_NAME_TRADE_RANGES_DATA = "tradeRangesData";
-  @SerializedName(SERIALIZED_NAME_TRADE_RANGES_DATA)
-  private TitaniumTradeRangesData tradeRangesData;
-
   public TitaniumConsensusExplorerRangeData() { 
   }
 
-  public TitaniumConsensusExplorerRangeData allParticipantCrsConsensusPrice(TitaniumRangePoint allParticipantCrsConsensusPrice) {
+  public TitaniumConsensusExplorerRangeData anchorPoint(TitaniumRangePoint anchorPoint) {
     
-    this.allParticipantCrsConsensusPrice = allParticipantCrsConsensusPrice;
+    this.anchorPoint = anchorPoint;
     return this;
   }
 
    /**
-   * Get allParticipantCrsConsensusPrice
-   * @return allParticipantCrsConsensusPrice
+   * Get anchorPoint
+   * @return anchorPoint
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumRangePoint getAllParticipantCrsConsensusPrice() {
-    return allParticipantCrsConsensusPrice;
+  public TitaniumRangePoint getAnchorPoint() {
+    return anchorPoint;
   }
 
 
-  public void setAllParticipantCrsConsensusPrice(TitaniumRangePoint allParticipantCrsConsensusPrice) {
-    this.allParticipantCrsConsensusPrice = allParticipantCrsConsensusPrice;
+  public void setAnchorPoint(TitaniumRangePoint anchorPoint) {
+    this.anchorPoint = anchorPoint;
   }
 
 
@@ -177,29 +160,6 @@ public class TitaniumConsensusExplorerRangeData {
   }
 
 
-  public TitaniumConsensusExplorerRangeData challengeOverlayCrsConsensusPrice(TitaniumRangePoint challengeOverlayCrsConsensusPrice) {
-    
-    this.challengeOverlayCrsConsensusPrice = challengeOverlayCrsConsensusPrice;
-    return this;
-  }
-
-   /**
-   * Get challengeOverlayCrsConsensusPrice
-   * @return challengeOverlayCrsConsensusPrice
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumRangePoint getChallengeOverlayCrsConsensusPrice() {
-    return challengeOverlayCrsConsensusPrice;
-  }
-
-
-  public void setChallengeOverlayCrsConsensusPrice(TitaniumRangePoint challengeOverlayCrsConsensusPrice) {
-    this.challengeOverlayCrsConsensusPrice = challengeOverlayCrsConsensusPrice;
-  }
-
-
   public TitaniumConsensusExplorerRangeData chartRanges(TitaniumChartRanges chartRanges) {
     
     this.chartRanges = chartRanges;
@@ -220,6 +180,52 @@ public class TitaniumConsensusExplorerRangeData {
 
   public void setChartRanges(TitaniumChartRanges chartRanges) {
     this.chartRanges = chartRanges;
+  }
+
+
+  public TitaniumConsensusExplorerRangeData cohortConsensusPrice(TitaniumRangePoint cohortConsensusPrice) {
+    
+    this.cohortConsensusPrice = cohortConsensusPrice;
+    return this;
+  }
+
+   /**
+   * Get cohortConsensusPrice
+   * @return cohortConsensusPrice
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumRangePoint getCohortConsensusPrice() {
+    return cohortConsensusPrice;
+  }
+
+
+  public void setCohortConsensusPrice(TitaniumRangePoint cohortConsensusPrice) {
+    this.cohortConsensusPrice = cohortConsensusPrice;
+  }
+
+
+  public TitaniumConsensusExplorerRangeData cohortConsensusRangeTabData(TitaniumCohortConsensusRangeTabData cohortConsensusRangeTabData) {
+    
+    this.cohortConsensusRangeTabData = cohortConsensusRangeTabData;
+    return this;
+  }
+
+   /**
+   * Get cohortConsensusRangeTabData
+   * @return cohortConsensusRangeTabData
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumCohortConsensusRangeTabData getCohortConsensusRangeTabData() {
+    return cohortConsensusRangeTabData;
+  }
+
+
+  public void setCohortConsensusRangeTabData(TitaniumCohortConsensusRangeTabData cohortConsensusRangeTabData) {
+    this.cohortConsensusRangeTabData = cohortConsensusRangeTabData;
   }
 
 
@@ -246,95 +252,26 @@ public class TitaniumConsensusExplorerRangeData {
   }
 
 
-  public TitaniumConsensusExplorerRangeData expertPostChallengeConsensusPrice(TitaniumRangePoint expertPostChallengeConsensusPrice) {
+  public TitaniumConsensusExplorerRangeData submissionEvidencePrice(TitaniumRangePoint submissionEvidencePrice) {
     
-    this.expertPostChallengeConsensusPrice = expertPostChallengeConsensusPrice;
+    this.submissionEvidencePrice = submissionEvidencePrice;
     return this;
   }
 
    /**
-   * Get expertPostChallengeConsensusPrice
-   * @return expertPostChallengeConsensusPrice
+   * Get submissionEvidencePrice
+   * @return submissionEvidencePrice
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumRangePoint getExpertPostChallengeConsensusPrice() {
-    return expertPostChallengeConsensusPrice;
+  public TitaniumRangePoint getSubmissionEvidencePrice() {
+    return submissionEvidencePrice;
   }
 
 
-  public void setExpertPostChallengeConsensusPrice(TitaniumRangePoint expertPostChallengeConsensusPrice) {
-    this.expertPostChallengeConsensusPrice = expertPostChallengeConsensusPrice;
-  }
-
-
-  public TitaniumConsensusExplorerRangeData expertPreChallengeConsensusPrice(TitaniumRangePoint expertPreChallengeConsensusPrice) {
-    
-    this.expertPreChallengeConsensusPrice = expertPreChallengeConsensusPrice;
-    return this;
-  }
-
-   /**
-   * Get expertPreChallengeConsensusPrice
-   * @return expertPreChallengeConsensusPrice
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumRangePoint getExpertPreChallengeConsensusPrice() {
-    return expertPreChallengeConsensusPrice;
-  }
-
-
-  public void setExpertPreChallengeConsensusPrice(TitaniumRangePoint expertPreChallengeConsensusPrice) {
-    this.expertPreChallengeConsensusPrice = expertPreChallengeConsensusPrice;
-  }
-
-
-  public TitaniumConsensusExplorerRangeData marketDataCrsConsensusPrice(TitaniumRangePoint marketDataCrsConsensusPrice) {
-    
-    this.marketDataCrsConsensusPrice = marketDataCrsConsensusPrice;
-    return this;
-  }
-
-   /**
-   * Get marketDataCrsConsensusPrice
-   * @return marketDataCrsConsensusPrice
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumRangePoint getMarketDataCrsConsensusPrice() {
-    return marketDataCrsConsensusPrice;
-  }
-
-
-  public void setMarketDataCrsConsensusPrice(TitaniumRangePoint marketDataCrsConsensusPrice) {
-    this.marketDataCrsConsensusPrice = marketDataCrsConsensusPrice;
-  }
-
-
-  public TitaniumConsensusExplorerRangeData submissionMeanPoint(TitaniumRangePoint submissionMeanPoint) {
-    
-    this.submissionMeanPoint = submissionMeanPoint;
-    return this;
-  }
-
-   /**
-   * Get submissionMeanPoint
-   * @return submissionMeanPoint
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumRangePoint getSubmissionMeanPoint() {
-    return submissionMeanPoint;
-  }
-
-
-  public void setSubmissionMeanPoint(TitaniumRangePoint submissionMeanPoint) {
-    this.submissionMeanPoint = submissionMeanPoint;
+  public void setSubmissionEvidencePrice(TitaniumRangePoint submissionEvidencePrice) {
+    this.submissionEvidencePrice = submissionEvidencePrice;
   }
 
 
@@ -361,52 +298,6 @@ public class TitaniumConsensusExplorerRangeData {
   }
 
 
-  public TitaniumConsensusExplorerRangeData tradePeriodsWithMetrics(TitaniumTradePeriodsWithMetrics tradePeriodsWithMetrics) {
-    
-    this.tradePeriodsWithMetrics = tradePeriodsWithMetrics;
-    return this;
-  }
-
-   /**
-   * Get tradePeriodsWithMetrics
-   * @return tradePeriodsWithMetrics
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumTradePeriodsWithMetrics getTradePeriodsWithMetrics() {
-    return tradePeriodsWithMetrics;
-  }
-
-
-  public void setTradePeriodsWithMetrics(TitaniumTradePeriodsWithMetrics tradePeriodsWithMetrics) {
-    this.tradePeriodsWithMetrics = tradePeriodsWithMetrics;
-  }
-
-
-  public TitaniumConsensusExplorerRangeData tradeRangesData(TitaniumTradeRangesData tradeRangesData) {
-    
-    this.tradeRangesData = tradeRangesData;
-    return this;
-  }
-
-   /**
-   * Get tradeRangesData
-   * @return tradeRangesData
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumTradeRangesData getTradeRangesData() {
-    return tradeRangesData;
-  }
-
-
-  public void setTradeRangesData(TitaniumTradeRangesData tradeRangesData) {
-    this.tradeRangesData = tradeRangesData;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -417,43 +308,35 @@ public class TitaniumConsensusExplorerRangeData {
       return false;
     }
     TitaniumConsensusExplorerRangeData titaniumConsensusExplorerRangeData = (TitaniumConsensusExplorerRangeData) o;
-    return Objects.equals(this.allParticipantCrsConsensusPrice, titaniumConsensusExplorerRangeData.allParticipantCrsConsensusPrice) &&
+    return Objects.equals(this.anchorPoint, titaniumConsensusExplorerRangeData.anchorPoint) &&
         Objects.equals(this.bimodalLeftMean, titaniumConsensusExplorerRangeData.bimodalLeftMean) &&
         Objects.equals(this.bimodalRightMean, titaniumConsensusExplorerRangeData.bimodalRightMean) &&
-        Objects.equals(this.challengeOverlayCrsConsensusPrice, titaniumConsensusExplorerRangeData.challengeOverlayCrsConsensusPrice) &&
         Objects.equals(this.chartRanges, titaniumConsensusExplorerRangeData.chartRanges) &&
+        Objects.equals(this.cohortConsensusPrice, titaniumConsensusExplorerRangeData.cohortConsensusPrice) &&
+        Objects.equals(this.cohortConsensusRangeTabData, titaniumConsensusExplorerRangeData.cohortConsensusRangeTabData) &&
         Objects.equals(this.evpMid, titaniumConsensusExplorerRangeData.evpMid) &&
-        Objects.equals(this.expertPostChallengeConsensusPrice, titaniumConsensusExplorerRangeData.expertPostChallengeConsensusPrice) &&
-        Objects.equals(this.expertPreChallengeConsensusPrice, titaniumConsensusExplorerRangeData.expertPreChallengeConsensusPrice) &&
-        Objects.equals(this.marketDataCrsConsensusPrice, titaniumConsensusExplorerRangeData.marketDataCrsConsensusPrice) &&
-        Objects.equals(this.submissionMeanPoint, titaniumConsensusExplorerRangeData.submissionMeanPoint) &&
-        Objects.equals(this.submissionPoint, titaniumConsensusExplorerRangeData.submissionPoint) &&
-        Objects.equals(this.tradePeriodsWithMetrics, titaniumConsensusExplorerRangeData.tradePeriodsWithMetrics) &&
-        Objects.equals(this.tradeRangesData, titaniumConsensusExplorerRangeData.tradeRangesData);
+        Objects.equals(this.submissionEvidencePrice, titaniumConsensusExplorerRangeData.submissionEvidencePrice) &&
+        Objects.equals(this.submissionPoint, titaniumConsensusExplorerRangeData.submissionPoint);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allParticipantCrsConsensusPrice, bimodalLeftMean, bimodalRightMean, challengeOverlayCrsConsensusPrice, chartRanges, evpMid, expertPostChallengeConsensusPrice, expertPreChallengeConsensusPrice, marketDataCrsConsensusPrice, submissionMeanPoint, submissionPoint, tradePeriodsWithMetrics, tradeRangesData);
+    return Objects.hash(anchorPoint, bimodalLeftMean, bimodalRightMean, chartRanges, cohortConsensusPrice, cohortConsensusRangeTabData, evpMid, submissionEvidencePrice, submissionPoint);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumConsensusExplorerRangeData {\n");
-    sb.append("    allParticipantCrsConsensusPrice: ").append(toIndentedString(allParticipantCrsConsensusPrice)).append("\n");
+    sb.append("    anchorPoint: ").append(toIndentedString(anchorPoint)).append("\n");
     sb.append("    bimodalLeftMean: ").append(toIndentedString(bimodalLeftMean)).append("\n");
     sb.append("    bimodalRightMean: ").append(toIndentedString(bimodalRightMean)).append("\n");
-    sb.append("    challengeOverlayCrsConsensusPrice: ").append(toIndentedString(challengeOverlayCrsConsensusPrice)).append("\n");
     sb.append("    chartRanges: ").append(toIndentedString(chartRanges)).append("\n");
+    sb.append("    cohortConsensusPrice: ").append(toIndentedString(cohortConsensusPrice)).append("\n");
+    sb.append("    cohortConsensusRangeTabData: ").append(toIndentedString(cohortConsensusRangeTabData)).append("\n");
     sb.append("    evpMid: ").append(toIndentedString(evpMid)).append("\n");
-    sb.append("    expertPostChallengeConsensusPrice: ").append(toIndentedString(expertPostChallengeConsensusPrice)).append("\n");
-    sb.append("    expertPreChallengeConsensusPrice: ").append(toIndentedString(expertPreChallengeConsensusPrice)).append("\n");
-    sb.append("    marketDataCrsConsensusPrice: ").append(toIndentedString(marketDataCrsConsensusPrice)).append("\n");
-    sb.append("    submissionMeanPoint: ").append(toIndentedString(submissionMeanPoint)).append("\n");
+    sb.append("    submissionEvidencePrice: ").append(toIndentedString(submissionEvidencePrice)).append("\n");
     sb.append("    submissionPoint: ").append(toIndentedString(submissionPoint)).append("\n");
-    sb.append("    tradePeriodsWithMetrics: ").append(toIndentedString(tradePeriodsWithMetrics)).append("\n");
-    sb.append("    tradeRangesData: ").append(toIndentedString(tradeRangesData)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -476,19 +359,15 @@ public class TitaniumConsensusExplorerRangeData {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("allParticipantCrsConsensusPrice");
+    openapiFields.add("anchorPoint");
     openapiFields.add("bimodalLeftMean");
     openapiFields.add("bimodalRightMean");
-    openapiFields.add("challengeOverlayCrsConsensusPrice");
     openapiFields.add("chartRanges");
+    openapiFields.add("cohortConsensusPrice");
+    openapiFields.add("cohortConsensusRangeTabData");
     openapiFields.add("evpMid");
-    openapiFields.add("expertPostChallengeConsensusPrice");
-    openapiFields.add("expertPreChallengeConsensusPrice");
-    openapiFields.add("marketDataCrsConsensusPrice");
-    openapiFields.add("submissionMeanPoint");
+    openapiFields.add("submissionEvidencePrice");
     openapiFields.add("submissionPoint");
-    openapiFields.add("tradePeriodsWithMetrics");
-    openapiFields.add("tradeRangesData");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -516,9 +395,9 @@ public class TitaniumConsensusExplorerRangeData {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumConsensusExplorerRangeData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      // validate the optional field `allParticipantCrsConsensusPrice`
-      if (jsonObj.getAsJsonObject("allParticipantCrsConsensusPrice") != null) {
-        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("allParticipantCrsConsensusPrice"));
+      // validate the optional field `anchorPoint`
+      if (jsonObj.getAsJsonObject("anchorPoint") != null) {
+        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("anchorPoint"));
       }
       // validate the optional field `bimodalLeftMean`
       if (jsonObj.getAsJsonObject("bimodalLeftMean") != null) {
@@ -528,45 +407,29 @@ public class TitaniumConsensusExplorerRangeData {
       if (jsonObj.getAsJsonObject("bimodalRightMean") != null) {
         TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("bimodalRightMean"));
       }
-      // validate the optional field `challengeOverlayCrsConsensusPrice`
-      if (jsonObj.getAsJsonObject("challengeOverlayCrsConsensusPrice") != null) {
-        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("challengeOverlayCrsConsensusPrice"));
-      }
       // validate the optional field `chartRanges`
       if (jsonObj.getAsJsonObject("chartRanges") != null) {
         TitaniumChartRanges.validateJsonObject(jsonObj.getAsJsonObject("chartRanges"));
+      }
+      // validate the optional field `cohortConsensusPrice`
+      if (jsonObj.getAsJsonObject("cohortConsensusPrice") != null) {
+        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("cohortConsensusPrice"));
+      }
+      // validate the optional field `cohortConsensusRangeTabData`
+      if (jsonObj.getAsJsonObject("cohortConsensusRangeTabData") != null) {
+        TitaniumCohortConsensusRangeTabData.validateJsonObject(jsonObj.getAsJsonObject("cohortConsensusRangeTabData"));
       }
       // validate the optional field `evpMid`
       if (jsonObj.getAsJsonObject("evpMid") != null) {
         TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("evpMid"));
       }
-      // validate the optional field `expertPostChallengeConsensusPrice`
-      if (jsonObj.getAsJsonObject("expertPostChallengeConsensusPrice") != null) {
-        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("expertPostChallengeConsensusPrice"));
-      }
-      // validate the optional field `expertPreChallengeConsensusPrice`
-      if (jsonObj.getAsJsonObject("expertPreChallengeConsensusPrice") != null) {
-        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("expertPreChallengeConsensusPrice"));
-      }
-      // validate the optional field `marketDataCrsConsensusPrice`
-      if (jsonObj.getAsJsonObject("marketDataCrsConsensusPrice") != null) {
-        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("marketDataCrsConsensusPrice"));
-      }
-      // validate the optional field `submissionMeanPoint`
-      if (jsonObj.getAsJsonObject("submissionMeanPoint") != null) {
-        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("submissionMeanPoint"));
+      // validate the optional field `submissionEvidencePrice`
+      if (jsonObj.getAsJsonObject("submissionEvidencePrice") != null) {
+        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("submissionEvidencePrice"));
       }
       // validate the optional field `submissionPoint`
       if (jsonObj.getAsJsonObject("submissionPoint") != null) {
         TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("submissionPoint"));
-      }
-      // validate the optional field `tradePeriodsWithMetrics`
-      if (jsonObj.getAsJsonObject("tradePeriodsWithMetrics") != null) {
-        TitaniumTradePeriodsWithMetrics.validateJsonObject(jsonObj.getAsJsonObject("tradePeriodsWithMetrics"));
-      }
-      // validate the optional field `tradeRangesData`
-      if (jsonObj.getAsJsonObject("tradeRangesData") != null) {
-        TitaniumTradeRangesData.validateJsonObject(jsonObj.getAsJsonObject("tradeRangesData"));
       }
   }
 

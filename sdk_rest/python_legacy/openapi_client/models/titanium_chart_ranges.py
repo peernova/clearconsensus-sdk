@@ -38,30 +38,22 @@ class TitaniumChartRanges(object):
     openapi_types = {
         'bimodal_left_population': 'TitaniumRange',
         'bimodal_right_population': 'TitaniumRange',
-        'challenge_overlay_consensus': 'TitaniumRange',
+        'cohort_consensus': 'TitaniumRange',
         'evp': 'TitaniumRange',
-        'expert_post_challenge': 'TitaniumRange',
-        'expert_pre_challenge': 'TitaniumRange',
-        'market_data_overlay_consensus': 'TitaniumRange',
-        'submission_mean_median': 'TitaniumRange',
-        'submission_min_max': 'TitaniumRange',
-        'submission_only_consensus': 'TitaniumRange'
+        'submission_evidence': 'TitaniumRange',
+        'submission_min_max': 'TitaniumRange'
     }
 
     attribute_map = {
         'bimodal_left_population': 'bimodalLeftPopulation',
         'bimodal_right_population': 'bimodalRightPopulation',
-        'challenge_overlay_consensus': 'challengeOverlayConsensus',
+        'cohort_consensus': 'cohortConsensus',
         'evp': 'evp',
-        'expert_post_challenge': 'expertPostChallenge',
-        'expert_pre_challenge': 'expertPreChallenge',
-        'market_data_overlay_consensus': 'marketDataOverlayConsensus',
-        'submission_mean_median': 'submissionMeanMedian',
-        'submission_min_max': 'submissionMinMax',
-        'submission_only_consensus': 'submissionOnlyConsensus'
+        'submission_evidence': 'submissionEvidence',
+        'submission_min_max': 'submissionMinMax'
     }
 
-    def __init__(self, bimodal_left_population=None, bimodal_right_population=None, challenge_overlay_consensus=None, evp=None, expert_post_challenge=None, expert_pre_challenge=None, market_data_overlay_consensus=None, submission_mean_median=None, submission_min_max=None, submission_only_consensus=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bimodal_left_population=None, bimodal_right_population=None, cohort_consensus=None, evp=None, submission_evidence=None, submission_min_max=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumChartRanges - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -69,36 +61,24 @@ class TitaniumChartRanges(object):
 
         self._bimodal_left_population = None
         self._bimodal_right_population = None
-        self._challenge_overlay_consensus = None
+        self._cohort_consensus = None
         self._evp = None
-        self._expert_post_challenge = None
-        self._expert_pre_challenge = None
-        self._market_data_overlay_consensus = None
-        self._submission_mean_median = None
+        self._submission_evidence = None
         self._submission_min_max = None
-        self._submission_only_consensus = None
         self.discriminator = None
 
         if bimodal_left_population is not None:
             self.bimodal_left_population = bimodal_left_population
         if bimodal_right_population is not None:
             self.bimodal_right_population = bimodal_right_population
-        if challenge_overlay_consensus is not None:
-            self.challenge_overlay_consensus = challenge_overlay_consensus
+        if cohort_consensus is not None:
+            self.cohort_consensus = cohort_consensus
         if evp is not None:
             self.evp = evp
-        if expert_post_challenge is not None:
-            self.expert_post_challenge = expert_post_challenge
-        if expert_pre_challenge is not None:
-            self.expert_pre_challenge = expert_pre_challenge
-        if market_data_overlay_consensus is not None:
-            self.market_data_overlay_consensus = market_data_overlay_consensus
-        if submission_mean_median is not None:
-            self.submission_mean_median = submission_mean_median
+        if submission_evidence is not None:
+            self.submission_evidence = submission_evidence
         if submission_min_max is not None:
             self.submission_min_max = submission_min_max
-        if submission_only_consensus is not None:
-            self.submission_only_consensus = submission_only_consensus
 
     @property
     def bimodal_left_population(self):
@@ -143,25 +123,25 @@ class TitaniumChartRanges(object):
         self._bimodal_right_population = bimodal_right_population
 
     @property
-    def challenge_overlay_consensus(self):
-        """Gets the challenge_overlay_consensus of this TitaniumChartRanges.  # noqa: E501
+    def cohort_consensus(self):
+        """Gets the cohort_consensus of this TitaniumChartRanges.  # noqa: E501
 
 
-        :return: The challenge_overlay_consensus of this TitaniumChartRanges.  # noqa: E501
+        :return: The cohort_consensus of this TitaniumChartRanges.  # noqa: E501
         :rtype: TitaniumRange
         """
-        return self._challenge_overlay_consensus
+        return self._cohort_consensus
 
-    @challenge_overlay_consensus.setter
-    def challenge_overlay_consensus(self, challenge_overlay_consensus):
-        """Sets the challenge_overlay_consensus of this TitaniumChartRanges.
+    @cohort_consensus.setter
+    def cohort_consensus(self, cohort_consensus):
+        """Sets the cohort_consensus of this TitaniumChartRanges.
 
 
-        :param challenge_overlay_consensus: The challenge_overlay_consensus of this TitaniumChartRanges.  # noqa: E501
-        :type challenge_overlay_consensus: TitaniumRange
+        :param cohort_consensus: The cohort_consensus of this TitaniumChartRanges.  # noqa: E501
+        :type cohort_consensus: TitaniumRange
         """
 
-        self._challenge_overlay_consensus = challenge_overlay_consensus
+        self._cohort_consensus = cohort_consensus
 
     @property
     def evp(self):
@@ -185,88 +165,25 @@ class TitaniumChartRanges(object):
         self._evp = evp
 
     @property
-    def expert_post_challenge(self):
-        """Gets the expert_post_challenge of this TitaniumChartRanges.  # noqa: E501
+    def submission_evidence(self):
+        """Gets the submission_evidence of this TitaniumChartRanges.  # noqa: E501
 
 
-        :return: The expert_post_challenge of this TitaniumChartRanges.  # noqa: E501
+        :return: The submission_evidence of this TitaniumChartRanges.  # noqa: E501
         :rtype: TitaniumRange
         """
-        return self._expert_post_challenge
+        return self._submission_evidence
 
-    @expert_post_challenge.setter
-    def expert_post_challenge(self, expert_post_challenge):
-        """Sets the expert_post_challenge of this TitaniumChartRanges.
+    @submission_evidence.setter
+    def submission_evidence(self, submission_evidence):
+        """Sets the submission_evidence of this TitaniumChartRanges.
 
 
-        :param expert_post_challenge: The expert_post_challenge of this TitaniumChartRanges.  # noqa: E501
-        :type expert_post_challenge: TitaniumRange
+        :param submission_evidence: The submission_evidence of this TitaniumChartRanges.  # noqa: E501
+        :type submission_evidence: TitaniumRange
         """
 
-        self._expert_post_challenge = expert_post_challenge
-
-    @property
-    def expert_pre_challenge(self):
-        """Gets the expert_pre_challenge of this TitaniumChartRanges.  # noqa: E501
-
-
-        :return: The expert_pre_challenge of this TitaniumChartRanges.  # noqa: E501
-        :rtype: TitaniumRange
-        """
-        return self._expert_pre_challenge
-
-    @expert_pre_challenge.setter
-    def expert_pre_challenge(self, expert_pre_challenge):
-        """Sets the expert_pre_challenge of this TitaniumChartRanges.
-
-
-        :param expert_pre_challenge: The expert_pre_challenge of this TitaniumChartRanges.  # noqa: E501
-        :type expert_pre_challenge: TitaniumRange
-        """
-
-        self._expert_pre_challenge = expert_pre_challenge
-
-    @property
-    def market_data_overlay_consensus(self):
-        """Gets the market_data_overlay_consensus of this TitaniumChartRanges.  # noqa: E501
-
-
-        :return: The market_data_overlay_consensus of this TitaniumChartRanges.  # noqa: E501
-        :rtype: TitaniumRange
-        """
-        return self._market_data_overlay_consensus
-
-    @market_data_overlay_consensus.setter
-    def market_data_overlay_consensus(self, market_data_overlay_consensus):
-        """Sets the market_data_overlay_consensus of this TitaniumChartRanges.
-
-
-        :param market_data_overlay_consensus: The market_data_overlay_consensus of this TitaniumChartRanges.  # noqa: E501
-        :type market_data_overlay_consensus: TitaniumRange
-        """
-
-        self._market_data_overlay_consensus = market_data_overlay_consensus
-
-    @property
-    def submission_mean_median(self):
-        """Gets the submission_mean_median of this TitaniumChartRanges.  # noqa: E501
-
-
-        :return: The submission_mean_median of this TitaniumChartRanges.  # noqa: E501
-        :rtype: TitaniumRange
-        """
-        return self._submission_mean_median
-
-    @submission_mean_median.setter
-    def submission_mean_median(self, submission_mean_median):
-        """Sets the submission_mean_median of this TitaniumChartRanges.
-
-
-        :param submission_mean_median: The submission_mean_median of this TitaniumChartRanges.  # noqa: E501
-        :type submission_mean_median: TitaniumRange
-        """
-
-        self._submission_mean_median = submission_mean_median
+        self._submission_evidence = submission_evidence
 
     @property
     def submission_min_max(self):
@@ -288,27 +205,6 @@ class TitaniumChartRanges(object):
         """
 
         self._submission_min_max = submission_min_max
-
-    @property
-    def submission_only_consensus(self):
-        """Gets the submission_only_consensus of this TitaniumChartRanges.  # noqa: E501
-
-
-        :return: The submission_only_consensus of this TitaniumChartRanges.  # noqa: E501
-        :rtype: TitaniumRange
-        """
-        return self._submission_only_consensus
-
-    @submission_only_consensus.setter
-    def submission_only_consensus(self, submission_only_consensus):
-        """Sets the submission_only_consensus of this TitaniumChartRanges.
-
-
-        :param submission_only_consensus: The submission_only_consensus of this TitaniumChartRanges.  # noqa: E501
-        :type submission_only_consensus: TitaniumRange
-        """
-
-        self._submission_only_consensus = submission_only_consensus
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

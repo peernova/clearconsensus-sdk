@@ -23,7 +23,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.math.BigDecimal;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,16 +47,16 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumSubmissionExplorerTableColumn {
   public static final String SERIALIZED_NAME_SUBMISSION_PRICE = "submissionPrice";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_PRICE)
-  private BigDecimal submissionPrice;
+  private Object submissionPrice;
 
   public TitaniumSubmissionExplorerTableColumn() { 
   }
 
-  public TitaniumSubmissionExplorerTableColumn submissionPrice(BigDecimal submissionPrice) {
+  public TitaniumSubmissionExplorerTableColumn submissionPrice(Object submissionPrice) {
     
     this.submissionPrice = submissionPrice;
     return this;
@@ -70,12 +69,12 @@ public class TitaniumSubmissionExplorerTableColumn {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public BigDecimal getSubmissionPrice() {
+  public Object getSubmissionPrice() {
     return submissionPrice;
   }
 
 
-  public void setSubmissionPrice(BigDecimal submissionPrice) {
+  public void setSubmissionPrice(Object submissionPrice) {
     this.submissionPrice = submissionPrice;
   }
 

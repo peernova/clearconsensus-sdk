@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.TitaniumEvpAlignmentScoreWithDate;
+import org.openapitools.client.model.TitaniumTradeAligmentDateAndValue;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,19 +50,15 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpAlignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumEvpAlignmentScore {
-  public static final String SERIALIZED_NAME_EVP_ALIGNMENT_DISPERSION_SCORE = "evpAlignmentDispersionScore";
-  @SerializedName(SERIALIZED_NAME_EVP_ALIGNMENT_DISPERSION_SCORE)
-  private Object evpAlignmentDispersionScore;
-
   public static final String SERIALIZED_NAME_EVP_MID = "evpMid";
   @SerializedName(SERIALIZED_NAME_EVP_MID)
   private Object evpMid;
 
   public static final String SERIALIZED_NAME_HISTORY = "history";
   @SerializedName(SERIALIZED_NAME_HISTORY)
-  private List<TitaniumEvpAlignmentScoreWithDate> history = null;
+  private List<TitaniumTradeAligmentDateAndValue> history = null;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -72,39 +68,16 @@ public class TitaniumEvpAlignmentScore {
   @SerializedName(SERIALIZED_NAME_SCORE_STATUS)
   private String scoreStatus;
 
+  public static final String SERIALIZED_NAME_STD_DEV = "stdDev";
+  @SerializedName(SERIALIZED_NAME_STD_DEV)
+  private Object stdDev;
+
   public static final String SERIALIZED_NAME_SUBMISSION_MEAN = "submissionMean";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_MEAN)
   private Object submissionMean;
 
-  public static final String SERIALIZED_NAME_SUBMISSION_STD_DEV = "submissionStdDev";
-  @SerializedName(SERIALIZED_NAME_SUBMISSION_STD_DEV)
-  private Object submissionStdDev;
-
   public TitaniumEvpAlignmentScore() { 
   }
-
-  public TitaniumEvpAlignmentScore evpAlignmentDispersionScore(Object evpAlignmentDispersionScore) {
-    
-    this.evpAlignmentDispersionScore = evpAlignmentDispersionScore;
-    return this;
-  }
-
-   /**
-   * Get evpAlignmentDispersionScore
-   * @return evpAlignmentDispersionScore
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getEvpAlignmentDispersionScore() {
-    return evpAlignmentDispersionScore;
-  }
-
-
-  public void setEvpAlignmentDispersionScore(Object evpAlignmentDispersionScore) {
-    this.evpAlignmentDispersionScore = evpAlignmentDispersionScore;
-  }
-
 
   public TitaniumEvpAlignmentScore evpMid(Object evpMid) {
     
@@ -129,13 +102,13 @@ public class TitaniumEvpAlignmentScore {
   }
 
 
-  public TitaniumEvpAlignmentScore history(List<TitaniumEvpAlignmentScoreWithDate> history) {
+  public TitaniumEvpAlignmentScore history(List<TitaniumTradeAligmentDateAndValue> history) {
     
     this.history = history;
     return this;
   }
 
-  public TitaniumEvpAlignmentScore addHistoryItem(TitaniumEvpAlignmentScoreWithDate historyItem) {
+  public TitaniumEvpAlignmentScore addHistoryItem(TitaniumTradeAligmentDateAndValue historyItem) {
     if (this.history == null) {
       this.history = new ArrayList<>();
     }
@@ -150,12 +123,12 @@ public class TitaniumEvpAlignmentScore {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<TitaniumEvpAlignmentScoreWithDate> getHistory() {
+  public List<TitaniumTradeAligmentDateAndValue> getHistory() {
     return history;
   }
 
 
-  public void setHistory(List<TitaniumEvpAlignmentScoreWithDate> history) {
+  public void setHistory(List<TitaniumTradeAligmentDateAndValue> history) {
     this.history = history;
   }
 
@@ -206,6 +179,29 @@ public class TitaniumEvpAlignmentScore {
   }
 
 
+  public TitaniumEvpAlignmentScore stdDev(Object stdDev) {
+    
+    this.stdDev = stdDev;
+    return this;
+  }
+
+   /**
+   * Get stdDev
+   * @return stdDev
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getStdDev() {
+    return stdDev;
+  }
+
+
+  public void setStdDev(Object stdDev) {
+    this.stdDev = stdDev;
+  }
+
+
   public TitaniumEvpAlignmentScore submissionMean(Object submissionMean) {
     
     this.submissionMean = submissionMean;
@@ -229,29 +225,6 @@ public class TitaniumEvpAlignmentScore {
   }
 
 
-  public TitaniumEvpAlignmentScore submissionStdDev(Object submissionStdDev) {
-    
-    this.submissionStdDev = submissionStdDev;
-    return this;
-  }
-
-   /**
-   * Get submissionStdDev
-   * @return submissionStdDev
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getSubmissionStdDev() {
-    return submissionStdDev;
-  }
-
-
-  public void setSubmissionStdDev(Object submissionStdDev) {
-    this.submissionStdDev = submissionStdDev;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -262,31 +235,29 @@ public class TitaniumEvpAlignmentScore {
       return false;
     }
     TitaniumEvpAlignmentScore titaniumEvpAlignmentScore = (TitaniumEvpAlignmentScore) o;
-    return Objects.equals(this.evpAlignmentDispersionScore, titaniumEvpAlignmentScore.evpAlignmentDispersionScore) &&
-        Objects.equals(this.evpMid, titaniumEvpAlignmentScore.evpMid) &&
+    return Objects.equals(this.evpMid, titaniumEvpAlignmentScore.evpMid) &&
         Objects.equals(this.history, titaniumEvpAlignmentScore.history) &&
         Objects.equals(this.score, titaniumEvpAlignmentScore.score) &&
         Objects.equals(this.scoreStatus, titaniumEvpAlignmentScore.scoreStatus) &&
-        Objects.equals(this.submissionMean, titaniumEvpAlignmentScore.submissionMean) &&
-        Objects.equals(this.submissionStdDev, titaniumEvpAlignmentScore.submissionStdDev);
+        Objects.equals(this.stdDev, titaniumEvpAlignmentScore.stdDev) &&
+        Objects.equals(this.submissionMean, titaniumEvpAlignmentScore.submissionMean);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(evpAlignmentDispersionScore, evpMid, history, score, scoreStatus, submissionMean, submissionStdDev);
+    return Objects.hash(evpMid, history, score, scoreStatus, stdDev, submissionMean);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumEvpAlignmentScore {\n");
-    sb.append("    evpAlignmentDispersionScore: ").append(toIndentedString(evpAlignmentDispersionScore)).append("\n");
     sb.append("    evpMid: ").append(toIndentedString(evpMid)).append("\n");
     sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    scoreStatus: ").append(toIndentedString(scoreStatus)).append("\n");
+    sb.append("    stdDev: ").append(toIndentedString(stdDev)).append("\n");
     sb.append("    submissionMean: ").append(toIndentedString(submissionMean)).append("\n");
-    sb.append("    submissionStdDev: ").append(toIndentedString(submissionStdDev)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -309,13 +280,12 @@ public class TitaniumEvpAlignmentScore {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("evpAlignmentDispersionScore");
     openapiFields.add("evpMid");
     openapiFields.add("history");
     openapiFields.add("score");
     openapiFields.add("scoreStatus");
+    openapiFields.add("stdDev");
     openapiFields.add("submissionMean");
-    openapiFields.add("submissionStdDev");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -352,7 +322,7 @@ public class TitaniumEvpAlignmentScore {
 
         // validate the optional field `history` (array)
         for (int i = 0; i < jsonArrayhistory.size(); i++) {
-          TitaniumEvpAlignmentScoreWithDate.validateJsonObject(jsonArrayhistory.get(i).getAsJsonObject());
+          TitaniumTradeAligmentDateAndValue.validateJsonObject(jsonArrayhistory.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("scoreStatus") != null && !jsonObj.get("scoreStatus").isJsonPrimitive()) {

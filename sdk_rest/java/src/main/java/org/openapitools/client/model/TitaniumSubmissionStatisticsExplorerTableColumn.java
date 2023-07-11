@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionStatisticsExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumSubmissionStatisticsExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN = "absDiffFromStatisticalMean";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN)
@@ -61,6 +61,10 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   @SerializedName(SERIALIZED_NAME_MAX)
   private Object max;
 
+  public static final String SERIALIZED_NAME_MEAN = "mean";
+  @SerializedName(SERIALIZED_NAME_MEAN)
+  private Object mean;
+
   public static final String SERIALIZED_NAME_MIN = "min";
   @SerializedName(SERIALIZED_NAME_MIN)
   private Object min;
@@ -68,10 +72,6 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   public static final String SERIALIZED_NAME_STAT_MEAN_ABS_DIFF_FROM_LATEST_TRADE = "statMeanAbsDiffFromLatestTrade";
   @SerializedName(SERIALIZED_NAME_STAT_MEAN_ABS_DIFF_FROM_LATEST_TRADE)
   private Object statMeanAbsDiffFromLatestTrade;
-
-  public static final String SERIALIZED_NAME_STATISTICAL_MEAN = "statisticalMean";
-  @SerializedName(SERIALIZED_NAME_STATISTICAL_MEAN)
-  private Object statisticalMean;
 
   public static final String SERIALIZED_NAME_STD_DEV = "stdDev";
   @SerializedName(SERIALIZED_NAME_STD_DEV)
@@ -161,6 +161,29 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   }
 
 
+  public TitaniumSubmissionStatisticsExplorerTableColumn mean(Object mean) {
+    
+    this.mean = mean;
+    return this;
+  }
+
+   /**
+   * Get mean
+   * @return mean
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getMean() {
+    return mean;
+  }
+
+
+  public void setMean(Object mean) {
+    this.mean = mean;
+  }
+
+
   public TitaniumSubmissionStatisticsExplorerTableColumn min(Object min) {
     
     this.min = min;
@@ -204,29 +227,6 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
 
   public void setStatMeanAbsDiffFromLatestTrade(Object statMeanAbsDiffFromLatestTrade) {
     this.statMeanAbsDiffFromLatestTrade = statMeanAbsDiffFromLatestTrade;
-  }
-
-
-  public TitaniumSubmissionStatisticsExplorerTableColumn statisticalMean(Object statisticalMean) {
-    
-    this.statisticalMean = statisticalMean;
-    return this;
-  }
-
-   /**
-   * Get statisticalMean
-   * @return statisticalMean
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getStatisticalMean() {
-    return statisticalMean;
-  }
-
-
-  public void setStatisticalMean(Object statisticalMean) {
-    this.statisticalMean = statisticalMean;
   }
 
 
@@ -335,9 +335,9 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
     return Objects.equals(this.absDiffFromStatisticalMean, titaniumSubmissionStatisticsExplorerTableColumn.absDiffFromStatisticalMean) &&
         Objects.equals(this.lowerBoundary, titaniumSubmissionStatisticsExplorerTableColumn.lowerBoundary) &&
         Objects.equals(this.max, titaniumSubmissionStatisticsExplorerTableColumn.max) &&
+        Objects.equals(this.mean, titaniumSubmissionStatisticsExplorerTableColumn.mean) &&
         Objects.equals(this.min, titaniumSubmissionStatisticsExplorerTableColumn.min) &&
         Objects.equals(this.statMeanAbsDiffFromLatestTrade, titaniumSubmissionStatisticsExplorerTableColumn.statMeanAbsDiffFromLatestTrade) &&
-        Objects.equals(this.statisticalMean, titaniumSubmissionStatisticsExplorerTableColumn.statisticalMean) &&
         Objects.equals(this.stdDev, titaniumSubmissionStatisticsExplorerTableColumn.stdDev) &&
         Objects.equals(this.subPriceDiff, titaniumSubmissionStatisticsExplorerTableColumn.subPriceDiff) &&
         Objects.equals(this.subValidPointsCount, titaniumSubmissionStatisticsExplorerTableColumn.subValidPointsCount) &&
@@ -346,7 +346,7 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromStatisticalMean, lowerBoundary, max, min, statMeanAbsDiffFromLatestTrade, statisticalMean, stdDev, subPriceDiff, subValidPointsCount, upperBoundary);
+    return Objects.hash(absDiffFromStatisticalMean, lowerBoundary, max, mean, min, statMeanAbsDiffFromLatestTrade, stdDev, subPriceDiff, subValidPointsCount, upperBoundary);
   }
 
   @Override
@@ -356,9 +356,9 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
     sb.append("    absDiffFromStatisticalMean: ").append(toIndentedString(absDiffFromStatisticalMean)).append("\n");
     sb.append("    lowerBoundary: ").append(toIndentedString(lowerBoundary)).append("\n");
     sb.append("    max: ").append(toIndentedString(max)).append("\n");
+    sb.append("    mean: ").append(toIndentedString(mean)).append("\n");
     sb.append("    min: ").append(toIndentedString(min)).append("\n");
     sb.append("    statMeanAbsDiffFromLatestTrade: ").append(toIndentedString(statMeanAbsDiffFromLatestTrade)).append("\n");
-    sb.append("    statisticalMean: ").append(toIndentedString(statisticalMean)).append("\n");
     sb.append("    stdDev: ").append(toIndentedString(stdDev)).append("\n");
     sb.append("    subPriceDiff: ").append(toIndentedString(subPriceDiff)).append("\n");
     sb.append("    subValidPointsCount: ").append(toIndentedString(subValidPointsCount)).append("\n");
@@ -388,9 +388,9 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
     openapiFields.add("absDiffFromStatisticalMean");
     openapiFields.add("lowerBoundary");
     openapiFields.add("max");
+    openapiFields.add("mean");
     openapiFields.add("min");
     openapiFields.add("statMeanAbsDiffFromLatestTrade");
-    openapiFields.add("statisticalMean");
     openapiFields.add("stdDev");
     openapiFields.add("subPriceDiff");
     openapiFields.add("subValidPointsCount");

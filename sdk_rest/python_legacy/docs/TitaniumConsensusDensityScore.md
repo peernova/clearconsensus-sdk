@@ -4,15 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**bimodality** | **object** |  | [optional] 
-**challenge_quality** | **object** |  | [optional] 
-**dispersion** | **object** |  | [optional] 
+**bimodality_score** | **object** |  | [optional] 
 **evp_alignment_score** | **object** |  | [optional] 
-**evp_quality** | **object** |  | [optional] 
 **history** | [**list[TitaniumDateAndValue]**](TitaniumDateAndValue.md) |  | [optional] 
-**number_of_participants** | **object** |  | [optional] 
-**outlier_volume** | **object** |  | [optional] 
 **score** | **object** |  | [optional] 
+**trade_alignment_score** | **object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

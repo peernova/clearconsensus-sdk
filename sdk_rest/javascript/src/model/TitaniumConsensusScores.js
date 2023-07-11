@@ -12,10 +12,12 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumBimodality from './TitaniumBimodality';
 import TitaniumConsensusDensityScore from './TitaniumConsensusDensityScore';
 import TitaniumEvpAlignmentScore from './TitaniumEvpAlignmentScore';
 import TitaniumEvpQualityScore from './TitaniumEvpQualityScore';
-import TitaniumExpertiseScore from './TitaniumExpertiseScore';
+import TitaniumExpertiseRank from './TitaniumExpertiseRank';
+import TitaniumTradeAlignmentScore from './TitaniumTradeAlignmentScore';
 
 /**
  * The TitaniumConsensusScores model module.
@@ -51,6 +53,9 @@ class TitaniumConsensusScores {
         if (data) {
             obj = obj || new TitaniumConsensusScores();
 
+            if (data.hasOwnProperty('bimodality')) {
+                obj['bimodality'] = TitaniumBimodality.constructFromObject(data['bimodality']);
+            }
             if (data.hasOwnProperty('consensusDensityScore')) {
                 obj['consensusDensityScore'] = TitaniumConsensusDensityScore.constructFromObject(data['consensusDensityScore']);
             }
@@ -60,8 +65,11 @@ class TitaniumConsensusScores {
             if (data.hasOwnProperty('evpQualityScore')) {
                 obj['evpQualityScore'] = TitaniumEvpQualityScore.constructFromObject(data['evpQualityScore']);
             }
-            if (data.hasOwnProperty('expertiseScore')) {
-                obj['expertiseScore'] = TitaniumExpertiseScore.constructFromObject(data['expertiseScore']);
+            if (data.hasOwnProperty('expertiseRank')) {
+                obj['expertiseRank'] = TitaniumExpertiseRank.constructFromObject(data['expertiseRank']);
+            }
+            if (data.hasOwnProperty('tradeAlignmentScore')) {
+                obj['tradeAlignmentScore'] = TitaniumTradeAlignmentScore.constructFromObject(data['tradeAlignmentScore']);
             }
         }
         return obj;
@@ -69,6 +77,11 @@ class TitaniumConsensusScores {
 
 
 }
+
+/**
+ * @member {module:model/TitaniumBimodality} bimodality
+ */
+TitaniumConsensusScores.prototype['bimodality'] = undefined;
 
 /**
  * @member {module:model/TitaniumConsensusDensityScore} consensusDensityScore
@@ -86,9 +99,14 @@ TitaniumConsensusScores.prototype['evpAlignmentScore'] = undefined;
 TitaniumConsensusScores.prototype['evpQualityScore'] = undefined;
 
 /**
- * @member {module:model/TitaniumExpertiseScore} expertiseScore
+ * @member {module:model/TitaniumExpertiseRank} expertiseRank
  */
-TitaniumConsensusScores.prototype['expertiseScore'] = undefined;
+TitaniumConsensusScores.prototype['expertiseRank'] = undefined;
+
+/**
+ * @member {module:model/TitaniumTradeAlignmentScore} tradeAlignmentScore
+ */
+TitaniumConsensusScores.prototype['tradeAlignmentScore'] = undefined;
 
 
 

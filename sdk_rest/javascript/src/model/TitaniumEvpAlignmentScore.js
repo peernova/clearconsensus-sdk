@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TitaniumEvpAlignmentScoreWithDate from './TitaniumEvpAlignmentScoreWithDate';
+import TitaniumTradeAligmentDateAndValue from './TitaniumTradeAligmentDateAndValue';
 
 /**
  * The TitaniumEvpAlignmentScore model module.
@@ -48,14 +48,11 @@ class TitaniumEvpAlignmentScore {
         if (data) {
             obj = obj || new TitaniumEvpAlignmentScore();
 
-            if (data.hasOwnProperty('evpAlignmentDispersionScore')) {
-                obj['evpAlignmentDispersionScore'] = ApiClient.convertToType(data['evpAlignmentDispersionScore'], Object);
-            }
             if (data.hasOwnProperty('evpMid')) {
                 obj['evpMid'] = ApiClient.convertToType(data['evpMid'], Object);
             }
             if (data.hasOwnProperty('history')) {
-                obj['history'] = ApiClient.convertToType(data['history'], [TitaniumEvpAlignmentScoreWithDate]);
+                obj['history'] = ApiClient.convertToType(data['history'], [TitaniumTradeAligmentDateAndValue]);
             }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], Object);
@@ -63,11 +60,11 @@ class TitaniumEvpAlignmentScore {
             if (data.hasOwnProperty('scoreStatus')) {
                 obj['scoreStatus'] = ApiClient.convertToType(data['scoreStatus'], 'String');
             }
+            if (data.hasOwnProperty('stdDev')) {
+                obj['stdDev'] = ApiClient.convertToType(data['stdDev'], Object);
+            }
             if (data.hasOwnProperty('submissionMean')) {
                 obj['submissionMean'] = ApiClient.convertToType(data['submissionMean'], Object);
-            }
-            if (data.hasOwnProperty('submissionStdDev')) {
-                obj['submissionStdDev'] = ApiClient.convertToType(data['submissionStdDev'], Object);
             }
         }
         return obj;
@@ -77,17 +74,12 @@ class TitaniumEvpAlignmentScore {
 }
 
 /**
- * @member {Object} evpAlignmentDispersionScore
- */
-TitaniumEvpAlignmentScore.prototype['evpAlignmentDispersionScore'] = undefined;
-
-/**
  * @member {Object} evpMid
  */
 TitaniumEvpAlignmentScore.prototype['evpMid'] = undefined;
 
 /**
- * @member {Array.<module:model/TitaniumEvpAlignmentScoreWithDate>} history
+ * @member {Array.<module:model/TitaniumTradeAligmentDateAndValue>} history
  */
 TitaniumEvpAlignmentScore.prototype['history'] = undefined;
 
@@ -102,14 +94,14 @@ TitaniumEvpAlignmentScore.prototype['score'] = undefined;
 TitaniumEvpAlignmentScore.prototype['scoreStatus'] = undefined;
 
 /**
+ * @member {Object} stdDev
+ */
+TitaniumEvpAlignmentScore.prototype['stdDev'] = undefined;
+
+/**
  * @member {Object} submissionMean
  */
 TitaniumEvpAlignmentScore.prototype['submissionMean'] = undefined;
-
-/**
- * @member {Object} submissionStdDev
- */
-TitaniumEvpAlignmentScore.prototype['submissionStdDev'] = undefined;
 
 
 

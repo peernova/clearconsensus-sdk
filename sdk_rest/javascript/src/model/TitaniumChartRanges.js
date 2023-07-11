@@ -54,29 +54,17 @@ class TitaniumChartRanges {
             if (data.hasOwnProperty('bimodalRightPopulation')) {
                 obj['bimodalRightPopulation'] = TitaniumRange.constructFromObject(data['bimodalRightPopulation']);
             }
-            if (data.hasOwnProperty('challengeOverlayConsensus')) {
-                obj['challengeOverlayConsensus'] = TitaniumRange.constructFromObject(data['challengeOverlayConsensus']);
+            if (data.hasOwnProperty('cohortConsensus')) {
+                obj['cohortConsensus'] = TitaniumRange.constructFromObject(data['cohortConsensus']);
             }
             if (data.hasOwnProperty('evp')) {
                 obj['evp'] = TitaniumRange.constructFromObject(data['evp']);
             }
-            if (data.hasOwnProperty('expertPostChallenge')) {
-                obj['expertPostChallenge'] = TitaniumRange.constructFromObject(data['expertPostChallenge']);
-            }
-            if (data.hasOwnProperty('expertPreChallenge')) {
-                obj['expertPreChallenge'] = TitaniumRange.constructFromObject(data['expertPreChallenge']);
-            }
-            if (data.hasOwnProperty('marketDataOverlayConsensus')) {
-                obj['marketDataOverlayConsensus'] = TitaniumRange.constructFromObject(data['marketDataOverlayConsensus']);
-            }
-            if (data.hasOwnProperty('submissionMeanMedian')) {
-                obj['submissionMeanMedian'] = TitaniumRange.constructFromObject(data['submissionMeanMedian']);
+            if (data.hasOwnProperty('submissionEvidence')) {
+                obj['submissionEvidence'] = TitaniumRange.constructFromObject(data['submissionEvidence']);
             }
             if (data.hasOwnProperty('submissionMinMax')) {
                 obj['submissionMinMax'] = TitaniumRange.constructFromObject(data['submissionMinMax']);
-            }
-            if (data.hasOwnProperty('submissionOnlyConsensus')) {
-                obj['submissionOnlyConsensus'] = TitaniumRange.constructFromObject(data['submissionOnlyConsensus']);
             }
         }
         return obj;
@@ -96,9 +84,9 @@ TitaniumChartRanges.prototype['bimodalLeftPopulation'] = undefined;
 TitaniumChartRanges.prototype['bimodalRightPopulation'] = undefined;
 
 /**
- * @member {module:model/TitaniumRange} challengeOverlayConsensus
+ * @member {module:model/TitaniumRange} cohortConsensus
  */
-TitaniumChartRanges.prototype['challengeOverlayConsensus'] = undefined;
+TitaniumChartRanges.prototype['cohortConsensus'] = undefined;
 
 /**
  * @member {module:model/TitaniumRange} evp
@@ -106,34 +94,14 @@ TitaniumChartRanges.prototype['challengeOverlayConsensus'] = undefined;
 TitaniumChartRanges.prototype['evp'] = undefined;
 
 /**
- * @member {module:model/TitaniumRange} expertPostChallenge
+ * @member {module:model/TitaniumRange} submissionEvidence
  */
-TitaniumChartRanges.prototype['expertPostChallenge'] = undefined;
-
-/**
- * @member {module:model/TitaniumRange} expertPreChallenge
- */
-TitaniumChartRanges.prototype['expertPreChallenge'] = undefined;
-
-/**
- * @member {module:model/TitaniumRange} marketDataOverlayConsensus
- */
-TitaniumChartRanges.prototype['marketDataOverlayConsensus'] = undefined;
-
-/**
- * @member {module:model/TitaniumRange} submissionMeanMedian
- */
-TitaniumChartRanges.prototype['submissionMeanMedian'] = undefined;
+TitaniumChartRanges.prototype['submissionEvidence'] = undefined;
 
 /**
  * @member {module:model/TitaniumRange} submissionMinMax
  */
 TitaniumChartRanges.prototype['submissionMinMax'] = undefined;
-
-/**
- * @member {module:model/TitaniumRange} submissionOnlyConsensus
- */
-TitaniumChartRanges.prototype['submissionOnlyConsensus'] = undefined;
 
 
 

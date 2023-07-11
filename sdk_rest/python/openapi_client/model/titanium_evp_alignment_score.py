@@ -30,8 +30,8 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from openapi_client.model.titanium_evp_alignment_score_with_date import TitaniumEvpAlignmentScoreWithDate
-    globals()['TitaniumEvpAlignmentScoreWithDate'] = TitaniumEvpAlignmentScoreWithDate
+    from openapi_client.model.titanium_trade_aligment_date_and_value import TitaniumTradeAligmentDateAndValue
+    globals()['TitaniumTradeAligmentDateAndValue'] = TitaniumTradeAligmentDateAndValue
 
 
 class TitaniumEvpAlignmentScore(ModelNormal):
@@ -87,13 +87,12 @@ class TitaniumEvpAlignmentScore(ModelNormal):
         """
         lazy_import()
         return {
-            'evp_alignment_dispersion_score': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'evp_mid': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'history': ([TitaniumEvpAlignmentScoreWithDate],),  # noqa: E501
+            'history': ([TitaniumTradeAligmentDateAndValue],),  # noqa: E501
             'score': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'score_status': (str,),  # noqa: E501
+            'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'submission_mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'submission_std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -102,13 +101,12 @@ class TitaniumEvpAlignmentScore(ModelNormal):
 
 
     attribute_map = {
-        'evp_alignment_dispersion_score': 'evpAlignmentDispersionScore',  # noqa: E501
         'evp_mid': 'evpMid',  # noqa: E501
         'history': 'history',  # noqa: E501
         'score': 'score',  # noqa: E501
         'score_status': 'scoreStatus',  # noqa: E501
+        'std_dev': 'stdDev',  # noqa: E501
         'submission_mean': 'submissionMean',  # noqa: E501
-        'submission_std_dev': 'submissionStdDev',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,13 +150,12 @@ class TitaniumEvpAlignmentScore(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            evp_alignment_dispersion_score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            history ([TitaniumEvpAlignmentScoreWithDate]): [optional]  # noqa: E501
+            history ([TitaniumTradeAligmentDateAndValue]): [optional]  # noqa: E501
             score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score_status (str): [optional]  # noqa: E501
+            std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             submission_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            submission_std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -244,13 +241,12 @@ class TitaniumEvpAlignmentScore(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            evp_alignment_dispersion_score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            history ([TitaniumEvpAlignmentScoreWithDate]): [optional]  # noqa: E501
+            history ([TitaniumTradeAligmentDateAndValue]): [optional]  # noqa: E501
             score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score_status (str): [optional]  # noqa: E501
+            std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             submission_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            submission_std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

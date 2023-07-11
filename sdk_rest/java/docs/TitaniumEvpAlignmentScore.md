@@ -7,13 +7,12 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**evpAlignmentDispersionScore** | **Object** |  |  [optional] |
 |**evpMid** | **Object** |  |  [optional] |
-|**history** | [**List&lt;TitaniumEvpAlignmentScoreWithDate&gt;**](TitaniumEvpAlignmentScoreWithDate.md) |  |  [optional] |
+|**history** | [**List&lt;TitaniumTradeAligmentDateAndValue&gt;**](TitaniumTradeAligmentDateAndValue.md) |  |  [optional] |
 |**score** | **Object** |  |  [optional] |
 |**scoreStatus** | **String** |  |  [optional] |
+|**stdDev** | **Object** |  |  [optional] |
 |**submissionMean** | **Object** |  |  [optional] |
-|**submissionStdDev** | **Object** |  |  [optional] |
 
 
 

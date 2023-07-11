@@ -38,16 +38,18 @@ class TitaniumTradePeriodMetrics(object):
     openapi_types = {
         'max_notional_amount': 'float',
         'min_notional_amount': 'float',
+        'total_liquidity': 'float',
         'trade_count': 'str'
     }
 
     attribute_map = {
         'max_notional_amount': 'maxNotionalAmount',
         'min_notional_amount': 'minNotionalAmount',
+        'total_liquidity': 'totalLiquidity',
         'trade_count': 'tradeCount'
     }
 
-    def __init__(self, max_notional_amount=None, min_notional_amount=None, trade_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, max_notional_amount=None, min_notional_amount=None, total_liquidity=None, trade_count=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumTradePeriodMetrics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -55,6 +57,7 @@ class TitaniumTradePeriodMetrics(object):
 
         self._max_notional_amount = None
         self._min_notional_amount = None
+        self._total_liquidity = None
         self._trade_count = None
         self.discriminator = None
 
@@ -62,6 +65,8 @@ class TitaniumTradePeriodMetrics(object):
             self.max_notional_amount = max_notional_amount
         if min_notional_amount is not None:
             self.min_notional_amount = min_notional_amount
+        if total_liquidity is not None:
+            self.total_liquidity = total_liquidity
         if trade_count is not None:
             self.trade_count = trade_count
 
@@ -106,6 +111,27 @@ class TitaniumTradePeriodMetrics(object):
         """
 
         self._min_notional_amount = min_notional_amount
+
+    @property
+    def total_liquidity(self):
+        """Gets the total_liquidity of this TitaniumTradePeriodMetrics.  # noqa: E501
+
+
+        :return: The total_liquidity of this TitaniumTradePeriodMetrics.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_liquidity
+
+    @total_liquidity.setter
+    def total_liquidity(self, total_liquidity):
+        """Sets the total_liquidity of this TitaniumTradePeriodMetrics.
+
+
+        :param total_liquidity: The total_liquidity of this TitaniumTradePeriodMetrics.  # noqa: E501
+        :type total_liquidity: float
+        """
+
+        self._total_liquidity = total_liquidity
 
     @property
     def trade_count(self):

@@ -36,105 +36,85 @@ class TitaniumConsensusExplorerRangeData(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'all_participant_crs_consensus_price': 'TitaniumRangePoint',
+        'anchor_point': 'TitaniumRangePoint',
         'bimodal_left_mean': 'TitaniumRangePoint',
         'bimodal_right_mean': 'TitaniumRangePoint',
-        'challenge_overlay_crs_consensus_price': 'TitaniumRangePoint',
         'chart_ranges': 'TitaniumChartRanges',
+        'cohort_consensus_price': 'TitaniumRangePoint',
+        'cohort_consensus_range_tab_data': 'TitaniumCohortConsensusRangeTabData',
         'evp_mid': 'TitaniumRangePoint',
-        'expert_post_challenge_consensus_price': 'TitaniumRangePoint',
-        'expert_pre_challenge_consensus_price': 'TitaniumRangePoint',
-        'market_data_crs_consensus_price': 'TitaniumRangePoint',
-        'submission_mean_point': 'TitaniumRangePoint',
-        'submission_point': 'TitaniumRangePoint',
-        'trade_periods_with_metrics': 'TitaniumTradePeriodsWithMetrics',
-        'trade_ranges_data': 'TitaniumTradeRangesData'
+        'submission_evidence_price': 'TitaniumRangePoint',
+        'submission_point': 'TitaniumRangePoint'
     }
 
     attribute_map = {
-        'all_participant_crs_consensus_price': 'allParticipantCrsConsensusPrice',
+        'anchor_point': 'anchorPoint',
         'bimodal_left_mean': 'bimodalLeftMean',
         'bimodal_right_mean': 'bimodalRightMean',
-        'challenge_overlay_crs_consensus_price': 'challengeOverlayCrsConsensusPrice',
         'chart_ranges': 'chartRanges',
+        'cohort_consensus_price': 'cohortConsensusPrice',
+        'cohort_consensus_range_tab_data': 'cohortConsensusRangeTabData',
         'evp_mid': 'evpMid',
-        'expert_post_challenge_consensus_price': 'expertPostChallengeConsensusPrice',
-        'expert_pre_challenge_consensus_price': 'expertPreChallengeConsensusPrice',
-        'market_data_crs_consensus_price': 'marketDataCrsConsensusPrice',
-        'submission_mean_point': 'submissionMeanPoint',
-        'submission_point': 'submissionPoint',
-        'trade_periods_with_metrics': 'tradePeriodsWithMetrics',
-        'trade_ranges_data': 'tradeRangesData'
+        'submission_evidence_price': 'submissionEvidencePrice',
+        'submission_point': 'submissionPoint'
     }
 
-    def __init__(self, all_participant_crs_consensus_price=None, bimodal_left_mean=None, bimodal_right_mean=None, challenge_overlay_crs_consensus_price=None, chart_ranges=None, evp_mid=None, expert_post_challenge_consensus_price=None, expert_pre_challenge_consensus_price=None, market_data_crs_consensus_price=None, submission_mean_point=None, submission_point=None, trade_periods_with_metrics=None, trade_ranges_data=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, anchor_point=None, bimodal_left_mean=None, bimodal_right_mean=None, chart_ranges=None, cohort_consensus_price=None, cohort_consensus_range_tab_data=None, evp_mid=None, submission_evidence_price=None, submission_point=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusExplorerRangeData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._all_participant_crs_consensus_price = None
+        self._anchor_point = None
         self._bimodal_left_mean = None
         self._bimodal_right_mean = None
-        self._challenge_overlay_crs_consensus_price = None
         self._chart_ranges = None
+        self._cohort_consensus_price = None
+        self._cohort_consensus_range_tab_data = None
         self._evp_mid = None
-        self._expert_post_challenge_consensus_price = None
-        self._expert_pre_challenge_consensus_price = None
-        self._market_data_crs_consensus_price = None
-        self._submission_mean_point = None
+        self._submission_evidence_price = None
         self._submission_point = None
-        self._trade_periods_with_metrics = None
-        self._trade_ranges_data = None
         self.discriminator = None
 
-        if all_participant_crs_consensus_price is not None:
-            self.all_participant_crs_consensus_price = all_participant_crs_consensus_price
+        if anchor_point is not None:
+            self.anchor_point = anchor_point
         if bimodal_left_mean is not None:
             self.bimodal_left_mean = bimodal_left_mean
         if bimodal_right_mean is not None:
             self.bimodal_right_mean = bimodal_right_mean
-        if challenge_overlay_crs_consensus_price is not None:
-            self.challenge_overlay_crs_consensus_price = challenge_overlay_crs_consensus_price
         if chart_ranges is not None:
             self.chart_ranges = chart_ranges
+        if cohort_consensus_price is not None:
+            self.cohort_consensus_price = cohort_consensus_price
+        if cohort_consensus_range_tab_data is not None:
+            self.cohort_consensus_range_tab_data = cohort_consensus_range_tab_data
         if evp_mid is not None:
             self.evp_mid = evp_mid
-        if expert_post_challenge_consensus_price is not None:
-            self.expert_post_challenge_consensus_price = expert_post_challenge_consensus_price
-        if expert_pre_challenge_consensus_price is not None:
-            self.expert_pre_challenge_consensus_price = expert_pre_challenge_consensus_price
-        if market_data_crs_consensus_price is not None:
-            self.market_data_crs_consensus_price = market_data_crs_consensus_price
-        if submission_mean_point is not None:
-            self.submission_mean_point = submission_mean_point
+        if submission_evidence_price is not None:
+            self.submission_evidence_price = submission_evidence_price
         if submission_point is not None:
             self.submission_point = submission_point
-        if trade_periods_with_metrics is not None:
-            self.trade_periods_with_metrics = trade_periods_with_metrics
-        if trade_ranges_data is not None:
-            self.trade_ranges_data = trade_ranges_data
 
     @property
-    def all_participant_crs_consensus_price(self):
-        """Gets the all_participant_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+    def anchor_point(self):
+        """Gets the anchor_point of this TitaniumConsensusExplorerRangeData.  # noqa: E501
 
 
-        :return: The all_participant_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :return: The anchor_point of this TitaniumConsensusExplorerRangeData.  # noqa: E501
         :rtype: TitaniumRangePoint
         """
-        return self._all_participant_crs_consensus_price
+        return self._anchor_point
 
-    @all_participant_crs_consensus_price.setter
-    def all_participant_crs_consensus_price(self, all_participant_crs_consensus_price):
-        """Sets the all_participant_crs_consensus_price of this TitaniumConsensusExplorerRangeData.
+    @anchor_point.setter
+    def anchor_point(self, anchor_point):
+        """Sets the anchor_point of this TitaniumConsensusExplorerRangeData.
 
 
-        :param all_participant_crs_consensus_price: The all_participant_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :type all_participant_crs_consensus_price: TitaniumRangePoint
+        :param anchor_point: The anchor_point of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type anchor_point: TitaniumRangePoint
         """
 
-        self._all_participant_crs_consensus_price = all_participant_crs_consensus_price
+        self._anchor_point = anchor_point
 
     @property
     def bimodal_left_mean(self):
@@ -179,27 +159,6 @@ class TitaniumConsensusExplorerRangeData(object):
         self._bimodal_right_mean = bimodal_right_mean
 
     @property
-    def challenge_overlay_crs_consensus_price(self):
-        """Gets the challenge_overlay_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-
-
-        :return: The challenge_overlay_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :rtype: TitaniumRangePoint
-        """
-        return self._challenge_overlay_crs_consensus_price
-
-    @challenge_overlay_crs_consensus_price.setter
-    def challenge_overlay_crs_consensus_price(self, challenge_overlay_crs_consensus_price):
-        """Sets the challenge_overlay_crs_consensus_price of this TitaniumConsensusExplorerRangeData.
-
-
-        :param challenge_overlay_crs_consensus_price: The challenge_overlay_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :type challenge_overlay_crs_consensus_price: TitaniumRangePoint
-        """
-
-        self._challenge_overlay_crs_consensus_price = challenge_overlay_crs_consensus_price
-
-    @property
     def chart_ranges(self):
         """Gets the chart_ranges of this TitaniumConsensusExplorerRangeData.  # noqa: E501
 
@@ -219,6 +178,48 @@ class TitaniumConsensusExplorerRangeData(object):
         """
 
         self._chart_ranges = chart_ranges
+
+    @property
+    def cohort_consensus_price(self):
+        """Gets the cohort_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+
+
+        :return: The cohort_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :rtype: TitaniumRangePoint
+        """
+        return self._cohort_consensus_price
+
+    @cohort_consensus_price.setter
+    def cohort_consensus_price(self, cohort_consensus_price):
+        """Sets the cohort_consensus_price of this TitaniumConsensusExplorerRangeData.
+
+
+        :param cohort_consensus_price: The cohort_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type cohort_consensus_price: TitaniumRangePoint
+        """
+
+        self._cohort_consensus_price = cohort_consensus_price
+
+    @property
+    def cohort_consensus_range_tab_data(self):
+        """Gets the cohort_consensus_range_tab_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+
+
+        :return: The cohort_consensus_range_tab_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :rtype: TitaniumCohortConsensusRangeTabData
+        """
+        return self._cohort_consensus_range_tab_data
+
+    @cohort_consensus_range_tab_data.setter
+    def cohort_consensus_range_tab_data(self, cohort_consensus_range_tab_data):
+        """Sets the cohort_consensus_range_tab_data of this TitaniumConsensusExplorerRangeData.
+
+
+        :param cohort_consensus_range_tab_data: The cohort_consensus_range_tab_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type cohort_consensus_range_tab_data: TitaniumCohortConsensusRangeTabData
+        """
+
+        self._cohort_consensus_range_tab_data = cohort_consensus_range_tab_data
 
     @property
     def evp_mid(self):
@@ -242,88 +243,25 @@ class TitaniumConsensusExplorerRangeData(object):
         self._evp_mid = evp_mid
 
     @property
-    def expert_post_challenge_consensus_price(self):
-        """Gets the expert_post_challenge_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+    def submission_evidence_price(self):
+        """Gets the submission_evidence_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
 
 
-        :return: The expert_post_challenge_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :return: The submission_evidence_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
         :rtype: TitaniumRangePoint
         """
-        return self._expert_post_challenge_consensus_price
+        return self._submission_evidence_price
 
-    @expert_post_challenge_consensus_price.setter
-    def expert_post_challenge_consensus_price(self, expert_post_challenge_consensus_price):
-        """Sets the expert_post_challenge_consensus_price of this TitaniumConsensusExplorerRangeData.
+    @submission_evidence_price.setter
+    def submission_evidence_price(self, submission_evidence_price):
+        """Sets the submission_evidence_price of this TitaniumConsensusExplorerRangeData.
 
 
-        :param expert_post_challenge_consensus_price: The expert_post_challenge_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :type expert_post_challenge_consensus_price: TitaniumRangePoint
+        :param submission_evidence_price: The submission_evidence_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type submission_evidence_price: TitaniumRangePoint
         """
 
-        self._expert_post_challenge_consensus_price = expert_post_challenge_consensus_price
-
-    @property
-    def expert_pre_challenge_consensus_price(self):
-        """Gets the expert_pre_challenge_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-
-
-        :return: The expert_pre_challenge_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :rtype: TitaniumRangePoint
-        """
-        return self._expert_pre_challenge_consensus_price
-
-    @expert_pre_challenge_consensus_price.setter
-    def expert_pre_challenge_consensus_price(self, expert_pre_challenge_consensus_price):
-        """Sets the expert_pre_challenge_consensus_price of this TitaniumConsensusExplorerRangeData.
-
-
-        :param expert_pre_challenge_consensus_price: The expert_pre_challenge_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :type expert_pre_challenge_consensus_price: TitaniumRangePoint
-        """
-
-        self._expert_pre_challenge_consensus_price = expert_pre_challenge_consensus_price
-
-    @property
-    def market_data_crs_consensus_price(self):
-        """Gets the market_data_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-
-
-        :return: The market_data_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :rtype: TitaniumRangePoint
-        """
-        return self._market_data_crs_consensus_price
-
-    @market_data_crs_consensus_price.setter
-    def market_data_crs_consensus_price(self, market_data_crs_consensus_price):
-        """Sets the market_data_crs_consensus_price of this TitaniumConsensusExplorerRangeData.
-
-
-        :param market_data_crs_consensus_price: The market_data_crs_consensus_price of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :type market_data_crs_consensus_price: TitaniumRangePoint
-        """
-
-        self._market_data_crs_consensus_price = market_data_crs_consensus_price
-
-    @property
-    def submission_mean_point(self):
-        """Gets the submission_mean_point of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-
-
-        :return: The submission_mean_point of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :rtype: TitaniumRangePoint
-        """
-        return self._submission_mean_point
-
-    @submission_mean_point.setter
-    def submission_mean_point(self, submission_mean_point):
-        """Sets the submission_mean_point of this TitaniumConsensusExplorerRangeData.
-
-
-        :param submission_mean_point: The submission_mean_point of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :type submission_mean_point: TitaniumRangePoint
-        """
-
-        self._submission_mean_point = submission_mean_point
+        self._submission_evidence_price = submission_evidence_price
 
     @property
     def submission_point(self):
@@ -345,48 +283,6 @@ class TitaniumConsensusExplorerRangeData(object):
         """
 
         self._submission_point = submission_point
-
-    @property
-    def trade_periods_with_metrics(self):
-        """Gets the trade_periods_with_metrics of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-
-
-        :return: The trade_periods_with_metrics of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :rtype: TitaniumTradePeriodsWithMetrics
-        """
-        return self._trade_periods_with_metrics
-
-    @trade_periods_with_metrics.setter
-    def trade_periods_with_metrics(self, trade_periods_with_metrics):
-        """Sets the trade_periods_with_metrics of this TitaniumConsensusExplorerRangeData.
-
-
-        :param trade_periods_with_metrics: The trade_periods_with_metrics of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :type trade_periods_with_metrics: TitaniumTradePeriodsWithMetrics
-        """
-
-        self._trade_periods_with_metrics = trade_periods_with_metrics
-
-    @property
-    def trade_ranges_data(self):
-        """Gets the trade_ranges_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-
-
-        :return: The trade_ranges_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :rtype: TitaniumTradeRangesData
-        """
-        return self._trade_ranges_data
-
-    @trade_ranges_data.setter
-    def trade_ranges_data(self, trade_ranges_data):
-        """Sets the trade_ranges_data of this TitaniumConsensusExplorerRangeData.
-
-
-        :param trade_ranges_data: The trade_ranges_data of this TitaniumConsensusExplorerRangeData.  # noqa: E501
-        :type trade_ranges_data: TitaniumTradeRangesData
-        """
-
-        self._trade_ranges_data = trade_ranges_data
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

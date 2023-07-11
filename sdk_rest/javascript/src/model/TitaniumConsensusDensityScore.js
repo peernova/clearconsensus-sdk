@@ -48,32 +48,20 @@ class TitaniumConsensusDensityScore {
         if (data) {
             obj = obj || new TitaniumConsensusDensityScore();
 
-            if (data.hasOwnProperty('bimodality')) {
-                obj['bimodality'] = ApiClient.convertToType(data['bimodality'], Object);
-            }
-            if (data.hasOwnProperty('challengeQuality')) {
-                obj['challengeQuality'] = ApiClient.convertToType(data['challengeQuality'], Object);
-            }
-            if (data.hasOwnProperty('dispersion')) {
-                obj['dispersion'] = ApiClient.convertToType(data['dispersion'], Object);
+            if (data.hasOwnProperty('bimodalityScore')) {
+                obj['bimodalityScore'] = ApiClient.convertToType(data['bimodalityScore'], Object);
             }
             if (data.hasOwnProperty('evpAlignmentScore')) {
                 obj['evpAlignmentScore'] = ApiClient.convertToType(data['evpAlignmentScore'], Object);
             }
-            if (data.hasOwnProperty('evpQuality')) {
-                obj['evpQuality'] = ApiClient.convertToType(data['evpQuality'], Object);
-            }
             if (data.hasOwnProperty('history')) {
                 obj['history'] = ApiClient.convertToType(data['history'], [TitaniumDateAndValue]);
             }
-            if (data.hasOwnProperty('numberOfParticipants')) {
-                obj['numberOfParticipants'] = ApiClient.convertToType(data['numberOfParticipants'], Object);
-            }
-            if (data.hasOwnProperty('outlierVolume')) {
-                obj['outlierVolume'] = ApiClient.convertToType(data['outlierVolume'], Object);
-            }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], Object);
+            }
+            if (data.hasOwnProperty('tradeAlignmentScore')) {
+                obj['tradeAlignmentScore'] = ApiClient.convertToType(data['tradeAlignmentScore'], Object);
             }
         }
         return obj;
@@ -83,19 +71,9 @@ class TitaniumConsensusDensityScore {
 }
 
 /**
- * @member {Object} bimodality
+ * @member {Object} bimodalityScore
  */
-TitaniumConsensusDensityScore.prototype['bimodality'] = undefined;
-
-/**
- * @member {Object} challengeQuality
- */
-TitaniumConsensusDensityScore.prototype['challengeQuality'] = undefined;
-
-/**
- * @member {Object} dispersion
- */
-TitaniumConsensusDensityScore.prototype['dispersion'] = undefined;
+TitaniumConsensusDensityScore.prototype['bimodalityScore'] = undefined;
 
 /**
  * @member {Object} evpAlignmentScore
@@ -103,29 +81,19 @@ TitaniumConsensusDensityScore.prototype['dispersion'] = undefined;
 TitaniumConsensusDensityScore.prototype['evpAlignmentScore'] = undefined;
 
 /**
- * @member {Object} evpQuality
- */
-TitaniumConsensusDensityScore.prototype['evpQuality'] = undefined;
-
-/**
  * @member {Array.<module:model/TitaniumDateAndValue>} history
  */
 TitaniumConsensusDensityScore.prototype['history'] = undefined;
 
 /**
- * @member {Object} numberOfParticipants
- */
-TitaniumConsensusDensityScore.prototype['numberOfParticipants'] = undefined;
-
-/**
- * @member {Object} outlierVolume
- */
-TitaniumConsensusDensityScore.prototype['outlierVolume'] = undefined;
-
-/**
  * @member {Object} score
  */
 TitaniumConsensusDensityScore.prototype['score'] = undefined;
+
+/**
+ * @member {Object} tradeAlignmentScore
+ */
+TitaniumConsensusDensityScore.prototype['tradeAlignmentScore'] = undefined;
 
 
 

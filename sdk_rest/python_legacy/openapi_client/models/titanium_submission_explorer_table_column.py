@@ -36,7 +36,7 @@ class TitaniumSubmissionExplorerTableColumn(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'submission_price': 'float'
+        'submission_price': 'object'
     }
 
     attribute_map = {
@@ -61,7 +61,7 @@ class TitaniumSubmissionExplorerTableColumn(object):
 
 
         :return: The submission_price of this TitaniumSubmissionExplorerTableColumn.  # noqa: E501
-        :rtype: float
+        :rtype: object
         """
         return self._submission_price
 
@@ -71,7 +71,7 @@ class TitaniumSubmissionExplorerTableColumn(object):
 
 
         :param submission_price: The submission_price of this TitaniumSubmissionExplorerTableColumn.  # noqa: E501
-        :type submission_price: float
+        :type submission_price: object
         """
 
         self._submission_price = submission_price

@@ -87,18 +87,16 @@ class TitaniumInstrumentSubmissionStatus(ModelNormal):
         """
         lazy_import()
         return {
-            'bimodality': (str,),  # noqa: E501
-            'bimodality_history': ([TitaniumDateAndValue],),  # noqa: E501
             'consensus_status': (str,),  # noqa: E501
             'consensus_status_details': (str,),  # noqa: E501
             'consensus_status_details_history': ([TitaniumDateAndValue],),  # noqa: E501
             'consensus_status_history': ([TitaniumDateAndValue],),  # noqa: E501
             'dqe_history': ([TitaniumDateAndValue],),  # noqa: E501
             'highest_dqe': (str,),  # noqa: E501
-            'participant_consensus_status': (str,),  # noqa: E501
-            'participant_consensus_status_details': (str,),  # noqa: E501
-            'participant_consensus_status_details_history': ([TitaniumDateAndValue],),  # noqa: E501
-            'participant_consensus_status_history': ([TitaniumDateAndValue],),  # noqa: E501
+            'participant_cohort_consensus_status': (str,),  # noqa: E501
+            'participant_cohort_consensus_status_history': ([TitaniumDateAndValue],),  # noqa: E501
+            'participant_submissions_evidence_status': (str,),  # noqa: E501
+            'participant_submissions_evidence_status_history': ([TitaniumDateAndValue],),  # noqa: E501
         }
 
     @cached_property
@@ -107,18 +105,16 @@ class TitaniumInstrumentSubmissionStatus(ModelNormal):
 
 
     attribute_map = {
-        'bimodality': 'bimodality',  # noqa: E501
-        'bimodality_history': 'bimodalityHistory',  # noqa: E501
         'consensus_status': 'consensusStatus',  # noqa: E501
         'consensus_status_details': 'consensusStatusDetails',  # noqa: E501
         'consensus_status_details_history': 'consensusStatusDetailsHistory',  # noqa: E501
         'consensus_status_history': 'consensusStatusHistory',  # noqa: E501
         'dqe_history': 'dqeHistory',  # noqa: E501
         'highest_dqe': 'highestDqe',  # noqa: E501
-        'participant_consensus_status': 'participantConsensusStatus',  # noqa: E501
-        'participant_consensus_status_details': 'participantConsensusStatusDetails',  # noqa: E501
-        'participant_consensus_status_details_history': 'participantConsensusStatusDetailsHistory',  # noqa: E501
-        'participant_consensus_status_history': 'participantConsensusStatusHistory',  # noqa: E501
+        'participant_cohort_consensus_status': 'participantCohortConsensusStatus',  # noqa: E501
+        'participant_cohort_consensus_status_history': 'participantCohortConsensusStatusHistory',  # noqa: E501
+        'participant_submissions_evidence_status': 'participantSubmissionsEvidenceStatus',  # noqa: E501
+        'participant_submissions_evidence_status_history': 'participantSubmissionsEvidenceStatusHistory',  # noqa: E501
     }
 
     read_only_vars = {
@@ -162,18 +158,16 @@ class TitaniumInstrumentSubmissionStatus(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bimodality (str): [optional]  # noqa: E501
-            bimodality_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             consensus_status (str): [optional]  # noqa: E501
             consensus_status_details (str): [optional]  # noqa: E501
             consensus_status_details_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             consensus_status_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             dqe_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             highest_dqe (str): [optional]  # noqa: E501
-            participant_consensus_status (str): [optional]  # noqa: E501
-            participant_consensus_status_details (str): [optional]  # noqa: E501
-            participant_consensus_status_details_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
-            participant_consensus_status_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
+            participant_cohort_consensus_status (str): [optional]  # noqa: E501
+            participant_cohort_consensus_status_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
+            participant_submissions_evidence_status (str): [optional]  # noqa: E501
+            participant_submissions_evidence_status_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -259,18 +253,16 @@ class TitaniumInstrumentSubmissionStatus(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            bimodality (str): [optional]  # noqa: E501
-            bimodality_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             consensus_status (str): [optional]  # noqa: E501
             consensus_status_details (str): [optional]  # noqa: E501
             consensus_status_details_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             consensus_status_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             dqe_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             highest_dqe (str): [optional]  # noqa: E501
-            participant_consensus_status (str): [optional]  # noqa: E501
-            participant_consensus_status_details (str): [optional]  # noqa: E501
-            participant_consensus_status_details_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
-            participant_consensus_status_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
+            participant_cohort_consensus_status (str): [optional]  # noqa: E501
+            participant_cohort_consensus_status_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
+            participant_submissions_evidence_status (str): [optional]  # noqa: E501
+            participant_submissions_evidence_status_history ([TitaniumDateAndValue]): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

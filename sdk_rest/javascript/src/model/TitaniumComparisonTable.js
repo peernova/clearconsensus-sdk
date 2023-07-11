@@ -12,10 +12,10 @@
  */
 
 import ApiClient from '../ApiClient';
-import TitaniumAllParticipantExplorerTableColumn from './TitaniumAllParticipantExplorerTableColumn';
 import TitaniumAvailableTrades from './TitaniumAvailableTrades';
-import TitaniumEvpExplorerTableColumn from './TitaniumEvpExplorerTableColumn';
-import TitaniumExpertExplorerTableColumn from './TitaniumExpertExplorerTableColumn';
+import TitaniumCohortConsensusColumn from './TitaniumCohortConsensusColumn';
+import TitaniumEvidentalPricing from './TitaniumEvidentalPricing';
+import TitaniumSubmissionEvidenceTableColumn from './TitaniumSubmissionEvidenceTableColumn';
 import TitaniumSubmissionExplorerTableColumn from './TitaniumSubmissionExplorerTableColumn';
 import TitaniumSubmissionStatisticsExplorerTableColumn from './TitaniumSubmissionStatisticsExplorerTableColumn';
 
@@ -53,20 +53,20 @@ class TitaniumComparisonTable {
         if (data) {
             obj = obj || new TitaniumComparisonTable();
 
-            if (data.hasOwnProperty('allParticipantCohortConsensus')) {
-                obj['allParticipantCohortConsensus'] = TitaniumAllParticipantExplorerTableColumn.constructFromObject(data['allParticipantCohortConsensus']);
-            }
             if (data.hasOwnProperty('availableTrades')) {
                 obj['availableTrades'] = TitaniumAvailableTrades.constructFromObject(data['availableTrades']);
             }
-            if (data.hasOwnProperty('evaluatedPrice')) {
-                obj['evaluatedPrice'] = TitaniumEvpExplorerTableColumn.constructFromObject(data['evaluatedPrice']);
+            if (data.hasOwnProperty('cohortConsensusColumn')) {
+                obj['cohortConsensusColumn'] = TitaniumCohortConsensusColumn.constructFromObject(data['cohortConsensusColumn']);
             }
-            if (data.hasOwnProperty('expertCohortConsensus')) {
-                obj['expertCohortConsensus'] = TitaniumExpertExplorerTableColumn.constructFromObject(data['expertCohortConsensus']);
+            if (data.hasOwnProperty('evidentialPricing')) {
+                obj['evidentialPricing'] = TitaniumEvidentalPricing.constructFromObject(data['evidentialPricing']);
             }
             if (data.hasOwnProperty('submission')) {
                 obj['submission'] = TitaniumSubmissionExplorerTableColumn.constructFromObject(data['submission']);
+            }
+            if (data.hasOwnProperty('submissionEvidence')) {
+                obj['submissionEvidence'] = TitaniumSubmissionEvidenceTableColumn.constructFromObject(data['submissionEvidence']);
             }
             if (data.hasOwnProperty('submissionStatistics')) {
                 obj['submissionStatistics'] = TitaniumSubmissionStatisticsExplorerTableColumn.constructFromObject(data['submissionStatistics']);
@@ -79,29 +79,29 @@ class TitaniumComparisonTable {
 }
 
 /**
- * @member {module:model/TitaniumAllParticipantExplorerTableColumn} allParticipantCohortConsensus
- */
-TitaniumComparisonTable.prototype['allParticipantCohortConsensus'] = undefined;
-
-/**
  * @member {module:model/TitaniumAvailableTrades} availableTrades
  */
 TitaniumComparisonTable.prototype['availableTrades'] = undefined;
 
 /**
- * @member {module:model/TitaniumEvpExplorerTableColumn} evaluatedPrice
+ * @member {module:model/TitaniumCohortConsensusColumn} cohortConsensusColumn
  */
-TitaniumComparisonTable.prototype['evaluatedPrice'] = undefined;
+TitaniumComparisonTable.prototype['cohortConsensusColumn'] = undefined;
 
 /**
- * @member {module:model/TitaniumExpertExplorerTableColumn} expertCohortConsensus
+ * @member {module:model/TitaniumEvidentalPricing} evidentialPricing
  */
-TitaniumComparisonTable.prototype['expertCohortConsensus'] = undefined;
+TitaniumComparisonTable.prototype['evidentialPricing'] = undefined;
 
 /**
  * @member {module:model/TitaniumSubmissionExplorerTableColumn} submission
  */
 TitaniumComparisonTable.prototype['submission'] = undefined;
+
+/**
+ * @member {module:model/TitaniumSubmissionEvidenceTableColumn} submissionEvidence
+ */
+TitaniumComparisonTable.prototype['submissionEvidence'] = undefined;
 
 /**
  * @member {module:model/TitaniumSubmissionStatisticsExplorerTableColumn} submissionStatistics

@@ -36,127 +36,65 @@ class TitaniumConsensusDensityScore(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'bimodality': 'object',
-        'challenge_quality': 'object',
-        'dispersion': 'object',
+        'bimodality_score': 'object',
         'evp_alignment_score': 'object',
-        'evp_quality': 'object',
         'history': 'list[TitaniumDateAndValue]',
-        'number_of_participants': 'object',
-        'outlier_volume': 'object',
-        'score': 'object'
+        'score': 'object',
+        'trade_alignment_score': 'object'
     }
 
     attribute_map = {
-        'bimodality': 'bimodality',
-        'challenge_quality': 'challengeQuality',
-        'dispersion': 'dispersion',
+        'bimodality_score': 'bimodalityScore',
         'evp_alignment_score': 'evpAlignmentScore',
-        'evp_quality': 'evpQuality',
         'history': 'history',
-        'number_of_participants': 'numberOfParticipants',
-        'outlier_volume': 'outlierVolume',
-        'score': 'score'
+        'score': 'score',
+        'trade_alignment_score': 'tradeAlignmentScore'
     }
 
-    def __init__(self, bimodality=None, challenge_quality=None, dispersion=None, evp_alignment_score=None, evp_quality=None, history=None, number_of_participants=None, outlier_volume=None, score=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bimodality_score=None, evp_alignment_score=None, history=None, score=None, trade_alignment_score=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusDensityScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._bimodality = None
-        self._challenge_quality = None
-        self._dispersion = None
+        self._bimodality_score = None
         self._evp_alignment_score = None
-        self._evp_quality = None
         self._history = None
-        self._number_of_participants = None
-        self._outlier_volume = None
         self._score = None
+        self._trade_alignment_score = None
         self.discriminator = None
 
-        if bimodality is not None:
-            self.bimodality = bimodality
-        if challenge_quality is not None:
-            self.challenge_quality = challenge_quality
-        if dispersion is not None:
-            self.dispersion = dispersion
+        if bimodality_score is not None:
+            self.bimodality_score = bimodality_score
         if evp_alignment_score is not None:
             self.evp_alignment_score = evp_alignment_score
-        if evp_quality is not None:
-            self.evp_quality = evp_quality
         if history is not None:
             self.history = history
-        if number_of_participants is not None:
-            self.number_of_participants = number_of_participants
-        if outlier_volume is not None:
-            self.outlier_volume = outlier_volume
         if score is not None:
             self.score = score
+        if trade_alignment_score is not None:
+            self.trade_alignment_score = trade_alignment_score
 
     @property
-    def bimodality(self):
-        """Gets the bimodality of this TitaniumConsensusDensityScore.  # noqa: E501
+    def bimodality_score(self):
+        """Gets the bimodality_score of this TitaniumConsensusDensityScore.  # noqa: E501
 
 
-        :return: The bimodality of this TitaniumConsensusDensityScore.  # noqa: E501
+        :return: The bimodality_score of this TitaniumConsensusDensityScore.  # noqa: E501
         :rtype: object
         """
-        return self._bimodality
+        return self._bimodality_score
 
-    @bimodality.setter
-    def bimodality(self, bimodality):
-        """Sets the bimodality of this TitaniumConsensusDensityScore.
+    @bimodality_score.setter
+    def bimodality_score(self, bimodality_score):
+        """Sets the bimodality_score of this TitaniumConsensusDensityScore.
 
 
-        :param bimodality: The bimodality of this TitaniumConsensusDensityScore.  # noqa: E501
-        :type bimodality: object
+        :param bimodality_score: The bimodality_score of this TitaniumConsensusDensityScore.  # noqa: E501
+        :type bimodality_score: object
         """
 
-        self._bimodality = bimodality
-
-    @property
-    def challenge_quality(self):
-        """Gets the challenge_quality of this TitaniumConsensusDensityScore.  # noqa: E501
-
-
-        :return: The challenge_quality of this TitaniumConsensusDensityScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._challenge_quality
-
-    @challenge_quality.setter
-    def challenge_quality(self, challenge_quality):
-        """Sets the challenge_quality of this TitaniumConsensusDensityScore.
-
-
-        :param challenge_quality: The challenge_quality of this TitaniumConsensusDensityScore.  # noqa: E501
-        :type challenge_quality: object
-        """
-
-        self._challenge_quality = challenge_quality
-
-    @property
-    def dispersion(self):
-        """Gets the dispersion of this TitaniumConsensusDensityScore.  # noqa: E501
-
-
-        :return: The dispersion of this TitaniumConsensusDensityScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._dispersion
-
-    @dispersion.setter
-    def dispersion(self, dispersion):
-        """Sets the dispersion of this TitaniumConsensusDensityScore.
-
-
-        :param dispersion: The dispersion of this TitaniumConsensusDensityScore.  # noqa: E501
-        :type dispersion: object
-        """
-
-        self._dispersion = dispersion
+        self._bimodality_score = bimodality_score
 
     @property
     def evp_alignment_score(self):
@@ -180,27 +118,6 @@ class TitaniumConsensusDensityScore(object):
         self._evp_alignment_score = evp_alignment_score
 
     @property
-    def evp_quality(self):
-        """Gets the evp_quality of this TitaniumConsensusDensityScore.  # noqa: E501
-
-
-        :return: The evp_quality of this TitaniumConsensusDensityScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._evp_quality
-
-    @evp_quality.setter
-    def evp_quality(self, evp_quality):
-        """Sets the evp_quality of this TitaniumConsensusDensityScore.
-
-
-        :param evp_quality: The evp_quality of this TitaniumConsensusDensityScore.  # noqa: E501
-        :type evp_quality: object
-        """
-
-        self._evp_quality = evp_quality
-
-    @property
     def history(self):
         """Gets the history of this TitaniumConsensusDensityScore.  # noqa: E501
 
@@ -222,48 +139,6 @@ class TitaniumConsensusDensityScore(object):
         self._history = history
 
     @property
-    def number_of_participants(self):
-        """Gets the number_of_participants of this TitaniumConsensusDensityScore.  # noqa: E501
-
-
-        :return: The number_of_participants of this TitaniumConsensusDensityScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._number_of_participants
-
-    @number_of_participants.setter
-    def number_of_participants(self, number_of_participants):
-        """Sets the number_of_participants of this TitaniumConsensusDensityScore.
-
-
-        :param number_of_participants: The number_of_participants of this TitaniumConsensusDensityScore.  # noqa: E501
-        :type number_of_participants: object
-        """
-
-        self._number_of_participants = number_of_participants
-
-    @property
-    def outlier_volume(self):
-        """Gets the outlier_volume of this TitaniumConsensusDensityScore.  # noqa: E501
-
-
-        :return: The outlier_volume of this TitaniumConsensusDensityScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._outlier_volume
-
-    @outlier_volume.setter
-    def outlier_volume(self, outlier_volume):
-        """Sets the outlier_volume of this TitaniumConsensusDensityScore.
-
-
-        :param outlier_volume: The outlier_volume of this TitaniumConsensusDensityScore.  # noqa: E501
-        :type outlier_volume: object
-        """
-
-        self._outlier_volume = outlier_volume
-
-    @property
     def score(self):
         """Gets the score of this TitaniumConsensusDensityScore.  # noqa: E501
 
@@ -283,6 +158,27 @@ class TitaniumConsensusDensityScore(object):
         """
 
         self._score = score
+
+    @property
+    def trade_alignment_score(self):
+        """Gets the trade_alignment_score of this TitaniumConsensusDensityScore.  # noqa: E501
+
+
+        :return: The trade_alignment_score of this TitaniumConsensusDensityScore.  # noqa: E501
+        :rtype: object
+        """
+        return self._trade_alignment_score
+
+    @trade_alignment_score.setter
+    def trade_alignment_score(self, trade_alignment_score):
+        """Sets the trade_alignment_score of this TitaniumConsensusDensityScore.
+
+
+        :param trade_alignment_score: The trade_alignment_score of this TitaniumConsensusDensityScore.  # noqa: E501
+        :type trade_alignment_score: object
+        """
+
+        self._trade_alignment_score = trade_alignment_score
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

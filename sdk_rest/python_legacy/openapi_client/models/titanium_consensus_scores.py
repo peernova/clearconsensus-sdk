@@ -36,39 +36,70 @@ class TitaniumConsensusScores(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'bimodality': 'TitaniumBimodality',
         'consensus_density_score': 'TitaniumConsensusDensityScore',
         'evp_alignment_score': 'TitaniumEvpAlignmentScore',
         'evp_quality_score': 'TitaniumEvpQualityScore',
-        'expertise_score': 'TitaniumExpertiseScore'
+        'expertise_rank': 'TitaniumExpertiseRank',
+        'trade_alignment_score': 'TitaniumTradeAlignmentScore'
     }
 
     attribute_map = {
+        'bimodality': 'bimodality',
         'consensus_density_score': 'consensusDensityScore',
         'evp_alignment_score': 'evpAlignmentScore',
         'evp_quality_score': 'evpQualityScore',
-        'expertise_score': 'expertiseScore'
+        'expertise_rank': 'expertiseRank',
+        'trade_alignment_score': 'tradeAlignmentScore'
     }
 
-    def __init__(self, consensus_density_score=None, evp_alignment_score=None, evp_quality_score=None, expertise_score=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bimodality=None, consensus_density_score=None, evp_alignment_score=None, evp_quality_score=None, expertise_rank=None, trade_alignment_score=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusScores - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._bimodality = None
         self._consensus_density_score = None
         self._evp_alignment_score = None
         self._evp_quality_score = None
-        self._expertise_score = None
+        self._expertise_rank = None
+        self._trade_alignment_score = None
         self.discriminator = None
 
+        if bimodality is not None:
+            self.bimodality = bimodality
         if consensus_density_score is not None:
             self.consensus_density_score = consensus_density_score
         if evp_alignment_score is not None:
             self.evp_alignment_score = evp_alignment_score
         if evp_quality_score is not None:
             self.evp_quality_score = evp_quality_score
-        if expertise_score is not None:
-            self.expertise_score = expertise_score
+        if expertise_rank is not None:
+            self.expertise_rank = expertise_rank
+        if trade_alignment_score is not None:
+            self.trade_alignment_score = trade_alignment_score
+
+    @property
+    def bimodality(self):
+        """Gets the bimodality of this TitaniumConsensusScores.  # noqa: E501
+
+
+        :return: The bimodality of this TitaniumConsensusScores.  # noqa: E501
+        :rtype: TitaniumBimodality
+        """
+        return self._bimodality
+
+    @bimodality.setter
+    def bimodality(self, bimodality):
+        """Sets the bimodality of this TitaniumConsensusScores.
+
+
+        :param bimodality: The bimodality of this TitaniumConsensusScores.  # noqa: E501
+        :type bimodality: TitaniumBimodality
+        """
+
+        self._bimodality = bimodality
 
     @property
     def consensus_density_score(self):
@@ -134,25 +165,46 @@ class TitaniumConsensusScores(object):
         self._evp_quality_score = evp_quality_score
 
     @property
-    def expertise_score(self):
-        """Gets the expertise_score of this TitaniumConsensusScores.  # noqa: E501
+    def expertise_rank(self):
+        """Gets the expertise_rank of this TitaniumConsensusScores.  # noqa: E501
 
 
-        :return: The expertise_score of this TitaniumConsensusScores.  # noqa: E501
-        :rtype: TitaniumExpertiseScore
+        :return: The expertise_rank of this TitaniumConsensusScores.  # noqa: E501
+        :rtype: TitaniumExpertiseRank
         """
-        return self._expertise_score
+        return self._expertise_rank
 
-    @expertise_score.setter
-    def expertise_score(self, expertise_score):
-        """Sets the expertise_score of this TitaniumConsensusScores.
+    @expertise_rank.setter
+    def expertise_rank(self, expertise_rank):
+        """Sets the expertise_rank of this TitaniumConsensusScores.
 
 
-        :param expertise_score: The expertise_score of this TitaniumConsensusScores.  # noqa: E501
-        :type expertise_score: TitaniumExpertiseScore
+        :param expertise_rank: The expertise_rank of this TitaniumConsensusScores.  # noqa: E501
+        :type expertise_rank: TitaniumExpertiseRank
         """
 
-        self._expertise_score = expertise_score
+        self._expertise_rank = expertise_rank
+
+    @property
+    def trade_alignment_score(self):
+        """Gets the trade_alignment_score of this TitaniumConsensusScores.  # noqa: E501
+
+
+        :return: The trade_alignment_score of this TitaniumConsensusScores.  # noqa: E501
+        :rtype: TitaniumTradeAlignmentScore
+        """
+        return self._trade_alignment_score
+
+    @trade_alignment_score.setter
+    def trade_alignment_score(self, trade_alignment_score):
+        """Sets the trade_alignment_score of this TitaniumConsensusScores.
+
+
+        :param trade_alignment_score: The trade_alignment_score of this TitaniumConsensusScores.  # noqa: E501
+        :type trade_alignment_score: TitaniumTradeAlignmentScore
+        """
+
+        self._trade_alignment_score = trade_alignment_score
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

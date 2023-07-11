@@ -30,14 +30,18 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
+    from openapi_client.model.titanium_bimodality import TitaniumBimodality
     from openapi_client.model.titanium_consensus_density_score import TitaniumConsensusDensityScore
     from openapi_client.model.titanium_evp_alignment_score import TitaniumEvpAlignmentScore
     from openapi_client.model.titanium_evp_quality_score import TitaniumEvpQualityScore
-    from openapi_client.model.titanium_expertise_score import TitaniumExpertiseScore
+    from openapi_client.model.titanium_expertise_rank import TitaniumExpertiseRank
+    from openapi_client.model.titanium_trade_alignment_score import TitaniumTradeAlignmentScore
+    globals()['TitaniumBimodality'] = TitaniumBimodality
     globals()['TitaniumConsensusDensityScore'] = TitaniumConsensusDensityScore
     globals()['TitaniumEvpAlignmentScore'] = TitaniumEvpAlignmentScore
     globals()['TitaniumEvpQualityScore'] = TitaniumEvpQualityScore
-    globals()['TitaniumExpertiseScore'] = TitaniumExpertiseScore
+    globals()['TitaniumExpertiseRank'] = TitaniumExpertiseRank
+    globals()['TitaniumTradeAlignmentScore'] = TitaniumTradeAlignmentScore
 
 
 class TitaniumConsensusScores(ModelNormal):
@@ -93,10 +97,12 @@ class TitaniumConsensusScores(ModelNormal):
         """
         lazy_import()
         return {
+            'bimodality': (TitaniumBimodality,),  # noqa: E501
             'consensus_density_score': (TitaniumConsensusDensityScore,),  # noqa: E501
             'evp_alignment_score': (TitaniumEvpAlignmentScore,),  # noqa: E501
             'evp_quality_score': (TitaniumEvpQualityScore,),  # noqa: E501
-            'expertise_score': (TitaniumExpertiseScore,),  # noqa: E501
+            'expertise_rank': (TitaniumExpertiseRank,),  # noqa: E501
+            'trade_alignment_score': (TitaniumTradeAlignmentScore,),  # noqa: E501
         }
 
     @cached_property
@@ -105,10 +111,12 @@ class TitaniumConsensusScores(ModelNormal):
 
 
     attribute_map = {
+        'bimodality': 'bimodality',  # noqa: E501
         'consensus_density_score': 'consensusDensityScore',  # noqa: E501
         'evp_alignment_score': 'evpAlignmentScore',  # noqa: E501
         'evp_quality_score': 'evpQualityScore',  # noqa: E501
-        'expertise_score': 'expertiseScore',  # noqa: E501
+        'expertise_rank': 'expertiseRank',  # noqa: E501
+        'trade_alignment_score': 'tradeAlignmentScore',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,10 +160,12 @@ class TitaniumConsensusScores(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            bimodality (TitaniumBimodality): [optional]  # noqa: E501
             consensus_density_score (TitaniumConsensusDensityScore): [optional]  # noqa: E501
             evp_alignment_score (TitaniumEvpAlignmentScore): [optional]  # noqa: E501
             evp_quality_score (TitaniumEvpQualityScore): [optional]  # noqa: E501
-            expertise_score (TitaniumExpertiseScore): [optional]  # noqa: E501
+            expertise_rank (TitaniumExpertiseRank): [optional]  # noqa: E501
+            trade_alignment_score (TitaniumTradeAlignmentScore): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -241,10 +251,12 @@ class TitaniumConsensusScores(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            bimodality (TitaniumBimodality): [optional]  # noqa: E501
             consensus_density_score (TitaniumConsensusDensityScore): [optional]  # noqa: E501
             evp_alignment_score (TitaniumEvpAlignmentScore): [optional]  # noqa: E501
             evp_quality_score (TitaniumEvpQualityScore): [optional]  # noqa: E501
-            expertise_score (TitaniumExpertiseScore): [optional]  # noqa: E501
+            expertise_rank (TitaniumExpertiseRank): [optional]  # noqa: E501
+            trade_alignment_score (TitaniumTradeAlignmentScore): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

@@ -89,14 +89,10 @@ class TitaniumChartRanges(ModelNormal):
         return {
             'bimodal_left_population': (TitaniumRange,),  # noqa: E501
             'bimodal_right_population': (TitaniumRange,),  # noqa: E501
-            'challenge_overlay_consensus': (TitaniumRange,),  # noqa: E501
+            'cohort_consensus': (TitaniumRange,),  # noqa: E501
             'evp': (TitaniumRange,),  # noqa: E501
-            'expert_post_challenge': (TitaniumRange,),  # noqa: E501
-            'expert_pre_challenge': (TitaniumRange,),  # noqa: E501
-            'market_data_overlay_consensus': (TitaniumRange,),  # noqa: E501
-            'submission_mean_median': (TitaniumRange,),  # noqa: E501
+            'submission_evidence': (TitaniumRange,),  # noqa: E501
             'submission_min_max': (TitaniumRange,),  # noqa: E501
-            'submission_only_consensus': (TitaniumRange,),  # noqa: E501
         }
 
     @cached_property
@@ -107,14 +103,10 @@ class TitaniumChartRanges(ModelNormal):
     attribute_map = {
         'bimodal_left_population': 'bimodalLeftPopulation',  # noqa: E501
         'bimodal_right_population': 'bimodalRightPopulation',  # noqa: E501
-        'challenge_overlay_consensus': 'challengeOverlayConsensus',  # noqa: E501
+        'cohort_consensus': 'cohortConsensus',  # noqa: E501
         'evp': 'evp',  # noqa: E501
-        'expert_post_challenge': 'expertPostChallenge',  # noqa: E501
-        'expert_pre_challenge': 'expertPreChallenge',  # noqa: E501
-        'market_data_overlay_consensus': 'marketDataOverlayConsensus',  # noqa: E501
-        'submission_mean_median': 'submissionMeanMedian',  # noqa: E501
+        'submission_evidence': 'submissionEvidence',  # noqa: E501
         'submission_min_max': 'submissionMinMax',  # noqa: E501
-        'submission_only_consensus': 'submissionOnlyConsensus',  # noqa: E501
     }
 
     read_only_vars = {
@@ -160,14 +152,10 @@ class TitaniumChartRanges(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             bimodal_left_population (TitaniumRange): [optional]  # noqa: E501
             bimodal_right_population (TitaniumRange): [optional]  # noqa: E501
-            challenge_overlay_consensus (TitaniumRange): [optional]  # noqa: E501
+            cohort_consensus (TitaniumRange): [optional]  # noqa: E501
             evp (TitaniumRange): [optional]  # noqa: E501
-            expert_post_challenge (TitaniumRange): [optional]  # noqa: E501
-            expert_pre_challenge (TitaniumRange): [optional]  # noqa: E501
-            market_data_overlay_consensus (TitaniumRange): [optional]  # noqa: E501
-            submission_mean_median (TitaniumRange): [optional]  # noqa: E501
+            submission_evidence (TitaniumRange): [optional]  # noqa: E501
             submission_min_max (TitaniumRange): [optional]  # noqa: E501
-            submission_only_consensus (TitaniumRange): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -255,14 +243,10 @@ class TitaniumChartRanges(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             bimodal_left_population (TitaniumRange): [optional]  # noqa: E501
             bimodal_right_population (TitaniumRange): [optional]  # noqa: E501
-            challenge_overlay_consensus (TitaniumRange): [optional]  # noqa: E501
+            cohort_consensus (TitaniumRange): [optional]  # noqa: E501
             evp (TitaniumRange): [optional]  # noqa: E501
-            expert_post_challenge (TitaniumRange): [optional]  # noqa: E501
-            expert_pre_challenge (TitaniumRange): [optional]  # noqa: E501
-            market_data_overlay_consensus (TitaniumRange): [optional]  # noqa: E501
-            submission_mean_median (TitaniumRange): [optional]  # noqa: E501
+            submission_evidence (TitaniumRange): [optional]  # noqa: E501
             submission_min_max (TitaniumRange): [optional]  # noqa: E501
-            submission_only_consensus (TitaniumRange): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

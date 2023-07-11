@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradePeriodMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumTradePeriodMetrics {
   public static final String SERIALIZED_NAME_MAX_NOTIONAL_AMOUNT = "maxNotionalAmount";
   @SerializedName(SERIALIZED_NAME_MAX_NOTIONAL_AMOUNT)
@@ -57,6 +57,10 @@ public class TitaniumTradePeriodMetrics {
   public static final String SERIALIZED_NAME_MIN_NOTIONAL_AMOUNT = "minNotionalAmount";
   @SerializedName(SERIALIZED_NAME_MIN_NOTIONAL_AMOUNT)
   private BigDecimal minNotionalAmount;
+
+  public static final String SERIALIZED_NAME_TOTAL_LIQUIDITY = "totalLiquidity";
+  @SerializedName(SERIALIZED_NAME_TOTAL_LIQUIDITY)
+  private BigDecimal totalLiquidity;
 
   public static final String SERIALIZED_NAME_TRADE_COUNT = "tradeCount";
   @SerializedName(SERIALIZED_NAME_TRADE_COUNT)
@@ -111,6 +115,29 @@ public class TitaniumTradePeriodMetrics {
   }
 
 
+  public TitaniumTradePeriodMetrics totalLiquidity(BigDecimal totalLiquidity) {
+    
+    this.totalLiquidity = totalLiquidity;
+    return this;
+  }
+
+   /**
+   * Get totalLiquidity
+   * @return totalLiquidity
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public BigDecimal getTotalLiquidity() {
+    return totalLiquidity;
+  }
+
+
+  public void setTotalLiquidity(BigDecimal totalLiquidity) {
+    this.totalLiquidity = totalLiquidity;
+  }
+
+
   public TitaniumTradePeriodMetrics tradeCount(String tradeCount) {
     
     this.tradeCount = tradeCount;
@@ -146,12 +173,13 @@ public class TitaniumTradePeriodMetrics {
     TitaniumTradePeriodMetrics titaniumTradePeriodMetrics = (TitaniumTradePeriodMetrics) o;
     return Objects.equals(this.maxNotionalAmount, titaniumTradePeriodMetrics.maxNotionalAmount) &&
         Objects.equals(this.minNotionalAmount, titaniumTradePeriodMetrics.minNotionalAmount) &&
+        Objects.equals(this.totalLiquidity, titaniumTradePeriodMetrics.totalLiquidity) &&
         Objects.equals(this.tradeCount, titaniumTradePeriodMetrics.tradeCount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxNotionalAmount, minNotionalAmount, tradeCount);
+    return Objects.hash(maxNotionalAmount, minNotionalAmount, totalLiquidity, tradeCount);
   }
 
   @Override
@@ -160,6 +188,7 @@ public class TitaniumTradePeriodMetrics {
     sb.append("class TitaniumTradePeriodMetrics {\n");
     sb.append("    maxNotionalAmount: ").append(toIndentedString(maxNotionalAmount)).append("\n");
     sb.append("    minNotionalAmount: ").append(toIndentedString(minNotionalAmount)).append("\n");
+    sb.append("    totalLiquidity: ").append(toIndentedString(totalLiquidity)).append("\n");
     sb.append("    tradeCount: ").append(toIndentedString(tradeCount)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -185,6 +214,7 @@ public class TitaniumTradePeriodMetrics {
     openapiFields = new HashSet<String>();
     openapiFields.add("maxNotionalAmount");
     openapiFields.add("minNotionalAmount");
+    openapiFields.add("totalLiquidity");
     openapiFields.add("tradeCount");
 
     // a set of required properties/fields (JSON key names)

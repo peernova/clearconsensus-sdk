@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**submissionPrice** | **BigDecimal** |  |  [optional] |
+|**submissionPrice** | **Object** |  |  [optional] |
 
 
 

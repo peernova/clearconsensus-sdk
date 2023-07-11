@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChartRanges
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumChartRanges {
   public static final String SERIALIZED_NAME_BIMODAL_LEFT_POPULATION = "bimodalLeftPopulation";
   @SerializedName(SERIALIZED_NAME_BIMODAL_LEFT_POPULATION)
@@ -58,37 +58,21 @@ public class TitaniumChartRanges {
   @SerializedName(SERIALIZED_NAME_BIMODAL_RIGHT_POPULATION)
   private TitaniumRange bimodalRightPopulation;
 
-  public static final String SERIALIZED_NAME_CHALLENGE_OVERLAY_CONSENSUS = "challengeOverlayConsensus";
-  @SerializedName(SERIALIZED_NAME_CHALLENGE_OVERLAY_CONSENSUS)
-  private TitaniumRange challengeOverlayConsensus;
+  public static final String SERIALIZED_NAME_COHORT_CONSENSUS = "cohortConsensus";
+  @SerializedName(SERIALIZED_NAME_COHORT_CONSENSUS)
+  private TitaniumRange cohortConsensus;
 
   public static final String SERIALIZED_NAME_EVP = "evp";
   @SerializedName(SERIALIZED_NAME_EVP)
   private TitaniumRange evp;
 
-  public static final String SERIALIZED_NAME_EXPERT_POST_CHALLENGE = "expertPostChallenge";
-  @SerializedName(SERIALIZED_NAME_EXPERT_POST_CHALLENGE)
-  private TitaniumRange expertPostChallenge;
-
-  public static final String SERIALIZED_NAME_EXPERT_PRE_CHALLENGE = "expertPreChallenge";
-  @SerializedName(SERIALIZED_NAME_EXPERT_PRE_CHALLENGE)
-  private TitaniumRange expertPreChallenge;
-
-  public static final String SERIALIZED_NAME_MARKET_DATA_OVERLAY_CONSENSUS = "marketDataOverlayConsensus";
-  @SerializedName(SERIALIZED_NAME_MARKET_DATA_OVERLAY_CONSENSUS)
-  private TitaniumRange marketDataOverlayConsensus;
-
-  public static final String SERIALIZED_NAME_SUBMISSION_MEAN_MEDIAN = "submissionMeanMedian";
-  @SerializedName(SERIALIZED_NAME_SUBMISSION_MEAN_MEDIAN)
-  private TitaniumRange submissionMeanMedian;
+  public static final String SERIALIZED_NAME_SUBMISSION_EVIDENCE = "submissionEvidence";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_EVIDENCE)
+  private TitaniumRange submissionEvidence;
 
   public static final String SERIALIZED_NAME_SUBMISSION_MIN_MAX = "submissionMinMax";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_MIN_MAX)
   private TitaniumRange submissionMinMax;
-
-  public static final String SERIALIZED_NAME_SUBMISSION_ONLY_CONSENSUS = "submissionOnlyConsensus";
-  @SerializedName(SERIALIZED_NAME_SUBMISSION_ONLY_CONSENSUS)
-  private TitaniumRange submissionOnlyConsensus;
 
   public TitaniumChartRanges() { 
   }
@@ -139,26 +123,26 @@ public class TitaniumChartRanges {
   }
 
 
-  public TitaniumChartRanges challengeOverlayConsensus(TitaniumRange challengeOverlayConsensus) {
+  public TitaniumChartRanges cohortConsensus(TitaniumRange cohortConsensus) {
     
-    this.challengeOverlayConsensus = challengeOverlayConsensus;
+    this.cohortConsensus = cohortConsensus;
     return this;
   }
 
    /**
-   * Get challengeOverlayConsensus
-   * @return challengeOverlayConsensus
+   * Get cohortConsensus
+   * @return cohortConsensus
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumRange getChallengeOverlayConsensus() {
-    return challengeOverlayConsensus;
+  public TitaniumRange getCohortConsensus() {
+    return cohortConsensus;
   }
 
 
-  public void setChallengeOverlayConsensus(TitaniumRange challengeOverlayConsensus) {
-    this.challengeOverlayConsensus = challengeOverlayConsensus;
+  public void setCohortConsensus(TitaniumRange cohortConsensus) {
+    this.cohortConsensus = cohortConsensus;
   }
 
 
@@ -185,95 +169,26 @@ public class TitaniumChartRanges {
   }
 
 
-  public TitaniumChartRanges expertPostChallenge(TitaniumRange expertPostChallenge) {
+  public TitaniumChartRanges submissionEvidence(TitaniumRange submissionEvidence) {
     
-    this.expertPostChallenge = expertPostChallenge;
+    this.submissionEvidence = submissionEvidence;
     return this;
   }
 
    /**
-   * Get expertPostChallenge
-   * @return expertPostChallenge
+   * Get submissionEvidence
+   * @return submissionEvidence
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumRange getExpertPostChallenge() {
-    return expertPostChallenge;
+  public TitaniumRange getSubmissionEvidence() {
+    return submissionEvidence;
   }
 
 
-  public void setExpertPostChallenge(TitaniumRange expertPostChallenge) {
-    this.expertPostChallenge = expertPostChallenge;
-  }
-
-
-  public TitaniumChartRanges expertPreChallenge(TitaniumRange expertPreChallenge) {
-    
-    this.expertPreChallenge = expertPreChallenge;
-    return this;
-  }
-
-   /**
-   * Get expertPreChallenge
-   * @return expertPreChallenge
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumRange getExpertPreChallenge() {
-    return expertPreChallenge;
-  }
-
-
-  public void setExpertPreChallenge(TitaniumRange expertPreChallenge) {
-    this.expertPreChallenge = expertPreChallenge;
-  }
-
-
-  public TitaniumChartRanges marketDataOverlayConsensus(TitaniumRange marketDataOverlayConsensus) {
-    
-    this.marketDataOverlayConsensus = marketDataOverlayConsensus;
-    return this;
-  }
-
-   /**
-   * Get marketDataOverlayConsensus
-   * @return marketDataOverlayConsensus
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumRange getMarketDataOverlayConsensus() {
-    return marketDataOverlayConsensus;
-  }
-
-
-  public void setMarketDataOverlayConsensus(TitaniumRange marketDataOverlayConsensus) {
-    this.marketDataOverlayConsensus = marketDataOverlayConsensus;
-  }
-
-
-  public TitaniumChartRanges submissionMeanMedian(TitaniumRange submissionMeanMedian) {
-    
-    this.submissionMeanMedian = submissionMeanMedian;
-    return this;
-  }
-
-   /**
-   * Get submissionMeanMedian
-   * @return submissionMeanMedian
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumRange getSubmissionMeanMedian() {
-    return submissionMeanMedian;
-  }
-
-
-  public void setSubmissionMeanMedian(TitaniumRange submissionMeanMedian) {
-    this.submissionMeanMedian = submissionMeanMedian;
+  public void setSubmissionEvidence(TitaniumRange submissionEvidence) {
+    this.submissionEvidence = submissionEvidence;
   }
 
 
@@ -300,29 +215,6 @@ public class TitaniumChartRanges {
   }
 
 
-  public TitaniumChartRanges submissionOnlyConsensus(TitaniumRange submissionOnlyConsensus) {
-    
-    this.submissionOnlyConsensus = submissionOnlyConsensus;
-    return this;
-  }
-
-   /**
-   * Get submissionOnlyConsensus
-   * @return submissionOnlyConsensus
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumRange getSubmissionOnlyConsensus() {
-    return submissionOnlyConsensus;
-  }
-
-
-  public void setSubmissionOnlyConsensus(TitaniumRange submissionOnlyConsensus) {
-    this.submissionOnlyConsensus = submissionOnlyConsensus;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -335,19 +227,15 @@ public class TitaniumChartRanges {
     TitaniumChartRanges titaniumChartRanges = (TitaniumChartRanges) o;
     return Objects.equals(this.bimodalLeftPopulation, titaniumChartRanges.bimodalLeftPopulation) &&
         Objects.equals(this.bimodalRightPopulation, titaniumChartRanges.bimodalRightPopulation) &&
-        Objects.equals(this.challengeOverlayConsensus, titaniumChartRanges.challengeOverlayConsensus) &&
+        Objects.equals(this.cohortConsensus, titaniumChartRanges.cohortConsensus) &&
         Objects.equals(this.evp, titaniumChartRanges.evp) &&
-        Objects.equals(this.expertPostChallenge, titaniumChartRanges.expertPostChallenge) &&
-        Objects.equals(this.expertPreChallenge, titaniumChartRanges.expertPreChallenge) &&
-        Objects.equals(this.marketDataOverlayConsensus, titaniumChartRanges.marketDataOverlayConsensus) &&
-        Objects.equals(this.submissionMeanMedian, titaniumChartRanges.submissionMeanMedian) &&
-        Objects.equals(this.submissionMinMax, titaniumChartRanges.submissionMinMax) &&
-        Objects.equals(this.submissionOnlyConsensus, titaniumChartRanges.submissionOnlyConsensus);
+        Objects.equals(this.submissionEvidence, titaniumChartRanges.submissionEvidence) &&
+        Objects.equals(this.submissionMinMax, titaniumChartRanges.submissionMinMax);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bimodalLeftPopulation, bimodalRightPopulation, challengeOverlayConsensus, evp, expertPostChallenge, expertPreChallenge, marketDataOverlayConsensus, submissionMeanMedian, submissionMinMax, submissionOnlyConsensus);
+    return Objects.hash(bimodalLeftPopulation, bimodalRightPopulation, cohortConsensus, evp, submissionEvidence, submissionMinMax);
   }
 
   @Override
@@ -356,14 +244,10 @@ public class TitaniumChartRanges {
     sb.append("class TitaniumChartRanges {\n");
     sb.append("    bimodalLeftPopulation: ").append(toIndentedString(bimodalLeftPopulation)).append("\n");
     sb.append("    bimodalRightPopulation: ").append(toIndentedString(bimodalRightPopulation)).append("\n");
-    sb.append("    challengeOverlayConsensus: ").append(toIndentedString(challengeOverlayConsensus)).append("\n");
+    sb.append("    cohortConsensus: ").append(toIndentedString(cohortConsensus)).append("\n");
     sb.append("    evp: ").append(toIndentedString(evp)).append("\n");
-    sb.append("    expertPostChallenge: ").append(toIndentedString(expertPostChallenge)).append("\n");
-    sb.append("    expertPreChallenge: ").append(toIndentedString(expertPreChallenge)).append("\n");
-    sb.append("    marketDataOverlayConsensus: ").append(toIndentedString(marketDataOverlayConsensus)).append("\n");
-    sb.append("    submissionMeanMedian: ").append(toIndentedString(submissionMeanMedian)).append("\n");
+    sb.append("    submissionEvidence: ").append(toIndentedString(submissionEvidence)).append("\n");
     sb.append("    submissionMinMax: ").append(toIndentedString(submissionMinMax)).append("\n");
-    sb.append("    submissionOnlyConsensus: ").append(toIndentedString(submissionOnlyConsensus)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -388,14 +272,10 @@ public class TitaniumChartRanges {
     openapiFields = new HashSet<String>();
     openapiFields.add("bimodalLeftPopulation");
     openapiFields.add("bimodalRightPopulation");
-    openapiFields.add("challengeOverlayConsensus");
+    openapiFields.add("cohortConsensus");
     openapiFields.add("evp");
-    openapiFields.add("expertPostChallenge");
-    openapiFields.add("expertPreChallenge");
-    openapiFields.add("marketDataOverlayConsensus");
-    openapiFields.add("submissionMeanMedian");
+    openapiFields.add("submissionEvidence");
     openapiFields.add("submissionMinMax");
-    openapiFields.add("submissionOnlyConsensus");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -431,37 +311,21 @@ public class TitaniumChartRanges {
       if (jsonObj.getAsJsonObject("bimodalRightPopulation") != null) {
         TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("bimodalRightPopulation"));
       }
-      // validate the optional field `challengeOverlayConsensus`
-      if (jsonObj.getAsJsonObject("challengeOverlayConsensus") != null) {
-        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("challengeOverlayConsensus"));
+      // validate the optional field `cohortConsensus`
+      if (jsonObj.getAsJsonObject("cohortConsensus") != null) {
+        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("cohortConsensus"));
       }
       // validate the optional field `evp`
       if (jsonObj.getAsJsonObject("evp") != null) {
         TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("evp"));
       }
-      // validate the optional field `expertPostChallenge`
-      if (jsonObj.getAsJsonObject("expertPostChallenge") != null) {
-        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("expertPostChallenge"));
-      }
-      // validate the optional field `expertPreChallenge`
-      if (jsonObj.getAsJsonObject("expertPreChallenge") != null) {
-        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("expertPreChallenge"));
-      }
-      // validate the optional field `marketDataOverlayConsensus`
-      if (jsonObj.getAsJsonObject("marketDataOverlayConsensus") != null) {
-        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("marketDataOverlayConsensus"));
-      }
-      // validate the optional field `submissionMeanMedian`
-      if (jsonObj.getAsJsonObject("submissionMeanMedian") != null) {
-        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("submissionMeanMedian"));
+      // validate the optional field `submissionEvidence`
+      if (jsonObj.getAsJsonObject("submissionEvidence") != null) {
+        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("submissionEvidence"));
       }
       // validate the optional field `submissionMinMax`
       if (jsonObj.getAsJsonObject("submissionMinMax") != null) {
         TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("submissionMinMax"));
-      }
-      // validate the optional field `submissionOnlyConsensus`
-      if (jsonObj.getAsJsonObject("submissionOnlyConsensus") != null) {
-        TitaniumRange.validateJsonObject(jsonObj.getAsJsonObject("submissionOnlyConsensus"));
       }
   }
 

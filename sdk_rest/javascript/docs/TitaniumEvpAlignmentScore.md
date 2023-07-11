@@ -4,12 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**evpAlignmentDispersionScore** | **Object** |  | [optional] 
 **evpMid** | **Object** |  | [optional] 
-**history** | [**[TitaniumEvpAlignmentScoreWithDate]**](TitaniumEvpAlignmentScoreWithDate.md) |  | [optional] 
+**history** | [**[TitaniumTradeAligmentDateAndValue]**](TitaniumTradeAligmentDateAndValue.md) |  | [optional] 
 **score** | **Object** |  | [optional] 
 **scoreStatus** | **String** |  | [optional] 
+**stdDev** | **Object** |  | [optional] 
 **submissionMean** | **Object** |  | [optional] 
-**submissionStdDev** | **Object** |  | [optional] 
 
 

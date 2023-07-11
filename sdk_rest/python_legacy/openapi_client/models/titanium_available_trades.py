@@ -36,50 +36,48 @@ class TitaniumAvailableTrades(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'abs_diff_from_consensus_price': 'object',
-        'abs_diff_from_expert_cohort_price': 'object',
+        'abs_diff_from_latest_trade': 'object',
         'day_trade_number': 'str',
         'latest_trade_price': 'object',
         'max': 'object',
         'min': 'object',
         'month_trade_number': 'str',
         'sub_price_abs_diff_from_latest_trade': 'object',
+        'sub_price_diff': 'object',
         'week_trade_number': 'str'
     }
 
     attribute_map = {
-        'abs_diff_from_consensus_price': 'absDiffFromConsensusPrice',
-        'abs_diff_from_expert_cohort_price': 'absDiffFromExpertCohortPrice',
+        'abs_diff_from_latest_trade': 'absDiffFromLatestTrade',
         'day_trade_number': 'dayTradeNumber',
         'latest_trade_price': 'latestTradePrice',
         'max': 'max',
         'min': 'min',
         'month_trade_number': 'monthTradeNumber',
         'sub_price_abs_diff_from_latest_trade': 'subPriceAbsDiffFromLatestTrade',
+        'sub_price_diff': 'subPriceDiff',
         'week_trade_number': 'weekTradeNumber'
     }
 
-    def __init__(self, abs_diff_from_consensus_price=None, abs_diff_from_expert_cohort_price=None, day_trade_number=None, latest_trade_price=None, max=None, min=None, month_trade_number=None, sub_price_abs_diff_from_latest_trade=None, week_trade_number=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_latest_trade=None, day_trade_number=None, latest_trade_price=None, max=None, min=None, month_trade_number=None, sub_price_abs_diff_from_latest_trade=None, sub_price_diff=None, week_trade_number=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumAvailableTrades - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._abs_diff_from_consensus_price = None
-        self._abs_diff_from_expert_cohort_price = None
+        self._abs_diff_from_latest_trade = None
         self._day_trade_number = None
         self._latest_trade_price = None
         self._max = None
         self._min = None
         self._month_trade_number = None
         self._sub_price_abs_diff_from_latest_trade = None
+        self._sub_price_diff = None
         self._week_trade_number = None
         self.discriminator = None
 
-        if abs_diff_from_consensus_price is not None:
-            self.abs_diff_from_consensus_price = abs_diff_from_consensus_price
-        if abs_diff_from_expert_cohort_price is not None:
-            self.abs_diff_from_expert_cohort_price = abs_diff_from_expert_cohort_price
+        if abs_diff_from_latest_trade is not None:
+            self.abs_diff_from_latest_trade = abs_diff_from_latest_trade
         if day_trade_number is not None:
             self.day_trade_number = day_trade_number
         if latest_trade_price is not None:
@@ -92,50 +90,31 @@ class TitaniumAvailableTrades(object):
             self.month_trade_number = month_trade_number
         if sub_price_abs_diff_from_latest_trade is not None:
             self.sub_price_abs_diff_from_latest_trade = sub_price_abs_diff_from_latest_trade
+        if sub_price_diff is not None:
+            self.sub_price_diff = sub_price_diff
         if week_trade_number is not None:
             self.week_trade_number = week_trade_number
 
     @property
-    def abs_diff_from_consensus_price(self):
-        """Gets the abs_diff_from_consensus_price of this TitaniumAvailableTrades.  # noqa: E501
+    def abs_diff_from_latest_trade(self):
+        """Gets the abs_diff_from_latest_trade of this TitaniumAvailableTrades.  # noqa: E501
 
 
-        :return: The abs_diff_from_consensus_price of this TitaniumAvailableTrades.  # noqa: E501
+        :return: The abs_diff_from_latest_trade of this TitaniumAvailableTrades.  # noqa: E501
         :rtype: object
         """
-        return self._abs_diff_from_consensus_price
+        return self._abs_diff_from_latest_trade
 
-    @abs_diff_from_consensus_price.setter
-    def abs_diff_from_consensus_price(self, abs_diff_from_consensus_price):
-        """Sets the abs_diff_from_consensus_price of this TitaniumAvailableTrades.
+    @abs_diff_from_latest_trade.setter
+    def abs_diff_from_latest_trade(self, abs_diff_from_latest_trade):
+        """Sets the abs_diff_from_latest_trade of this TitaniumAvailableTrades.
 
 
-        :param abs_diff_from_consensus_price: The abs_diff_from_consensus_price of this TitaniumAvailableTrades.  # noqa: E501
-        :type abs_diff_from_consensus_price: object
+        :param abs_diff_from_latest_trade: The abs_diff_from_latest_trade of this TitaniumAvailableTrades.  # noqa: E501
+        :type abs_diff_from_latest_trade: object
         """
 
-        self._abs_diff_from_consensus_price = abs_diff_from_consensus_price
-
-    @property
-    def abs_diff_from_expert_cohort_price(self):
-        """Gets the abs_diff_from_expert_cohort_price of this TitaniumAvailableTrades.  # noqa: E501
-
-
-        :return: The abs_diff_from_expert_cohort_price of this TitaniumAvailableTrades.  # noqa: E501
-        :rtype: object
-        """
-        return self._abs_diff_from_expert_cohort_price
-
-    @abs_diff_from_expert_cohort_price.setter
-    def abs_diff_from_expert_cohort_price(self, abs_diff_from_expert_cohort_price):
-        """Sets the abs_diff_from_expert_cohort_price of this TitaniumAvailableTrades.
-
-
-        :param abs_diff_from_expert_cohort_price: The abs_diff_from_expert_cohort_price of this TitaniumAvailableTrades.  # noqa: E501
-        :type abs_diff_from_expert_cohort_price: object
-        """
-
-        self._abs_diff_from_expert_cohort_price = abs_diff_from_expert_cohort_price
+        self._abs_diff_from_latest_trade = abs_diff_from_latest_trade
 
     @property
     def day_trade_number(self):
@@ -262,6 +241,27 @@ class TitaniumAvailableTrades(object):
         """
 
         self._sub_price_abs_diff_from_latest_trade = sub_price_abs_diff_from_latest_trade
+
+    @property
+    def sub_price_diff(self):
+        """Gets the sub_price_diff of this TitaniumAvailableTrades.  # noqa: E501
+
+
+        :return: The sub_price_diff of this TitaniumAvailableTrades.  # noqa: E501
+        :rtype: object
+        """
+        return self._sub_price_diff
+
+    @sub_price_diff.setter
+    def sub_price_diff(self, sub_price_diff):
+        """Sets the sub_price_diff of this TitaniumAvailableTrades.
+
+
+        :param sub_price_diff: The sub_price_diff of this TitaniumAvailableTrades.  # noqa: E501
+        :type sub_price_diff: object
+        """
+
+        self._sub_price_diff = sub_price_diff
 
     @property
     def week_trade_number(self):

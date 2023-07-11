@@ -36,42 +36,37 @@ class TitaniumEvpAlignmentScore(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'evp_alignment_dispersion_score': 'object',
         'evp_mid': 'object',
-        'history': 'list[TitaniumEvpAlignmentScoreWithDate]',
+        'history': 'list[TitaniumTradeAligmentDateAndValue]',
         'score': 'object',
         'score_status': 'str',
-        'submission_mean': 'object',
-        'submission_std_dev': 'object'
+        'std_dev': 'object',
+        'submission_mean': 'object'
     }
 
     attribute_map = {
-        'evp_alignment_dispersion_score': 'evpAlignmentDispersionScore',
         'evp_mid': 'evpMid',
         'history': 'history',
         'score': 'score',
         'score_status': 'scoreStatus',
-        'submission_mean': 'submissionMean',
-        'submission_std_dev': 'submissionStdDev'
+        'std_dev': 'stdDev',
+        'submission_mean': 'submissionMean'
     }
 
-    def __init__(self, evp_alignment_dispersion_score=None, evp_mid=None, history=None, score=None, score_status=None, submission_mean=None, submission_std_dev=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, evp_mid=None, history=None, score=None, score_status=None, std_dev=None, submission_mean=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumEvpAlignmentScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._evp_alignment_dispersion_score = None
         self._evp_mid = None
         self._history = None
         self._score = None
         self._score_status = None
+        self._std_dev = None
         self._submission_mean = None
-        self._submission_std_dev = None
         self.discriminator = None
 
-        if evp_alignment_dispersion_score is not None:
-            self.evp_alignment_dispersion_score = evp_alignment_dispersion_score
         if evp_mid is not None:
             self.evp_mid = evp_mid
         if history is not None:
@@ -80,31 +75,10 @@ class TitaniumEvpAlignmentScore(object):
             self.score = score
         if score_status is not None:
             self.score_status = score_status
+        if std_dev is not None:
+            self.std_dev = std_dev
         if submission_mean is not None:
             self.submission_mean = submission_mean
-        if submission_std_dev is not None:
-            self.submission_std_dev = submission_std_dev
-
-    @property
-    def evp_alignment_dispersion_score(self):
-        """Gets the evp_alignment_dispersion_score of this TitaniumEvpAlignmentScore.  # noqa: E501
-
-
-        :return: The evp_alignment_dispersion_score of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._evp_alignment_dispersion_score
-
-    @evp_alignment_dispersion_score.setter
-    def evp_alignment_dispersion_score(self, evp_alignment_dispersion_score):
-        """Sets the evp_alignment_dispersion_score of this TitaniumEvpAlignmentScore.
-
-
-        :param evp_alignment_dispersion_score: The evp_alignment_dispersion_score of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :type evp_alignment_dispersion_score: object
-        """
-
-        self._evp_alignment_dispersion_score = evp_alignment_dispersion_score
 
     @property
     def evp_mid(self):
@@ -133,7 +107,7 @@ class TitaniumEvpAlignmentScore(object):
 
 
         :return: The history of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :rtype: list[TitaniumEvpAlignmentScoreWithDate]
+        :rtype: list[TitaniumTradeAligmentDateAndValue]
         """
         return self._history
 
@@ -143,7 +117,7 @@ class TitaniumEvpAlignmentScore(object):
 
 
         :param history: The history of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :type history: list[TitaniumEvpAlignmentScoreWithDate]
+        :type history: list[TitaniumTradeAligmentDateAndValue]
         """
 
         self._history = history
@@ -191,6 +165,27 @@ class TitaniumEvpAlignmentScore(object):
         self._score_status = score_status
 
     @property
+    def std_dev(self):
+        """Gets the std_dev of this TitaniumEvpAlignmentScore.  # noqa: E501
+
+
+        :return: The std_dev of this TitaniumEvpAlignmentScore.  # noqa: E501
+        :rtype: object
+        """
+        return self._std_dev
+
+    @std_dev.setter
+    def std_dev(self, std_dev):
+        """Sets the std_dev of this TitaniumEvpAlignmentScore.
+
+
+        :param std_dev: The std_dev of this TitaniumEvpAlignmentScore.  # noqa: E501
+        :type std_dev: object
+        """
+
+        self._std_dev = std_dev
+
+    @property
     def submission_mean(self):
         """Gets the submission_mean of this TitaniumEvpAlignmentScore.  # noqa: E501
 
@@ -210,27 +205,6 @@ class TitaniumEvpAlignmentScore(object):
         """
 
         self._submission_mean = submission_mean
-
-    @property
-    def submission_std_dev(self):
-        """Gets the submission_std_dev of this TitaniumEvpAlignmentScore.  # noqa: E501
-
-
-        :return: The submission_std_dev of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._submission_std_dev
-
-    @submission_std_dev.setter
-    def submission_std_dev(self, submission_std_dev):
-        """Sets the submission_std_dev of this TitaniumEvpAlignmentScore.
-
-
-        :param submission_std_dev: The submission_std_dev of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :type submission_std_dev: object
-        """
-
-        self._submission_std_dev = submission_std_dev
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

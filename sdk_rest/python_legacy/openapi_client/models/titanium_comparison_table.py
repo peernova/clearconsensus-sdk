@@ -36,70 +36,49 @@ class TitaniumComparisonTable(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'all_participant_cohort_consensus': 'TitaniumAllParticipantExplorerTableColumn',
         'available_trades': 'TitaniumAvailableTrades',
-        'evaluated_price': 'TitaniumEvpExplorerTableColumn',
-        'expert_cohort_consensus': 'TitaniumExpertExplorerTableColumn',
+        'cohort_consensus_column': 'TitaniumCohortConsensusColumn',
+        'evidential_pricing': 'TitaniumEvidentalPricing',
         'submission': 'TitaniumSubmissionExplorerTableColumn',
+        'submission_evidence': 'TitaniumSubmissionEvidenceTableColumn',
         'submission_statistics': 'TitaniumSubmissionStatisticsExplorerTableColumn'
     }
 
     attribute_map = {
-        'all_participant_cohort_consensus': 'allParticipantCohortConsensus',
         'available_trades': 'availableTrades',
-        'evaluated_price': 'evaluatedPrice',
-        'expert_cohort_consensus': 'expertCohortConsensus',
+        'cohort_consensus_column': 'cohortConsensusColumn',
+        'evidential_pricing': 'evidentialPricing',
         'submission': 'submission',
+        'submission_evidence': 'submissionEvidence',
         'submission_statistics': 'submissionStatistics'
     }
 
-    def __init__(self, all_participant_cohort_consensus=None, available_trades=None, evaluated_price=None, expert_cohort_consensus=None, submission=None, submission_statistics=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, available_trades=None, cohort_consensus_column=None, evidential_pricing=None, submission=None, submission_evidence=None, submission_statistics=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumComparisonTable - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._all_participant_cohort_consensus = None
         self._available_trades = None
-        self._evaluated_price = None
-        self._expert_cohort_consensus = None
+        self._cohort_consensus_column = None
+        self._evidential_pricing = None
         self._submission = None
+        self._submission_evidence = None
         self._submission_statistics = None
         self.discriminator = None
 
-        if all_participant_cohort_consensus is not None:
-            self.all_participant_cohort_consensus = all_participant_cohort_consensus
         if available_trades is not None:
             self.available_trades = available_trades
-        if evaluated_price is not None:
-            self.evaluated_price = evaluated_price
-        if expert_cohort_consensus is not None:
-            self.expert_cohort_consensus = expert_cohort_consensus
+        if cohort_consensus_column is not None:
+            self.cohort_consensus_column = cohort_consensus_column
+        if evidential_pricing is not None:
+            self.evidential_pricing = evidential_pricing
         if submission is not None:
             self.submission = submission
+        if submission_evidence is not None:
+            self.submission_evidence = submission_evidence
         if submission_statistics is not None:
             self.submission_statistics = submission_statistics
-
-    @property
-    def all_participant_cohort_consensus(self):
-        """Gets the all_participant_cohort_consensus of this TitaniumComparisonTable.  # noqa: E501
-
-
-        :return: The all_participant_cohort_consensus of this TitaniumComparisonTable.  # noqa: E501
-        :rtype: TitaniumAllParticipantExplorerTableColumn
-        """
-        return self._all_participant_cohort_consensus
-
-    @all_participant_cohort_consensus.setter
-    def all_participant_cohort_consensus(self, all_participant_cohort_consensus):
-        """Sets the all_participant_cohort_consensus of this TitaniumComparisonTable.
-
-
-        :param all_participant_cohort_consensus: The all_participant_cohort_consensus of this TitaniumComparisonTable.  # noqa: E501
-        :type all_participant_cohort_consensus: TitaniumAllParticipantExplorerTableColumn
-        """
-
-        self._all_participant_cohort_consensus = all_participant_cohort_consensus
 
     @property
     def available_trades(self):
@@ -123,46 +102,46 @@ class TitaniumComparisonTable(object):
         self._available_trades = available_trades
 
     @property
-    def evaluated_price(self):
-        """Gets the evaluated_price of this TitaniumComparisonTable.  # noqa: E501
+    def cohort_consensus_column(self):
+        """Gets the cohort_consensus_column of this TitaniumComparisonTable.  # noqa: E501
 
 
-        :return: The evaluated_price of this TitaniumComparisonTable.  # noqa: E501
-        :rtype: TitaniumEvpExplorerTableColumn
+        :return: The cohort_consensus_column of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumCohortConsensusColumn
         """
-        return self._evaluated_price
+        return self._cohort_consensus_column
 
-    @evaluated_price.setter
-    def evaluated_price(self, evaluated_price):
-        """Sets the evaluated_price of this TitaniumComparisonTable.
+    @cohort_consensus_column.setter
+    def cohort_consensus_column(self, cohort_consensus_column):
+        """Sets the cohort_consensus_column of this TitaniumComparisonTable.
 
 
-        :param evaluated_price: The evaluated_price of this TitaniumComparisonTable.  # noqa: E501
-        :type evaluated_price: TitaniumEvpExplorerTableColumn
+        :param cohort_consensus_column: The cohort_consensus_column of this TitaniumComparisonTable.  # noqa: E501
+        :type cohort_consensus_column: TitaniumCohortConsensusColumn
         """
 
-        self._evaluated_price = evaluated_price
+        self._cohort_consensus_column = cohort_consensus_column
 
     @property
-    def expert_cohort_consensus(self):
-        """Gets the expert_cohort_consensus of this TitaniumComparisonTable.  # noqa: E501
+    def evidential_pricing(self):
+        """Gets the evidential_pricing of this TitaniumComparisonTable.  # noqa: E501
 
 
-        :return: The expert_cohort_consensus of this TitaniumComparisonTable.  # noqa: E501
-        :rtype: TitaniumExpertExplorerTableColumn
+        :return: The evidential_pricing of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumEvidentalPricing
         """
-        return self._expert_cohort_consensus
+        return self._evidential_pricing
 
-    @expert_cohort_consensus.setter
-    def expert_cohort_consensus(self, expert_cohort_consensus):
-        """Sets the expert_cohort_consensus of this TitaniumComparisonTable.
+    @evidential_pricing.setter
+    def evidential_pricing(self, evidential_pricing):
+        """Sets the evidential_pricing of this TitaniumComparisonTable.
 
 
-        :param expert_cohort_consensus: The expert_cohort_consensus of this TitaniumComparisonTable.  # noqa: E501
-        :type expert_cohort_consensus: TitaniumExpertExplorerTableColumn
+        :param evidential_pricing: The evidential_pricing of this TitaniumComparisonTable.  # noqa: E501
+        :type evidential_pricing: TitaniumEvidentalPricing
         """
 
-        self._expert_cohort_consensus = expert_cohort_consensus
+        self._evidential_pricing = evidential_pricing
 
     @property
     def submission(self):
@@ -184,6 +163,27 @@ class TitaniumComparisonTable(object):
         """
 
         self._submission = submission
+
+    @property
+    def submission_evidence(self):
+        """Gets the submission_evidence of this TitaniumComparisonTable.  # noqa: E501
+
+
+        :return: The submission_evidence of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumSubmissionEvidenceTableColumn
+        """
+        return self._submission_evidence
+
+    @submission_evidence.setter
+    def submission_evidence(self, submission_evidence):
+        """Sets the submission_evidence of this TitaniumComparisonTable.
+
+
+        :param submission_evidence: The submission_evidence of this TitaniumComparisonTable.  # noqa: E501
+        :type submission_evidence: TitaniumSubmissionEvidenceTableColumn
+        """
+
+        self._submission_evidence = submission_evidence
 
     @property
     def submission_statistics(self):

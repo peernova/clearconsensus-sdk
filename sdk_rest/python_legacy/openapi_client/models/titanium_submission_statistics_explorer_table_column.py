@@ -39,9 +39,9 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         'abs_diff_from_statistical_mean': 'object',
         'lower_boundary': 'object',
         'max': 'object',
+        'mean': 'object',
         'min': 'object',
         'stat_mean_abs_diff_from_latest_trade': 'object',
-        'statistical_mean': 'object',
         'std_dev': 'object',
         'sub_price_diff': 'object',
         'sub_valid_points_count': 'str',
@@ -52,16 +52,16 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         'abs_diff_from_statistical_mean': 'absDiffFromStatisticalMean',
         'lower_boundary': 'lowerBoundary',
         'max': 'max',
+        'mean': 'mean',
         'min': 'min',
         'stat_mean_abs_diff_from_latest_trade': 'statMeanAbsDiffFromLatestTrade',
-        'statistical_mean': 'statisticalMean',
         'std_dev': 'stdDev',
         'sub_price_diff': 'subPriceDiff',
         'sub_valid_points_count': 'subValidPointsCount',
         'upper_boundary': 'upperBoundary'
     }
 
-    def __init__(self, abs_diff_from_statistical_mean=None, lower_boundary=None, max=None, min=None, stat_mean_abs_diff_from_latest_trade=None, statistical_mean=None, std_dev=None, sub_price_diff=None, sub_valid_points_count=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_statistical_mean=None, lower_boundary=None, max=None, mean=None, min=None, stat_mean_abs_diff_from_latest_trade=None, std_dev=None, sub_price_diff=None, sub_valid_points_count=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumSubmissionStatisticsExplorerTableColumn - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -70,9 +70,9 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         self._abs_diff_from_statistical_mean = None
         self._lower_boundary = None
         self._max = None
+        self._mean = None
         self._min = None
         self._stat_mean_abs_diff_from_latest_trade = None
-        self._statistical_mean = None
         self._std_dev = None
         self._sub_price_diff = None
         self._sub_valid_points_count = None
@@ -85,12 +85,12 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
             self.lower_boundary = lower_boundary
         if max is not None:
             self.max = max
+        if mean is not None:
+            self.mean = mean
         if min is not None:
             self.min = min
         if stat_mean_abs_diff_from_latest_trade is not None:
             self.stat_mean_abs_diff_from_latest_trade = stat_mean_abs_diff_from_latest_trade
-        if statistical_mean is not None:
-            self.statistical_mean = statistical_mean
         if std_dev is not None:
             self.std_dev = std_dev
         if sub_price_diff is not None:
@@ -164,6 +164,27 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         self._max = max
 
     @property
+    def mean(self):
+        """Gets the mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+
+
+        :return: The mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._mean
+
+    @mean.setter
+    def mean(self, mean):
+        """Sets the mean of this TitaniumSubmissionStatisticsExplorerTableColumn.
+
+
+        :param mean: The mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :type mean: object
+        """
+
+        self._mean = mean
+
+    @property
     def min(self):
         """Gets the min of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
 
@@ -204,27 +225,6 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         """
 
         self._stat_mean_abs_diff_from_latest_trade = stat_mean_abs_diff_from_latest_trade
-
-    @property
-    def statistical_mean(self):
-        """Gets the statistical_mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-
-
-        :return: The statistical_mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :rtype: object
-        """
-        return self._statistical_mean
-
-    @statistical_mean.setter
-    def statistical_mean(self, statistical_mean):
-        """Sets the statistical_mean of this TitaniumSubmissionStatisticsExplorerTableColumn.
-
-
-        :param statistical_mean: The statistical_mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :type statistical_mean: object
-        """
-
-        self._statistical_mean = statistical_mean
 
     @property
     def std_dev(self):

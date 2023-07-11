@@ -47,11 +47,8 @@ class TitaniumAvailableTrades {
         if (data) {
             obj = obj || new TitaniumAvailableTrades();
 
-            if (data.hasOwnProperty('absDiffFromConsensusPrice')) {
-                obj['absDiffFromConsensusPrice'] = ApiClient.convertToType(data['absDiffFromConsensusPrice'], Object);
-            }
-            if (data.hasOwnProperty('absDiffFromExpertCohortPrice')) {
-                obj['absDiffFromExpertCohortPrice'] = ApiClient.convertToType(data['absDiffFromExpertCohortPrice'], Object);
+            if (data.hasOwnProperty('absDiffFromLatestTrade')) {
+                obj['absDiffFromLatestTrade'] = ApiClient.convertToType(data['absDiffFromLatestTrade'], Object);
             }
             if (data.hasOwnProperty('dayTradeNumber')) {
                 obj['dayTradeNumber'] = ApiClient.convertToType(data['dayTradeNumber'], 'String');
@@ -71,6 +68,9 @@ class TitaniumAvailableTrades {
             if (data.hasOwnProperty('subPriceAbsDiffFromLatestTrade')) {
                 obj['subPriceAbsDiffFromLatestTrade'] = ApiClient.convertToType(data['subPriceAbsDiffFromLatestTrade'], Object);
             }
+            if (data.hasOwnProperty('subPriceDiff')) {
+                obj['subPriceDiff'] = ApiClient.convertToType(data['subPriceDiff'], Object);
+            }
             if (data.hasOwnProperty('weekTradeNumber')) {
                 obj['weekTradeNumber'] = ApiClient.convertToType(data['weekTradeNumber'], 'String');
             }
@@ -82,14 +82,9 @@ class TitaniumAvailableTrades {
 }
 
 /**
- * @member {Object} absDiffFromConsensusPrice
+ * @member {Object} absDiffFromLatestTrade
  */
-TitaniumAvailableTrades.prototype['absDiffFromConsensusPrice'] = undefined;
-
-/**
- * @member {Object} absDiffFromExpertCohortPrice
- */
-TitaniumAvailableTrades.prototype['absDiffFromExpertCohortPrice'] = undefined;
+TitaniumAvailableTrades.prototype['absDiffFromLatestTrade'] = undefined;
 
 /**
  * @member {String} dayTradeNumber
@@ -120,6 +115,11 @@ TitaniumAvailableTrades.prototype['monthTradeNumber'] = undefined;
  * @member {Object} subPriceAbsDiffFromLatestTrade
  */
 TitaniumAvailableTrades.prototype['subPriceAbsDiffFromLatestTrade'] = undefined;
+
+/**
+ * @member {Object} subPriceDiff
+ */
+TitaniumAvailableTrades.prototype['subPriceDiff'] = undefined;
 
 /**
  * @member {String} weekTradeNumber

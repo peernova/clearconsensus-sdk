@@ -48,12 +48,6 @@ class TitaniumInstrumentSubmissionStatus {
         if (data) {
             obj = obj || new TitaniumInstrumentSubmissionStatus();
 
-            if (data.hasOwnProperty('bimodality')) {
-                obj['bimodality'] = ApiClient.convertToType(data['bimodality'], 'String');
-            }
-            if (data.hasOwnProperty('bimodalityHistory')) {
-                obj['bimodalityHistory'] = ApiClient.convertToType(data['bimodalityHistory'], [TitaniumDateAndValue]);
-            }
             if (data.hasOwnProperty('consensusStatus')) {
                 obj['consensusStatus'] = ApiClient.convertToType(data['consensusStatus'], 'String');
             }
@@ -72,17 +66,17 @@ class TitaniumInstrumentSubmissionStatus {
             if (data.hasOwnProperty('highestDqe')) {
                 obj['highestDqe'] = ApiClient.convertToType(data['highestDqe'], 'String');
             }
-            if (data.hasOwnProperty('participantConsensusStatus')) {
-                obj['participantConsensusStatus'] = ApiClient.convertToType(data['participantConsensusStatus'], 'String');
+            if (data.hasOwnProperty('participantCohortConsensusStatus')) {
+                obj['participantCohortConsensusStatus'] = ApiClient.convertToType(data['participantCohortConsensusStatus'], 'String');
             }
-            if (data.hasOwnProperty('participantConsensusStatusDetails')) {
-                obj['participantConsensusStatusDetails'] = ApiClient.convertToType(data['participantConsensusStatusDetails'], 'String');
+            if (data.hasOwnProperty('participantCohortConsensusStatusHistory')) {
+                obj['participantCohortConsensusStatusHistory'] = ApiClient.convertToType(data['participantCohortConsensusStatusHistory'], [TitaniumDateAndValue]);
             }
-            if (data.hasOwnProperty('participantConsensusStatusDetailsHistory')) {
-                obj['participantConsensusStatusDetailsHistory'] = ApiClient.convertToType(data['participantConsensusStatusDetailsHistory'], [TitaniumDateAndValue]);
+            if (data.hasOwnProperty('participantSubmissionsEvidenceStatus')) {
+                obj['participantSubmissionsEvidenceStatus'] = ApiClient.convertToType(data['participantSubmissionsEvidenceStatus'], 'String');
             }
-            if (data.hasOwnProperty('participantConsensusStatusHistory')) {
-                obj['participantConsensusStatusHistory'] = ApiClient.convertToType(data['participantConsensusStatusHistory'], [TitaniumDateAndValue]);
+            if (data.hasOwnProperty('participantSubmissionsEvidenceStatusHistory')) {
+                obj['participantSubmissionsEvidenceStatusHistory'] = ApiClient.convertToType(data['participantSubmissionsEvidenceStatusHistory'], [TitaniumDateAndValue]);
             }
         }
         return obj;
@@ -90,16 +84,6 @@ class TitaniumInstrumentSubmissionStatus {
 
 
 }
-
-/**
- * @member {String} bimodality
- */
-TitaniumInstrumentSubmissionStatus.prototype['bimodality'] = undefined;
-
-/**
- * @member {Array.<module:model/TitaniumDateAndValue>} bimodalityHistory
- */
-TitaniumInstrumentSubmissionStatus.prototype['bimodalityHistory'] = undefined;
 
 /**
  * @member {String} consensusStatus
@@ -132,24 +116,24 @@ TitaniumInstrumentSubmissionStatus.prototype['dqeHistory'] = undefined;
 TitaniumInstrumentSubmissionStatus.prototype['highestDqe'] = undefined;
 
 /**
- * @member {String} participantConsensusStatus
+ * @member {String} participantCohortConsensusStatus
  */
-TitaniumInstrumentSubmissionStatus.prototype['participantConsensusStatus'] = undefined;
+TitaniumInstrumentSubmissionStatus.prototype['participantCohortConsensusStatus'] = undefined;
 
 /**
- * @member {String} participantConsensusStatusDetails
+ * @member {Array.<module:model/TitaniumDateAndValue>} participantCohortConsensusStatusHistory
  */
-TitaniumInstrumentSubmissionStatus.prototype['participantConsensusStatusDetails'] = undefined;
+TitaniumInstrumentSubmissionStatus.prototype['participantCohortConsensusStatusHistory'] = undefined;
 
 /**
- * @member {Array.<module:model/TitaniumDateAndValue>} participantConsensusStatusDetailsHistory
+ * @member {String} participantSubmissionsEvidenceStatus
  */
-TitaniumInstrumentSubmissionStatus.prototype['participantConsensusStatusDetailsHistory'] = undefined;
+TitaniumInstrumentSubmissionStatus.prototype['participantSubmissionsEvidenceStatus'] = undefined;
 
 /**
- * @member {Array.<module:model/TitaniumDateAndValue>} participantConsensusStatusHistory
+ * @member {Array.<module:model/TitaniumDateAndValue>} participantSubmissionsEvidenceStatusHistory
  */
-TitaniumInstrumentSubmissionStatus.prototype['participantConsensusStatusHistory'] = undefined;
+TitaniumInstrumentSubmissionStatus.prototype['participantSubmissionsEvidenceStatusHistory'] = undefined;
 
 
 

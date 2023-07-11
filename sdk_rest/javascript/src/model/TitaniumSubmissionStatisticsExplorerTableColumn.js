@@ -56,14 +56,14 @@ class TitaniumSubmissionStatisticsExplorerTableColumn {
             if (data.hasOwnProperty('max')) {
                 obj['max'] = ApiClient.convertToType(data['max'], Object);
             }
+            if (data.hasOwnProperty('mean')) {
+                obj['mean'] = ApiClient.convertToType(data['mean'], Object);
+            }
             if (data.hasOwnProperty('min')) {
                 obj['min'] = ApiClient.convertToType(data['min'], Object);
             }
             if (data.hasOwnProperty('statMeanAbsDiffFromLatestTrade')) {
                 obj['statMeanAbsDiffFromLatestTrade'] = ApiClient.convertToType(data['statMeanAbsDiffFromLatestTrade'], Object);
-            }
-            if (data.hasOwnProperty('statisticalMean')) {
-                obj['statisticalMean'] = ApiClient.convertToType(data['statisticalMean'], Object);
             }
             if (data.hasOwnProperty('stdDev')) {
                 obj['stdDev'] = ApiClient.convertToType(data['stdDev'], Object);
@@ -100,6 +100,11 @@ TitaniumSubmissionStatisticsExplorerTableColumn.prototype['lowerBoundary'] = und
 TitaniumSubmissionStatisticsExplorerTableColumn.prototype['max'] = undefined;
 
 /**
+ * @member {Object} mean
+ */
+TitaniumSubmissionStatisticsExplorerTableColumn.prototype['mean'] = undefined;
+
+/**
  * @member {Object} min
  */
 TitaniumSubmissionStatisticsExplorerTableColumn.prototype['min'] = undefined;
@@ -108,11 +113,6 @@ TitaniumSubmissionStatisticsExplorerTableColumn.prototype['min'] = undefined;
  * @member {Object} statMeanAbsDiffFromLatestTrade
  */
 TitaniumSubmissionStatisticsExplorerTableColumn.prototype['statMeanAbsDiffFromLatestTrade'] = undefined;
-
-/**
- * @member {Object} statisticalMean
- */
-TitaniumSubmissionStatisticsExplorerTableColumn.prototype['statisticalMean'] = undefined;
 
 /**
  * @member {Object} stdDev

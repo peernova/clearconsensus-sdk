@@ -4,6 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**submissionPrice** | **Number** |  | [optional] 
+**submissionPrice** | **Object** |  | [optional] 
 
 

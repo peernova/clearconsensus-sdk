@@ -4,11 +4,11 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**all_participant_cohort_consensus** | [**TitaniumAllParticipantExplorerTableColumn**](TitaniumAllParticipantExplorerTableColumn.md) |  | [optional] 
 **available_trades** | [**TitaniumAvailableTrades**](TitaniumAvailableTrades.md) |  | [optional] 
-**evaluated_price** | [**TitaniumEvpExplorerTableColumn**](TitaniumEvpExplorerTableColumn.md) |  | [optional] 
-**expert_cohort_consensus** | [**TitaniumExpertExplorerTableColumn**](TitaniumExpertExplorerTableColumn.md) |  | [optional] 
+**cohort_consensus_column** | [**TitaniumCohortConsensusColumn**](TitaniumCohortConsensusColumn.md) |  | [optional] 
+**evidential_pricing** | [**TitaniumEvidentalPricing**](TitaniumEvidentalPricing.md) |  | [optional] 
 **submission** | [**TitaniumSubmissionExplorerTableColumn**](TitaniumSubmissionExplorerTableColumn.md) |  | [optional] 
+**submission_evidence** | [**TitaniumSubmissionEvidenceTableColumn**](TitaniumSubmissionEvidenceTableColumn.md) |  | [optional] 
 **submission_statistics** | [**TitaniumSubmissionStatisticsExplorerTableColumn**](TitaniumSubmissionStatisticsExplorerTableColumn.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

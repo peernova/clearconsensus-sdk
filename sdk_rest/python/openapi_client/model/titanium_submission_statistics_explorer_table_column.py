@@ -84,9 +84,9 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
             'abs_diff_from_statistical_mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'lower_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'max': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'min': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'stat_mean_abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'statistical_mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'sub_price_diff': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'sub_valid_points_count': (str,),  # noqa: E501
@@ -102,9 +102,9 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
         'abs_diff_from_statistical_mean': 'absDiffFromStatisticalMean',  # noqa: E501
         'lower_boundary': 'lowerBoundary',  # noqa: E501
         'max': 'max',  # noqa: E501
+        'mean': 'mean',  # noqa: E501
         'min': 'min',  # noqa: E501
         'stat_mean_abs_diff_from_latest_trade': 'statMeanAbsDiffFromLatestTrade',  # noqa: E501
-        'statistical_mean': 'statisticalMean',  # noqa: E501
         'std_dev': 'stdDev',  # noqa: E501
         'sub_price_diff': 'subPriceDiff',  # noqa: E501
         'sub_valid_points_count': 'subValidPointsCount',  # noqa: E501
@@ -155,9 +155,9 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
             abs_diff_from_statistical_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             stat_mean_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            statistical_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_valid_points_count (str): [optional]  # noqa: E501
@@ -250,9 +250,9 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
             abs_diff_from_statistical_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             stat_mean_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            statistical_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_valid_points_count (str): [optional]  # noqa: E501

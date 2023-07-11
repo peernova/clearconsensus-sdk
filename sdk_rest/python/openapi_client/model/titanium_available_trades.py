@@ -81,14 +81,14 @@ class TitaniumAvailableTrades(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'abs_diff_from_consensus_price': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'abs_diff_from_expert_cohort_price': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'day_trade_number': (str,),  # noqa: E501
             'latest_trade_price': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'max': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'min': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'month_trade_number': (str,),  # noqa: E501
             'sub_price_abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'sub_price_diff': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'week_trade_number': (str,),  # noqa: E501
         }
 
@@ -98,14 +98,14 @@ class TitaniumAvailableTrades(ModelNormal):
 
 
     attribute_map = {
-        'abs_diff_from_consensus_price': 'absDiffFromConsensusPrice',  # noqa: E501
-        'abs_diff_from_expert_cohort_price': 'absDiffFromExpertCohortPrice',  # noqa: E501
+        'abs_diff_from_latest_trade': 'absDiffFromLatestTrade',  # noqa: E501
         'day_trade_number': 'dayTradeNumber',  # noqa: E501
         'latest_trade_price': 'latestTradePrice',  # noqa: E501
         'max': 'max',  # noqa: E501
         'min': 'min',  # noqa: E501
         'month_trade_number': 'monthTradeNumber',  # noqa: E501
         'sub_price_abs_diff_from_latest_trade': 'subPriceAbsDiffFromLatestTrade',  # noqa: E501
+        'sub_price_diff': 'subPriceDiff',  # noqa: E501
         'week_trade_number': 'weekTradeNumber',  # noqa: E501
     }
 
@@ -150,14 +150,14 @@ class TitaniumAvailableTrades(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            abs_diff_from_consensus_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            abs_diff_from_expert_cohort_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             day_trade_number (str): [optional]  # noqa: E501
             latest_trade_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             month_trade_number (str): [optional]  # noqa: E501
             sub_price_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             week_trade_number (str): [optional]  # noqa: E501
         """
 
@@ -244,14 +244,14 @@ class TitaniumAvailableTrades(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            abs_diff_from_consensus_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            abs_diff_from_expert_cohort_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             day_trade_number (str): [optional]  # noqa: E501
             latest_trade_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             month_trade_number (str): [optional]  # noqa: E501
             sub_price_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             week_trade_number (str): [optional]  # noqa: E501
         """
 

@@ -50,113 +50,51 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusDensityScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumConsensusDensityScore {
-  public static final String SERIALIZED_NAME_BIMODALITY = "bimodality";
-  @SerializedName(SERIALIZED_NAME_BIMODALITY)
-  private Object bimodality;
-
-  public static final String SERIALIZED_NAME_CHALLENGE_QUALITY = "challengeQuality";
-  @SerializedName(SERIALIZED_NAME_CHALLENGE_QUALITY)
-  private Object challengeQuality;
-
-  public static final String SERIALIZED_NAME_DISPERSION = "dispersion";
-  @SerializedName(SERIALIZED_NAME_DISPERSION)
-  private Object dispersion;
+  public static final String SERIALIZED_NAME_BIMODALITY_SCORE = "bimodalityScore";
+  @SerializedName(SERIALIZED_NAME_BIMODALITY_SCORE)
+  private Object bimodalityScore;
 
   public static final String SERIALIZED_NAME_EVP_ALIGNMENT_SCORE = "evpAlignmentScore";
   @SerializedName(SERIALIZED_NAME_EVP_ALIGNMENT_SCORE)
   private Object evpAlignmentScore;
 
-  public static final String SERIALIZED_NAME_EVP_QUALITY = "evpQuality";
-  @SerializedName(SERIALIZED_NAME_EVP_QUALITY)
-  private Object evpQuality;
-
   public static final String SERIALIZED_NAME_HISTORY = "history";
   @SerializedName(SERIALIZED_NAME_HISTORY)
   private List<TitaniumDateAndValue> history = null;
-
-  public static final String SERIALIZED_NAME_NUMBER_OF_PARTICIPANTS = "numberOfParticipants";
-  @SerializedName(SERIALIZED_NAME_NUMBER_OF_PARTICIPANTS)
-  private Object numberOfParticipants;
-
-  public static final String SERIALIZED_NAME_OUTLIER_VOLUME = "outlierVolume";
-  @SerializedName(SERIALIZED_NAME_OUTLIER_VOLUME)
-  private Object outlierVolume;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
   private Object score;
 
+  public static final String SERIALIZED_NAME_TRADE_ALIGNMENT_SCORE = "tradeAlignmentScore";
+  @SerializedName(SERIALIZED_NAME_TRADE_ALIGNMENT_SCORE)
+  private Object tradeAlignmentScore;
+
   public TitaniumConsensusDensityScore() { 
   }
 
-  public TitaniumConsensusDensityScore bimodality(Object bimodality) {
+  public TitaniumConsensusDensityScore bimodalityScore(Object bimodalityScore) {
     
-    this.bimodality = bimodality;
+    this.bimodalityScore = bimodalityScore;
     return this;
   }
 
    /**
-   * Get bimodality
-   * @return bimodality
+   * Get bimodalityScore
+   * @return bimodalityScore
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getBimodality() {
-    return bimodality;
+  public Object getBimodalityScore() {
+    return bimodalityScore;
   }
 
 
-  public void setBimodality(Object bimodality) {
-    this.bimodality = bimodality;
-  }
-
-
-  public TitaniumConsensusDensityScore challengeQuality(Object challengeQuality) {
-    
-    this.challengeQuality = challengeQuality;
-    return this;
-  }
-
-   /**
-   * Get challengeQuality
-   * @return challengeQuality
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getChallengeQuality() {
-    return challengeQuality;
-  }
-
-
-  public void setChallengeQuality(Object challengeQuality) {
-    this.challengeQuality = challengeQuality;
-  }
-
-
-  public TitaniumConsensusDensityScore dispersion(Object dispersion) {
-    
-    this.dispersion = dispersion;
-    return this;
-  }
-
-   /**
-   * Get dispersion
-   * @return dispersion
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getDispersion() {
-    return dispersion;
-  }
-
-
-  public void setDispersion(Object dispersion) {
-    this.dispersion = dispersion;
+  public void setBimodalityScore(Object bimodalityScore) {
+    this.bimodalityScore = bimodalityScore;
   }
 
 
@@ -180,29 +118,6 @@ public class TitaniumConsensusDensityScore {
 
   public void setEvpAlignmentScore(Object evpAlignmentScore) {
     this.evpAlignmentScore = evpAlignmentScore;
-  }
-
-
-  public TitaniumConsensusDensityScore evpQuality(Object evpQuality) {
-    
-    this.evpQuality = evpQuality;
-    return this;
-  }
-
-   /**
-   * Get evpQuality
-   * @return evpQuality
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getEvpQuality() {
-    return evpQuality;
-  }
-
-
-  public void setEvpQuality(Object evpQuality) {
-    this.evpQuality = evpQuality;
   }
 
 
@@ -237,52 +152,6 @@ public class TitaniumConsensusDensityScore {
   }
 
 
-  public TitaniumConsensusDensityScore numberOfParticipants(Object numberOfParticipants) {
-    
-    this.numberOfParticipants = numberOfParticipants;
-    return this;
-  }
-
-   /**
-   * Get numberOfParticipants
-   * @return numberOfParticipants
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getNumberOfParticipants() {
-    return numberOfParticipants;
-  }
-
-
-  public void setNumberOfParticipants(Object numberOfParticipants) {
-    this.numberOfParticipants = numberOfParticipants;
-  }
-
-
-  public TitaniumConsensusDensityScore outlierVolume(Object outlierVolume) {
-    
-    this.outlierVolume = outlierVolume;
-    return this;
-  }
-
-   /**
-   * Get outlierVolume
-   * @return outlierVolume
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getOutlierVolume() {
-    return outlierVolume;
-  }
-
-
-  public void setOutlierVolume(Object outlierVolume) {
-    this.outlierVolume = outlierVolume;
-  }
-
-
   public TitaniumConsensusDensityScore score(Object score) {
     
     this.score = score;
@@ -306,6 +175,29 @@ public class TitaniumConsensusDensityScore {
   }
 
 
+  public TitaniumConsensusDensityScore tradeAlignmentScore(Object tradeAlignmentScore) {
+    
+    this.tradeAlignmentScore = tradeAlignmentScore;
+    return this;
+  }
+
+   /**
+   * Get tradeAlignmentScore
+   * @return tradeAlignmentScore
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getTradeAlignmentScore() {
+    return tradeAlignmentScore;
+  }
+
+
+  public void setTradeAlignmentScore(Object tradeAlignmentScore) {
+    this.tradeAlignmentScore = tradeAlignmentScore;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -316,35 +208,27 @@ public class TitaniumConsensusDensityScore {
       return false;
     }
     TitaniumConsensusDensityScore titaniumConsensusDensityScore = (TitaniumConsensusDensityScore) o;
-    return Objects.equals(this.bimodality, titaniumConsensusDensityScore.bimodality) &&
-        Objects.equals(this.challengeQuality, titaniumConsensusDensityScore.challengeQuality) &&
-        Objects.equals(this.dispersion, titaniumConsensusDensityScore.dispersion) &&
+    return Objects.equals(this.bimodalityScore, titaniumConsensusDensityScore.bimodalityScore) &&
         Objects.equals(this.evpAlignmentScore, titaniumConsensusDensityScore.evpAlignmentScore) &&
-        Objects.equals(this.evpQuality, titaniumConsensusDensityScore.evpQuality) &&
         Objects.equals(this.history, titaniumConsensusDensityScore.history) &&
-        Objects.equals(this.numberOfParticipants, titaniumConsensusDensityScore.numberOfParticipants) &&
-        Objects.equals(this.outlierVolume, titaniumConsensusDensityScore.outlierVolume) &&
-        Objects.equals(this.score, titaniumConsensusDensityScore.score);
+        Objects.equals(this.score, titaniumConsensusDensityScore.score) &&
+        Objects.equals(this.tradeAlignmentScore, titaniumConsensusDensityScore.tradeAlignmentScore);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(bimodality, challengeQuality, dispersion, evpAlignmentScore, evpQuality, history, numberOfParticipants, outlierVolume, score);
+    return Objects.hash(bimodalityScore, evpAlignmentScore, history, score, tradeAlignmentScore);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumConsensusDensityScore {\n");
-    sb.append("    bimodality: ").append(toIndentedString(bimodality)).append("\n");
-    sb.append("    challengeQuality: ").append(toIndentedString(challengeQuality)).append("\n");
-    sb.append("    dispersion: ").append(toIndentedString(dispersion)).append("\n");
+    sb.append("    bimodalityScore: ").append(toIndentedString(bimodalityScore)).append("\n");
     sb.append("    evpAlignmentScore: ").append(toIndentedString(evpAlignmentScore)).append("\n");
-    sb.append("    evpQuality: ").append(toIndentedString(evpQuality)).append("\n");
     sb.append("    history: ").append(toIndentedString(history)).append("\n");
-    sb.append("    numberOfParticipants: ").append(toIndentedString(numberOfParticipants)).append("\n");
-    sb.append("    outlierVolume: ").append(toIndentedString(outlierVolume)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
+    sb.append("    tradeAlignmentScore: ").append(toIndentedString(tradeAlignmentScore)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -367,15 +251,11 @@ public class TitaniumConsensusDensityScore {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("bimodality");
-    openapiFields.add("challengeQuality");
-    openapiFields.add("dispersion");
+    openapiFields.add("bimodalityScore");
     openapiFields.add("evpAlignmentScore");
-    openapiFields.add("evpQuality");
     openapiFields.add("history");
-    openapiFields.add("numberOfParticipants");
-    openapiFields.add("outlierVolume");
     openapiFields.add("score");
+    openapiFields.add("tradeAlignmentScore");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

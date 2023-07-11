@@ -47,15 +47,11 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAvailableTrades
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumAvailableTrades {
-  public static final String SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS_PRICE = "absDiffFromConsensusPrice";
-  @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS_PRICE)
-  private Object absDiffFromConsensusPrice;
-
-  public static final String SERIALIZED_NAME_ABS_DIFF_FROM_EXPERT_COHORT_PRICE = "absDiffFromExpertCohortPrice";
-  @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_EXPERT_COHORT_PRICE)
-  private Object absDiffFromExpertCohortPrice;
+  public static final String SERIALIZED_NAME_ABS_DIFF_FROM_LATEST_TRADE = "absDiffFromLatestTrade";
+  @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_LATEST_TRADE)
+  private Object absDiffFromLatestTrade;
 
   public static final String SERIALIZED_NAME_DAY_TRADE_NUMBER = "dayTradeNumber";
   @SerializedName(SERIALIZED_NAME_DAY_TRADE_NUMBER)
@@ -81,6 +77,10 @@ public class TitaniumAvailableTrades {
   @SerializedName(SERIALIZED_NAME_SUB_PRICE_ABS_DIFF_FROM_LATEST_TRADE)
   private Object subPriceAbsDiffFromLatestTrade;
 
+  public static final String SERIALIZED_NAME_SUB_PRICE_DIFF = "subPriceDiff";
+  @SerializedName(SERIALIZED_NAME_SUB_PRICE_DIFF)
+  private Object subPriceDiff;
+
   public static final String SERIALIZED_NAME_WEEK_TRADE_NUMBER = "weekTradeNumber";
   @SerializedName(SERIALIZED_NAME_WEEK_TRADE_NUMBER)
   private String weekTradeNumber;
@@ -88,49 +88,26 @@ public class TitaniumAvailableTrades {
   public TitaniumAvailableTrades() { 
   }
 
-  public TitaniumAvailableTrades absDiffFromConsensusPrice(Object absDiffFromConsensusPrice) {
+  public TitaniumAvailableTrades absDiffFromLatestTrade(Object absDiffFromLatestTrade) {
     
-    this.absDiffFromConsensusPrice = absDiffFromConsensusPrice;
+    this.absDiffFromLatestTrade = absDiffFromLatestTrade;
     return this;
   }
 
    /**
-   * Get absDiffFromConsensusPrice
-   * @return absDiffFromConsensusPrice
+   * Get absDiffFromLatestTrade
+   * @return absDiffFromLatestTrade
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getAbsDiffFromConsensusPrice() {
-    return absDiffFromConsensusPrice;
+  public Object getAbsDiffFromLatestTrade() {
+    return absDiffFromLatestTrade;
   }
 
 
-  public void setAbsDiffFromConsensusPrice(Object absDiffFromConsensusPrice) {
-    this.absDiffFromConsensusPrice = absDiffFromConsensusPrice;
-  }
-
-
-  public TitaniumAvailableTrades absDiffFromExpertCohortPrice(Object absDiffFromExpertCohortPrice) {
-    
-    this.absDiffFromExpertCohortPrice = absDiffFromExpertCohortPrice;
-    return this;
-  }
-
-   /**
-   * Get absDiffFromExpertCohortPrice
-   * @return absDiffFromExpertCohortPrice
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getAbsDiffFromExpertCohortPrice() {
-    return absDiffFromExpertCohortPrice;
-  }
-
-
-  public void setAbsDiffFromExpertCohortPrice(Object absDiffFromExpertCohortPrice) {
-    this.absDiffFromExpertCohortPrice = absDiffFromExpertCohortPrice;
+  public void setAbsDiffFromLatestTrade(Object absDiffFromLatestTrade) {
+    this.absDiffFromLatestTrade = absDiffFromLatestTrade;
   }
 
 
@@ -272,6 +249,29 @@ public class TitaniumAvailableTrades {
   }
 
 
+  public TitaniumAvailableTrades subPriceDiff(Object subPriceDiff) {
+    
+    this.subPriceDiff = subPriceDiff;
+    return this;
+  }
+
+   /**
+   * Get subPriceDiff
+   * @return subPriceDiff
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getSubPriceDiff() {
+    return subPriceDiff;
+  }
+
+
+  public void setSubPriceDiff(Object subPriceDiff) {
+    this.subPriceDiff = subPriceDiff;
+  }
+
+
   public TitaniumAvailableTrades weekTradeNumber(String weekTradeNumber) {
     
     this.weekTradeNumber = weekTradeNumber;
@@ -305,34 +305,34 @@ public class TitaniumAvailableTrades {
       return false;
     }
     TitaniumAvailableTrades titaniumAvailableTrades = (TitaniumAvailableTrades) o;
-    return Objects.equals(this.absDiffFromConsensusPrice, titaniumAvailableTrades.absDiffFromConsensusPrice) &&
-        Objects.equals(this.absDiffFromExpertCohortPrice, titaniumAvailableTrades.absDiffFromExpertCohortPrice) &&
+    return Objects.equals(this.absDiffFromLatestTrade, titaniumAvailableTrades.absDiffFromLatestTrade) &&
         Objects.equals(this.dayTradeNumber, titaniumAvailableTrades.dayTradeNumber) &&
         Objects.equals(this.latestTradePrice, titaniumAvailableTrades.latestTradePrice) &&
         Objects.equals(this.max, titaniumAvailableTrades.max) &&
         Objects.equals(this.min, titaniumAvailableTrades.min) &&
         Objects.equals(this.monthTradeNumber, titaniumAvailableTrades.monthTradeNumber) &&
         Objects.equals(this.subPriceAbsDiffFromLatestTrade, titaniumAvailableTrades.subPriceAbsDiffFromLatestTrade) &&
+        Objects.equals(this.subPriceDiff, titaniumAvailableTrades.subPriceDiff) &&
         Objects.equals(this.weekTradeNumber, titaniumAvailableTrades.weekTradeNumber);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromConsensusPrice, absDiffFromExpertCohortPrice, dayTradeNumber, latestTradePrice, max, min, monthTradeNumber, subPriceAbsDiffFromLatestTrade, weekTradeNumber);
+    return Objects.hash(absDiffFromLatestTrade, dayTradeNumber, latestTradePrice, max, min, monthTradeNumber, subPriceAbsDiffFromLatestTrade, subPriceDiff, weekTradeNumber);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumAvailableTrades {\n");
-    sb.append("    absDiffFromConsensusPrice: ").append(toIndentedString(absDiffFromConsensusPrice)).append("\n");
-    sb.append("    absDiffFromExpertCohortPrice: ").append(toIndentedString(absDiffFromExpertCohortPrice)).append("\n");
+    sb.append("    absDiffFromLatestTrade: ").append(toIndentedString(absDiffFromLatestTrade)).append("\n");
     sb.append("    dayTradeNumber: ").append(toIndentedString(dayTradeNumber)).append("\n");
     sb.append("    latestTradePrice: ").append(toIndentedString(latestTradePrice)).append("\n");
     sb.append("    max: ").append(toIndentedString(max)).append("\n");
     sb.append("    min: ").append(toIndentedString(min)).append("\n");
     sb.append("    monthTradeNumber: ").append(toIndentedString(monthTradeNumber)).append("\n");
     sb.append("    subPriceAbsDiffFromLatestTrade: ").append(toIndentedString(subPriceAbsDiffFromLatestTrade)).append("\n");
+    sb.append("    subPriceDiff: ").append(toIndentedString(subPriceDiff)).append("\n");
     sb.append("    weekTradeNumber: ").append(toIndentedString(weekTradeNumber)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -356,14 +356,14 @@ public class TitaniumAvailableTrades {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("absDiffFromConsensusPrice");
-    openapiFields.add("absDiffFromExpertCohortPrice");
+    openapiFields.add("absDiffFromLatestTrade");
     openapiFields.add("dayTradeNumber");
     openapiFields.add("latestTradePrice");
     openapiFields.add("max");
     openapiFields.add("min");
     openapiFields.add("monthTradeNumber");
     openapiFields.add("subPriceAbsDiffFromLatestTrade");
+    openapiFields.add("subPriceDiff");
     openapiFields.add("weekTradeNumber");
 
     // a set of required properties/fields (JSON key names)

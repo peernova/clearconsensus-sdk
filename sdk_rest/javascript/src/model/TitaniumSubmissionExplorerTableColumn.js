@@ -48,7 +48,7 @@ class TitaniumSubmissionExplorerTableColumn {
             obj = obj || new TitaniumSubmissionExplorerTableColumn();
 
             if (data.hasOwnProperty('submissionPrice')) {
-                obj['submissionPrice'] = ApiClient.convertToType(data['submissionPrice'], 'Number');
+                obj['submissionPrice'] = ApiClient.convertToType(data['submissionPrice'], Object);
             }
         }
         return obj;
@@ -58,7 +58,7 @@ class TitaniumSubmissionExplorerTableColumn {
 }
 
 /**
- * @member {Number} submissionPrice
+ * @member {Object} submissionPrice
  */
 TitaniumSubmissionExplorerTableColumn.prototype['submissionPrice'] = undefined;
 

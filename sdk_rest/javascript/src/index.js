@@ -36,7 +36,6 @@ import RpcStatus from './model/RpcStatus';
 import TitaniumAcknowledgeResponse from './model/TitaniumAcknowledgeResponse';
 import TitaniumAddAssetRequest from './model/TitaniumAddAssetRequest';
 import TitaniumAddLookupTableRequest from './model/TitaniumAddLookupTableRequest';
-import TitaniumAllParticipantExplorerTableColumn from './model/TitaniumAllParticipantExplorerTableColumn';
 import TitaniumAsset from './model/TitaniumAsset';
 import TitaniumAssetM from './model/TitaniumAssetM';
 import TitaniumAssetsList from './model/TitaniumAssetsList';
@@ -47,6 +46,7 @@ import TitaniumAssetsResponse from './model/TitaniumAssetsResponse';
 import TitaniumAttachment from './model/TitaniumAttachment';
 import TitaniumAvailableTrades from './model/TitaniumAvailableTrades';
 import TitaniumBenchmarkMetadata from './model/TitaniumBenchmarkMetadata';
+import TitaniumBimodality from './model/TitaniumBimodality';
 import TitaniumChallengeActiveRequest from './model/TitaniumChallengeActiveRequest';
 import TitaniumChallengeActiveResponse from './model/TitaniumChallengeActiveResponse';
 import TitaniumChallengeActiveResponseData from './model/TitaniumChallengeActiveResponseData';
@@ -86,6 +86,8 @@ import TitaniumChartsRequest from './model/TitaniumChartsRequest';
 import TitaniumChartsResponse from './model/TitaniumChartsResponse';
 import TitaniumChartsResponseData from './model/TitaniumChartsResponseData';
 import TitaniumClientName from './model/TitaniumClientName';
+import TitaniumCohortConsensusColumn from './model/TitaniumCohortConsensusColumn';
+import TitaniumCohortConsensusRangeTabData from './model/TitaniumCohortConsensusRangeTabData';
 import TitaniumColDependency from './model/TitaniumColDependency';
 import TitaniumColumnInfo from './model/TitaniumColumnInfo';
 import TitaniumComparisonTable from './model/TitaniumComparisonTable';
@@ -158,18 +160,17 @@ import TitaniumEntityDefinition from './model/TitaniumEntityDefinition';
 import TitaniumEntityIdentifier from './model/TitaniumEntityIdentifier';
 import TitaniumError from './model/TitaniumError';
 import TitaniumErrorDefinition from './model/TitaniumErrorDefinition';
+import TitaniumEvidentalPricing from './model/TitaniumEvidentalPricing';
 import TitaniumEvpAlignmentScore from './model/TitaniumEvpAlignmentScore';
-import TitaniumEvpAlignmentScoreWithDate from './model/TitaniumEvpAlignmentScoreWithDate';
-import TitaniumEvpExplorerTableColumn from './model/TitaniumEvpExplorerTableColumn';
+import TitaniumEvpAnchorDetails from './model/TitaniumEvpAnchorDetails';
 import TitaniumEvpQualityScore from './model/TitaniumEvpQualityScore';
 import TitaniumEvpStatus from './model/TitaniumEvpStatus';
 import TitaniumEvpStatuses from './model/TitaniumEvpStatuses';
 import TitaniumEvpStatusesRequest from './model/TitaniumEvpStatusesRequest';
 import TitaniumEvpStatusesResponse from './model/TitaniumEvpStatusesResponse';
 import TitaniumEvpStatusesResponseData from './model/TitaniumEvpStatusesResponseData';
-import TitaniumExpertExplorerTableColumn from './model/TitaniumExpertExplorerTableColumn';
-import TitaniumExpertiseScore from './model/TitaniumExpertiseScore';
-import TitaniumExpertiseScoreWithDate from './model/TitaniumExpertiseScoreWithDate';
+import TitaniumExpertiseRank from './model/TitaniumExpertiseRank';
+import TitaniumExpertiseRankHistoryElement from './model/TitaniumExpertiseRankHistoryElement';
 import TitaniumExportPresignedUrlResponseResponseData from './model/TitaniumExportPresignedUrlResponseResponseData';
 import TitaniumExportReportRequest from './model/TitaniumExportReportRequest';
 import TitaniumExportRequest from './model/TitaniumExportRequest';
@@ -310,6 +311,8 @@ import TitaniumStatusResponse from './model/TitaniumStatusResponse';
 import TitaniumStatusResponseData from './model/TitaniumStatusResponseData';
 import TitaniumStringKeyVal from './model/TitaniumStringKeyVal';
 import TitaniumSubAsset from './model/TitaniumSubAsset';
+import TitaniumSubmissionEvidenceAnchorDetails from './model/TitaniumSubmissionEvidenceAnchorDetails';
+import TitaniumSubmissionEvidenceTableColumn from './model/TitaniumSubmissionEvidenceTableColumn';
 import TitaniumSubmissionExplorerTableColumn from './model/TitaniumSubmissionExplorerTableColumn';
 import TitaniumSubmissionHistogram from './model/TitaniumSubmissionHistogram';
 import TitaniumSubmissionStatisticsExplorerTableColumn from './model/TitaniumSubmissionStatisticsExplorerTableColumn';
@@ -320,9 +323,11 @@ import TitaniumSubmittedResponseData from './model/TitaniumSubmittedResponseData
 import TitaniumSubmittedRow from './model/TitaniumSubmittedRow';
 import TitaniumSupportedField from './model/TitaniumSupportedField';
 import TitaniumSupportedFieldsValues from './model/TitaniumSupportedFieldsValues';
+import TitaniumTradeAligmentDateAndValue from './model/TitaniumTradeAligmentDateAndValue';
+import TitaniumTradeAlignmentScore from './model/TitaniumTradeAlignmentScore';
+import TitaniumTradeAnchorDetails from './model/TitaniumTradeAnchorDetails';
 import TitaniumTradePeriodMetrics from './model/TitaniumTradePeriodMetrics';
 import TitaniumTradePeriodsWithMetrics from './model/TitaniumTradePeriodsWithMetrics';
-import TitaniumTradeRangesData from './model/TitaniumTradeRangesData';
 import TitaniumTransformation from './model/TitaniumTransformation';
 import TitaniumUniqueKeyDefinition from './model/TitaniumUniqueKeyDefinition';
 import TitaniumUniqueKeyDefinitionResponse from './model/TitaniumUniqueKeyDefinitionResponse';
@@ -565,12 +570,6 @@ export {
     TitaniumAddLookupTableRequest,
 
     /**
-     * The TitaniumAllParticipantExplorerTableColumn model constructor.
-     * @property {module:model/TitaniumAllParticipantExplorerTableColumn}
-     */
-    TitaniumAllParticipantExplorerTableColumn,
-
-    /**
      * The TitaniumAsset model constructor.
      * @property {module:model/TitaniumAsset}
      */
@@ -629,6 +628,12 @@ export {
      * @property {module:model/TitaniumBenchmarkMetadata}
      */
     TitaniumBenchmarkMetadata,
+
+    /**
+     * The TitaniumBimodality model constructor.
+     * @property {module:model/TitaniumBimodality}
+     */
+    TitaniumBimodality,
 
     /**
      * The TitaniumChallengeActiveRequest model constructor.
@@ -863,6 +868,18 @@ export {
      * @property {module:model/TitaniumClientName}
      */
     TitaniumClientName,
+
+    /**
+     * The TitaniumCohortConsensusColumn model constructor.
+     * @property {module:model/TitaniumCohortConsensusColumn}
+     */
+    TitaniumCohortConsensusColumn,
+
+    /**
+     * The TitaniumCohortConsensusRangeTabData model constructor.
+     * @property {module:model/TitaniumCohortConsensusRangeTabData}
+     */
+    TitaniumCohortConsensusRangeTabData,
 
     /**
      * The TitaniumColDependency model constructor.
@@ -1297,22 +1314,22 @@ export {
     TitaniumErrorDefinition,
 
     /**
+     * The TitaniumEvidentalPricing model constructor.
+     * @property {module:model/TitaniumEvidentalPricing}
+     */
+    TitaniumEvidentalPricing,
+
+    /**
      * The TitaniumEvpAlignmentScore model constructor.
      * @property {module:model/TitaniumEvpAlignmentScore}
      */
     TitaniumEvpAlignmentScore,
 
     /**
-     * The TitaniumEvpAlignmentScoreWithDate model constructor.
-     * @property {module:model/TitaniumEvpAlignmentScoreWithDate}
+     * The TitaniumEvpAnchorDetails model constructor.
+     * @property {module:model/TitaniumEvpAnchorDetails}
      */
-    TitaniumEvpAlignmentScoreWithDate,
-
-    /**
-     * The TitaniumEvpExplorerTableColumn model constructor.
-     * @property {module:model/TitaniumEvpExplorerTableColumn}
-     */
-    TitaniumEvpExplorerTableColumn,
+    TitaniumEvpAnchorDetails,
 
     /**
      * The TitaniumEvpQualityScore model constructor.
@@ -1351,22 +1368,16 @@ export {
     TitaniumEvpStatusesResponseData,
 
     /**
-     * The TitaniumExpertExplorerTableColumn model constructor.
-     * @property {module:model/TitaniumExpertExplorerTableColumn}
+     * The TitaniumExpertiseRank model constructor.
+     * @property {module:model/TitaniumExpertiseRank}
      */
-    TitaniumExpertExplorerTableColumn,
+    TitaniumExpertiseRank,
 
     /**
-     * The TitaniumExpertiseScore model constructor.
-     * @property {module:model/TitaniumExpertiseScore}
+     * The TitaniumExpertiseRankHistoryElement model constructor.
+     * @property {module:model/TitaniumExpertiseRankHistoryElement}
      */
-    TitaniumExpertiseScore,
-
-    /**
-     * The TitaniumExpertiseScoreWithDate model constructor.
-     * @property {module:model/TitaniumExpertiseScoreWithDate}
-     */
-    TitaniumExpertiseScoreWithDate,
+    TitaniumExpertiseRankHistoryElement,
 
     /**
      * The TitaniumExportPresignedUrlResponseResponseData model constructor.
@@ -2209,6 +2220,18 @@ export {
     TitaniumSubAsset,
 
     /**
+     * The TitaniumSubmissionEvidenceAnchorDetails model constructor.
+     * @property {module:model/TitaniumSubmissionEvidenceAnchorDetails}
+     */
+    TitaniumSubmissionEvidenceAnchorDetails,
+
+    /**
+     * The TitaniumSubmissionEvidenceTableColumn model constructor.
+     * @property {module:model/TitaniumSubmissionEvidenceTableColumn}
+     */
+    TitaniumSubmissionEvidenceTableColumn,
+
+    /**
      * The TitaniumSubmissionExplorerTableColumn model constructor.
      * @property {module:model/TitaniumSubmissionExplorerTableColumn}
      */
@@ -2269,6 +2292,24 @@ export {
     TitaniumSupportedFieldsValues,
 
     /**
+     * The TitaniumTradeAligmentDateAndValue model constructor.
+     * @property {module:model/TitaniumTradeAligmentDateAndValue}
+     */
+    TitaniumTradeAligmentDateAndValue,
+
+    /**
+     * The TitaniumTradeAlignmentScore model constructor.
+     * @property {module:model/TitaniumTradeAlignmentScore}
+     */
+    TitaniumTradeAlignmentScore,
+
+    /**
+     * The TitaniumTradeAnchorDetails model constructor.
+     * @property {module:model/TitaniumTradeAnchorDetails}
+     */
+    TitaniumTradeAnchorDetails,
+
+    /**
      * The TitaniumTradePeriodMetrics model constructor.
      * @property {module:model/TitaniumTradePeriodMetrics}
      */
@@ -2279,12 +2320,6 @@ export {
      * @property {module:model/TitaniumTradePeriodsWithMetrics}
      */
     TitaniumTradePeriodsWithMetrics,
-
-    /**
-     * The TitaniumTradeRangesData model constructor.
-     * @property {module:model/TitaniumTradeRangesData}
-     */
-    TitaniumTradeRangesData,
 
     /**
      * The TitaniumTransformation model constructor.

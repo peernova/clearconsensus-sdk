@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusExplorerInstrumentDetailsData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumConsensusExplorerInstrumentDetailsData {
   public static final String SERIALIZED_NAME_CONSENSUS_SCORES = "consensusScores";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_SCORES)
@@ -65,10 +65,6 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
   public static final String SERIALIZED_NAME_INSTRUMENT_SUBMISSION_STATUS = "instrumentSubmissionStatus";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_SUBMISSION_STATUS)
   private TitaniumInstrumentSubmissionStatus instrumentSubmissionStatus;
-
-  public static final String SERIALIZED_NAME_IS_EXPERT = "isExpert";
-  @SerializedName(SERIALIZED_NAME_IS_EXPERT)
-  private Boolean isExpert;
 
   public TitaniumConsensusExplorerInstrumentDetailsData() { 
   }
@@ -150,29 +146,6 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
   }
 
 
-  public TitaniumConsensusExplorerInstrumentDetailsData isExpert(Boolean isExpert) {
-    
-    this.isExpert = isExpert;
-    return this;
-  }
-
-   /**
-   * Get isExpert
-   * @return isExpert
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Boolean getIsExpert() {
-    return isExpert;
-  }
-
-
-  public void setIsExpert(Boolean isExpert) {
-    this.isExpert = isExpert;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -185,13 +158,12 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
     TitaniumConsensusExplorerInstrumentDetailsData titaniumConsensusExplorerInstrumentDetailsData = (TitaniumConsensusExplorerInstrumentDetailsData) o;
     return Objects.equals(this.consensusScores, titaniumConsensusExplorerInstrumentDetailsData.consensusScores) &&
         Objects.equals(this.instrumentDetails, titaniumConsensusExplorerInstrumentDetailsData.instrumentDetails) &&
-        Objects.equals(this.instrumentSubmissionStatus, titaniumConsensusExplorerInstrumentDetailsData.instrumentSubmissionStatus) &&
-        Objects.equals(this.isExpert, titaniumConsensusExplorerInstrumentDetailsData.isExpert);
+        Objects.equals(this.instrumentSubmissionStatus, titaniumConsensusExplorerInstrumentDetailsData.instrumentSubmissionStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(consensusScores, instrumentDetails, instrumentSubmissionStatus, isExpert);
+    return Objects.hash(consensusScores, instrumentDetails, instrumentSubmissionStatus);
   }
 
   @Override
@@ -201,7 +173,6 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
     sb.append("    consensusScores: ").append(toIndentedString(consensusScores)).append("\n");
     sb.append("    instrumentDetails: ").append(toIndentedString(instrumentDetails)).append("\n");
     sb.append("    instrumentSubmissionStatus: ").append(toIndentedString(instrumentSubmissionStatus)).append("\n");
-    sb.append("    isExpert: ").append(toIndentedString(isExpert)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -227,7 +198,6 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
     openapiFields.add("consensusScores");
     openapiFields.add("instrumentDetails");
     openapiFields.add("instrumentSubmissionStatus");
-    openapiFields.add("isExpert");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

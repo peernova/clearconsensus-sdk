@@ -5700,41 +5700,6 @@ components:
         scope:
           type: string
       type: object
-    titaniumAllParticipantExplorerTableColumn:
-      example:
-        participantsCount: participantsCount
-        consensusPrice: "{}"
-        absDiffFromConsensusPrice: "{}"
-        subPriceDiff: "{}"
-        conPriceAbsDiffFromLatestTrade: "{}"
-        stdDev: "{}"
-        upperBoundary: "{}"
-        lowerBoundary: "{}"
-      properties:
-        absDiffFromConsensusPrice:
-          properties: {}
-          type: object
-        conPriceAbsDiffFromLatestTrade:
-          properties: {}
-          type: object
-        consensusPrice:
-          properties: {}
-          type: object
-        lowerBoundary:
-          properties: {}
-          type: object
-        participantsCount:
-          type: string
-        stdDev:
-          properties: {}
-          type: object
-        subPriceDiff:
-          properties: {}
-          type: object
-        upperBoundary:
-          properties: {}
-          type: object
-      type: object
     titaniumAsset:
       example:
         name: name
@@ -5945,20 +5910,17 @@ components:
       type: object
     titaniumAvailableTrades:
       example:
-        absDiffFromExpertCohortPrice: "{}"
+        absDiffFromLatestTrade: "{}"
         min: "{}"
         subPriceAbsDiffFromLatestTrade: "{}"
         dayTradeNumber: dayTradeNumber
         max: "{}"
         monthTradeNumber: monthTradeNumber
-        absDiffFromConsensusPrice: "{}"
+        subPriceDiff: "{}"
         latestTradePrice: "{}"
         weekTradeNumber: weekTradeNumber
       properties:
-        absDiffFromConsensusPrice:
-          properties: {}
-          type: object
-        absDiffFromExpertCohortPrice:
+        absDiffFromLatestTrade:
           properties: {}
           type: object
         dayTradeNumber:
@@ -5977,6 +5939,9 @@ components:
         subPriceAbsDiffFromLatestTrade:
           properties: {}
           type: object
+        subPriceDiff:
+          properties: {}
+          type: object
         weekTradeNumber:
           type: string
       type: object
@@ -5988,6 +5953,26 @@ components:
         reason:
           type: string
         tenor:
+          type: string
+      type: object
+    titaniumBimodality:
+      example:
+        bimodalityIndex: "{}"
+        history:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
+        value: value
+      properties:
+        bimodalityIndex:
+          properties: {}
+          type: object
+        history:
+          items:
+            $ref: '#/components/schemas/titaniumDateAndValue'
+          type: array
+        value:
           type: string
       type: object
     titaniumChallengeActiveRequest:
@@ -6607,21 +6592,14 @@ components:
           max:
             label: label
             value: "{}"
-        challengeOverlayConsensus:
-          min:
-            label: label
-            value: "{}"
-          max:
-            label: label
-            value: "{}"
-        submissionOnlyConsensus:
-          min:
-            label: label
-            value: "{}"
-          max:
-            label: label
-            value: "{}"
         bimodalLeftPopulation:
+          min:
+            label: label
+            value: "{}"
+          max:
+            label: label
+            value: "{}"
+        submissionEvidence:
           min:
             label: label
             value: "{}"
@@ -6635,21 +6613,7 @@ components:
           max:
             label: label
             value: "{}"
-        expertPostChallenge:
-          min:
-            label: label
-            value: "{}"
-          max:
-            label: label
-            value: "{}"
-        submissionMeanMedian:
-          min:
-            label: label
-            value: "{}"
-          max:
-            label: label
-            value: "{}"
-        marketDataOverlayConsensus:
+        cohortConsensus:
           min:
             label: label
             value: "{}"
@@ -6657,13 +6621,6 @@ components:
             label: label
             value: "{}"
         evp:
-          min:
-            label: label
-            value: "{}"
-          max:
-            label: label
-            value: "{}"
-        expertPreChallenge:
           min:
             label: label
             value: "{}"
@@ -6675,21 +6632,13 @@ components:
           $ref: '#/components/schemas/titaniumRange'
         bimodalRightPopulation:
           $ref: '#/components/schemas/titaniumRange'
-        challengeOverlayConsensus:
+        cohortConsensus:
           $ref: '#/components/schemas/titaniumRange'
         evp:
           $ref: '#/components/schemas/titaniumRange'
-        expertPostChallenge:
-          $ref: '#/components/schemas/titaniumRange'
-        expertPreChallenge:
-          $ref: '#/components/schemas/titaniumRange'
-        marketDataOverlayConsensus:
-          $ref: '#/components/schemas/titaniumRange'
-        submissionMeanMedian:
+        submissionEvidence:
           $ref: '#/components/schemas/titaniumRange'
         submissionMinMax:
-          $ref: '#/components/schemas/titaniumRange'
-        submissionOnlyConsensus:
           $ref: '#/components/schemas/titaniumRange'
       type: object
     titaniumChartSource:
@@ -6891,6 +6840,113 @@ components:
         name:
           type: string
       type: object
+    titaniumCohortConsensusColumn:
+      example:
+        consAbsDiffFromAnchorEvpMid: "{}"
+        subPriceDiff: "{}"
+        consAbsDiffFromAnchorSub: "{}"
+        consAbsDiffFromAnchorEvpMidCalc: "{}"
+        stdDev: "{}"
+        upperBoundary: "{}"
+        cohortConsensusPrice: "{}"
+        consAbsDiffFromAnchorTrade: "{}"
+        numberOfInstruments: numberOfInstruments
+        absDiffFromConsensus: "{}"
+        lowerBoundary: "{}"
+      properties:
+        absDiffFromConsensus:
+          properties: {}
+          type: object
+        cohortConsensusPrice:
+          properties: {}
+          type: object
+        consAbsDiffFromAnchorEvpMid:
+          properties: {}
+          type: object
+        consAbsDiffFromAnchorEvpMidCalc:
+          properties: {}
+          type: object
+        consAbsDiffFromAnchorSub:
+          properties: {}
+          type: object
+        consAbsDiffFromAnchorTrade:
+          properties: {}
+          type: object
+        lowerBoundary:
+          properties: {}
+          type: object
+        numberOfInstruments:
+          type: string
+        stdDev:
+          properties: {}
+          type: object
+        subPriceDiff:
+          properties: {}
+          type: object
+        upperBoundary:
+          properties: {}
+          type: object
+      type: object
+    titaniumCohortConsensusRangeTabData:
+      example:
+        evpAnchorDetails:
+          mid: 6.027456183070403
+          distanceToConsensus: 0.8008281904610115
+        expertsCount: 1
+        distanceToAnchor: "{}"
+        expertiseScore: "{}"
+        tradeAnchorDetails:
+          notional: 9.301444243932576
+          pricingAge: pricingAge
+          latestTradePrice: 7.061401241503109
+          source: source
+          tradeExecutionTime: tradeExecutionTime
+          distanceToConsensus: 2.3021358869347655
+        submissionEvidenceAnchorDetails:
+          submissionEvidence: 5.637376656633329
+          distanceToConsensus: 5.962133916683182
+        tradePeriodsWithMetrics:
+          lessWeek:
+            tradeCount: tradeCount
+            totalLiquidity: 4.145608029883936
+            minNotionalAmount: 2.027123023002322
+            maxNotionalAmount: 3.616076749251911
+          lessDay:
+            tradeCount: tradeCount
+            totalLiquidity: 4.145608029883936
+            minNotionalAmount: 2.027123023002322
+            maxNotionalAmount: 3.616076749251911
+          lessMonth:
+            tradeCount: tradeCount
+            totalLiquidity: 4.145608029883936
+            minNotionalAmount: 2.027123023002322
+            maxNotionalAmount: 3.616076749251911
+        distanceToConsensus: "{}"
+        expertiseRank: "{}"
+      properties:
+        distanceToAnchor:
+          properties: {}
+          type: object
+        distanceToConsensus:
+          properties: {}
+          type: object
+        evpAnchorDetails:
+          $ref: '#/components/schemas/titaniumEvpAnchorDetails'
+        expertiseRank:
+          properties: {}
+          type: object
+        expertiseScore:
+          properties: {}
+          type: object
+        expertsCount:
+          type: integer
+        submissionEvidenceAnchorDetails:
+          $ref: '#/components/schemas/titaniumSubmissionEvidenceAnchorDetails'
+        tradeAnchorDetails:
+          $ref: '#/components/schemas/titaniumTradeAnchorDetails'
+        tradePeriodsWithMetrics:
+          $ref: '#/components/schemas/titaniumTradePeriodsWithMetrics'
+      type: object
     titaniumColDependency:
       example:
         col: col
@@ -6941,7 +6997,30 @@ components:
       type: object
     titaniumComparisonTable:
       example:
-        evaluatedPrice:
+        cohortConsensusColumn:
+          consAbsDiffFromAnchorEvpMid: "{}"
+          subPriceDiff: "{}"
+          consAbsDiffFromAnchorSub: "{}"
+          consAbsDiffFromAnchorEvpMidCalc: "{}"
+          stdDev: "{}"
+          upperBoundary: "{}"
+          cohortConsensusPrice: "{}"
+          consAbsDiffFromAnchorTrade: "{}"
+          numberOfInstruments: numberOfInstruments
+          absDiffFromConsensus: "{}"
+          lowerBoundary: "{}"
+        submissionStatistics:
+          min: "{}"
+          max: "{}"
+          mean: "{}"
+          statMeanAbsDiffFromLatestTrade: "{}"
+          subPriceDiff: "{}"
+          subValidPointsCount: subValidPointsCount
+          stdDev: "{}"
+          upperBoundary: "{}"
+          absDiffFromStatisticalMean: "{}"
+          lowerBoundary: "{}"
+        evidentialPricing:
           absDiffFromEvpMid: "{}"
           evpLowerBoundary: "{}"
           ask: "{}"
@@ -6951,58 +7030,38 @@ components:
           evpUpperBoundary: "{}"
           bid: "{}"
           evpMidAbsDiffFromLatestTrade: "{}"
-        allParticipantCohortConsensus:
-          participantsCount: participantsCount
-          consensusPrice: "{}"
-          absDiffFromConsensusPrice: "{}"
-          subPriceDiff: "{}"
-          conPriceAbsDiffFromLatestTrade: "{}"
-          stdDev: "{}"
-          upperBoundary: "{}"
-          lowerBoundary: "{}"
-        submissionStatistics:
-          statisticalMean: "{}"
-          min: "{}"
-          max: "{}"
-          statMeanAbsDiffFromLatestTrade: "{}"
-          subPriceDiff: "{}"
-          subValidPointsCount: subValidPointsCount
-          stdDev: "{}"
-          upperBoundary: "{}"
-          absDiffFromStatisticalMean: "{}"
-          lowerBoundary: "{}"
-        expertCohortConsensus:
-          min: "{}"
-          max: "{}"
-          participantInstrumentsCount: participantInstrumentsCount
-          mean: "{}"
-          subPriceDiff: "{}"
-          absDiffFromExpertCohortMean: "{}"
-          conPriceAbsDiffFromLatestTrade: "{}"
-          stdDev: "{}"
         availableTrades:
-          absDiffFromExpertCohortPrice: "{}"
+          absDiffFromLatestTrade: "{}"
           min: "{}"
           subPriceAbsDiffFromLatestTrade: "{}"
           dayTradeNumber: dayTradeNumber
           max: "{}"
           monthTradeNumber: monthTradeNumber
-          absDiffFromConsensusPrice: "{}"
+          subPriceDiff: "{}"
           latestTradePrice: "{}"
           weekTradeNumber: weekTradeNumber
+        submissionEvidence:
+          eviPriceAbsDiffFromLatestTrade: "{}"
+          participantsCount: participantsCount
+          absDiffFromEvidence: "{}"
+          evidence: "{}"
+          subPriceDiff: "{}"
+          stdDev: "{}"
+          upperBoundary: "{}"
+          lowerBoundary: "{}"
         submission:
-          submissionPrice: 0.8008281904610115
+          submissionPrice: "{}"
       properties:
-        allParticipantCohortConsensus:
-          $ref: '#/components/schemas/titaniumAllParticipantExplorerTableColumn'
         availableTrades:
           $ref: '#/components/schemas/titaniumAvailableTrades'
-        evaluatedPrice:
-          $ref: '#/components/schemas/titaniumEvpExplorerTableColumn'
-        expertCohortConsensus:
-          $ref: '#/components/schemas/titaniumExpertExplorerTableColumn'
+        cohortConsensusColumn:
+          $ref: '#/components/schemas/titaniumCohortConsensusColumn'
+        evidentialPricing:
+          $ref: '#/components/schemas/titaniumEvidentalPricing'
         submission:
           $ref: '#/components/schemas/titaniumSubmissionExplorerTableColumn'
+        submissionEvidence:
+          $ref: '#/components/schemas/titaniumSubmissionEvidenceTableColumn'
         submissionStatistics:
           $ref: '#/components/schemas/titaniumSubmissionStatisticsExplorerTableColumn'
       type: object
@@ -7059,46 +7118,30 @@ components:
       type: object
     titaniumConsensusDensityScore:
       example:
-        numberOfParticipants: "{}"
+        tradeAlignmentScore: "{}"
         evpAlignmentScore: "{}"
-        evpQuality: "{}"
         score: "{}"
-        challengeQuality: "{}"
-        bimodality: "{}"
-        outlierVolume: "{}"
+        bimodalityScore: "{}"
         history:
         - date: date
           value: "{}"
         - date: date
           value: "{}"
-        dispersion: "{}"
       properties:
-        bimodality:
-          properties: {}
-          type: object
-        challengeQuality:
-          properties: {}
-          type: object
-        dispersion:
+        bimodalityScore:
           properties: {}
           type: object
         evpAlignmentScore:
-          properties: {}
-          type: object
-        evpQuality:
           properties: {}
           type: object
         history:
           items:
             $ref: '#/components/schemas/titaniumDateAndValue'
           type: array
-        numberOfParticipants:
-          properties: {}
-          type: object
-        outlierVolume:
-          properties: {}
-          type: object
         score:
+          properties: {}
+          type: object
+        tradeAlignmentScore:
           properties: {}
           type: object
       type: object
@@ -7120,16 +7163,18 @@ components:
       type: object
     titaniumConsensusExplorerInstrumentDetailsData:
       example:
-        isExpert: true
         instrumentDetails:
         - val: val
           key: key
         - val: val
           key: key
         instrumentSubmissionStatus:
-          participantConsensusStatus: participantConsensusStatus
-          participantConsensusStatusDetails: participantConsensusStatusDetails
           consensusStatusDetailsHistory:
+          - date: date
+            value: "{}"
+          - date: date
+            value: "{}"
+          participantSubmissionsEvidenceStatusHistory:
           - date: date
             value: "{}"
           - date: date
@@ -7140,7 +7185,6 @@ components:
           - date: date
             value: "{}"
           consensusStatus: consensusStatus
-          bimodality: bimodality
           consensusStatusDetails: consensusStatusDetails
           dqeHistory:
           - date: date
@@ -7148,26 +7192,29 @@ components:
           - date: date
             value: "{}"
           highestDqe: highestDqe
-          participantConsensusStatusDetailsHistory:
-          - date: date
-            value: "{}"
-          - date: date
-            value: "{}"
-          participantConsensusStatusHistory:
-          - date: date
-            value: "{}"
-          - date: date
-            value: "{}"
-          bimodalityHistory:
+          participantSubmissionsEvidenceStatus: participantSubmissionsEvidenceStatus
+          participantCohortConsensusStatus: participantCohortConsensusStatus
+          participantCohortConsensusStatusHistory:
           - date: date
             value: "{}"
           - date: date
             value: "{}"
         consensusScores:
+          tradeAlignmentScore:
+            score: "{}"
+            submissionMean: "{}"
+            latestTradePrice: "{}"
+            scoreStatus: scoreStatus
+            history:
+            - date: date
+              score: "{}"
+              scoreStatus: scoreStatus
+            - date: date
+              score: "{}"
+              scoreStatus: scoreStatus
+            stdDev: "{}"
           evpAlignmentScore:
             score: "{}"
-            submissionStdDev: "{}"
-            evpAlignmentDispersionScore: "{}"
             evpMid: "{}"
             submissionMean: "{}"
             scoreStatus: scoreStatus
@@ -7178,6 +7225,7 @@ components:
             - date: date
               score: "{}"
               scoreStatus: scoreStatus
+            stdDev: "{}"
           evpQualityScore:
             score: "{}"
             tradeCount: tradeCount
@@ -7188,39 +7236,38 @@ components:
               value: "{}"
             - date: date
               value: "{}"
-          expertiseScore:
-            score: "{}"
-            expertsCount: "{}"
-            dimensionCreditScore: "{}"
+          bimodality:
+            bimodalityIndex: "{}"
             history:
             - date: date
-              score: "{}"
-              expertsCount: "{}"
-              expertiseRank: "{}"
+              value: "{}"
             - date: date
-              score: "{}"
-              expertsCount: "{}"
-              expertiseRank: "{}"
-            proximityToPostChallengeConsensusMean: "{}"
-            challengeScore: "{}"
-            consensusScore: "{}"
-            submittedScore: "{}"
-            consensusDistanceScore: "{}"
-            expertiseRank: "{}"
+              value: "{}"
+            value: value
           consensusDensityScore:
-            numberOfParticipants: "{}"
+            tradeAlignmentScore: "{}"
             evpAlignmentScore: "{}"
-            evpQuality: "{}"
             score: "{}"
-            challengeQuality: "{}"
-            bimodality: "{}"
-            outlierVolume: "{}"
+            bimodalityScore: "{}"
             history:
             - date: date
               value: "{}"
             - date: date
               value: "{}"
-            dispersion: "{}"
+          expertiseRank:
+            expertsCount: 0
+            anchorPrice: "{}"
+            expertiseScore: "{}"
+            rank: "{}"
+            absDistanceToAnchor: "{}"
+            history:
+            - date: date
+              expertsCount: 6
+              rank: "{}"
+            - date: date
+              expertsCount: 6
+              rank: "{}"
+            submissionPrice: "{}"
       properties:
         consensusScores:
           $ref: '#/components/schemas/titaniumConsensusScores'
@@ -7230,22 +7277,22 @@ components:
           type: array
         instrumentSubmissionStatus:
           $ref: '#/components/schemas/titaniumInstrumentSubmissionStatus'
-        isExpert:
-          type: boolean
       type: object
     titaniumConsensusExplorerInstrumentDetailsResponse:
       example:
         data:
-          isExpert: true
           instrumentDetails:
           - val: val
             key: key
           - val: val
             key: key
           instrumentSubmissionStatus:
-            participantConsensusStatus: participantConsensusStatus
-            participantConsensusStatusDetails: participantConsensusStatusDetails
             consensusStatusDetailsHistory:
+            - date: date
+              value: "{}"
+            - date: date
+              value: "{}"
+            participantSubmissionsEvidenceStatusHistory:
             - date: date
               value: "{}"
             - date: date
@@ -7256,7 +7303,6 @@ components:
             - date: date
               value: "{}"
             consensusStatus: consensusStatus
-            bimodality: bimodality
             consensusStatusDetails: consensusStatusDetails
             dqeHistory:
             - date: date
@@ -7264,26 +7310,29 @@ components:
             - date: date
               value: "{}"
             highestDqe: highestDqe
-            participantConsensusStatusDetailsHistory:
-            - date: date
-              value: "{}"
-            - date: date
-              value: "{}"
-            participantConsensusStatusHistory:
-            - date: date
-              value: "{}"
-            - date: date
-              value: "{}"
-            bimodalityHistory:
+            participantSubmissionsEvidenceStatus: participantSubmissionsEvidenceStatus
+            participantCohortConsensusStatus: participantCohortConsensusStatus
+            participantCohortConsensusStatusHistory:
             - date: date
               value: "{}"
             - date: date
               value: "{}"
           consensusScores:
+            tradeAlignmentScore:
+              score: "{}"
+              submissionMean: "{}"
+              latestTradePrice: "{}"
+              scoreStatus: scoreStatus
+              history:
+              - date: date
+                score: "{}"
+                scoreStatus: scoreStatus
+              - date: date
+                score: "{}"
+                scoreStatus: scoreStatus
+              stdDev: "{}"
             evpAlignmentScore:
               score: "{}"
-              submissionStdDev: "{}"
-              evpAlignmentDispersionScore: "{}"
               evpMid: "{}"
               submissionMean: "{}"
               scoreStatus: scoreStatus
@@ -7294,6 +7343,7 @@ components:
               - date: date
                 score: "{}"
                 scoreStatus: scoreStatus
+              stdDev: "{}"
             evpQualityScore:
               score: "{}"
               tradeCount: tradeCount
@@ -7304,39 +7354,38 @@ components:
                 value: "{}"
               - date: date
                 value: "{}"
-            expertiseScore:
-              score: "{}"
-              expertsCount: "{}"
-              dimensionCreditScore: "{}"
+            bimodality:
+              bimodalityIndex: "{}"
               history:
               - date: date
-                score: "{}"
-                expertsCount: "{}"
-                expertiseRank: "{}"
+                value: "{}"
               - date: date
-                score: "{}"
-                expertsCount: "{}"
-                expertiseRank: "{}"
-              proximityToPostChallengeConsensusMean: "{}"
-              challengeScore: "{}"
-              consensusScore: "{}"
-              submittedScore: "{}"
-              consensusDistanceScore: "{}"
-              expertiseRank: "{}"
+                value: "{}"
+              value: value
             consensusDensityScore:
-              numberOfParticipants: "{}"
+              tradeAlignmentScore: "{}"
               evpAlignmentScore: "{}"
-              evpQuality: "{}"
               score: "{}"
-              challengeQuality: "{}"
-              bimodality: "{}"
-              outlierVolume: "{}"
+              bimodalityScore: "{}"
               history:
               - date: date
                 value: "{}"
               - date: date
                 value: "{}"
-              dispersion: "{}"
+            expertiseRank:
+              expertsCount: 0
+              anchorPrice: "{}"
+              expertiseScore: "{}"
+              rank: "{}"
+              absDistanceToAnchor: "{}"
+              history:
+              - date: date
+                expertsCount: 6
+                rank: "{}"
+              - date: date
+                expertsCount: 6
+                rank: "{}"
+              submissionPrice: "{}"
         error:
           code: 0
           message: message
@@ -7351,47 +7400,8 @@ components:
         bimodalLeftMean:
           label: label
           value: "{}"
-        evpMid:
-          label: label
-          value: "{}"
-        submissionPoint:
-          label: label
-          value: "{}"
-        tradePeriodsWithMetrics:
-          lessWeek:
-            tradeCount: tradeCount
-            minNotionalAmount: 6.027456183070403
-            maxNotionalAmount: 0.8008281904610115
-          lessDay:
-            tradeCount: tradeCount
-            minNotionalAmount: 6.027456183070403
-            maxNotionalAmount: 0.8008281904610115
-          lessMonth:
-            tradeCount: tradeCount
-            minNotionalAmount: 6.027456183070403
-            maxNotionalAmount: 0.8008281904610115
-        expertPreChallengeConsensusPrice:
-          label: label
-          value: "{}"
-        challengeOverlayCrsConsensusPrice:
-          label: label
-          value: "{}"
         chartRanges:
           bimodalRightPopulation:
-            min:
-              label: label
-              value: "{}"
-            max:
-              label: label
-              value: "{}"
-          challengeOverlayConsensus:
-            min:
-              label: label
-              value: "{}"
-            max:
-              label: label
-              value: "{}"
-          submissionOnlyConsensus:
             min:
               label: label
               value: "{}"
@@ -7405,6 +7415,13 @@ components:
             max:
               label: label
               value: "{}"
+          submissionEvidence:
+            min:
+              label: label
+              value: "{}"
+            max:
+              label: label
+              value: "{}"
           submissionMinMax:
             min:
               label: label
@@ -7412,21 +7429,7 @@ components:
             max:
               label: label
               value: "{}"
-          expertPostChallenge:
-            min:
-              label: label
-              value: "{}"
-            max:
-              label: label
-              value: "{}"
-          submissionMeanMedian:
-            min:
-              label: label
-              value: "{}"
-            max:
-              label: label
-              value: "{}"
-          marketDataOverlayConsensus:
+          cohortConsensus:
             min:
               label: label
               value: "{}"
@@ -7440,60 +7443,78 @@ components:
             max:
               label: label
               value: "{}"
-          expertPreChallenge:
-            min:
-              label: label
-              value: "{}"
-            max:
-              label: label
-              value: "{}"
-        marketDataCrsConsensusPrice:
+        anchorPoint:
           label: label
           value: "{}"
-        allParticipantCrsConsensusPrice:
+        cohortConsensusRangeTabData:
+          evpAnchorDetails:
+            mid: 6.027456183070403
+            distanceToConsensus: 0.8008281904610115
+          expertsCount: 1
+          distanceToAnchor: "{}"
+          expertiseScore: "{}"
+          tradeAnchorDetails:
+            notional: 9.301444243932576
+            pricingAge: pricingAge
+            latestTradePrice: 7.061401241503109
+            source: source
+            tradeExecutionTime: tradeExecutionTime
+            distanceToConsensus: 2.3021358869347655
+          submissionEvidenceAnchorDetails:
+            submissionEvidence: 5.637376656633329
+            distanceToConsensus: 5.962133916683182
+          tradePeriodsWithMetrics:
+            lessWeek:
+              tradeCount: tradeCount
+              totalLiquidity: 4.145608029883936
+              minNotionalAmount: 2.027123023002322
+              maxNotionalAmount: 3.616076749251911
+            lessDay:
+              tradeCount: tradeCount
+              totalLiquidity: 4.145608029883936
+              minNotionalAmount: 2.027123023002322
+              maxNotionalAmount: 3.616076749251911
+            lessMonth:
+              tradeCount: tradeCount
+              totalLiquidity: 4.145608029883936
+              minNotionalAmount: 2.027123023002322
+              maxNotionalAmount: 3.616076749251911
+          distanceToConsensus: "{}"
+          expertiseRank: "{}"
+        evpMid:
           label: label
           value: "{}"
-        expertPostChallengeConsensusPrice:
+        submissionPoint:
           label: label
           value: "{}"
-        submissionMeanPoint:
+        submissionEvidencePrice:
           label: label
           value: "{}"
-        tradeRangesData:
-          notional: 5.962133916683182
-          pricingRecency: pricingRecency
-          latestTradePrice: 1.4658129805029452
-          tradeExecutionTime: tradeExecutionTime
+        cohortConsensusPrice:
+          label: label
+          value: "{}"
         bimodalRightMean:
           label: label
           value: "{}"
       properties:
-        allParticipantCrsConsensusPrice:
+        anchorPoint:
           $ref: '#/components/schemas/titaniumRangePoint'
         bimodalLeftMean:
           $ref: '#/components/schemas/titaniumRangePoint'
         bimodalRightMean:
           $ref: '#/components/schemas/titaniumRangePoint'
-        challengeOverlayCrsConsensusPrice:
-          $ref: '#/components/schemas/titaniumRangePoint'
         chartRanges:
           $ref: '#/components/schemas/titaniumChartRanges'
+        cohortConsensusPrice:
+          $ref: '#/components/schemas/titaniumRangePoint'
+        cohortConsensusRangeTabData:
+          $ref: '#/components/schemas/titaniumCohortConsensusRangeTabData'
         evpMid:
           $ref: '#/components/schemas/titaniumRangePoint'
-        expertPostChallengeConsensusPrice:
-          $ref: '#/components/schemas/titaniumRangePoint'
-        expertPreChallengeConsensusPrice:
-          $ref: '#/components/schemas/titaniumRangePoint'
-        marketDataCrsConsensusPrice:
-          $ref: '#/components/schemas/titaniumRangePoint'
-        submissionMeanPoint:
+        submissionEvidencePrice:
           $ref: '#/components/schemas/titaniumRangePoint'
         submissionPoint:
           $ref: '#/components/schemas/titaniumRangePoint'
-        tradePeriodsWithMetrics:
-          $ref: '#/components/schemas/titaniumTradePeriodsWithMetrics'
-        tradeRangesData:
-          $ref: '#/components/schemas/titaniumTradeRangesData'
       type: object
     titaniumConsensusExplorerRangeResponse:
       example:
@@ -7501,47 +7522,8 @@ components:
           bimodalLeftMean:
             label: label
             value: "{}"
-          evpMid:
-            label: label
-            value: "{}"
-          submissionPoint:
-            label: label
-            value: "{}"
-          tradePeriodsWithMetrics:
-            lessWeek:
-              tradeCount: tradeCount
-              minNotionalAmount: 6.027456183070403
-              maxNotionalAmount: 0.8008281904610115
-            lessDay:
-              tradeCount: tradeCount
-              minNotionalAmount: 6.027456183070403
-              maxNotionalAmount: 0.8008281904610115
-            lessMonth:
-              tradeCount: tradeCount
-              minNotionalAmount: 6.027456183070403
-              maxNotionalAmount: 0.8008281904610115
-          expertPreChallengeConsensusPrice:
-            label: label
-            value: "{}"
-          challengeOverlayCrsConsensusPrice:
-            label: label
-            value: "{}"
           chartRanges:
             bimodalRightPopulation:
-              min:
-                label: label
-                value: "{}"
-              max:
-                label: label
-                value: "{}"
-            challengeOverlayConsensus:
-              min:
-                label: label
-                value: "{}"
-              max:
-                label: label
-                value: "{}"
-            submissionOnlyConsensus:
               min:
                 label: label
                 value: "{}"
@@ -7555,6 +7537,13 @@ components:
               max:
                 label: label
                 value: "{}"
+            submissionEvidence:
+              min:
+                label: label
+                value: "{}"
+              max:
+                label: label
+                value: "{}"
             submissionMinMax:
               min:
                 label: label
@@ -7562,21 +7551,7 @@ components:
               max:
                 label: label
                 value: "{}"
-            expertPostChallenge:
-              min:
-                label: label
-                value: "{}"
-              max:
-                label: label
-                value: "{}"
-            submissionMeanMedian:
-              min:
-                label: label
-                value: "{}"
-              max:
-                label: label
-                value: "{}"
-            marketDataOverlayConsensus:
+            cohortConsensus:
               min:
                 label: label
                 value: "{}"
@@ -7590,30 +7565,56 @@ components:
               max:
                 label: label
                 value: "{}"
-            expertPreChallenge:
-              min:
-                label: label
-                value: "{}"
-              max:
-                label: label
-                value: "{}"
-          marketDataCrsConsensusPrice:
+          anchorPoint:
             label: label
             value: "{}"
-          allParticipantCrsConsensusPrice:
+          cohortConsensusRangeTabData:
+            evpAnchorDetails:
+              mid: 6.027456183070403
+              distanceToConsensus: 0.8008281904610115
+            expertsCount: 1
+            distanceToAnchor: "{}"
+            expertiseScore: "{}"
+            tradeAnchorDetails:
+              notional: 9.301444243932576
+              pricingAge: pricingAge
+              latestTradePrice: 7.061401241503109
+              source: source
+              tradeExecutionTime: tradeExecutionTime
+              distanceToConsensus: 2.3021358869347655
+            submissionEvidenceAnchorDetails:
+              submissionEvidence: 5.637376656633329
+              distanceToConsensus: 5.962133916683182
+            tradePeriodsWithMetrics:
+              lessWeek:
+                tradeCount: tradeCount
+                totalLiquidity: 4.145608029883936
+                minNotionalAmount: 2.027123023002322
+                maxNotionalAmount: 3.616076749251911
+              lessDay:
+                tradeCount: tradeCount
+                totalLiquidity: 4.145608029883936
+                minNotionalAmount: 2.027123023002322
+                maxNotionalAmount: 3.616076749251911
+              lessMonth:
+                tradeCount: tradeCount
+                totalLiquidity: 4.145608029883936
+                minNotionalAmount: 2.027123023002322
+                maxNotionalAmount: 3.616076749251911
+            distanceToConsensus: "{}"
+            expertiseRank: "{}"
+          evpMid:
             label: label
             value: "{}"
-          expertPostChallengeConsensusPrice:
+          submissionPoint:
             label: label
             value: "{}"
-          submissionMeanPoint:
+          submissionEvidencePrice:
             label: label
             value: "{}"
-          tradeRangesData:
-            notional: 5.962133916683182
-            pricingRecency: pricingRecency
-            latestTradePrice: 1.4658129805029452
-            tradeExecutionTime: tradeExecutionTime
+          cohortConsensusPrice:
+            label: label
+            value: "{}"
           bimodalRightMean:
             label: label
             value: "{}"
@@ -7629,7 +7630,30 @@ components:
     titaniumConsensusExplorerTableData:
       example:
         comparisonTable:
-          evaluatedPrice:
+          cohortConsensusColumn:
+            consAbsDiffFromAnchorEvpMid: "{}"
+            subPriceDiff: "{}"
+            consAbsDiffFromAnchorSub: "{}"
+            consAbsDiffFromAnchorEvpMidCalc: "{}"
+            stdDev: "{}"
+            upperBoundary: "{}"
+            cohortConsensusPrice: "{}"
+            consAbsDiffFromAnchorTrade: "{}"
+            numberOfInstruments: numberOfInstruments
+            absDiffFromConsensus: "{}"
+            lowerBoundary: "{}"
+          submissionStatistics:
+            min: "{}"
+            max: "{}"
+            mean: "{}"
+            statMeanAbsDiffFromLatestTrade: "{}"
+            subPriceDiff: "{}"
+            subValidPointsCount: subValidPointsCount
+            stdDev: "{}"
+            upperBoundary: "{}"
+            absDiffFromStatisticalMean: "{}"
+            lowerBoundary: "{}"
+          evidentialPricing:
             absDiffFromEvpMid: "{}"
             evpLowerBoundary: "{}"
             ask: "{}"
@@ -7639,47 +7663,27 @@ components:
             evpUpperBoundary: "{}"
             bid: "{}"
             evpMidAbsDiffFromLatestTrade: "{}"
-          allParticipantCohortConsensus:
-            participantsCount: participantsCount
-            consensusPrice: "{}"
-            absDiffFromConsensusPrice: "{}"
-            subPriceDiff: "{}"
-            conPriceAbsDiffFromLatestTrade: "{}"
-            stdDev: "{}"
-            upperBoundary: "{}"
-            lowerBoundary: "{}"
-          submissionStatistics:
-            statisticalMean: "{}"
-            min: "{}"
-            max: "{}"
-            statMeanAbsDiffFromLatestTrade: "{}"
-            subPriceDiff: "{}"
-            subValidPointsCount: subValidPointsCount
-            stdDev: "{}"
-            upperBoundary: "{}"
-            absDiffFromStatisticalMean: "{}"
-            lowerBoundary: "{}"
-          expertCohortConsensus:
-            min: "{}"
-            max: "{}"
-            participantInstrumentsCount: participantInstrumentsCount
-            mean: "{}"
-            subPriceDiff: "{}"
-            absDiffFromExpertCohortMean: "{}"
-            conPriceAbsDiffFromLatestTrade: "{}"
-            stdDev: "{}"
           availableTrades:
-            absDiffFromExpertCohortPrice: "{}"
+            absDiffFromLatestTrade: "{}"
             min: "{}"
             subPriceAbsDiffFromLatestTrade: "{}"
             dayTradeNumber: dayTradeNumber
             max: "{}"
             monthTradeNumber: monthTradeNumber
-            absDiffFromConsensusPrice: "{}"
+            subPriceDiff: "{}"
             latestTradePrice: "{}"
             weekTradeNumber: weekTradeNumber
+          submissionEvidence:
+            eviPriceAbsDiffFromLatestTrade: "{}"
+            participantsCount: participantsCount
+            absDiffFromEvidence: "{}"
+            evidence: "{}"
+            subPriceDiff: "{}"
+            stdDev: "{}"
+            upperBoundary: "{}"
+            lowerBoundary: "{}"
           submission:
-            submissionPrice: 0.8008281904610115
+            submissionPrice: "{}"
       properties:
         comparisonTable:
           $ref: '#/components/schemas/titaniumComparisonTable'
@@ -7688,7 +7692,30 @@ components:
       example:
         data:
           comparisonTable:
-            evaluatedPrice:
+            cohortConsensusColumn:
+              consAbsDiffFromAnchorEvpMid: "{}"
+              subPriceDiff: "{}"
+              consAbsDiffFromAnchorSub: "{}"
+              consAbsDiffFromAnchorEvpMidCalc: "{}"
+              stdDev: "{}"
+              upperBoundary: "{}"
+              cohortConsensusPrice: "{}"
+              consAbsDiffFromAnchorTrade: "{}"
+              numberOfInstruments: numberOfInstruments
+              absDiffFromConsensus: "{}"
+              lowerBoundary: "{}"
+            submissionStatistics:
+              min: "{}"
+              max: "{}"
+              mean: "{}"
+              statMeanAbsDiffFromLatestTrade: "{}"
+              subPriceDiff: "{}"
+              subValidPointsCount: subValidPointsCount
+              stdDev: "{}"
+              upperBoundary: "{}"
+              absDiffFromStatisticalMean: "{}"
+              lowerBoundary: "{}"
+            evidentialPricing:
               absDiffFromEvpMid: "{}"
               evpLowerBoundary: "{}"
               ask: "{}"
@@ -7698,47 +7725,27 @@ components:
               evpUpperBoundary: "{}"
               bid: "{}"
               evpMidAbsDiffFromLatestTrade: "{}"
-            allParticipantCohortConsensus:
-              participantsCount: participantsCount
-              consensusPrice: "{}"
-              absDiffFromConsensusPrice: "{}"
-              subPriceDiff: "{}"
-              conPriceAbsDiffFromLatestTrade: "{}"
-              stdDev: "{}"
-              upperBoundary: "{}"
-              lowerBoundary: "{}"
-            submissionStatistics:
-              statisticalMean: "{}"
-              min: "{}"
-              max: "{}"
-              statMeanAbsDiffFromLatestTrade: "{}"
-              subPriceDiff: "{}"
-              subValidPointsCount: subValidPointsCount
-              stdDev: "{}"
-              upperBoundary: "{}"
-              absDiffFromStatisticalMean: "{}"
-              lowerBoundary: "{}"
-            expertCohortConsensus:
-              min: "{}"
-              max: "{}"
-              participantInstrumentsCount: participantInstrumentsCount
-              mean: "{}"
-              subPriceDiff: "{}"
-              absDiffFromExpertCohortMean: "{}"
-              conPriceAbsDiffFromLatestTrade: "{}"
-              stdDev: "{}"
             availableTrades:
-              absDiffFromExpertCohortPrice: "{}"
+              absDiffFromLatestTrade: "{}"
               min: "{}"
               subPriceAbsDiffFromLatestTrade: "{}"
               dayTradeNumber: dayTradeNumber
               max: "{}"
               monthTradeNumber: monthTradeNumber
-              absDiffFromConsensusPrice: "{}"
+              subPriceDiff: "{}"
               latestTradePrice: "{}"
               weekTradeNumber: weekTradeNumber
+            submissionEvidence:
+              eviPriceAbsDiffFromLatestTrade: "{}"
+              participantsCount: participantsCount
+              absDiffFromEvidence: "{}"
+              evidence: "{}"
+              subPriceDiff: "{}"
+              stdDev: "{}"
+              upperBoundary: "{}"
+              lowerBoundary: "{}"
             submission:
-              submissionPrice: 0.8008281904610115
+              submissionPrice: "{}"
         error:
           code: 0
           message: message
@@ -8093,10 +8100,21 @@ components:
       type: object
     titaniumConsensusScores:
       example:
+        tradeAlignmentScore:
+          score: "{}"
+          submissionMean: "{}"
+          latestTradePrice: "{}"
+          scoreStatus: scoreStatus
+          history:
+          - date: date
+            score: "{}"
+            scoreStatus: scoreStatus
+          - date: date
+            score: "{}"
+            scoreStatus: scoreStatus
+          stdDev: "{}"
         evpAlignmentScore:
           score: "{}"
-          submissionStdDev: "{}"
-          evpAlignmentDispersionScore: "{}"
           evpMid: "{}"
           submissionMean: "{}"
           scoreStatus: scoreStatus
@@ -8107,6 +8125,7 @@ components:
           - date: date
             score: "{}"
             scoreStatus: scoreStatus
+          stdDev: "{}"
         evpQualityScore:
           score: "{}"
           tradeCount: tradeCount
@@ -8117,48 +8136,51 @@ components:
             value: "{}"
           - date: date
             value: "{}"
-        expertiseScore:
-          score: "{}"
-          expertsCount: "{}"
-          dimensionCreditScore: "{}"
+        bimodality:
+          bimodalityIndex: "{}"
           history:
           - date: date
-            score: "{}"
-            expertsCount: "{}"
-            expertiseRank: "{}"
+            value: "{}"
           - date: date
-            score: "{}"
-            expertsCount: "{}"
-            expertiseRank: "{}"
-          proximityToPostChallengeConsensusMean: "{}"
-          challengeScore: "{}"
-          consensusScore: "{}"
-          submittedScore: "{}"
-          consensusDistanceScore: "{}"
-          expertiseRank: "{}"
+            value: "{}"
+          value: value
         consensusDensityScore:
-          numberOfParticipants: "{}"
+          tradeAlignmentScore: "{}"
           evpAlignmentScore: "{}"
-          evpQuality: "{}"
           score: "{}"
-          challengeQuality: "{}"
-          bimodality: "{}"
-          outlierVolume: "{}"
+          bimodalityScore: "{}"
           history:
           - date: date
             value: "{}"
           - date: date
             value: "{}"
-          dispersion: "{}"
+        expertiseRank:
+          expertsCount: 0
+          anchorPrice: "{}"
+          expertiseScore: "{}"
+          rank: "{}"
+          absDistanceToAnchor: "{}"
+          history:
+          - date: date
+            expertsCount: 6
+            rank: "{}"
+          - date: date
+            expertsCount: 6
+            rank: "{}"
+          submissionPrice: "{}"
       properties:
+        bimodality:
+          $ref: '#/components/schemas/titaniumBimodality'
         consensusDensityScore:
           $ref: '#/components/schemas/titaniumConsensusDensityScore'
         evpAlignmentScore:
           $ref: '#/components/schemas/titaniumEvpAlignmentScore'
         evpQualityScore:
           $ref: '#/components/schemas/titaniumEvpQualityScore'
-        expertiseScore:
-          $ref: '#/components/schemas/titaniumExpertiseScore'
+        expertiseRank:
+          $ref: '#/components/schemas/titaniumExpertiseRank'
+        tradeAlignmentScore:
+          $ref: '#/components/schemas/titaniumTradeAlignmentScore'
       type: object
     titaniumConsensusTimestampMeta:
       example:
@@ -9153,59 +9175,7 @@ components:
       type: object
     titaniumEvidenceType:
       type: string
-    titaniumEvpAlignmentScore:
-      example:
-        score: "{}"
-        submissionStdDev: "{}"
-        evpAlignmentDispersionScore: "{}"
-        evpMid: "{}"
-        submissionMean: "{}"
-        scoreStatus: scoreStatus
-        history:
-        - date: date
-          score: "{}"
-          scoreStatus: scoreStatus
-        - date: date
-          score: "{}"
-          scoreStatus: scoreStatus
-      properties:
-        evpAlignmentDispersionScore:
-          properties: {}
-          type: object
-        evpMid:
-          properties: {}
-          type: object
-        history:
-          items:
-            $ref: '#/components/schemas/titaniumEvpAlignmentScoreWithDate'
-          type: array
-        score:
-          properties: {}
-          type: object
-        scoreStatus:
-          type: string
-        submissionMean:
-          properties: {}
-          type: object
-        submissionStdDev:
-          properties: {}
-          type: object
-      type: object
-    titaniumEvpAlignmentScoreWithDate:
-      example:
-        date: date
-        score: "{}"
-        scoreStatus: scoreStatus
-      properties:
-        date:
-          type: string
-        score:
-          properties: {}
-          type: object
-        scoreStatus:
-          type: string
-      type: object
-    titaniumEvpExplorerTableColumn:
+    titaniumEvidentalPricing:
       example:
         absDiffFromEvpMid: "{}"
         evpLowerBoundary: "{}"
@@ -9244,6 +9214,50 @@ components:
         tradesOrOrdersCount:
           properties: {}
           type: object
+      type: object
+    titaniumEvpAlignmentScore:
+      example:
+        score: "{}"
+        evpMid: "{}"
+        submissionMean: "{}"
+        scoreStatus: scoreStatus
+        history:
+        - date: date
+          score: "{}"
+          scoreStatus: scoreStatus
+        - date: date
+          score: "{}"
+          scoreStatus: scoreStatus
+        stdDev: "{}"
+      properties:
+        evpMid:
+          properties: {}
+          type: object
+        history:
+          items:
+            $ref: '#/components/schemas/titaniumTradeAligmentDateAndValue'
+          type: array
+        score:
+          properties: {}
+          type: object
+        scoreStatus:
+          type: string
+        stdDev:
+          properties: {}
+          type: object
+        submissionMean:
+          properties: {}
+          type: object
+      type: object
+    titaniumEvpAnchorDetails:
+      example:
+        mid: 6.027456183070403
+        distanceToConsensus: 0.8008281904610115
+      properties:
+        distanceToConsensus:
+          type: number
+        mid:
+          type: number
       type: object
     titaniumEvpQualityScore:
       example:
@@ -9407,110 +9421,55 @@ components:
         slice:
           $ref: '#/components/schemas/titaniumSlice'
       type: object
-    titaniumExpertExplorerTableColumn:
+    titaniumExpertiseRank:
       example:
-        min: "{}"
-        max: "{}"
-        participantInstrumentsCount: participantInstrumentsCount
-        mean: "{}"
-        subPriceDiff: "{}"
-        absDiffFromExpertCohortMean: "{}"
-        conPriceAbsDiffFromLatestTrade: "{}"
-        stdDev: "{}"
-      properties:
-        absDiffFromExpertCohortMean:
-          properties: {}
-          type: object
-        conPriceAbsDiffFromLatestTrade:
-          properties: {}
-          type: object
-        max:
-          properties: {}
-          type: object
-        mean:
-          properties: {}
-          type: object
-        min:
-          properties: {}
-          type: object
-        participantInstrumentsCount:
-          type: string
-        stdDev:
-          properties: {}
-          type: object
-        subPriceDiff:
-          properties: {}
-          type: object
-      type: object
-    titaniumExpertiseScore:
-      example:
-        score: "{}"
-        expertsCount: "{}"
-        dimensionCreditScore: "{}"
+        expertsCount: 0
+        anchorPrice: "{}"
+        expertiseScore: "{}"
+        rank: "{}"
+        absDistanceToAnchor: "{}"
         history:
         - date: date
-          score: "{}"
-          expertsCount: "{}"
-          expertiseRank: "{}"
+          expertsCount: 6
+          rank: "{}"
         - date: date
-          score: "{}"
-          expertsCount: "{}"
-          expertiseRank: "{}"
-        proximityToPostChallengeConsensusMean: "{}"
-        challengeScore: "{}"
-        consensusScore: "{}"
-        submittedScore: "{}"
-        consensusDistanceScore: "{}"
-        expertiseRank: "{}"
+          expertsCount: 6
+          rank: "{}"
+        submissionPrice: "{}"
       properties:
-        challengeScore:
+        absDistanceToAnchor:
           properties: {}
           type: object
-        consensusDistanceScore:
+        anchorPrice:
           properties: {}
           type: object
-        consensusScore:
-          properties: {}
-          type: object
-        dimensionCreditScore:
-          properties: {}
-          type: object
-        expertiseRank:
+        expertiseScore:
           properties: {}
           type: object
         expertsCount:
-          properties: {}
-          type: object
+          type: integer
         history:
           items:
-            $ref: '#/components/schemas/titaniumExpertiseScoreWithDate'
+            $ref: '#/components/schemas/titaniumExpertiseRankHistoryElement'
           type: array
-        proximityToPostChallengeConsensusMean:
+        rank:
           properties: {}
           type: object
-        score:
-          properties: {}
-          type: object
-        submittedScore:
+        submissionPrice:
           properties: {}
           type: object
       type: object
-    titaniumExpertiseScoreWithDate:
+    titaniumExpertiseRankHistoryElement:
       example:
         date: date
-        score: "{}"
-        expertsCount: "{}"
-        expertiseRank: "{}"
+        expertsCount: 6
+        rank: "{}"
       properties:
         date:
           type: string
-        expertiseRank:
-          properties: {}
-          type: object
         expertsCount:
-          properties: {}
-          type: object
-        score:
+          type: integer
+        rank:
           properties: {}
           type: object
       type: object
@@ -10923,9 +10882,12 @@ components:
       type: object
     titaniumInstrumentSubmissionStatus:
       example:
-        participantConsensusStatus: participantConsensusStatus
-        participantConsensusStatusDetails: participantConsensusStatusDetails
         consensusStatusDetailsHistory:
+        - date: date
+          value: "{}"
+        - date: date
+          value: "{}"
+        participantSubmissionsEvidenceStatusHistory:
         - date: date
           value: "{}"
         - date: date
@@ -10936,7 +10898,6 @@ components:
         - date: date
           value: "{}"
         consensusStatus: consensusStatus
-        bimodality: bimodality
         consensusStatusDetails: consensusStatusDetails
         dqeHistory:
         - date: date
@@ -10944,28 +10905,14 @@ components:
         - date: date
           value: "{}"
         highestDqe: highestDqe
-        participantConsensusStatusDetailsHistory:
-        - date: date
-          value: "{}"
-        - date: date
-          value: "{}"
-        participantConsensusStatusHistory:
-        - date: date
-          value: "{}"
-        - date: date
-          value: "{}"
-        bimodalityHistory:
+        participantSubmissionsEvidenceStatus: participantSubmissionsEvidenceStatus
+        participantCohortConsensusStatus: participantCohortConsensusStatus
+        participantCohortConsensusStatusHistory:
         - date: date
           value: "{}"
         - date: date
           value: "{}"
       properties:
-        bimodality:
-          type: string
-        bimodalityHistory:
-          items:
-            $ref: '#/components/schemas/titaniumDateAndValue'
-          type: array
         consensusStatus:
           type: string
         consensusStatusDetails:
@@ -10984,15 +10931,15 @@ components:
           type: array
         highestDqe:
           type: string
-        participantConsensusStatus:
+        participantCohortConsensusStatus:
           type: string
-        participantConsensusStatusDetails:
-          type: string
-        participantConsensusStatusDetailsHistory:
+        participantCohortConsensusStatusHistory:
           items:
             $ref: '#/components/schemas/titaniumDateAndValue'
           type: array
-        participantConsensusStatusHistory:
+        participantSubmissionsEvidenceStatus:
+          type: string
+        participantSubmissionsEvidenceStatusHistory:
           items:
             $ref: '#/components/schemas/titaniumDateAndValue'
           type: array
@@ -12724,12 +12671,58 @@ components:
         traceName:
           type: string
       type: object
+    titaniumSubmissionEvidenceAnchorDetails:
+      example:
+        submissionEvidence: 5.637376656633329
+        distanceToConsensus: 5.962133916683182
+      properties:
+        distanceToConsensus:
+          type: number
+        submissionEvidence:
+          type: number
+      type: object
+    titaniumSubmissionEvidenceTableColumn:
+      example:
+        eviPriceAbsDiffFromLatestTrade: "{}"
+        participantsCount: participantsCount
+        absDiffFromEvidence: "{}"
+        evidence: "{}"
+        subPriceDiff: "{}"
+        stdDev: "{}"
+        upperBoundary: "{}"
+        lowerBoundary: "{}"
+      properties:
+        absDiffFromEvidence:
+          properties: {}
+          type: object
+        eviPriceAbsDiffFromLatestTrade:
+          properties: {}
+          type: object
+        evidence:
+          properties: {}
+          type: object
+        lowerBoundary:
+          properties: {}
+          type: object
+        participantsCount:
+          type: string
+        stdDev:
+          properties: {}
+          type: object
+        subPriceDiff:
+          properties: {}
+          type: object
+        upperBoundary:
+          properties: {}
+          type: object
+      type: object
     titaniumSubmissionExplorerTableColumn:
       example:
-        submissionPrice: 0.8008281904610115
+        submissionPrice: "{}"
       properties:
         submissionPrice:
-          type: number
+          properties: {}
+          type: object
       type: object
     titaniumSubmissionHistogram:
       example:
@@ -12778,9 +12771,9 @@ components:
       type: object
     titaniumSubmissionStatisticsExplorerTableColumn:
       example:
-        statisticalMean: "{}"
         min: "{}"
         max: "{}"
+        mean: "{}"
         statMeanAbsDiffFromLatestTrade: "{}"
         subPriceDiff: "{}"
         subValidPointsCount: subValidPointsCount
@@ -12798,13 +12791,13 @@ components:
         max:
           properties: {}
           type: object
+        mean:
+          properties: {}
+          type: object
         min:
           properties: {}
           type: object
         statMeanAbsDiffFromLatestTrade:
-          properties: {}
-          type: object
-        statisticalMean:
           properties: {}
           type: object
         stdDev:
@@ -12996,15 +12989,88 @@ components:
       type: object
     titaniumTTLTypes:
       type: string
+    titaniumTradeAligmentDateAndValue:
+      example:
+        date: date
+        score: "{}"
+        scoreStatus: scoreStatus
+      properties:
+        date:
+          type: string
+        score:
+          properties: {}
+          type: object
+        scoreStatus:
+          type: string
+      type: object
+    titaniumTradeAlignmentScore:
+      example:
+        score: "{}"
+        submissionMean: "{}"
+        latestTradePrice: "{}"
+        scoreStatus: scoreStatus
+        history:
+        - date: date
+          score: "{}"
+          scoreStatus: scoreStatus
+        - date: date
+          score: "{}"
+          scoreStatus: scoreStatus
+        stdDev: "{}"
+      properties:
+        history:
+          items:
+            $ref: '#/components/schemas/titaniumTradeAligmentDateAndValue'
+          type: array
+        latestTradePrice:
+          properties: {}
+          type: object
+        score:
+          properties: {}
+          type: object
+        scoreStatus:
+          type: string
+        stdDev:
+          properties: {}
+          type: object
+        submissionMean:
+          properties: {}
+          type: object
+      type: object
+    titaniumTradeAnchorDetails:
+      example:
+        notional: 9.301444243932576
+        pricingAge: pricingAge
+        latestTradePrice: 7.061401241503109
+        source: source
+        tradeExecutionTime: tradeExecutionTime
+        distanceToConsensus: 2.3021358869347655
+      properties:
+        distanceToConsensus:
+          type: number
+        latestTradePrice:
+          type: number
+        notional:
+          type: number
+        pricingAge:
+          type: string
+        source:
+          type: string
+        tradeExecutionTime:
+          type: string
+      type: object
     titaniumTradePeriodMetrics:
       example:
         tradeCount: tradeCount
-        minNotionalAmount: 6.027456183070403
-        maxNotionalAmount: 0.8008281904610115
+        totalLiquidity: 4.145608029883936
+        minNotionalAmount: 2.027123023002322
+        maxNotionalAmount: 3.616076749251911
       properties:
         maxNotionalAmount:
           type: number
         minNotionalAmount:
+          type: number
+        totalLiquidity:
           type: number
         tradeCount:
           type: string
@@ -13013,16 +13079,19 @@ components:
       example:
         lessWeek:
           tradeCount: tradeCount
-          minNotionalAmount: 6.027456183070403
-          maxNotionalAmount: 0.8008281904610115
+          totalLiquidity: 4.145608029883936
+          minNotionalAmount: 2.027123023002322
+          maxNotionalAmount: 3.616076749251911
         lessDay:
           tradeCount: tradeCount
-          minNotionalAmount: 6.027456183070403
-          maxNotionalAmount: 0.8008281904610115
+          totalLiquidity: 4.145608029883936
+          minNotionalAmount: 2.027123023002322
+          maxNotionalAmount: 3.616076749251911
         lessMonth:
           tradeCount: tradeCount
-          minNotionalAmount: 6.027456183070403
-          maxNotionalAmount: 0.8008281904610115
+          totalLiquidity: 4.145608029883936
+          minNotionalAmount: 2.027123023002322
+          maxNotionalAmount: 3.616076749251911
       properties:
         lessDay:
           $ref: '#/components/schemas/titaniumTradePeriodMetrics'
@@ -13030,22 +13099,6 @@ components:
           $ref: '#/components/schemas/titaniumTradePeriodMetrics'
         lessWeek:
           $ref: '#/components/schemas/titaniumTradePeriodMetrics'
-      type: object
-    titaniumTradeRangesData:
-      example:
-        notional: 5.962133916683182
-        pricingRecency: pricingRecency
-        latestTradePrice: 1.4658129805029452
-        tradeExecutionTime: tradeExecutionTime
-      properties:
-        latestTradePrice:
-          type: number
-        notional:
-          type: number
-        pricingRecency:
-          type: string
-        tradeExecutionTime:
-          type: string
       type: object
     titaniumTransformation:
       example:

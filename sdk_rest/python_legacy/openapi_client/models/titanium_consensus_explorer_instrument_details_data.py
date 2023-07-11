@@ -38,18 +38,16 @@ class TitaniumConsensusExplorerInstrumentDetailsData(object):
     openapi_types = {
         'consensus_scores': 'TitaniumConsensusScores',
         'instrument_details': 'list[TitaniumStringKeyVal]',
-        'instrument_submission_status': 'TitaniumInstrumentSubmissionStatus',
-        'is_expert': 'bool'
+        'instrument_submission_status': 'TitaniumInstrumentSubmissionStatus'
     }
 
     attribute_map = {
         'consensus_scores': 'consensusScores',
         'instrument_details': 'instrumentDetails',
-        'instrument_submission_status': 'instrumentSubmissionStatus',
-        'is_expert': 'isExpert'
+        'instrument_submission_status': 'instrumentSubmissionStatus'
     }
 
-    def __init__(self, consensus_scores=None, instrument_details=None, instrument_submission_status=None, is_expert=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, consensus_scores=None, instrument_details=None, instrument_submission_status=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusExplorerInstrumentDetailsData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -58,7 +56,6 @@ class TitaniumConsensusExplorerInstrumentDetailsData(object):
         self._consensus_scores = None
         self._instrument_details = None
         self._instrument_submission_status = None
-        self._is_expert = None
         self.discriminator = None
 
         if consensus_scores is not None:
@@ -67,8 +64,6 @@ class TitaniumConsensusExplorerInstrumentDetailsData(object):
             self.instrument_details = instrument_details
         if instrument_submission_status is not None:
             self.instrument_submission_status = instrument_submission_status
-        if is_expert is not None:
-            self.is_expert = is_expert
 
     @property
     def consensus_scores(self):
@@ -132,27 +127,6 @@ class TitaniumConsensusExplorerInstrumentDetailsData(object):
         """
 
         self._instrument_submission_status = instrument_submission_status
-
-    @property
-    def is_expert(self):
-        """Gets the is_expert of this TitaniumConsensusExplorerInstrumentDetailsData.  # noqa: E501
-
-
-        :return: The is_expert of this TitaniumConsensusExplorerInstrumentDetailsData.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_expert
-
-    @is_expert.setter
-    def is_expert(self, is_expert):
-        """Sets the is_expert of this TitaniumConsensusExplorerInstrumentDetailsData.
-
-
-        :param is_expert: The is_expert of this TitaniumConsensusExplorerInstrumentDetailsData.  # noqa: E501
-        :type is_expert: bool
-        """
-
-        self._is_expert = is_expert
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

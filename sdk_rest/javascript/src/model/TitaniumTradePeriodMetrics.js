@@ -53,6 +53,9 @@ class TitaniumTradePeriodMetrics {
             if (data.hasOwnProperty('minNotionalAmount')) {
                 obj['minNotionalAmount'] = ApiClient.convertToType(data['minNotionalAmount'], 'Number');
             }
+            if (data.hasOwnProperty('totalLiquidity')) {
+                obj['totalLiquidity'] = ApiClient.convertToType(data['totalLiquidity'], 'Number');
+            }
             if (data.hasOwnProperty('tradeCount')) {
                 obj['tradeCount'] = ApiClient.convertToType(data['tradeCount'], 'String');
             }
@@ -72,6 +75,11 @@ TitaniumTradePeriodMetrics.prototype['maxNotionalAmount'] = undefined;
  * @member {Number} minNotionalAmount
  */
 TitaniumTradePeriodMetrics.prototype['minNotionalAmount'] = undefined;
+
+/**
+ * @member {Number} totalLiquidity
+ */
+TitaniumTradePeriodMetrics.prototype['totalLiquidity'] = undefined;
 
 /**
  * @member {String} tradeCount

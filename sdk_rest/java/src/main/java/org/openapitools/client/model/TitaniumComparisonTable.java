@@ -23,10 +23,10 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.TitaniumAllParticipantExplorerTableColumn;
 import org.openapitools.client.model.TitaniumAvailableTrades;
-import org.openapitools.client.model.TitaniumEvpExplorerTableColumn;
-import org.openapitools.client.model.TitaniumExpertExplorerTableColumn;
+import org.openapitools.client.model.TitaniumCohortConsensusColumn;
+import org.openapitools.client.model.TitaniumEvidentalPricing;
+import org.openapitools.client.model.TitaniumSubmissionEvidenceTableColumn;
 import org.openapitools.client.model.TitaniumSubmissionExplorerTableColumn;
 import org.openapitools.client.model.TitaniumSubmissionStatisticsExplorerTableColumn;
 
@@ -53,27 +53,27 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumComparisonTable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:02:45.739107Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T12:56:22.030594Z[UTC]")
 public class TitaniumComparisonTable {
-  public static final String SERIALIZED_NAME_ALL_PARTICIPANT_COHORT_CONSENSUS = "allParticipantCohortConsensus";
-  @SerializedName(SERIALIZED_NAME_ALL_PARTICIPANT_COHORT_CONSENSUS)
-  private TitaniumAllParticipantExplorerTableColumn allParticipantCohortConsensus;
-
   public static final String SERIALIZED_NAME_AVAILABLE_TRADES = "availableTrades";
   @SerializedName(SERIALIZED_NAME_AVAILABLE_TRADES)
   private TitaniumAvailableTrades availableTrades;
 
-  public static final String SERIALIZED_NAME_EVALUATED_PRICE = "evaluatedPrice";
-  @SerializedName(SERIALIZED_NAME_EVALUATED_PRICE)
-  private TitaniumEvpExplorerTableColumn evaluatedPrice;
+  public static final String SERIALIZED_NAME_COHORT_CONSENSUS_COLUMN = "cohortConsensusColumn";
+  @SerializedName(SERIALIZED_NAME_COHORT_CONSENSUS_COLUMN)
+  private TitaniumCohortConsensusColumn cohortConsensusColumn;
 
-  public static final String SERIALIZED_NAME_EXPERT_COHORT_CONSENSUS = "expertCohortConsensus";
-  @SerializedName(SERIALIZED_NAME_EXPERT_COHORT_CONSENSUS)
-  private TitaniumExpertExplorerTableColumn expertCohortConsensus;
+  public static final String SERIALIZED_NAME_EVIDENTIAL_PRICING = "evidentialPricing";
+  @SerializedName(SERIALIZED_NAME_EVIDENTIAL_PRICING)
+  private TitaniumEvidentalPricing evidentialPricing;
 
   public static final String SERIALIZED_NAME_SUBMISSION = "submission";
   @SerializedName(SERIALIZED_NAME_SUBMISSION)
   private TitaniumSubmissionExplorerTableColumn submission;
+
+  public static final String SERIALIZED_NAME_SUBMISSION_EVIDENCE = "submissionEvidence";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_EVIDENCE)
+  private TitaniumSubmissionEvidenceTableColumn submissionEvidence;
 
   public static final String SERIALIZED_NAME_SUBMISSION_STATISTICS = "submissionStatistics";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_STATISTICS)
@@ -81,29 +81,6 @@ public class TitaniumComparisonTable {
 
   public TitaniumComparisonTable() { 
   }
-
-  public TitaniumComparisonTable allParticipantCohortConsensus(TitaniumAllParticipantExplorerTableColumn allParticipantCohortConsensus) {
-    
-    this.allParticipantCohortConsensus = allParticipantCohortConsensus;
-    return this;
-  }
-
-   /**
-   * Get allParticipantCohortConsensus
-   * @return allParticipantCohortConsensus
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumAllParticipantExplorerTableColumn getAllParticipantCohortConsensus() {
-    return allParticipantCohortConsensus;
-  }
-
-
-  public void setAllParticipantCohortConsensus(TitaniumAllParticipantExplorerTableColumn allParticipantCohortConsensus) {
-    this.allParticipantCohortConsensus = allParticipantCohortConsensus;
-  }
-
 
   public TitaniumComparisonTable availableTrades(TitaniumAvailableTrades availableTrades) {
     
@@ -128,49 +105,49 @@ public class TitaniumComparisonTable {
   }
 
 
-  public TitaniumComparisonTable evaluatedPrice(TitaniumEvpExplorerTableColumn evaluatedPrice) {
+  public TitaniumComparisonTable cohortConsensusColumn(TitaniumCohortConsensusColumn cohortConsensusColumn) {
     
-    this.evaluatedPrice = evaluatedPrice;
+    this.cohortConsensusColumn = cohortConsensusColumn;
     return this;
   }
 
    /**
-   * Get evaluatedPrice
-   * @return evaluatedPrice
+   * Get cohortConsensusColumn
+   * @return cohortConsensusColumn
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumEvpExplorerTableColumn getEvaluatedPrice() {
-    return evaluatedPrice;
+  public TitaniumCohortConsensusColumn getCohortConsensusColumn() {
+    return cohortConsensusColumn;
   }
 
 
-  public void setEvaluatedPrice(TitaniumEvpExplorerTableColumn evaluatedPrice) {
-    this.evaluatedPrice = evaluatedPrice;
+  public void setCohortConsensusColumn(TitaniumCohortConsensusColumn cohortConsensusColumn) {
+    this.cohortConsensusColumn = cohortConsensusColumn;
   }
 
 
-  public TitaniumComparisonTable expertCohortConsensus(TitaniumExpertExplorerTableColumn expertCohortConsensus) {
+  public TitaniumComparisonTable evidentialPricing(TitaniumEvidentalPricing evidentialPricing) {
     
-    this.expertCohortConsensus = expertCohortConsensus;
+    this.evidentialPricing = evidentialPricing;
     return this;
   }
 
    /**
-   * Get expertCohortConsensus
-   * @return expertCohortConsensus
+   * Get evidentialPricing
+   * @return evidentialPricing
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumExpertExplorerTableColumn getExpertCohortConsensus() {
-    return expertCohortConsensus;
+  public TitaniumEvidentalPricing getEvidentialPricing() {
+    return evidentialPricing;
   }
 
 
-  public void setExpertCohortConsensus(TitaniumExpertExplorerTableColumn expertCohortConsensus) {
-    this.expertCohortConsensus = expertCohortConsensus;
+  public void setEvidentialPricing(TitaniumEvidentalPricing evidentialPricing) {
+    this.evidentialPricing = evidentialPricing;
   }
 
 
@@ -194,6 +171,29 @@ public class TitaniumComparisonTable {
 
   public void setSubmission(TitaniumSubmissionExplorerTableColumn submission) {
     this.submission = submission;
+  }
+
+
+  public TitaniumComparisonTable submissionEvidence(TitaniumSubmissionEvidenceTableColumn submissionEvidence) {
+    
+    this.submissionEvidence = submissionEvidence;
+    return this;
+  }
+
+   /**
+   * Get submissionEvidence
+   * @return submissionEvidence
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumSubmissionEvidenceTableColumn getSubmissionEvidence() {
+    return submissionEvidence;
+  }
+
+
+  public void setSubmissionEvidence(TitaniumSubmissionEvidenceTableColumn submissionEvidence) {
+    this.submissionEvidence = submissionEvidence;
   }
 
 
@@ -230,28 +230,28 @@ public class TitaniumComparisonTable {
       return false;
     }
     TitaniumComparisonTable titaniumComparisonTable = (TitaniumComparisonTable) o;
-    return Objects.equals(this.allParticipantCohortConsensus, titaniumComparisonTable.allParticipantCohortConsensus) &&
-        Objects.equals(this.availableTrades, titaniumComparisonTable.availableTrades) &&
-        Objects.equals(this.evaluatedPrice, titaniumComparisonTable.evaluatedPrice) &&
-        Objects.equals(this.expertCohortConsensus, titaniumComparisonTable.expertCohortConsensus) &&
+    return Objects.equals(this.availableTrades, titaniumComparisonTable.availableTrades) &&
+        Objects.equals(this.cohortConsensusColumn, titaniumComparisonTable.cohortConsensusColumn) &&
+        Objects.equals(this.evidentialPricing, titaniumComparisonTable.evidentialPricing) &&
         Objects.equals(this.submission, titaniumComparisonTable.submission) &&
+        Objects.equals(this.submissionEvidence, titaniumComparisonTable.submissionEvidence) &&
         Objects.equals(this.submissionStatistics, titaniumComparisonTable.submissionStatistics);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(allParticipantCohortConsensus, availableTrades, evaluatedPrice, expertCohortConsensus, submission, submissionStatistics);
+    return Objects.hash(availableTrades, cohortConsensusColumn, evidentialPricing, submission, submissionEvidence, submissionStatistics);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumComparisonTable {\n");
-    sb.append("    allParticipantCohortConsensus: ").append(toIndentedString(allParticipantCohortConsensus)).append("\n");
     sb.append("    availableTrades: ").append(toIndentedString(availableTrades)).append("\n");
-    sb.append("    evaluatedPrice: ").append(toIndentedString(evaluatedPrice)).append("\n");
-    sb.append("    expertCohortConsensus: ").append(toIndentedString(expertCohortConsensus)).append("\n");
+    sb.append("    cohortConsensusColumn: ").append(toIndentedString(cohortConsensusColumn)).append("\n");
+    sb.append("    evidentialPricing: ").append(toIndentedString(evidentialPricing)).append("\n");
     sb.append("    submission: ").append(toIndentedString(submission)).append("\n");
+    sb.append("    submissionEvidence: ").append(toIndentedString(submissionEvidence)).append("\n");
     sb.append("    submissionStatistics: ").append(toIndentedString(submissionStatistics)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -275,11 +275,11 @@ public class TitaniumComparisonTable {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("allParticipantCohortConsensus");
     openapiFields.add("availableTrades");
-    openapiFields.add("evaluatedPrice");
-    openapiFields.add("expertCohortConsensus");
+    openapiFields.add("cohortConsensusColumn");
+    openapiFields.add("evidentialPricing");
     openapiFields.add("submission");
+    openapiFields.add("submissionEvidence");
     openapiFields.add("submissionStatistics");
 
     // a set of required properties/fields (JSON key names)
@@ -308,25 +308,25 @@ public class TitaniumComparisonTable {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumComparisonTable` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      // validate the optional field `allParticipantCohortConsensus`
-      if (jsonObj.getAsJsonObject("allParticipantCohortConsensus") != null) {
-        TitaniumAllParticipantExplorerTableColumn.validateJsonObject(jsonObj.getAsJsonObject("allParticipantCohortConsensus"));
-      }
       // validate the optional field `availableTrades`
       if (jsonObj.getAsJsonObject("availableTrades") != null) {
         TitaniumAvailableTrades.validateJsonObject(jsonObj.getAsJsonObject("availableTrades"));
       }
-      // validate the optional field `evaluatedPrice`
-      if (jsonObj.getAsJsonObject("evaluatedPrice") != null) {
-        TitaniumEvpExplorerTableColumn.validateJsonObject(jsonObj.getAsJsonObject("evaluatedPrice"));
+      // validate the optional field `cohortConsensusColumn`
+      if (jsonObj.getAsJsonObject("cohortConsensusColumn") != null) {
+        TitaniumCohortConsensusColumn.validateJsonObject(jsonObj.getAsJsonObject("cohortConsensusColumn"));
       }
-      // validate the optional field `expertCohortConsensus`
-      if (jsonObj.getAsJsonObject("expertCohortConsensus") != null) {
-        TitaniumExpertExplorerTableColumn.validateJsonObject(jsonObj.getAsJsonObject("expertCohortConsensus"));
+      // validate the optional field `evidentialPricing`
+      if (jsonObj.getAsJsonObject("evidentialPricing") != null) {
+        TitaniumEvidentalPricing.validateJsonObject(jsonObj.getAsJsonObject("evidentialPricing"));
       }
       // validate the optional field `submission`
       if (jsonObj.getAsJsonObject("submission") != null) {
         TitaniumSubmissionExplorerTableColumn.validateJsonObject(jsonObj.getAsJsonObject("submission"));
+      }
+      // validate the optional field `submissionEvidence`
+      if (jsonObj.getAsJsonObject("submissionEvidence") != null) {
+        TitaniumSubmissionEvidenceTableColumn.validateJsonObject(jsonObj.getAsJsonObject("submissionEvidence"));
       }
       // validate the optional field `submissionStatistics`
       if (jsonObj.getAsJsonObject("submissionStatistics") != null) {

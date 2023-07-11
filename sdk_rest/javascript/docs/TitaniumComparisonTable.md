@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**allParticipantCohortConsensus** | [**TitaniumAllParticipantExplorerTableColumn**](TitaniumAllParticipantExplorerTableColumn.md) |  | [optional] 
 **availableTrades** | [**TitaniumAvailableTrades**](TitaniumAvailableTrades.md) |  | [optional] 
-**evaluatedPrice** | [**TitaniumEvpExplorerTableColumn**](TitaniumEvpExplorerTableColumn.md) |  | [optional] 
-**expertCohortConsensus** | [**TitaniumExpertExplorerTableColumn**](TitaniumExpertExplorerTableColumn.md) |  | [optional] 
+**cohortConsensusColumn** | [**TitaniumCohortConsensusColumn**](TitaniumCohortConsensusColumn.md) |  | [optional] 
+**evidentialPricing** | [**TitaniumEvidentalPricing**](TitaniumEvidentalPricing.md) |  | [optional] 
 **submission** | [**TitaniumSubmissionExplorerTableColumn**](TitaniumSubmissionExplorerTableColumn.md) |  | [optional] 
+**submissionEvidence** | [**TitaniumSubmissionEvidenceTableColumn**](TitaniumSubmissionEvidenceTableColumn.md) |  | [optional] 
 **submissionStatistics** | [**TitaniumSubmissionStatisticsExplorerTableColumn**](TitaniumSubmissionStatisticsExplorerTableColumn.md) |  | [optional] 
 
 

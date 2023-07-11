@@ -36,59 +36,49 @@ class TitaniumInstrumentSubmissionStatus(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'bimodality': 'str',
-        'bimodality_history': 'list[TitaniumDateAndValue]',
         'consensus_status': 'str',
         'consensus_status_details': 'str',
         'consensus_status_details_history': 'list[TitaniumDateAndValue]',
         'consensus_status_history': 'list[TitaniumDateAndValue]',
         'dqe_history': 'list[TitaniumDateAndValue]',
         'highest_dqe': 'str',
-        'participant_consensus_status': 'str',
-        'participant_consensus_status_details': 'str',
-        'participant_consensus_status_details_history': 'list[TitaniumDateAndValue]',
-        'participant_consensus_status_history': 'list[TitaniumDateAndValue]'
+        'participant_cohort_consensus_status': 'str',
+        'participant_cohort_consensus_status_history': 'list[TitaniumDateAndValue]',
+        'participant_submissions_evidence_status': 'str',
+        'participant_submissions_evidence_status_history': 'list[TitaniumDateAndValue]'
     }
 
     attribute_map = {
-        'bimodality': 'bimodality',
-        'bimodality_history': 'bimodalityHistory',
         'consensus_status': 'consensusStatus',
         'consensus_status_details': 'consensusStatusDetails',
         'consensus_status_details_history': 'consensusStatusDetailsHistory',
         'consensus_status_history': 'consensusStatusHistory',
         'dqe_history': 'dqeHistory',
         'highest_dqe': 'highestDqe',
-        'participant_consensus_status': 'participantConsensusStatus',
-        'participant_consensus_status_details': 'participantConsensusStatusDetails',
-        'participant_consensus_status_details_history': 'participantConsensusStatusDetailsHistory',
-        'participant_consensus_status_history': 'participantConsensusStatusHistory'
+        'participant_cohort_consensus_status': 'participantCohortConsensusStatus',
+        'participant_cohort_consensus_status_history': 'participantCohortConsensusStatusHistory',
+        'participant_submissions_evidence_status': 'participantSubmissionsEvidenceStatus',
+        'participant_submissions_evidence_status_history': 'participantSubmissionsEvidenceStatusHistory'
     }
 
-    def __init__(self, bimodality=None, bimodality_history=None, consensus_status=None, consensus_status_details=None, consensus_status_details_history=None, consensus_status_history=None, dqe_history=None, highest_dqe=None, participant_consensus_status=None, participant_consensus_status_details=None, participant_consensus_status_details_history=None, participant_consensus_status_history=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, consensus_status=None, consensus_status_details=None, consensus_status_details_history=None, consensus_status_history=None, dqe_history=None, highest_dqe=None, participant_cohort_consensus_status=None, participant_cohort_consensus_status_history=None, participant_submissions_evidence_status=None, participant_submissions_evidence_status_history=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumInstrumentSubmissionStatus - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._bimodality = None
-        self._bimodality_history = None
         self._consensus_status = None
         self._consensus_status_details = None
         self._consensus_status_details_history = None
         self._consensus_status_history = None
         self._dqe_history = None
         self._highest_dqe = None
-        self._participant_consensus_status = None
-        self._participant_consensus_status_details = None
-        self._participant_consensus_status_details_history = None
-        self._participant_consensus_status_history = None
+        self._participant_cohort_consensus_status = None
+        self._participant_cohort_consensus_status_history = None
+        self._participant_submissions_evidence_status = None
+        self._participant_submissions_evidence_status_history = None
         self.discriminator = None
 
-        if bimodality is not None:
-            self.bimodality = bimodality
-        if bimodality_history is not None:
-            self.bimodality_history = bimodality_history
         if consensus_status is not None:
             self.consensus_status = consensus_status
         if consensus_status_details is not None:
@@ -101,56 +91,14 @@ class TitaniumInstrumentSubmissionStatus(object):
             self.dqe_history = dqe_history
         if highest_dqe is not None:
             self.highest_dqe = highest_dqe
-        if participant_consensus_status is not None:
-            self.participant_consensus_status = participant_consensus_status
-        if participant_consensus_status_details is not None:
-            self.participant_consensus_status_details = participant_consensus_status_details
-        if participant_consensus_status_details_history is not None:
-            self.participant_consensus_status_details_history = participant_consensus_status_details_history
-        if participant_consensus_status_history is not None:
-            self.participant_consensus_status_history = participant_consensus_status_history
-
-    @property
-    def bimodality(self):
-        """Gets the bimodality of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-
-
-        :return: The bimodality of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :rtype: str
-        """
-        return self._bimodality
-
-    @bimodality.setter
-    def bimodality(self, bimodality):
-        """Sets the bimodality of this TitaniumInstrumentSubmissionStatus.
-
-
-        :param bimodality: The bimodality of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :type bimodality: str
-        """
-
-        self._bimodality = bimodality
-
-    @property
-    def bimodality_history(self):
-        """Gets the bimodality_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-
-
-        :return: The bimodality_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :rtype: list[TitaniumDateAndValue]
-        """
-        return self._bimodality_history
-
-    @bimodality_history.setter
-    def bimodality_history(self, bimodality_history):
-        """Sets the bimodality_history of this TitaniumInstrumentSubmissionStatus.
-
-
-        :param bimodality_history: The bimodality_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :type bimodality_history: list[TitaniumDateAndValue]
-        """
-
-        self._bimodality_history = bimodality_history
+        if participant_cohort_consensus_status is not None:
+            self.participant_cohort_consensus_status = participant_cohort_consensus_status
+        if participant_cohort_consensus_status_history is not None:
+            self.participant_cohort_consensus_status_history = participant_cohort_consensus_status_history
+        if participant_submissions_evidence_status is not None:
+            self.participant_submissions_evidence_status = participant_submissions_evidence_status
+        if participant_submissions_evidence_status_history is not None:
+            self.participant_submissions_evidence_status_history = participant_submissions_evidence_status_history
 
     @property
     def consensus_status(self):
@@ -279,88 +227,88 @@ class TitaniumInstrumentSubmissionStatus(object):
         self._highest_dqe = highest_dqe
 
     @property
-    def participant_consensus_status(self):
-        """Gets the participant_consensus_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+    def participant_cohort_consensus_status(self):
+        """Gets the participant_cohort_consensus_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
 
 
-        :return: The participant_consensus_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+        :return: The participant_cohort_consensus_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
         :rtype: str
         """
-        return self._participant_consensus_status
+        return self._participant_cohort_consensus_status
 
-    @participant_consensus_status.setter
-    def participant_consensus_status(self, participant_consensus_status):
-        """Sets the participant_consensus_status of this TitaniumInstrumentSubmissionStatus.
+    @participant_cohort_consensus_status.setter
+    def participant_cohort_consensus_status(self, participant_cohort_consensus_status):
+        """Sets the participant_cohort_consensus_status of this TitaniumInstrumentSubmissionStatus.
 
 
-        :param participant_consensus_status: The participant_consensus_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :type participant_consensus_status: str
+        :param participant_cohort_consensus_status: The participant_cohort_consensus_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+        :type participant_cohort_consensus_status: str
         """
 
-        self._participant_consensus_status = participant_consensus_status
+        self._participant_cohort_consensus_status = participant_cohort_consensus_status
 
     @property
-    def participant_consensus_status_details(self):
-        """Gets the participant_consensus_status_details of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+    def participant_cohort_consensus_status_history(self):
+        """Gets the participant_cohort_consensus_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
 
 
-        :return: The participant_consensus_status_details of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+        :return: The participant_cohort_consensus_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+        :rtype: list[TitaniumDateAndValue]
+        """
+        return self._participant_cohort_consensus_status_history
+
+    @participant_cohort_consensus_status_history.setter
+    def participant_cohort_consensus_status_history(self, participant_cohort_consensus_status_history):
+        """Sets the participant_cohort_consensus_status_history of this TitaniumInstrumentSubmissionStatus.
+
+
+        :param participant_cohort_consensus_status_history: The participant_cohort_consensus_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+        :type participant_cohort_consensus_status_history: list[TitaniumDateAndValue]
+        """
+
+        self._participant_cohort_consensus_status_history = participant_cohort_consensus_status_history
+
+    @property
+    def participant_submissions_evidence_status(self):
+        """Gets the participant_submissions_evidence_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+
+
+        :return: The participant_submissions_evidence_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
         :rtype: str
         """
-        return self._participant_consensus_status_details
+        return self._participant_submissions_evidence_status
 
-    @participant_consensus_status_details.setter
-    def participant_consensus_status_details(self, participant_consensus_status_details):
-        """Sets the participant_consensus_status_details of this TitaniumInstrumentSubmissionStatus.
+    @participant_submissions_evidence_status.setter
+    def participant_submissions_evidence_status(self, participant_submissions_evidence_status):
+        """Sets the participant_submissions_evidence_status of this TitaniumInstrumentSubmissionStatus.
 
 
-        :param participant_consensus_status_details: The participant_consensus_status_details of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :type participant_consensus_status_details: str
+        :param participant_submissions_evidence_status: The participant_submissions_evidence_status of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+        :type participant_submissions_evidence_status: str
         """
 
-        self._participant_consensus_status_details = participant_consensus_status_details
+        self._participant_submissions_evidence_status = participant_submissions_evidence_status
 
     @property
-    def participant_consensus_status_details_history(self):
-        """Gets the participant_consensus_status_details_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+    def participant_submissions_evidence_status_history(self):
+        """Gets the participant_submissions_evidence_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
 
 
-        :return: The participant_consensus_status_details_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+        :return: The participant_submissions_evidence_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
         :rtype: list[TitaniumDateAndValue]
         """
-        return self._participant_consensus_status_details_history
+        return self._participant_submissions_evidence_status_history
 
-    @participant_consensus_status_details_history.setter
-    def participant_consensus_status_details_history(self, participant_consensus_status_details_history):
-        """Sets the participant_consensus_status_details_history of this TitaniumInstrumentSubmissionStatus.
+    @participant_submissions_evidence_status_history.setter
+    def participant_submissions_evidence_status_history(self, participant_submissions_evidence_status_history):
+        """Sets the participant_submissions_evidence_status_history of this TitaniumInstrumentSubmissionStatus.
 
 
-        :param participant_consensus_status_details_history: The participant_consensus_status_details_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :type participant_consensus_status_details_history: list[TitaniumDateAndValue]
+        :param participant_submissions_evidence_status_history: The participant_submissions_evidence_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
+        :type participant_submissions_evidence_status_history: list[TitaniumDateAndValue]
         """
 
-        self._participant_consensus_status_details_history = participant_consensus_status_details_history
-
-    @property
-    def participant_consensus_status_history(self):
-        """Gets the participant_consensus_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-
-
-        :return: The participant_consensus_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :rtype: list[TitaniumDateAndValue]
-        """
-        return self._participant_consensus_status_history
-
-    @participant_consensus_status_history.setter
-    def participant_consensus_status_history(self, participant_consensus_status_history):
-        """Sets the participant_consensus_status_history of this TitaniumInstrumentSubmissionStatus.
-
-
-        :param participant_consensus_status_history: The participant_consensus_status_history of this TitaniumInstrumentSubmissionStatus.  # noqa: E501
-        :type participant_consensus_status_history: list[TitaniumDateAndValue]
-        """
-
-        self._participant_consensus_status_history = participant_consensus_status_history
+        self._participant_submissions_evidence_status_history = participant_submissions_evidence_status_history
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""
