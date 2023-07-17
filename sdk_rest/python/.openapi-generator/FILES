@@ -786,13 +786,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_proto_policy_type.py
-test/test_proto_user_enabled.py
-test/test_proto_user_id.py
-test/test_titanium_consensus_tab_request.py
-test/test_titanium_get_table_response.py
-test/test_titanium_sub_group_key_search.py
-test/test_titanium_table.py
-test/test_titanium_table_column.py
-test/test_titanium_table_row.py
 tox.ini

@@ -775,12 +775,3 @@ src/model/TitaniumValuesRow.js
 src/model/TitaniumVersion.js
 src/model/TitaniumVersionList.js
 src/model/TitaniumViewRow.js
-test/model/ProtoPolicyType.spec.js
-test/model/ProtoUserEnabled.spec.js
-test/model/ProtoUserId.spec.js
-test/model/TitaniumConsensusTabRequest.spec.js
-test/model/TitaniumGetTableResponse.spec.js
-test/model/TitaniumSubGroupKeySearch.spec.js
-test/model/TitaniumTable.spec.js
-test/model/TitaniumTableColumn.spec.js
-test/model/TitaniumTableRow.spec.js

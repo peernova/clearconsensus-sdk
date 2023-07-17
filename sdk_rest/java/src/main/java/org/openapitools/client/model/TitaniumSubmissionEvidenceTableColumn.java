@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionEvidenceTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-11T14:52:12.519521Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T18:35:23.824920Z[UTC]")
 public class TitaniumSubmissionEvidenceTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_EVIDENCE = "absDiffFromEvidence";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_EVIDENCE)

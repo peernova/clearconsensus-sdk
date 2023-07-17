@@ -800,12 +800,3 @@ src/main/java/org/openapitools/client/model/TitaniumValuesRow.java
 src/main/java/org/openapitools/client/model/TitaniumVersion.java
 src/main/java/org/openapitools/client/model/TitaniumVersionList.java
 src/main/java/org/openapitools/client/model/TitaniumViewRow.java
-src/test/java/org/openapitools/client/model/ProtoPolicyTypeTest.java
-src/test/java/org/openapitools/client/model/ProtoUserEnabledTest.java
-src/test/java/org/openapitools/client/model/ProtoUserIdTest.java
-src/test/java/org/openapitools/client/model/TitaniumConsensusTabRequestTest.java
-src/test/java/org/openapitools/client/model/TitaniumGetTableResponseTest.java
-src/test/java/org/openapitools/client/model/TitaniumSubGroupKeySearchTest.java
-src/test/java/org/openapitools/client/model/TitaniumTableColumnTest.java
-src/test/java/org/openapitools/client/model/TitaniumTableRowTest.java
-src/test/java/org/openapitools/client/model/TitaniumTableTest.java
