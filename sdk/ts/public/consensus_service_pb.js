@@ -3363,7 +3363,7 @@ proto.titanium.ExpertiseRankHistoryElement.prototype.setExpertsCount = function(
  * @private {!Array<number>}
  * @const
  */
-proto.titanium.ConsensusDensityScore.repeatedFields_ = [5];
+proto.titanium.ConsensusDensityScore.repeatedFields_ = [6];
 
 
 
@@ -3399,6 +3399,7 @@ proto.titanium.ConsensusDensityScore.toObject = function(includeInstance, msg) {
     score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     bimodalityScore: (f = msg.getBimodalityScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     tradeAlignmentScore: (f = msg.getTradeAlignmentScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    dispersion: (f = msg.getDispersion()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     evpAlignmentScore: (f = msg.getEvpAlignmentScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     historyList: jspb.Message.toObjectList(msg.getHistoryList(),
     proto.titanium.DateAndValue.toObject, includeInstance)
@@ -3456,9 +3457,14 @@ proto.titanium.ConsensusDensityScore.deserializeBinaryFromReader = function(msg,
     case 4:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setEvpAlignmentScore(value);
+      msg.setDispersion(value);
       break;
     case 5:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setEvpAlignmentScore(value);
+      break;
+    case 6:
       var value = new proto.titanium.DateAndValue;
       reader.readMessage(value,proto.titanium.DateAndValue.deserializeBinaryFromReader);
       msg.addHistory(value);
@@ -3516,7 +3522,7 @@ proto.titanium.ConsensusDensityScore.serializeBinaryToWriter = function(message,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getEvpAlignmentScore();
+  f = message.getDispersion();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -3524,10 +3530,18 @@ proto.titanium.ConsensusDensityScore.serializeBinaryToWriter = function(message,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
+  f = message.getEvpAlignmentScore();
+  if (f != null) {
+    writer.writeMessage(
+      5,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
   f = message.getHistoryList();
   if (f.length > 0) {
     writer.writeRepeatedMessage(
-      5,
+      6,
       f,
       proto.titanium.DateAndValue.serializeBinaryToWriter
     );
@@ -3647,10 +3661,10 @@ proto.titanium.ConsensusDensityScore.prototype.hasTradeAlignmentScore = function
 
 
 /**
- * optional google.protobuf.Value evp_alignment_score = 4;
+ * optional google.protobuf.Value dispersion = 4;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.ConsensusDensityScore.prototype.getEvpAlignmentScore = function() {
+proto.titanium.ConsensusDensityScore.prototype.getDispersion = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
 };
@@ -3660,8 +3674,45 @@ proto.titanium.ConsensusDensityScore.prototype.getEvpAlignmentScore = function()
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.ConsensusDensityScore} returns this
 */
-proto.titanium.ConsensusDensityScore.prototype.setEvpAlignmentScore = function(value) {
+proto.titanium.ConsensusDensityScore.prototype.setDispersion = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+ */
+proto.titanium.ConsensusDensityScore.prototype.clearDispersion = function() {
+  return this.setDispersion(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusDensityScore.prototype.hasDispersion = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value evp_alignment_score = 5;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.ConsensusDensityScore.prototype.getEvpAlignmentScore = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 5));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ConsensusDensityScore} returns this
+*/
+proto.titanium.ConsensusDensityScore.prototype.setEvpAlignmentScore = function(value) {
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -3679,17 +3730,17 @@ proto.titanium.ConsensusDensityScore.prototype.clearEvpAlignmentScore = function
  * @return {boolean}
  */
 proto.titanium.ConsensusDensityScore.prototype.hasEvpAlignmentScore = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * repeated DateAndValue history = 5;
+ * repeated DateAndValue history = 6;
  * @return {!Array<!proto.titanium.DateAndValue>}
  */
 proto.titanium.ConsensusDensityScore.prototype.getHistoryList = function() {
   return /** @type{!Array<!proto.titanium.DateAndValue>} */ (
-    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 5));
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.DateAndValue, 6));
 };
 
 
@@ -3698,7 +3749,7 @@ proto.titanium.ConsensusDensityScore.prototype.getHistoryList = function() {
  * @return {!proto.titanium.ConsensusDensityScore} returns this
 */
 proto.titanium.ConsensusDensityScore.prototype.setHistoryList = function(value) {
-  return jspb.Message.setRepeatedWrapperField(this, 5, value);
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
 };
 
 
@@ -3708,7 +3759,7 @@ proto.titanium.ConsensusDensityScore.prototype.setHistoryList = function(value) 
  * @return {!proto.titanium.DateAndValue}
  */
 proto.titanium.ConsensusDensityScore.prototype.addHistory = function(opt_value, opt_index) {
-  return jspb.Message.addToRepeatedWrapperField(this, 5, opt_value, proto.titanium.DateAndValue, opt_index);
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.titanium.DateAndValue, opt_index);
 };
 
 

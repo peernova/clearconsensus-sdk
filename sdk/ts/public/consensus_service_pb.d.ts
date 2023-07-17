@@ -375,6 +375,11 @@ export class ConsensusDensityScore extends jspb.Message {
   getTradeAlignmentScore(): google_protobuf_struct_pb.Value | undefined;
   setTradeAlignmentScore(value?: google_protobuf_struct_pb.Value): void;
 
+  hasDispersion(): boolean;
+  clearDispersion(): void;
+  getDispersion(): google_protobuf_struct_pb.Value | undefined;
+  setDispersion(value?: google_protobuf_struct_pb.Value): void;
+
   hasEvpAlignmentScore(): boolean;
   clearEvpAlignmentScore(): void;
   getEvpAlignmentScore(): google_protobuf_struct_pb.Value | undefined;
@@ -400,6 +405,7 @@ export namespace ConsensusDensityScore {
     score?: google_protobuf_struct_pb.Value.AsObject,
     bimodalityScore?: google_protobuf_struct_pb.Value.AsObject,
     tradeAlignmentScore?: google_protobuf_struct_pb.Value.AsObject,
+    dispersion?: google_protobuf_struct_pb.Value.AsObject,
     evpAlignmentScore?: google_protobuf_struct_pb.Value.AsObject,
     historyList: Array<DateAndValue.AsObject>,
   }
