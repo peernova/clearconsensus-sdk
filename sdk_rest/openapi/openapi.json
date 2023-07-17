@@ -8431,6 +8431,10 @@
             "properties" : { },
             "type" : "object"
           },
+          "dispersion" : {
+            "properties" : { },
+            "type" : "object"
+          },
           "evpAlignmentScore" : {
             "properties" : { },
             "type" : "object"

@@ -37,6 +37,7 @@ class TitaniumConsensusDensityScore(object):
     """
     openapi_types = {
         'bimodality_score': 'object',
+        'dispersion': 'object',
         'evp_alignment_score': 'object',
         'history': 'list[TitaniumDateAndValue]',
         'score': 'object',
@@ -45,19 +46,21 @@ class TitaniumConsensusDensityScore(object):
 
     attribute_map = {
         'bimodality_score': 'bimodalityScore',
+        'dispersion': 'dispersion',
         'evp_alignment_score': 'evpAlignmentScore',
         'history': 'history',
         'score': 'score',
         'trade_alignment_score': 'tradeAlignmentScore'
     }
 
-    def __init__(self, bimodality_score=None, evp_alignment_score=None, history=None, score=None, trade_alignment_score=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, bimodality_score=None, dispersion=None, evp_alignment_score=None, history=None, score=None, trade_alignment_score=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusDensityScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._bimodality_score = None
+        self._dispersion = None
         self._evp_alignment_score = None
         self._history = None
         self._score = None
@@ -66,6 +69,8 @@ class TitaniumConsensusDensityScore(object):
 
         if bimodality_score is not None:
             self.bimodality_score = bimodality_score
+        if dispersion is not None:
+            self.dispersion = dispersion
         if evp_alignment_score is not None:
             self.evp_alignment_score = evp_alignment_score
         if history is not None:
@@ -95,6 +100,27 @@ class TitaniumConsensusDensityScore(object):
         """
 
         self._bimodality_score = bimodality_score
+
+    @property
+    def dispersion(self):
+        """Gets the dispersion of this TitaniumConsensusDensityScore.  # noqa: E501
+
+
+        :return: The dispersion of this TitaniumConsensusDensityScore.  # noqa: E501
+        :rtype: object
+        """
+        return self._dispersion
+
+    @dispersion.setter
+    def dispersion(self, dispersion):
+        """Sets the dispersion of this TitaniumConsensusDensityScore.
+
+
+        :param dispersion: The dispersion of this TitaniumConsensusDensityScore.  # noqa: E501
+        :type dispersion: object
+        """
+
+        self._dispersion = dispersion
 
     @property
     def evp_alignment_score(self):

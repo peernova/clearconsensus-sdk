@@ -8,6 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**bimodalityScore** | **Object** |  |  [optional] |
+|**dispersion** | **Object** |  |  [optional] |
 |**evpAlignmentScore** | **Object** |  |  [optional] |
 |**history** | [**List&lt;TitaniumDateAndValue&gt;**](TitaniumDateAndValue.md) |  |  [optional] |
 |**score** | **Object** |  |  [optional] |

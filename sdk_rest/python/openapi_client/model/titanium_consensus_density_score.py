@@ -88,6 +88,7 @@ class TitaniumConsensusDensityScore(ModelNormal):
         lazy_import()
         return {
             'bimodality_score': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'dispersion': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'evp_alignment_score': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'history': ([TitaniumDateAndValue],),  # noqa: E501
             'score': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -101,6 +102,7 @@ class TitaniumConsensusDensityScore(ModelNormal):
 
     attribute_map = {
         'bimodality_score': 'bimodalityScore',  # noqa: E501
+        'dispersion': 'dispersion',  # noqa: E501
         'evp_alignment_score': 'evpAlignmentScore',  # noqa: E501
         'history': 'history',  # noqa: E501
         'score': 'score',  # noqa: E501
@@ -149,6 +151,7 @@ class TitaniumConsensusDensityScore(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bimodality_score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            dispersion (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_alignment_score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -239,6 +242,7 @@ class TitaniumConsensusDensityScore(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             bimodality_score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            dispersion (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_alignment_score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             history ([TitaniumDateAndValue]): [optional]  # noqa: E501
             score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501

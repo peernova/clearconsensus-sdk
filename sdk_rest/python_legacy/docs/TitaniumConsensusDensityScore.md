@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bimodality_score** | **object** |  | [optional] 
+**dispersion** | **object** |  | [optional] 
 **evp_alignment_score** | **object** |  | [optional] 
 **history** | [**list[TitaniumDateAndValue]**](TitaniumDateAndValue.md) |  | [optional] 
 **score** | **object** |  | [optional] 

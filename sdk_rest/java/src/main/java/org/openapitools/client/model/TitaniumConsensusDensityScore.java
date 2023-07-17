@@ -50,11 +50,15 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusDensityScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T19:01:31.456496Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-17T19:07:41.695571Z[UTC]")
 public class TitaniumConsensusDensityScore {
   public static final String SERIALIZED_NAME_BIMODALITY_SCORE = "bimodalityScore";
   @SerializedName(SERIALIZED_NAME_BIMODALITY_SCORE)
   private Object bimodalityScore;
+
+  public static final String SERIALIZED_NAME_DISPERSION = "dispersion";
+  @SerializedName(SERIALIZED_NAME_DISPERSION)
+  private Object dispersion;
 
   public static final String SERIALIZED_NAME_EVP_ALIGNMENT_SCORE = "evpAlignmentScore";
   @SerializedName(SERIALIZED_NAME_EVP_ALIGNMENT_SCORE)
@@ -95,6 +99,29 @@ public class TitaniumConsensusDensityScore {
 
   public void setBimodalityScore(Object bimodalityScore) {
     this.bimodalityScore = bimodalityScore;
+  }
+
+
+  public TitaniumConsensusDensityScore dispersion(Object dispersion) {
+    
+    this.dispersion = dispersion;
+    return this;
+  }
+
+   /**
+   * Get dispersion
+   * @return dispersion
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getDispersion() {
+    return dispersion;
+  }
+
+
+  public void setDispersion(Object dispersion) {
+    this.dispersion = dispersion;
   }
 
 
@@ -209,6 +236,7 @@ public class TitaniumConsensusDensityScore {
     }
     TitaniumConsensusDensityScore titaniumConsensusDensityScore = (TitaniumConsensusDensityScore) o;
     return Objects.equals(this.bimodalityScore, titaniumConsensusDensityScore.bimodalityScore) &&
+        Objects.equals(this.dispersion, titaniumConsensusDensityScore.dispersion) &&
         Objects.equals(this.evpAlignmentScore, titaniumConsensusDensityScore.evpAlignmentScore) &&
         Objects.equals(this.history, titaniumConsensusDensityScore.history) &&
         Objects.equals(this.score, titaniumConsensusDensityScore.score) &&
@@ -217,7 +245,7 @@ public class TitaniumConsensusDensityScore {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bimodalityScore, evpAlignmentScore, history, score, tradeAlignmentScore);
+    return Objects.hash(bimodalityScore, dispersion, evpAlignmentScore, history, score, tradeAlignmentScore);
   }
 
   @Override
@@ -225,6 +253,7 @@ public class TitaniumConsensusDensityScore {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumConsensusDensityScore {\n");
     sb.append("    bimodalityScore: ").append(toIndentedString(bimodalityScore)).append("\n");
+    sb.append("    dispersion: ").append(toIndentedString(dispersion)).append("\n");
     sb.append("    evpAlignmentScore: ").append(toIndentedString(evpAlignmentScore)).append("\n");
     sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
@@ -252,6 +281,7 @@ public class TitaniumConsensusDensityScore {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("bimodalityScore");
+    openapiFields.add("dispersion");
     openapiFields.add("evpAlignmentScore");
     openapiFields.add("history");
     openapiFields.add("score");

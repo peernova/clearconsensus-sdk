@@ -51,6 +51,9 @@ class TitaniumConsensusDensityScore {
             if (data.hasOwnProperty('bimodalityScore')) {
                 obj['bimodalityScore'] = ApiClient.convertToType(data['bimodalityScore'], Object);
             }
+            if (data.hasOwnProperty('dispersion')) {
+                obj['dispersion'] = ApiClient.convertToType(data['dispersion'], Object);
+            }
             if (data.hasOwnProperty('evpAlignmentScore')) {
                 obj['evpAlignmentScore'] = ApiClient.convertToType(data['evpAlignmentScore'], Object);
             }
@@ -74,6 +77,11 @@ class TitaniumConsensusDensityScore {
  * @member {Object} bimodalityScore
  */
 TitaniumConsensusDensityScore.prototype['bimodalityScore'] = undefined;
+
+/**
+ * @member {Object} dispersion
+ */
+TitaniumConsensusDensityScore.prototype['dispersion'] = undefined;
 
 /**
  * @member {Object} evpAlignmentScore

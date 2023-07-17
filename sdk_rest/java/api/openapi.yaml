@@ -7250,8 +7250,12 @@ components:
           value: "{}"
         - date: date
           value: "{}"
+        dispersion: "{}"
       properties:
         bimodalityScore:
+          properties: {}
+          type: object
+        dispersion:
           properties: {}
           type: object
         evpAlignmentScore:
@@ -7377,6 +7381,7 @@ components:
               value: "{}"
             - date: date
               value: "{}"
+            dispersion: "{}"
           expertiseRank:
             expertsCount: 0
             anchorPrice: "{}"
@@ -7495,6 +7500,7 @@ components:
                 value: "{}"
               - date: date
                 value: "{}"
+              dispersion: "{}"
             expertiseRank:
               expertsCount: 0
               anchorPrice: "{}"
@@ -8258,6 +8264,7 @@ components:
             value: "{}"
           - date: date
             value: "{}"
+          dispersion: "{}"
         expertiseRank:
           expertsCount: 0
           anchorPrice: "{}"

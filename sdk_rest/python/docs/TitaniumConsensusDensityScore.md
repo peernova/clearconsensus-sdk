@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **bimodality_score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**dispersion** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **evp_alignment_score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **history** | [**[TitaniumDateAndValue]**](TitaniumDateAndValue.md) |  | [optional] 
 **score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
