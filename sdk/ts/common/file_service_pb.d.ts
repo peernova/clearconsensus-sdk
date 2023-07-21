@@ -245,6 +245,11 @@ export class FileHistoryRequest extends jspb.Message {
   getFilter(): string;
   setFilter(value: string): void;
 
+  hasFilterPack(): boolean;
+  clearFilterPack(): void;
+  getFilterPack(): common_gateway_base_pb.FilterPack | undefined;
+  setFilterPack(value?: common_gateway_base_pb.FilterPack): void;
+
   getClient(): string;
   setClient(value: string): void;
 
@@ -252,14 +257,6 @@ export class FileHistoryRequest extends jspb.Message {
   clearOrderby(): void;
   getOrderby(): common_gateway_base_pb.OrderBy | undefined;
   setOrderby(value?: common_gateway_base_pb.OrderBy): void;
-
-  hasLimit(): boolean;
-  clearLimit(): void;
-  getLimit(): common_gateway_base_pb.Limit | undefined;
-  setLimit(value?: common_gateway_base_pb.Limit): void;
-
-  getOffset(): number;
-  setOffset(value: number): void;
 
   getTraceName(): string;
   setTraceName(value: string): void;
@@ -279,10 +276,9 @@ export namespace FileHistoryRequest {
     assetId: string,
     fileDate: string,
     filter: string,
+    filterPack?: common_gateway_base_pb.FilterPack.AsObject,
     client: string,
     orderby?: common_gateway_base_pb.OrderBy.AsObject,
-    limit?: common_gateway_base_pb.Limit.AsObject,
-    offset: number,
     traceName: string,
   }
 }

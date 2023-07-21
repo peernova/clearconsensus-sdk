@@ -2005,11 +2005,10 @@ proto.titanium.FileHistoryRequest.toObject = function(includeInstance, msg) {
     assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     fileDate: jspb.Message.getFieldWithDefault(msg, 2, ""),
     filter: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    client: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    filterPack: (f = msg.getFilterPack()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f),
+    client: jspb.Message.getFieldWithDefault(msg, 5, ""),
     orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
-    limit: (f = msg.getLimit()) && common_gateway_base_pb.Limit.toObject(includeInstance, f),
-    offset: jspb.Message.getFieldWithDefault(msg, 7, 0),
-    traceName: jspb.Message.getFieldWithDefault(msg, 8, "")
+    traceName: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -2059,24 +2058,20 @@ proto.titanium.FileHistoryRequest.deserializeBinaryFromReader = function(msg, re
       msg.setFilter(value);
       break;
     case 4:
+      var value = new common_gateway_base_pb.FilterPack;
+      reader.readMessage(value,common_gateway_base_pb.FilterPack.deserializeBinaryFromReader);
+      msg.setFilterPack(value);
+      break;
+    case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setClient(value);
       break;
-    case 5:
+    case 6:
       var value = new common_gateway_base_pb.OrderBy;
       reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
       msg.setOrderby(value);
       break;
-    case 6:
-      var value = new common_gateway_base_pb.Limit;
-      reader.readMessage(value,common_gateway_base_pb.Limit.deserializeBinaryFromReader);
-      msg.setLimit(value);
-      break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt32());
-      msg.setOffset(value);
-      break;
-    case 8:
       var value = /** @type {string} */ (reader.readString());
       msg.setTraceName(value);
       break;
@@ -2130,40 +2125,33 @@ proto.titanium.FileHistoryRequest.serializeBinaryToWriter = function(message, wr
       f
     );
   }
+  f = message.getFilterPack();
+  if (f != null) {
+    writer.writeMessage(
+      4,
+      f,
+      common_gateway_base_pb.FilterPack.serializeBinaryToWriter
+    );
+  }
   f = message.getClient();
   if (f.length > 0) {
     writer.writeString(
-      4,
+      5,
       f
     );
   }
   f = message.getOrderby();
   if (f != null) {
     writer.writeMessage(
-      5,
-      f,
-      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
-    );
-  }
-  f = message.getLimit();
-  if (f != null) {
-    writer.writeMessage(
       6,
       f,
-      common_gateway_base_pb.Limit.serializeBinaryToWriter
-    );
-  }
-  f = message.getOffset();
-  if (f !== 0) {
-    writer.writeInt32(
-      7,
-      f
+      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
     );
   }
   f = message.getTraceName();
   if (f.length > 0) {
     writer.writeString(
-      8,
+      7,
       f
     );
   }
@@ -2225,11 +2213,48 @@ proto.titanium.FileHistoryRequest.prototype.setFilter = function(value) {
 
 
 /**
- * optional string client = 4;
+ * optional FilterPack filter_pack = 4;
+ * @return {?proto.titanium.FilterPack}
+ */
+proto.titanium.FileHistoryRequest.prototype.getFilterPack = function() {
+  return /** @type{?proto.titanium.FilterPack} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.FilterPack, 4));
+};
+
+
+/**
+ * @param {?proto.titanium.FilterPack|undefined} value
+ * @return {!proto.titanium.FileHistoryRequest} returns this
+*/
+proto.titanium.FileHistoryRequest.prototype.setFilterPack = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.FileHistoryRequest} returns this
+ */
+proto.titanium.FileHistoryRequest.prototype.clearFilterPack = function() {
+  return this.setFilterPack(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.FileHistoryRequest.prototype.hasFilterPack = function() {
+  return jspb.Message.getField(this, 4) != null;
+};
+
+
+/**
+ * optional string client = 5;
  * @return {string}
  */
 proto.titanium.FileHistoryRequest.prototype.getClient = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
 
@@ -2238,17 +2263,17 @@ proto.titanium.FileHistoryRequest.prototype.getClient = function() {
  * @return {!proto.titanium.FileHistoryRequest} returns this
  */
 proto.titanium.FileHistoryRequest.prototype.setClient = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional OrderBy orderBy = 5;
+ * optional OrderBy orderBy = 6;
  * @return {?proto.titanium.OrderBy}
  */
 proto.titanium.FileHistoryRequest.prototype.getOrderby = function() {
   return /** @type{?proto.titanium.OrderBy} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 5));
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 6));
 };
 
 
@@ -2257,7 +2282,7 @@ proto.titanium.FileHistoryRequest.prototype.getOrderby = function() {
  * @return {!proto.titanium.FileHistoryRequest} returns this
 */
 proto.titanium.FileHistoryRequest.prototype.setOrderby = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -2275,71 +2300,16 @@ proto.titanium.FileHistoryRequest.prototype.clearOrderby = function() {
  * @return {boolean}
  */
 proto.titanium.FileHistoryRequest.prototype.hasOrderby = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional Limit limit = 6;
- * @return {?proto.titanium.Limit}
- */
-proto.titanium.FileHistoryRequest.prototype.getLimit = function() {
-  return /** @type{?proto.titanium.Limit} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.Limit, 6));
-};
-
-
-/**
- * @param {?proto.titanium.Limit|undefined} value
- * @return {!proto.titanium.FileHistoryRequest} returns this
-*/
-proto.titanium.FileHistoryRequest.prototype.setLimit = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.titanium.FileHistoryRequest} returns this
- */
-proto.titanium.FileHistoryRequest.prototype.clearLimit = function() {
-  return this.setLimit(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.titanium.FileHistoryRequest.prototype.hasLimit = function() {
   return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional int32 offset = 7;
- * @return {number}
- */
-proto.titanium.FileHistoryRequest.prototype.getOffset = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
-};
-
-
-/**
- * @param {number} value
- * @return {!proto.titanium.FileHistoryRequest} returns this
- */
-proto.titanium.FileHistoryRequest.prototype.setOffset = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
-};
-
-
-/**
- * optional string trace_name = 8;
+ * optional string trace_name = 7;
  * @return {string}
  */
 proto.titanium.FileHistoryRequest.prototype.getTraceName = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 8, ""));
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
 };
 
 
@@ -2348,7 +2318,7 @@ proto.titanium.FileHistoryRequest.prototype.getTraceName = function() {
  * @return {!proto.titanium.FileHistoryRequest} returns this
  */
 proto.titanium.FileHistoryRequest.prototype.setTraceName = function(value) {
-  return jspb.Message.setProto3StringField(this, 8, value);
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
