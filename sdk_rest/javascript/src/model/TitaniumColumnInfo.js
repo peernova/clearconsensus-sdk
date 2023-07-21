@@ -47,9 +47,6 @@ class TitaniumColumnInfo {
         if (data) {
             obj = obj || new TitaniumColumnInfo();
 
-            if (data.hasOwnProperty('columnDbType')) {
-                obj['columnDbType'] = ApiClient.convertToType(data['columnDbType'], 'String');
-            }
             if (data.hasOwnProperty('columnName')) {
                 obj['columnName'] = ApiClient.convertToType(data['columnName'], 'String');
             }
@@ -65,11 +62,6 @@ class TitaniumColumnInfo {
 
 
 }
-
-/**
- * @member {String} columnDbType
- */
-TitaniumColumnInfo.prototype['columnDbType'] = undefined;
 
 /**
  * @member {String} columnName

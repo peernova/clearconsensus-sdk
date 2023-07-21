@@ -5990,11 +5990,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -6120,11 +6118,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -6156,11 +6152,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -6497,11 +6491,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -6525,11 +6517,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -6597,11 +6587,9 @@ components:
             - "{}"
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -6625,11 +6613,9 @@ components:
           - "{}"
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -7105,12 +7091,9 @@ components:
     titaniumColumnInfo:
       example:
         columnType: columnType
-        columnDbType: columnDbType
         rawColumnName: rawColumnName
         columnName: columnName
       properties:
-        columnDbType:
-          type: string
         columnName:
           type: string
         columnType:
@@ -7204,11 +7187,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -7942,11 +7923,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -7970,11 +7949,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -8030,11 +8007,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -8058,11 +8033,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -8114,11 +8087,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         page:
@@ -8149,11 +8120,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -8385,11 +8354,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -8413,11 +8380,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -8696,11 +8661,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -9076,11 +9039,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -9107,11 +9068,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         page:
@@ -9179,11 +9138,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -9210,11 +9167,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         page:
@@ -9668,11 +9623,9 @@ components:
       example:
         groupingKeys:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
       properties:
@@ -9724,11 +9677,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 6
@@ -9828,11 +9779,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 6
@@ -10135,11 +10084,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -10163,11 +10110,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -10320,11 +10265,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         page:
@@ -10376,11 +10319,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -10605,11 +10546,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         page:
@@ -10657,11 +10596,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -10702,11 +10639,9 @@ components:
         data:
           groupingKeys:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
         error:
@@ -11790,11 +11725,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -11818,11 +11751,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -11903,11 +11834,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -11933,11 +11862,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -12009,11 +11936,9 @@ components:
           consensus:
             columns:
             - columnType: columnType
-              columnDbType: columnDbType
               rawColumnName: rawColumnName
               columnName: columnName
             - columnType: columnType
-              columnDbType: columnDbType
               rawColumnName: rawColumnName
               columnName: columnName
             values:
@@ -12022,11 +11947,9 @@ components:
           evaluatedPrice:
             columns:
             - columnType: columnType
-              columnDbType: columnDbType
               rawColumnName: rawColumnName
               columnName: columnName
             - columnType: columnType
-              columnDbType: columnDbType
               rawColumnName: rawColumnName
               columnName: columnName
             values:
@@ -12054,11 +11977,9 @@ components:
           submission:
             columns:
             - columnType: columnType
-              columnDbType: columnDbType
               rawColumnName: rawColumnName
               columnName: columnName
             - columnType: columnType
-              columnDbType: columnDbType
               rawColumnName: rawColumnName
               columnName: columnName
             values:
@@ -12079,11 +12000,9 @@ components:
         consensus:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           values:
@@ -12092,11 +12011,9 @@ components:
         evaluatedPrice:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           values:
@@ -12124,11 +12041,9 @@ components:
         submission:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           values:
@@ -12246,11 +12161,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           totalRows: 0
@@ -12274,11 +12187,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         totalRows: 0
@@ -12317,11 +12228,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         page:
@@ -12994,11 +12903,9 @@ components:
         data:
           columns:
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           - columnType: columnType
-            columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
           page:
@@ -13032,11 +12939,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         page:
@@ -13969,11 +13874,9 @@ components:
       example:
         columns:
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         - columnType: columnType
-          columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
         values:

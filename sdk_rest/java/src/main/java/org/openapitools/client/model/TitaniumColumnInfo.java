@@ -47,12 +47,8 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumColumnInfo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-21T10:43:08.721052Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-21T15:51:40.150739Z[UTC]")
 public class TitaniumColumnInfo {
-  public static final String SERIALIZED_NAME_COLUMN_DB_TYPE = "columnDbType";
-  @SerializedName(SERIALIZED_NAME_COLUMN_DB_TYPE)
-  private String columnDbType;
-
   public static final String SERIALIZED_NAME_COLUMN_NAME = "columnName";
   @SerializedName(SERIALIZED_NAME_COLUMN_NAME)
   private String columnName;
@@ -67,29 +63,6 @@ public class TitaniumColumnInfo {
 
   public TitaniumColumnInfo() { 
   }
-
-  public TitaniumColumnInfo columnDbType(String columnDbType) {
-    
-    this.columnDbType = columnDbType;
-    return this;
-  }
-
-   /**
-   * Get columnDbType
-   * @return columnDbType
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getColumnDbType() {
-    return columnDbType;
-  }
-
-
-  public void setColumnDbType(String columnDbType) {
-    this.columnDbType = columnDbType;
-  }
-
 
   public TitaniumColumnInfo columnName(String columnName) {
     
@@ -170,22 +143,20 @@ public class TitaniumColumnInfo {
       return false;
     }
     TitaniumColumnInfo titaniumColumnInfo = (TitaniumColumnInfo) o;
-    return Objects.equals(this.columnDbType, titaniumColumnInfo.columnDbType) &&
-        Objects.equals(this.columnName, titaniumColumnInfo.columnName) &&
+    return Objects.equals(this.columnName, titaniumColumnInfo.columnName) &&
         Objects.equals(this.columnType, titaniumColumnInfo.columnType) &&
         Objects.equals(this.rawColumnName, titaniumColumnInfo.rawColumnName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(columnDbType, columnName, columnType, rawColumnName);
+    return Objects.hash(columnName, columnType, rawColumnName);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumColumnInfo {\n");
-    sb.append("    columnDbType: ").append(toIndentedString(columnDbType)).append("\n");
     sb.append("    columnName: ").append(toIndentedString(columnName)).append("\n");
     sb.append("    columnType: ").append(toIndentedString(columnType)).append("\n");
     sb.append("    rawColumnName: ").append(toIndentedString(rawColumnName)).append("\n");
@@ -211,7 +182,6 @@ public class TitaniumColumnInfo {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("columnDbType");
     openapiFields.add("columnName");
     openapiFields.add("columnType");
     openapiFields.add("rawColumnName");
@@ -241,9 +211,6 @@ public class TitaniumColumnInfo {
         if (!TitaniumColumnInfo.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumColumnInfo` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
-      }
-      if (jsonObj.get("columnDbType") != null && !jsonObj.get("columnDbType").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `columnDbType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("columnDbType").toString()));
       }
       if (jsonObj.get("columnName") != null && !jsonObj.get("columnName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `columnName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("columnName").toString()));

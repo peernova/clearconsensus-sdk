@@ -36,60 +36,34 @@ class TitaniumColumnInfo(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'column_db_type': 'str',
         'column_name': 'str',
         'column_type': 'str',
         'raw_column_name': 'str'
     }
 
     attribute_map = {
-        'column_db_type': 'columnDbType',
         'column_name': 'columnName',
         'column_type': 'columnType',
         'raw_column_name': 'rawColumnName'
     }
 
-    def __init__(self, column_db_type=None, column_name=None, column_type=None, raw_column_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, column_name=None, column_type=None, raw_column_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumColumnInfo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._column_db_type = None
         self._column_name = None
         self._column_type = None
         self._raw_column_name = None
         self.discriminator = None
 
-        if column_db_type is not None:
-            self.column_db_type = column_db_type
         if column_name is not None:
             self.column_name = column_name
         if column_type is not None:
             self.column_type = column_type
         if raw_column_name is not None:
             self.raw_column_name = raw_column_name
-
-    @property
-    def column_db_type(self):
-        """Gets the column_db_type of this TitaniumColumnInfo.  # noqa: E501
-
-
-        :return: The column_db_type of this TitaniumColumnInfo.  # noqa: E501
-        :rtype: str
-        """
-        return self._column_db_type
-
-    @column_db_type.setter
-    def column_db_type(self, column_db_type):
-        """Sets the column_db_type of this TitaniumColumnInfo.
-
-
-        :param column_db_type: The column_db_type of this TitaniumColumnInfo.  # noqa: E501
-        :type column_db_type: str
-        """
-
-        self._column_db_type = column_db_type
 
     @property
     def column_name(self):

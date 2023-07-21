@@ -4,7 +4,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**column_db_type** | **str** |  | [optional] 
 **column_name** | **str** |  | [optional] 
 **column_type** | **str** |  | [optional] 
 **raw_column_name** | **str** |  | [optional] 

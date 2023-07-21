@@ -8348,9 +8348,6 @@
       },
       "titaniumColumnInfo" : {
         "properties" : {
-          "columnDbType" : {
-            "type" : "string"
-          },
           "columnName" : {
             "type" : "string"
           },

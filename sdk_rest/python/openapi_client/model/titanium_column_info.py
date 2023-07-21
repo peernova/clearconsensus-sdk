@@ -81,7 +81,6 @@ class TitaniumColumnInfo(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'column_db_type': (str,),  # noqa: E501
             'column_name': (str,),  # noqa: E501
             'column_type': (str,),  # noqa: E501
             'raw_column_name': (str,),  # noqa: E501
@@ -93,7 +92,6 @@ class TitaniumColumnInfo(ModelNormal):
 
 
     attribute_map = {
-        'column_db_type': 'columnDbType',  # noqa: E501
         'column_name': 'columnName',  # noqa: E501
         'column_type': 'columnType',  # noqa: E501
         'raw_column_name': 'rawColumnName',  # noqa: E501
@@ -140,7 +138,6 @@ class TitaniumColumnInfo(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            column_db_type (str): [optional]  # noqa: E501
             column_name (str): [optional]  # noqa: E501
             column_type (str): [optional]  # noqa: E501
             raw_column_name (str): [optional]  # noqa: E501
@@ -229,7 +226,6 @@ class TitaniumColumnInfo(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            column_db_type (str): [optional]  # noqa: E501
             column_name (str): [optional]  # noqa: E501
             column_type (str): [optional]  # noqa: E501
             raw_column_name (str): [optional]  # noqa: E501
