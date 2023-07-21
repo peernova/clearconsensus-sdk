@@ -4969,8 +4969,7 @@ proto.titanium.ColumnInfo.toObject = function(includeInstance, msg) {
   var f, obj = {
     columnname: jspb.Message.getFieldWithDefault(msg, 1, ""),
     rawcolumnname: jspb.Message.getFieldWithDefault(msg, 2, ""),
-    columntype: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    columndbtype: jspb.Message.getFieldWithDefault(msg, 4, "")
+    columntype: jspb.Message.getFieldWithDefault(msg, 3, "")
   };
 
   if (includeInstance) {
@@ -5019,10 +5018,6 @@ proto.titanium.ColumnInfo.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {string} */ (reader.readString());
       msg.setColumntype(value);
       break;
-    case 4:
-      var value = /** @type {string} */ (reader.readString());
-      msg.setColumndbtype(value);
-      break;
     default:
       reader.skipField();
       break;
@@ -5070,13 +5065,6 @@ proto.titanium.ColumnInfo.serializeBinaryToWriter = function(message, writer) {
   if (f.length > 0) {
     writer.writeString(
       3,
-      f
-    );
-  }
-  f = message.getColumndbtype();
-  if (f.length > 0) {
-    writer.writeString(
-      4,
       f
     );
   }
@@ -5134,24 +5122,6 @@ proto.titanium.ColumnInfo.prototype.getColumntype = function() {
  */
 proto.titanium.ColumnInfo.prototype.setColumntype = function(value) {
   return jspb.Message.setProto3StringField(this, 3, value);
-};
-
-
-/**
- * optional string columnDbType = 4;
- * @return {string}
- */
-proto.titanium.ColumnInfo.prototype.getColumndbtype = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
-};
-
-
-/**
- * @param {string} value
- * @return {!proto.titanium.ColumnInfo} returns this
- */
-proto.titanium.ColumnInfo.prototype.setColumndbtype = function(value) {
-  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

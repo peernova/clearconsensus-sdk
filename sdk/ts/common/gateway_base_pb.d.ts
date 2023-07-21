@@ -545,9 +545,6 @@ export class ColumnInfo extends jspb.Message {
   getColumntype(): string;
   setColumntype(value: string): void;
 
-  getColumndbtype(): string;
-  setColumndbtype(value: string): void;
-
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ColumnInfo.AsObject;
   static toObject(includeInstance: boolean, msg: ColumnInfo): ColumnInfo.AsObject;
@@ -563,7 +560,6 @@ export namespace ColumnInfo {
     columnname: string,
     rawcolumnname: string,
     columntype: string,
-    columndbtype: string,
   }
 }
 
