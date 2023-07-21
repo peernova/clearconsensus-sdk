@@ -9661,10 +9661,8 @@ components:
           type: string
         filter:
           type: string
-        limit:
-          $ref: '#/components/schemas/titaniumLimit'
-        offset:
-          type: integer
+        filterPack:
+          $ref: '#/components/schemas/titaniumFilterPack'
         orderBy:
           $ref: '#/components/schemas/titaniumOrderBy'
         traceName:

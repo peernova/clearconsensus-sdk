@@ -8,8 +8,7 @@ Name | Type | Description | Notes
 **client** | **String** |  | [optional] 
 **fileDate** | **String** |  | [optional] 
 **filter** | **String** |  | [optional] 
-**limit** | [**TitaniumLimit**](TitaniumLimit.md) |  | [optional] 
-**offset** | **Number** |  | [optional] 
+**filterPack** | [**TitaniumFilterPack**](TitaniumFilterPack.md) |  | [optional] 
 **orderBy** | [**TitaniumOrderBy**](TitaniumOrderBy.md) |  | [optional] 
 **traceName** | **String** |  | [optional] 
 

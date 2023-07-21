@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TitaniumLimit from './TitaniumLimit';
+import TitaniumFilterPack from './TitaniumFilterPack';
 import TitaniumOrderBy from './TitaniumOrderBy';
 
 /**
@@ -61,11 +61,8 @@ class TitaniumFileHistoryRequest {
             if (data.hasOwnProperty('filter')) {
                 obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
             }
-            if (data.hasOwnProperty('limit')) {
-                obj['limit'] = TitaniumLimit.constructFromObject(data['limit']);
-            }
-            if (data.hasOwnProperty('offset')) {
-                obj['offset'] = ApiClient.convertToType(data['offset'], 'Number');
+            if (data.hasOwnProperty('filterPack')) {
+                obj['filterPack'] = TitaniumFilterPack.constructFromObject(data['filterPack']);
             }
             if (data.hasOwnProperty('orderBy')) {
                 obj['orderBy'] = TitaniumOrderBy.constructFromObject(data['orderBy']);
@@ -101,14 +98,9 @@ TitaniumFileHistoryRequest.prototype['fileDate'] = undefined;
 TitaniumFileHistoryRequest.prototype['filter'] = undefined;
 
 /**
- * @member {module:model/TitaniumLimit} limit
+ * @member {module:model/TitaniumFilterPack} filterPack
  */
-TitaniumFileHistoryRequest.prototype['limit'] = undefined;
-
-/**
- * @member {Number} offset
- */
-TitaniumFileHistoryRequest.prototype['offset'] = undefined;
+TitaniumFileHistoryRequest.prototype['filterPack'] = undefined;
 
 /**
  * @member {module:model/TitaniumOrderBy} orderBy

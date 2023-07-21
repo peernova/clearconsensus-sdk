@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.TitaniumLimit;
+import org.openapitools.client.model.TitaniumFilterPack;
 import org.openapitools.client.model.TitaniumOrderBy;
 
 import com.google.gson.Gson;
@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumFileHistoryRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-21T15:51:40.150739Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-21T16:17:32.733102Z[UTC]")
 public class TitaniumFileHistoryRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -67,13 +67,9 @@ public class TitaniumFileHistoryRequest {
   @SerializedName(SERIALIZED_NAME_FILTER)
   private String filter;
 
-  public static final String SERIALIZED_NAME_LIMIT = "limit";
-  @SerializedName(SERIALIZED_NAME_LIMIT)
-  private TitaniumLimit limit;
-
-  public static final String SERIALIZED_NAME_OFFSET = "offset";
-  @SerializedName(SERIALIZED_NAME_OFFSET)
-  private Integer offset;
+  public static final String SERIALIZED_NAME_FILTER_PACK = "filterPack";
+  @SerializedName(SERIALIZED_NAME_FILTER_PACK)
+  private TitaniumFilterPack filterPack;
 
   public static final String SERIALIZED_NAME_ORDER_BY = "orderBy";
   @SerializedName(SERIALIZED_NAME_ORDER_BY)
@@ -178,49 +174,26 @@ public class TitaniumFileHistoryRequest {
   }
 
 
-  public TitaniumFileHistoryRequest limit(TitaniumLimit limit) {
+  public TitaniumFileHistoryRequest filterPack(TitaniumFilterPack filterPack) {
     
-    this.limit = limit;
+    this.filterPack = filterPack;
     return this;
   }
 
    /**
-   * Get limit
-   * @return limit
+   * Get filterPack
+   * @return filterPack
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumLimit getLimit() {
-    return limit;
+  public TitaniumFilterPack getFilterPack() {
+    return filterPack;
   }
 
 
-  public void setLimit(TitaniumLimit limit) {
-    this.limit = limit;
-  }
-
-
-  public TitaniumFileHistoryRequest offset(Integer offset) {
-    
-    this.offset = offset;
-    return this;
-  }
-
-   /**
-   * Get offset
-   * @return offset
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Integer getOffset() {
-    return offset;
-  }
-
-
-  public void setOffset(Integer offset) {
-    this.offset = offset;
+  public void setFilterPack(TitaniumFilterPack filterPack) {
+    this.filterPack = filterPack;
   }
 
 
@@ -284,15 +257,14 @@ public class TitaniumFileHistoryRequest {
         Objects.equals(this.client, titaniumFileHistoryRequest.client) &&
         Objects.equals(this.fileDate, titaniumFileHistoryRequest.fileDate) &&
         Objects.equals(this.filter, titaniumFileHistoryRequest.filter) &&
-        Objects.equals(this.limit, titaniumFileHistoryRequest.limit) &&
-        Objects.equals(this.offset, titaniumFileHistoryRequest.offset) &&
+        Objects.equals(this.filterPack, titaniumFileHistoryRequest.filterPack) &&
         Objects.equals(this.orderBy, titaniumFileHistoryRequest.orderBy) &&
         Objects.equals(this.traceName, titaniumFileHistoryRequest.traceName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, client, fileDate, filter, limit, offset, orderBy, traceName);
+    return Objects.hash(assetId, client, fileDate, filter, filterPack, orderBy, traceName);
   }
 
   @Override
@@ -303,8 +275,7 @@ public class TitaniumFileHistoryRequest {
     sb.append("    client: ").append(toIndentedString(client)).append("\n");
     sb.append("    fileDate: ").append(toIndentedString(fileDate)).append("\n");
     sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
-    sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
+    sb.append("    filterPack: ").append(toIndentedString(filterPack)).append("\n");
     sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
     sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
     sb.append("}");
@@ -333,8 +304,7 @@ public class TitaniumFileHistoryRequest {
     openapiFields.add("client");
     openapiFields.add("fileDate");
     openapiFields.add("filter");
-    openapiFields.add("limit");
-    openapiFields.add("offset");
+    openapiFields.add("filterPack");
     openapiFields.add("orderBy");
     openapiFields.add("traceName");
 
@@ -376,9 +346,9 @@ public class TitaniumFileHistoryRequest {
       if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `filter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("filter").toString()));
       }
-      // validate the optional field `limit`
-      if (jsonObj.getAsJsonObject("limit") != null) {
-        TitaniumLimit.validateJsonObject(jsonObj.getAsJsonObject("limit"));
+      // validate the optional field `filterPack`
+      if (jsonObj.getAsJsonObject("filterPack") != null) {
+        TitaniumFilterPack.validateJsonObject(jsonObj.getAsJsonObject("filterPack"));
       }
       // validate the optional field `orderBy`
       if (jsonObj.getAsJsonObject("orderBy") != null) {

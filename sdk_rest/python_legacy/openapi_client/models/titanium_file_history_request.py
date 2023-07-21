@@ -40,8 +40,7 @@ class TitaniumFileHistoryRequest(object):
         'client': 'str',
         'file_date': 'str',
         'filter': 'str',
-        'limit': 'TitaniumLimit',
-        'offset': 'int',
+        'filter_pack': 'TitaniumFilterPack',
         'order_by': 'TitaniumOrderBy',
         'trace_name': 'str'
     }
@@ -51,13 +50,12 @@ class TitaniumFileHistoryRequest(object):
         'client': 'client',
         'file_date': 'fileDate',
         'filter': 'filter',
-        'limit': 'limit',
-        'offset': 'offset',
+        'filter_pack': 'filterPack',
         'order_by': 'orderBy',
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, client=None, file_date=None, filter=None, limit=None, offset=None, order_by=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, client=None, file_date=None, filter=None, filter_pack=None, order_by=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumFileHistoryRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -67,8 +65,7 @@ class TitaniumFileHistoryRequest(object):
         self._client = None
         self._file_date = None
         self._filter = None
-        self._limit = None
-        self._offset = None
+        self._filter_pack = None
         self._order_by = None
         self._trace_name = None
         self.discriminator = None
@@ -81,10 +78,8 @@ class TitaniumFileHistoryRequest(object):
             self.file_date = file_date
         if filter is not None:
             self.filter = filter
-        if limit is not None:
-            self.limit = limit
-        if offset is not None:
-            self.offset = offset
+        if filter_pack is not None:
+            self.filter_pack = filter_pack
         if order_by is not None:
             self.order_by = order_by
         if trace_name is not None:
@@ -175,46 +170,25 @@ class TitaniumFileHistoryRequest(object):
         self._filter = filter
 
     @property
-    def limit(self):
-        """Gets the limit of this TitaniumFileHistoryRequest.  # noqa: E501
+    def filter_pack(self):
+        """Gets the filter_pack of this TitaniumFileHistoryRequest.  # noqa: E501
 
 
-        :return: The limit of this TitaniumFileHistoryRequest.  # noqa: E501
-        :rtype: TitaniumLimit
+        :return: The filter_pack of this TitaniumFileHistoryRequest.  # noqa: E501
+        :rtype: TitaniumFilterPack
         """
-        return self._limit
+        return self._filter_pack
 
-    @limit.setter
-    def limit(self, limit):
-        """Sets the limit of this TitaniumFileHistoryRequest.
-
-
-        :param limit: The limit of this TitaniumFileHistoryRequest.  # noqa: E501
-        :type limit: TitaniumLimit
-        """
-
-        self._limit = limit
-
-    @property
-    def offset(self):
-        """Gets the offset of this TitaniumFileHistoryRequest.  # noqa: E501
+    @filter_pack.setter
+    def filter_pack(self, filter_pack):
+        """Sets the filter_pack of this TitaniumFileHistoryRequest.
 
 
-        :return: The offset of this TitaniumFileHistoryRequest.  # noqa: E501
-        :rtype: int
-        """
-        return self._offset
-
-    @offset.setter
-    def offset(self, offset):
-        """Sets the offset of this TitaniumFileHistoryRequest.
-
-
-        :param offset: The offset of this TitaniumFileHistoryRequest.  # noqa: E501
-        :type offset: int
+        :param filter_pack: The filter_pack of this TitaniumFileHistoryRequest.  # noqa: E501
+        :type filter_pack: TitaniumFilterPack
         """
 
-        self._offset = offset
+        self._filter_pack = filter_pack
 
     @property
     def order_by(self):

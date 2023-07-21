@@ -47,10 +47,19 @@ with openapi_client.ApiClient() as api_client:
         client="client_example",
         file_date="file_date_example",
         filter="filter_example",
-        limit=TitaniumLimit(
-            value=1,
+        filter_pack=TitaniumFilterPack(
+            filter_packs=[
+                TitaniumFilterPack(),
+            ],
+            filters=[
+                TitaniumFilter(
+                    key="key_example",
+                    operator="operator_example",
+                    value={},
+                ),
+            ],
+            logical_operation="logical_operation_example",
         ),
-        offset=1,
         order_by=TitaniumOrderBy(
             column="column_example",
             order="order_example",

@@ -30,9 +30,9 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from openapi_client.model.titanium_limit import TitaniumLimit
+    from openapi_client.model.titanium_filter_pack import TitaniumFilterPack
     from openapi_client.model.titanium_order_by import TitaniumOrderBy
-    globals()['TitaniumLimit'] = TitaniumLimit
+    globals()['TitaniumFilterPack'] = TitaniumFilterPack
     globals()['TitaniumOrderBy'] = TitaniumOrderBy
 
 
@@ -93,8 +93,7 @@ class TitaniumFileHistoryRequest(ModelNormal):
             'client': (str,),  # noqa: E501
             'file_date': (str,),  # noqa: E501
             'filter': (str,),  # noqa: E501
-            'limit': (TitaniumLimit,),  # noqa: E501
-            'offset': (int,),  # noqa: E501
+            'filter_pack': (TitaniumFilterPack,),  # noqa: E501
             'order_by': (TitaniumOrderBy,),  # noqa: E501
             'trace_name': (str,),  # noqa: E501
         }
@@ -109,8 +108,7 @@ class TitaniumFileHistoryRequest(ModelNormal):
         'client': 'client',  # noqa: E501
         'file_date': 'fileDate',  # noqa: E501
         'filter': 'filter',  # noqa: E501
-        'limit': 'limit',  # noqa: E501
-        'offset': 'offset',  # noqa: E501
+        'filter_pack': 'filterPack',  # noqa: E501
         'order_by': 'orderBy',  # noqa: E501
         'trace_name': 'traceName',  # noqa: E501
     }
@@ -160,8 +158,7 @@ class TitaniumFileHistoryRequest(ModelNormal):
             client (str): [optional]  # noqa: E501
             file_date (str): [optional]  # noqa: E501
             filter (str): [optional]  # noqa: E501
-            limit (TitaniumLimit): [optional]  # noqa: E501
-            offset (int): [optional]  # noqa: E501
+            filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
             order_by (TitaniumOrderBy): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """
@@ -253,8 +250,7 @@ class TitaniumFileHistoryRequest(ModelNormal):
             client (str): [optional]  # noqa: E501
             file_date (str): [optional]  # noqa: E501
             filter (str): [optional]  # noqa: E501
-            limit (TitaniumLimit): [optional]  # noqa: E501
-            offset (int): [optional]  # noqa: E501
+            filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
             order_by (TitaniumOrderBy): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """
