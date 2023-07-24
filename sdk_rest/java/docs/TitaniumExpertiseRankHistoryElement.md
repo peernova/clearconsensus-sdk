@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**date** | **String** |  |  [optional] |
-|**expertsCount** | **Integer** |  |  [optional] |
+|**expertsCount** | **Object** |  |  [optional] |
 |**rank** | **Object** |  |  [optional] |
 
 

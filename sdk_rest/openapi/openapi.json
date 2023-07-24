@@ -9745,7 +9745,8 @@
             "type" : "object"
           },
           "expertsCount" : {
-            "type" : "integer"
+            "properties" : { },
+            "type" : "object"
           },
           "history" : {
             "items" : {
@@ -9770,7 +9771,8 @@
             "type" : "string"
           },
           "expertsCount" : {
-            "type" : "integer"
+            "properties" : { },
+            "type" : "object"
           },
           "rank" : {
             "properties" : { },

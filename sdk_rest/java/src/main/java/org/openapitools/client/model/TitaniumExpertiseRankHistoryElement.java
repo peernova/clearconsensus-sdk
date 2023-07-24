@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumExpertiseRankHistoryElement
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-21T16:17:32.733102Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T13:30:52.291583Z[UTC]")
 public class TitaniumExpertiseRankHistoryElement {
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)
@@ -55,7 +55,7 @@ public class TitaniumExpertiseRankHistoryElement {
 
   public static final String SERIALIZED_NAME_EXPERTS_COUNT = "expertsCount";
   @SerializedName(SERIALIZED_NAME_EXPERTS_COUNT)
-  private Integer expertsCount;
+  private Object expertsCount;
 
   public static final String SERIALIZED_NAME_RANK = "rank";
   @SerializedName(SERIALIZED_NAME_RANK)
@@ -87,7 +87,7 @@ public class TitaniumExpertiseRankHistoryElement {
   }
 
 
-  public TitaniumExpertiseRankHistoryElement expertsCount(Integer expertsCount) {
+  public TitaniumExpertiseRankHistoryElement expertsCount(Object expertsCount) {
     
     this.expertsCount = expertsCount;
     return this;
@@ -100,12 +100,12 @@ public class TitaniumExpertiseRankHistoryElement {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getExpertsCount() {
+  public Object getExpertsCount() {
     return expertsCount;
   }
 
 
-  public void setExpertsCount(Integer expertsCount) {
+  public void setExpertsCount(Object expertsCount) {
     this.expertsCount = expertsCount;
   }
 

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **abs_distance_to_anchor** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **anchor_price** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **expertise_score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**experts_count** | **int** |  | [optional] 
+**experts_count** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **history** | [**[TitaniumExpertiseRankHistoryElement]**](TitaniumExpertiseRankHistoryElement.md) |  | [optional] 
 **rank** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **submission_price** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

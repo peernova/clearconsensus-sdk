@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **date** | **String** |  | [optional] 
-**expertsCount** | **Number** |  | [optional] 
+**expertsCount** | **Object** |  | [optional] 
 **rank** | **Object** |  | [optional] 
 
 

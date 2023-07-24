@@ -82,7 +82,7 @@ class TitaniumExpertiseRankHistoryElement(ModelNormal):
         """
         return {
             'date': (str,),  # noqa: E501
-            'experts_count': (int,),  # noqa: E501
+            'experts_count': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'rank': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
@@ -139,7 +139,7 @@ class TitaniumExpertiseRankHistoryElement(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             date (str): [optional]  # noqa: E501
-            experts_count (int): [optional]  # noqa: E501
+            experts_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             rank (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
@@ -227,7 +227,7 @@ class TitaniumExpertiseRankHistoryElement(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             date (str): [optional]  # noqa: E501
-            experts_count (int): [optional]  # noqa: E501
+            experts_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             rank (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 

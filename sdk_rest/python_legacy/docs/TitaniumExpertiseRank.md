@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **abs_distance_to_anchor** | **object** |  | [optional] 
 **anchor_price** | **object** |  | [optional] 
 **expertise_score** | **object** |  | [optional] 
-**experts_count** | **int** |  | [optional] 
+**experts_count** | **object** |  | [optional] 
 **history** | [**list[TitaniumExpertiseRankHistoryElement]**](TitaniumExpertiseRankHistoryElement.md) |  | [optional] 
 **rank** | **object** |  | [optional] 
 **submission_price** | **object** |  | [optional] 

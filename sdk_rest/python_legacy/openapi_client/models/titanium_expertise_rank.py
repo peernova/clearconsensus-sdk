@@ -39,7 +39,7 @@ class TitaniumExpertiseRank(object):
         'abs_distance_to_anchor': 'object',
         'anchor_price': 'object',
         'expertise_score': 'object',
-        'experts_count': 'int',
+        'experts_count': 'object',
         'history': 'list[TitaniumExpertiseRankHistoryElement]',
         'rank': 'object',
         'submission_price': 'object'
@@ -154,7 +154,7 @@ class TitaniumExpertiseRank(object):
 
 
         :return: The experts_count of this TitaniumExpertiseRank.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._experts_count
 
@@ -164,7 +164,7 @@ class TitaniumExpertiseRank(object):
 
 
         :param experts_count: The experts_count of this TitaniumExpertiseRank.  # noqa: E501
-        :type experts_count: int
+        :type experts_count: object
         """
 
         self._experts_count = experts_count

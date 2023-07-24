@@ -51,7 +51,7 @@ class TitaniumExpertiseRankHistoryElement {
                 obj['date'] = ApiClient.convertToType(data['date'], 'String');
             }
             if (data.hasOwnProperty('expertsCount')) {
-                obj['expertsCount'] = ApiClient.convertToType(data['expertsCount'], 'Number');
+                obj['expertsCount'] = ApiClient.convertToType(data['expertsCount'], Object);
             }
             if (data.hasOwnProperty('rank')) {
                 obj['rank'] = ApiClient.convertToType(data['rank'], Object);
@@ -69,7 +69,7 @@ class TitaniumExpertiseRankHistoryElement {
 TitaniumExpertiseRankHistoryElement.prototype['date'] = undefined;
 
 /**
- * @member {Number} expertsCount
+ * @member {Object} expertsCount
  */
 TitaniumExpertiseRankHistoryElement.prototype['expertsCount'] = undefined;
 

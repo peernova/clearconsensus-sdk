@@ -37,7 +37,7 @@ class TitaniumExpertiseRankHistoryElement(object):
     """
     openapi_types = {
         'date': 'str',
-        'experts_count': 'int',
+        'experts_count': 'object',
         'rank': 'object'
     }
 
@@ -92,7 +92,7 @@ class TitaniumExpertiseRankHistoryElement(object):
 
 
         :return: The experts_count of this TitaniumExpertiseRankHistoryElement.  # noqa: E501
-        :rtype: int
+        :rtype: object
         """
         return self._experts_count
 
@@ -102,7 +102,7 @@ class TitaniumExpertiseRankHistoryElement(object):
 
 
         :param experts_count: The experts_count of this TitaniumExpertiseRankHistoryElement.  # noqa: E501
-        :type experts_count: int
+        :type experts_count: object
         """
 
         self._experts_count = experts_count

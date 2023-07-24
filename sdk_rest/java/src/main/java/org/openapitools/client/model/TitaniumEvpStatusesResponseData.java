@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpStatusesResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-21T16:17:32.733102Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T13:30:52.291583Z[UTC]")
 public class TitaniumEvpStatusesResponseData {
   public static final String SERIALIZED_NAME_EVP_STATUSES = "evpStatuses";
   @SerializedName(SERIALIZED_NAME_EVP_STATUSES)

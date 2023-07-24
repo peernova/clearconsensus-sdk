@@ -90,7 +90,7 @@ class TitaniumExpertiseRank(ModelNormal):
             'abs_distance_to_anchor': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'anchor_price': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'expertise_score': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'experts_count': (int,),  # noqa: E501
+            'experts_count': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'history': ([TitaniumExpertiseRankHistoryElement],),  # noqa: E501
             'rank': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'submission_price': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -155,7 +155,7 @@ class TitaniumExpertiseRank(ModelNormal):
             abs_distance_to_anchor (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             anchor_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             expertise_score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            experts_count (int): [optional]  # noqa: E501
+            experts_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             history ([TitaniumExpertiseRankHistoryElement]): [optional]  # noqa: E501
             rank (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             submission_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -247,7 +247,7 @@ class TitaniumExpertiseRank(ModelNormal):
             abs_distance_to_anchor (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             anchor_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             expertise_score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            experts_count (int): [optional]  # noqa: E501
+            experts_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             history ([TitaniumExpertiseRankHistoryElement]): [optional]  # noqa: E501
             rank (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             submission_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501

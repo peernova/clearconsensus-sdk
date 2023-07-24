@@ -7364,17 +7364,17 @@ components:
               value: "{}"
             dispersion: "{}"
           expertiseRank:
-            expertsCount: 0
+            expertsCount: "{}"
             anchorPrice: "{}"
             expertiseScore: "{}"
             rank: "{}"
             absDistanceToAnchor: "{}"
             history:
             - date: date
-              expertsCount: 6
+              expertsCount: "{}"
               rank: "{}"
             - date: date
-              expertsCount: 6
+              expertsCount: "{}"
               rank: "{}"
             submissionPrice: "{}"
       properties:
@@ -7483,17 +7483,17 @@ components:
                 value: "{}"
               dispersion: "{}"
             expertiseRank:
-              expertsCount: 0
+              expertsCount: "{}"
               anchorPrice: "{}"
               expertiseScore: "{}"
               rank: "{}"
               absDistanceToAnchor: "{}"
               history:
               - date: date
-                expertsCount: 6
+                expertsCount: "{}"
                 rank: "{}"
               - date: date
-                expertsCount: 6
+                expertsCount: "{}"
                 rank: "{}"
               submissionPrice: "{}"
         error:
@@ -8235,17 +8235,17 @@ components:
             value: "{}"
           dispersion: "{}"
         expertiseRank:
-          expertsCount: 0
+          expertsCount: "{}"
           anchorPrice: "{}"
           expertiseScore: "{}"
           rank: "{}"
           absDistanceToAnchor: "{}"
           history:
           - date: date
-            expertsCount: 6
+            expertsCount: "{}"
             rank: "{}"
           - date: date
-            expertsCount: 6
+            expertsCount: "{}"
             rank: "{}"
           submissionPrice: "{}"
       properties:
@@ -9504,17 +9504,17 @@ components:
       type: object
     titaniumExpertiseRank:
       example:
-        expertsCount: 0
+        expertsCount: "{}"
         anchorPrice: "{}"
         expertiseScore: "{}"
         rank: "{}"
         absDistanceToAnchor: "{}"
         history:
         - date: date
-          expertsCount: 6
+          expertsCount: "{}"
           rank: "{}"
         - date: date
-          expertsCount: 6
+          expertsCount: "{}"
           rank: "{}"
         submissionPrice: "{}"
       properties:
@@ -9528,7 +9528,8 @@ components:
           properties: {}
           type: object
         expertsCount:
-          type: integer
+          properties: {}
+          type: object
         history:
           items:
             $ref: '#/components/schemas/titaniumExpertiseRankHistoryElement'
@@ -9543,13 +9544,14 @@ components:
     titaniumExpertiseRankHistoryElement:
       example:
         date: date
-        expertsCount: 6
+        expertsCount: "{}"
         rank: "{}"
       properties:
         date:
           type: string
         expertsCount:
-          type: integer
+          properties: {}
+          type: object
         rank:
           properties: {}
           type: object

@@ -58,7 +58,7 @@ class TitaniumExpertiseRank {
                 obj['expertiseScore'] = ApiClient.convertToType(data['expertiseScore'], Object);
             }
             if (data.hasOwnProperty('expertsCount')) {
-                obj['expertsCount'] = ApiClient.convertToType(data['expertsCount'], 'Number');
+                obj['expertsCount'] = ApiClient.convertToType(data['expertsCount'], Object);
             }
             if (data.hasOwnProperty('history')) {
                 obj['history'] = ApiClient.convertToType(data['history'], [TitaniumExpertiseRankHistoryElement]);
@@ -92,7 +92,7 @@ TitaniumExpertiseRank.prototype['anchorPrice'] = undefined;
 TitaniumExpertiseRank.prototype['expertiseScore'] = undefined;
 
 /**
- * @member {Number} expertsCount
+ * @member {Object} expertsCount
  */
 TitaniumExpertiseRank.prototype['expertsCount'] = undefined;
 

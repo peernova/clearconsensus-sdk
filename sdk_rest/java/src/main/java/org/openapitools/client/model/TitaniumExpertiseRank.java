@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumExpertiseRank
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-21T16:17:32.733102Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T13:30:52.291583Z[UTC]")
 public class TitaniumExpertiseRank {
   public static final String SERIALIZED_NAME_ABS_DISTANCE_TO_ANCHOR = "absDistanceToAnchor";
   @SerializedName(SERIALIZED_NAME_ABS_DISTANCE_TO_ANCHOR)
@@ -66,7 +66,7 @@ public class TitaniumExpertiseRank {
 
   public static final String SERIALIZED_NAME_EXPERTS_COUNT = "expertsCount";
   @SerializedName(SERIALIZED_NAME_EXPERTS_COUNT)
-  private Integer expertsCount;
+  private Object expertsCount;
 
   public static final String SERIALIZED_NAME_HISTORY = "history";
   @SerializedName(SERIALIZED_NAME_HISTORY)
@@ -152,7 +152,7 @@ public class TitaniumExpertiseRank {
   }
 
 
-  public TitaniumExpertiseRank expertsCount(Integer expertsCount) {
+  public TitaniumExpertiseRank expertsCount(Object expertsCount) {
     
     this.expertsCount = expertsCount;
     return this;
@@ -165,12 +165,12 @@ public class TitaniumExpertiseRank {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Integer getExpertsCount() {
+  public Object getExpertsCount() {
     return expertsCount;
   }
 
 
-  public void setExpertsCount(Integer expertsCount) {
+  public void setExpertsCount(Object expertsCount) {
     this.expertsCount = expertsCount;
   }
 
