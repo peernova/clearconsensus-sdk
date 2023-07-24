@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetFileExportUrlRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T13:30:52.291583Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T17:35:28.635518Z[UTC]")
 public class TitaniumGetFileExportUrlRequest {
   public static final String SERIALIZED_NAME_EXPORT_TYPE = "exportType";
   @SerializedName(SERIALIZED_NAME_EXPORT_TYPE)

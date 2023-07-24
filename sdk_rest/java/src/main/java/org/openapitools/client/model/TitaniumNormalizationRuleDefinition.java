@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumNormalizationRuleDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T13:30:52.291583Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-24T17:35:28.635518Z[UTC]")
 public class TitaniumNormalizationRuleDefinition {
   public static final String SERIALIZED_NAME_DESCRIPTOR_NAME = "descriptorName";
   @SerializedName(SERIALIZED_NAME_DESCRIPTOR_NAME)
