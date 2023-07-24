@@ -2741,7 +2741,7 @@ proto.titanium.ExpertiseRank.prototype.toObject = function(opt_includeInstance) 
 proto.titanium.ExpertiseRank.toObject = function(includeInstance, msg) {
   var f, obj = {
     rank: (f = msg.getRank()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    expertsCount: jspb.Message.getFieldWithDefault(msg, 2, 0),
+    expertsCount: (f = msg.getExpertsCount()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     submissionPrice: (f = msg.getSubmissionPrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     anchorPrice: (f = msg.getAnchorPrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     absDistanceToAnchor: (f = msg.getAbsDistanceToAnchor()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
@@ -2790,7 +2790,8 @@ proto.titanium.ExpertiseRank.deserializeBinaryFromReader = function(msg, reader)
       msg.setRank(value);
       break;
     case 2:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setExpertsCount(value);
       break;
     case 3:
@@ -2856,10 +2857,11 @@ proto.titanium.ExpertiseRank.serializeBinaryToWriter = function(message, writer)
     );
   }
   f = message.getExpertsCount();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getSubmissionPrice();
@@ -2943,20 +2945,39 @@ proto.titanium.ExpertiseRank.prototype.hasRank = function() {
 
 
 /**
- * optional int32 experts_count = 2;
- * @return {number}
+ * optional google.protobuf.Value experts_count = 2;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.titanium.ExpertiseRank.prototype.getExpertsCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 2, 0));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseRank} returns this
+*/
+proto.titanium.ExpertiseRank.prototype.setExpertsCount = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.titanium.ExpertiseRank} returns this
  */
-proto.titanium.ExpertiseRank.prototype.setExpertsCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 2, value);
+proto.titanium.ExpertiseRank.prototype.clearExpertsCount = function() {
+  return this.setExpertsCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseRank.prototype.hasExpertsCount = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 
@@ -3180,7 +3201,7 @@ proto.titanium.ExpertiseRankHistoryElement.toObject = function(includeInstance, 
   var f, obj = {
     date: jspb.Message.getFieldWithDefault(msg, 1, ""),
     rank: (f = msg.getRank()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    expertsCount: jspb.Message.getFieldWithDefault(msg, 3, 0)
+    expertsCount: (f = msg.getExpertsCount()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -3227,7 +3248,8 @@ proto.titanium.ExpertiseRankHistoryElement.deserializeBinaryFromReader = functio
       msg.setRank(value);
       break;
     case 3:
-      var value = /** @type {number} */ (reader.readInt32());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setExpertsCount(value);
       break;
     default:
@@ -3275,10 +3297,11 @@ proto.titanium.ExpertiseRankHistoryElement.serializeBinaryToWriter = function(me
     );
   }
   f = message.getExpertsCount();
-  if (f !== 0) {
-    writer.writeInt32(
+  if (f != null) {
+    writer.writeMessage(
       3,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
 };
@@ -3340,20 +3363,39 @@ proto.titanium.ExpertiseRankHistoryElement.prototype.hasRank = function() {
 
 
 /**
- * optional int32 experts_count = 3;
- * @return {number}
+ * optional google.protobuf.Value experts_count = 3;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.titanium.ExpertiseRankHistoryElement.prototype.getExpertsCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 3, 0));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 3));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.ExpertiseRankHistoryElement} returns this
+*/
+proto.titanium.ExpertiseRankHistoryElement.prototype.setExpertsCount = function(value) {
+  return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.titanium.ExpertiseRankHistoryElement} returns this
  */
-proto.titanium.ExpertiseRankHistoryElement.prototype.setExpertsCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 3, value);
+proto.titanium.ExpertiseRankHistoryElement.prototype.clearExpertsCount = function() {
+  return this.setExpertsCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ExpertiseRankHistoryElement.prototype.hasExpertsCount = function() {
+  return jspb.Message.getField(this, 3) != null;
 };
 
 

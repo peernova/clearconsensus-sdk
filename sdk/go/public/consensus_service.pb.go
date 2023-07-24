@@ -549,7 +549,7 @@ type ExpertiseRank struct {
 	unknownFields protoimpl.UnknownFields
 
 	Rank                *structpb.Value                `protobuf:"bytes,1,opt,name=rank,proto3" json:"rank,omitempty"`
-	ExpertsCount        int32                          `protobuf:"varint,2,opt,name=experts_count,json=expertsCount,proto3" json:"experts_count,omitempty"`
+	ExpertsCount        *structpb.Value                `protobuf:"bytes,2,opt,name=experts_count,json=expertsCount,proto3" json:"experts_count,omitempty"`
 	SubmissionPrice     *structpb.Value                `protobuf:"bytes,3,opt,name=submission_price,json=submissionPrice,proto3" json:"submission_price,omitempty"`
 	AnchorPrice         *structpb.Value                `protobuf:"bytes,4,opt,name=anchor_price,json=anchorPrice,proto3" json:"anchor_price,omitempty"`
 	AbsDistanceToAnchor *structpb.Value                `protobuf:"bytes,5,opt,name=abs_distance_to_anchor,json=absDistanceToAnchor,proto3" json:"abs_distance_to_anchor,omitempty"`
@@ -596,11 +596,11 @@ func (x *ExpertiseRank) GetRank() *structpb.Value {
 	return nil
 }
 
-func (x *ExpertiseRank) GetExpertsCount() int32 {
+func (x *ExpertiseRank) GetExpertsCount() *structpb.Value {
 	if x != nil {
 		return x.ExpertsCount
 	}
-	return 0
+	return nil
 }
 
 func (x *ExpertiseRank) GetSubmissionPrice() *structpb.Value {
@@ -645,7 +645,7 @@ type ExpertiseRankHistoryElement struct {
 
 	Date         string          `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
 	Rank         *structpb.Value `protobuf:"bytes,2,opt,name=rank,proto3" json:"rank,omitempty"`
-	ExpertsCount int32           `protobuf:"varint,3,opt,name=experts_count,json=expertsCount,proto3" json:"experts_count,omitempty"`
+	ExpertsCount *structpb.Value `protobuf:"bytes,3,opt,name=experts_count,json=expertsCount,proto3" json:"experts_count,omitempty"`
 }
 
 func (x *ExpertiseRankHistoryElement) Reset() {
@@ -694,11 +694,11 @@ func (x *ExpertiseRankHistoryElement) GetRank() *structpb.Value {
 	return nil
 }
 
-func (x *ExpertiseRankHistoryElement) GetExpertsCount() int32 {
+func (x *ExpertiseRankHistoryElement) GetExpertsCount() *structpb.Value {
 	if x != nil {
 		return x.ExpertsCount
 	}
-	return 0
+	return nil
 }
 
 type ConsensusDensityScore struct {
@@ -3023,41 +3023,44 @@ var file_public_consensus_service_proto_rawDesc = []byte{
 	0x63, 0x6f, 0x72, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x19, 0x2e, 0x74, 0x69, 0x74,
 	0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x45, 0x76, 0x70, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x74, 0x79,
 	0x53, 0x63, 0x6f, 0x72, 0x65, 0x52, 0x0f, 0x65, 0x76, 0x70, 0x51, 0x75, 0x61, 0x6c, 0x69, 0x74,
-	0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x22, 0xad, 0x03, 0x0a, 0x0d, 0x45, 0x78, 0x70, 0x65, 0x72,
+	0x79, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x22, 0xc5, 0x03, 0x0a, 0x0d, 0x45, 0x78, 0x70, 0x65, 0x72,
 	0x74, 0x69, 0x73, 0x65, 0x52, 0x61, 0x6e, 0x6b, 0x12, 0x2a, 0x0a, 0x04, 0x72, 0x61, 0x6e, 0x6b,
 	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
 	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x04,
-	0x72, 0x61, 0x6e, 0x6b, 0x12, 0x23, 0x0a, 0x0d, 0x65, 0x78, 0x70, 0x65, 0x72, 0x74, 0x73, 0x5f,
-	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0c, 0x65, 0x78, 0x70,
-	0x65, 0x72, 0x74, 0x73, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x12, 0x41, 0x0a, 0x10, 0x73, 0x75, 0x62,
-	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x70, 0x72, 0x69, 0x63, 0x65, 0x18, 0x03, 0x20,
-	0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
-	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x0f, 0x73, 0x75, 0x62,
-	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x50, 0x72, 0x69, 0x63, 0x65, 0x12, 0x39, 0x0a, 0x0c,
-	0x61, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x5f, 0x70, 0x72, 0x69, 0x63, 0x65, 0x18, 0x04, 0x20, 0x01,
-	0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x0b, 0x61, 0x6e, 0x63, 0x68,
-	0x6f, 0x72, 0x50, 0x72, 0x69, 0x63, 0x65, 0x12, 0x4b, 0x0a, 0x16, 0x61, 0x62, 0x73, 0x5f, 0x64,
-	0x69, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x5f, 0x74, 0x6f, 0x5f, 0x61, 0x6e, 0x63, 0x68, 0x6f,
-	0x72, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52,
-	0x13, 0x61, 0x62, 0x73, 0x44, 0x69, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x54, 0x6f, 0x41, 0x6e,
-	0x63, 0x68, 0x6f, 0x72, 0x12, 0x3f, 0x0a, 0x0f, 0x65, 0x78, 0x70, 0x65, 0x72, 0x74, 0x69, 0x73,
-	0x65, 0x5f, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e,
-	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
-	0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x0e, 0x65, 0x78, 0x70, 0x65, 0x72, 0x74, 0x69, 0x73, 0x65,
-	0x53, 0x63, 0x6f, 0x72, 0x65, 0x12, 0x3f, 0x0a, 0x07, 0x68, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79,
-	0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75,
-	0x6d, 0x2e, 0x45, 0x78, 0x70, 0x65, 0x72, 0x74, 0x69, 0x73, 0x65, 0x52, 0x61, 0x6e, 0x6b, 0x48,
-	0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x45, 0x6c, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x07, 0x68,
-	0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x22, 0x82, 0x01, 0x0a, 0x1b, 0x45, 0x78, 0x70, 0x65, 0x72,
-	0x74, 0x69, 0x73, 0x65, 0x52, 0x61, 0x6e, 0x6b, 0x48, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x45,
-	0x6c, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x65, 0x18, 0x01,
-	0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61, 0x74, 0x65, 0x12, 0x2a, 0x0a, 0x04, 0x72, 0x61,
-	0x6e, 0x6b, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65,
-	0x52, 0x04, 0x72, 0x61, 0x6e, 0x6b, 0x12, 0x23, 0x0a, 0x0d, 0x65, 0x78, 0x70, 0x65, 0x72, 0x74,
-	0x73, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x05, 0x52, 0x0c, 0x65,
+	0x72, 0x61, 0x6e, 0x6b, 0x12, 0x3b, 0x0a, 0x0d, 0x65, 0x78, 0x70, 0x65, 0x72, 0x74, 0x73, 0x5f,
+	0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61,
+	0x6c, 0x75, 0x65, 0x52, 0x0c, 0x65, 0x78, 0x70, 0x65, 0x72, 0x74, 0x73, 0x43, 0x6f, 0x75, 0x6e,
+	0x74, 0x12, 0x41, 0x0a, 0x10, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f,
+	0x70, 0x72, 0x69, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61,
+	0x6c, 0x75, 0x65, 0x52, 0x0f, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x50,
+	0x72, 0x69, 0x63, 0x65, 0x12, 0x39, 0x0a, 0x0c, 0x61, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x5f, 0x70,
+	0x72, 0x69, 0x63, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c,
+	0x75, 0x65, 0x52, 0x0b, 0x61, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x50, 0x72, 0x69, 0x63, 0x65, 0x12,
+	0x4b, 0x0a, 0x16, 0x61, 0x62, 0x73, 0x5f, 0x64, 0x69, 0x73, 0x74, 0x61, 0x6e, 0x63, 0x65, 0x5f,
+	0x74, 0x6f, 0x5f, 0x61, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x13, 0x61, 0x62, 0x73, 0x44, 0x69, 0x73, 0x74,
+	0x61, 0x6e, 0x63, 0x65, 0x54, 0x6f, 0x41, 0x6e, 0x63, 0x68, 0x6f, 0x72, 0x12, 0x3f, 0x0a, 0x0f,
+	0x65, 0x78, 0x70, 0x65, 0x72, 0x74, 0x69, 0x73, 0x65, 0x5f, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x18,
+	0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x0e, 0x65,
+	0x78, 0x70, 0x65, 0x72, 0x74, 0x69, 0x73, 0x65, 0x53, 0x63, 0x6f, 0x72, 0x65, 0x12, 0x3f, 0x0a,
+	0x07, 0x68, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x18, 0x07, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x25,
+	0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x45, 0x78, 0x70, 0x65, 0x72, 0x74,
+	0x69, 0x73, 0x65, 0x52, 0x61, 0x6e, 0x6b, 0x48, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x45, 0x6c,
+	0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x07, 0x68, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x22, 0x9a,
+	0x01, 0x0a, 0x1b, 0x45, 0x78, 0x70, 0x65, 0x72, 0x74, 0x69, 0x73, 0x65, 0x52, 0x61, 0x6e, 0x6b,
+	0x48, 0x69, 0x73, 0x74, 0x6f, 0x72, 0x79, 0x45, 0x6c, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x12,
+	0x0a, 0x04, 0x64, 0x61, 0x74, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x64, 0x61,
+	0x74, 0x65, 0x12, 0x2a, 0x0a, 0x04, 0x72, 0x61, 0x6e, 0x6b, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
+	0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x04, 0x72, 0x61, 0x6e, 0x6b, 0x12, 0x3b,
+	0x0a, 0x0d, 0x65, 0x78, 0x70, 0x65, 0x72, 0x74, 0x73, 0x5f, 0x63, 0x6f, 0x75, 0x6e, 0x74, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x16, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x56, 0x61, 0x6c, 0x75, 0x65, 0x52, 0x0c, 0x65,
 	0x78, 0x70, 0x65, 0x72, 0x74, 0x73, 0x43, 0x6f, 0x75, 0x6e, 0x74, 0x22, 0x86, 0x03, 0x0a, 0x15,
 	0x43, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x73, 0x75, 0x73, 0x44, 0x65, 0x6e, 0x73, 0x69, 0x74, 0x79,
 	0x53, 0x63, 0x6f, 0x72, 0x65, 0x12, 0x2c, 0x0a, 0x05, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x18, 0x01,
@@ -3842,150 +3845,152 @@ var file_public_consensus_service_proto_depIdxs = []int32{
 	12,  // 16: titanium.ConsensusScores.bimodality:type_name -> titanium.Bimodality
 	13,  // 17: titanium.ConsensusScores.evp_quality_score:type_name -> titanium.EvpQualityScore
 	36,  // 18: titanium.ExpertiseRank.rank:type_name -> google.protobuf.Value
-	36,  // 19: titanium.ExpertiseRank.submission_price:type_name -> google.protobuf.Value
-	36,  // 20: titanium.ExpertiseRank.anchor_price:type_name -> google.protobuf.Value
-	36,  // 21: titanium.ExpertiseRank.abs_distance_to_anchor:type_name -> google.protobuf.Value
-	36,  // 22: titanium.ExpertiseRank.expertise_score:type_name -> google.protobuf.Value
-	7,   // 23: titanium.ExpertiseRank.history:type_name -> titanium.ExpertiseRankHistoryElement
-	36,  // 24: titanium.ExpertiseRankHistoryElement.rank:type_name -> google.protobuf.Value
-	36,  // 25: titanium.ConsensusDensityScore.score:type_name -> google.protobuf.Value
-	36,  // 26: titanium.ConsensusDensityScore.bimodality_score:type_name -> google.protobuf.Value
-	36,  // 27: titanium.ConsensusDensityScore.trade_alignment_score:type_name -> google.protobuf.Value
-	36,  // 28: titanium.ConsensusDensityScore.dispersion:type_name -> google.protobuf.Value
-	36,  // 29: titanium.ConsensusDensityScore.evp_alignment_score:type_name -> google.protobuf.Value
-	4,   // 30: titanium.ConsensusDensityScore.history:type_name -> titanium.DateAndValue
-	36,  // 31: titanium.TradeAlignmentScore.score:type_name -> google.protobuf.Value
-	36,  // 32: titanium.TradeAlignmentScore.latest_trade_price:type_name -> google.protobuf.Value
-	36,  // 33: titanium.TradeAlignmentScore.submission_mean:type_name -> google.protobuf.Value
-	36,  // 34: titanium.TradeAlignmentScore.std_dev:type_name -> google.protobuf.Value
-	10,  // 35: titanium.TradeAlignmentScore.history:type_name -> titanium.TradeAligmentDateAndValue
-	36,  // 36: titanium.TradeAligmentDateAndValue.score:type_name -> google.protobuf.Value
-	36,  // 37: titanium.EvpAlignmentScore.score:type_name -> google.protobuf.Value
-	36,  // 38: titanium.EvpAlignmentScore.evp_mid:type_name -> google.protobuf.Value
-	36,  // 39: titanium.EvpAlignmentScore.submission_mean:type_name -> google.protobuf.Value
-	36,  // 40: titanium.EvpAlignmentScore.std_dev:type_name -> google.protobuf.Value
-	10,  // 41: titanium.EvpAlignmentScore.history:type_name -> titanium.TradeAligmentDateAndValue
-	36,  // 42: titanium.Bimodality.bimodality_index:type_name -> google.protobuf.Value
-	4,   // 43: titanium.Bimodality.history:type_name -> titanium.DateAndValue
-	36,  // 44: titanium.EvpQualityScore.score:type_name -> google.protobuf.Value
-	4,   // 45: titanium.EvpQualityScore.history:type_name -> titanium.DateAndValue
-	15,  // 46: titanium.ConsensusExplorerRangeResponse.data:type_name -> titanium.ConsensusExplorerRangeData
-	34,  // 47: titanium.ConsensusExplorerRangeResponse.error:type_name -> titanium.Error
-	16,  // 48: titanium.ConsensusExplorerRangeData.chart_ranges:type_name -> titanium.ChartRanges
-	37,  // 49: titanium.ConsensusExplorerRangeData.submission_point:type_name -> titanium.RangePoint
-	37,  // 50: titanium.ConsensusExplorerRangeData.anchor_point:type_name -> titanium.RangePoint
-	37,  // 51: titanium.ConsensusExplorerRangeData.evp_mid:type_name -> titanium.RangePoint
-	37,  // 52: titanium.ConsensusExplorerRangeData.submission_evidence_price:type_name -> titanium.RangePoint
-	37,  // 53: titanium.ConsensusExplorerRangeData.cohort_consensus_price:type_name -> titanium.RangePoint
-	37,  // 54: titanium.ConsensusExplorerRangeData.bimodal_left_mean:type_name -> titanium.RangePoint
-	37,  // 55: titanium.ConsensusExplorerRangeData.bimodal_right_mean:type_name -> titanium.RangePoint
-	17,  // 56: titanium.ConsensusExplorerRangeData.cohort_consensus_range_tab_data:type_name -> titanium.CohortConsensusRangeTabData
-	38,  // 57: titanium.ChartRanges.submission_min_max:type_name -> titanium.Range
-	38,  // 58: titanium.ChartRanges.evp:type_name -> titanium.Range
-	38,  // 59: titanium.ChartRanges.submission_evidence:type_name -> titanium.Range
-	38,  // 60: titanium.ChartRanges.cohort_consensus:type_name -> titanium.Range
-	38,  // 61: titanium.ChartRanges.bimodal_left_population:type_name -> titanium.Range
-	38,  // 62: titanium.ChartRanges.bimodal_right_population:type_name -> titanium.Range
-	36,  // 63: titanium.CohortConsensusRangeTabData.expertise_rank:type_name -> google.protobuf.Value
-	36,  // 64: titanium.CohortConsensusRangeTabData.expertise_score:type_name -> google.protobuf.Value
-	36,  // 65: titanium.CohortConsensusRangeTabData.distance_to_anchor:type_name -> google.protobuf.Value
-	36,  // 66: titanium.CohortConsensusRangeTabData.distance_to_consensus:type_name -> google.protobuf.Value
-	21,  // 67: titanium.CohortConsensusRangeTabData.trade_periods_with_metrics:type_name -> titanium.TradePeriodsWithMetrics
-	18,  // 68: titanium.CohortConsensusRangeTabData.trade_anchor_details:type_name -> titanium.TradeAnchorDetails
-	19,  // 69: titanium.CohortConsensusRangeTabData.evp_anchor_details:type_name -> titanium.EvpAnchorDetails
-	20,  // 70: titanium.CohortConsensusRangeTabData.submission_evidence_anchor_details:type_name -> titanium.SubmissionEvidenceAnchorDetails
-	22,  // 71: titanium.TradePeriodsWithMetrics.less_day:type_name -> titanium.TradePeriodMetrics
-	22,  // 72: titanium.TradePeriodsWithMetrics.less_week:type_name -> titanium.TradePeriodMetrics
-	22,  // 73: titanium.TradePeriodsWithMetrics.less_month:type_name -> titanium.TradePeriodMetrics
-	24,  // 74: titanium.ConsensusExplorerTableResponse.data:type_name -> titanium.ConsensusExplorerTableData
-	34,  // 75: titanium.ConsensusExplorerTableResponse.error:type_name -> titanium.Error
-	25,  // 76: titanium.ConsensusExplorerTableData.comparison_table:type_name -> titanium.ComparisonTable
-	26,  // 77: titanium.ComparisonTable.cohort_consensus_column:type_name -> titanium.CohortConsensusColumn
-	27,  // 78: titanium.ComparisonTable.submission:type_name -> titanium.SubmissionExplorerTableColumn
-	28,  // 79: titanium.ComparisonTable.submission_statistics:type_name -> titanium.SubmissionStatisticsExplorerTableColumn
-	29,  // 80: titanium.ComparisonTable.submission_evidence:type_name -> titanium.SubmissionEvidenceTableColumn
-	30,  // 81: titanium.ComparisonTable.evidentialPricing:type_name -> titanium.EvidentalPricing
-	31,  // 82: titanium.ComparisonTable.available_trades:type_name -> titanium.AvailableTrades
-	36,  // 83: titanium.CohortConsensusColumn.cohort_consensus_price:type_name -> google.protobuf.Value
-	36,  // 84: titanium.CohortConsensusColumn.abs_diff_from_consensus:type_name -> google.protobuf.Value
-	36,  // 85: titanium.CohortConsensusColumn.sub_price_diff:type_name -> google.protobuf.Value
-	36,  // 86: titanium.CohortConsensusColumn.cons_abs_diff_from_anchor_trade:type_name -> google.protobuf.Value
-	36,  // 87: titanium.CohortConsensusColumn.cons_abs_diff_from_anchor_evp_mid:type_name -> google.protobuf.Value
-	36,  // 88: titanium.CohortConsensusColumn.cons_abs_diff_from_anchor_evp_mid_calc:type_name -> google.protobuf.Value
-	36,  // 89: titanium.CohortConsensusColumn.cons_abs_diff_from_anchor_sub:type_name -> google.protobuf.Value
-	36,  // 90: titanium.CohortConsensusColumn.lower_boundary:type_name -> google.protobuf.Value
-	36,  // 91: titanium.CohortConsensusColumn.upper_boundary:type_name -> google.protobuf.Value
-	36,  // 92: titanium.CohortConsensusColumn.std_dev:type_name -> google.protobuf.Value
-	36,  // 93: titanium.SubmissionExplorerTableColumn.submission_price:type_name -> google.protobuf.Value
-	36,  // 94: titanium.SubmissionStatisticsExplorerTableColumn.mean:type_name -> google.protobuf.Value
-	36,  // 95: titanium.SubmissionStatisticsExplorerTableColumn.abs_diff_from_statistical_mean:type_name -> google.protobuf.Value
-	36,  // 96: titanium.SubmissionStatisticsExplorerTableColumn.sub_price_diff:type_name -> google.protobuf.Value
-	36,  // 97: titanium.SubmissionStatisticsExplorerTableColumn.stat_mean_abs_diff_from_latest_trade:type_name -> google.protobuf.Value
-	36,  // 98: titanium.SubmissionStatisticsExplorerTableColumn.lower_boundary:type_name -> google.protobuf.Value
-	36,  // 99: titanium.SubmissionStatisticsExplorerTableColumn.upper_boundary:type_name -> google.protobuf.Value
-	36,  // 100: titanium.SubmissionStatisticsExplorerTableColumn.std_dev:type_name -> google.protobuf.Value
-	36,  // 101: titanium.SubmissionStatisticsExplorerTableColumn.min:type_name -> google.protobuf.Value
-	36,  // 102: titanium.SubmissionStatisticsExplorerTableColumn.max:type_name -> google.protobuf.Value
-	36,  // 103: titanium.SubmissionEvidenceTableColumn.evidence:type_name -> google.protobuf.Value
-	36,  // 104: titanium.SubmissionEvidenceTableColumn.abs_diff_from_evidence:type_name -> google.protobuf.Value
-	36,  // 105: titanium.SubmissionEvidenceTableColumn.sub_price_diff:type_name -> google.protobuf.Value
-	36,  // 106: titanium.SubmissionEvidenceTableColumn.evi_price_abs_diff_from_latest_trade:type_name -> google.protobuf.Value
-	36,  // 107: titanium.SubmissionEvidenceTableColumn.lower_boundary:type_name -> google.protobuf.Value
-	36,  // 108: titanium.SubmissionEvidenceTableColumn.upper_boundary:type_name -> google.protobuf.Value
-	36,  // 109: titanium.SubmissionEvidenceTableColumn.std_dev:type_name -> google.protobuf.Value
-	36,  // 110: titanium.EvidentalPricing.mid:type_name -> google.protobuf.Value
-	36,  // 111: titanium.EvidentalPricing.bid:type_name -> google.protobuf.Value
-	36,  // 112: titanium.EvidentalPricing.ask:type_name -> google.protobuf.Value
-	36,  // 113: titanium.EvidentalPricing.abs_diff_from_evp_mid:type_name -> google.protobuf.Value
-	36,  // 114: titanium.EvidentalPricing.sub_price_diff:type_name -> google.protobuf.Value
-	36,  // 115: titanium.EvidentalPricing.evp_mid_abs_diff_from_latest_trade:type_name -> google.protobuf.Value
-	36,  // 116: titanium.EvidentalPricing.evp_lower_boundary:type_name -> google.protobuf.Value
-	36,  // 117: titanium.EvidentalPricing.evp_upper_boundary:type_name -> google.protobuf.Value
-	36,  // 118: titanium.EvidentalPricing.trades_or_orders_count:type_name -> google.protobuf.Value
-	36,  // 119: titanium.AvailableTrades.latest_trade_price:type_name -> google.protobuf.Value
-	36,  // 120: titanium.AvailableTrades.abs_diff_from_latest_trade:type_name -> google.protobuf.Value
-	36,  // 121: titanium.AvailableTrades.sub_price_diff:type_name -> google.protobuf.Value
-	36,  // 122: titanium.AvailableTrades.sub_price_abs_diff_from_latest_trade:type_name -> google.protobuf.Value
-	36,  // 123: titanium.AvailableTrades.min:type_name -> google.protobuf.Value
-	36,  // 124: titanium.AvailableTrades.max:type_name -> google.protobuf.Value
-	33,  // 125: titanium.ConsensusTabRequest.filter_pack:type_name -> titanium.FilterPack
-	39,  // 126: titanium.ConsensusTabRequest.orderBy:type_name -> titanium.OrderBy
-	40,  // 127: titanium.ConsensusTabRequest.page:type_name -> titanium.Page
-	41,  // 128: titanium.ConsensusService.ConsensusTimestamps:input_type -> titanium.ConsensusTimestampsRequest
-	42,  // 129: titanium.ConsensusService.Consensus:input_type -> titanium.ConsensusRequest
-	43,  // 130: titanium.ConsensusService.EvaluatedPrice:input_type -> titanium.EVPRequest
-	44,  // 131: titanium.ConsensusService.ConsensusOutliers:input_type -> titanium.OutliersListRequest
-	45,  // 132: titanium.ConsensusService.GetConsensusRuns:input_type -> titanium.GetConsensusRunsRequest
-	0,   // 133: titanium.ConsensusService.ConsensusExplorerInstrumentDetails:input_type -> titanium.ConsensusExplorerRequest
-	0,   // 134: titanium.ConsensusService.ConsensusExplorerTable:input_type -> titanium.ConsensusExplorerRequest
-	0,   // 135: titanium.ConsensusService.ConsensusExplorerRanges:input_type -> titanium.ConsensusExplorerRequest
-	32,  // 136: titanium.ConsensusService.CohortConsensusTab:input_type -> titanium.ConsensusTabRequest
-	32,  // 137: titanium.ConsensusService.SubmissionEvidenceTab:input_type -> titanium.ConsensusTabRequest
-	46,  // 138: titanium.ConsensusService.ConsensusActive:input_type -> titanium.ConsensusActiveRequest
-	47,  // 139: titanium.ConsensusService.ConsensusToPublish:input_type -> titanium.ConsensusToPublishRequest
-	48,  // 140: titanium.ConsensusService.ConsensusPublish:input_type -> titanium.ConsensusPublishRequest
-	49,  // 141: titanium.ConsensusService.ConsensusHistory:input_type -> titanium.ConsensusHistoryRequest
-	50,  // 142: titanium.ConsensusService.ConsensusDecision:input_type -> titanium.ConsensusDecisionRequest
-	51,  // 143: titanium.ConsensusService.ConsensusTimestamps:output_type -> titanium.ConsensusTimestampsResponse
-	52,  // 144: titanium.ConsensusService.Consensus:output_type -> titanium.ConsensusResponse
-	53,  // 145: titanium.ConsensusService.EvaluatedPrice:output_type -> titanium.EVPResponse
-	54,  // 146: titanium.ConsensusService.ConsensusOutliers:output_type -> titanium.ConsensusActiveResponse
-	55,  // 147: titanium.ConsensusService.GetConsensusRuns:output_type -> titanium.GetConsensusRunsResponse
-	1,   // 148: titanium.ConsensusService.ConsensusExplorerInstrumentDetails:output_type -> titanium.ConsensusExplorerInstrumentDetailsResponse
-	23,  // 149: titanium.ConsensusService.ConsensusExplorerTable:output_type -> titanium.ConsensusExplorerTableResponse
-	14,  // 150: titanium.ConsensusService.ConsensusExplorerRanges:output_type -> titanium.ConsensusExplorerRangeResponse
-	56,  // 151: titanium.ConsensusService.CohortConsensusTab:output_type -> titanium.ConsensusResultSetValuesResponse
-	56,  // 152: titanium.ConsensusService.SubmissionEvidenceTab:output_type -> titanium.ConsensusResultSetValuesResponse
-	54,  // 153: titanium.ConsensusService.ConsensusActive:output_type -> titanium.ConsensusActiveResponse
-	57,  // 154: titanium.ConsensusService.ConsensusToPublish:output_type -> titanium.ConsensusToPublishResponse
-	58,  // 155: titanium.ConsensusService.ConsensusPublish:output_type -> titanium.MessageResponse
-	59,  // 156: titanium.ConsensusService.ConsensusHistory:output_type -> titanium.ConsensusHistoryResponse
-	58,  // 157: titanium.ConsensusService.ConsensusDecision:output_type -> titanium.MessageResponse
-	143, // [143:158] is the sub-list for method output_type
-	128, // [128:143] is the sub-list for method input_type
-	128, // [128:128] is the sub-list for extension type_name
-	128, // [128:128] is the sub-list for extension extendee
-	0,   // [0:128] is the sub-list for field type_name
+	36,  // 19: titanium.ExpertiseRank.experts_count:type_name -> google.protobuf.Value
+	36,  // 20: titanium.ExpertiseRank.submission_price:type_name -> google.protobuf.Value
+	36,  // 21: titanium.ExpertiseRank.anchor_price:type_name -> google.protobuf.Value
+	36,  // 22: titanium.ExpertiseRank.abs_distance_to_anchor:type_name -> google.protobuf.Value
+	36,  // 23: titanium.ExpertiseRank.expertise_score:type_name -> google.protobuf.Value
+	7,   // 24: titanium.ExpertiseRank.history:type_name -> titanium.ExpertiseRankHistoryElement
+	36,  // 25: titanium.ExpertiseRankHistoryElement.rank:type_name -> google.protobuf.Value
+	36,  // 26: titanium.ExpertiseRankHistoryElement.experts_count:type_name -> google.protobuf.Value
+	36,  // 27: titanium.ConsensusDensityScore.score:type_name -> google.protobuf.Value
+	36,  // 28: titanium.ConsensusDensityScore.bimodality_score:type_name -> google.protobuf.Value
+	36,  // 29: titanium.ConsensusDensityScore.trade_alignment_score:type_name -> google.protobuf.Value
+	36,  // 30: titanium.ConsensusDensityScore.dispersion:type_name -> google.protobuf.Value
+	36,  // 31: titanium.ConsensusDensityScore.evp_alignment_score:type_name -> google.protobuf.Value
+	4,   // 32: titanium.ConsensusDensityScore.history:type_name -> titanium.DateAndValue
+	36,  // 33: titanium.TradeAlignmentScore.score:type_name -> google.protobuf.Value
+	36,  // 34: titanium.TradeAlignmentScore.latest_trade_price:type_name -> google.protobuf.Value
+	36,  // 35: titanium.TradeAlignmentScore.submission_mean:type_name -> google.protobuf.Value
+	36,  // 36: titanium.TradeAlignmentScore.std_dev:type_name -> google.protobuf.Value
+	10,  // 37: titanium.TradeAlignmentScore.history:type_name -> titanium.TradeAligmentDateAndValue
+	36,  // 38: titanium.TradeAligmentDateAndValue.score:type_name -> google.protobuf.Value
+	36,  // 39: titanium.EvpAlignmentScore.score:type_name -> google.protobuf.Value
+	36,  // 40: titanium.EvpAlignmentScore.evp_mid:type_name -> google.protobuf.Value
+	36,  // 41: titanium.EvpAlignmentScore.submission_mean:type_name -> google.protobuf.Value
+	36,  // 42: titanium.EvpAlignmentScore.std_dev:type_name -> google.protobuf.Value
+	10,  // 43: titanium.EvpAlignmentScore.history:type_name -> titanium.TradeAligmentDateAndValue
+	36,  // 44: titanium.Bimodality.bimodality_index:type_name -> google.protobuf.Value
+	4,   // 45: titanium.Bimodality.history:type_name -> titanium.DateAndValue
+	36,  // 46: titanium.EvpQualityScore.score:type_name -> google.protobuf.Value
+	4,   // 47: titanium.EvpQualityScore.history:type_name -> titanium.DateAndValue
+	15,  // 48: titanium.ConsensusExplorerRangeResponse.data:type_name -> titanium.ConsensusExplorerRangeData
+	34,  // 49: titanium.ConsensusExplorerRangeResponse.error:type_name -> titanium.Error
+	16,  // 50: titanium.ConsensusExplorerRangeData.chart_ranges:type_name -> titanium.ChartRanges
+	37,  // 51: titanium.ConsensusExplorerRangeData.submission_point:type_name -> titanium.RangePoint
+	37,  // 52: titanium.ConsensusExplorerRangeData.anchor_point:type_name -> titanium.RangePoint
+	37,  // 53: titanium.ConsensusExplorerRangeData.evp_mid:type_name -> titanium.RangePoint
+	37,  // 54: titanium.ConsensusExplorerRangeData.submission_evidence_price:type_name -> titanium.RangePoint
+	37,  // 55: titanium.ConsensusExplorerRangeData.cohort_consensus_price:type_name -> titanium.RangePoint
+	37,  // 56: titanium.ConsensusExplorerRangeData.bimodal_left_mean:type_name -> titanium.RangePoint
+	37,  // 57: titanium.ConsensusExplorerRangeData.bimodal_right_mean:type_name -> titanium.RangePoint
+	17,  // 58: titanium.ConsensusExplorerRangeData.cohort_consensus_range_tab_data:type_name -> titanium.CohortConsensusRangeTabData
+	38,  // 59: titanium.ChartRanges.submission_min_max:type_name -> titanium.Range
+	38,  // 60: titanium.ChartRanges.evp:type_name -> titanium.Range
+	38,  // 61: titanium.ChartRanges.submission_evidence:type_name -> titanium.Range
+	38,  // 62: titanium.ChartRanges.cohort_consensus:type_name -> titanium.Range
+	38,  // 63: titanium.ChartRanges.bimodal_left_population:type_name -> titanium.Range
+	38,  // 64: titanium.ChartRanges.bimodal_right_population:type_name -> titanium.Range
+	36,  // 65: titanium.CohortConsensusRangeTabData.expertise_rank:type_name -> google.protobuf.Value
+	36,  // 66: titanium.CohortConsensusRangeTabData.expertise_score:type_name -> google.protobuf.Value
+	36,  // 67: titanium.CohortConsensusRangeTabData.distance_to_anchor:type_name -> google.protobuf.Value
+	36,  // 68: titanium.CohortConsensusRangeTabData.distance_to_consensus:type_name -> google.protobuf.Value
+	21,  // 69: titanium.CohortConsensusRangeTabData.trade_periods_with_metrics:type_name -> titanium.TradePeriodsWithMetrics
+	18,  // 70: titanium.CohortConsensusRangeTabData.trade_anchor_details:type_name -> titanium.TradeAnchorDetails
+	19,  // 71: titanium.CohortConsensusRangeTabData.evp_anchor_details:type_name -> titanium.EvpAnchorDetails
+	20,  // 72: titanium.CohortConsensusRangeTabData.submission_evidence_anchor_details:type_name -> titanium.SubmissionEvidenceAnchorDetails
+	22,  // 73: titanium.TradePeriodsWithMetrics.less_day:type_name -> titanium.TradePeriodMetrics
+	22,  // 74: titanium.TradePeriodsWithMetrics.less_week:type_name -> titanium.TradePeriodMetrics
+	22,  // 75: titanium.TradePeriodsWithMetrics.less_month:type_name -> titanium.TradePeriodMetrics
+	24,  // 76: titanium.ConsensusExplorerTableResponse.data:type_name -> titanium.ConsensusExplorerTableData
+	34,  // 77: titanium.ConsensusExplorerTableResponse.error:type_name -> titanium.Error
+	25,  // 78: titanium.ConsensusExplorerTableData.comparison_table:type_name -> titanium.ComparisonTable
+	26,  // 79: titanium.ComparisonTable.cohort_consensus_column:type_name -> titanium.CohortConsensusColumn
+	27,  // 80: titanium.ComparisonTable.submission:type_name -> titanium.SubmissionExplorerTableColumn
+	28,  // 81: titanium.ComparisonTable.submission_statistics:type_name -> titanium.SubmissionStatisticsExplorerTableColumn
+	29,  // 82: titanium.ComparisonTable.submission_evidence:type_name -> titanium.SubmissionEvidenceTableColumn
+	30,  // 83: titanium.ComparisonTable.evidentialPricing:type_name -> titanium.EvidentalPricing
+	31,  // 84: titanium.ComparisonTable.available_trades:type_name -> titanium.AvailableTrades
+	36,  // 85: titanium.CohortConsensusColumn.cohort_consensus_price:type_name -> google.protobuf.Value
+	36,  // 86: titanium.CohortConsensusColumn.abs_diff_from_consensus:type_name -> google.protobuf.Value
+	36,  // 87: titanium.CohortConsensusColumn.sub_price_diff:type_name -> google.protobuf.Value
+	36,  // 88: titanium.CohortConsensusColumn.cons_abs_diff_from_anchor_trade:type_name -> google.protobuf.Value
+	36,  // 89: titanium.CohortConsensusColumn.cons_abs_diff_from_anchor_evp_mid:type_name -> google.protobuf.Value
+	36,  // 90: titanium.CohortConsensusColumn.cons_abs_diff_from_anchor_evp_mid_calc:type_name -> google.protobuf.Value
+	36,  // 91: titanium.CohortConsensusColumn.cons_abs_diff_from_anchor_sub:type_name -> google.protobuf.Value
+	36,  // 92: titanium.CohortConsensusColumn.lower_boundary:type_name -> google.protobuf.Value
+	36,  // 93: titanium.CohortConsensusColumn.upper_boundary:type_name -> google.protobuf.Value
+	36,  // 94: titanium.CohortConsensusColumn.std_dev:type_name -> google.protobuf.Value
+	36,  // 95: titanium.SubmissionExplorerTableColumn.submission_price:type_name -> google.protobuf.Value
+	36,  // 96: titanium.SubmissionStatisticsExplorerTableColumn.mean:type_name -> google.protobuf.Value
+	36,  // 97: titanium.SubmissionStatisticsExplorerTableColumn.abs_diff_from_statistical_mean:type_name -> google.protobuf.Value
+	36,  // 98: titanium.SubmissionStatisticsExplorerTableColumn.sub_price_diff:type_name -> google.protobuf.Value
+	36,  // 99: titanium.SubmissionStatisticsExplorerTableColumn.stat_mean_abs_diff_from_latest_trade:type_name -> google.protobuf.Value
+	36,  // 100: titanium.SubmissionStatisticsExplorerTableColumn.lower_boundary:type_name -> google.protobuf.Value
+	36,  // 101: titanium.SubmissionStatisticsExplorerTableColumn.upper_boundary:type_name -> google.protobuf.Value
+	36,  // 102: titanium.SubmissionStatisticsExplorerTableColumn.std_dev:type_name -> google.protobuf.Value
+	36,  // 103: titanium.SubmissionStatisticsExplorerTableColumn.min:type_name -> google.protobuf.Value
+	36,  // 104: titanium.SubmissionStatisticsExplorerTableColumn.max:type_name -> google.protobuf.Value
+	36,  // 105: titanium.SubmissionEvidenceTableColumn.evidence:type_name -> google.protobuf.Value
+	36,  // 106: titanium.SubmissionEvidenceTableColumn.abs_diff_from_evidence:type_name -> google.protobuf.Value
+	36,  // 107: titanium.SubmissionEvidenceTableColumn.sub_price_diff:type_name -> google.protobuf.Value
+	36,  // 108: titanium.SubmissionEvidenceTableColumn.evi_price_abs_diff_from_latest_trade:type_name -> google.protobuf.Value
+	36,  // 109: titanium.SubmissionEvidenceTableColumn.lower_boundary:type_name -> google.protobuf.Value
+	36,  // 110: titanium.SubmissionEvidenceTableColumn.upper_boundary:type_name -> google.protobuf.Value
+	36,  // 111: titanium.SubmissionEvidenceTableColumn.std_dev:type_name -> google.protobuf.Value
+	36,  // 112: titanium.EvidentalPricing.mid:type_name -> google.protobuf.Value
+	36,  // 113: titanium.EvidentalPricing.bid:type_name -> google.protobuf.Value
+	36,  // 114: titanium.EvidentalPricing.ask:type_name -> google.protobuf.Value
+	36,  // 115: titanium.EvidentalPricing.abs_diff_from_evp_mid:type_name -> google.protobuf.Value
+	36,  // 116: titanium.EvidentalPricing.sub_price_diff:type_name -> google.protobuf.Value
+	36,  // 117: titanium.EvidentalPricing.evp_mid_abs_diff_from_latest_trade:type_name -> google.protobuf.Value
+	36,  // 118: titanium.EvidentalPricing.evp_lower_boundary:type_name -> google.protobuf.Value
+	36,  // 119: titanium.EvidentalPricing.evp_upper_boundary:type_name -> google.protobuf.Value
+	36,  // 120: titanium.EvidentalPricing.trades_or_orders_count:type_name -> google.protobuf.Value
+	36,  // 121: titanium.AvailableTrades.latest_trade_price:type_name -> google.protobuf.Value
+	36,  // 122: titanium.AvailableTrades.abs_diff_from_latest_trade:type_name -> google.protobuf.Value
+	36,  // 123: titanium.AvailableTrades.sub_price_diff:type_name -> google.protobuf.Value
+	36,  // 124: titanium.AvailableTrades.sub_price_abs_diff_from_latest_trade:type_name -> google.protobuf.Value
+	36,  // 125: titanium.AvailableTrades.min:type_name -> google.protobuf.Value
+	36,  // 126: titanium.AvailableTrades.max:type_name -> google.protobuf.Value
+	33,  // 127: titanium.ConsensusTabRequest.filter_pack:type_name -> titanium.FilterPack
+	39,  // 128: titanium.ConsensusTabRequest.orderBy:type_name -> titanium.OrderBy
+	40,  // 129: titanium.ConsensusTabRequest.page:type_name -> titanium.Page
+	41,  // 130: titanium.ConsensusService.ConsensusTimestamps:input_type -> titanium.ConsensusTimestampsRequest
+	42,  // 131: titanium.ConsensusService.Consensus:input_type -> titanium.ConsensusRequest
+	43,  // 132: titanium.ConsensusService.EvaluatedPrice:input_type -> titanium.EVPRequest
+	44,  // 133: titanium.ConsensusService.ConsensusOutliers:input_type -> titanium.OutliersListRequest
+	45,  // 134: titanium.ConsensusService.GetConsensusRuns:input_type -> titanium.GetConsensusRunsRequest
+	0,   // 135: titanium.ConsensusService.ConsensusExplorerInstrumentDetails:input_type -> titanium.ConsensusExplorerRequest
+	0,   // 136: titanium.ConsensusService.ConsensusExplorerTable:input_type -> titanium.ConsensusExplorerRequest
+	0,   // 137: titanium.ConsensusService.ConsensusExplorerRanges:input_type -> titanium.ConsensusExplorerRequest
+	32,  // 138: titanium.ConsensusService.CohortConsensusTab:input_type -> titanium.ConsensusTabRequest
+	32,  // 139: titanium.ConsensusService.SubmissionEvidenceTab:input_type -> titanium.ConsensusTabRequest
+	46,  // 140: titanium.ConsensusService.ConsensusActive:input_type -> titanium.ConsensusActiveRequest
+	47,  // 141: titanium.ConsensusService.ConsensusToPublish:input_type -> titanium.ConsensusToPublishRequest
+	48,  // 142: titanium.ConsensusService.ConsensusPublish:input_type -> titanium.ConsensusPublishRequest
+	49,  // 143: titanium.ConsensusService.ConsensusHistory:input_type -> titanium.ConsensusHistoryRequest
+	50,  // 144: titanium.ConsensusService.ConsensusDecision:input_type -> titanium.ConsensusDecisionRequest
+	51,  // 145: titanium.ConsensusService.ConsensusTimestamps:output_type -> titanium.ConsensusTimestampsResponse
+	52,  // 146: titanium.ConsensusService.Consensus:output_type -> titanium.ConsensusResponse
+	53,  // 147: titanium.ConsensusService.EvaluatedPrice:output_type -> titanium.EVPResponse
+	54,  // 148: titanium.ConsensusService.ConsensusOutliers:output_type -> titanium.ConsensusActiveResponse
+	55,  // 149: titanium.ConsensusService.GetConsensusRuns:output_type -> titanium.GetConsensusRunsResponse
+	1,   // 150: titanium.ConsensusService.ConsensusExplorerInstrumentDetails:output_type -> titanium.ConsensusExplorerInstrumentDetailsResponse
+	23,  // 151: titanium.ConsensusService.ConsensusExplorerTable:output_type -> titanium.ConsensusExplorerTableResponse
+	14,  // 152: titanium.ConsensusService.ConsensusExplorerRanges:output_type -> titanium.ConsensusExplorerRangeResponse
+	56,  // 153: titanium.ConsensusService.CohortConsensusTab:output_type -> titanium.ConsensusResultSetValuesResponse
+	56,  // 154: titanium.ConsensusService.SubmissionEvidenceTab:output_type -> titanium.ConsensusResultSetValuesResponse
+	54,  // 155: titanium.ConsensusService.ConsensusActive:output_type -> titanium.ConsensusActiveResponse
+	57,  // 156: titanium.ConsensusService.ConsensusToPublish:output_type -> titanium.ConsensusToPublishResponse
+	58,  // 157: titanium.ConsensusService.ConsensusPublish:output_type -> titanium.MessageResponse
+	59,  // 158: titanium.ConsensusService.ConsensusHistory:output_type -> titanium.ConsensusHistoryResponse
+	58,  // 159: titanium.ConsensusService.ConsensusDecision:output_type -> titanium.MessageResponse
+	145, // [145:160] is the sub-list for method output_type
+	130, // [130:145] is the sub-list for method input_type
+	130, // [130:130] is the sub-list for extension type_name
+	130, // [130:130] is the sub-list for extension extendee
+	0,   // [0:130] is the sub-list for field type_name
 }
 
 func init() { file_public_consensus_service_proto_init() }

@@ -279,8 +279,10 @@ export class ExpertiseRank extends jspb.Message {
   getRank(): google_protobuf_struct_pb.Value | undefined;
   setRank(value?: google_protobuf_struct_pb.Value): void;
 
-  getExpertsCount(): number;
-  setExpertsCount(value: number): void;
+  hasExpertsCount(): boolean;
+  clearExpertsCount(): void;
+  getExpertsCount(): google_protobuf_struct_pb.Value | undefined;
+  setExpertsCount(value?: google_protobuf_struct_pb.Value): void;
 
   hasSubmissionPrice(): boolean;
   clearSubmissionPrice(): void;
@@ -320,7 +322,7 @@ export class ExpertiseRank extends jspb.Message {
 export namespace ExpertiseRank {
   export type AsObject = {
     rank?: google_protobuf_struct_pb.Value.AsObject,
-    expertsCount: number,
+    expertsCount?: google_protobuf_struct_pb.Value.AsObject,
     submissionPrice?: google_protobuf_struct_pb.Value.AsObject,
     anchorPrice?: google_protobuf_struct_pb.Value.AsObject,
     absDistanceToAnchor?: google_protobuf_struct_pb.Value.AsObject,
@@ -338,8 +340,10 @@ export class ExpertiseRankHistoryElement extends jspb.Message {
   getRank(): google_protobuf_struct_pb.Value | undefined;
   setRank(value?: google_protobuf_struct_pb.Value): void;
 
-  getExpertsCount(): number;
-  setExpertsCount(value: number): void;
+  hasExpertsCount(): boolean;
+  clearExpertsCount(): void;
+  getExpertsCount(): google_protobuf_struct_pb.Value | undefined;
+  setExpertsCount(value?: google_protobuf_struct_pb.Value): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ExpertiseRankHistoryElement.AsObject;
@@ -355,7 +359,7 @@ export namespace ExpertiseRankHistoryElement {
   export type AsObject = {
     date: string,
     rank?: google_protobuf_struct_pb.Value.AsObject,
-    expertsCount: number,
+    expertsCount?: google_protobuf_struct_pb.Value.AsObject,
   }
 }
 
