@@ -7425,8 +7425,9 @@ proto.titanium.EvpAnchorDetails.prototype.toObject = function(opt_includeInstanc
  */
 proto.titanium.EvpAnchorDetails.toObject = function(includeInstance, msg) {
   var f, obj = {
-    mid: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
-    distanceToConsensus: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0)
+    mid: (f = msg.getMid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    midCalculated: (f = msg.getMidCalculated()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    distanceToConsensus: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0)
   };
 
   if (includeInstance) {
@@ -7464,10 +7465,16 @@ proto.titanium.EvpAnchorDetails.deserializeBinaryFromReader = function(msg, read
     var field = reader.getFieldNumber();
     switch (field) {
     case 1:
-      var value = /** @type {number} */ (reader.readDouble());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setMid(value);
       break;
     case 2:
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
+      msg.setMidCalculated(value);
+      break;
+    case 3:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setDistanceToConsensus(value);
       break;
@@ -7501,16 +7508,25 @@ proto.titanium.EvpAnchorDetails.prototype.serializeBinary = function() {
 proto.titanium.EvpAnchorDetails.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
   f = message.getMid();
-  if (f !== 0.0) {
-    writer.writeDouble(
+  if (f != null) {
+    writer.writeMessage(
       1,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
+    );
+  }
+  f = message.getMidCalculated();
+  if (f != null) {
+    writer.writeMessage(
+      2,
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getDistanceToConsensus();
   if (f !== 0.0) {
     writer.writeDouble(
-      2,
+      3,
       f
     );
   }
@@ -7518,29 +7534,85 @@ proto.titanium.EvpAnchorDetails.serializeBinaryToWriter = function(message, writ
 
 
 /**
- * optional double mid = 1;
- * @return {number}
+ * optional google.protobuf.Value mid = 1;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.titanium.EvpAnchorDetails.prototype.getMid = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 1, 0.0));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpAnchorDetails} returns this
+*/
+proto.titanium.EvpAnchorDetails.prototype.setMid = function(value) {
+  return jspb.Message.setWrapperField(this, 1, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.titanium.EvpAnchorDetails} returns this
  */
-proto.titanium.EvpAnchorDetails.prototype.setMid = function(value) {
-  return jspb.Message.setProto3FloatField(this, 1, value);
+proto.titanium.EvpAnchorDetails.prototype.clearMid = function() {
+  return this.setMid(undefined);
 };
 
 
 /**
- * optional double distance_to_consensus = 2;
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpAnchorDetails.prototype.hasMid = function() {
+  return jspb.Message.getField(this, 1) != null;
+};
+
+
+/**
+ * optional google.protobuf.Value mid_calculated = 2;
+ * @return {?proto.google.protobuf.Value}
+ */
+proto.titanium.EvpAnchorDetails.prototype.getMidCalculated = function() {
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
+};
+
+
+/**
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.EvpAnchorDetails} returns this
+*/
+proto.titanium.EvpAnchorDetails.prototype.setMidCalculated = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.EvpAnchorDetails} returns this
+ */
+proto.titanium.EvpAnchorDetails.prototype.clearMidCalculated = function() {
+  return this.setMidCalculated(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.EvpAnchorDetails.prototype.hasMidCalculated = function() {
+  return jspb.Message.getField(this, 2) != null;
+};
+
+
+/**
+ * optional double distance_to_consensus = 3;
  * @return {number}
  */
 proto.titanium.EvpAnchorDetails.prototype.getDistanceToConsensus = function() {
-  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 2, 0.0));
+  return /** @type {number} */ (jspb.Message.getFloatingPointFieldWithDefault(this, 3, 0.0));
 };
 
 
@@ -7549,7 +7621,7 @@ proto.titanium.EvpAnchorDetails.prototype.getDistanceToConsensus = function() {
  * @return {!proto.titanium.EvpAnchorDetails} returns this
  */
 proto.titanium.EvpAnchorDetails.prototype.setDistanceToConsensus = function(value) {
-  return jspb.Message.setProto3FloatField(this, 2, value);
+  return jspb.Message.setProto3FloatField(this, 3, value);
 };
 
 

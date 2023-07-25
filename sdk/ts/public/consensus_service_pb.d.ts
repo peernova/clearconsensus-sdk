@@ -891,8 +891,15 @@ export namespace TradeAnchorDetails {
 }
 
 export class EvpAnchorDetails extends jspb.Message {
-  getMid(): number;
-  setMid(value: number): void;
+  hasMid(): boolean;
+  clearMid(): void;
+  getMid(): google_protobuf_struct_pb.Value | undefined;
+  setMid(value?: google_protobuf_struct_pb.Value): void;
+
+  hasMidCalculated(): boolean;
+  clearMidCalculated(): void;
+  getMidCalculated(): google_protobuf_struct_pb.Value | undefined;
+  setMidCalculated(value?: google_protobuf_struct_pb.Value): void;
 
   getDistanceToConsensus(): number;
   setDistanceToConsensus(value: number): void;
@@ -909,7 +916,8 @@ export class EvpAnchorDetails extends jspb.Message {
 
 export namespace EvpAnchorDetails {
   export type AsObject = {
-    mid: number,
+    mid?: google_protobuf_struct_pb.Value.AsObject,
+    midCalculated?: google_protobuf_struct_pb.Value.AsObject,
     distanceToConsensus: number,
   }
 }
