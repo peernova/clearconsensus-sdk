@@ -37,15 +37,17 @@ class TitaniumEvpAnchorDetails(object):
     """
     openapi_types = {
         'distance_to_consensus': 'float',
-        'mid': 'float'
+        'mid': 'object',
+        'mid_calculated': 'object'
     }
 
     attribute_map = {
         'distance_to_consensus': 'distanceToConsensus',
-        'mid': 'mid'
+        'mid': 'mid',
+        'mid_calculated': 'midCalculated'
     }
 
-    def __init__(self, distance_to_consensus=None, mid=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, distance_to_consensus=None, mid=None, mid_calculated=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumEvpAnchorDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -53,12 +55,15 @@ class TitaniumEvpAnchorDetails(object):
 
         self._distance_to_consensus = None
         self._mid = None
+        self._mid_calculated = None
         self.discriminator = None
 
         if distance_to_consensus is not None:
             self.distance_to_consensus = distance_to_consensus
         if mid is not None:
             self.mid = mid
+        if mid_calculated is not None:
+            self.mid_calculated = mid_calculated
 
     @property
     def distance_to_consensus(self):
@@ -87,7 +92,7 @@ class TitaniumEvpAnchorDetails(object):
 
 
         :return: The mid of this TitaniumEvpAnchorDetails.  # noqa: E501
-        :rtype: float
+        :rtype: object
         """
         return self._mid
 
@@ -97,10 +102,31 @@ class TitaniumEvpAnchorDetails(object):
 
 
         :param mid: The mid of this TitaniumEvpAnchorDetails.  # noqa: E501
-        :type mid: float
+        :type mid: object
         """
 
         self._mid = mid
+
+    @property
+    def mid_calculated(self):
+        """Gets the mid_calculated of this TitaniumEvpAnchorDetails.  # noqa: E501
+
+
+        :return: The mid_calculated of this TitaniumEvpAnchorDetails.  # noqa: E501
+        :rtype: object
+        """
+        return self._mid_calculated
+
+    @mid_calculated.setter
+    def mid_calculated(self, mid_calculated):
+        """Sets the mid_calculated of this TitaniumEvpAnchorDetails.
+
+
+        :param mid_calculated: The mid_calculated of this TitaniumEvpAnchorDetails.  # noqa: E501
+        :type mid_calculated: object
+        """
+
+        self._mid_calculated = mid_calculated
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

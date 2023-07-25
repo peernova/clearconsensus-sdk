@@ -9625,7 +9625,12 @@
             "type" : "number"
           },
           "mid" : {
-            "type" : "number"
+            "properties" : { },
+            "type" : "object"
+          },
+          "midCalculated" : {
+            "properties" : { },
+            "type" : "object"
           }
         },
         "type" : "object"

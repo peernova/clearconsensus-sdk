@@ -82,7 +82,8 @@ class TitaniumEvpAnchorDetails(ModelNormal):
         """
         return {
             'distance_to_consensus': (float,),  # noqa: E501
-            'mid': (float,),  # noqa: E501
+            'mid': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'mid_calculated': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -93,6 +94,7 @@ class TitaniumEvpAnchorDetails(ModelNormal):
     attribute_map = {
         'distance_to_consensus': 'distanceToConsensus',  # noqa: E501
         'mid': 'mid',  # noqa: E501
+        'mid_calculated': 'midCalculated',  # noqa: E501
     }
 
     read_only_vars = {
@@ -137,7 +139,8 @@ class TitaniumEvpAnchorDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             distance_to_consensus (float): [optional]  # noqa: E501
-            mid (float): [optional]  # noqa: E501
+            mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            mid_calculated (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -224,7 +227,8 @@ class TitaniumEvpAnchorDetails(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             distance_to_consensus (float): [optional]  # noqa: E501
-            mid (float): [optional]  # noqa: E501
+            mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            mid_calculated (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

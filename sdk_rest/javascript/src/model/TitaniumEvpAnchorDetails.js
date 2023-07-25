@@ -51,7 +51,10 @@ class TitaniumEvpAnchorDetails {
                 obj['distanceToConsensus'] = ApiClient.convertToType(data['distanceToConsensus'], 'Number');
             }
             if (data.hasOwnProperty('mid')) {
-                obj['mid'] = ApiClient.convertToType(data['mid'], 'Number');
+                obj['mid'] = ApiClient.convertToType(data['mid'], Object);
+            }
+            if (data.hasOwnProperty('midCalculated')) {
+                obj['midCalculated'] = ApiClient.convertToType(data['midCalculated'], Object);
             }
         }
         return obj;
@@ -66,9 +69,14 @@ class TitaniumEvpAnchorDetails {
 TitaniumEvpAnchorDetails.prototype['distanceToConsensus'] = undefined;
 
 /**
- * @member {Number} mid
+ * @member {Object} mid
  */
 TitaniumEvpAnchorDetails.prototype['mid'] = undefined;
+
+/**
+ * @member {Object} midCalculated
+ */
+TitaniumEvpAnchorDetails.prototype['midCalculated'] = undefined;
 
 
 

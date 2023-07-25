@@ -6999,37 +6999,38 @@ components:
     titaniumCohortConsensusRangeTabData:
       example:
         evpAnchorDetails:
-          mid: 6.027456183070403
+          midCalculated: "{}"
+          mid: "{}"
           distanceToConsensus: 0.8008281904610115
-        expertsCount: 1
+        expertsCount: 6
         distanceToAnchor: "{}"
         expertiseScore: "{}"
         tradeAnchorDetails:
-          notional: 9.301444243932576
+          notional: 7.061401241503109
           pricingAge: pricingAge
-          latestTradePrice: 7.061401241503109
+          latestTradePrice: 2.3021358869347655
           source: source
           tradeExecutionTime: tradeExecutionTime
-          distanceToConsensus: 2.3021358869347655
+          distanceToConsensus: 5.637376656633329
         submissionEvidenceAnchorDetails:
-          submissionEvidence: 5.637376656633329
-          distanceToConsensus: 5.962133916683182
+          submissionEvidence: 5.962133916683182
+          distanceToConsensus: 1.4658129805029452
         tradePeriodsWithMetrics:
           lessWeek:
             tradeCount: tradeCount
-            totalLiquidity: 4.145608029883936
-            minNotionalAmount: 2.027123023002322
-            maxNotionalAmount: 3.616076749251911
+            totalLiquidity: 2.027123023002322
+            minNotionalAmount: 3.616076749251911
+            maxNotionalAmount: 9.301444243932576
           lessDay:
             tradeCount: tradeCount
-            totalLiquidity: 4.145608029883936
-            minNotionalAmount: 2.027123023002322
-            maxNotionalAmount: 3.616076749251911
+            totalLiquidity: 2.027123023002322
+            minNotionalAmount: 3.616076749251911
+            maxNotionalAmount: 9.301444243932576
           lessMonth:
             tradeCount: tradeCount
-            totalLiquidity: 4.145608029883936
-            minNotionalAmount: 2.027123023002322
-            maxNotionalAmount: 3.616076749251911
+            totalLiquidity: 2.027123023002322
+            minNotionalAmount: 3.616076749251911
+            maxNotionalAmount: 9.301444243932576
         distanceToConsensus: "{}"
         expertiseRank: "{}"
       properties:
@@ -7558,37 +7559,38 @@ components:
           value: "{}"
         cohortConsensusRangeTabData:
           evpAnchorDetails:
-            mid: 6.027456183070403
+            midCalculated: "{}"
+            mid: "{}"
             distanceToConsensus: 0.8008281904610115
-          expertsCount: 1
+          expertsCount: 6
           distanceToAnchor: "{}"
           expertiseScore: "{}"
           tradeAnchorDetails:
-            notional: 9.301444243932576
+            notional: 7.061401241503109
             pricingAge: pricingAge
-            latestTradePrice: 7.061401241503109
+            latestTradePrice: 2.3021358869347655
             source: source
             tradeExecutionTime: tradeExecutionTime
-            distanceToConsensus: 2.3021358869347655
+            distanceToConsensus: 5.637376656633329
           submissionEvidenceAnchorDetails:
-            submissionEvidence: 5.637376656633329
-            distanceToConsensus: 5.962133916683182
+            submissionEvidence: 5.962133916683182
+            distanceToConsensus: 1.4658129805029452
           tradePeriodsWithMetrics:
             lessWeek:
               tradeCount: tradeCount
-              totalLiquidity: 4.145608029883936
-              minNotionalAmount: 2.027123023002322
-              maxNotionalAmount: 3.616076749251911
+              totalLiquidity: 2.027123023002322
+              minNotionalAmount: 3.616076749251911
+              maxNotionalAmount: 9.301444243932576
             lessDay:
               tradeCount: tradeCount
-              totalLiquidity: 4.145608029883936
-              minNotionalAmount: 2.027123023002322
-              maxNotionalAmount: 3.616076749251911
+              totalLiquidity: 2.027123023002322
+              minNotionalAmount: 3.616076749251911
+              maxNotionalAmount: 9.301444243932576
             lessMonth:
               tradeCount: tradeCount
-              totalLiquidity: 4.145608029883936
-              minNotionalAmount: 2.027123023002322
-              maxNotionalAmount: 3.616076749251911
+              totalLiquidity: 2.027123023002322
+              minNotionalAmount: 3.616076749251911
+              maxNotionalAmount: 9.301444243932576
           distanceToConsensus: "{}"
           expertiseRank: "{}"
         evpMid:
@@ -7680,37 +7682,38 @@ components:
             value: "{}"
           cohortConsensusRangeTabData:
             evpAnchorDetails:
-              mid: 6.027456183070403
+              midCalculated: "{}"
+              mid: "{}"
               distanceToConsensus: 0.8008281904610115
-            expertsCount: 1
+            expertsCount: 6
             distanceToAnchor: "{}"
             expertiseScore: "{}"
             tradeAnchorDetails:
-              notional: 9.301444243932576
+              notional: 7.061401241503109
               pricingAge: pricingAge
-              latestTradePrice: 7.061401241503109
+              latestTradePrice: 2.3021358869347655
               source: source
               tradeExecutionTime: tradeExecutionTime
-              distanceToConsensus: 2.3021358869347655
+              distanceToConsensus: 5.637376656633329
             submissionEvidenceAnchorDetails:
-              submissionEvidence: 5.637376656633329
-              distanceToConsensus: 5.962133916683182
+              submissionEvidence: 5.962133916683182
+              distanceToConsensus: 1.4658129805029452
             tradePeriodsWithMetrics:
               lessWeek:
                 tradeCount: tradeCount
-                totalLiquidity: 4.145608029883936
-                minNotionalAmount: 2.027123023002322
-                maxNotionalAmount: 3.616076749251911
+                totalLiquidity: 2.027123023002322
+                minNotionalAmount: 3.616076749251911
+                maxNotionalAmount: 9.301444243932576
               lessDay:
                 tradeCount: tradeCount
-                totalLiquidity: 4.145608029883936
-                minNotionalAmount: 2.027123023002322
-                maxNotionalAmount: 3.616076749251911
+                totalLiquidity: 2.027123023002322
+                minNotionalAmount: 3.616076749251911
+                maxNotionalAmount: 9.301444243932576
               lessMonth:
                 tradeCount: tradeCount
-                totalLiquidity: 4.145608029883936
-                minNotionalAmount: 2.027123023002322
-                maxNotionalAmount: 3.616076749251911
+                totalLiquidity: 2.027123023002322
+                minNotionalAmount: 3.616076749251911
+                maxNotionalAmount: 9.301444243932576
             distanceToConsensus: "{}"
             expertiseRank: "{}"
           evpMid:
@@ -9332,13 +9335,18 @@ components:
       type: object
     titaniumEvpAnchorDetails:
       example:
-        mid: 6.027456183070403
+        midCalculated: "{}"
+        mid: "{}"
         distanceToConsensus: 0.8008281904610115
       properties:
         distanceToConsensus:
           type: number
         mid:
-          type: number
+          properties: {}
+          type: object
+        midCalculated:
+          properties: {}
+          type: object
       type: object
     titaniumEvpQualityScore:
       example:
@@ -12725,8 +12733,8 @@ components:
       type: object
     titaniumSubmissionEvidenceAnchorDetails:
       example:
-        submissionEvidence: 5.637376656633329
-        distanceToConsensus: 5.962133916683182
+        submissionEvidence: 5.962133916683182
+        distanceToConsensus: 1.4658129805029452
       properties:
         distanceToConsensus:
           type: number
@@ -13141,12 +13149,12 @@ components:
       type: object
     titaniumTradeAnchorDetails:
       example:
-        notional: 9.301444243932576
+        notional: 7.061401241503109
         pricingAge: pricingAge
-        latestTradePrice: 7.061401241503109
+        latestTradePrice: 2.3021358869347655
         source: source
         tradeExecutionTime: tradeExecutionTime
-        distanceToConsensus: 2.3021358869347655
+        distanceToConsensus: 5.637376656633329
       properties:
         distanceToConsensus:
           type: number
@@ -13164,9 +13172,9 @@ components:
     titaniumTradePeriodMetrics:
       example:
         tradeCount: tradeCount
-        totalLiquidity: 4.145608029883936
-        minNotionalAmount: 2.027123023002322
-        maxNotionalAmount: 3.616076749251911
+        totalLiquidity: 2.027123023002322
+        minNotionalAmount: 3.616076749251911
+        maxNotionalAmount: 9.301444243932576
       properties:
         maxNotionalAmount:
           type: number
@@ -13181,19 +13189,19 @@ components:
       example:
         lessWeek:
           tradeCount: tradeCount
-          totalLiquidity: 4.145608029883936
-          minNotionalAmount: 2.027123023002322
-          maxNotionalAmount: 3.616076749251911
+          totalLiquidity: 2.027123023002322
+          minNotionalAmount: 3.616076749251911
+          maxNotionalAmount: 9.301444243932576
         lessDay:
           tradeCount: tradeCount
-          totalLiquidity: 4.145608029883936
-          minNotionalAmount: 2.027123023002322
-          maxNotionalAmount: 3.616076749251911
+          totalLiquidity: 2.027123023002322
+          minNotionalAmount: 3.616076749251911
+          maxNotionalAmount: 9.301444243932576
         lessMonth:
           tradeCount: tradeCount
-          totalLiquidity: 4.145608029883936
-          minNotionalAmount: 2.027123023002322
-          maxNotionalAmount: 3.616076749251911
+          totalLiquidity: 2.027123023002322
+          minNotionalAmount: 3.616076749251911
+          maxNotionalAmount: 9.301444243932576
       properties:
         lessDay:
           $ref: '#/components/schemas/titaniumTradePeriodMetrics'

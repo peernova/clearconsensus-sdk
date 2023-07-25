@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpAnchorDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-25T14:35:11.651542Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-25T17:43:09.689890Z[UTC]")
 public class TitaniumEvpAnchorDetails {
   public static final String SERIALIZED_NAME_DISTANCE_TO_CONSENSUS = "distanceToConsensus";
   @SerializedName(SERIALIZED_NAME_DISTANCE_TO_CONSENSUS)
@@ -56,7 +56,11 @@ public class TitaniumEvpAnchorDetails {
 
   public static final String SERIALIZED_NAME_MID = "mid";
   @SerializedName(SERIALIZED_NAME_MID)
-  private BigDecimal mid;
+  private Object mid;
+
+  public static final String SERIALIZED_NAME_MID_CALCULATED = "midCalculated";
+  @SerializedName(SERIALIZED_NAME_MID_CALCULATED)
+  private Object midCalculated;
 
   public TitaniumEvpAnchorDetails() { 
   }
@@ -84,7 +88,7 @@ public class TitaniumEvpAnchorDetails {
   }
 
 
-  public TitaniumEvpAnchorDetails mid(BigDecimal mid) {
+  public TitaniumEvpAnchorDetails mid(Object mid) {
     
     this.mid = mid;
     return this;
@@ -97,13 +101,36 @@ public class TitaniumEvpAnchorDetails {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public BigDecimal getMid() {
+  public Object getMid() {
     return mid;
   }
 
 
-  public void setMid(BigDecimal mid) {
+  public void setMid(Object mid) {
     this.mid = mid;
+  }
+
+
+  public TitaniumEvpAnchorDetails midCalculated(Object midCalculated) {
+    
+    this.midCalculated = midCalculated;
+    return this;
+  }
+
+   /**
+   * Get midCalculated
+   * @return midCalculated
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getMidCalculated() {
+    return midCalculated;
+  }
+
+
+  public void setMidCalculated(Object midCalculated) {
+    this.midCalculated = midCalculated;
   }
 
 
@@ -118,12 +145,13 @@ public class TitaniumEvpAnchorDetails {
     }
     TitaniumEvpAnchorDetails titaniumEvpAnchorDetails = (TitaniumEvpAnchorDetails) o;
     return Objects.equals(this.distanceToConsensus, titaniumEvpAnchorDetails.distanceToConsensus) &&
-        Objects.equals(this.mid, titaniumEvpAnchorDetails.mid);
+        Objects.equals(this.mid, titaniumEvpAnchorDetails.mid) &&
+        Objects.equals(this.midCalculated, titaniumEvpAnchorDetails.midCalculated);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(distanceToConsensus, mid);
+    return Objects.hash(distanceToConsensus, mid, midCalculated);
   }
 
   @Override
@@ -132,6 +160,7 @@ public class TitaniumEvpAnchorDetails {
     sb.append("class TitaniumEvpAnchorDetails {\n");
     sb.append("    distanceToConsensus: ").append(toIndentedString(distanceToConsensus)).append("\n");
     sb.append("    mid: ").append(toIndentedString(mid)).append("\n");
+    sb.append("    midCalculated: ").append(toIndentedString(midCalculated)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -156,6 +185,7 @@ public class TitaniumEvpAnchorDetails {
     openapiFields = new HashSet<String>();
     openapiFields.add("distanceToConsensus");
     openapiFields.add("mid");
+    openapiFields.add("midCalculated");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

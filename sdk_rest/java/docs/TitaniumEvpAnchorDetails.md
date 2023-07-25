@@ -8,7 +8,8 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**distanceToConsensus** | **BigDecimal** |  |  [optional] |
-|**mid** | **BigDecimal** |  |  [optional] |
+|**mid** | **Object** |  |  [optional] |
+|**midCalculated** | **Object** |  |  [optional] |
 
 
 
