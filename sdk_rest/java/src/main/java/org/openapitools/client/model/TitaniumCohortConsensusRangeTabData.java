@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumCohortConsensusRangeTabData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-25T17:43:09.689890Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-26T14:40:43.178538Z[UTC]")
 public class TitaniumCohortConsensusRangeTabData {
   public static final String SERIALIZED_NAME_DISTANCE_TO_ANCHOR = "distanceToAnchor";
   @SerializedName(SERIALIZED_NAME_DISTANCE_TO_ANCHOR)
