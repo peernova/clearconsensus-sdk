@@ -27,10 +27,11 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.ProtoServiceResponse;
+import org.openapitools.client.model.GrpcprotoUserResponse;
 import org.openapitools.client.model.ProtoUserDto;
 import org.openapitools.client.model.ProtoUserEnabled;
 import org.openapitools.client.model.ProtoUserId;
+import org.openapitools.client.model.ProtoUsersResponse;
 import org.openapitools.client.model.RpcStatus;
 import org.openapitools.client.model.TitaniumGetUserNotificationByMarketRequest;
 import org.openapitools.client.model.TitaniumGetUserNotificationRequest;
@@ -423,7 +424,7 @@ public class UserServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return GrpcprotoUserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -432,8 +433,8 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse userServiceCreate(ProtoUserDto body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = userServiceCreateWithHttpInfo(body);
+    public GrpcprotoUserResponse userServiceCreate(ProtoUserDto body) throws ApiException {
+        ApiResponse<GrpcprotoUserResponse> localVarResp = userServiceCreateWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -441,7 +442,7 @@ public class UserServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;GrpcprotoUserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -450,9 +451,9 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> userServiceCreateWithHttpInfo(ProtoUserDto body) throws ApiException {
+    public ApiResponse<GrpcprotoUserResponse> userServiceCreateWithHttpInfo(ProtoUserDto body) throws ApiException {
         okhttp3.Call localVarCall = userServiceCreateValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GrpcprotoUserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -470,10 +471,10 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call userServiceCreateAsync(ProtoUserDto body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call userServiceCreateAsync(ProtoUserDto body, final ApiCallback<GrpcprotoUserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = userServiceCreateValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GrpcprotoUserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -813,7 +814,7 @@ public class UserServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return ProtoUsersResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -822,8 +823,8 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse userServiceGetAll(ProtoUserEnabled body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = userServiceGetAllWithHttpInfo(body);
+    public ProtoUsersResponse userServiceGetAll(ProtoUserEnabled body) throws ApiException {
+        ApiResponse<ProtoUsersResponse> localVarResp = userServiceGetAllWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -831,7 +832,7 @@ public class UserServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;ProtoUsersResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -840,9 +841,9 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> userServiceGetAllWithHttpInfo(ProtoUserEnabled body) throws ApiException {
+    public ApiResponse<ProtoUsersResponse> userServiceGetAllWithHttpInfo(ProtoUserEnabled body) throws ApiException {
         okhttp3.Call localVarCall = userServiceGetAllValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoUsersResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -860,10 +861,10 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call userServiceGetAllAsync(ProtoUserEnabled body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call userServiceGetAllAsync(ProtoUserEnabled body, final ApiCallback<ProtoUsersResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = userServiceGetAllValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoUsersResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -943,7 +944,7 @@ public class UserServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return GrpcprotoUserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -952,8 +953,8 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse userServiceGetById(ProtoUserId body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = userServiceGetByIdWithHttpInfo(body);
+    public GrpcprotoUserResponse userServiceGetById(ProtoUserId body) throws ApiException {
+        ApiResponse<GrpcprotoUserResponse> localVarResp = userServiceGetByIdWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -961,7 +962,7 @@ public class UserServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;GrpcprotoUserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -970,9 +971,9 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> userServiceGetByIdWithHttpInfo(ProtoUserId body) throws ApiException {
+    public ApiResponse<GrpcprotoUserResponse> userServiceGetByIdWithHttpInfo(ProtoUserId body) throws ApiException {
         okhttp3.Call localVarCall = userServiceGetByIdValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GrpcprotoUserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -990,10 +991,10 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call userServiceGetByIdAsync(ProtoUserId body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call userServiceGetByIdAsync(ProtoUserId body, final ApiCallback<GrpcprotoUserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = userServiceGetByIdValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GrpcprotoUserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1593,7 +1594,7 @@ public class UserServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return GrpcprotoUserResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1602,8 +1603,8 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse userServiceUpdate(ProtoUserDto body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = userServiceUpdateWithHttpInfo(body);
+    public GrpcprotoUserResponse userServiceUpdate(ProtoUserDto body) throws ApiException {
+        ApiResponse<GrpcprotoUserResponse> localVarResp = userServiceUpdateWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -1611,7 +1612,7 @@ public class UserServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;GrpcprotoUserResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -1620,9 +1621,9 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> userServiceUpdateWithHttpInfo(ProtoUserDto body) throws ApiException {
+    public ApiResponse<GrpcprotoUserResponse> userServiceUpdateWithHttpInfo(ProtoUserDto body) throws ApiException {
         okhttp3.Call localVarCall = userServiceUpdateValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GrpcprotoUserResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -1640,10 +1641,10 @@ public class UserServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call userServiceUpdateAsync(ProtoUserDto body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call userServiceUpdateAsync(ProtoUserDto body, final ApiCallback<GrpcprotoUserResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = userServiceUpdateValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<GrpcprotoUserResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

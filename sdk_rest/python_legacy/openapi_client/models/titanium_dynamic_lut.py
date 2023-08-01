@@ -39,7 +39,7 @@ class TitaniumDynamicLut(object):
         'filter': 'str',
         'key': 'list[str]',
         'type': 'str',
-        'value': 'str'
+        'value': 'object'
     }
 
     attribute_map = {
@@ -139,7 +139,7 @@ class TitaniumDynamicLut(object):
 
 
         :return: The value of this TitaniumDynamicLut.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._value
 
@@ -149,7 +149,7 @@ class TitaniumDynamicLut(object):
 
 
         :param value: The value of this TitaniumDynamicLut.  # noqa: E501
-        :type value: str
+        :type value: object
         """
 
         self._value = value

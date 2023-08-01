@@ -109,7 +109,7 @@ No authorization required
 
 ## userServiceCreate
 
-> ProtoServiceResponse userServiceCreate(body)
+> GrpcprotoUserResponse userServiceCreate(body)
 
 
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 
@@ -238,7 +238,7 @@ No authorization required
 
 ## userServiceGetAll
 
-> ProtoServiceResponse userServiceGetAll(body)
+> ProtoUsersResponse userServiceGetAll(body)
 
 
 
@@ -267,7 +267,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoUsersResponse**](ProtoUsersResponse.md)
 
 ### Authorization
 
@@ -281,7 +281,7 @@ No authorization required
 
 ## userServiceGetById
 
-> ProtoServiceResponse userServiceGetById(body)
+> GrpcprotoUserResponse userServiceGetById(body)
 
 
 
@@ -310,7 +310,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 
@@ -496,7 +496,7 @@ No authorization required
 
 ## userServiceUpdate
 
-> ProtoServiceResponse userServiceUpdate(body)
+> GrpcprotoUserResponse userServiceUpdate(body)
 
 
 
@@ -525,7 +525,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 

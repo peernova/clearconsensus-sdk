@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumDynamicLut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-31T10:25:55.821401Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-01T17:33:13.116303Z[UTC]")
 public class TitaniumDynamicLut {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
@@ -65,7 +65,7 @@ public class TitaniumDynamicLut {
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  private String value;
+  private Object value;
 
   public TitaniumDynamicLut() { 
   }
@@ -147,7 +147,7 @@ public class TitaniumDynamicLut {
   }
 
 
-  public TitaniumDynamicLut value(String value) {
+  public TitaniumDynamicLut value(Object value) {
     
     this.value = value;
     return this;
@@ -160,12 +160,12 @@ public class TitaniumDynamicLut {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getValue() {
+  public Object getValue() {
     return value;
   }
 
 
-  public void setValue(String value) {
+  public void setValue(Object value) {
     this.value = value;
   }
 
@@ -261,9 +261,6 @@ public class TitaniumDynamicLut {
       }
       if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
-      }
-      if (jsonObj.get("value") != null && !jsonObj.get("value").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `value` to be a primitive type in the JSON string but got `%s`", jsonObj.get("value").toString()));
       }
   }
 

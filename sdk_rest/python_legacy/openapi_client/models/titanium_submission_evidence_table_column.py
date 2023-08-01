@@ -40,7 +40,7 @@ class TitaniumSubmissionEvidenceTableColumn(object):
         'evi_price_abs_diff_from_latest_trade': 'object',
         'evidence': 'object',
         'lower_boundary': 'object',
-        'participants_count': 'str',
+        'participants_count': 'object',
         'std_dev': 'object',
         'sub_price_diff': 'object',
         'upper_boundary': 'object'
@@ -180,7 +180,7 @@ class TitaniumSubmissionEvidenceTableColumn(object):
 
 
         :return: The participants_count of this TitaniumSubmissionEvidenceTableColumn.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._participants_count
 
@@ -190,7 +190,7 @@ class TitaniumSubmissionEvidenceTableColumn(object):
 
 
         :param participants_count: The participants_count of this TitaniumSubmissionEvidenceTableColumn.  # noqa: E501
-        :type participants_count: str
+        :type participants_count: object
         """
 
         self._participants_count = participants_count

@@ -89,10 +89,10 @@ class TitaniumEvpAlignmentScore(ModelNormal):
         return {
             'evp_mid': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'history': ([TitaniumTradeAligmentDateAndValue],),  # noqa: E501
+            'mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'score': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'score_status': (str,),  # noqa: E501
             'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'submission_mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -103,10 +103,10 @@ class TitaniumEvpAlignmentScore(ModelNormal):
     attribute_map = {
         'evp_mid': 'evpMid',  # noqa: E501
         'history': 'history',  # noqa: E501
+        'mean': 'mean',  # noqa: E501
         'score': 'score',  # noqa: E501
         'score_status': 'scoreStatus',  # noqa: E501
         'std_dev': 'stdDev',  # noqa: E501
-        'submission_mean': 'submissionMean',  # noqa: E501
     }
 
     read_only_vars = {
@@ -152,10 +152,10 @@ class TitaniumEvpAlignmentScore(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             evp_mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             history ([TitaniumTradeAligmentDateAndValue]): [optional]  # noqa: E501
+            mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score_status (str): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            submission_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -243,10 +243,10 @@ class TitaniumEvpAlignmentScore(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             evp_mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             history ([TitaniumTradeAligmentDateAndValue]): [optional]  # noqa: E501
+            mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score_status (str): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            submission_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

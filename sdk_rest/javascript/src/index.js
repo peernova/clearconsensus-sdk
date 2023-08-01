@@ -13,6 +13,7 @@
 
 
 import ApiClient from './ApiClient';
+import EntityServiceUpdateRequest from './model/EntityServiceUpdateRequest';
 import ErrorValidationErrorDetail from './model/ErrorValidationErrorDetail';
 import FileServiceGetFilePreviewRequest from './model/FileServiceGetFilePreviewRequest';
 import GetAttachmentUploadUrlResponseAttachmentUploadUrl from './model/GetAttachmentUploadUrlResponseAttachmentUploadUrl';
@@ -20,20 +21,34 @@ import GetChallengeDetailsResponseCommonChallengeData from './model/GetChallenge
 import GetChallengeDetailsResponseResult from './model/GetChallengeDetailsResponseResult';
 import GetFileExportUrlResponseFileExportUrl from './model/GetFileExportUrlResponseFileExportUrl';
 import GrpcprotoError from './model/GrpcprotoError';
+import GrpcprotoTable from './model/GrpcprotoTable';
+import GrpcprotoTableColumn from './model/GrpcprotoTableColumn';
+import GrpcprotoTableRow from './model/GrpcprotoTableRow';
+import GrpcprotoUserResponse from './model/GrpcprotoUserResponse';
+import ProtoEntitiesDto from './model/ProtoEntitiesDto';
+import ProtoEntitiesResponse from './model/ProtoEntitiesResponse';
 import ProtoEntityDto from './model/ProtoEntityDto';
+import ProtoEntityResponse from './model/ProtoEntityResponse';
 import ProtoGroupPolicies from './model/ProtoGroupPolicies';
+import ProtoGroupPoliciesResponse from './model/ProtoGroupPoliciesResponse';
 import ProtoGroupPolicyDto from './model/ProtoGroupPolicyDto';
+import ProtoOperationSuccess from './model/ProtoOperationSuccess';
 import ProtoPolicies from './model/ProtoPolicies';
+import ProtoPoliciesList from './model/ProtoPoliciesList';
+import ProtoPoliciesListResponse from './model/ProtoPoliciesListResponse';
+import ProtoPoliciesResponse from './model/ProtoPoliciesResponse';
 import ProtoPolicyDto from './model/ProtoPolicyDto';
 import ProtoPolicyType from './model/ProtoPolicyType';
 import ProtoSearchCriteria from './model/ProtoSearchCriteria';
 import ProtoSearchCriteriaLimit from './model/ProtoSearchCriteriaLimit';
 import ProtoSearchCriteriaOrderBy from './model/ProtoSearchCriteriaOrderBy';
-import ProtoServiceResponse from './model/ProtoServiceResponse';
+import ProtoTableResponse from './model/ProtoTableResponse';
 import ProtoUserDto from './model/ProtoUserDto';
 import ProtoUserEnabled from './model/ProtoUserEnabled';
 import ProtoUserId from './model/ProtoUserId';
 import ProtoUsernamePermissionRequest from './model/ProtoUsernamePermissionRequest';
+import ProtoUsersDto from './model/ProtoUsersDto';
+import ProtoUsersResponse from './model/ProtoUsersResponse';
 import ProtobufAny from './model/ProtobufAny';
 import RpcStatus from './model/RpcStatus';
 import TitaniumAcknowledgeResponse from './model/TitaniumAcknowledgeResponse';
@@ -438,6 +453,12 @@ export {
     ApiClient,
 
     /**
+     * The EntityServiceUpdateRequest model constructor.
+     * @property {module:model/EntityServiceUpdateRequest}
+     */
+    EntityServiceUpdateRequest,
+
+    /**
      * The ErrorValidationErrorDetail model constructor.
      * @property {module:model/ErrorValidationErrorDetail}
      */
@@ -480,10 +501,52 @@ export {
     GrpcprotoError,
 
     /**
+     * The GrpcprotoTable model constructor.
+     * @property {module:model/GrpcprotoTable}
+     */
+    GrpcprotoTable,
+
+    /**
+     * The GrpcprotoTableColumn model constructor.
+     * @property {module:model/GrpcprotoTableColumn}
+     */
+    GrpcprotoTableColumn,
+
+    /**
+     * The GrpcprotoTableRow model constructor.
+     * @property {module:model/GrpcprotoTableRow}
+     */
+    GrpcprotoTableRow,
+
+    /**
+     * The GrpcprotoUserResponse model constructor.
+     * @property {module:model/GrpcprotoUserResponse}
+     */
+    GrpcprotoUserResponse,
+
+    /**
+     * The ProtoEntitiesDto model constructor.
+     * @property {module:model/ProtoEntitiesDto}
+     */
+    ProtoEntitiesDto,
+
+    /**
+     * The ProtoEntitiesResponse model constructor.
+     * @property {module:model/ProtoEntitiesResponse}
+     */
+    ProtoEntitiesResponse,
+
+    /**
      * The ProtoEntityDto model constructor.
      * @property {module:model/ProtoEntityDto}
      */
     ProtoEntityDto,
+
+    /**
+     * The ProtoEntityResponse model constructor.
+     * @property {module:model/ProtoEntityResponse}
+     */
+    ProtoEntityResponse,
 
     /**
      * The ProtoGroupPolicies model constructor.
@@ -492,16 +555,46 @@ export {
     ProtoGroupPolicies,
 
     /**
+     * The ProtoGroupPoliciesResponse model constructor.
+     * @property {module:model/ProtoGroupPoliciesResponse}
+     */
+    ProtoGroupPoliciesResponse,
+
+    /**
      * The ProtoGroupPolicyDto model constructor.
      * @property {module:model/ProtoGroupPolicyDto}
      */
     ProtoGroupPolicyDto,
 
     /**
+     * The ProtoOperationSuccess model constructor.
+     * @property {module:model/ProtoOperationSuccess}
+     */
+    ProtoOperationSuccess,
+
+    /**
      * The ProtoPolicies model constructor.
      * @property {module:model/ProtoPolicies}
      */
     ProtoPolicies,
+
+    /**
+     * The ProtoPoliciesList model constructor.
+     * @property {module:model/ProtoPoliciesList}
+     */
+    ProtoPoliciesList,
+
+    /**
+     * The ProtoPoliciesListResponse model constructor.
+     * @property {module:model/ProtoPoliciesListResponse}
+     */
+    ProtoPoliciesListResponse,
+
+    /**
+     * The ProtoPoliciesResponse model constructor.
+     * @property {module:model/ProtoPoliciesResponse}
+     */
+    ProtoPoliciesResponse,
 
     /**
      * The ProtoPolicyDto model constructor.
@@ -534,10 +627,10 @@ export {
     ProtoSearchCriteriaOrderBy,
 
     /**
-     * The ProtoServiceResponse model constructor.
-     * @property {module:model/ProtoServiceResponse}
+     * The ProtoTableResponse model constructor.
+     * @property {module:model/ProtoTableResponse}
      */
-    ProtoServiceResponse,
+    ProtoTableResponse,
 
     /**
      * The ProtoUserDto model constructor.
@@ -562,6 +655,18 @@ export {
      * @property {module:model/ProtoUsernamePermissionRequest}
      */
     ProtoUsernamePermissionRequest,
+
+    /**
+     * The ProtoUsersDto model constructor.
+     * @property {module:model/ProtoUsersDto}
+     */
+    ProtoUsersDto,
+
+    /**
+     * The ProtoUsersResponse model constructor.
+     * @property {module:model/ProtoUsersResponse}
+     */
+    ProtoUsersResponse,
 
     /**
      * The ProtobufAny model constructor.

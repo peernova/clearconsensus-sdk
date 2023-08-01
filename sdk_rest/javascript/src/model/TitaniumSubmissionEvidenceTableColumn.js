@@ -60,7 +60,7 @@ class TitaniumSubmissionEvidenceTableColumn {
                 obj['lowerBoundary'] = ApiClient.convertToType(data['lowerBoundary'], Object);
             }
             if (data.hasOwnProperty('participantsCount')) {
-                obj['participantsCount'] = ApiClient.convertToType(data['participantsCount'], 'String');
+                obj['participantsCount'] = ApiClient.convertToType(data['participantsCount'], Object);
             }
             if (data.hasOwnProperty('stdDev')) {
                 obj['stdDev'] = ApiClient.convertToType(data['stdDev'], Object);
@@ -99,7 +99,7 @@ TitaniumSubmissionEvidenceTableColumn.prototype['evidence'] = undefined;
 TitaniumSubmissionEvidenceTableColumn.prototype['lowerBoundary'] = undefined;
 
 /**
- * @member {String} participantsCount
+ * @member {Object} participantsCount
  */
 TitaniumSubmissionEvidenceTableColumn.prototype['participantsCount'] = undefined;
 

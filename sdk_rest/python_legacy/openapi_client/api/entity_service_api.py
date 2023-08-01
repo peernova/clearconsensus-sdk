@@ -60,7 +60,7 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoEntityResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.entity_service_create_with_http_info(body, **kwargs)  # noqa: E501
@@ -97,7 +97,7 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoEntityResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -151,7 +151,7 @@ class EntityServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoEntityResponse",
         }
 
         return self.api_client.call_api(
@@ -195,7 +195,7 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoTableResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.entity_service_find_with_http_info(body, **kwargs)  # noqa: E501
@@ -232,7 +232,7 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoTableResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -286,11 +286,11 @@ class EntityServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoTableResponse",
         }
 
         return self.api_client.call_api(
-            '/api/v1/user-management/entities/find', 'POST',
+            '/api/v1/user-management/entities', 'POST',
             path_params,
             query_params,
             header_params,
@@ -306,17 +306,15 @@ class EntityServiceApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def entity_service_get_all_enabled_only(self, body, **kwargs):  # noqa: E501
+    def entity_service_get_all_enabled_only(self, **kwargs):  # noqa: E501
         """entity_service_get_all_enabled_only  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_get_all_enabled_only(body, async_req=True)
+        >>> thread = api.entity_service_get_all_enabled_only(async_req=True)
         >>> result = thread.get()
 
-        :param body: (required)
-        :type body: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -330,22 +328,20 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoEntitiesResponse
         """
         kwargs['_return_http_data_only'] = True
-        return self.entity_service_get_all_enabled_only_with_http_info(body, **kwargs)  # noqa: E501
+        return self.entity_service_get_all_enabled_only_with_http_info(**kwargs)  # noqa: E501
 
-    def entity_service_get_all_enabled_only_with_http_info(self, body, **kwargs):  # noqa: E501
+    def entity_service_get_all_enabled_only_with_http_info(self, **kwargs):  # noqa: E501
         """entity_service_get_all_enabled_only  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_get_all_enabled_only_with_http_info(body, async_req=True)
+        >>> thread = api.entity_service_get_all_enabled_only_with_http_info(async_req=True)
         >>> result = thread.get()
 
-        :param body: (required)
-        :type body: bool
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -367,13 +363,12 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoEntitiesResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
         all_params = [
-            'body'
         ]
         all_params.extend(
             [
@@ -395,9 +390,6 @@ class EntityServiceApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and local_var_params.get('body') is None:  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `entity_service_get_all_enabled_only`")  # noqa: E501
 
         collection_formats = {}
 
@@ -411,8 +403,6 @@ class EntityServiceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['*/*'])  # noqa: E501
@@ -421,11 +411,11 @@ class EntityServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoEntitiesResponse",
         }
 
         return self.api_client.call_api(
-            '/api/v1/user-management/entities/getAllByEnabled', 'POST',
+            '/api/v1/user-management/entities', 'GET',
             path_params,
             query_params,
             header_params,
@@ -441,17 +431,17 @@ class EntityServiceApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def entity_service_get_by_id(self, body, **kwargs):  # noqa: E501
+    def entity_service_get_by_id(self, id, **kwargs):  # noqa: E501
         """entity_service_get_by_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_get_by_id(body, async_req=True)
+        >>> thread = api.entity_service_get_by_id(id, async_req=True)
         >>> result = thread.get()
 
-        :param body: (required)
-        :type body: str
+        :param id: (required)
+        :type id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -465,22 +455,22 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoEntityResponse
         """
         kwargs['_return_http_data_only'] = True
-        return self.entity_service_get_by_id_with_http_info(body, **kwargs)  # noqa: E501
+        return self.entity_service_get_by_id_with_http_info(id, **kwargs)  # noqa: E501
 
-    def entity_service_get_by_id_with_http_info(self, body, **kwargs):  # noqa: E501
+    def entity_service_get_by_id_with_http_info(self, id, **kwargs):  # noqa: E501
         """entity_service_get_by_id  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_get_by_id_with_http_info(body, async_req=True)
+        >>> thread = api.entity_service_get_by_id_with_http_info(id, async_req=True)
         >>> result = thread.get()
 
-        :param body: (required)
-        :type body: str
+        :param id: (required)
+        :type id: str
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -502,13 +492,13 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoEntityResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
         all_params = [
-            'body'
+            'id'
         ]
         all_params.extend(
             [
@@ -530,13 +520,15 @@ class EntityServiceApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
-        # verify the required parameter 'body' is set
-        if self.api_client.client_side_validation and local_var_params.get('body') is None:  # noqa: E501
-            raise ApiValueError("Missing the required parameter `body` when calling `entity_service_get_by_id`")  # noqa: E501
+        # verify the required parameter 'id' is set
+        if self.api_client.client_side_validation and local_var_params.get('id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `id` when calling `entity_service_get_by_id`")  # noqa: E501
 
         collection_formats = {}
 
         path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
 
         query_params = []
 
@@ -546,8 +538,6 @@ class EntityServiceApi(object):
         local_var_files = {}
 
         body_params = None
-        if 'body' in local_var_params:
-            body_params = local_var_params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
             ['*/*'])  # noqa: E501
@@ -556,11 +546,11 @@ class EntityServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoEntityResponse",
         }
 
         return self.api_client.call_api(
-            '/api/v1/user-management/entities/getById', 'POST',
+            '/api/v1/user-management/entities/{id}', 'GET',
             path_params,
             query_params,
             header_params,
@@ -576,17 +566,19 @@ class EntityServiceApi(object):
             collection_formats=collection_formats,
             _request_auth=local_var_params.get('_request_auth'))
 
-    def entity_service_update(self, body, **kwargs):  # noqa: E501
+    def entity_service_update(self, id, body, **kwargs):  # noqa: E501
         """entity_service_update  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_update(body, async_req=True)
+        >>> thread = api.entity_service_update(id, body, async_req=True)
         >>> result = thread.get()
 
+        :param id: (required)
+        :type id: str
         :param body: (required)
-        :type body: ProtoEntityDto
+        :type body: EntityServiceUpdateRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -600,22 +592,24 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoEntityResponse
         """
         kwargs['_return_http_data_only'] = True
-        return self.entity_service_update_with_http_info(body, **kwargs)  # noqa: E501
+        return self.entity_service_update_with_http_info(id, body, **kwargs)  # noqa: E501
 
-    def entity_service_update_with_http_info(self, body, **kwargs):  # noqa: E501
+    def entity_service_update_with_http_info(self, id, body, **kwargs):  # noqa: E501
         """entity_service_update  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_update_with_http_info(body, async_req=True)
+        >>> thread = api.entity_service_update_with_http_info(id, body, async_req=True)
         >>> result = thread.get()
 
+        :param id: (required)
+        :type id: str
         :param body: (required)
-        :type body: ProtoEntityDto
+        :type body: EntityServiceUpdateRequest
         :param async_req: Whether to execute the request asynchronously.
         :type async_req: bool, optional
         :param _return_http_data_only: response data without head status code
@@ -637,12 +631,13 @@ class EntityServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoEntityResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
 
         all_params = [
+            'id',
             'body'
         ]
         all_params.extend(
@@ -665,6 +660,9 @@ class EntityServiceApi(object):
                 )
             local_var_params[key] = val
         del local_var_params['kwargs']
+        # verify the required parameter 'id' is set
+        if self.api_client.client_side_validation and local_var_params.get('id') is None:  # noqa: E501
+            raise ApiValueError("Missing the required parameter `id` when calling `entity_service_update`")  # noqa: E501
         # verify the required parameter 'body' is set
         if self.api_client.client_side_validation and local_var_params.get('body') is None:  # noqa: E501
             raise ApiValueError("Missing the required parameter `body` when calling `entity_service_update`")  # noqa: E501
@@ -672,6 +670,8 @@ class EntityServiceApi(object):
         collection_formats = {}
 
         path_params = {}
+        if 'id' in local_var_params:
+            path_params['id'] = local_var_params['id']  # noqa: E501
 
         query_params = []
 
@@ -691,11 +691,11 @@ class EntityServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoEntityResponse",
         }
 
         return self.api_client.call_api(
-            '/api/v1/user-management/entities/update', 'POST',
+            '/api/v1/user-management/entities/{id}', 'PUT',
             path_params,
             query_params,
             header_params,

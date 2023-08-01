@@ -21,9 +21,12 @@ from openapi_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from openapi_client.model.entity_service_update_request import EntityServiceUpdateRequest
+from openapi_client.model.proto_entities_response import ProtoEntitiesResponse
 from openapi_client.model.proto_entity_dto import ProtoEntityDto
+from openapi_client.model.proto_entity_response import ProtoEntityResponse
 from openapi_client.model.proto_search_criteria import ProtoSearchCriteria
-from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_table_response import ProtoTableResponse
 from openapi_client.model.rpc_status import RpcStatus
 
 
@@ -40,7 +43,7 @@ class EntityServiceApi(object):
         self.api_client = api_client
         self.entity_service_create_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoEntityResponse,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/entities/create',
                 'operation_id': 'entity_service_create',
@@ -88,9 +91,9 @@ class EntityServiceApi(object):
         )
         self.entity_service_find_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoTableResponse,),
                 'auth': [],
-                'endpoint_path': '/api/v1/user-management/entities/find',
+                'endpoint_path': '/api/v1/user-management/entities',
                 'operation_id': 'entity_service_find',
                 'http_method': 'POST',
                 'servers': None,
@@ -136,20 +139,17 @@ class EntityServiceApi(object):
         )
         self.entity_service_get_all_enabled_only_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoEntitiesResponse,),
                 'auth': [],
-                'endpoint_path': '/api/v1/user-management/entities/getAllByEnabled',
+                'endpoint_path': '/api/v1/user-management/entities',
                 'operation_id': 'entity_service_get_all_enabled_only',
-                'http_method': 'POST',
+                'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'body',
                 ],
-                'required': [
-                    'body',
-                ],
+                'required': [],
                 'nullable': [
                 ],
                 'enum': [
@@ -163,13 +163,10 @@ class EntityServiceApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
-                        (bool,),
                 },
                 'attribute_map': {
                 },
                 'location_map': {
-                    'body': 'body',
                 },
                 'collection_format_map': {
                 }
@@ -184,19 +181,19 @@ class EntityServiceApi(object):
         )
         self.entity_service_get_by_id_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoEntityResponse,),
                 'auth': [],
-                'endpoint_path': '/api/v1/user-management/entities/getById',
+                'endpoint_path': '/api/v1/user-management/entities/{id}',
                 'operation_id': 'entity_service_get_by_id',
-                'http_method': 'POST',
+                'http_method': 'GET',
                 'servers': None,
             },
             params_map={
                 'all': [
-                    'body',
+                    'id',
                 ],
                 'required': [
-                    'body',
+                    'id',
                 ],
                 'nullable': [
                 ],
@@ -211,13 +208,14 @@ class EntityServiceApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
-                    'body':
+                    'id':
                         (str,),
                 },
                 'attribute_map': {
+                    'id': 'id',
                 },
                 'location_map': {
-                    'body': 'body',
+                    'id': 'path',
                 },
                 'collection_format_map': {
                 }
@@ -232,18 +230,20 @@ class EntityServiceApi(object):
         )
         self.entity_service_update_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoEntityResponse,),
                 'auth': [],
-                'endpoint_path': '/api/v1/user-management/entities/update',
+                'endpoint_path': '/api/v1/user-management/entities/{id}',
                 'operation_id': 'entity_service_update',
-                'http_method': 'POST',
+                'http_method': 'PUT',
                 'servers': None,
             },
             params_map={
                 'all': [
+                    'id',
                     'body',
                 ],
                 'required': [
+                    'id',
                     'body',
                 ],
                 'nullable': [
@@ -259,12 +259,16 @@ class EntityServiceApi(object):
                 'allowed_values': {
                 },
                 'openapi_types': {
+                    'id':
+                        (str,),
                     'body':
-                        (ProtoEntityDto,),
+                        (EntityServiceUpdateRequest,),
                 },
                 'attribute_map': {
+                    'id': 'id',
                 },
                 'location_map': {
+                    'id': 'path',
                     'body': 'body',
                 },
                 'collection_format_map': {
@@ -328,7 +332,7 @@ class EntityServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoEntityResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -410,7 +414,7 @@ class EntityServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoTableResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -445,7 +449,6 @@ class EntityServiceApi(object):
 
     def entity_service_get_all_enabled_only(
         self,
-        body,
         **kwargs
     ):
         """entity_service_get_all_enabled_only  # noqa: E501
@@ -453,11 +456,9 @@ class EntityServiceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_get_all_enabled_only(body, async_req=True)
+        >>> thread = api.entity_service_get_all_enabled_only(async_req=True)
         >>> result = thread.get()
 
-        Args:
-            body (bool):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -492,7 +493,7 @@ class EntityServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoEntitiesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -521,13 +522,11 @@ class EntityServiceApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['body'] = \
-            body
         return self.entity_service_get_all_enabled_only_endpoint.call_with_http_info(**kwargs)
 
     def entity_service_get_by_id(
         self,
-        body,
+        id,
         **kwargs
     ):
         """entity_service_get_by_id  # noqa: E501
@@ -535,11 +534,11 @@ class EntityServiceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_get_by_id(body, async_req=True)
+        >>> thread = api.entity_service_get_by_id(id, async_req=True)
         >>> result = thread.get()
 
         Args:
-            body (str):
+            id (str):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -574,7 +573,7 @@ class EntityServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoEntityResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -603,12 +602,13 @@ class EntityServiceApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
-        kwargs['body'] = \
-            body
+        kwargs['id'] = \
+            id
         return self.entity_service_get_by_id_endpoint.call_with_http_info(**kwargs)
 
     def entity_service_update(
         self,
+        id,
         body,
         **kwargs
     ):
@@ -617,11 +617,12 @@ class EntityServiceApi(object):
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
 
-        >>> thread = api.entity_service_update(body, async_req=True)
+        >>> thread = api.entity_service_update(id, body, async_req=True)
         >>> result = thread.get()
 
         Args:
-            body (ProtoEntityDto):
+            id (str):
+            body (EntityServiceUpdateRequest):
 
         Keyword Args:
             _return_http_data_only (bool): response data without head status
@@ -656,7 +657,7 @@ class EntityServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoEntityResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -685,6 +686,8 @@ class EntityServiceApi(object):
             '_content_type')
         kwargs['_host_index'] = kwargs.get('_host_index')
         kwargs['_request_auths'] = kwargs.get('_request_auths', None)
+        kwargs['id'] = \
+            id
         kwargs['body'] = \
             body
         return self.entity_service_update_endpoint.call_with_http_info(**kwargs)

@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumCohortConsensusColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-31T10:25:55.821401Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-01T17:33:13.116303Z[UTC]")
 public class TitaniumCohortConsensusColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS = "absDiffFromConsensus";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS)
@@ -79,7 +79,7 @@ public class TitaniumCohortConsensusColumn {
 
   public static final String SERIALIZED_NAME_NUMBER_OF_INSTRUMENTS = "numberOfInstruments";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_INSTRUMENTS)
-  private String numberOfInstruments;
+  private Object numberOfInstruments;
 
   public static final String SERIALIZED_NAME_STD_DEV = "stdDev";
   @SerializedName(SERIALIZED_NAME_STD_DEV)
@@ -257,7 +257,7 @@ public class TitaniumCohortConsensusColumn {
   }
 
 
-  public TitaniumCohortConsensusColumn numberOfInstruments(String numberOfInstruments) {
+  public TitaniumCohortConsensusColumn numberOfInstruments(Object numberOfInstruments) {
     
     this.numberOfInstruments = numberOfInstruments;
     return this;
@@ -270,12 +270,12 @@ public class TitaniumCohortConsensusColumn {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getNumberOfInstruments() {
+  public Object getNumberOfInstruments() {
     return numberOfInstruments;
   }
 
 
-  public void setNumberOfInstruments(String numberOfInstruments) {
+  public void setNumberOfInstruments(Object numberOfInstruments) {
     this.numberOfInstruments = numberOfInstruments;
   }
 
@@ -451,9 +451,6 @@ public class TitaniumCohortConsensusColumn {
         if (!TitaniumCohortConsensusColumn.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumCohortConsensusColumn` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
-      }
-      if (jsonObj.get("numberOfInstruments") != null && !jsonObj.get("numberOfInstruments").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `numberOfInstruments` to be a primitive type in the JSON string but got `%s`", jsonObj.get("numberOfInstruments").toString()));
       }
   }
 

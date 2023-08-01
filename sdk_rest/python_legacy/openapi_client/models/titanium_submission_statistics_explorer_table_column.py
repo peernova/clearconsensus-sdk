@@ -44,7 +44,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         'stat_mean_abs_diff_from_latest_trade': 'object',
         'std_dev': 'object',
         'sub_price_diff': 'object',
-        'sub_valid_points_count': 'str',
+        'sub_valid_points_count': 'object',
         'upper_boundary': 'object'
     }
 
@@ -274,7 +274,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
 
 
         :return: The sub_valid_points_count of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._sub_valid_points_count
 
@@ -284,7 +284,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
 
 
         :param sub_valid_points_count: The sub_valid_points_count of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :type sub_valid_points_count: str
+        :type sub_valid_points_count: object
         """
 
         self._sub_valid_points_count = sub_valid_points_count

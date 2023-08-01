@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **policy_service_check_policy**
-> ProtoServiceResponse policy_service_check_policy(body)
+> ProtoOperationSuccess policy_service_check_policy(body)
 
 
 
@@ -54,7 +54,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_create**
-> ProtoServiceResponse policy_service_create(body)
+> ProtoOperationSuccess policy_service_create(body)
 
 
 
@@ -114,7 +114,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -134,7 +134,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_get_addons**
-> ProtoServiceResponse policy_service_get_addons(body)
+> ProtoPoliciesListResponse policy_service_get_addons(body)
 
 
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -194,7 +194,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_get_apis**
-> ProtoServiceResponse policy_service_get_apis(body)
+> ProtoPoliciesListResponse policy_service_get_apis(body)
 
 
 
@@ -234,7 +234,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -254,7 +254,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_get_assets**
-> ProtoServiceResponse policy_service_get_assets(body)
+> ProtoPoliciesListResponse policy_service_get_assets(body)
 
 
 
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -314,7 +314,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_get_policies**
-> ProtoServiceResponse policy_service_get_policies(body)
+> ProtoPoliciesResponse policy_service_get_policies(body)
 
 
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesResponse**](ProtoPoliciesResponse.md)
 
 ### Authorization
 
@@ -374,7 +374,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_remove_policy**
-> ProtoServiceResponse policy_service_remove_policy(body)
+> ProtoOperationSuccess policy_service_remove_policy(body)
 
 
 
@@ -414,7 +414,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 

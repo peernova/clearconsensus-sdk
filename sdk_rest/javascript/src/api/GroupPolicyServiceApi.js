@@ -14,8 +14,9 @@
 
 import ApiClient from "../ApiClient";
 import ProtoGroupPolicies from '../model/ProtoGroupPolicies';
+import ProtoGroupPoliciesResponse from '../model/ProtoGroupPoliciesResponse';
+import ProtoOperationSuccess from '../model/ProtoOperationSuccess';
 import ProtoPolicyType from '../model/ProtoPolicyType';
-import ProtoServiceResponse from '../model/ProtoServiceResponse';
 import RpcStatus from '../model/RpcStatus';
 
 /**
@@ -41,14 +42,14 @@ export default class GroupPolicyServiceApi {
      * Callback function to receive the result of the groupPolicyServiceCreate operation.
      * @callback module:api/GroupPolicyServiceApi~groupPolicyServiceCreateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoOperationSuccess} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoGroupPolicies} body 
      * @param {module:api/GroupPolicyServiceApi~groupPolicyServiceCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoOperationSuccess}
      */
     groupPolicyServiceCreate(body, callback) {
       let postBody = body;
@@ -69,7 +70,7 @@ export default class GroupPolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoOperationSuccess;
       return this.apiClient.callApi(
         '/api/v1/user-management/group-policies/create', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -81,14 +82,14 @@ export default class GroupPolicyServiceApi {
      * Callback function to receive the result of the groupPolicyServiceGetPolicies operation.
      * @callback module:api/GroupPolicyServiceApi~groupPolicyServiceGetPoliciesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoGroupPoliciesResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoPolicyType} body 
      * @param {module:api/GroupPolicyServiceApi~groupPolicyServiceGetPoliciesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoGroupPoliciesResponse}
      */
     groupPolicyServiceGetPolicies(body, callback) {
       let postBody = body;
@@ -109,7 +110,7 @@ export default class GroupPolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoGroupPoliciesResponse;
       return this.apiClient.callApi(
         '/api/v1/user-management/group-policies/getPolicies', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

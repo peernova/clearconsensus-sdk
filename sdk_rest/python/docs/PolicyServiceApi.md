@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **policy_service_check_policy**
-> ProtoServiceResponse policy_service_check_policy(body)
+> ProtoOperationSuccess policy_service_check_policy(body)
 
 
 
@@ -26,7 +26,7 @@ import time
 import openapi_client
 from openapi_client.api import policy_service_api
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_operation_success import ProtoOperationSuccess
 from openapi_client.model.proto_policy_dto import ProtoPolicyDto
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -89,7 +89,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_create**
-> ProtoServiceResponse policy_service_create(body)
+> ProtoOperationSuccess policy_service_create(body)
 
 
 
@@ -102,7 +102,7 @@ import openapi_client
 from openapi_client.api import policy_service_api
 from openapi_client.model.proto_policies import ProtoPolicies
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_operation_success import ProtoOperationSuccess
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -168,7 +168,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_get_addons**
-> ProtoServiceResponse policy_service_get_addons(body)
+> ProtoPoliciesListResponse policy_service_get_addons(body)
 
 
 
@@ -179,9 +179,9 @@ No authorization required
 import time
 import openapi_client
 from openapi_client.api import policy_service_api
+from openapi_client.model.proto_policies_list_response import ProtoPoliciesListResponse
 from openapi_client.model.rpc_status import RpcStatus
 from openapi_client.model.proto_username_permission_request import ProtoUsernamePermissionRequest
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -216,7 +216,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -238,7 +238,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_get_apis**
-> ProtoServiceResponse policy_service_get_apis(body)
+> ProtoPoliciesListResponse policy_service_get_apis(body)
 
 
 
@@ -249,9 +249,9 @@ No authorization required
 import time
 import openapi_client
 from openapi_client.api import policy_service_api
+from openapi_client.model.proto_policies_list_response import ProtoPoliciesListResponse
 from openapi_client.model.rpc_status import RpcStatus
 from openapi_client.model.proto_username_permission_request import ProtoUsernamePermissionRequest
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -286,7 +286,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -308,7 +308,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_get_assets**
-> ProtoServiceResponse policy_service_get_assets(body)
+> ProtoPoliciesListResponse policy_service_get_assets(body)
 
 
 
@@ -319,9 +319,9 @@ No authorization required
 import time
 import openapi_client
 from openapi_client.api import policy_service_api
+from openapi_client.model.proto_policies_list_response import ProtoPoliciesListResponse
 from openapi_client.model.rpc_status import RpcStatus
 from openapi_client.model.proto_username_permission_request import ProtoUsernamePermissionRequest
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -378,7 +378,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_get_policies**
-> ProtoServiceResponse policy_service_get_policies(body)
+> ProtoPoliciesResponse policy_service_get_policies(body)
 
 
 
@@ -391,7 +391,7 @@ import openapi_client
 from openapi_client.api import policy_service_api
 from openapi_client.model.proto_policy_type import ProtoPolicyType
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_policies_response import ProtoPoliciesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesResponse**](ProtoPoliciesResponse.md)
 
 ### Authorization
 
@@ -447,7 +447,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **policy_service_remove_policy**
-> ProtoServiceResponse policy_service_remove_policy(body)
+> ProtoOperationSuccess policy_service_remove_policy(body)
 
 
 
@@ -459,7 +459,7 @@ import time
 import openapi_client
 from openapi_client.api import policy_service_api
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_operation_success import ProtoOperationSuccess
 from openapi_client.model.proto_policy_dto import ProtoPolicyDto
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
@@ -500,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 

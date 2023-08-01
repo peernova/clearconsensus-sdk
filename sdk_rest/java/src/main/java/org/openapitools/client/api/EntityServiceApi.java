@@ -27,9 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.EntityServiceUpdateRequest;
+import org.openapitools.client.model.ProtoEntitiesResponse;
 import org.openapitools.client.model.ProtoEntityDto;
+import org.openapitools.client.model.ProtoEntityResponse;
 import org.openapitools.client.model.ProtoSearchCriteria;
-import org.openapitools.client.model.ProtoServiceResponse;
+import org.openapitools.client.model.ProtoTableResponse;
 import org.openapitools.client.model.RpcStatus;
 
 import java.lang.reflect.Type;
@@ -152,7 +155,7 @@ public class EntityServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return ProtoEntityResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -161,8 +164,8 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse entityServiceCreate(ProtoEntityDto body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = entityServiceCreateWithHttpInfo(body);
+    public ProtoEntityResponse entityServiceCreate(ProtoEntityDto body) throws ApiException {
+        ApiResponse<ProtoEntityResponse> localVarResp = entityServiceCreateWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -170,7 +173,7 @@ public class EntityServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;ProtoEntityResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -179,9 +182,9 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> entityServiceCreateWithHttpInfo(ProtoEntityDto body) throws ApiException {
+    public ApiResponse<ProtoEntityResponse> entityServiceCreateWithHttpInfo(ProtoEntityDto body) throws ApiException {
         okhttp3.Call localVarCall = entityServiceCreateValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoEntityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -199,10 +202,10 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entityServiceCreateAsync(ProtoEntityDto body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call entityServiceCreateAsync(ProtoEntityDto body, final ApiCallback<ProtoEntityResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = entityServiceCreateValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoEntityResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -236,7 +239,7 @@ public class EntityServiceApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/api/v1/user-management/entities/find";
+        String localVarPath = "/api/v1/user-management/entities";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -282,7 +285,7 @@ public class EntityServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return ProtoTableResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -291,8 +294,8 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse entityServiceFind(ProtoSearchCriteria body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = entityServiceFindWithHttpInfo(body);
+    public ProtoTableResponse entityServiceFind(ProtoSearchCriteria body) throws ApiException {
+        ApiResponse<ProtoTableResponse> localVarResp = entityServiceFindWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -300,7 +303,7 @@ public class EntityServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;ProtoTableResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -309,9 +312,9 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> entityServiceFindWithHttpInfo(ProtoSearchCriteria body) throws ApiException {
+    public ApiResponse<ProtoTableResponse> entityServiceFindWithHttpInfo(ProtoSearchCriteria body) throws ApiException {
         okhttp3.Call localVarCall = entityServiceFindValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoTableResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -329,16 +332,15 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entityServiceFindAsync(ProtoSearchCriteria body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call entityServiceFindAsync(ProtoSearchCriteria body, final ApiCallback<ProtoTableResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = entityServiceFindValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoTableResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for entityServiceGetAllEnabledOnly
-     * @param body  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -349,7 +351,7 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entityServiceGetAllEnabledOnlyCall(Boolean body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call entityServiceGetAllEnabledOnlyCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -363,10 +365,10 @@ public class EntityServiceApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/user-management/entities/getAllByEnabled";
+        String localVarPath = "/api/v1/user-management/entities";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -391,19 +393,14 @@ public class EntityServiceApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call entityServiceGetAllEnabledOnlyValidateBeforeCall(Boolean body, final ApiCallback _callback) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling entityServiceGetAllEnabledOnly(Async)");
-        }
+    private okhttp3.Call entityServiceGetAllEnabledOnlyValidateBeforeCall(final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = entityServiceGetAllEnabledOnlyCall(body, _callback);
+        okhttp3.Call localVarCall = entityServiceGetAllEnabledOnlyCall(_callback);
         return localVarCall;
 
     }
@@ -411,8 +408,7 @@ public class EntityServiceApi {
     /**
      * 
      * 
-     * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return ProtoEntitiesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -421,16 +417,15 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse entityServiceGetAllEnabledOnly(Boolean body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = entityServiceGetAllEnabledOnlyWithHttpInfo(body);
+    public ProtoEntitiesResponse entityServiceGetAllEnabledOnly() throws ApiException {
+        ApiResponse<ProtoEntitiesResponse> localVarResp = entityServiceGetAllEnabledOnlyWithHttpInfo();
         return localVarResp.getData();
     }
 
     /**
      * 
      * 
-     * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;ProtoEntitiesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -439,16 +434,15 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> entityServiceGetAllEnabledOnlyWithHttpInfo(Boolean body) throws ApiException {
-        okhttp3.Call localVarCall = entityServiceGetAllEnabledOnlyValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+    public ApiResponse<ProtoEntitiesResponse> entityServiceGetAllEnabledOnlyWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = entityServiceGetAllEnabledOnlyValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<ProtoEntitiesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
      * 
-     * @param body  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -459,16 +453,16 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entityServiceGetAllEnabledOnlyAsync(Boolean body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call entityServiceGetAllEnabledOnlyAsync(final ApiCallback<ProtoEntitiesResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = entityServiceGetAllEnabledOnlyValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        okhttp3.Call localVarCall = entityServiceGetAllEnabledOnlyValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<ProtoEntitiesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for entityServiceGetById
-     * @param body  (required)
+     * @param id  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -479,7 +473,7 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entityServiceGetByIdCall(String body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call entityServiceGetByIdCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -493,10 +487,11 @@ public class EntityServiceApi {
             basePath = null;
         }
 
-        Object localVarPostBody = body;
+        Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/api/v1/user-management/entities/getById";
+        String localVarPath = "/api/v1/user-management/entities/{id}"
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -521,19 +516,19 @@ public class EntityServiceApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call entityServiceGetByIdValidateBeforeCall(String body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call entityServiceGetByIdValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling entityServiceGetById(Async)");
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling entityServiceGetById(Async)");
         }
         
 
-        okhttp3.Call localVarCall = entityServiceGetByIdCall(body, _callback);
+        okhttp3.Call localVarCall = entityServiceGetByIdCall(id, _callback);
         return localVarCall;
 
     }
@@ -541,8 +536,8 @@ public class EntityServiceApi {
     /**
      * 
      * 
-     * @param body  (required)
-     * @return ProtoServiceResponse
+     * @param id  (required)
+     * @return ProtoEntityResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -551,16 +546,16 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse entityServiceGetById(String body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = entityServiceGetByIdWithHttpInfo(body);
+    public ProtoEntityResponse entityServiceGetById(String id) throws ApiException {
+        ApiResponse<ProtoEntityResponse> localVarResp = entityServiceGetByIdWithHttpInfo(id);
         return localVarResp.getData();
     }
 
     /**
      * 
      * 
-     * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @param id  (required)
+     * @return ApiResponse&lt;ProtoEntityResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -569,16 +564,16 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> entityServiceGetByIdWithHttpInfo(String body) throws ApiException {
-        okhttp3.Call localVarCall = entityServiceGetByIdValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+    public ApiResponse<ProtoEntityResponse> entityServiceGetByIdWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = entityServiceGetByIdValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<ProtoEntityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
      * 
-     * @param body  (required)
+     * @param id  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -589,15 +584,16 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entityServiceGetByIdAsync(String body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call entityServiceGetByIdAsync(String id, final ApiCallback<ProtoEntityResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = entityServiceGetByIdValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        okhttp3.Call localVarCall = entityServiceGetByIdValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<ProtoEntityResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
      * Build call for entityServiceUpdate
+     * @param id  (required)
      * @param body  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -609,7 +605,7 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entityServiceUpdateCall(ProtoEntityDto body, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call entityServiceUpdateCall(String id, EntityServiceUpdateRequest body, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -626,7 +622,8 @@ public class EntityServiceApi {
         Object localVarPostBody = body;
 
         // create path and map variables
-        String localVarPath = "/api/v1/user-management/entities/update";
+        String localVarPath = "/api/v1/user-management/entities/{id}"
+            .replaceAll("\\{" + "id" + "\\}", localVarApiClient.escapeString(id.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -651,11 +648,16 @@ public class EntityServiceApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "PUT", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call entityServiceUpdateValidateBeforeCall(ProtoEntityDto body, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call entityServiceUpdateValidateBeforeCall(String id, EntityServiceUpdateRequest body, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling entityServiceUpdate(Async)");
+        }
         
         // verify the required parameter 'body' is set
         if (body == null) {
@@ -663,7 +665,7 @@ public class EntityServiceApi {
         }
         
 
-        okhttp3.Call localVarCall = entityServiceUpdateCall(body, _callback);
+        okhttp3.Call localVarCall = entityServiceUpdateCall(id, body, _callback);
         return localVarCall;
 
     }
@@ -671,8 +673,9 @@ public class EntityServiceApi {
     /**
      * 
      * 
+     * @param id  (required)
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return ProtoEntityResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -681,16 +684,17 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse entityServiceUpdate(ProtoEntityDto body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = entityServiceUpdateWithHttpInfo(body);
+    public ProtoEntityResponse entityServiceUpdate(String id, EntityServiceUpdateRequest body) throws ApiException {
+        ApiResponse<ProtoEntityResponse> localVarResp = entityServiceUpdateWithHttpInfo(id, body);
         return localVarResp.getData();
     }
 
     /**
      * 
      * 
+     * @param id  (required)
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;ProtoEntityResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -699,15 +703,16 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> entityServiceUpdateWithHttpInfo(ProtoEntityDto body) throws ApiException {
-        okhttp3.Call localVarCall = entityServiceUpdateValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+    public ApiResponse<ProtoEntityResponse> entityServiceUpdateWithHttpInfo(String id, EntityServiceUpdateRequest body) throws ApiException {
+        okhttp3.Call localVarCall = entityServiceUpdateValidateBeforeCall(id, body, null);
+        Type localVarReturnType = new TypeToken<ProtoEntityResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      *  (asynchronously)
      * 
+     * @param id  (required)
      * @param body  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -719,10 +724,10 @@ public class EntityServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entityServiceUpdateAsync(ProtoEntityDto body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call entityServiceUpdateAsync(String id, EntityServiceUpdateRequest body, final ApiCallback<ProtoEntityResponse> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = entityServiceUpdateValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        okhttp3.Call localVarCall = entityServiceUpdateValidateBeforeCall(id, body, _callback);
+        Type localVarReturnType = new TypeToken<ProtoEntityResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

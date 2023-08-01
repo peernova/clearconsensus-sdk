@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## policyServiceCheckPolicy
 
-> ProtoServiceResponse policyServiceCheckPolicy(body)
+> ProtoOperationSuccess policyServiceCheckPolicy(body)
 
 
 
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -59,7 +59,7 @@ No authorization required
 
 ## policyServiceCreate
 
-> ProtoServiceResponse policyServiceCreate(body)
+> ProtoOperationSuccess policyServiceCreate(body)
 
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -102,7 +102,7 @@ No authorization required
 
 ## policyServiceGetAddons
 
-> ProtoServiceResponse policyServiceGetAddons(body)
+> ProtoPoliciesListResponse policyServiceGetAddons(body)
 
 
 
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -145,7 +145,7 @@ No authorization required
 
 ## policyServiceGetApis
 
-> ProtoServiceResponse policyServiceGetApis(body)
+> ProtoPoliciesListResponse policyServiceGetApis(body)
 
 
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -188,7 +188,7 @@ No authorization required
 
 ## policyServiceGetAssets
 
-> ProtoServiceResponse policyServiceGetAssets(body)
+> ProtoPoliciesListResponse policyServiceGetAssets(body)
 
 
 
@@ -217,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -231,7 +231,7 @@ No authorization required
 
 ## policyServiceGetPolicies
 
-> ProtoServiceResponse policyServiceGetPolicies(body)
+> ProtoPoliciesResponse policyServiceGetPolicies(body)
 
 
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesResponse**](ProtoPoliciesResponse.md)
 
 ### Authorization
 
@@ -274,7 +274,7 @@ No authorization required
 
 ## policyServiceRemovePolicy
 
-> ProtoServiceResponse policyServiceRemovePolicy(body)
+> ProtoOperationSuccess policyServiceRemovePolicy(body)
 
 
 
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 

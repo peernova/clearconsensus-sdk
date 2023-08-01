@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradeAlignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-31T10:25:55.821401Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-01T17:33:13.116303Z[UTC]")
 public class TitaniumTradeAlignmentScore {
   public static final String SERIALIZED_NAME_HISTORY = "history";
   @SerializedName(SERIALIZED_NAME_HISTORY)
@@ -59,6 +59,10 @@ public class TitaniumTradeAlignmentScore {
   public static final String SERIALIZED_NAME_LATEST_TRADE_PRICE = "latestTradePrice";
   @SerializedName(SERIALIZED_NAME_LATEST_TRADE_PRICE)
   private Object latestTradePrice;
+
+  public static final String SERIALIZED_NAME_MEAN = "mean";
+  @SerializedName(SERIALIZED_NAME_MEAN)
+  private Object mean;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -71,10 +75,6 @@ public class TitaniumTradeAlignmentScore {
   public static final String SERIALIZED_NAME_STD_DEV = "stdDev";
   @SerializedName(SERIALIZED_NAME_STD_DEV)
   private Object stdDev;
-
-  public static final String SERIALIZED_NAME_SUBMISSION_MEAN = "submissionMean";
-  @SerializedName(SERIALIZED_NAME_SUBMISSION_MEAN)
-  private Object submissionMean;
 
   public TitaniumTradeAlignmentScore() { 
   }
@@ -130,6 +130,29 @@ public class TitaniumTradeAlignmentScore {
 
   public void setLatestTradePrice(Object latestTradePrice) {
     this.latestTradePrice = latestTradePrice;
+  }
+
+
+  public TitaniumTradeAlignmentScore mean(Object mean) {
+    
+    this.mean = mean;
+    return this;
+  }
+
+   /**
+   * Get mean
+   * @return mean
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getMean() {
+    return mean;
+  }
+
+
+  public void setMean(Object mean) {
+    this.mean = mean;
   }
 
 
@@ -202,29 +225,6 @@ public class TitaniumTradeAlignmentScore {
   }
 
 
-  public TitaniumTradeAlignmentScore submissionMean(Object submissionMean) {
-    
-    this.submissionMean = submissionMean;
-    return this;
-  }
-
-   /**
-   * Get submissionMean
-   * @return submissionMean
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getSubmissionMean() {
-    return submissionMean;
-  }
-
-
-  public void setSubmissionMean(Object submissionMean) {
-    this.submissionMean = submissionMean;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -237,15 +237,15 @@ public class TitaniumTradeAlignmentScore {
     TitaniumTradeAlignmentScore titaniumTradeAlignmentScore = (TitaniumTradeAlignmentScore) o;
     return Objects.equals(this.history, titaniumTradeAlignmentScore.history) &&
         Objects.equals(this.latestTradePrice, titaniumTradeAlignmentScore.latestTradePrice) &&
+        Objects.equals(this.mean, titaniumTradeAlignmentScore.mean) &&
         Objects.equals(this.score, titaniumTradeAlignmentScore.score) &&
         Objects.equals(this.scoreStatus, titaniumTradeAlignmentScore.scoreStatus) &&
-        Objects.equals(this.stdDev, titaniumTradeAlignmentScore.stdDev) &&
-        Objects.equals(this.submissionMean, titaniumTradeAlignmentScore.submissionMean);
+        Objects.equals(this.stdDev, titaniumTradeAlignmentScore.stdDev);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(history, latestTradePrice, score, scoreStatus, stdDev, submissionMean);
+    return Objects.hash(history, latestTradePrice, mean, score, scoreStatus, stdDev);
   }
 
   @Override
@@ -254,10 +254,10 @@ public class TitaniumTradeAlignmentScore {
     sb.append("class TitaniumTradeAlignmentScore {\n");
     sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("    latestTradePrice: ").append(toIndentedString(latestTradePrice)).append("\n");
+    sb.append("    mean: ").append(toIndentedString(mean)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    scoreStatus: ").append(toIndentedString(scoreStatus)).append("\n");
     sb.append("    stdDev: ").append(toIndentedString(stdDev)).append("\n");
-    sb.append("    submissionMean: ").append(toIndentedString(submissionMean)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -282,10 +282,10 @@ public class TitaniumTradeAlignmentScore {
     openapiFields = new HashSet<String>();
     openapiFields.add("history");
     openapiFields.add("latestTradePrice");
+    openapiFields.add("mean");
     openapiFields.add("score");
     openapiFields.add("scoreStatus");
     openapiFields.add("stdDev");
-    openapiFields.add("submissionMean");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

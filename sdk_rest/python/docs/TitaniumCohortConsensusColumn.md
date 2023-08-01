@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **cons_abs_diff_from_anchor_sub** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **cons_abs_diff_from_anchor_trade** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **lower_boundary** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**number_of_instruments** | **str** |  | [optional] 
+**number_of_instruments** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **std_dev** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **sub_price_diff** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **upper_boundary** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

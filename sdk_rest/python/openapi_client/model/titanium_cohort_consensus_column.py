@@ -88,7 +88,7 @@ class TitaniumCohortConsensusColumn(ModelNormal):
             'cons_abs_diff_from_anchor_sub': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'cons_abs_diff_from_anchor_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'lower_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'number_of_instruments': (str,),  # noqa: E501
+            'number_of_instruments': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'sub_price_diff': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'upper_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -161,7 +161,7 @@ class TitaniumCohortConsensusColumn(ModelNormal):
             cons_abs_diff_from_anchor_sub (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            number_of_instruments (str): [optional]  # noqa: E501
+            number_of_instruments (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -257,7 +257,7 @@ class TitaniumCohortConsensusColumn(ModelNormal):
             cons_abs_diff_from_anchor_sub (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            number_of_instruments (str): [optional]  # noqa: E501
+            number_of_instruments (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501

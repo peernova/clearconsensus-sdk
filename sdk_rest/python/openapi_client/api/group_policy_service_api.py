@@ -22,8 +22,9 @@ from openapi_client.model_utils import (  # noqa: F401
     validate_and_convert_types
 )
 from openapi_client.model.proto_group_policies import ProtoGroupPolicies
+from openapi_client.model.proto_group_policies_response import ProtoGroupPoliciesResponse
+from openapi_client.model.proto_operation_success import ProtoOperationSuccess
 from openapi_client.model.proto_policy_type import ProtoPolicyType
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from openapi_client.model.rpc_status import RpcStatus
 
 
@@ -40,7 +41,7 @@ class GroupPolicyServiceApi(object):
         self.api_client = api_client
         self.group_policy_service_create_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoOperationSuccess,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/group-policies/create',
                 'operation_id': 'group_policy_service_create',
@@ -88,7 +89,7 @@ class GroupPolicyServiceApi(object):
         )
         self.group_policy_service_get_policies_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoGroupPoliciesResponse,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/group-policies/getPolicies',
                 'operation_id': 'group_policy_service_get_policies',
@@ -184,7 +185,7 @@ class GroupPolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoOperationSuccess
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -266,7 +267,7 @@ class GroupPolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoGroupPoliciesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """

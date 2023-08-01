@@ -5572,6 +5572,71 @@
         "x-codegen-request-body-name" : "body"
       }
     },
+    "/api/v1/user-management/entities" : {
+      "get" : {
+        "operationId" : "EntityService_getAllEnabledOnly",
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoEntitiesResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "EntityService" ]
+      },
+      "post" : {
+        "operationId" : "EntityService_find",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/protoSearchCriteria"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/protoTableResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "EntityService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/user-management/entities/create" : {
       "post" : {
         "operationId" : "EntityService_create",
@@ -5590,7 +5655,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoEntityResponse"
                 }
               }
             },
@@ -5611,103 +5676,23 @@
         "x-codegen-request-body-name" : "body"
       }
     },
-    "/api/v1/user-management/entities/find" : {
-      "post" : {
-        "operationId" : "EntityService_find",
-        "requestBody" : {
-          "content" : {
-            "*/*" : {
-              "schema" : {
-                "$ref" : "#/components/schemas/protoSearchCriteria"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
-                }
-              }
-            },
-            "description" : "A successful response."
-          },
-          "default" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description" : "An unexpected error response."
-          }
-        },
-        "tags" : [ "EntityService" ],
-        "x-codegen-request-body-name" : "body"
-      }
-    },
-    "/api/v1/user-management/entities/getAllByEnabled" : {
-      "post" : {
-        "operationId" : "EntityService_getAllEnabledOnly",
-        "requestBody" : {
-          "content" : {
-            "*/*" : {
-              "schema" : {
-                "type" : "boolean"
-              }
-            }
-          },
-          "required" : true
-        },
-        "responses" : {
-          "200" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
-                }
-              }
-            },
-            "description" : "A successful response."
-          },
-          "default" : {
-            "content" : {
-              "*/*" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/rpcStatus"
-                }
-              }
-            },
-            "description" : "An unexpected error response."
-          }
-        },
-        "tags" : [ "EntityService" ],
-        "x-codegen-request-body-name" : "body"
-      }
-    },
-    "/api/v1/user-management/entities/getById" : {
-      "post" : {
+    "/api/v1/user-management/entities/{id}" : {
+      "get" : {
         "operationId" : "EntityService_getById",
-        "requestBody" : {
-          "content" : {
-            "*/*" : {
-              "schema" : {
-                "type" : "string"
-              }
-            }
-          },
-          "required" : true
-        },
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
         "responses" : {
           "200" : {
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoEntityResponse"
                 }
               }
             },
@@ -5724,18 +5709,23 @@
             "description" : "An unexpected error response."
           }
         },
-        "tags" : [ "EntityService" ],
-        "x-codegen-request-body-name" : "body"
-      }
-    },
-    "/api/v1/user-management/entities/update" : {
-      "post" : {
+        "tags" : [ "EntityService" ]
+      },
+      "put" : {
         "operationId" : "EntityService_update",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "id",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
         "requestBody" : {
           "content" : {
             "*/*" : {
               "schema" : {
-                "$ref" : "#/components/schemas/protoEntityDto"
+                "$ref" : "#/components/schemas/EntityService_update_request"
               }
             }
           },
@@ -5746,7 +5736,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoEntityResponse"
                 }
               }
             },
@@ -5785,7 +5775,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoOperationSuccess"
                 }
               }
             },
@@ -5824,7 +5814,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoGroupPoliciesResponse"
                 }
               }
             },
@@ -5863,7 +5853,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoOperationSuccess"
                 }
               }
             },
@@ -5902,7 +5892,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoOperationSuccess"
                 }
               }
             },
@@ -5941,7 +5931,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoPoliciesListResponse"
                 }
               }
             },
@@ -5980,7 +5970,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoPoliciesListResponse"
                 }
               }
             },
@@ -6019,7 +6009,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoPoliciesListResponse"
                 }
               }
             },
@@ -6058,7 +6048,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoPoliciesResponse"
                 }
               }
             },
@@ -6097,7 +6087,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoOperationSuccess"
                 }
               }
             },
@@ -6136,7 +6126,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/grpcprotoUserResponse"
                 }
               }
             },
@@ -6175,7 +6165,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/protoUsersResponse"
                 }
               }
             },
@@ -6214,7 +6204,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/grpcprotoUserResponse"
                 }
               }
             },
@@ -6253,7 +6243,7 @@
             "content" : {
               "*/*" : {
                 "schema" : {
-                  "$ref" : "#/components/schemas/protoServiceResponse"
+                  "$ref" : "#/components/schemas/grpcprotoUserResponse"
                 }
               }
             },
@@ -7203,6 +7193,87 @@
         },
         "type" : "object"
       },
+      "grpcprotoTable" : {
+        "properties" : {
+          "columns" : {
+            "items" : {
+              "$ref" : "#/components/schemas/grpcprotoTableColumn"
+            },
+            "type" : "array"
+          },
+          "rows" : {
+            "items" : {
+              "$ref" : "#/components/schemas/grpcprotoTableRow"
+            },
+            "type" : "array"
+          },
+          "totalRows" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "grpcprotoTableColumn" : {
+        "properties" : {
+          "columnDbType" : {
+            "type" : "string"
+          },
+          "columnName" : {
+            "type" : "string"
+          },
+          "columnType" : {
+            "type" : "string"
+          },
+          "rawColumnName" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "grpcprotoTableRow" : {
+        "properties" : {
+          "values" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "grpcprotoUserResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/protoUserDto"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
+          }
+        },
+        "type" : "object"
+      },
+      "protoEntitiesDto" : {
+        "properties" : {
+          "entities" : {
+            "items" : {
+              "$ref" : "#/components/schemas/protoEntityDto"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "protoEntitiesResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/protoEntitiesDto"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
+          }
+        },
+        "type" : "object"
+      },
       "protoEntityDto" : {
         "properties" : {
           "enabled" : {
@@ -7220,6 +7291,17 @@
         },
         "type" : "object"
       },
+      "protoEntityResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/protoEntityDto"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
+          }
+        },
+        "type" : "object"
+      },
       "protoGroupPolicies" : {
         "properties" : {
           "groupPolicy" : {
@@ -7227,6 +7309,17 @@
               "$ref" : "#/components/schemas/protoGroupPolicyDto"
             },
             "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "protoGroupPoliciesResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/protoGroupPolicies"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
           }
         },
         "type" : "object"
@@ -7245,6 +7338,17 @@
         },
         "type" : "object"
       },
+      "protoOperationSuccess" : {
+        "properties" : {
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
+          },
+          "success" : {
+            "type" : "boolean"
+          }
+        },
+        "type" : "object"
+      },
       "protoPolicies" : {
         "properties" : {
           "policyDto" : {
@@ -7252,6 +7356,39 @@
               "$ref" : "#/components/schemas/protoPolicyDto"
             },
             "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "protoPoliciesList" : {
+        "properties" : {
+          "policies" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "protoPoliciesListResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/protoPoliciesList"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
+          }
+        },
+        "type" : "object"
+      },
+      "protoPoliciesResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/protoPolicies"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
           }
         },
         "type" : "object"
@@ -7326,10 +7463,10 @@
         },
         "type" : "object"
       },
-      "protoServiceResponse" : {
+      "protoTableResponse" : {
         "properties" : {
           "data" : {
-            "$ref" : "#/components/schemas/protobufAny"
+            "$ref" : "#/components/schemas/grpcprotoTable"
           },
           "error" : {
             "$ref" : "#/components/schemas/grpcprotoError"
@@ -7383,6 +7520,28 @@
           },
           "username" : {
             "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "protoUsersDto" : {
+        "properties" : {
+          "user" : {
+            "items" : {
+              "$ref" : "#/components/schemas/protoUserDto"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "protoUsersResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/protoUsersDto"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/grpcprotoError"
           }
         },
         "type" : "object"
@@ -8279,7 +8438,8 @@
             "type" : "object"
           },
           "numberOfInstruments" : {
-            "type" : "string"
+            "properties" : { },
+            "type" : "object"
           },
           "stdDev" : {
             "properties" : { },
@@ -9412,7 +9572,8 @@
             "$ref" : "#/components/schemas/DynamicLutDynamicLutType"
           },
           "value" : {
-            "type" : "string"
+            "properties" : { },
+            "type" : "object"
           }
         },
         "type" : "object"
@@ -9601,6 +9762,10 @@
             },
             "type" : "array"
           },
+          "mean" : {
+            "properties" : { },
+            "type" : "object"
+          },
           "score" : {
             "properties" : { },
             "type" : "object"
@@ -9609,10 +9774,6 @@
             "type" : "string"
           },
           "stdDev" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "submissionMean" : {
             "properties" : { },
             "type" : "object"
           }
@@ -11971,7 +12132,8 @@
             "type" : "object"
           },
           "participantsCount" : {
-            "type" : "string"
+            "properties" : { },
+            "type" : "object"
           },
           "stdDev" : {
             "properties" : { },
@@ -12058,7 +12220,8 @@
             "type" : "object"
           },
           "subValidPointsCount" : {
-            "type" : "string"
+            "properties" : { },
+            "type" : "object"
           },
           "upperBoundary" : {
             "properties" : { },
@@ -12303,6 +12466,10 @@
             "properties" : { },
             "type" : "object"
           },
+          "mean" : {
+            "properties" : { },
+            "type" : "object"
+          },
           "score" : {
             "properties" : { },
             "type" : "object"
@@ -12311,10 +12478,6 @@
             "type" : "string"
           },
           "stdDev" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "submissionMean" : {
             "properties" : { },
             "type" : "object"
           }
@@ -12811,6 +12974,20 @@
             "type" : "string"
           },
           "uploadDate" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "EntityService_update_request" : {
+        "properties" : {
+          "enabled" : {
+            "type" : "boolean"
+          },
+          "externalId" : {
+            "type" : "string"
+          },
+          "name" : {
             "type" : "string"
           }
         },

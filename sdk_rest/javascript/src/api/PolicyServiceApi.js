@@ -13,10 +13,12 @@
 
 
 import ApiClient from "../ApiClient";
+import ProtoOperationSuccess from '../model/ProtoOperationSuccess';
 import ProtoPolicies from '../model/ProtoPolicies';
+import ProtoPoliciesListResponse from '../model/ProtoPoliciesListResponse';
+import ProtoPoliciesResponse from '../model/ProtoPoliciesResponse';
 import ProtoPolicyDto from '../model/ProtoPolicyDto';
 import ProtoPolicyType from '../model/ProtoPolicyType';
-import ProtoServiceResponse from '../model/ProtoServiceResponse';
 import ProtoUsernamePermissionRequest from '../model/ProtoUsernamePermissionRequest';
 import RpcStatus from '../model/RpcStatus';
 
@@ -43,14 +45,14 @@ export default class PolicyServiceApi {
      * Callback function to receive the result of the policyServiceCheckPolicy operation.
      * @callback module:api/PolicyServiceApi~policyServiceCheckPolicyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoOperationSuccess} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoPolicyDto} body 
      * @param {module:api/PolicyServiceApi~policyServiceCheckPolicyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoOperationSuccess}
      */
     policyServiceCheckPolicy(body, callback) {
       let postBody = body;
@@ -71,7 +73,7 @@ export default class PolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoOperationSuccess;
       return this.apiClient.callApi(
         '/api/v1/user-management/policies/checkPolicy', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -83,14 +85,14 @@ export default class PolicyServiceApi {
      * Callback function to receive the result of the policyServiceCreate operation.
      * @callback module:api/PolicyServiceApi~policyServiceCreateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoOperationSuccess} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoPolicies} body 
      * @param {module:api/PolicyServiceApi~policyServiceCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoOperationSuccess}
      */
     policyServiceCreate(body, callback) {
       let postBody = body;
@@ -111,7 +113,7 @@ export default class PolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoOperationSuccess;
       return this.apiClient.callApi(
         '/api/v1/user-management/policies/create', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -123,14 +125,14 @@ export default class PolicyServiceApi {
      * Callback function to receive the result of the policyServiceGetAddons operation.
      * @callback module:api/PolicyServiceApi~policyServiceGetAddonsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoPoliciesListResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoUsernamePermissionRequest} body 
      * @param {module:api/PolicyServiceApi~policyServiceGetAddonsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoPoliciesListResponse}
      */
     policyServiceGetAddons(body, callback) {
       let postBody = body;
@@ -151,7 +153,7 @@ export default class PolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoPoliciesListResponse;
       return this.apiClient.callApi(
         '/api/v1/user-management/policies/getAddons', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -163,14 +165,14 @@ export default class PolicyServiceApi {
      * Callback function to receive the result of the policyServiceGetApis operation.
      * @callback module:api/PolicyServiceApi~policyServiceGetApisCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoPoliciesListResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoUsernamePermissionRequest} body 
      * @param {module:api/PolicyServiceApi~policyServiceGetApisCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoPoliciesListResponse}
      */
     policyServiceGetApis(body, callback) {
       let postBody = body;
@@ -191,7 +193,7 @@ export default class PolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoPoliciesListResponse;
       return this.apiClient.callApi(
         '/api/v1/user-management/policies/getApis', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -203,14 +205,14 @@ export default class PolicyServiceApi {
      * Callback function to receive the result of the policyServiceGetAssets operation.
      * @callback module:api/PolicyServiceApi~policyServiceGetAssetsCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoPoliciesListResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoUsernamePermissionRequest} body 
      * @param {module:api/PolicyServiceApi~policyServiceGetAssetsCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoPoliciesListResponse}
      */
     policyServiceGetAssets(body, callback) {
       let postBody = body;
@@ -231,7 +233,7 @@ export default class PolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoPoliciesListResponse;
       return this.apiClient.callApi(
         '/api/v1/user-management/policies/getAssets', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -243,14 +245,14 @@ export default class PolicyServiceApi {
      * Callback function to receive the result of the policyServiceGetPolicies operation.
      * @callback module:api/PolicyServiceApi~policyServiceGetPoliciesCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoPoliciesResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoPolicyType} body 
      * @param {module:api/PolicyServiceApi~policyServiceGetPoliciesCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoPoliciesResponse}
      */
     policyServiceGetPolicies(body, callback) {
       let postBody = body;
@@ -271,7 +273,7 @@ export default class PolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoPoliciesResponse;
       return this.apiClient.callApi(
         '/api/v1/user-management/policies/getPolicies', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -283,14 +285,14 @@ export default class PolicyServiceApi {
      * Callback function to receive the result of the policyServiceRemovePolicy operation.
      * @callback module:api/PolicyServiceApi~policyServiceRemovePolicyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoOperationSuccess} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoPolicyDto} body 
      * @param {module:api/PolicyServiceApi~policyServiceRemovePolicyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoOperationSuccess}
      */
     policyServiceRemovePolicy(body, callback) {
       let postBody = body;
@@ -311,7 +313,7 @@ export default class PolicyServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoOperationSuccess;
       return this.apiClient.callApi(
         '/api/v1/user-management/policies/removePolicy', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,

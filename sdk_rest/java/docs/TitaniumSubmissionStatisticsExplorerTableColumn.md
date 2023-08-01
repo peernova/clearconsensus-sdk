@@ -15,7 +15,7 @@
 |**statMeanAbsDiffFromLatestTrade** | **Object** |  |  [optional] |
 |**stdDev** | **Object** |  |  [optional] |
 |**subPriceDiff** | **Object** |  |  [optional] |
-|**subValidPointsCount** | **String** |  |  [optional] |
+|**subValidPointsCount** | **Object** |  |  [optional] |
 |**upperBoundary** | **Object** |  |  [optional] |
 
 

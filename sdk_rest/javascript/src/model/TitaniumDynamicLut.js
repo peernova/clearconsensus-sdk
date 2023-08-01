@@ -57,7 +57,7 @@ class TitaniumDynamicLut {
                 obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
             if (data.hasOwnProperty('value')) {
-                obj['value'] = ApiClient.convertToType(data['value'], 'String');
+                obj['value'] = ApiClient.convertToType(data['value'], Object);
             }
         }
         return obj;
@@ -82,7 +82,7 @@ TitaniumDynamicLut.prototype['key'] = undefined;
 TitaniumDynamicLut.prototype['type'] = undefined;
 
 /**
- * @member {String} value
+ * @member {Object} value
  */
 TitaniumDynamicLut.prototype['value'] = undefined;
 

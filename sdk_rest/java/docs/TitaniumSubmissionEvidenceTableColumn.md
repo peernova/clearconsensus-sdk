@@ -11,7 +11,7 @@
 |**eviPriceAbsDiffFromLatestTrade** | **Object** |  |  [optional] |
 |**evidence** | **Object** |  |  [optional] |
 |**lowerBoundary** | **Object** |  |  [optional] |
-|**participantsCount** | **String** |  |  [optional] |
+|**participantsCount** | **Object** |  |  [optional] |
 |**stdDev** | **Object** |  |  [optional] |
 |**subPriceDiff** | **Object** |  |  [optional] |
 |**upperBoundary** | **Object** |  |  [optional] |

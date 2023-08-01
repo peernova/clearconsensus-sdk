@@ -60,7 +60,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoOperationSuccess
         """
         kwargs['_return_http_data_only'] = True
         return self.policy_service_check_policy_with_http_info(body, **kwargs)  # noqa: E501
@@ -97,7 +97,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoOperationSuccess, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -151,7 +151,7 @@ class PolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoOperationSuccess",
         }
 
         return self.api_client.call_api(
@@ -195,7 +195,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoOperationSuccess
         """
         kwargs['_return_http_data_only'] = True
         return self.policy_service_create_with_http_info(body, **kwargs)  # noqa: E501
@@ -232,7 +232,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoOperationSuccess, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -286,7 +286,7 @@ class PolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoOperationSuccess",
         }
 
         return self.api_client.call_api(
@@ -330,7 +330,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoPoliciesListResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.policy_service_get_addons_with_http_info(body, **kwargs)  # noqa: E501
@@ -367,7 +367,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoPoliciesListResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -421,7 +421,7 @@ class PolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoPoliciesListResponse",
         }
 
         return self.api_client.call_api(
@@ -465,7 +465,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoPoliciesListResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.policy_service_get_apis_with_http_info(body, **kwargs)  # noqa: E501
@@ -502,7 +502,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoPoliciesListResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -556,7 +556,7 @@ class PolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoPoliciesListResponse",
         }
 
         return self.api_client.call_api(
@@ -600,7 +600,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoPoliciesListResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.policy_service_get_assets_with_http_info(body, **kwargs)  # noqa: E501
@@ -637,7 +637,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoPoliciesListResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -691,7 +691,7 @@ class PolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoPoliciesListResponse",
         }
 
         return self.api_client.call_api(
@@ -735,7 +735,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoPoliciesResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.policy_service_get_policies_with_http_info(body, **kwargs)  # noqa: E501
@@ -772,7 +772,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoPoliciesResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -826,7 +826,7 @@ class PolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoPoliciesResponse",
         }
 
         return self.api_client.call_api(
@@ -870,7 +870,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoOperationSuccess
         """
         kwargs['_return_http_data_only'] = True
         return self.policy_service_remove_policy_with_http_info(body, **kwargs)  # noqa: E501
@@ -907,7 +907,7 @@ class PolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoOperationSuccess, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -961,7 +961,7 @@ class PolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoOperationSuccess",
         }
 
         return self.api_client.call_api(

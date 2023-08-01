@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionStatisticsExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-31T10:25:55.821401Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-01T17:33:13.116303Z[UTC]")
 public class TitaniumSubmissionStatisticsExplorerTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN = "absDiffFromStatisticalMean";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN)
@@ -83,7 +83,7 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
 
   public static final String SERIALIZED_NAME_SUB_VALID_POINTS_COUNT = "subValidPointsCount";
   @SerializedName(SERIALIZED_NAME_SUB_VALID_POINTS_COUNT)
-  private String subValidPointsCount;
+  private Object subValidPointsCount;
 
   public static final String SERIALIZED_NAME_UPPER_BOUNDARY = "upperBoundary";
   @SerializedName(SERIALIZED_NAME_UPPER_BOUNDARY)
@@ -276,7 +276,7 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   }
 
 
-  public TitaniumSubmissionStatisticsExplorerTableColumn subValidPointsCount(String subValidPointsCount) {
+  public TitaniumSubmissionStatisticsExplorerTableColumn subValidPointsCount(Object subValidPointsCount) {
     
     this.subValidPointsCount = subValidPointsCount;
     return this;
@@ -289,12 +289,12 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getSubValidPointsCount() {
+  public Object getSubValidPointsCount() {
     return subValidPointsCount;
   }
 
 
-  public void setSubValidPointsCount(String subValidPointsCount) {
+  public void setSubValidPointsCount(Object subValidPointsCount) {
     this.subValidPointsCount = subValidPointsCount;
   }
 
@@ -421,9 +421,6 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
         if (!TitaniumSubmissionStatisticsExplorerTableColumn.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumSubmissionStatisticsExplorerTableColumn` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
-      }
-      if (jsonObj.get("subValidPointsCount") != null && !jsonObj.get("subValidPointsCount").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `subValidPointsCount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("subValidPointsCount").toString()));
       }
   }
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## groupPolicyServiceCreate
 
-> ProtoServiceResponse groupPolicyServiceCreate(body)
+> ProtoOperationSuccess groupPolicyServiceCreate(body)
 
 
 
@@ -40,7 +40,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -54,7 +54,7 @@ No authorization required
 
 ## groupPolicyServiceGetPolicies
 
-> ProtoServiceResponse groupPolicyServiceGetPolicies(body)
+> ProtoGroupPoliciesResponse groupPolicyServiceGetPolicies(body)
 
 
 
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoGroupPoliciesResponse**](ProtoGroupPoliciesResponse.md)
 
 ### Authorization
 

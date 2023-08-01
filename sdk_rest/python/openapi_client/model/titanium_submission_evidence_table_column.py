@@ -85,7 +85,7 @@ class TitaniumSubmissionEvidenceTableColumn(ModelNormal):
             'evi_price_abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'evidence': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'lower_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'participants_count': (str,),  # noqa: E501
+            'participants_count': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'sub_price_diff': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'upper_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -152,7 +152,7 @@ class TitaniumSubmissionEvidenceTableColumn(ModelNormal):
             evi_price_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evidence (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            participants_count (str): [optional]  # noqa: E501
+            participants_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -245,7 +245,7 @@ class TitaniumSubmissionEvidenceTableColumn(ModelNormal):
             evi_price_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evidence (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            participants_count (str): [optional]  # noqa: E501
+            participants_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501

@@ -4228,6 +4228,51 @@ paths:
       x-codegen-request-body-name: body
       x-content-type: '*/*'
       x-accepts: '*/*'
+  /api/v1/user-management/entities:
+    get:
+      operationId: EntityService_getAllEnabledOnly
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoEntitiesResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - EntityService
+      x-accepts: '*/*'
+    post:
+      operationId: EntityService_find
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/protoSearchCriteria'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/protoTableResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - EntityService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
   /api/v1/user-management/entities/create:
     post:
       operationId: EntityService_create
@@ -4242,7 +4287,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoEntityResponse'
           description: A successful response.
         default:
           content:
@@ -4255,75 +4300,23 @@ paths:
       x-codegen-request-body-name: body
       x-content-type: '*/*'
       x-accepts: '*/*'
-  /api/v1/user-management/entities/find:
-    post:
-      operationId: EntityService_find
-      requestBody:
-        content:
-          '*/*':
-            schema:
-              $ref: '#/components/schemas/protoSearchCriteria'
-        required: true
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/protoServiceResponse'
-          description: A successful response.
-        default:
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-          description: An unexpected error response.
-      tags:
-      - EntityService
-      x-codegen-request-body-name: body
-      x-content-type: '*/*'
-      x-accepts: '*/*'
-  /api/v1/user-management/entities/getAllByEnabled:
-    post:
-      operationId: EntityService_getAllEnabledOnly
-      requestBody:
-        content:
-          '*/*':
-            schema:
-              type: boolean
-        required: true
-      responses:
-        "200":
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/protoServiceResponse'
-          description: A successful response.
-        default:
-          content:
-            '*/*':
-              schema:
-                $ref: '#/components/schemas/rpcStatus'
-          description: An unexpected error response.
-      tags:
-      - EntityService
-      x-codegen-request-body-name: body
-      x-content-type: '*/*'
-      x-accepts: '*/*'
-  /api/v1/user-management/entities/getById:
-    post:
+  /api/v1/user-management/entities/{id}:
+    get:
       operationId: EntityService_getById
-      requestBody:
-        content:
-          '*/*':
-            schema:
-              type: string
+      parameters:
+      - explode: false
+        in: path
+        name: id
         required: true
+        schema:
+          type: string
+        style: simple
       responses:
         "200":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoEntityResponse'
           description: A successful response.
         default:
           content:
@@ -4333,24 +4326,29 @@ paths:
           description: An unexpected error response.
       tags:
       - EntityService
-      x-codegen-request-body-name: body
-      x-content-type: '*/*'
       x-accepts: '*/*'
-  /api/v1/user-management/entities/update:
-    post:
+    put:
       operationId: EntityService_update
+      parameters:
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
       requestBody:
         content:
           '*/*':
             schema:
-              $ref: '#/components/schemas/protoEntityDto'
+              $ref: '#/components/schemas/EntityService_update_request'
         required: true
       responses:
         "200":
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoEntityResponse'
           description: A successful response.
         default:
           content:
@@ -4377,7 +4375,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoOperationSuccess'
           description: A successful response.
         default:
           content:
@@ -4404,7 +4402,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoGroupPoliciesResponse'
           description: A successful response.
         default:
           content:
@@ -4431,7 +4429,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoOperationSuccess'
           description: A successful response.
         default:
           content:
@@ -4458,7 +4456,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoOperationSuccess'
           description: A successful response.
         default:
           content:
@@ -4485,7 +4483,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoPoliciesListResponse'
           description: A successful response.
         default:
           content:
@@ -4512,7 +4510,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoPoliciesListResponse'
           description: A successful response.
         default:
           content:
@@ -4539,7 +4537,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoPoliciesListResponse'
           description: A successful response.
         default:
           content:
@@ -4566,7 +4564,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoPoliciesResponse'
           description: A successful response.
         default:
           content:
@@ -4593,7 +4591,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoOperationSuccess'
           description: A successful response.
         default:
           content:
@@ -4620,7 +4618,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/grpcprotoUserResponse'
           description: A successful response.
         default:
           content:
@@ -4647,7 +4645,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/protoUsersResponse'
           description: A successful response.
         default:
           content:
@@ -4674,7 +4672,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/grpcprotoUserResponse'
           description: A successful response.
         default:
           content:
@@ -4701,7 +4699,7 @@ paths:
           content:
             '*/*':
               schema:
-                $ref: '#/components/schemas/protoServiceResponse'
+                $ref: '#/components/schemas/grpcprotoUserResponse'
           description: A successful response.
         default:
           content:
@@ -5639,7 +5637,140 @@ components:
             $ref: '#/components/schemas/ErrorValidationErrorDetail'
           type: array
       type: object
+    grpcprotoTable:
+      example:
+        columns:
+        - columnType: columnType
+          columnDbType: columnDbType
+          rawColumnName: rawColumnName
+          columnName: columnName
+        - columnType: columnType
+          columnDbType: columnDbType
+          rawColumnName: rawColumnName
+          columnName: columnName
+        totalRows: totalRows
+        rows:
+        - values:
+          - values
+          - values
+        - values:
+          - values
+          - values
+      properties:
+        columns:
+          items:
+            $ref: '#/components/schemas/grpcprotoTableColumn'
+          type: array
+        rows:
+          items:
+            $ref: '#/components/schemas/grpcprotoTableRow'
+          type: array
+        totalRows:
+          type: string
+      type: object
+    grpcprotoTableColumn:
+      example:
+        columnType: columnType
+        columnDbType: columnDbType
+        rawColumnName: rawColumnName
+        columnName: columnName
+      properties:
+        columnDbType:
+          type: string
+        columnName:
+          type: string
+        columnType:
+          type: string
+        rawColumnName:
+          type: string
+      type: object
+    grpcprotoTableRow:
+      example:
+        values:
+        - values
+        - values
+      properties:
+        values:
+          items:
+            type: string
+          type: array
+      type: object
+    grpcprotoUserResponse:
+      example:
+        data:
+          firstName: firstName
+          lastName: lastName
+          id: id
+          email: email
+          enabled: true
+          entity:
+            name: name
+            externalId: externalId
+            id: id
+            enabled: true
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/protoUserDto'
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+      type: object
+    protoEntitiesDto:
+      example:
+        entities:
+        - name: name
+          externalId: externalId
+          id: id
+          enabled: true
+        - name: name
+          externalId: externalId
+          id: id
+          enabled: true
+      properties:
+        entities:
+          items:
+            $ref: '#/components/schemas/protoEntityDto'
+          type: array
+      type: object
+    protoEntitiesResponse:
+      example:
+        data:
+          entities:
+          - name: name
+            externalId: externalId
+            id: id
+            enabled: true
+          - name: name
+            externalId: externalId
+            id: id
+            enabled: true
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/protoEntitiesDto'
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+      type: object
     protoEntityDto:
+      example:
+        name: name
+        externalId: externalId
+        id: id
+        enabled: true
       properties:
         enabled:
           type: boolean
@@ -5650,14 +5781,71 @@ components:
         name:
           type: string
       type: object
+    protoEntityResponse:
+      example:
+        data:
+          name: name
+          externalId: externalId
+          id: id
+          enabled: true
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/protoEntityDto'
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+      type: object
     protoGroupPolicies:
+      example:
+        groupPolicy:
+        - type: type
+          group: group
+          username: username
+        - type: type
+          group: group
+          username: username
       properties:
         groupPolicy:
           items:
             $ref: '#/components/schemas/protoGroupPolicyDto'
           type: array
       type: object
+    protoGroupPoliciesResponse:
+      example:
+        data:
+          groupPolicy:
+          - type: type
+            group: group
+            username: username
+          - type: type
+            group: group
+            username: username
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/protoGroupPolicies'
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+      type: object
     protoGroupPolicyDto:
+      example:
+        type: type
+        group: group
+        username: username
       properties:
         group:
           type: string
@@ -5666,14 +5854,118 @@ components:
         username:
           type: string
       type: object
+    protoOperationSuccess:
+      example:
+        success: true
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+        success:
+          type: boolean
+      type: object
     protoPolicies:
+      example:
+        policyDto:
+        - assetPermission: assetPermission
+          addon: addon
+          api: api
+          apiPermission: apiPermission
+          asset: asset
+          type: type
+          username: username
+        - assetPermission: assetPermission
+          addon: addon
+          api: api
+          apiPermission: apiPermission
+          asset: asset
+          type: type
+          username: username
       properties:
         policyDto:
           items:
             $ref: '#/components/schemas/protoPolicyDto'
           type: array
       type: object
+    protoPoliciesList:
+      example:
+        policies:
+        - policies
+        - policies
+      properties:
+        policies:
+          items:
+            type: string
+          type: array
+      type: object
+    protoPoliciesListResponse:
+      example:
+        data:
+          policies:
+          - policies
+          - policies
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/protoPoliciesList'
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+      type: object
+    protoPoliciesResponse:
+      example:
+        data:
+          policyDto:
+          - assetPermission: assetPermission
+            addon: addon
+            api: api
+            apiPermission: apiPermission
+            asset: asset
+            type: type
+            username: username
+          - assetPermission: assetPermission
+            addon: addon
+            api: api
+            apiPermission: apiPermission
+            asset: asset
+            type: type
+            username: username
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/protoPolicies'
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+      type: object
     protoPolicyDto:
+      example:
+        assetPermission: assetPermission
+        addon: addon
+        api: api
+        apiPermission: apiPermission
+        asset: asset
+        type: type
+        username: username
       properties:
         addon:
           type: string
@@ -5718,11 +6010,26 @@ components:
         order:
           type: string
       type: object
-    protoServiceResponse:
+    protoTableResponse:
       example:
         data:
-          typeUrl: typeUrl
-          value: value
+          columns:
+          - columnType: columnType
+            columnDbType: columnDbType
+            rawColumnName: rawColumnName
+            columnName: columnName
+          - columnType: columnType
+            columnDbType: columnDbType
+            rawColumnName: rawColumnName
+            columnName: columnName
+          totalRows: totalRows
+          rows:
+          - values:
+            - values
+            - values
+          - values:
+            - values
+            - values
         error:
           code: 0
           validationErrorDetails:
@@ -5733,11 +6040,22 @@ components:
           message: message
       properties:
         data:
-          $ref: '#/components/schemas/protobufAny'
+          $ref: '#/components/schemas/grpcprotoTable'
         error:
           $ref: '#/components/schemas/grpcprotoError'
       type: object
     protoUserDto:
+      example:
+        firstName: firstName
+        lastName: lastName
+        id: id
+        email: email
+        enabled: true
+        entity:
+          name: name
+          externalId: externalId
+          id: id
+          enabled: true
       properties:
         email:
           type: string
@@ -5769,10 +6087,74 @@ components:
         username:
           type: string
       type: object
-    protobufAny:
+    protoUsersDto:
       example:
-        typeUrl: typeUrl
-        value: value
+        user:
+        - firstName: firstName
+          lastName: lastName
+          id: id
+          email: email
+          enabled: true
+          entity:
+            name: name
+            externalId: externalId
+            id: id
+            enabled: true
+        - firstName: firstName
+          lastName: lastName
+          id: id
+          email: email
+          enabled: true
+          entity:
+            name: name
+            externalId: externalId
+            id: id
+            enabled: true
+      properties:
+        user:
+          items:
+            $ref: '#/components/schemas/protoUserDto'
+          type: array
+      type: object
+    protoUsersResponse:
+      example:
+        data:
+          user:
+          - firstName: firstName
+            lastName: lastName
+            id: id
+            email: email
+            enabled: true
+            entity:
+              name: name
+              externalId: externalId
+              id: id
+              enabled: true
+          - firstName: firstName
+            lastName: lastName
+            id: id
+            email: email
+            enabled: true
+            entity:
+              name: name
+              externalId: externalId
+              id: id
+              enabled: true
+        error:
+          code: 0
+          validationErrorDetails:
+          - fieldName: fieldName
+            description: description
+          - fieldName: fieldName
+            description: description
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/protoUsersDto'
+        error:
+          $ref: '#/components/schemas/grpcprotoError'
+      type: object
+    protobufAny:
       properties:
         typeUrl:
           type: string
@@ -6959,7 +7341,7 @@ components:
         upperBoundary: "{}"
         cohortConsensusPrice: "{}"
         consAbsDiffFromAnchorTrade: "{}"
-        numberOfInstruments: numberOfInstruments
+        numberOfInstruments: "{}"
         absDiffFromConsensus: "{}"
         lowerBoundary: "{}"
       properties:
@@ -6985,7 +7367,8 @@ components:
           properties: {}
           type: object
         numberOfInstruments:
-          type: string
+          properties: {}
+          type: object
         stdDev:
           properties: {}
           type: object
@@ -7113,7 +7496,7 @@ components:
           upperBoundary: "{}"
           cohortConsensusPrice: "{}"
           consAbsDiffFromAnchorTrade: "{}"
-          numberOfInstruments: numberOfInstruments
+          numberOfInstruments: "{}"
           absDiffFromConsensus: "{}"
           lowerBoundary: "{}"
         submissionStatistics:
@@ -7122,7 +7505,7 @@ components:
           mean: "{}"
           statMeanAbsDiffFromLatestTrade: "{}"
           subPriceDiff: "{}"
-          subValidPointsCount: subValidPointsCount
+          subValidPointsCount: "{}"
           stdDev: "{}"
           upperBoundary: "{}"
           absDiffFromStatisticalMean: "{}"
@@ -7149,7 +7532,7 @@ components:
           weekTradeNumber: weekTradeNumber
         submissionEvidence:
           eviPriceAbsDiffFromLatestTrade: "{}"
-          participantsCount: participantsCount
+          participantsCount: "{}"
           absDiffFromEvidence: "{}"
           evidence: "{}"
           subPriceDiff: "{}"
@@ -7311,7 +7694,7 @@ components:
         consensusScores:
           tradeAlignmentScore:
             score: "{}"
-            submissionMean: "{}"
+            mean: "{}"
             latestTradePrice: "{}"
             scoreStatus: scoreStatus
             history:
@@ -7325,7 +7708,7 @@ components:
           evpAlignmentScore:
             score: "{}"
             evpMid: "{}"
-            submissionMean: "{}"
+            mean: "{}"
             scoreStatus: scoreStatus
             history:
             - date: date
@@ -7430,7 +7813,7 @@ components:
           consensusScores:
             tradeAlignmentScore:
               score: "{}"
-              submissionMean: "{}"
+              mean: "{}"
               latestTradePrice: "{}"
               scoreStatus: scoreStatus
               history:
@@ -7444,7 +7827,7 @@ components:
             evpAlignmentScore:
               score: "{}"
               evpMid: "{}"
-              submissionMean: "{}"
+              mean: "{}"
               scoreStatus: scoreStatus
               history:
               - date: date
@@ -7752,7 +8135,7 @@ components:
             upperBoundary: "{}"
             cohortConsensusPrice: "{}"
             consAbsDiffFromAnchorTrade: "{}"
-            numberOfInstruments: numberOfInstruments
+            numberOfInstruments: "{}"
             absDiffFromConsensus: "{}"
             lowerBoundary: "{}"
           submissionStatistics:
@@ -7761,7 +8144,7 @@ components:
             mean: "{}"
             statMeanAbsDiffFromLatestTrade: "{}"
             subPriceDiff: "{}"
-            subValidPointsCount: subValidPointsCount
+            subValidPointsCount: "{}"
             stdDev: "{}"
             upperBoundary: "{}"
             absDiffFromStatisticalMean: "{}"
@@ -7788,7 +8171,7 @@ components:
             weekTradeNumber: weekTradeNumber
           submissionEvidence:
             eviPriceAbsDiffFromLatestTrade: "{}"
-            participantsCount: participantsCount
+            participantsCount: "{}"
             absDiffFromEvidence: "{}"
             evidence: "{}"
             subPriceDiff: "{}"
@@ -7814,7 +8197,7 @@ components:
               upperBoundary: "{}"
               cohortConsensusPrice: "{}"
               consAbsDiffFromAnchorTrade: "{}"
-              numberOfInstruments: numberOfInstruments
+              numberOfInstruments: "{}"
               absDiffFromConsensus: "{}"
               lowerBoundary: "{}"
             submissionStatistics:
@@ -7823,7 +8206,7 @@ components:
               mean: "{}"
               statMeanAbsDiffFromLatestTrade: "{}"
               subPriceDiff: "{}"
-              subValidPointsCount: subValidPointsCount
+              subValidPointsCount: "{}"
               stdDev: "{}"
               upperBoundary: "{}"
               absDiffFromStatisticalMean: "{}"
@@ -7850,7 +8233,7 @@ components:
               weekTradeNumber: weekTradeNumber
             submissionEvidence:
               eviPriceAbsDiffFromLatestTrade: "{}"
-              participantsCount: participantsCount
+              participantsCount: "{}"
               absDiffFromEvidence: "{}"
               evidence: "{}"
               subPriceDiff: "{}"
@@ -8184,7 +8567,7 @@ components:
       example:
         tradeAlignmentScore:
           score: "{}"
-          submissionMean: "{}"
+          mean: "{}"
           latestTradePrice: "{}"
           scoreStatus: scoreStatus
           history:
@@ -8198,7 +8581,7 @@ components:
         evpAlignmentScore:
           score: "{}"
           evpMid: "{}"
-          submissionMean: "{}"
+          mean: "{}"
           scoreStatus: scoreStatus
           history:
           - date: date
@@ -8422,7 +8805,7 @@ components:
           lookuptable:
             filter: filter
             type: type
-            value: value
+            value: "{}"
             key:
             - key
             - key
@@ -8443,7 +8826,7 @@ components:
           lookuptable:
             filter: filter
             type: type
-            value: value
+            value: "{}"
             key:
             - key
             - key
@@ -9103,7 +9486,7 @@ components:
       example:
         filter: filter
         type: type
-        value: value
+        value: "{}"
         key:
         - key
         - key
@@ -9117,7 +9500,8 @@ components:
         type:
           type: string
         value:
-          type: string
+          properties: {}
+          type: object
       type: object
     titaniumEVPRequest:
       properties:
@@ -9303,7 +9687,7 @@ components:
       example:
         score: "{}"
         evpMid: "{}"
-        submissionMean: "{}"
+        mean: "{}"
         scoreStatus: scoreStatus
         history:
         - date: date
@@ -9321,15 +9705,15 @@ components:
           items:
             $ref: '#/components/schemas/titaniumTradeAligmentDateAndValue'
           type: array
+        mean:
+          properties: {}
+          type: object
         score:
           properties: {}
           type: object
         scoreStatus:
           type: string
         stdDev:
-          properties: {}
-          type: object
-        submissionMean:
           properties: {}
           type: object
       type: object
@@ -10729,7 +11113,7 @@ components:
                 lookuptable:
                   filter: filter
                   type: type
-                  value: value
+                  value: "{}"
                   key:
                   - key
                   - key
@@ -10750,7 +11134,7 @@ components:
                 lookuptable:
                   filter: filter
                   type: type
-                  value: value
+                  value: "{}"
                   key:
                   - key
                   - key
@@ -10781,7 +11165,7 @@ components:
                 lookuptable:
                   filter: filter
                   type: type
-                  value: value
+                  value: "{}"
                   key:
                   - key
                   - key
@@ -10802,7 +11186,7 @@ components:
                 lookuptable:
                   filter: filter
                   type: type
-                  value: value
+                  value: "{}"
                   key:
                   - key
                   - key
@@ -11450,7 +11834,7 @@ components:
           lut:
             filter: filter
             type: type
-            value: value
+            value: "{}"
             key:
             - key
             - key
@@ -11462,7 +11846,7 @@ components:
           lut:
             filter: filter
             type: type
-            value: value
+            value: "{}"
             key:
             - key
             - key
@@ -11519,7 +11903,7 @@ components:
             lut:
               filter: filter
               type: type
-              value: value
+              value: "{}"
               key:
               - key
               - key
@@ -11531,7 +11915,7 @@ components:
             lut:
               filter: filter
               type: type
-              value: value
+              value: "{}"
               key:
               - key
               - key
@@ -11630,7 +12014,7 @@ components:
           lut:
             filter: filter
             type: type
-            value: value
+            value: "{}"
             key:
             - key
             - key
@@ -11642,7 +12026,7 @@ components:
           lut:
             filter: filter
             type: type
-            value: value
+            value: "{}"
             key:
             - key
             - key
@@ -11673,7 +12057,7 @@ components:
             lut:
               filter: filter
               type: type
-              value: value
+              value: "{}"
               key:
               - key
               - key
@@ -11685,7 +12069,7 @@ components:
             lut:
               filter: filter
               type: type
-              value: value
+              value: "{}"
               key:
               - key
               - key
@@ -12287,7 +12671,7 @@ components:
         lookuptable:
           filter: filter
           type: type
-          value: value
+          value: "{}"
           key:
           - key
           - key
@@ -12340,7 +12724,7 @@ components:
             lookuptable:
               filter: filter
               type: type
-              value: value
+              value: "{}"
               key:
               - key
               - key
@@ -12361,7 +12745,7 @@ components:
             lookuptable:
               filter: filter
               type: type
-              value: value
+              value: "{}"
               key:
               - key
               - key
@@ -12392,7 +12776,7 @@ components:
             lookuptable:
               filter: filter
               type: type
-              value: value
+              value: "{}"
               key:
               - key
               - key
@@ -12413,7 +12797,7 @@ components:
             lookuptable:
               filter: filter
               type: type
-              value: value
+              value: "{}"
               key:
               - key
               - key
@@ -12744,7 +13128,7 @@ components:
     titaniumSubmissionEvidenceTableColumn:
       example:
         eviPriceAbsDiffFromLatestTrade: "{}"
-        participantsCount: participantsCount
+        participantsCount: "{}"
         absDiffFromEvidence: "{}"
         evidence: "{}"
         subPriceDiff: "{}"
@@ -12765,7 +13149,8 @@ components:
           properties: {}
           type: object
         participantsCount:
-          type: string
+          properties: {}
+          type: object
         stdDev:
           properties: {}
           type: object
@@ -12836,7 +13221,7 @@ components:
         mean: "{}"
         statMeanAbsDiffFromLatestTrade: "{}"
         subPriceDiff: "{}"
-        subValidPointsCount: subValidPointsCount
+        subValidPointsCount: "{}"
         stdDev: "{}"
         upperBoundary: "{}"
         absDiffFromStatisticalMean: "{}"
@@ -12867,7 +13252,8 @@ components:
           properties: {}
           type: object
         subValidPointsCount:
-          type: string
+          properties: {}
+          type: object
         upperBoundary:
           properties: {}
           type: object
@@ -13116,7 +13502,7 @@ components:
     titaniumTradeAlignmentScore:
       example:
         score: "{}"
-        submissionMean: "{}"
+        mean: "{}"
         latestTradePrice: "{}"
         scoreStatus: scoreStatus
         history:
@@ -13135,15 +13521,15 @@ components:
         latestTradePrice:
           properties: {}
           type: object
+        mean:
+          properties: {}
+          type: object
         score:
           properties: {}
           type: object
         scoreStatus:
           type: string
         stdDev:
-          properties: {}
-          type: object
-        submissionMean:
           properties: {}
           type: object
       type: object
@@ -13219,7 +13605,7 @@ components:
         lut:
           filter: filter
           type: type
-          value: value
+          value: "{}"
           key:
           - key
           - key
@@ -13722,7 +14108,7 @@ components:
               lookuptable:
                 filter: filter
                 type: type
-                value: value
+                value: "{}"
                 key:
                 - key
                 - key
@@ -13743,7 +14129,7 @@ components:
               lookuptable:
                 filter: filter
                 type: type
-                value: value
+                value: "{}"
                 key:
                 - key
                 - key
@@ -13774,7 +14160,7 @@ components:
               lookuptable:
                 filter: filter
                 type: type
-                value: value
+                value: "{}"
                 key:
                 - key
                 - key
@@ -13795,7 +14181,7 @@ components:
               lookuptable:
                 filter: filter
                 type: type
-                value: value
+                value: "{}"
                 key:
                 - key
                 - key
@@ -13908,6 +14294,15 @@ components:
         fileStatus:
           type: string
         uploadDate:
+          type: string
+      type: object
+    EntityService_update_request:
+      properties:
+        enabled:
+          type: boolean
+        externalId:
+          type: string
+        name:
           type: string
       type: object
 x-original-swagger-version: "2.0"

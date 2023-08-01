@@ -5,16 +5,16 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**entityServiceCreate**](EntityServiceApi.md#entityServiceCreate) | **POST** /api/v1/user-management/entities/create | 
-[**entityServiceFind**](EntityServiceApi.md#entityServiceFind) | **POST** /api/v1/user-management/entities/find | 
-[**entityServiceGetAllEnabledOnly**](EntityServiceApi.md#entityServiceGetAllEnabledOnly) | **POST** /api/v1/user-management/entities/getAllByEnabled | 
-[**entityServiceGetById**](EntityServiceApi.md#entityServiceGetById) | **POST** /api/v1/user-management/entities/getById | 
-[**entityServiceUpdate**](EntityServiceApi.md#entityServiceUpdate) | **POST** /api/v1/user-management/entities/update | 
+[**entityServiceFind**](EntityServiceApi.md#entityServiceFind) | **POST** /api/v1/user-management/entities | 
+[**entityServiceGetAllEnabledOnly**](EntityServiceApi.md#entityServiceGetAllEnabledOnly) | **GET** /api/v1/user-management/entities | 
+[**entityServiceGetById**](EntityServiceApi.md#entityServiceGetById) | **GET** /api/v1/user-management/entities/{id} | 
+[**entityServiceUpdate**](EntityServiceApi.md#entityServiceUpdate) | **PUT** /api/v1/user-management/entities/{id} | 
 
 
 
 ## entityServiceCreate
 
-> ProtoServiceResponse entityServiceCreate(body)
+> ProtoEntityResponse entityServiceCreate(body)
 
 
 
@@ -43,7 +43,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 
@@ -57,7 +57,7 @@ No authorization required
 
 ## entityServiceFind
 
-> ProtoServiceResponse entityServiceFind(body)
+> ProtoTableResponse entityServiceFind(body)
 
 
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoTableResponse**](ProtoTableResponse.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ No authorization required
 
 ## entityServiceGetAllEnabledOnly
 
-> ProtoServiceResponse entityServiceGetAllEnabledOnly(body)
+> ProtoEntitiesResponse entityServiceGetAllEnabledOnly()
 
 
 
@@ -110,8 +110,7 @@ No authorization required
 import ClearconsensusSdk from 'clearconsensus_sdk';
 
 let apiInstance = new ClearconsensusSdk.EntityServiceApi();
-let body = true; // Boolean | 
-apiInstance.entityServiceGetAllEnabledOnly(body, (error, data, response) => {
+apiInstance.entityServiceGetAllEnabledOnly((error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -122,14 +121,11 @@ apiInstance.entityServiceGetAllEnabledOnly(body, (error, data, response) => {
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **Boolean**|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntitiesResponse**](ProtoEntitiesResponse.md)
 
 ### Authorization
 
@@ -143,7 +139,7 @@ No authorization required
 
 ## entityServiceGetById
 
-> ProtoServiceResponse entityServiceGetById(body)
+> ProtoEntityResponse entityServiceGetById(id)
 
 
 
@@ -153,8 +149,8 @@ No authorization required
 import ClearconsensusSdk from 'clearconsensus_sdk';
 
 let apiInstance = new ClearconsensusSdk.EntityServiceApi();
-let body = "body_example"; // String | 
-apiInstance.entityServiceGetById(body, (error, data, response) => {
+let id = "id_example"; // String | 
+apiInstance.entityServiceGetById(id, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -168,11 +164,11 @@ apiInstance.entityServiceGetById(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **String**|  | 
+ **id** | **String**|  | 
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 
@@ -186,7 +182,7 @@ No authorization required
 
 ## entityServiceUpdate
 
-> ProtoServiceResponse entityServiceUpdate(body)
+> ProtoEntityResponse entityServiceUpdate(id, body)
 
 
 
@@ -196,8 +192,9 @@ No authorization required
 import ClearconsensusSdk from 'clearconsensus_sdk';
 
 let apiInstance = new ClearconsensusSdk.EntityServiceApi();
-let body = new ClearconsensusSdk.ProtoEntityDto(); // ProtoEntityDto | 
-apiInstance.entityServiceUpdate(body, (error, data, response) => {
+let id = "id_example"; // String | 
+let body = new ClearconsensusSdk.EntityServiceUpdateRequest(); // EntityServiceUpdateRequest | 
+apiInstance.entityServiceUpdate(id, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -211,11 +208,12 @@ apiInstance.entityServiceUpdate(body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProtoEntityDto**](ProtoEntityDto.md)|  | 
+ **id** | **String**|  | 
+ **body** | [**EntityServiceUpdateRequest**](EntityServiceUpdateRequest.md)|  | 
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 

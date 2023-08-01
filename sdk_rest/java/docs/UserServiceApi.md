@@ -144,7 +144,7 @@ No authorization required
 
 <a name="userServiceCreate"></a>
 # **userServiceCreate**
-> ProtoServiceResponse userServiceCreate(body)
+> GrpcprotoUserResponse userServiceCreate(body)
 
 
 
@@ -165,7 +165,7 @@ public class Example {
     UserServiceApi apiInstance = new UserServiceApi(defaultClient);
     ProtoUserDto body = new ProtoUserDto(); // ProtoUserDto | 
     try {
-      ProtoServiceResponse result = apiInstance.userServiceCreate(body);
+      GrpcprotoUserResponse result = apiInstance.userServiceCreate(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserServiceApi#userServiceCreate");
@@ -186,7 +186,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 
@@ -327,7 +327,7 @@ No authorization required
 
 <a name="userServiceGetAll"></a>
 # **userServiceGetAll**
-> ProtoServiceResponse userServiceGetAll(body)
+> ProtoUsersResponse userServiceGetAll(body)
 
 
 
@@ -348,7 +348,7 @@ public class Example {
     UserServiceApi apiInstance = new UserServiceApi(defaultClient);
     ProtoUserEnabled body = new ProtoUserEnabled(); // ProtoUserEnabled | 
     try {
-      ProtoServiceResponse result = apiInstance.userServiceGetAll(body);
+      ProtoUsersResponse result = apiInstance.userServiceGetAll(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserServiceApi#userServiceGetAll");
@@ -369,7 +369,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoUsersResponse**](ProtoUsersResponse.md)
 
 ### Authorization
 
@@ -388,7 +388,7 @@ No authorization required
 
 <a name="userServiceGetById"></a>
 # **userServiceGetById**
-> ProtoServiceResponse userServiceGetById(body)
+> GrpcprotoUserResponse userServiceGetById(body)
 
 
 
@@ -409,7 +409,7 @@ public class Example {
     UserServiceApi apiInstance = new UserServiceApi(defaultClient);
     ProtoUserId body = new ProtoUserId(); // ProtoUserId | 
     try {
-      ProtoServiceResponse result = apiInstance.userServiceGetById(body);
+      GrpcprotoUserResponse result = apiInstance.userServiceGetById(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserServiceApi#userServiceGetById");
@@ -430,7 +430,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 
@@ -693,7 +693,7 @@ No authorization required
 
 <a name="userServiceUpdate"></a>
 # **userServiceUpdate**
-> ProtoServiceResponse userServiceUpdate(body)
+> GrpcprotoUserResponse userServiceUpdate(body)
 
 
 
@@ -714,7 +714,7 @@ public class Example {
     UserServiceApi apiInstance = new UserServiceApi(defaultClient);
     ProtoUserDto body = new ProtoUserDto(); // ProtoUserDto | 
     try {
-      ProtoServiceResponse result = apiInstance.userServiceUpdate(body);
+      GrpcprotoUserResponse result = apiInstance.userServiceUpdate(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UserServiceApi#userServiceUpdate");
@@ -735,7 +735,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 

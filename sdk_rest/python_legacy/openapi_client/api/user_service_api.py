@@ -330,7 +330,7 @@ class UserServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: GrpcprotoUserResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.user_service_create_with_http_info(body, **kwargs)  # noqa: E501
@@ -367,7 +367,7 @@ class UserServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(GrpcprotoUserResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -421,7 +421,7 @@ class UserServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "GrpcprotoUserResponse",
         }
 
         return self.api_client.call_api(
@@ -735,7 +735,7 @@ class UserServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoUsersResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.user_service_get_all_with_http_info(body, **kwargs)  # noqa: E501
@@ -772,7 +772,7 @@ class UserServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoUsersResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -826,7 +826,7 @@ class UserServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoUsersResponse",
         }
 
         return self.api_client.call_api(
@@ -870,7 +870,7 @@ class UserServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: GrpcprotoUserResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.user_service_get_by_id_with_http_info(body, **kwargs)  # noqa: E501
@@ -907,7 +907,7 @@ class UserServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(GrpcprotoUserResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -961,7 +961,7 @@ class UserServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "GrpcprotoUserResponse",
         }
 
         return self.api_client.call_api(
@@ -1545,7 +1545,7 @@ class UserServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: GrpcprotoUserResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.user_service_update_with_http_info(body, **kwargs)  # noqa: E501
@@ -1582,7 +1582,7 @@ class UserServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(GrpcprotoUserResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -1636,7 +1636,7 @@ class UserServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "GrpcprotoUserResponse",
         }
 
         return self.api_client.call_api(

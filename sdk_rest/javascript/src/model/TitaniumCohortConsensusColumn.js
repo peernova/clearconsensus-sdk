@@ -69,7 +69,7 @@ class TitaniumCohortConsensusColumn {
                 obj['lowerBoundary'] = ApiClient.convertToType(data['lowerBoundary'], Object);
             }
             if (data.hasOwnProperty('numberOfInstruments')) {
-                obj['numberOfInstruments'] = ApiClient.convertToType(data['numberOfInstruments'], 'String');
+                obj['numberOfInstruments'] = ApiClient.convertToType(data['numberOfInstruments'], Object);
             }
             if (data.hasOwnProperty('stdDev')) {
                 obj['stdDev'] = ApiClient.convertToType(data['stdDev'], Object);
@@ -123,7 +123,7 @@ TitaniumCohortConsensusColumn.prototype['consAbsDiffFromAnchorTrade'] = undefine
 TitaniumCohortConsensusColumn.prototype['lowerBoundary'] = undefined;
 
 /**
- * @member {String} numberOfInstruments
+ * @member {Object} numberOfInstruments
  */
 TitaniumCohortConsensusColumn.prototype['numberOfInstruments'] = undefined;
 

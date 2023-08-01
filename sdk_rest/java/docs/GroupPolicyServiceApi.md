@@ -10,7 +10,7 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 
 <a name="groupPolicyServiceCreate"></a>
 # **groupPolicyServiceCreate**
-> ProtoServiceResponse groupPolicyServiceCreate(body)
+> ProtoOperationSuccess groupPolicyServiceCreate(body)
 
 
 
@@ -31,7 +31,7 @@ public class Example {
     GroupPolicyServiceApi apiInstance = new GroupPolicyServiceApi(defaultClient);
     ProtoGroupPolicies body = new ProtoGroupPolicies(); // ProtoGroupPolicies | 
     try {
-      ProtoServiceResponse result = apiInstance.groupPolicyServiceCreate(body);
+      ProtoOperationSuccess result = apiInstance.groupPolicyServiceCreate(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupPolicyServiceApi#groupPolicyServiceCreate");
@@ -52,7 +52,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -71,7 +71,7 @@ No authorization required
 
 <a name="groupPolicyServiceGetPolicies"></a>
 # **groupPolicyServiceGetPolicies**
-> ProtoServiceResponse groupPolicyServiceGetPolicies(body)
+> ProtoGroupPoliciesResponse groupPolicyServiceGetPolicies(body)
 
 
 
@@ -92,7 +92,7 @@ public class Example {
     GroupPolicyServiceApi apiInstance = new GroupPolicyServiceApi(defaultClient);
     ProtoPolicyType body = new ProtoPolicyType(); // ProtoPolicyType | 
     try {
-      ProtoServiceResponse result = apiInstance.groupPolicyServiceGetPolicies(body);
+      ProtoGroupPoliciesResponse result = apiInstance.groupPolicyServiceGetPolicies(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling GroupPolicyServiceApi#groupPolicyServiceGetPolicies");
@@ -113,7 +113,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoGroupPoliciesResponse**](ProtoGroupPoliciesResponse.md)
 
 ### Authorization
 

@@ -28,8 +28,9 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.ProtoGroupPolicies;
+import org.openapitools.client.model.ProtoGroupPoliciesResponse;
+import org.openapitools.client.model.ProtoOperationSuccess;
 import org.openapitools.client.model.ProtoPolicyType;
-import org.openapitools.client.model.ProtoServiceResponse;
 import org.openapitools.client.model.RpcStatus;
 
 import java.lang.reflect.Type;
@@ -152,7 +153,7 @@ public class GroupPolicyServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return ProtoOperationSuccess
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -161,8 +162,8 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse groupPolicyServiceCreate(ProtoGroupPolicies body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = groupPolicyServiceCreateWithHttpInfo(body);
+    public ProtoOperationSuccess groupPolicyServiceCreate(ProtoGroupPolicies body) throws ApiException {
+        ApiResponse<ProtoOperationSuccess> localVarResp = groupPolicyServiceCreateWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -170,7 +171,7 @@ public class GroupPolicyServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;ProtoOperationSuccess&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -179,9 +180,9 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> groupPolicyServiceCreateWithHttpInfo(ProtoGroupPolicies body) throws ApiException {
+    public ApiResponse<ProtoOperationSuccess> groupPolicyServiceCreateWithHttpInfo(ProtoGroupPolicies body) throws ApiException {
         okhttp3.Call localVarCall = groupPolicyServiceCreateValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoOperationSuccess>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -199,10 +200,10 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call groupPolicyServiceCreateAsync(ProtoGroupPolicies body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call groupPolicyServiceCreateAsync(ProtoGroupPolicies body, final ApiCallback<ProtoOperationSuccess> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = groupPolicyServiceCreateValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoOperationSuccess>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -282,7 +283,7 @@ public class GroupPolicyServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ProtoServiceResponse
+     * @return ProtoGroupPoliciesResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -291,8 +292,8 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ProtoServiceResponse groupPolicyServiceGetPolicies(ProtoPolicyType body) throws ApiException {
-        ApiResponse<ProtoServiceResponse> localVarResp = groupPolicyServiceGetPoliciesWithHttpInfo(body);
+    public ProtoGroupPoliciesResponse groupPolicyServiceGetPolicies(ProtoPolicyType body) throws ApiException {
+        ApiResponse<ProtoGroupPoliciesResponse> localVarResp = groupPolicyServiceGetPoliciesWithHttpInfo(body);
         return localVarResp.getData();
     }
 
@@ -300,7 +301,7 @@ public class GroupPolicyServiceApi {
      * 
      * 
      * @param body  (required)
-     * @return ApiResponse&lt;ProtoServiceResponse&gt;
+     * @return ApiResponse&lt;ProtoGroupPoliciesResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -309,9 +310,9 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ProtoServiceResponse> groupPolicyServiceGetPoliciesWithHttpInfo(ProtoPolicyType body) throws ApiException {
+    public ApiResponse<ProtoGroupPoliciesResponse> groupPolicyServiceGetPoliciesWithHttpInfo(ProtoPolicyType body) throws ApiException {
         okhttp3.Call localVarCall = groupPolicyServiceGetPoliciesValidateBeforeCall(body, null);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoGroupPoliciesResponse>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
@@ -329,10 +330,10 @@ public class GroupPolicyServiceApi {
         <tr><td> 0 </td><td> An unexpected error response. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call groupPolicyServiceGetPoliciesAsync(ProtoPolicyType body, final ApiCallback<ProtoServiceResponse> _callback) throws ApiException {
+    public okhttp3.Call groupPolicyServiceGetPoliciesAsync(ProtoPolicyType body, final ApiCallback<ProtoGroupPoliciesResponse> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = groupPolicyServiceGetPoliciesValidateBeforeCall(body, _callback);
-        Type localVarReturnType = new TypeToken<ProtoServiceResponse>(){}.getType();
+        Type localVarReturnType = new TypeToken<ProtoGroupPoliciesResponse>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

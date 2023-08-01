@@ -141,7 +141,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_create**
-> ProtoServiceResponse user_service_create(body)
+> GrpcprotoUserResponse user_service_create(body)
 
 
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 
@@ -321,7 +321,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_get_all**
-> ProtoServiceResponse user_service_get_all(body)
+> ProtoUsersResponse user_service_get_all(body)
 
 
 
@@ -361,7 +361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoUsersResponse**](ProtoUsersResponse.md)
 
 ### Authorization
 
@@ -381,7 +381,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_get_by_id**
-> ProtoServiceResponse user_service_get_by_id(body)
+> GrpcprotoUserResponse user_service_get_by_id(body)
 
 
 
@@ -421,7 +421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 
@@ -681,7 +681,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_update**
-> ProtoServiceResponse user_service_update(body)
+> GrpcprotoUserResponse user_service_update(body)
 
 
 
@@ -721,7 +721,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 

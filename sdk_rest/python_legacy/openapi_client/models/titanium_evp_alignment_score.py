@@ -38,22 +38,22 @@ class TitaniumEvpAlignmentScore(object):
     openapi_types = {
         'evp_mid': 'object',
         'history': 'list[TitaniumTradeAligmentDateAndValue]',
+        'mean': 'object',
         'score': 'object',
         'score_status': 'str',
-        'std_dev': 'object',
-        'submission_mean': 'object'
+        'std_dev': 'object'
     }
 
     attribute_map = {
         'evp_mid': 'evpMid',
         'history': 'history',
+        'mean': 'mean',
         'score': 'score',
         'score_status': 'scoreStatus',
-        'std_dev': 'stdDev',
-        'submission_mean': 'submissionMean'
+        'std_dev': 'stdDev'
     }
 
-    def __init__(self, evp_mid=None, history=None, score=None, score_status=None, std_dev=None, submission_mean=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, evp_mid=None, history=None, mean=None, score=None, score_status=None, std_dev=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumEvpAlignmentScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -61,24 +61,24 @@ class TitaniumEvpAlignmentScore(object):
 
         self._evp_mid = None
         self._history = None
+        self._mean = None
         self._score = None
         self._score_status = None
         self._std_dev = None
-        self._submission_mean = None
         self.discriminator = None
 
         if evp_mid is not None:
             self.evp_mid = evp_mid
         if history is not None:
             self.history = history
+        if mean is not None:
+            self.mean = mean
         if score is not None:
             self.score = score
         if score_status is not None:
             self.score_status = score_status
         if std_dev is not None:
             self.std_dev = std_dev
-        if submission_mean is not None:
-            self.submission_mean = submission_mean
 
     @property
     def evp_mid(self):
@@ -121,6 +121,27 @@ class TitaniumEvpAlignmentScore(object):
         """
 
         self._history = history
+
+    @property
+    def mean(self):
+        """Gets the mean of this TitaniumEvpAlignmentScore.  # noqa: E501
+
+
+        :return: The mean of this TitaniumEvpAlignmentScore.  # noqa: E501
+        :rtype: object
+        """
+        return self._mean
+
+    @mean.setter
+    def mean(self, mean):
+        """Sets the mean of this TitaniumEvpAlignmentScore.
+
+
+        :param mean: The mean of this TitaniumEvpAlignmentScore.  # noqa: E501
+        :type mean: object
+        """
+
+        self._mean = mean
 
     @property
     def score(self):
@@ -184,27 +205,6 @@ class TitaniumEvpAlignmentScore(object):
         """
 
         self._std_dev = std_dev
-
-    @property
-    def submission_mean(self):
-        """Gets the submission_mean of this TitaniumEvpAlignmentScore.  # noqa: E501
-
-
-        :return: The submission_mean of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._submission_mean
-
-    @submission_mean.setter
-    def submission_mean(self, submission_mean):
-        """Sets the submission_mean of this TitaniumEvpAlignmentScore.
-
-
-        :param submission_mean: The submission_mean of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :type submission_mean: object
-        """
-
-        self._submission_mean = submission_mean
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

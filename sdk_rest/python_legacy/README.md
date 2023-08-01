@@ -153,10 +153,10 @@ Class | Method | HTTP request | Description
 *DescriptorServiceApi* | [**descriptor_service_list_descriptors**](docs/DescriptorServiceApi.md#descriptor_service_list_descriptors) | **POST** /api/v1/descriptor/list | ListDescriptors returns list of specific descriptors according to request.
 *DtccServiceApi* | [**dtcc_service_get_dtcc_table**](docs/DtccServiceApi.md#dtcc_service_get_dtcc_table) | **POST** /api/v1/dtcc/tab | 
 *EntityServiceApi* | [**entity_service_create**](docs/EntityServiceApi.md#entity_service_create) | **POST** /api/v1/user-management/entities/create | 
-*EntityServiceApi* | [**entity_service_find**](docs/EntityServiceApi.md#entity_service_find) | **POST** /api/v1/user-management/entities/find | 
-*EntityServiceApi* | [**entity_service_get_all_enabled_only**](docs/EntityServiceApi.md#entity_service_get_all_enabled_only) | **POST** /api/v1/user-management/entities/getAllByEnabled | 
-*EntityServiceApi* | [**entity_service_get_by_id**](docs/EntityServiceApi.md#entity_service_get_by_id) | **POST** /api/v1/user-management/entities/getById | 
-*EntityServiceApi* | [**entity_service_update**](docs/EntityServiceApi.md#entity_service_update) | **POST** /api/v1/user-management/entities/update | 
+*EntityServiceApi* | [**entity_service_find**](docs/EntityServiceApi.md#entity_service_find) | **POST** /api/v1/user-management/entities | 
+*EntityServiceApi* | [**entity_service_get_all_enabled_only**](docs/EntityServiceApi.md#entity_service_get_all_enabled_only) | **GET** /api/v1/user-management/entities | 
+*EntityServiceApi* | [**entity_service_get_by_id**](docs/EntityServiceApi.md#entity_service_get_by_id) | **GET** /api/v1/user-management/entities/{id} | 
+*EntityServiceApi* | [**entity_service_update**](docs/EntityServiceApi.md#entity_service_update) | **PUT** /api/v1/user-management/entities/{id} | 
 *FileServiceApi* | [**file_service_file_history**](docs/FileServiceApi.md#file_service_file_history) | **POST** /api/v1/file-history | FileHistory retrieves the history for a specified file.
 *FileServiceApi* | [**file_service_file_submission**](docs/FileServiceApi.md#file_service_file_submission) | **POST** /api/v1/file-submission | FileSubmission submits a file for processing.
 *FileServiceApi* | [**file_service_get_file_delimiter**](docs/FileServiceApi.md#file_service_get_file_delimiter) | **POST** /api/v1/import/{filename}/delimiter | GetFileDelimiter retrieves the delimiter for a specified file.
@@ -262,6 +262,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [EntityServiceUpdateRequest](docs/EntityServiceUpdateRequest.md)
  - [ErrorValidationErrorDetail](docs/ErrorValidationErrorDetail.md)
  - [FileServiceGetFilePreviewRequest](docs/FileServiceGetFilePreviewRequest.md)
  - [GetAttachmentUploadUrlResponseAttachmentUploadUrl](docs/GetAttachmentUploadUrlResponseAttachmentUploadUrl.md)
@@ -269,20 +270,34 @@ Class | Method | HTTP request | Description
  - [GetChallengeDetailsResponseResult](docs/GetChallengeDetailsResponseResult.md)
  - [GetFileExportUrlResponseFileExportUrl](docs/GetFileExportUrlResponseFileExportUrl.md)
  - [GrpcprotoError](docs/GrpcprotoError.md)
+ - [GrpcprotoTable](docs/GrpcprotoTable.md)
+ - [GrpcprotoTableColumn](docs/GrpcprotoTableColumn.md)
+ - [GrpcprotoTableRow](docs/GrpcprotoTableRow.md)
+ - [GrpcprotoUserResponse](docs/GrpcprotoUserResponse.md)
+ - [ProtoEntitiesDto](docs/ProtoEntitiesDto.md)
+ - [ProtoEntitiesResponse](docs/ProtoEntitiesResponse.md)
  - [ProtoEntityDto](docs/ProtoEntityDto.md)
+ - [ProtoEntityResponse](docs/ProtoEntityResponse.md)
  - [ProtoGroupPolicies](docs/ProtoGroupPolicies.md)
+ - [ProtoGroupPoliciesResponse](docs/ProtoGroupPoliciesResponse.md)
  - [ProtoGroupPolicyDto](docs/ProtoGroupPolicyDto.md)
+ - [ProtoOperationSuccess](docs/ProtoOperationSuccess.md)
  - [ProtoPolicies](docs/ProtoPolicies.md)
+ - [ProtoPoliciesList](docs/ProtoPoliciesList.md)
+ - [ProtoPoliciesListResponse](docs/ProtoPoliciesListResponse.md)
+ - [ProtoPoliciesResponse](docs/ProtoPoliciesResponse.md)
  - [ProtoPolicyDto](docs/ProtoPolicyDto.md)
  - [ProtoPolicyType](docs/ProtoPolicyType.md)
  - [ProtoSearchCriteria](docs/ProtoSearchCriteria.md)
  - [ProtoSearchCriteriaLimit](docs/ProtoSearchCriteriaLimit.md)
  - [ProtoSearchCriteriaOrderBy](docs/ProtoSearchCriteriaOrderBy.md)
- - [ProtoServiceResponse](docs/ProtoServiceResponse.md)
+ - [ProtoTableResponse](docs/ProtoTableResponse.md)
  - [ProtoUserDto](docs/ProtoUserDto.md)
  - [ProtoUserEnabled](docs/ProtoUserEnabled.md)
  - [ProtoUserId](docs/ProtoUserId.md)
  - [ProtoUsernamePermissionRequest](docs/ProtoUsernamePermissionRequest.md)
+ - [ProtoUsersDto](docs/ProtoUsersDto.md)
+ - [ProtoUsersResponse](docs/ProtoUsersResponse.md)
  - [ProtobufAny](docs/ProtobufAny.md)
  - [RpcStatus](docs/RpcStatus.md)
  - [TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)

@@ -43,7 +43,7 @@ class TitaniumCohortConsensusColumn(object):
         'cons_abs_diff_from_anchor_sub': 'object',
         'cons_abs_diff_from_anchor_trade': 'object',
         'lower_boundary': 'object',
-        'number_of_instruments': 'str',
+        'number_of_instruments': 'object',
         'std_dev': 'object',
         'sub_price_diff': 'object',
         'upper_boundary': 'object'
@@ -258,7 +258,7 @@ class TitaniumCohortConsensusColumn(object):
 
 
         :return: The number_of_instruments of this TitaniumCohortConsensusColumn.  # noqa: E501
-        :rtype: str
+        :rtype: object
         """
         return self._number_of_instruments
 
@@ -268,7 +268,7 @@ class TitaniumCohortConsensusColumn(object):
 
 
         :param number_of_instruments: The number_of_instruments of this TitaniumCohortConsensusColumn.  # noqa: E501
-        :type number_of_instruments: str
+        :type number_of_instruments: object
         """
 
         self._number_of_instruments = number_of_instruments

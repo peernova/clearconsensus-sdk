@@ -5,15 +5,15 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**entityServiceCreate**](EntityServiceApi.md#entityServiceCreate) | **POST** /api/v1/user-management/entities/create |  |
-| [**entityServiceFind**](EntityServiceApi.md#entityServiceFind) | **POST** /api/v1/user-management/entities/find |  |
-| [**entityServiceGetAllEnabledOnly**](EntityServiceApi.md#entityServiceGetAllEnabledOnly) | **POST** /api/v1/user-management/entities/getAllByEnabled |  |
-| [**entityServiceGetById**](EntityServiceApi.md#entityServiceGetById) | **POST** /api/v1/user-management/entities/getById |  |
-| [**entityServiceUpdate**](EntityServiceApi.md#entityServiceUpdate) | **POST** /api/v1/user-management/entities/update |  |
+| [**entityServiceFind**](EntityServiceApi.md#entityServiceFind) | **POST** /api/v1/user-management/entities |  |
+| [**entityServiceGetAllEnabledOnly**](EntityServiceApi.md#entityServiceGetAllEnabledOnly) | **GET** /api/v1/user-management/entities |  |
+| [**entityServiceGetById**](EntityServiceApi.md#entityServiceGetById) | **GET** /api/v1/user-management/entities/{id} |  |
+| [**entityServiceUpdate**](EntityServiceApi.md#entityServiceUpdate) | **PUT** /api/v1/user-management/entities/{id} |  |
 
 
 <a name="entityServiceCreate"></a>
 # **entityServiceCreate**
-> ProtoServiceResponse entityServiceCreate(body)
+> ProtoEntityResponse entityServiceCreate(body)
 
 
 
@@ -34,7 +34,7 @@ public class Example {
     EntityServiceApi apiInstance = new EntityServiceApi(defaultClient);
     ProtoEntityDto body = new ProtoEntityDto(); // ProtoEntityDto | 
     try {
-      ProtoServiceResponse result = apiInstance.entityServiceCreate(body);
+      ProtoEntityResponse result = apiInstance.entityServiceCreate(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EntityServiceApi#entityServiceCreate");
@@ -55,7 +55,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 
@@ -74,7 +74,7 @@ No authorization required
 
 <a name="entityServiceFind"></a>
 # **entityServiceFind**
-> ProtoServiceResponse entityServiceFind(body)
+> ProtoTableResponse entityServiceFind(body)
 
 
 
@@ -95,7 +95,7 @@ public class Example {
     EntityServiceApi apiInstance = new EntityServiceApi(defaultClient);
     ProtoSearchCriteria body = new ProtoSearchCriteria(); // ProtoSearchCriteria | 
     try {
-      ProtoServiceResponse result = apiInstance.entityServiceFind(body);
+      ProtoTableResponse result = apiInstance.entityServiceFind(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EntityServiceApi#entityServiceFind");
@@ -116,7 +116,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoTableResponse**](ProtoTableResponse.md)
 
 ### Authorization
 
@@ -135,7 +135,7 @@ No authorization required
 
 <a name="entityServiceGetAllEnabledOnly"></a>
 # **entityServiceGetAllEnabledOnly**
-> ProtoServiceResponse entityServiceGetAllEnabledOnly(body)
+> ProtoEntitiesResponse entityServiceGetAllEnabledOnly()
 
 
 
@@ -154,9 +154,8 @@ public class Example {
     defaultClient.setBasePath("http://api-dev.clearconsensus.io");
 
     EntityServiceApi apiInstance = new EntityServiceApi(defaultClient);
-    Boolean body = true; // Boolean | 
     try {
-      ProtoServiceResponse result = apiInstance.entityServiceGetAllEnabledOnly(body);
+      ProtoEntitiesResponse result = apiInstance.entityServiceGetAllEnabledOnly();
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EntityServiceApi#entityServiceGetAllEnabledOnly");
@@ -170,14 +169,11 @@ public class Example {
 ```
 
 ### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **body** | **Boolean**|  | |
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntitiesResponse**](ProtoEntitiesResponse.md)
 
 ### Authorization
 
@@ -196,7 +192,7 @@ No authorization required
 
 <a name="entityServiceGetById"></a>
 # **entityServiceGetById**
-> ProtoServiceResponse entityServiceGetById(body)
+> ProtoEntityResponse entityServiceGetById(id)
 
 
 
@@ -215,9 +211,9 @@ public class Example {
     defaultClient.setBasePath("http://api-dev.clearconsensus.io");
 
     EntityServiceApi apiInstance = new EntityServiceApi(defaultClient);
-    String body = "body_example"; // String | 
+    String id = "id_example"; // String | 
     try {
-      ProtoServiceResponse result = apiInstance.entityServiceGetById(body);
+      ProtoEntityResponse result = apiInstance.entityServiceGetById(id);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EntityServiceApi#entityServiceGetById");
@@ -234,11 +230,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | **String**|  | |
+| **id** | **String**|  | |
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 
@@ -257,7 +253,7 @@ No authorization required
 
 <a name="entityServiceUpdate"></a>
 # **entityServiceUpdate**
-> ProtoServiceResponse entityServiceUpdate(body)
+> ProtoEntityResponse entityServiceUpdate(id, body)
 
 
 
@@ -276,9 +272,10 @@ public class Example {
     defaultClient.setBasePath("http://api-dev.clearconsensus.io");
 
     EntityServiceApi apiInstance = new EntityServiceApi(defaultClient);
-    ProtoEntityDto body = new ProtoEntityDto(); // ProtoEntityDto | 
+    String id = "id_example"; // String | 
+    EntityServiceUpdateRequest body = new EntityServiceUpdateRequest(); // EntityServiceUpdateRequest | 
     try {
-      ProtoServiceResponse result = apiInstance.entityServiceUpdate(body);
+      ProtoEntityResponse result = apiInstance.entityServiceUpdate(id, body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EntityServiceApi#entityServiceUpdate");
@@ -295,11 +292,12 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **body** | [**ProtoEntityDto**](ProtoEntityDto.md)|  | |
+| **id** | **String**|  | |
+| **body** | [**EntityServiceUpdateRequest**](EntityServiceUpdateRequest.md)|  | |
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 

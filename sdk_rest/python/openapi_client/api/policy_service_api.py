@@ -21,10 +21,12 @@ from openapi_client.model_utils import (  # noqa: F401
     none_type,
     validate_and_convert_types
 )
+from openapi_client.model.proto_operation_success import ProtoOperationSuccess
 from openapi_client.model.proto_policies import ProtoPolicies
+from openapi_client.model.proto_policies_list_response import ProtoPoliciesListResponse
+from openapi_client.model.proto_policies_response import ProtoPoliciesResponse
 from openapi_client.model.proto_policy_dto import ProtoPolicyDto
 from openapi_client.model.proto_policy_type import ProtoPolicyType
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from openapi_client.model.proto_username_permission_request import ProtoUsernamePermissionRequest
 from openapi_client.model.rpc_status import RpcStatus
 
@@ -42,7 +44,7 @@ class PolicyServiceApi(object):
         self.api_client = api_client
         self.policy_service_check_policy_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoOperationSuccess,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/policies/checkPolicy',
                 'operation_id': 'policy_service_check_policy',
@@ -90,7 +92,7 @@ class PolicyServiceApi(object):
         )
         self.policy_service_create_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoOperationSuccess,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/policies/create',
                 'operation_id': 'policy_service_create',
@@ -138,7 +140,7 @@ class PolicyServiceApi(object):
         )
         self.policy_service_get_addons_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoPoliciesListResponse,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/policies/getAddons',
                 'operation_id': 'policy_service_get_addons',
@@ -186,7 +188,7 @@ class PolicyServiceApi(object):
         )
         self.policy_service_get_apis_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoPoliciesListResponse,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/policies/getApis',
                 'operation_id': 'policy_service_get_apis',
@@ -234,7 +236,7 @@ class PolicyServiceApi(object):
         )
         self.policy_service_get_assets_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoPoliciesListResponse,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/policies/getAssets',
                 'operation_id': 'policy_service_get_assets',
@@ -282,7 +284,7 @@ class PolicyServiceApi(object):
         )
         self.policy_service_get_policies_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoPoliciesResponse,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/policies/getPolicies',
                 'operation_id': 'policy_service_get_policies',
@@ -330,7 +332,7 @@ class PolicyServiceApi(object):
         )
         self.policy_service_remove_policy_endpoint = _Endpoint(
             settings={
-                'response_type': (ProtoServiceResponse,),
+                'response_type': (ProtoOperationSuccess,),
                 'auth': [],
                 'endpoint_path': '/api/v1/user-management/policies/removePolicy',
                 'operation_id': 'policy_service_remove_policy',
@@ -426,7 +428,7 @@ class PolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoOperationSuccess
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -508,7 +510,7 @@ class PolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoOperationSuccess
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -590,7 +592,7 @@ class PolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoPoliciesListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -672,7 +674,7 @@ class PolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoPoliciesListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -754,7 +756,7 @@ class PolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoPoliciesListResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -836,7 +838,7 @@ class PolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoPoliciesResponse
                 If the method is called asynchronously, returns the request
                 thread.
         """
@@ -918,7 +920,7 @@ class PolicyServiceApi(object):
             async_req (bool): execute request asynchronously
 
         Returns:
-            ProtoServiceResponse
+            ProtoOperationSuccess
                 If the method is called asynchronously, returns the request
                 thread.
         """

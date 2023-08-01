@@ -13,9 +13,12 @@
 
 
 import ApiClient from "../ApiClient";
+import EntityServiceUpdateRequest from '../model/EntityServiceUpdateRequest';
+import ProtoEntitiesResponse from '../model/ProtoEntitiesResponse';
 import ProtoEntityDto from '../model/ProtoEntityDto';
+import ProtoEntityResponse from '../model/ProtoEntityResponse';
 import ProtoSearchCriteria from '../model/ProtoSearchCriteria';
-import ProtoServiceResponse from '../model/ProtoServiceResponse';
+import ProtoTableResponse from '../model/ProtoTableResponse';
 import RpcStatus from '../model/RpcStatus';
 
 /**
@@ -41,14 +44,14 @@ export default class EntityServiceApi {
      * Callback function to receive the result of the entityServiceCreate operation.
      * @callback module:api/EntityServiceApi~entityServiceCreateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoEntityResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoEntityDto} body 
      * @param {module:api/EntityServiceApi~entityServiceCreateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoEntityResponse}
      */
     entityServiceCreate(body, callback) {
       let postBody = body;
@@ -69,7 +72,7 @@ export default class EntityServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoEntityResponse;
       return this.apiClient.callApi(
         '/api/v1/user-management/entities/create', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
@@ -81,14 +84,14 @@ export default class EntityServiceApi {
      * Callback function to receive the result of the entityServiceFind operation.
      * @callback module:api/EntityServiceApi~entityServiceFindCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoTableResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
      * @param {module:model/ProtoSearchCriteria} body 
      * @param {module:api/EntityServiceApi~entityServiceFindCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoTableResponse}
      */
     entityServiceFind(body, callback) {
       let postBody = body;
@@ -109,9 +112,9 @@ export default class EntityServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoTableResponse;
       return this.apiClient.callApi(
-        '/api/v1/user-management/entities/find', 'POST',
+        '/api/v1/user-management/entities', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -121,21 +124,16 @@ export default class EntityServiceApi {
      * Callback function to receive the result of the entityServiceGetAllEnabledOnly operation.
      * @callback module:api/EntityServiceApi~entityServiceGetAllEnabledOnlyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoEntitiesResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * @param {Boolean} body 
      * @param {module:api/EntityServiceApi~entityServiceGetAllEnabledOnlyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoEntitiesResponse}
      */
-    entityServiceGetAllEnabledOnly(body, callback) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling entityServiceGetAllEnabledOnly");
-      }
+    entityServiceGetAllEnabledOnly(callback) {
+      let postBody = null;
 
       let pathParams = {
       };
@@ -149,9 +147,9 @@ export default class EntityServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoEntitiesResponse;
       return this.apiClient.callApi(
-        '/api/v1/user-management/entities/getAllByEnabled', 'POST',
+        '/api/v1/user-management/entities', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -161,23 +159,24 @@ export default class EntityServiceApi {
      * Callback function to receive the result of the entityServiceGetById operation.
      * @callback module:api/EntityServiceApi~entityServiceGetByIdCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoEntityResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * @param {String} body 
+     * @param {String} id 
      * @param {module:api/EntityServiceApi~entityServiceGetByIdCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoEntityResponse}
      */
-    entityServiceGetById(body, callback) {
-      let postBody = body;
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling entityServiceGetById");
+    entityServiceGetById(id, callback) {
+      let postBody = null;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling entityServiceGetById");
       }
 
       let pathParams = {
+        'id': id
       };
       let queryParams = {
       };
@@ -189,9 +188,9 @@ export default class EntityServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoEntityResponse;
       return this.apiClient.callApi(
-        '/api/v1/user-management/entities/getById', 'POST',
+        '/api/v1/user-management/entities/{id}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -201,23 +200,29 @@ export default class EntityServiceApi {
      * Callback function to receive the result of the entityServiceUpdate operation.
      * @callback module:api/EntityServiceApi~entityServiceUpdateCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/ProtoServiceResponse} data The data returned by the service call.
+     * @param {module:model/ProtoEntityResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * @param {module:model/ProtoEntityDto} body 
+     * @param {String} id 
+     * @param {module:model/EntityServiceUpdateRequest} body 
      * @param {module:api/EntityServiceApi~entityServiceUpdateCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/ProtoServiceResponse}
+     * data is of type: {@link module:model/ProtoEntityResponse}
      */
-    entityServiceUpdate(body, callback) {
+    entityServiceUpdate(id, body, callback) {
       let postBody = body;
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling entityServiceUpdate");
+      }
       // verify the required parameter 'body' is set
       if (body === undefined || body === null) {
         throw new Error("Missing the required parameter 'body' when calling entityServiceUpdate");
       }
 
       let pathParams = {
+        'id': id
       };
       let queryParams = {
       };
@@ -229,9 +234,9 @@ export default class EntityServiceApi {
       let authNames = [];
       let contentTypes = [];
       let accepts = ['*/*'];
-      let returnType = ProtoServiceResponse;
+      let returnType = ProtoEntityResponse;
       return this.apiClient.callApi(
-        '/api/v1/user-management/entities/update', 'POST',
+        '/api/v1/user-management/entities/{id}', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

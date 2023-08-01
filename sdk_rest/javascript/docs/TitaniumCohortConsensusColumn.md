@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **consAbsDiffFromAnchorSub** | **Object** |  | [optional] 
 **consAbsDiffFromAnchorTrade** | **Object** |  | [optional] 
 **lowerBoundary** | **Object** |  | [optional] 
-**numberOfInstruments** | **String** |  | [optional] 
+**numberOfInstruments** | **Object** |  | [optional] 
 **stdDev** | **Object** |  | [optional] 
 **subPriceDiff** | **Object** |  | [optional] 
 **upperBoundary** | **Object** |  | [optional] 

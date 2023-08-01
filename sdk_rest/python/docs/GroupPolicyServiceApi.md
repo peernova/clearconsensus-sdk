@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **group_policy_service_create**
-> ProtoServiceResponse group_policy_service_create(body)
+> ProtoOperationSuccess group_policy_service_create(body)
 
 
 
@@ -22,7 +22,7 @@ import openapi_client
 from openapi_client.api import group_policy_service_api
 from openapi_client.model.proto_group_policies import ProtoGroupPolicies
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_operation_success import ProtoOperationSuccess
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -84,7 +84,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **group_policy_service_get_policies**
-> ProtoServiceResponse group_policy_service_get_policies(body)
+> ProtoGroupPoliciesResponse group_policy_service_get_policies(body)
 
 
 
@@ -97,7 +97,7 @@ import openapi_client
 from openapi_client.api import group_policy_service_api
 from openapi_client.model.proto_policy_type import ProtoPolicyType
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
+from openapi_client.model.proto_group_policies_response import ProtoGroupPoliciesResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -131,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoGroupPoliciesResponse**](ProtoGroupPoliciesResponse.md)
 
 ### Authorization
 

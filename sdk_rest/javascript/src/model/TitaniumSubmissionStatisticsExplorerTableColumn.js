@@ -72,7 +72,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn {
                 obj['subPriceDiff'] = ApiClient.convertToType(data['subPriceDiff'], Object);
             }
             if (data.hasOwnProperty('subValidPointsCount')) {
-                obj['subValidPointsCount'] = ApiClient.convertToType(data['subValidPointsCount'], 'String');
+                obj['subValidPointsCount'] = ApiClient.convertToType(data['subValidPointsCount'], Object);
             }
             if (data.hasOwnProperty('upperBoundary')) {
                 obj['upperBoundary'] = ApiClient.convertToType(data['upperBoundary'], Object);
@@ -125,7 +125,7 @@ TitaniumSubmissionStatisticsExplorerTableColumn.prototype['stdDev'] = undefined;
 TitaniumSubmissionStatisticsExplorerTableColumn.prototype['subPriceDiff'] = undefined;
 
 /**
- * @member {String} subValidPointsCount
+ * @member {Object} subValidPointsCount
  */
 TitaniumSubmissionStatisticsExplorerTableColumn.prototype['subValidPointsCount'] = undefined;
 

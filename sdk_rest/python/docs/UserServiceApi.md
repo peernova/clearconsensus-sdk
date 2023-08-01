@@ -194,7 +194,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_create**
-> ProtoServiceResponse user_service_create(body)
+> GrpcprotoUserResponse user_service_create(body)
 
 
 
@@ -205,8 +205,8 @@ No authorization required
 import time
 import openapi_client
 from openapi_client.api import user_service_api
+from openapi_client.model.grpcproto_user_response import GrpcprotoUserResponse
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from openapi_client.model.proto_user_dto import ProtoUserDto
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 
@@ -446,7 +446,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_get_all**
-> ProtoServiceResponse user_service_get_all(body)
+> ProtoUsersResponse user_service_get_all(body)
 
 
 
@@ -458,8 +458,8 @@ import time
 import openapi_client
 from openapi_client.api import user_service_api
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from openapi_client.model.proto_user_enabled import ProtoUserEnabled
+from openapi_client.model.proto_users_response import ProtoUsersResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -493,7 +493,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoUsersResponse**](ProtoUsersResponse.md)
 
 ### Authorization
 
@@ -515,7 +515,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_get_by_id**
-> ProtoServiceResponse user_service_get_by_id(body)
+> GrpcprotoUserResponse user_service_get_by_id(body)
 
 
 
@@ -526,9 +526,9 @@ No authorization required
 import time
 import openapi_client
 from openapi_client.api import user_service_api
+from openapi_client.model.grpcproto_user_response import GrpcprotoUserResponse
 from openapi_client.model.rpc_status import RpcStatus
 from openapi_client.model.proto_user_id import ProtoUserId
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
 # See configuration.py for a list of all supported configuration parameters.
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 
@@ -861,7 +861,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **user_service_update**
-> ProtoServiceResponse user_service_update(body)
+> GrpcprotoUserResponse user_service_update(body)
 
 
 
@@ -872,8 +872,8 @@ No authorization required
 import time
 import openapi_client
 from openapi_client.api import user_service_api
+from openapi_client.model.grpcproto_user_response import GrpcprotoUserResponse
 from openapi_client.model.rpc_status import RpcStatus
-from openapi_client.model.proto_service_response import ProtoServiceResponse
 from openapi_client.model.proto_user_dto import ProtoUserDto
 from pprint import pprint
 # Defining the host is optional and defaults to http://api-dev.clearconsensus.io
@@ -918,7 +918,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**GrpcprotoUserResponse**](GrpcprotoUserResponse.md)
 
 ### Authorization
 

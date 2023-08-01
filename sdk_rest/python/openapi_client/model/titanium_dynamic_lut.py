@@ -84,7 +84,7 @@ class TitaniumDynamicLut(ModelNormal):
             'filter': (str,),  # noqa: E501
             'key': ([str],),  # noqa: E501
             'type': (str,),  # noqa: E501
-            'value': (str,),  # noqa: E501
+            'value': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -143,7 +143,7 @@ class TitaniumDynamicLut(ModelNormal):
             filter (str): [optional]  # noqa: E501
             key ([str]): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            value (str): [optional]  # noqa: E501
+            value (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -232,7 +232,7 @@ class TitaniumDynamicLut(ModelNormal):
             filter (str): [optional]  # noqa: E501
             key ([str]): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
-            value (str): [optional]  # noqa: E501
+            value (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

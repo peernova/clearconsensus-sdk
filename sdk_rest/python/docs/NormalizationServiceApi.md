@@ -52,7 +52,7 @@ with openapi_client.ApiClient() as api_client:
                         "key_example",
                     ],
                     type="type_example",
-                    value="value_example",
+                    value={},
                 ),
                 name="name_example",
                 rule="rule_example",

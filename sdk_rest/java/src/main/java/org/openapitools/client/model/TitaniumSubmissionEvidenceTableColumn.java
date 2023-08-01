@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionEvidenceTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-07-31T10:25:55.821401Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-01T17:33:13.116303Z[UTC]")
 public class TitaniumSubmissionEvidenceTableColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_EVIDENCE = "absDiffFromEvidence";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_EVIDENCE)
@@ -67,7 +67,7 @@ public class TitaniumSubmissionEvidenceTableColumn {
 
   public static final String SERIALIZED_NAME_PARTICIPANTS_COUNT = "participantsCount";
   @SerializedName(SERIALIZED_NAME_PARTICIPANTS_COUNT)
-  private String participantsCount;
+  private Object participantsCount;
 
   public static final String SERIALIZED_NAME_STD_DEV = "stdDev";
   @SerializedName(SERIALIZED_NAME_STD_DEV)
@@ -176,7 +176,7 @@ public class TitaniumSubmissionEvidenceTableColumn {
   }
 
 
-  public TitaniumSubmissionEvidenceTableColumn participantsCount(String participantsCount) {
+  public TitaniumSubmissionEvidenceTableColumn participantsCount(Object participantsCount) {
     
     this.participantsCount = participantsCount;
     return this;
@@ -189,12 +189,12 @@ public class TitaniumSubmissionEvidenceTableColumn {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getParticipantsCount() {
+  public Object getParticipantsCount() {
     return participantsCount;
   }
 
 
-  public void setParticipantsCount(String participantsCount) {
+  public void setParticipantsCount(Object participantsCount) {
     this.participantsCount = participantsCount;
   }
 
@@ -361,9 +361,6 @@ public class TitaniumSubmissionEvidenceTableColumn {
         if (!TitaniumSubmissionEvidenceTableColumn.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumSubmissionEvidenceTableColumn` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
-      }
-      if (jsonObj.get("participantsCount") != null && !jsonObj.get("participantsCount").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `participantsCount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("participantsCount").toString()));
       }
   }
 

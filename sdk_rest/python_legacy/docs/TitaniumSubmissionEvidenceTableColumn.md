@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **evi_price_abs_diff_from_latest_trade** | **object** |  | [optional] 
 **evidence** | **object** |  | [optional] 
 **lower_boundary** | **object** |  | [optional] 
-**participants_count** | **str** |  | [optional] 
+**participants_count** | **object** |  | [optional] 
 **std_dev** | **object** |  | [optional] 
 **sub_price_diff** | **object** |  | [optional] 
 **upper_boundary** | **object** |  | [optional] 

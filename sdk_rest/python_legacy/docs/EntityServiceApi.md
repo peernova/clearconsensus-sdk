@@ -5,14 +5,14 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**entity_service_create**](EntityServiceApi.md#entity_service_create) | **POST** /api/v1/user-management/entities/create | 
-[**entity_service_find**](EntityServiceApi.md#entity_service_find) | **POST** /api/v1/user-management/entities/find | 
-[**entity_service_get_all_enabled_only**](EntityServiceApi.md#entity_service_get_all_enabled_only) | **POST** /api/v1/user-management/entities/getAllByEnabled | 
-[**entity_service_get_by_id**](EntityServiceApi.md#entity_service_get_by_id) | **POST** /api/v1/user-management/entities/getById | 
-[**entity_service_update**](EntityServiceApi.md#entity_service_update) | **POST** /api/v1/user-management/entities/update | 
+[**entity_service_find**](EntityServiceApi.md#entity_service_find) | **POST** /api/v1/user-management/entities | 
+[**entity_service_get_all_enabled_only**](EntityServiceApi.md#entity_service_get_all_enabled_only) | **GET** /api/v1/user-management/entities | 
+[**entity_service_get_by_id**](EntityServiceApi.md#entity_service_get_by_id) | **GET** /api/v1/user-management/entities/{id} | 
+[**entity_service_update**](EntityServiceApi.md#entity_service_update) | **PUT** /api/v1/user-management/entities/{id} | 
 
 
 # **entity_service_create**
-> ProtoServiceResponse entity_service_create(body)
+> ProtoEntityResponse entity_service_create(body)
 
 
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 
@@ -72,7 +72,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **entity_service_find**
-> ProtoServiceResponse entity_service_find(body)
+> ProtoTableResponse entity_service_find(body)
 
 
 
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoTableResponse**](ProtoTableResponse.md)
 
 ### Authorization
 
@@ -132,7 +132,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **entity_service_get_all_enabled_only**
-> ProtoServiceResponse entity_service_get_all_enabled_only(body)
+> ProtoEntitiesResponse entity_service_get_all_enabled_only()
 
 
 
@@ -155,24 +155,20 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.EntityServiceApi(api_client)
-    body = True # bool | 
-
+    
     try:
-        api_response = api_instance.entity_service_get_all_enabled_only(body)
+        api_response = api_instance.entity_service_get_all_enabled_only()
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling EntityServiceApi->entity_service_get_all_enabled_only: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **bool**|  | 
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntitiesResponse**](ProtoEntitiesResponse.md)
 
 ### Authorization
 
@@ -192,7 +188,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **entity_service_get_by_id**
-> ProtoServiceResponse entity_service_get_by_id(body)
+> ProtoEntityResponse entity_service_get_by_id(id)
 
 
 
@@ -215,10 +211,10 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.EntityServiceApi(api_client)
-    body = 'body_example' # str | 
+    id = 'id_example' # str | 
 
     try:
-        api_response = api_instance.entity_service_get_by_id(body)
+        api_response = api_instance.entity_service_get_by_id(id)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling EntityServiceApi->entity_service_get_by_id: %s\n" % e)
@@ -228,11 +224,11 @@ with openapi_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **str**|  | 
+ **id** | **str**|  | 
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 
@@ -252,7 +248,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **entity_service_update**
-> ProtoServiceResponse entity_service_update(body)
+> ProtoEntityResponse entity_service_update(id, body)
 
 
 
@@ -275,10 +271,11 @@ configuration = openapi_client.Configuration(
 with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = openapi_client.EntityServiceApi(api_client)
-    body = openapi_client.ProtoEntityDto() # ProtoEntityDto | 
+    id = 'id_example' # str | 
+body = openapi_client.EntityServiceUpdateRequest() # EntityServiceUpdateRequest | 
 
     try:
-        api_response = api_instance.entity_service_update(body)
+        api_response = api_instance.entity_service_update(id, body)
         pprint(api_response)
     except ApiException as e:
         print("Exception when calling EntityServiceApi->entity_service_update: %s\n" % e)
@@ -288,11 +285,12 @@ with openapi_client.ApiClient() as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ProtoEntityDto**](ProtoEntityDto.md)|  | 
+ **id** | **str**|  | 
+ **body** | [**EntityServiceUpdateRequest**](EntityServiceUpdateRequest.md)|  | 
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoEntityResponse**](ProtoEntityResponse.md)
 
 ### Authorization
 

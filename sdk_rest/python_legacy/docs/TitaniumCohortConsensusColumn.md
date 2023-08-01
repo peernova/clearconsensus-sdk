@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **cons_abs_diff_from_anchor_sub** | **object** |  | [optional] 
 **cons_abs_diff_from_anchor_trade** | **object** |  | [optional] 
 **lower_boundary** | **object** |  | [optional] 
-**number_of_instruments** | **str** |  | [optional] 
+**number_of_instruments** | **object** |  | [optional] 
 **std_dev** | **object** |  | [optional] 
 **sub_price_diff** | **object** |  | [optional] 
 **upper_boundary** | **object** |  | [optional] 

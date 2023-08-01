@@ -15,7 +15,7 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 
 <a name="policyServiceCheckPolicy"></a>
 # **policyServiceCheckPolicy**
-> ProtoServiceResponse policyServiceCheckPolicy(body)
+> ProtoOperationSuccess policyServiceCheckPolicy(body)
 
 
 
@@ -36,7 +36,7 @@ public class Example {
     PolicyServiceApi apiInstance = new PolicyServiceApi(defaultClient);
     ProtoPolicyDto body = new ProtoPolicyDto(); // ProtoPolicyDto | 
     try {
-      ProtoServiceResponse result = apiInstance.policyServiceCheckPolicy(body);
+      ProtoOperationSuccess result = apiInstance.policyServiceCheckPolicy(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PolicyServiceApi#policyServiceCheckPolicy");
@@ -57,7 +57,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -76,7 +76,7 @@ No authorization required
 
 <a name="policyServiceCreate"></a>
 # **policyServiceCreate**
-> ProtoServiceResponse policyServiceCreate(body)
+> ProtoOperationSuccess policyServiceCreate(body)
 
 
 
@@ -97,7 +97,7 @@ public class Example {
     PolicyServiceApi apiInstance = new PolicyServiceApi(defaultClient);
     ProtoPolicies body = new ProtoPolicies(); // ProtoPolicies | 
     try {
-      ProtoServiceResponse result = apiInstance.policyServiceCreate(body);
+      ProtoOperationSuccess result = apiInstance.policyServiceCreate(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PolicyServiceApi#policyServiceCreate");
@@ -118,7 +118,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -137,7 +137,7 @@ No authorization required
 
 <a name="policyServiceGetAddons"></a>
 # **policyServiceGetAddons**
-> ProtoServiceResponse policyServiceGetAddons(body)
+> ProtoPoliciesListResponse policyServiceGetAddons(body)
 
 
 
@@ -158,7 +158,7 @@ public class Example {
     PolicyServiceApi apiInstance = new PolicyServiceApi(defaultClient);
     ProtoUsernamePermissionRequest body = new ProtoUsernamePermissionRequest(); // ProtoUsernamePermissionRequest | 
     try {
-      ProtoServiceResponse result = apiInstance.policyServiceGetAddons(body);
+      ProtoPoliciesListResponse result = apiInstance.policyServiceGetAddons(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PolicyServiceApi#policyServiceGetAddons");
@@ -179,7 +179,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -198,7 +198,7 @@ No authorization required
 
 <a name="policyServiceGetApis"></a>
 # **policyServiceGetApis**
-> ProtoServiceResponse policyServiceGetApis(body)
+> ProtoPoliciesListResponse policyServiceGetApis(body)
 
 
 
@@ -219,7 +219,7 @@ public class Example {
     PolicyServiceApi apiInstance = new PolicyServiceApi(defaultClient);
     ProtoUsernamePermissionRequest body = new ProtoUsernamePermissionRequest(); // ProtoUsernamePermissionRequest | 
     try {
-      ProtoServiceResponse result = apiInstance.policyServiceGetApis(body);
+      ProtoPoliciesListResponse result = apiInstance.policyServiceGetApis(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PolicyServiceApi#policyServiceGetApis");
@@ -240,7 +240,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -259,7 +259,7 @@ No authorization required
 
 <a name="policyServiceGetAssets"></a>
 # **policyServiceGetAssets**
-> ProtoServiceResponse policyServiceGetAssets(body)
+> ProtoPoliciesListResponse policyServiceGetAssets(body)
 
 
 
@@ -280,7 +280,7 @@ public class Example {
     PolicyServiceApi apiInstance = new PolicyServiceApi(defaultClient);
     ProtoUsernamePermissionRequest body = new ProtoUsernamePermissionRequest(); // ProtoUsernamePermissionRequest | 
     try {
-      ProtoServiceResponse result = apiInstance.policyServiceGetAssets(body);
+      ProtoPoliciesListResponse result = apiInstance.policyServiceGetAssets(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PolicyServiceApi#policyServiceGetAssets");
@@ -301,7 +301,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesListResponse**](ProtoPoliciesListResponse.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ No authorization required
 
 <a name="policyServiceGetPolicies"></a>
 # **policyServiceGetPolicies**
-> ProtoServiceResponse policyServiceGetPolicies(body)
+> ProtoPoliciesResponse policyServiceGetPolicies(body)
 
 
 
@@ -341,7 +341,7 @@ public class Example {
     PolicyServiceApi apiInstance = new PolicyServiceApi(defaultClient);
     ProtoPolicyType body = new ProtoPolicyType(); // ProtoPolicyType | 
     try {
-      ProtoServiceResponse result = apiInstance.policyServiceGetPolicies(body);
+      ProtoPoliciesResponse result = apiInstance.policyServiceGetPolicies(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PolicyServiceApi#policyServiceGetPolicies");
@@ -362,7 +362,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoPoliciesResponse**](ProtoPoliciesResponse.md)
 
 ### Authorization
 
@@ -381,7 +381,7 @@ No authorization required
 
 <a name="policyServiceRemovePolicy"></a>
 # **policyServiceRemovePolicy**
-> ProtoServiceResponse policyServiceRemovePolicy(body)
+> ProtoOperationSuccess policyServiceRemovePolicy(body)
 
 
 
@@ -402,7 +402,7 @@ public class Example {
     PolicyServiceApi apiInstance = new PolicyServiceApi(defaultClient);
     ProtoPolicyDto body = new ProtoPolicyDto(); // ProtoPolicyDto | 
     try {
-      ProtoServiceResponse result = apiInstance.policyServiceRemovePolicy(body);
+      ProtoOperationSuccess result = apiInstance.policyServiceRemovePolicy(body);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling PolicyServiceApi#policyServiceRemovePolicy");
@@ -423,7 +423,7 @@ public class Example {
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 

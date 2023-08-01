@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **group_policy_service_create**
-> ProtoServiceResponse group_policy_service_create(body)
+> ProtoOperationSuccess group_policy_service_create(body)
 
 
 
@@ -49,7 +49,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoOperationSuccess**](ProtoOperationSuccess.md)
 
 ### Authorization
 
@@ -69,7 +69,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **group_policy_service_get_policies**
-> ProtoServiceResponse group_policy_service_get_policies(body)
+> ProtoGroupPoliciesResponse group_policy_service_get_policies(body)
 
 
 
@@ -109,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ProtoServiceResponse**](ProtoServiceResponse.md)
+[**ProtoGroupPoliciesResponse**](ProtoGroupPoliciesResponse.md)
 
 ### Authorization
 

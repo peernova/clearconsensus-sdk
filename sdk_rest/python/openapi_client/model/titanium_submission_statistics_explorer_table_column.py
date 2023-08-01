@@ -89,7 +89,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
             'stat_mean_abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'sub_price_diff': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'sub_valid_points_count': (str,),  # noqa: E501
+            'sub_valid_points_count': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'upper_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
@@ -160,7 +160,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
             stat_mean_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            sub_valid_points_count (str): [optional]  # noqa: E501
+            sub_valid_points_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
@@ -255,7 +255,7 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
             stat_mean_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            sub_valid_points_count (str): [optional]  # noqa: E501
+            sub_valid_points_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 

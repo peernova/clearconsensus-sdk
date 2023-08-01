@@ -193,10 +193,10 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.DescriptorServiceApi* | [**descriptorServiceListDescriptors**](docs/DescriptorServiceApi.md#descriptorServiceListDescriptors) | **POST** /api/v1/descriptor/list | ListDescriptors returns list of specific descriptors according to request.
 *ClearconsensusSdk.DtccServiceApi* | [**dtccServiceGetDtccTable**](docs/DtccServiceApi.md#dtccServiceGetDtccTable) | **POST** /api/v1/dtcc/tab | 
 *ClearconsensusSdk.EntityServiceApi* | [**entityServiceCreate**](docs/EntityServiceApi.md#entityServiceCreate) | **POST** /api/v1/user-management/entities/create | 
-*ClearconsensusSdk.EntityServiceApi* | [**entityServiceFind**](docs/EntityServiceApi.md#entityServiceFind) | **POST** /api/v1/user-management/entities/find | 
-*ClearconsensusSdk.EntityServiceApi* | [**entityServiceGetAllEnabledOnly**](docs/EntityServiceApi.md#entityServiceGetAllEnabledOnly) | **POST** /api/v1/user-management/entities/getAllByEnabled | 
-*ClearconsensusSdk.EntityServiceApi* | [**entityServiceGetById**](docs/EntityServiceApi.md#entityServiceGetById) | **POST** /api/v1/user-management/entities/getById | 
-*ClearconsensusSdk.EntityServiceApi* | [**entityServiceUpdate**](docs/EntityServiceApi.md#entityServiceUpdate) | **POST** /api/v1/user-management/entities/update | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceFind**](docs/EntityServiceApi.md#entityServiceFind) | **POST** /api/v1/user-management/entities | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceGetAllEnabledOnly**](docs/EntityServiceApi.md#entityServiceGetAllEnabledOnly) | **GET** /api/v1/user-management/entities | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceGetById**](docs/EntityServiceApi.md#entityServiceGetById) | **GET** /api/v1/user-management/entities/{id} | 
+*ClearconsensusSdk.EntityServiceApi* | [**entityServiceUpdate**](docs/EntityServiceApi.md#entityServiceUpdate) | **PUT** /api/v1/user-management/entities/{id} | 
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceFileHistory**](docs/FileServiceApi.md#fileServiceFileHistory) | **POST** /api/v1/file-history | FileHistory retrieves the history for a specified file.
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceFileSubmission**](docs/FileServiceApi.md#fileServiceFileSubmission) | **POST** /api/v1/file-submission | FileSubmission submits a file for processing.
 *ClearconsensusSdk.FileServiceApi* | [**fileServiceGetFileDelimiter**](docs/FileServiceApi.md#fileServiceGetFileDelimiter) | **POST** /api/v1/import/{filename}/delimiter | GetFileDelimiter retrieves the delimiter for a specified file.
@@ -302,6 +302,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [ClearconsensusSdk.EntityServiceUpdateRequest](docs/EntityServiceUpdateRequest.md)
  - [ClearconsensusSdk.ErrorValidationErrorDetail](docs/ErrorValidationErrorDetail.md)
  - [ClearconsensusSdk.FileServiceGetFilePreviewRequest](docs/FileServiceGetFilePreviewRequest.md)
  - [ClearconsensusSdk.GetAttachmentUploadUrlResponseAttachmentUploadUrl](docs/GetAttachmentUploadUrlResponseAttachmentUploadUrl.md)
@@ -309,20 +310,34 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.GetChallengeDetailsResponseResult](docs/GetChallengeDetailsResponseResult.md)
  - [ClearconsensusSdk.GetFileExportUrlResponseFileExportUrl](docs/GetFileExportUrlResponseFileExportUrl.md)
  - [ClearconsensusSdk.GrpcprotoError](docs/GrpcprotoError.md)
+ - [ClearconsensusSdk.GrpcprotoTable](docs/GrpcprotoTable.md)
+ - [ClearconsensusSdk.GrpcprotoTableColumn](docs/GrpcprotoTableColumn.md)
+ - [ClearconsensusSdk.GrpcprotoTableRow](docs/GrpcprotoTableRow.md)
+ - [ClearconsensusSdk.GrpcprotoUserResponse](docs/GrpcprotoUserResponse.md)
+ - [ClearconsensusSdk.ProtoEntitiesDto](docs/ProtoEntitiesDto.md)
+ - [ClearconsensusSdk.ProtoEntitiesResponse](docs/ProtoEntitiesResponse.md)
  - [ClearconsensusSdk.ProtoEntityDto](docs/ProtoEntityDto.md)
+ - [ClearconsensusSdk.ProtoEntityResponse](docs/ProtoEntityResponse.md)
  - [ClearconsensusSdk.ProtoGroupPolicies](docs/ProtoGroupPolicies.md)
+ - [ClearconsensusSdk.ProtoGroupPoliciesResponse](docs/ProtoGroupPoliciesResponse.md)
  - [ClearconsensusSdk.ProtoGroupPolicyDto](docs/ProtoGroupPolicyDto.md)
+ - [ClearconsensusSdk.ProtoOperationSuccess](docs/ProtoOperationSuccess.md)
  - [ClearconsensusSdk.ProtoPolicies](docs/ProtoPolicies.md)
+ - [ClearconsensusSdk.ProtoPoliciesList](docs/ProtoPoliciesList.md)
+ - [ClearconsensusSdk.ProtoPoliciesListResponse](docs/ProtoPoliciesListResponse.md)
+ - [ClearconsensusSdk.ProtoPoliciesResponse](docs/ProtoPoliciesResponse.md)
  - [ClearconsensusSdk.ProtoPolicyDto](docs/ProtoPolicyDto.md)
  - [ClearconsensusSdk.ProtoPolicyType](docs/ProtoPolicyType.md)
  - [ClearconsensusSdk.ProtoSearchCriteria](docs/ProtoSearchCriteria.md)
  - [ClearconsensusSdk.ProtoSearchCriteriaLimit](docs/ProtoSearchCriteriaLimit.md)
  - [ClearconsensusSdk.ProtoSearchCriteriaOrderBy](docs/ProtoSearchCriteriaOrderBy.md)
- - [ClearconsensusSdk.ProtoServiceResponse](docs/ProtoServiceResponse.md)
+ - [ClearconsensusSdk.ProtoTableResponse](docs/ProtoTableResponse.md)
  - [ClearconsensusSdk.ProtoUserDto](docs/ProtoUserDto.md)
  - [ClearconsensusSdk.ProtoUserEnabled](docs/ProtoUserEnabled.md)
  - [ClearconsensusSdk.ProtoUserId](docs/ProtoUserId.md)
  - [ClearconsensusSdk.ProtoUsernamePermissionRequest](docs/ProtoUsernamePermissionRequest.md)
+ - [ClearconsensusSdk.ProtoUsersDto](docs/ProtoUsersDto.md)
+ - [ClearconsensusSdk.ProtoUsersResponse](docs/ProtoUsersResponse.md)
  - [ClearconsensusSdk.ProtobufAny](docs/ProtobufAny.md)
  - [ClearconsensusSdk.RpcStatus](docs/RpcStatus.md)
  - [ClearconsensusSdk.TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)

@@ -60,7 +60,7 @@ class GroupPolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoOperationSuccess
         """
         kwargs['_return_http_data_only'] = True
         return self.group_policy_service_create_with_http_info(body, **kwargs)  # noqa: E501
@@ -97,7 +97,7 @@ class GroupPolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoOperationSuccess, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -151,7 +151,7 @@ class GroupPolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoOperationSuccess",
         }
 
         return self.api_client.call_api(
@@ -195,7 +195,7 @@ class GroupPolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: ProtoServiceResponse
+        :rtype: ProtoGroupPoliciesResponse
         """
         kwargs['_return_http_data_only'] = True
         return self.group_policy_service_get_policies_with_http_info(body, **kwargs)  # noqa: E501
@@ -232,7 +232,7 @@ class GroupPolicyServiceApi(object):
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(ProtoServiceResponse, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(ProtoGroupPoliciesResponse, status_code(int), headers(HTTPHeaderDict))
         """
 
         local_var_params = locals()
@@ -286,7 +286,7 @@ class GroupPolicyServiceApi(object):
         auth_settings = []  # noqa: E501
 
         response_types_map = {
-            200: "ProtoServiceResponse",
+            200: "ProtoGroupPoliciesResponse",
         }
 
         return self.api_client.call_api(
