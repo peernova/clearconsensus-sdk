@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetUserPermissionsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-01T17:33:13.116303Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-01T17:44:45.122003Z[UTC]")
 public class TitaniumGetUserPermissionsRequest {
   public static final String SERIALIZED_NAME_USER_ID = "userId";
   @SerializedName(SERIALIZED_NAME_USER_ID)
