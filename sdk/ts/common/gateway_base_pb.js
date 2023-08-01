@@ -11040,7 +11040,7 @@ proto.titanium.DynamicLut.prototype.toObject = function(opt_includeInstance) {
 proto.titanium.DynamicLut.toObject = function(includeInstance, msg) {
   var f, obj = {
     keyList: (f = jspb.Message.getRepeatedField(msg, 1)) == null ? undefined : f,
-    value: jspb.Message.getFieldWithDefault(msg, 2, ""),
+    value: (f = msg.getValue()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     type: jspb.Message.getFieldWithDefault(msg, 3, 0),
     filter: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
@@ -11084,7 +11084,8 @@ proto.titanium.DynamicLut.deserializeBinaryFromReader = function(msg, reader) {
       msg.addKey(value);
       break;
     case 2:
-      var value = /** @type {string} */ (reader.readString());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setValue(value);
       break;
     case 3:
@@ -11132,10 +11133,11 @@ proto.titanium.DynamicLut.serializeBinaryToWriter = function(message, writer) {
     );
   }
   f = message.getValue();
-  if (f.length > 0) {
-    writer.writeString(
+  if (f != null) {
+    writer.writeMessage(
       2,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getType();
@@ -11203,20 +11205,39 @@ proto.titanium.DynamicLut.prototype.clearKeyList = function() {
 
 
 /**
- * optional string value = 2;
- * @return {string}
+ * optional google.protobuf.Value value = 2;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.titanium.DynamicLut.prototype.getValue = function() {
-  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 2, ""));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
 };
 
 
 /**
- * @param {string} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.DynamicLut} returns this
+*/
+proto.titanium.DynamicLut.prototype.setValue = function(value) {
+  return jspb.Message.setWrapperField(this, 2, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.titanium.DynamicLut} returns this
  */
-proto.titanium.DynamicLut.prototype.setValue = function(value) {
-  return jspb.Message.setProto3StringField(this, 2, value);
+proto.titanium.DynamicLut.prototype.clearValue = function() {
+  return this.setValue(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.DynamicLut.prototype.hasValue = function() {
+  return jspb.Message.getField(this, 2) != null;
 };
 
 

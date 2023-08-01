@@ -1370,6 +1370,8 @@ export namespace RuleDefinition {
   export interface RuleTypeMap {
     INPUT_DATA: 0;
     BUSINESS_DATA: 1;
+    INPUT_DATA: 0;
+    BUSINESS_DATA: 1;
   }
 
   export const RuleType: RuleTypeMap;
@@ -1407,8 +1409,10 @@ export class DynamicLut extends jspb.Message {
   setKeyList(value: Array<string>): void;
   addKey(value: string, index?: number): string;
 
-  getValue(): string;
-  setValue(value: string): void;
+  hasValue(): boolean;
+  clearValue(): void;
+  getValue(): google_protobuf_struct_pb.Value | undefined;
+  setValue(value?: google_protobuf_struct_pb.Value): void;
 
   getType(): DynamicLut.DynamicLutTypeMap[keyof DynamicLut.DynamicLutTypeMap];
   setType(value: DynamicLut.DynamicLutTypeMap[keyof DynamicLut.DynamicLutTypeMap]): void;
@@ -1429,13 +1433,16 @@ export class DynamicLut extends jspb.Message {
 export namespace DynamicLut {
   export type AsObject = {
     keyList: Array<string>,
-    value: string,
+    value?: google_protobuf_struct_pb.Value.AsObject,
     type: DynamicLut.DynamicLutTypeMap[keyof DynamicLut.DynamicLutTypeMap],
     filter: string,
   }
 
   export interface DynamicLutTypeMap {
     BOOLEAN: 0;
+    STRING: 1;
+    NUMERIC: 2;
+    TIMESTAMP: 3;
     STRING: 1;
     NUMERIC: 2;
     TIMESTAMP: 3;

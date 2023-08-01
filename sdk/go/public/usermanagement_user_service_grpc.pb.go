@@ -19,10 +19,10 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type UserServiceClient interface {
-	Create(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	Update(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetById(ctx context.Context, in *common.UserId, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetAll(ctx context.Context, in *common.UserEnabled, opts ...grpc.CallOption) (*common.ServiceResponse, error)
+	Create(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.UserResponse, error)
+	Update(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.UserResponse, error)
+	GetById(ctx context.Context, in *common.UserId, opts ...grpc.CallOption) (*common.UserResponse, error)
+	GetAll(ctx context.Context, in *common.UserEnabled, opts ...grpc.CallOption) (*common.UsersResponse, error)
 }
 
 type userServiceClient struct {
@@ -33,8 +33,8 @@ func NewUserServiceClient(cc grpc.ClientConnInterface) UserServiceClient {
 	return &userServiceClient{cc}
 }
 
-func (c *userServiceClient) Create(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *userServiceClient) Create(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.UserResponse, error) {
+	out := new(common.UserResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.UserService/create", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -42,8 +42,8 @@ func (c *userServiceClient) Create(ctx context.Context, in *common.UserDto, opts
 	return out, nil
 }
 
-func (c *userServiceClient) Update(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *userServiceClient) Update(ctx context.Context, in *common.UserDto, opts ...grpc.CallOption) (*common.UserResponse, error) {
+	out := new(common.UserResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.UserService/update", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -51,8 +51,8 @@ func (c *userServiceClient) Update(ctx context.Context, in *common.UserDto, opts
 	return out, nil
 }
 
-func (c *userServiceClient) GetById(ctx context.Context, in *common.UserId, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *userServiceClient) GetById(ctx context.Context, in *common.UserId, opts ...grpc.CallOption) (*common.UserResponse, error) {
+	out := new(common.UserResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.UserService/getById", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -60,8 +60,8 @@ func (c *userServiceClient) GetById(ctx context.Context, in *common.UserId, opts
 	return out, nil
 }
 
-func (c *userServiceClient) GetAll(ctx context.Context, in *common.UserEnabled, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *userServiceClient) GetAll(ctx context.Context, in *common.UserEnabled, opts ...grpc.CallOption) (*common.UsersResponse, error) {
+	out := new(common.UsersResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.UserService/getAll", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -73,10 +73,10 @@ func (c *userServiceClient) GetAll(ctx context.Context, in *common.UserEnabled, 
 // All implementations must embed UnimplementedUserServiceServer
 // for forward compatibility
 type UserServiceServer interface {
-	Create(context.Context, *common.UserDto) (*common.ServiceResponse, error)
-	Update(context.Context, *common.UserDto) (*common.ServiceResponse, error)
-	GetById(context.Context, *common.UserId) (*common.ServiceResponse, error)
-	GetAll(context.Context, *common.UserEnabled) (*common.ServiceResponse, error)
+	Create(context.Context, *common.UserDto) (*common.UserResponse, error)
+	Update(context.Context, *common.UserDto) (*common.UserResponse, error)
+	GetById(context.Context, *common.UserId) (*common.UserResponse, error)
+	GetAll(context.Context, *common.UserEnabled) (*common.UsersResponse, error)
 	mustEmbedUnimplementedUserServiceServer()
 }
 
@@ -84,16 +84,16 @@ type UserServiceServer interface {
 type UnimplementedUserServiceServer struct {
 }
 
-func (UnimplementedUserServiceServer) Create(context.Context, *common.UserDto) (*common.ServiceResponse, error) {
+func (UnimplementedUserServiceServer) Create(context.Context, *common.UserDto) (*common.UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedUserServiceServer) Update(context.Context, *common.UserDto) (*common.ServiceResponse, error) {
+func (UnimplementedUserServiceServer) Update(context.Context, *common.UserDto) (*common.UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedUserServiceServer) GetById(context.Context, *common.UserId) (*common.ServiceResponse, error) {
+func (UnimplementedUserServiceServer) GetById(context.Context, *common.UserId) (*common.UserResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetById not implemented")
 }
-func (UnimplementedUserServiceServer) GetAll(context.Context, *common.UserEnabled) (*common.ServiceResponse, error) {
+func (UnimplementedUserServiceServer) GetAll(context.Context, *common.UserEnabled) (*common.UsersResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAll not implemented")
 }
 func (UnimplementedUserServiceServer) mustEmbedUnimplementedUserServiceServer() {}

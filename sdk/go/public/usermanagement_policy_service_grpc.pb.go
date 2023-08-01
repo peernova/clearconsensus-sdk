@@ -19,13 +19,13 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type PolicyServiceClient interface {
-	Create(ctx context.Context, in *common.Policies, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	RemovePolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	CheckPolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetAssets(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetApis(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetAddons(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.ServiceResponse, error)
+	Create(ctx context.Context, in *common.Policies, opts ...grpc.CallOption) (*common.OperationSuccess, error)
+	GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.PoliciesResponse, error)
+	RemovePolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.OperationSuccess, error)
+	CheckPolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.OperationSuccess, error)
+	GetAssets(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.PoliciesListResponse, error)
+	GetApis(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.PoliciesListResponse, error)
+	GetAddons(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.PoliciesListResponse, error)
 }
 
 type policyServiceClient struct {
@@ -36,8 +36,8 @@ func NewPolicyServiceClient(cc grpc.ClientConnInterface) PolicyServiceClient {
 	return &policyServiceClient{cc}
 }
 
-func (c *policyServiceClient) Create(ctx context.Context, in *common.Policies, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *policyServiceClient) Create(ctx context.Context, in *common.Policies, opts ...grpc.CallOption) (*common.OperationSuccess, error) {
+	out := new(common.OperationSuccess)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/create", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -45,8 +45,8 @@ func (c *policyServiceClient) Create(ctx context.Context, in *common.Policies, o
 	return out, nil
 }
 
-func (c *policyServiceClient) GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *policyServiceClient) GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.PoliciesResponse, error) {
+	out := new(common.PoliciesResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/getPolicies", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -54,8 +54,8 @@ func (c *policyServiceClient) GetPolicies(ctx context.Context, in *common.Policy
 	return out, nil
 }
 
-func (c *policyServiceClient) RemovePolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *policyServiceClient) RemovePolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.OperationSuccess, error) {
+	out := new(common.OperationSuccess)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/removePolicy", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -63,8 +63,8 @@ func (c *policyServiceClient) RemovePolicy(ctx context.Context, in *common.Polic
 	return out, nil
 }
 
-func (c *policyServiceClient) CheckPolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *policyServiceClient) CheckPolicy(ctx context.Context, in *common.PolicyDto, opts ...grpc.CallOption) (*common.OperationSuccess, error) {
+	out := new(common.OperationSuccess)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/checkPolicy", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -72,8 +72,8 @@ func (c *policyServiceClient) CheckPolicy(ctx context.Context, in *common.Policy
 	return out, nil
 }
 
-func (c *policyServiceClient) GetAssets(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *policyServiceClient) GetAssets(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.PoliciesListResponse, error) {
+	out := new(common.PoliciesListResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/getAssets", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -81,8 +81,8 @@ func (c *policyServiceClient) GetAssets(ctx context.Context, in *common.Username
 	return out, nil
 }
 
-func (c *policyServiceClient) GetApis(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *policyServiceClient) GetApis(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.PoliciesListResponse, error) {
+	out := new(common.PoliciesListResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/getApis", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -90,8 +90,8 @@ func (c *policyServiceClient) GetApis(ctx context.Context, in *common.UsernamePe
 	return out, nil
 }
 
-func (c *policyServiceClient) GetAddons(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *policyServiceClient) GetAddons(ctx context.Context, in *common.UsernamePermissionRequest, opts ...grpc.CallOption) (*common.PoliciesListResponse, error) {
+	out := new(common.PoliciesListResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.PolicyService/getAddons", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -103,13 +103,13 @@ func (c *policyServiceClient) GetAddons(ctx context.Context, in *common.Username
 // All implementations must embed UnimplementedPolicyServiceServer
 // for forward compatibility
 type PolicyServiceServer interface {
-	Create(context.Context, *common.Policies) (*common.ServiceResponse, error)
-	GetPolicies(context.Context, *common.PolicyType) (*common.ServiceResponse, error)
-	RemovePolicy(context.Context, *common.PolicyDto) (*common.ServiceResponse, error)
-	CheckPolicy(context.Context, *common.PolicyDto) (*common.ServiceResponse, error)
-	GetAssets(context.Context, *common.UsernamePermissionRequest) (*common.ServiceResponse, error)
-	GetApis(context.Context, *common.UsernamePermissionRequest) (*common.ServiceResponse, error)
-	GetAddons(context.Context, *common.UsernamePermissionRequest) (*common.ServiceResponse, error)
+	Create(context.Context, *common.Policies) (*common.OperationSuccess, error)
+	GetPolicies(context.Context, *common.PolicyType) (*common.PoliciesResponse, error)
+	RemovePolicy(context.Context, *common.PolicyDto) (*common.OperationSuccess, error)
+	CheckPolicy(context.Context, *common.PolicyDto) (*common.OperationSuccess, error)
+	GetAssets(context.Context, *common.UsernamePermissionRequest) (*common.PoliciesListResponse, error)
+	GetApis(context.Context, *common.UsernamePermissionRequest) (*common.PoliciesListResponse, error)
+	GetAddons(context.Context, *common.UsernamePermissionRequest) (*common.PoliciesListResponse, error)
 	mustEmbedUnimplementedPolicyServiceServer()
 }
 
@@ -117,25 +117,25 @@ type PolicyServiceServer interface {
 type UnimplementedPolicyServiceServer struct {
 }
 
-func (UnimplementedPolicyServiceServer) Create(context.Context, *common.Policies) (*common.ServiceResponse, error) {
+func (UnimplementedPolicyServiceServer) Create(context.Context, *common.Policies) (*common.OperationSuccess, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedPolicyServiceServer) GetPolicies(context.Context, *common.PolicyType) (*common.ServiceResponse, error) {
+func (UnimplementedPolicyServiceServer) GetPolicies(context.Context, *common.PolicyType) (*common.PoliciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPolicies not implemented")
 }
-func (UnimplementedPolicyServiceServer) RemovePolicy(context.Context, *common.PolicyDto) (*common.ServiceResponse, error) {
+func (UnimplementedPolicyServiceServer) RemovePolicy(context.Context, *common.PolicyDto) (*common.OperationSuccess, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RemovePolicy not implemented")
 }
-func (UnimplementedPolicyServiceServer) CheckPolicy(context.Context, *common.PolicyDto) (*common.ServiceResponse, error) {
+func (UnimplementedPolicyServiceServer) CheckPolicy(context.Context, *common.PolicyDto) (*common.OperationSuccess, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CheckPolicy not implemented")
 }
-func (UnimplementedPolicyServiceServer) GetAssets(context.Context, *common.UsernamePermissionRequest) (*common.ServiceResponse, error) {
+func (UnimplementedPolicyServiceServer) GetAssets(context.Context, *common.UsernamePermissionRequest) (*common.PoliciesListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAssets not implemented")
 }
-func (UnimplementedPolicyServiceServer) GetApis(context.Context, *common.UsernamePermissionRequest) (*common.ServiceResponse, error) {
+func (UnimplementedPolicyServiceServer) GetApis(context.Context, *common.UsernamePermissionRequest) (*common.PoliciesListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetApis not implemented")
 }
-func (UnimplementedPolicyServiceServer) GetAddons(context.Context, *common.UsernamePermissionRequest) (*common.ServiceResponse, error) {
+func (UnimplementedPolicyServiceServer) GetAddons(context.Context, *common.UsernamePermissionRequest) (*common.PoliciesListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAddons not implemented")
 }
 func (UnimplementedPolicyServiceServer) mustEmbedUnimplementedPolicyServiceServer() {}

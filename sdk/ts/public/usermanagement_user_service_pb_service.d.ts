@@ -5,7 +5,6 @@
 
 import * as public_usermanagement_user_service_pb from "../public/usermanagement_user_service_pb";
 import * as common_usermanagement_user_pb from "../common/usermanagement_user_pb";
-import * as common_usermanagement_fe_specific_pb from "../common/usermanagement_fe_specific_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type UserServicecreate = {
@@ -14,7 +13,7 @@ type UserServicecreate = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_user_pb.UserDto;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_user_pb.UserResponse;
 };
 
 type UserServiceupdate = {
@@ -23,7 +22,7 @@ type UserServiceupdate = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_user_pb.UserDto;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_user_pb.UserResponse;
 };
 
 type UserServicegetById = {
@@ -32,7 +31,7 @@ type UserServicegetById = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_user_pb.UserId;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_user_pb.UserResponse;
 };
 
 type UserServicegetAll = {
@@ -41,7 +40,7 @@ type UserServicegetAll = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_user_pb.UserEnabled;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_user_pb.UsersResponse;
 };
 
 export class UserService {
@@ -87,38 +86,38 @@ export class UserServiceClient {
   create(
     requestMessage: common_usermanagement_user_pb.UserDto,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   create(
     requestMessage: common_usermanagement_user_pb.UserDto,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   update(
     requestMessage: common_usermanagement_user_pb.UserDto,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   update(
     requestMessage: common_usermanagement_user_pb.UserDto,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   getById(
     requestMessage: common_usermanagement_user_pb.UserId,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   getById(
     requestMessage: common_usermanagement_user_pb.UserId,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   getAll(
     requestMessage: common_usermanagement_user_pb.UserEnabled,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_user_pb.UsersResponse|null) => void
   ): UnaryResponse;
   getAll(
     requestMessage: common_usermanagement_user_pb.UserEnabled,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_user_pb.UsersResponse|null) => void
   ): UnaryResponse;
 }
 

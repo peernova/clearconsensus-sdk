@@ -4,6 +4,7 @@
 // file: common/usermanagement_user.proto
 
 import * as jspb from "google-protobuf";
+import * as common_usermanagement_error_pb from "../common/usermanagement_error_pb";
 import * as common_usermanagement_fe_specific_pb from "../common/usermanagement_fe_specific_pb";
 import * as common_usermanagement_entity_pb from "../common/usermanagement_entity_pb";
 
@@ -49,6 +50,41 @@ export namespace UserDto {
   }
 }
 
+export class UserResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): UserDto | undefined;
+  setData(value?: UserDto): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): UserResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UserResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UserResponse): UserResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UserResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UserResponse;
+  static deserializeBinaryFromReader(message: UserResponse, reader: jspb.BinaryReader): UserResponse;
+}
+
+export namespace UserResponse {
+  export type AsObject = {
+    data?: UserDto.AsObject,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+
 export class UsersDto extends jspb.Message {
   clearUserList(): void;
   getUserList(): Array<UserDto>;
@@ -68,6 +104,41 @@ export class UsersDto extends jspb.Message {
 export namespace UsersDto {
   export type AsObject = {
     userList: Array<UserDto.AsObject>,
+  }
+}
+
+export class UsersResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): UsersDto | undefined;
+  setData(value?: UsersDto): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): UsersResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UsersResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UsersResponse): UsersResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UsersResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UsersResponse;
+  static deserializeBinaryFromReader(message: UsersResponse, reader: jspb.BinaryReader): UsersResponse;
+}
+
+export namespace UsersResponse {
+  export type AsObject = {
+    data?: UsersDto.AsObject,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
   }
 }
 

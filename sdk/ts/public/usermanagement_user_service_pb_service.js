@@ -5,7 +5,6 @@
 
 var public_usermanagement_user_service_pb = require("../public/usermanagement_user_service_pb");
 var common_usermanagement_user_pb = require("../common/usermanagement_user_pb");
-var common_usermanagement_fe_specific_pb = require("../common/usermanagement_fe_specific_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var UserService = (function () {
@@ -20,7 +19,7 @@ UserService.create = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_user_pb.UserDto,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_user_pb.UserResponse
 };
 
 UserService.update = {
@@ -29,7 +28,7 @@ UserService.update = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_user_pb.UserDto,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_user_pb.UserResponse
 };
 
 UserService.getById = {
@@ -38,7 +37,7 @@ UserService.getById = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_user_pb.UserId,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_user_pb.UserResponse
 };
 
 UserService.getAll = {
@@ -47,7 +46,7 @@ UserService.getAll = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_user_pb.UserEnabled,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_user_pb.UsersResponse
 };
 
 exports.UserService = UserService;

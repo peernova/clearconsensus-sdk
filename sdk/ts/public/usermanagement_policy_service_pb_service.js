@@ -20,7 +20,7 @@ PolicyService.create = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_policy_pb.Policies,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_fe_specific_pb.OperationSuccess
 };
 
 PolicyService.getPolicies = {
@@ -29,7 +29,7 @@ PolicyService.getPolicies = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_policy_pb.PolicyType,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_policy_pb.PoliciesResponse
 };
 
 PolicyService.removePolicy = {
@@ -38,7 +38,7 @@ PolicyService.removePolicy = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_policy_pb.PolicyDto,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_fe_specific_pb.OperationSuccess
 };
 
 PolicyService.checkPolicy = {
@@ -47,7 +47,7 @@ PolicyService.checkPolicy = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_policy_pb.PolicyDto,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_fe_specific_pb.OperationSuccess
 };
 
 PolicyService.getAssets = {
@@ -56,7 +56,7 @@ PolicyService.getAssets = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_policy_pb.UsernamePermissionRequest,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_policy_pb.PoliciesListResponse
 };
 
 PolicyService.getApis = {
@@ -65,7 +65,7 @@ PolicyService.getApis = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_policy_pb.UsernamePermissionRequest,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_policy_pb.PoliciesListResponse
 };
 
 PolicyService.getAddons = {
@@ -74,7 +74,7 @@ PolicyService.getAddons = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_policy_pb.UsernamePermissionRequest,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_policy_pb.PoliciesListResponse
 };
 
 exports.PolicyService = PolicyService;

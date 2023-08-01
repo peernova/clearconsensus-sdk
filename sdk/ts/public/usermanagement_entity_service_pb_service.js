@@ -6,7 +6,6 @@
 var public_usermanagement_entity_service_pb = require("../public/usermanagement_entity_service_pb");
 var common_usermanagement_entity_pb = require("../common/usermanagement_entity_pb");
 var common_usermanagement_fe_specific_pb = require("../common/usermanagement_fe_specific_pb");
-var google_protobuf_wrappers_pb = require("google-protobuf/google/protobuf/wrappers_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var EntityService = (function () {
@@ -21,7 +20,7 @@ EntityService.create = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_entity_pb.EntityDto,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_entity_pb.EntityResponse
 };
 
 EntityService.update = {
@@ -30,7 +29,7 @@ EntityService.update = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_entity_pb.EntityDto,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_entity_pb.EntityResponse
 };
 
 EntityService.getById = {
@@ -38,8 +37,8 @@ EntityService.getById = {
   service: EntityService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_wrappers_pb.StringValue,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  requestType: common_usermanagement_entity_pb.EntityId,
+  responseType: common_usermanagement_entity_pb.EntityResponse
 };
 
 EntityService.getAllEnabledOnly = {
@@ -47,8 +46,8 @@ EntityService.getAllEnabledOnly = {
   service: EntityService,
   requestStream: false,
   responseStream: false,
-  requestType: google_protobuf_wrappers_pb.BoolValue,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  requestType: common_usermanagement_fe_specific_pb.NoParameters,
+  responseType: common_usermanagement_entity_pb.EntitiesResponse
 };
 
 EntityService.find = {
@@ -57,7 +56,7 @@ EntityService.find = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_fe_specific_pb.SearchCriteria,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_fe_specific_pb.TableResponse
 };
 
 exports.EntityService = EntityService;

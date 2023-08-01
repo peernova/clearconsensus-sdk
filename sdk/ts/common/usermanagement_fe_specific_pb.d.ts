@@ -93,6 +93,41 @@ export namespace Table {
   }
 }
 
+export class TableResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): Table | undefined;
+  setData(value?: Table): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): TableResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): TableResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: TableResponse): TableResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: TableResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TableResponse;
+  static deserializeBinaryFromReader(message: TableResponse, reader: jspb.BinaryReader): TableResponse;
+}
+
+export namespace TableResponse {
+  export type AsObject = {
+    data?: Table.AsObject,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+
 export class SearchCriteria extends jspb.Message {
   hasLimit(): boolean;
   clearLimit(): void;
@@ -204,6 +239,57 @@ export namespace ServiceResponse {
   export enum ResponseCase {
     RESPONSE_NOT_SET = 0,
     DATA = 1,
+    ERROR = 2,
+  }
+}
+
+export class NoParameters extends jspb.Message {
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): NoParameters.AsObject;
+  static toObject(includeInstance: boolean, msg: NoParameters): NoParameters.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: NoParameters, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): NoParameters;
+  static deserializeBinaryFromReader(message: NoParameters, reader: jspb.BinaryReader): NoParameters;
+}
+
+export namespace NoParameters {
+  export type AsObject = {
+  }
+}
+
+export class OperationSuccess extends jspb.Message {
+  hasSuccess(): boolean;
+  clearSuccess(): void;
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): OperationSuccess.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): OperationSuccess.AsObject;
+  static toObject(includeInstance: boolean, msg: OperationSuccess): OperationSuccess.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: OperationSuccess, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): OperationSuccess;
+  static deserializeBinaryFromReader(message: OperationSuccess, reader: jspb.BinaryReader): OperationSuccess;
+}
+
+export namespace OperationSuccess {
+  export type AsObject = {
+    success: boolean,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    SUCCESS = 1,
     ERROR = 2,
   }
 }

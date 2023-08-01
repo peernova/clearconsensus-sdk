@@ -14,7 +14,7 @@ type PolicyServicecreate = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_policy_pb.Policies;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_fe_specific_pb.OperationSuccess;
 };
 
 type PolicyServicegetPolicies = {
@@ -23,7 +23,7 @@ type PolicyServicegetPolicies = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_policy_pb.PolicyType;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_policy_pb.PoliciesResponse;
 };
 
 type PolicyServiceremovePolicy = {
@@ -32,7 +32,7 @@ type PolicyServiceremovePolicy = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_policy_pb.PolicyDto;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_fe_specific_pb.OperationSuccess;
 };
 
 type PolicyServicecheckPolicy = {
@@ -41,7 +41,7 @@ type PolicyServicecheckPolicy = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_policy_pb.PolicyDto;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_fe_specific_pb.OperationSuccess;
 };
 
 type PolicyServicegetAssets = {
@@ -50,7 +50,7 @@ type PolicyServicegetAssets = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_policy_pb.UsernamePermissionRequest;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_policy_pb.PoliciesListResponse;
 };
 
 type PolicyServicegetApis = {
@@ -59,7 +59,7 @@ type PolicyServicegetApis = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_policy_pb.UsernamePermissionRequest;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_policy_pb.PoliciesListResponse;
 };
 
 type PolicyServicegetAddons = {
@@ -68,7 +68,7 @@ type PolicyServicegetAddons = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_policy_pb.UsernamePermissionRequest;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_policy_pb.PoliciesListResponse;
 };
 
 export class PolicyService {
@@ -117,65 +117,65 @@ export class PolicyServiceClient {
   create(
     requestMessage: common_usermanagement_policy_pb.Policies,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.OperationSuccess|null) => void
   ): UnaryResponse;
   create(
     requestMessage: common_usermanagement_policy_pb.Policies,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.OperationSuccess|null) => void
   ): UnaryResponse;
   getPolicies(
     requestMessage: common_usermanagement_policy_pb.PolicyType,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_policy_pb.PoliciesResponse|null) => void
   ): UnaryResponse;
   getPolicies(
     requestMessage: common_usermanagement_policy_pb.PolicyType,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_policy_pb.PoliciesResponse|null) => void
   ): UnaryResponse;
   removePolicy(
     requestMessage: common_usermanagement_policy_pb.PolicyDto,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.OperationSuccess|null) => void
   ): UnaryResponse;
   removePolicy(
     requestMessage: common_usermanagement_policy_pb.PolicyDto,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.OperationSuccess|null) => void
   ): UnaryResponse;
   checkPolicy(
     requestMessage: common_usermanagement_policy_pb.PolicyDto,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.OperationSuccess|null) => void
   ): UnaryResponse;
   checkPolicy(
     requestMessage: common_usermanagement_policy_pb.PolicyDto,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.OperationSuccess|null) => void
   ): UnaryResponse;
   getAssets(
     requestMessage: common_usermanagement_policy_pb.UsernamePermissionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_policy_pb.PoliciesListResponse|null) => void
   ): UnaryResponse;
   getAssets(
     requestMessage: common_usermanagement_policy_pb.UsernamePermissionRequest,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_policy_pb.PoliciesListResponse|null) => void
   ): UnaryResponse;
   getApis(
     requestMessage: common_usermanagement_policy_pb.UsernamePermissionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_policy_pb.PoliciesListResponse|null) => void
   ): UnaryResponse;
   getApis(
     requestMessage: common_usermanagement_policy_pb.UsernamePermissionRequest,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_policy_pb.PoliciesListResponse|null) => void
   ): UnaryResponse;
   getAddons(
     requestMessage: common_usermanagement_policy_pb.UsernamePermissionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_policy_pb.PoliciesListResponse|null) => void
   ): UnaryResponse;
   getAddons(
     requestMessage: common_usermanagement_policy_pb.UsernamePermissionRequest,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_policy_pb.PoliciesListResponse|null) => void
   ): UnaryResponse;
 }
 

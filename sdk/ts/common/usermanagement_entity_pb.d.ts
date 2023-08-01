@@ -4,6 +4,7 @@
 // file: common/usermanagement_entity.proto
 
 import * as jspb from "google-protobuf";
+import * as common_usermanagement_error_pb from "../common/usermanagement_error_pb";
 
 export class EntityDto extends jspb.Message {
   getId(): string;
@@ -37,6 +38,61 @@ export namespace EntityDto {
   }
 }
 
+export class EntityId extends jspb.Message {
+  getId(): string;
+  setId(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntityId.AsObject;
+  static toObject(includeInstance: boolean, msg: EntityId): EntityId.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntityId, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntityId;
+  static deserializeBinaryFromReader(message: EntityId, reader: jspb.BinaryReader): EntityId;
+}
+
+export namespace EntityId {
+  export type AsObject = {
+    id: string,
+  }
+}
+
+export class EntityResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): EntityDto | undefined;
+  setData(value?: EntityDto): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): EntityResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntityResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EntityResponse): EntityResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntityResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntityResponse;
+  static deserializeBinaryFromReader(message: EntityResponse, reader: jspb.BinaryReader): EntityResponse;
+}
+
+export namespace EntityResponse {
+  export type AsObject = {
+    data?: EntityDto.AsObject,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+
 export class EntitiesDto extends jspb.Message {
   clearEntitiesList(): void;
   getEntitiesList(): Array<EntityDto>;
@@ -56,6 +112,41 @@ export class EntitiesDto extends jspb.Message {
 export namespace EntitiesDto {
   export type AsObject = {
     entitiesList: Array<EntityDto.AsObject>,
+  }
+}
+
+export class EntitiesResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): EntitiesDto | undefined;
+  setData(value?: EntitiesDto): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): EntitiesResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntitiesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EntitiesResponse): EntitiesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntitiesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntitiesResponse;
+  static deserializeBinaryFromReader(message: EntitiesResponse, reader: jspb.BinaryReader): EntitiesResponse;
+}
+
+export namespace EntitiesResponse {
+  export type AsObject = {
+    data?: EntitiesDto.AsObject,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
   }
 }
 

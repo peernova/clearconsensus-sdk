@@ -429,10 +429,10 @@ export class TradeAlignmentScore extends jspb.Message {
   getLatestTradePrice(): google_protobuf_struct_pb.Value | undefined;
   setLatestTradePrice(value?: google_protobuf_struct_pb.Value): void;
 
-  hasSubmissionMean(): boolean;
-  clearSubmissionMean(): void;
-  getSubmissionMean(): google_protobuf_struct_pb.Value | undefined;
-  setSubmissionMean(value?: google_protobuf_struct_pb.Value): void;
+  hasMean(): boolean;
+  clearMean(): void;
+  getMean(): google_protobuf_struct_pb.Value | undefined;
+  setMean(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
@@ -459,7 +459,7 @@ export namespace TradeAlignmentScore {
     score?: google_protobuf_struct_pb.Value.AsObject,
     scoreStatus: string,
     latestTradePrice?: google_protobuf_struct_pb.Value.AsObject,
-    submissionMean?: google_protobuf_struct_pb.Value.AsObject,
+    mean?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
     historyList: Array<TradeAligmentDateAndValue.AsObject>,
   }
@@ -509,10 +509,10 @@ export class EvpAlignmentScore extends jspb.Message {
   getEvpMid(): google_protobuf_struct_pb.Value | undefined;
   setEvpMid(value?: google_protobuf_struct_pb.Value): void;
 
-  hasSubmissionMean(): boolean;
-  clearSubmissionMean(): void;
-  getSubmissionMean(): google_protobuf_struct_pb.Value | undefined;
-  setSubmissionMean(value?: google_protobuf_struct_pb.Value): void;
+  hasMean(): boolean;
+  clearMean(): void;
+  getMean(): google_protobuf_struct_pb.Value | undefined;
+  setMean(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
@@ -539,7 +539,7 @@ export namespace EvpAlignmentScore {
     score?: google_protobuf_struct_pb.Value.AsObject,
     scoreStatus: string,
     evpMid?: google_protobuf_struct_pb.Value.AsObject,
-    submissionMean?: google_protobuf_struct_pb.Value.AsObject,
+    mean?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
     historyList: Array<TradeAligmentDateAndValue.AsObject>,
   }
@@ -1167,8 +1167,10 @@ export class CohortConsensusColumn extends jspb.Message {
   getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
   setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
 
-  getNumberOfInstruments(): number;
-  setNumberOfInstruments(value: number): void;
+  hasNumberOfInstruments(): boolean;
+  clearNumberOfInstruments(): void;
+  getNumberOfInstruments(): google_protobuf_struct_pb.Value | undefined;
+  setNumberOfInstruments(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
@@ -1197,7 +1199,7 @@ export namespace CohortConsensusColumn {
     consAbsDiffFromAnchorSub?: google_protobuf_struct_pb.Value.AsObject,
     lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
     upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    numberOfInstruments: number,
+    numberOfInstruments?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
   }
 
@@ -1263,8 +1265,10 @@ export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
   getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
   setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
 
-  getSubValidPointsCount(): number;
-  setSubValidPointsCount(value: number): void;
+  hasSubValidPointsCount(): boolean;
+  clearSubValidPointsCount(): void;
+  getSubValidPointsCount(): google_protobuf_struct_pb.Value | undefined;
+  setSubValidPointsCount(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
@@ -1299,7 +1303,7 @@ export namespace SubmissionStatisticsExplorerTableColumn {
     statMeanAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
     lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
     upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    subValidPointsCount: number,
+    subValidPointsCount?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
     min?: google_protobuf_struct_pb.Value.AsObject,
     max?: google_protobuf_struct_pb.Value.AsObject,
@@ -1337,8 +1341,10 @@ export class SubmissionEvidenceTableColumn extends jspb.Message {
   getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
   setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
 
-  getParticipantsCount(): number;
-  setParticipantsCount(value: number): void;
+  hasParticipantsCount(): boolean;
+  clearParticipantsCount(): void;
+  getParticipantsCount(): google_protobuf_struct_pb.Value | undefined;
+  setParticipantsCount(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
@@ -1363,7 +1369,7 @@ export namespace SubmissionEvidenceTableColumn {
     eviPriceAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
     lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
     upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    participantsCount: number,
+    participantsCount?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
   }
 }

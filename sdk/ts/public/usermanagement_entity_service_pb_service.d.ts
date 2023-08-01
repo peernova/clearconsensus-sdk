@@ -6,7 +6,6 @@
 import * as public_usermanagement_entity_service_pb from "../public/usermanagement_entity_service_pb";
 import * as common_usermanagement_entity_pb from "../common/usermanagement_entity_pb";
 import * as common_usermanagement_fe_specific_pb from "../common/usermanagement_fe_specific_pb";
-import * as google_protobuf_wrappers_pb from "google-protobuf/google/protobuf/wrappers_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type EntityServicecreate = {
@@ -15,7 +14,7 @@ type EntityServicecreate = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_entity_pb.EntityDto;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_entity_pb.EntityResponse;
 };
 
 type EntityServiceupdate = {
@@ -24,7 +23,7 @@ type EntityServiceupdate = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_entity_pb.EntityDto;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_entity_pb.EntityResponse;
 };
 
 type EntityServicegetById = {
@@ -32,8 +31,8 @@ type EntityServicegetById = {
   readonly service: typeof EntityService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_wrappers_pb.StringValue;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly requestType: typeof common_usermanagement_entity_pb.EntityId;
+  readonly responseType: typeof common_usermanagement_entity_pb.EntityResponse;
 };
 
 type EntityServicegetAllEnabledOnly = {
@@ -41,8 +40,8 @@ type EntityServicegetAllEnabledOnly = {
   readonly service: typeof EntityService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof google_protobuf_wrappers_pb.BoolValue;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly requestType: typeof common_usermanagement_fe_specific_pb.NoParameters;
+  readonly responseType: typeof common_usermanagement_entity_pb.EntitiesResponse;
 };
 
 type EntityServicefind = {
@@ -51,7 +50,7 @@ type EntityServicefind = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_fe_specific_pb.SearchCriteria;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_fe_specific_pb.TableResponse;
 };
 
 export class EntityService {
@@ -98,47 +97,47 @@ export class EntityServiceClient {
   create(
     requestMessage: common_usermanagement_entity_pb.EntityDto,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_entity_pb.EntityResponse|null) => void
   ): UnaryResponse;
   create(
     requestMessage: common_usermanagement_entity_pb.EntityDto,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_entity_pb.EntityResponse|null) => void
   ): UnaryResponse;
   update(
     requestMessage: common_usermanagement_entity_pb.EntityDto,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_entity_pb.EntityResponse|null) => void
   ): UnaryResponse;
   update(
     requestMessage: common_usermanagement_entity_pb.EntityDto,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_entity_pb.EntityResponse|null) => void
   ): UnaryResponse;
   getById(
-    requestMessage: google_protobuf_wrappers_pb.StringValue,
+    requestMessage: common_usermanagement_entity_pb.EntityId,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_entity_pb.EntityResponse|null) => void
   ): UnaryResponse;
   getById(
-    requestMessage: google_protobuf_wrappers_pb.StringValue,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    requestMessage: common_usermanagement_entity_pb.EntityId,
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_entity_pb.EntityResponse|null) => void
   ): UnaryResponse;
   getAllEnabledOnly(
-    requestMessage: google_protobuf_wrappers_pb.BoolValue,
+    requestMessage: common_usermanagement_fe_specific_pb.NoParameters,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_entity_pb.EntitiesResponse|null) => void
   ): UnaryResponse;
   getAllEnabledOnly(
-    requestMessage: google_protobuf_wrappers_pb.BoolValue,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    requestMessage: common_usermanagement_fe_specific_pb.NoParameters,
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_entity_pb.EntitiesResponse|null) => void
   ): UnaryResponse;
   find(
     requestMessage: common_usermanagement_fe_specific_pb.SearchCriteria,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.TableResponse|null) => void
   ): UnaryResponse;
   find(
     requestMessage: common_usermanagement_fe_specific_pb.SearchCriteria,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.TableResponse|null) => void
   ): UnaryResponse;
 }
 

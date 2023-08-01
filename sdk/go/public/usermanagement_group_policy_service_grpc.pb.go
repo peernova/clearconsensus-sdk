@@ -19,8 +19,8 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type GroupPolicyServiceClient interface {
-	Create(ctx context.Context, in *common.GroupPolicies, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.ServiceResponse, error)
+	Create(ctx context.Context, in *common.GroupPolicies, opts ...grpc.CallOption) (*common.OperationSuccess, error)
+	GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.GroupPoliciesResponse, error)
 }
 
 type groupPolicyServiceClient struct {
@@ -31,8 +31,8 @@ func NewGroupPolicyServiceClient(cc grpc.ClientConnInterface) GroupPolicyService
 	return &groupPolicyServiceClient{cc}
 }
 
-func (c *groupPolicyServiceClient) Create(ctx context.Context, in *common.GroupPolicies, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *groupPolicyServiceClient) Create(ctx context.Context, in *common.GroupPolicies, opts ...grpc.CallOption) (*common.OperationSuccess, error) {
+	out := new(common.OperationSuccess)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.GroupPolicyService/create", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -40,8 +40,8 @@ func (c *groupPolicyServiceClient) Create(ctx context.Context, in *common.GroupP
 	return out, nil
 }
 
-func (c *groupPolicyServiceClient) GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *groupPolicyServiceClient) GetPolicies(ctx context.Context, in *common.PolicyType, opts ...grpc.CallOption) (*common.GroupPoliciesResponse, error) {
+	out := new(common.GroupPoliciesResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.GroupPolicyService/getPolicies", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -53,8 +53,8 @@ func (c *groupPolicyServiceClient) GetPolicies(ctx context.Context, in *common.P
 // All implementations must embed UnimplementedGroupPolicyServiceServer
 // for forward compatibility
 type GroupPolicyServiceServer interface {
-	Create(context.Context, *common.GroupPolicies) (*common.ServiceResponse, error)
-	GetPolicies(context.Context, *common.PolicyType) (*common.ServiceResponse, error)
+	Create(context.Context, *common.GroupPolicies) (*common.OperationSuccess, error)
+	GetPolicies(context.Context, *common.PolicyType) (*common.GroupPoliciesResponse, error)
 	mustEmbedUnimplementedGroupPolicyServiceServer()
 }
 
@@ -62,10 +62,10 @@ type GroupPolicyServiceServer interface {
 type UnimplementedGroupPolicyServiceServer struct {
 }
 
-func (UnimplementedGroupPolicyServiceServer) Create(context.Context, *common.GroupPolicies) (*common.ServiceResponse, error) {
+func (UnimplementedGroupPolicyServiceServer) Create(context.Context, *common.GroupPolicies) (*common.OperationSuccess, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedGroupPolicyServiceServer) GetPolicies(context.Context, *common.PolicyType) (*common.ServiceResponse, error) {
+func (UnimplementedGroupPolicyServiceServer) GetPolicies(context.Context, *common.PolicyType) (*common.GroupPoliciesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetPolicies not implemented")
 }
 func (UnimplementedGroupPolicyServiceServer) mustEmbedUnimplementedGroupPolicyServiceServer() {}

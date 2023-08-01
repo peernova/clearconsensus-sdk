@@ -3856,7 +3856,7 @@ proto.titanium.TradeAlignmentScore.toObject = function(includeInstance, msg) {
     score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     scoreStatus: jspb.Message.getFieldWithDefault(msg, 2, ""),
     latestTradePrice: (f = msg.getLatestTradePrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    submissionMean: (f = msg.getSubmissionMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    mean: (f = msg.getMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     historyList: jspb.Message.toObjectList(msg.getHistoryList(),
     proto.titanium.TradeAligmentDateAndValue.toObject, includeInstance)
@@ -3913,7 +3913,7 @@ proto.titanium.TradeAlignmentScore.deserializeBinaryFromReader = function(msg, r
     case 4:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setSubmissionMean(value);
+      msg.setMean(value);
       break;
     case 5:
       var value = new google_protobuf_struct_pb.Value;
@@ -3977,7 +3977,7 @@ proto.titanium.TradeAlignmentScore.serializeBinaryToWriter = function(message, w
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getSubmissionMean();
+  f = message.getMean();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -4097,10 +4097,10 @@ proto.titanium.TradeAlignmentScore.prototype.hasLatestTradePrice = function() {
 
 
 /**
- * optional google.protobuf.Value submission_mean = 4;
+ * optional google.protobuf.Value mean = 4;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.TradeAlignmentScore.prototype.getSubmissionMean = function() {
+proto.titanium.TradeAlignmentScore.prototype.getMean = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
 };
@@ -4110,7 +4110,7 @@ proto.titanium.TradeAlignmentScore.prototype.getSubmissionMean = function() {
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.TradeAlignmentScore} returns this
 */
-proto.titanium.TradeAlignmentScore.prototype.setSubmissionMean = function(value) {
+proto.titanium.TradeAlignmentScore.prototype.setMean = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -4119,8 +4119,8 @@ proto.titanium.TradeAlignmentScore.prototype.setSubmissionMean = function(value)
  * Clears the message field making it undefined.
  * @return {!proto.titanium.TradeAlignmentScore} returns this
  */
-proto.titanium.TradeAlignmentScore.prototype.clearSubmissionMean = function() {
-  return this.setSubmissionMean(undefined);
+proto.titanium.TradeAlignmentScore.prototype.clearMean = function() {
+  return this.setMean(undefined);
 };
 
 
@@ -4128,7 +4128,7 @@ proto.titanium.TradeAlignmentScore.prototype.clearSubmissionMean = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.TradeAlignmentScore.prototype.hasSubmissionMean = function() {
+proto.titanium.TradeAlignmentScore.prototype.hasMean = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -4461,7 +4461,7 @@ proto.titanium.EvpAlignmentScore.toObject = function(includeInstance, msg) {
     score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     scoreStatus: jspb.Message.getFieldWithDefault(msg, 2, ""),
     evpMid: (f = msg.getEvpMid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    submissionMean: (f = msg.getSubmissionMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    mean: (f = msg.getMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     historyList: jspb.Message.toObjectList(msg.getHistoryList(),
     proto.titanium.TradeAligmentDateAndValue.toObject, includeInstance)
@@ -4518,7 +4518,7 @@ proto.titanium.EvpAlignmentScore.deserializeBinaryFromReader = function(msg, rea
     case 4:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setSubmissionMean(value);
+      msg.setMean(value);
       break;
     case 5:
       var value = new google_protobuf_struct_pb.Value;
@@ -4582,7 +4582,7 @@ proto.titanium.EvpAlignmentScore.serializeBinaryToWriter = function(message, wri
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getSubmissionMean();
+  f = message.getMean();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -4702,10 +4702,10 @@ proto.titanium.EvpAlignmentScore.prototype.hasEvpMid = function() {
 
 
 /**
- * optional google.protobuf.Value submission_mean = 4;
+ * optional google.protobuf.Value mean = 4;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.EvpAlignmentScore.prototype.getSubmissionMean = function() {
+proto.titanium.EvpAlignmentScore.prototype.getMean = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
 };
@@ -4715,7 +4715,7 @@ proto.titanium.EvpAlignmentScore.prototype.getSubmissionMean = function() {
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.EvpAlignmentScore} returns this
 */
-proto.titanium.EvpAlignmentScore.prototype.setSubmissionMean = function(value) {
+proto.titanium.EvpAlignmentScore.prototype.setMean = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -4724,8 +4724,8 @@ proto.titanium.EvpAlignmentScore.prototype.setSubmissionMean = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.titanium.EvpAlignmentScore} returns this
  */
-proto.titanium.EvpAlignmentScore.prototype.clearSubmissionMean = function() {
-  return this.setSubmissionMean(undefined);
+proto.titanium.EvpAlignmentScore.prototype.clearMean = function() {
+  return this.setMean(undefined);
 };
 
 
@@ -4733,7 +4733,7 @@ proto.titanium.EvpAlignmentScore.prototype.clearSubmissionMean = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.EvpAlignmentScore.prototype.hasSubmissionMean = function() {
+proto.titanium.EvpAlignmentScore.prototype.hasMean = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -9112,7 +9112,7 @@ proto.titanium.CohortConsensusColumn.toObject = function(includeInstance, msg) {
     consAbsDiffFromAnchorSub: (f = msg.getConsAbsDiffFromAnchorSub()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     lowerBoundary: (f = msg.getLowerBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     upperBoundary: (f = msg.getUpperBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    numberOfInstruments: jspb.Message.getFieldWithDefault(msg, 10, 0),
+    numberOfInstruments: (f = msg.getNumberOfInstruments()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
   };
 
@@ -9196,7 +9196,8 @@ proto.titanium.CohortConsensusColumn.deserializeBinaryFromReader = function(msg,
       msg.setUpperBoundary(value);
       break;
     case 10:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setNumberOfInstruments(value);
       break;
     case 11:
@@ -9306,10 +9307,11 @@ proto.titanium.CohortConsensusColumn.serializeBinaryToWriter = function(message,
     );
   }
   f = message.getNumberOfInstruments();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f != null) {
+    writer.writeMessage(
       10,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getStdDev();
@@ -9657,20 +9659,39 @@ proto.titanium.CohortConsensusColumn.prototype.hasUpperBoundary = function() {
 
 
 /**
- * optional int64 number_of_instruments = 10;
- * @return {number}
+ * optional google.protobuf.Value number_of_instruments = 10;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.titanium.CohortConsensusColumn.prototype.getNumberOfInstruments = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 10, 0));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 10));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.CohortConsensusColumn} returns this
+*/
+proto.titanium.CohortConsensusColumn.prototype.setNumberOfInstruments = function(value) {
+  return jspb.Message.setWrapperField(this, 10, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.titanium.CohortConsensusColumn} returns this
  */
-proto.titanium.CohortConsensusColumn.prototype.setNumberOfInstruments = function(value) {
-  return jspb.Message.setProto3IntField(this, 10, value);
+proto.titanium.CohortConsensusColumn.prototype.clearNumberOfInstruments = function() {
+  return this.setNumberOfInstruments(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.CohortConsensusColumn.prototype.hasNumberOfInstruments = function() {
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -9900,7 +9921,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.toObject = function(inclu
     statMeanAbsDiffFromLatestTrade: (f = msg.getStatMeanAbsDiffFromLatestTrade()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     lowerBoundary: (f = msg.getLowerBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     upperBoundary: (f = msg.getUpperBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    subValidPointsCount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    subValidPointsCount: (f = msg.getSubValidPointsCount()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     min: (f = msg.getMin()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     max: (f = msg.getMax()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
@@ -9971,7 +9992,8 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.deserializeBinaryFromRead
       msg.setUpperBoundary(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setSubValidPointsCount(value);
       break;
     case 8:
@@ -10067,10 +10089,11 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter =
     );
   }
   f = message.getSubValidPointsCount();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f != null) {
+    writer.writeMessage(
       7,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getStdDev();
@@ -10323,20 +10346,39 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasUpperBoundar
 
 
 /**
- * optional int64 sub_valid_points_count = 7;
- * @return {number}
+ * optional google.protobuf.Value sub_valid_points_count = 7;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getSubValidPointsCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 7));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
+*/
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubValidPointsCount = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubValidPointsCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearSubValidPointsCount = function() {
+  return this.setSubValidPointsCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasSubValidPointsCount = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
@@ -10489,7 +10531,7 @@ proto.titanium.SubmissionEvidenceTableColumn.toObject = function(includeInstance
     eviPriceAbsDiffFromLatestTrade: (f = msg.getEviPriceAbsDiffFromLatestTrade()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     lowerBoundary: (f = msg.getLowerBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     upperBoundary: (f = msg.getUpperBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    participantsCount: jspb.Message.getFieldWithDefault(msg, 7, 0),
+    participantsCount: (f = msg.getParticipantsCount()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
   };
 
@@ -10558,7 +10600,8 @@ proto.titanium.SubmissionEvidenceTableColumn.deserializeBinaryFromReader = funct
       msg.setUpperBoundary(value);
       break;
     case 7:
-      var value = /** @type {number} */ (reader.readInt64());
+      var value = new google_protobuf_struct_pb.Value;
+      reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
       msg.setParticipantsCount(value);
       break;
     case 8:
@@ -10644,10 +10687,11 @@ proto.titanium.SubmissionEvidenceTableColumn.serializeBinaryToWriter = function(
     );
   }
   f = message.getParticipantsCount();
-  if (f !== 0) {
-    writer.writeInt64(
+  if (f != null) {
+    writer.writeMessage(
       7,
-      f
+      f,
+      google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
   f = message.getStdDev();
@@ -10884,20 +10928,39 @@ proto.titanium.SubmissionEvidenceTableColumn.prototype.hasUpperBoundary = functi
 
 
 /**
- * optional int64 participants_count = 7;
- * @return {number}
+ * optional google.protobuf.Value participants_count = 7;
+ * @return {?proto.google.protobuf.Value}
  */
 proto.titanium.SubmissionEvidenceTableColumn.prototype.getParticipantsCount = function() {
-  return /** @type {number} */ (jspb.Message.getFieldWithDefault(this, 7, 0));
+  return /** @type{?proto.google.protobuf.Value} */ (
+    jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 7));
 };
 
 
 /**
- * @param {number} value
+ * @param {?proto.google.protobuf.Value|undefined} value
+ * @return {!proto.titanium.SubmissionEvidenceTableColumn} returns this
+*/
+proto.titanium.SubmissionEvidenceTableColumn.prototype.setParticipantsCount = function(value) {
+  return jspb.Message.setWrapperField(this, 7, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
  * @return {!proto.titanium.SubmissionEvidenceTableColumn} returns this
  */
-proto.titanium.SubmissionEvidenceTableColumn.prototype.setParticipantsCount = function(value) {
-  return jspb.Message.setProto3IntField(this, 7, value);
+proto.titanium.SubmissionEvidenceTableColumn.prototype.clearParticipantsCount = function() {
+  return this.setParticipantsCount(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.SubmissionEvidenceTableColumn.prototype.hasParticipantsCount = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

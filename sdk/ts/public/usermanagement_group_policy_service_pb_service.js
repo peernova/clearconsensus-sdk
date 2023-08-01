@@ -21,7 +21,7 @@ GroupPolicyService.create = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_group_policy_pb.GroupPolicies,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_fe_specific_pb.OperationSuccess
 };
 
 GroupPolicyService.getPolicies = {
@@ -30,7 +30,7 @@ GroupPolicyService.getPolicies = {
   requestStream: false,
   responseStream: false,
   requestType: common_usermanagement_policy_pb.PolicyType,
-  responseType: common_usermanagement_fe_specific_pb.ServiceResponse
+  responseType: common_usermanagement_group_policy_pb.GroupPoliciesResponse
 };
 
 exports.GroupPolicyService = GroupPolicyService;

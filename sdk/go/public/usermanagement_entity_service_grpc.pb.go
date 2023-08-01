@@ -8,7 +8,6 @@ import (
 	grpc "google.golang.org/grpc"
 	codes "google.golang.org/grpc/codes"
 	status "google.golang.org/grpc/status"
-	wrapperspb "google.golang.org/protobuf/types/known/wrapperspb"
 )
 
 // This is a compile-time assertion to ensure that this generated file
@@ -20,11 +19,11 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type EntityServiceClient interface {
-	Create(ctx context.Context, in *common.EntityDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	Update(ctx context.Context, in *common.EntityDto, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetById(ctx context.Context, in *wrapperspb.StringValue, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	GetAllEnabledOnly(ctx context.Context, in *wrapperspb.BoolValue, opts ...grpc.CallOption) (*common.ServiceResponse, error)
-	Find(ctx context.Context, in *common.SearchCriteria, opts ...grpc.CallOption) (*common.ServiceResponse, error)
+	Create(ctx context.Context, in *common.EntityDto, opts ...grpc.CallOption) (*common.EntityResponse, error)
+	Update(ctx context.Context, in *common.EntityDto, opts ...grpc.CallOption) (*common.EntityResponse, error)
+	GetById(ctx context.Context, in *common.EntityId, opts ...grpc.CallOption) (*common.EntityResponse, error)
+	GetAllEnabledOnly(ctx context.Context, in *common.NoParameters, opts ...grpc.CallOption) (*common.EntitiesResponse, error)
+	Find(ctx context.Context, in *common.SearchCriteria, opts ...grpc.CallOption) (*common.TableResponse, error)
 }
 
 type entityServiceClient struct {
@@ -35,8 +34,8 @@ func NewEntityServiceClient(cc grpc.ClientConnInterface) EntityServiceClient {
 	return &entityServiceClient{cc}
 }
 
-func (c *entityServiceClient) Create(ctx context.Context, in *common.EntityDto, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *entityServiceClient) Create(ctx context.Context, in *common.EntityDto, opts ...grpc.CallOption) (*common.EntityResponse, error) {
+	out := new(common.EntityResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.EntityService/create", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -44,8 +43,8 @@ func (c *entityServiceClient) Create(ctx context.Context, in *common.EntityDto, 
 	return out, nil
 }
 
-func (c *entityServiceClient) Update(ctx context.Context, in *common.EntityDto, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *entityServiceClient) Update(ctx context.Context, in *common.EntityDto, opts ...grpc.CallOption) (*common.EntityResponse, error) {
+	out := new(common.EntityResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.EntityService/update", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -53,8 +52,8 @@ func (c *entityServiceClient) Update(ctx context.Context, in *common.EntityDto, 
 	return out, nil
 }
 
-func (c *entityServiceClient) GetById(ctx context.Context, in *wrapperspb.StringValue, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *entityServiceClient) GetById(ctx context.Context, in *common.EntityId, opts ...grpc.CallOption) (*common.EntityResponse, error) {
+	out := new(common.EntityResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.EntityService/getById", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -62,8 +61,8 @@ func (c *entityServiceClient) GetById(ctx context.Context, in *wrapperspb.String
 	return out, nil
 }
 
-func (c *entityServiceClient) GetAllEnabledOnly(ctx context.Context, in *wrapperspb.BoolValue, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *entityServiceClient) GetAllEnabledOnly(ctx context.Context, in *common.NoParameters, opts ...grpc.CallOption) (*common.EntitiesResponse, error) {
+	out := new(common.EntitiesResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.EntityService/getAllEnabledOnly", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -71,8 +70,8 @@ func (c *entityServiceClient) GetAllEnabledOnly(ctx context.Context, in *wrapper
 	return out, nil
 }
 
-func (c *entityServiceClient) Find(ctx context.Context, in *common.SearchCriteria, opts ...grpc.CallOption) (*common.ServiceResponse, error) {
-	out := new(common.ServiceResponse)
+func (c *entityServiceClient) Find(ctx context.Context, in *common.SearchCriteria, opts ...grpc.CallOption) (*common.TableResponse, error) {
+	out := new(common.TableResponse)
 	err := c.cc.Invoke(ctx, "/com.peernova.titanium.casbin.management.grpc.service.EntityService/find", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -84,11 +83,11 @@ func (c *entityServiceClient) Find(ctx context.Context, in *common.SearchCriteri
 // All implementations must embed UnimplementedEntityServiceServer
 // for forward compatibility
 type EntityServiceServer interface {
-	Create(context.Context, *common.EntityDto) (*common.ServiceResponse, error)
-	Update(context.Context, *common.EntityDto) (*common.ServiceResponse, error)
-	GetById(context.Context, *wrapperspb.StringValue) (*common.ServiceResponse, error)
-	GetAllEnabledOnly(context.Context, *wrapperspb.BoolValue) (*common.ServiceResponse, error)
-	Find(context.Context, *common.SearchCriteria) (*common.ServiceResponse, error)
+	Create(context.Context, *common.EntityDto) (*common.EntityResponse, error)
+	Update(context.Context, *common.EntityDto) (*common.EntityResponse, error)
+	GetById(context.Context, *common.EntityId) (*common.EntityResponse, error)
+	GetAllEnabledOnly(context.Context, *common.NoParameters) (*common.EntitiesResponse, error)
+	Find(context.Context, *common.SearchCriteria) (*common.TableResponse, error)
 	mustEmbedUnimplementedEntityServiceServer()
 }
 
@@ -96,19 +95,19 @@ type EntityServiceServer interface {
 type UnimplementedEntityServiceServer struct {
 }
 
-func (UnimplementedEntityServiceServer) Create(context.Context, *common.EntityDto) (*common.ServiceResponse, error) {
+func (UnimplementedEntityServiceServer) Create(context.Context, *common.EntityDto) (*common.EntityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Create not implemented")
 }
-func (UnimplementedEntityServiceServer) Update(context.Context, *common.EntityDto) (*common.ServiceResponse, error) {
+func (UnimplementedEntityServiceServer) Update(context.Context, *common.EntityDto) (*common.EntityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Update not implemented")
 }
-func (UnimplementedEntityServiceServer) GetById(context.Context, *wrapperspb.StringValue) (*common.ServiceResponse, error) {
+func (UnimplementedEntityServiceServer) GetById(context.Context, *common.EntityId) (*common.EntityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetById not implemented")
 }
-func (UnimplementedEntityServiceServer) GetAllEnabledOnly(context.Context, *wrapperspb.BoolValue) (*common.ServiceResponse, error) {
+func (UnimplementedEntityServiceServer) GetAllEnabledOnly(context.Context, *common.NoParameters) (*common.EntitiesResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetAllEnabledOnly not implemented")
 }
-func (UnimplementedEntityServiceServer) Find(context.Context, *common.SearchCriteria) (*common.ServiceResponse, error) {
+func (UnimplementedEntityServiceServer) Find(context.Context, *common.SearchCriteria) (*common.TableResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Find not implemented")
 }
 func (UnimplementedEntityServiceServer) mustEmbedUnimplementedEntityServiceServer() {}
@@ -161,7 +160,7 @@ func _EntityService_Update_Handler(srv interface{}, ctx context.Context, dec fun
 }
 
 func _EntityService_GetById_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(wrapperspb.StringValue)
+	in := new(common.EntityId)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -173,13 +172,13 @@ func _EntityService_GetById_Handler(srv interface{}, ctx context.Context, dec fu
 		FullMethod: "/com.peernova.titanium.casbin.management.grpc.service.EntityService/getById",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EntityServiceServer).GetById(ctx, req.(*wrapperspb.StringValue))
+		return srv.(EntityServiceServer).GetById(ctx, req.(*common.EntityId))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
 func _EntityService_GetAllEnabledOnly_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(wrapperspb.BoolValue)
+	in := new(common.NoParameters)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
@@ -191,7 +190,7 @@ func _EntityService_GetAllEnabledOnly_Handler(srv interface{}, ctx context.Conte
 		FullMethod: "/com.peernova.titanium.casbin.management.grpc.service.EntityService/getAllEnabledOnly",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(EntityServiceServer).GetAllEnabledOnly(ctx, req.(*wrapperspb.BoolValue))
+		return srv.(EntityServiceServer).GetAllEnabledOnly(ctx, req.(*common.NoParameters))
 	}
 	return interceptor(ctx, in, info, handler)
 }

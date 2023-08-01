@@ -5,6 +5,7 @@
 
 import * as jspb from "google-protobuf";
 import * as google_protobuf_descriptor_pb from "google-protobuf/google/protobuf/descriptor_pb";
+import * as common_usermanagement_error_pb from "../common/usermanagement_error_pb";
 
 export class PolicyDto extends jspb.Message {
   getType(): string;
@@ -72,6 +73,41 @@ export namespace Policies {
   }
 }
 
+export class PoliciesResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): Policies | undefined;
+  setData(value?: Policies): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): PoliciesResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PoliciesResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PoliciesResponse): PoliciesResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PoliciesResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PoliciesResponse;
+  static deserializeBinaryFromReader(message: PoliciesResponse, reader: jspb.BinaryReader): PoliciesResponse;
+}
+
+export namespace PoliciesResponse {
+  export type AsObject = {
+    data?: Policies.AsObject,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+
 export class PolicyType extends jspb.Message {
   getType(): string;
   setType(value: string): void;
@@ -116,34 +152,60 @@ export namespace UsernamePermissionRequest {
   }
 }
 
-export class PoliciesResponse extends jspb.Message {
+export class PoliciesList extends jspb.Message {
   clearPoliciesList(): void;
   getPoliciesList(): Array<string>;
   setPoliciesList(value: Array<string>): void;
   addPolicies(value: string, index?: number): string;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): PoliciesResponse.AsObject;
-  static toObject(includeInstance: boolean, msg: PoliciesResponse): PoliciesResponse.AsObject;
+  toObject(includeInstance?: boolean): PoliciesList.AsObject;
+  static toObject(includeInstance: boolean, msg: PoliciesList): PoliciesList.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: PoliciesResponse, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): PoliciesResponse;
-  static deserializeBinaryFromReader(message: PoliciesResponse, reader: jspb.BinaryReader): PoliciesResponse;
+  static serializeBinaryToWriter(message: PoliciesList, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PoliciesList;
+  static deserializeBinaryFromReader(message: PoliciesList, reader: jspb.BinaryReader): PoliciesList;
 }
 
-export namespace PoliciesResponse {
+export namespace PoliciesList {
   export type AsObject = {
     policiesList: Array<string>,
   }
 }
 
-export interface TypeEnumMap {
-  ASSET_TYPE: 0;
-  API_TYPE: 1;
-  ADDON_TYPE: 2;
-  GROUP_TYPE: 3;
+export class PoliciesListResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): PoliciesList | undefined;
+  setData(value?: PoliciesList): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): PoliciesListResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PoliciesListResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: PoliciesListResponse): PoliciesListResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PoliciesListResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PoliciesListResponse;
+  static deserializeBinaryFromReader(message: PoliciesListResponse, reader: jspb.BinaryReader): PoliciesListResponse;
 }
 
-export const TypeEnum: TypeEnumMap;
+export namespace PoliciesListResponse {
+  export type AsObject = {
+    data?: PoliciesList.AsObject,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
 

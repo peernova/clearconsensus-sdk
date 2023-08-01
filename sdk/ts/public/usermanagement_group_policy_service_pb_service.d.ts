@@ -15,7 +15,7 @@ type GroupPolicyServicecreate = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_group_policy_pb.GroupPolicies;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_fe_specific_pb.OperationSuccess;
 };
 
 type GroupPolicyServicegetPolicies = {
@@ -24,7 +24,7 @@ type GroupPolicyServicegetPolicies = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_usermanagement_policy_pb.PolicyType;
-  readonly responseType: typeof common_usermanagement_fe_specific_pb.ServiceResponse;
+  readonly responseType: typeof common_usermanagement_group_policy_pb.GroupPoliciesResponse;
 };
 
 export class GroupPolicyService {
@@ -68,20 +68,20 @@ export class GroupPolicyServiceClient {
   create(
     requestMessage: common_usermanagement_group_policy_pb.GroupPolicies,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.OperationSuccess|null) => void
   ): UnaryResponse;
   create(
     requestMessage: common_usermanagement_group_policy_pb.GroupPolicies,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.OperationSuccess|null) => void
   ): UnaryResponse;
   getPolicies(
     requestMessage: common_usermanagement_policy_pb.PolicyType,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_group_policy_pb.GroupPoliciesResponse|null) => void
   ): UnaryResponse;
   getPolicies(
     requestMessage: common_usermanagement_policy_pb.PolicyType,
-    callback: (error: ServiceError|null, responseMessage: common_usermanagement_fe_specific_pb.ServiceResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_usermanagement_group_policy_pb.GroupPoliciesResponse|null) => void
   ): UnaryResponse;
 }
 
