@@ -94,6 +94,7 @@ class TitaniumConsensusExplorerInstrumentDetailsData(ModelNormal):
             'consensus_scores': (TitaniumConsensusScores,),  # noqa: E501
             'instrument_details': ([TitaniumStringKeyVal],),  # noqa: E501
             'instrument_submission_status': (TitaniumInstrumentSubmissionStatus,),  # noqa: E501
+            'submission_id': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -105,6 +106,7 @@ class TitaniumConsensusExplorerInstrumentDetailsData(ModelNormal):
         'consensus_scores': 'consensusScores',  # noqa: E501
         'instrument_details': 'instrumentDetails',  # noqa: E501
         'instrument_submission_status': 'instrumentSubmissionStatus',  # noqa: E501
+        'submission_id': 'submissionId',  # noqa: E501
     }
 
     read_only_vars = {
@@ -151,6 +153,7 @@ class TitaniumConsensusExplorerInstrumentDetailsData(ModelNormal):
             consensus_scores (TitaniumConsensusScores): [optional]  # noqa: E501
             instrument_details ([TitaniumStringKeyVal]): [optional]  # noqa: E501
             instrument_submission_status (TitaniumInstrumentSubmissionStatus): [optional]  # noqa: E501
+            submission_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -239,6 +242,7 @@ class TitaniumConsensusExplorerInstrumentDetailsData(ModelNormal):
             consensus_scores (TitaniumConsensusScores): [optional]  # noqa: E501
             instrument_details ([TitaniumStringKeyVal]): [optional]  # noqa: E501
             instrument_submission_status (TitaniumInstrumentSubmissionStatus): [optional]  # noqa: E501
+            submission_id (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

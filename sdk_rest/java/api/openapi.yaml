@@ -7655,6 +7655,7 @@ components:
       type: object
     titaniumConsensusExplorerInstrumentDetailsData:
       example:
+        submissionId: submissionId
         instrumentDetails:
         - val: val
           key: key
@@ -7770,10 +7771,13 @@ components:
           type: array
         instrumentSubmissionStatus:
           $ref: '#/components/schemas/titaniumInstrumentSubmissionStatus'
+        submissionId:
+          type: string
       type: object
     titaniumConsensusExplorerInstrumentDetailsResponse:
       example:
         data:
+          submissionId: submissionId
           instrumentDetails:
           - val: val
             key: key

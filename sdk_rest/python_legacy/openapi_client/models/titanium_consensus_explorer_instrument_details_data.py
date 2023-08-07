@@ -38,16 +38,18 @@ class TitaniumConsensusExplorerInstrumentDetailsData(object):
     openapi_types = {
         'consensus_scores': 'TitaniumConsensusScores',
         'instrument_details': 'list[TitaniumStringKeyVal]',
-        'instrument_submission_status': 'TitaniumInstrumentSubmissionStatus'
+        'instrument_submission_status': 'TitaniumInstrumentSubmissionStatus',
+        'submission_id': 'str'
     }
 
     attribute_map = {
         'consensus_scores': 'consensusScores',
         'instrument_details': 'instrumentDetails',
-        'instrument_submission_status': 'instrumentSubmissionStatus'
+        'instrument_submission_status': 'instrumentSubmissionStatus',
+        'submission_id': 'submissionId'
     }
 
-    def __init__(self, consensus_scores=None, instrument_details=None, instrument_submission_status=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, consensus_scores=None, instrument_details=None, instrument_submission_status=None, submission_id=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusExplorerInstrumentDetailsData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -56,6 +58,7 @@ class TitaniumConsensusExplorerInstrumentDetailsData(object):
         self._consensus_scores = None
         self._instrument_details = None
         self._instrument_submission_status = None
+        self._submission_id = None
         self.discriminator = None
 
         if consensus_scores is not None:
@@ -64,6 +67,8 @@ class TitaniumConsensusExplorerInstrumentDetailsData(object):
             self.instrument_details = instrument_details
         if instrument_submission_status is not None:
             self.instrument_submission_status = instrument_submission_status
+        if submission_id is not None:
+            self.submission_id = submission_id
 
     @property
     def consensus_scores(self):
@@ -127,6 +132,27 @@ class TitaniumConsensusExplorerInstrumentDetailsData(object):
         """
 
         self._instrument_submission_status = instrument_submission_status
+
+    @property
+    def submission_id(self):
+        """Gets the submission_id of this TitaniumConsensusExplorerInstrumentDetailsData.  # noqa: E501
+
+
+        :return: The submission_id of this TitaniumConsensusExplorerInstrumentDetailsData.  # noqa: E501
+        :rtype: str
+        """
+        return self._submission_id
+
+    @submission_id.setter
+    def submission_id(self, submission_id):
+        """Sets the submission_id of this TitaniumConsensusExplorerInstrumentDetailsData.
+
+
+        :param submission_id: The submission_id of this TitaniumConsensusExplorerInstrumentDetailsData.  # noqa: E501
+        :type submission_id: str
+        """
+
+        self._submission_id = submission_id
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

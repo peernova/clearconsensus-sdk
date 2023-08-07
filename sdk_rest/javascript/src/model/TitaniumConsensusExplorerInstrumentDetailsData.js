@@ -59,6 +59,9 @@ class TitaniumConsensusExplorerInstrumentDetailsData {
             if (data.hasOwnProperty('instrumentSubmissionStatus')) {
                 obj['instrumentSubmissionStatus'] = TitaniumInstrumentSubmissionStatus.constructFromObject(data['instrumentSubmissionStatus']);
             }
+            if (data.hasOwnProperty('submissionId')) {
+                obj['submissionId'] = ApiClient.convertToType(data['submissionId'], 'String');
+            }
         }
         return obj;
     }
@@ -80,6 +83,11 @@ TitaniumConsensusExplorerInstrumentDetailsData.prototype['instrumentDetails'] = 
  * @member {module:model/TitaniumInstrumentSubmissionStatus} instrumentSubmissionStatus
  */
 TitaniumConsensusExplorerInstrumentDetailsData.prototype['instrumentSubmissionStatus'] = undefined;
+
+/**
+ * @member {String} submissionId
+ */
+TitaniumConsensusExplorerInstrumentDetailsData.prototype['submissionId'] = undefined;
 
 
 

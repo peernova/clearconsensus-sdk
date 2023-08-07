@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSeries
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-04T14:18:51.166239Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-07T12:58:40.226232Z[UTC]")
 public class TitaniumSeries {
   public static final String SERIALIZED_NAME_CONTENT_TYPE = "contentType";
   @SerializedName(SERIALIZED_NAME_CONTENT_TYPE)

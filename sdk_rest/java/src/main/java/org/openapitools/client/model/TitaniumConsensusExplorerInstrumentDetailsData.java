@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusExplorerInstrumentDetailsData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-04T14:18:51.166239Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-07T12:58:40.226232Z[UTC]")
 public class TitaniumConsensusExplorerInstrumentDetailsData {
   public static final String SERIALIZED_NAME_CONSENSUS_SCORES = "consensusScores";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_SCORES)
@@ -65,6 +65,10 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
   public static final String SERIALIZED_NAME_INSTRUMENT_SUBMISSION_STATUS = "instrumentSubmissionStatus";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_SUBMISSION_STATUS)
   private TitaniumInstrumentSubmissionStatus instrumentSubmissionStatus;
+
+  public static final String SERIALIZED_NAME_SUBMISSION_ID = "submissionId";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_ID)
+  private String submissionId;
 
   public TitaniumConsensusExplorerInstrumentDetailsData() { 
   }
@@ -146,6 +150,29 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
   }
 
 
+  public TitaniumConsensusExplorerInstrumentDetailsData submissionId(String submissionId) {
+    
+    this.submissionId = submissionId;
+    return this;
+  }
+
+   /**
+   * Get submissionId
+   * @return submissionId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getSubmissionId() {
+    return submissionId;
+  }
+
+
+  public void setSubmissionId(String submissionId) {
+    this.submissionId = submissionId;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -158,12 +185,13 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
     TitaniumConsensusExplorerInstrumentDetailsData titaniumConsensusExplorerInstrumentDetailsData = (TitaniumConsensusExplorerInstrumentDetailsData) o;
     return Objects.equals(this.consensusScores, titaniumConsensusExplorerInstrumentDetailsData.consensusScores) &&
         Objects.equals(this.instrumentDetails, titaniumConsensusExplorerInstrumentDetailsData.instrumentDetails) &&
-        Objects.equals(this.instrumentSubmissionStatus, titaniumConsensusExplorerInstrumentDetailsData.instrumentSubmissionStatus);
+        Objects.equals(this.instrumentSubmissionStatus, titaniumConsensusExplorerInstrumentDetailsData.instrumentSubmissionStatus) &&
+        Objects.equals(this.submissionId, titaniumConsensusExplorerInstrumentDetailsData.submissionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(consensusScores, instrumentDetails, instrumentSubmissionStatus);
+    return Objects.hash(consensusScores, instrumentDetails, instrumentSubmissionStatus, submissionId);
   }
 
   @Override
@@ -173,6 +201,7 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
     sb.append("    consensusScores: ").append(toIndentedString(consensusScores)).append("\n");
     sb.append("    instrumentDetails: ").append(toIndentedString(instrumentDetails)).append("\n");
     sb.append("    instrumentSubmissionStatus: ").append(toIndentedString(instrumentSubmissionStatus)).append("\n");
+    sb.append("    submissionId: ").append(toIndentedString(submissionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -198,6 +227,7 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
     openapiFields.add("consensusScores");
     openapiFields.add("instrumentDetails");
     openapiFields.add("instrumentSubmissionStatus");
+    openapiFields.add("submissionId");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -244,6 +274,9 @@ public class TitaniumConsensusExplorerInstrumentDetailsData {
       // validate the optional field `instrumentSubmissionStatus`
       if (jsonObj.getAsJsonObject("instrumentSubmissionStatus") != null) {
         TitaniumInstrumentSubmissionStatus.validateJsonObject(jsonObj.getAsJsonObject("instrumentSubmissionStatus"));
+      }
+      if (jsonObj.get("submissionId") != null && !jsonObj.get("submissionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `submissionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("submissionId").toString()));
       }
   }
 
