@@ -1372,7 +1372,8 @@ proto.titanium.ConsensusExplorerInstrumentDetailsData.toObject = function(includ
     instrumentDetailsList: jspb.Message.toObjectList(msg.getInstrumentDetailsList(),
     common_gateway_base_pb.StringKeyVal.toObject, includeInstance),
     instrumentSubmissionStatus: (f = msg.getInstrumentSubmissionStatus()) && proto.titanium.InstrumentSubmissionStatus.toObject(includeInstance, f),
-    consensusScores: (f = msg.getConsensusScores()) && proto.titanium.ConsensusScores.toObject(includeInstance, f)
+    consensusScores: (f = msg.getConsensusScores()) && proto.titanium.ConsensusScores.toObject(includeInstance, f),
+    submissionId: jspb.Message.getFieldWithDefault(msg, 4, "")
   };
 
   if (includeInstance) {
@@ -1423,6 +1424,10 @@ proto.titanium.ConsensusExplorerInstrumentDetailsData.deserializeBinaryFromReade
       var value = new proto.titanium.ConsensusScores;
       reader.readMessage(value,proto.titanium.ConsensusScores.deserializeBinaryFromReader);
       msg.setConsensusScores(value);
+      break;
+    case 4:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setSubmissionId(value);
       break;
     default:
       reader.skipField();
@@ -1475,6 +1480,13 @@ proto.titanium.ConsensusExplorerInstrumentDetailsData.serializeBinaryToWriter = 
       3,
       f,
       proto.titanium.ConsensusScores.serializeBinaryToWriter
+    );
+  }
+  f = message.getSubmissionId();
+  if (f.length > 0) {
+    writer.writeString(
+      4,
+      f
     );
   }
 };
@@ -1589,6 +1601,24 @@ proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.clearConsensusSc
  */
 proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.hasConsensusScores = function() {
   return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional string submission_id = 4;
+ * @return {string}
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.getSubmissionId = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.ConsensusExplorerInstrumentDetailsData} returns this
+ */
+proto.titanium.ConsensusExplorerInstrumentDetailsData.prototype.setSubmissionId = function(value) {
+  return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 

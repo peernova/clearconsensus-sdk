@@ -111,6 +111,9 @@ export class ConsensusExplorerInstrumentDetailsData extends jspb.Message {
   getConsensusScores(): ConsensusScores | undefined;
   setConsensusScores(value?: ConsensusScores): void;
 
+  getSubmissionId(): string;
+  setSubmissionId(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConsensusExplorerInstrumentDetailsData.AsObject;
   static toObject(includeInstance: boolean, msg: ConsensusExplorerInstrumentDetailsData): ConsensusExplorerInstrumentDetailsData.AsObject;
@@ -126,6 +129,7 @@ export namespace ConsensusExplorerInstrumentDetailsData {
     instrumentDetailsList: Array<common_gateway_base_pb.StringKeyVal.AsObject>,
     instrumentSubmissionStatus?: InstrumentSubmissionStatus.AsObject,
     consensusScores?: ConsensusScores.AsObject,
+    submissionId: string,
   }
 }
 
