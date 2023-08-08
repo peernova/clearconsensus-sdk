@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChallengeFormOneOfFields
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-07T12:58:40.226232Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-08T14:48:48.074263Z[UTC]")
 public class TitaniumChallengeFormOneOfFields {
   public static final String SERIALIZED_NAME_NAMES = "names";
   @SerializedName(SERIALIZED_NAME_NAMES)
