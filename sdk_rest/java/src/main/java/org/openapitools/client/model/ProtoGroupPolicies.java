@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ProtoGroupPolicies
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-08T14:48:48.074263Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-09T14:37:06.029381Z[UTC]")
 public class ProtoGroupPolicies {
   public static final String SERIALIZED_NAME_GROUP_POLICY = "groupPolicy";
   @SerializedName(SERIALIZED_NAME_GROUP_POLICY)
