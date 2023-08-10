@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * ProtobufAny
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-09T14:37:06.029381Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-10T13:29:20.834668Z[UTC]")
 public class ProtobufAny {
   public static final String SERIALIZED_NAME_TYPE_URL = "typeUrl";
   @SerializedName(SERIALIZED_NAME_TYPE_URL)
