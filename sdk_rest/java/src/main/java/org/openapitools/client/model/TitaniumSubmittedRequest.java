@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmittedRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-11T13:07:41.494357Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-13T18:34:39.175680Z[UTC]")
 public class TitaniumSubmittedRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)

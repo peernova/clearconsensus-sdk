@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUploadURLResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-11T13:07:41.494357Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-13T18:34:39.175680Z[UTC]")
 public class TitaniumUploadURLResponse {
   public static final String SERIALIZED_NAME_S3_URL = "s3Url";
   @SerializedName(SERIALIZED_NAME_S3_URL)
