@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumDynamicLut
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-14T17:50:41.602636Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-15T15:17:16.456168Z[UTC]")
 public class TitaniumDynamicLut {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
