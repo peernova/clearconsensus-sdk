@@ -53,6 +53,24 @@ type DataServiceNotifyUpload = {
   readonly responseType: typeof common_gateway_base_pb.MessageResponse;
 };
 
+type DataServiceUploadData = {
+  readonly methodName: string;
+  readonly service: typeof DataService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_data_pb.UploadDataRequest;
+  readonly responseType: typeof common_data_pb.UploadDataResponse;
+};
+
+type DataServiceCompleteDataUpload = {
+  readonly methodName: string;
+  readonly service: typeof DataService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_data_pb.CompleteDataUploadRequest;
+  readonly responseType: typeof common_data_pb.CompleteDataUploadResponse;
+};
+
 export class DataService {
   static readonly serviceName: string;
   static readonly Submitted: DataServiceSubmitted;
@@ -60,6 +78,8 @@ export class DataService {
   static readonly UploadURL: DataServiceUploadURL;
   static readonly AuthorizeUpload: DataServiceAuthorizeUpload;
   static readonly NotifyUpload: DataServiceNotifyUpload;
+  static readonly UploadData: DataServiceUploadData;
+  static readonly CompleteDataUpload: DataServiceCompleteDataUpload;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -138,6 +158,24 @@ export class DataServiceClient {
   notifyUpload(
     requestMessage: common_data_pb.UploadNotifyRequest,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
+  ): UnaryResponse;
+  uploadData(
+    requestMessage: common_data_pb.UploadDataRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_data_pb.UploadDataResponse|null) => void
+  ): UnaryResponse;
+  uploadData(
+    requestMessage: common_data_pb.UploadDataRequest,
+    callback: (error: ServiceError|null, responseMessage: common_data_pb.UploadDataResponse|null) => void
+  ): UnaryResponse;
+  completeDataUpload(
+    requestMessage: common_data_pb.CompleteDataUploadRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_data_pb.CompleteDataUploadResponse|null) => void
+  ): UnaryResponse;
+  completeDataUpload(
+    requestMessage: common_data_pb.CompleteDataUploadRequest,
+    callback: (error: ServiceError|null, responseMessage: common_data_pb.CompleteDataUploadResponse|null) => void
   ): UnaryResponse;
 }
 

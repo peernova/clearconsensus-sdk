@@ -21,6 +21,122 @@ const (
 	_ = protoimpl.EnforceVersion(protoimpl.MaxVersion - 20)
 )
 
+type UploadMode int32
+
+const (
+	UploadMode_SUBMISSION UploadMode = 0
+	UploadMode_PARTIAL    UploadMode = 1
+	UploadMode_CUSTOM     UploadMode = 2
+	UploadMode_CORRECTION UploadMode = 3
+	UploadMode_submission UploadMode = 0
+	UploadMode_partial    UploadMode = 1
+	UploadMode_custom     UploadMode = 2
+	UploadMode_correction UploadMode = 3
+)
+
+// Enum value maps for UploadMode.
+var (
+	UploadMode_name = map[int32]string{
+		0: "SUBMISSION",
+		1: "PARTIAL",
+		2: "CUSTOM",
+		3: "CORRECTION",
+		// Duplicate value: 0: "submission",
+		// Duplicate value: 1: "partial",
+		// Duplicate value: 2: "custom",
+		// Duplicate value: 3: "correction",
+	}
+	UploadMode_value = map[string]int32{
+		"SUBMISSION": 0,
+		"PARTIAL":    1,
+		"CUSTOM":     2,
+		"CORRECTION": 3,
+		"submission": 0,
+		"partial":    1,
+		"custom":     2,
+		"correction": 3,
+	}
+)
+
+func (x UploadMode) Enum() *UploadMode {
+	p := new(UploadMode)
+	*p = x
+	return p
+}
+
+func (x UploadMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (UploadMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_common_data_proto_enumTypes[0].Descriptor()
+}
+
+func (UploadMode) Type() protoreflect.EnumType {
+	return &file_common_data_proto_enumTypes[0]
+}
+
+func (x UploadMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use UploadMode.Descriptor instead.
+func (UploadMode) EnumDescriptor() ([]byte, []int) {
+	return file_common_data_proto_rawDescGZIP(), []int{0}
+}
+
+type Protocol int32
+
+const (
+	Protocol_S3  Protocol = 0
+	Protocol_TUS Protocol = 1
+	Protocol_s3  Protocol = 0
+	Protocol_tus Protocol = 1
+)
+
+// Enum value maps for Protocol.
+var (
+	Protocol_name = map[int32]string{
+		0: "S3",
+		1: "TUS",
+		// Duplicate value: 0: "s3",
+		// Duplicate value: 1: "tus",
+	}
+	Protocol_value = map[string]int32{
+		"S3":  0,
+		"TUS": 1,
+		"s3":  0,
+		"tus": 1,
+	}
+)
+
+func (x Protocol) Enum() *Protocol {
+	p := new(Protocol)
+	*p = x
+	return p
+}
+
+func (x Protocol) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (Protocol) Descriptor() protoreflect.EnumDescriptor {
+	return file_common_data_proto_enumTypes[1].Descriptor()
+}
+
+func (Protocol) Type() protoreflect.EnumType {
+	return &file_common_data_proto_enumTypes[1]
+}
+
+func (x Protocol) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use Protocol.Descriptor instead.
+func (Protocol) EnumDescriptor() ([]byte, []int) {
+	return file_common_data_proto_rawDescGZIP(), []int{1}
+}
+
 type UploadAuthorizationResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -972,6 +1088,459 @@ func (x *UploadURLRequest) GetDescriptorName() string {
 	return ""
 }
 
+type UploadDataResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Response:
+	//
+	//	*UploadDataResponse_S3Url
+	//	*UploadDataResponse_Error
+	//	*UploadDataResponse_TusPayload
+	Response isUploadDataResponse_Response `protobuf_oneof:"response"`
+}
+
+func (x *UploadDataResponse) Reset() {
+	*x = UploadDataResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_data_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UploadDataResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadDataResponse) ProtoMessage() {}
+
+func (x *UploadDataResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_data_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadDataResponse.ProtoReflect.Descriptor instead.
+func (*UploadDataResponse) Descriptor() ([]byte, []int) {
+	return file_common_data_proto_rawDescGZIP(), []int{12}
+}
+
+func (m *UploadDataResponse) GetResponse() isUploadDataResponse_Response {
+	if m != nil {
+		return m.Response
+	}
+	return nil
+}
+
+func (x *UploadDataResponse) GetS3Url() string {
+	if x, ok := x.GetResponse().(*UploadDataResponse_S3Url); ok {
+		return x.S3Url
+	}
+	return ""
+}
+
+func (x *UploadDataResponse) GetError() *Error {
+	if x, ok := x.GetResponse().(*UploadDataResponse_Error); ok {
+		return x.Error
+	}
+	return nil
+}
+
+func (x *UploadDataResponse) GetTusPayload() string {
+	if x, ok := x.GetResponse().(*UploadDataResponse_TusPayload); ok {
+		return x.TusPayload
+	}
+	return ""
+}
+
+type isUploadDataResponse_Response interface {
+	isUploadDataResponse_Response()
+}
+
+type UploadDataResponse_S3Url struct {
+	S3Url string `protobuf:"bytes,1,opt,name=s3_url,json=s3Url,proto3,oneof"`
+}
+
+type UploadDataResponse_Error struct {
+	Error *Error `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+type UploadDataResponse_TusPayload struct {
+	TusPayload string `protobuf:"bytes,3,opt,name=tus_payload,json=tusPayload,proto3,oneof"`
+}
+
+func (*UploadDataResponse_S3Url) isUploadDataResponse_Response() {}
+
+func (*UploadDataResponse_Error) isUploadDataResponse_Response() {}
+
+func (*UploadDataResponse_TusPayload) isUploadDataResponse_Response() {}
+
+type CompleteDataUploadRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Client   string `protobuf:"bytes,1,opt,name=client,proto3" json:"client,omitempty"`
+	AssetId  string `protobuf:"bytes,2,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	Asset    string `protobuf:"bytes,3,opt,name=asset,proto3" json:"asset,omitempty"`
+	SubAsset string `protobuf:"bytes,4,opt,name=sub_asset,json=subAsset,proto3" json:"sub_asset,omitempty"`
+	Service  string `protobuf:"bytes,5,opt,name=service,proto3" json:"service,omitempty"`
+	SnapTime string `protobuf:"bytes,6,opt,name=snap_time,json=snapTime,proto3" json:"snap_time,omitempty"`
+	Date     string `protobuf:"bytes,7,opt,name=date,proto3" json:"date,omitempty"`
+}
+
+func (x *CompleteDataUploadRequest) Reset() {
+	*x = CompleteDataUploadRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_data_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CompleteDataUploadRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteDataUploadRequest) ProtoMessage() {}
+
+func (x *CompleteDataUploadRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_data_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteDataUploadRequest.ProtoReflect.Descriptor instead.
+func (*CompleteDataUploadRequest) Descriptor() ([]byte, []int) {
+	return file_common_data_proto_rawDescGZIP(), []int{13}
+}
+
+func (x *CompleteDataUploadRequest) GetClient() string {
+	if x != nil {
+		return x.Client
+	}
+	return ""
+}
+
+func (x *CompleteDataUploadRequest) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *CompleteDataUploadRequest) GetAsset() string {
+	if x != nil {
+		return x.Asset
+	}
+	return ""
+}
+
+func (x *CompleteDataUploadRequest) GetSubAsset() string {
+	if x != nil {
+		return x.SubAsset
+	}
+	return ""
+}
+
+func (x *CompleteDataUploadRequest) GetService() string {
+	if x != nil {
+		return x.Service
+	}
+	return ""
+}
+
+func (x *CompleteDataUploadRequest) GetSnapTime() string {
+	if x != nil {
+		return x.SnapTime
+	}
+	return ""
+}
+
+func (x *CompleteDataUploadRequest) GetDate() string {
+	if x != nil {
+		return x.Date
+	}
+	return ""
+}
+
+type CompleteDataUploadResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Response:
+	//
+	//	*CompleteDataUploadResponse_Success
+	//	*CompleteDataUploadResponse_Error
+	Response isCompleteDataUploadResponse_Response `protobuf_oneof:"response"`
+}
+
+func (x *CompleteDataUploadResponse) Reset() {
+	*x = CompleteDataUploadResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_data_proto_msgTypes[14]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CompleteDataUploadResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CompleteDataUploadResponse) ProtoMessage() {}
+
+func (x *CompleteDataUploadResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_data_proto_msgTypes[14]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CompleteDataUploadResponse.ProtoReflect.Descriptor instead.
+func (*CompleteDataUploadResponse) Descriptor() ([]byte, []int) {
+	return file_common_data_proto_rawDescGZIP(), []int{14}
+}
+
+func (m *CompleteDataUploadResponse) GetResponse() isCompleteDataUploadResponse_Response {
+	if m != nil {
+		return m.Response
+	}
+	return nil
+}
+
+func (x *CompleteDataUploadResponse) GetSuccess() bool {
+	if x, ok := x.GetResponse().(*CompleteDataUploadResponse_Success); ok {
+		return x.Success
+	}
+	return false
+}
+
+func (x *CompleteDataUploadResponse) GetError() *Error {
+	if x, ok := x.GetResponse().(*CompleteDataUploadResponse_Error); ok {
+		return x.Error
+	}
+	return nil
+}
+
+type isCompleteDataUploadResponse_Response interface {
+	isCompleteDataUploadResponse_Response()
+}
+
+type CompleteDataUploadResponse_Success struct {
+	Success bool `protobuf:"varint,1,opt,name=success,proto3,oneof"`
+}
+
+type CompleteDataUploadResponse_Error struct {
+	Error *Error `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*CompleteDataUploadResponse_Success) isCompleteDataUploadResponse_Response() {}
+
+func (*CompleteDataUploadResponse_Error) isCompleteDataUploadResponse_Response() {}
+
+type UploadDataRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Client     string      `protobuf:"bytes,1,opt,name=client,proto3" json:"client,omitempty"`
+	FileName   string      `protobuf:"bytes,2,opt,name=file_name,json=fileName,proto3" json:"file_name,omitempty"`
+	Annotation *Annotation `protobuf:"bytes,3,opt,name=annotation,proto3" json:"annotation,omitempty"`
+	Protocol   Protocol    `protobuf:"varint,4,opt,name=protocol,proto3,enum=titanium.Protocol" json:"protocol,omitempty"`
+}
+
+func (x *UploadDataRequest) Reset() {
+	*x = UploadDataRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_data_proto_msgTypes[15]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *UploadDataRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*UploadDataRequest) ProtoMessage() {}
+
+func (x *UploadDataRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_common_data_proto_msgTypes[15]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use UploadDataRequest.ProtoReflect.Descriptor instead.
+func (*UploadDataRequest) Descriptor() ([]byte, []int) {
+	return file_common_data_proto_rawDescGZIP(), []int{15}
+}
+
+func (x *UploadDataRequest) GetClient() string {
+	if x != nil {
+		return x.Client
+	}
+	return ""
+}
+
+func (x *UploadDataRequest) GetFileName() string {
+	if x != nil {
+		return x.FileName
+	}
+	return ""
+}
+
+func (x *UploadDataRequest) GetAnnotation() *Annotation {
+	if x != nil {
+		return x.Annotation
+	}
+	return nil
+}
+
+func (x *UploadDataRequest) GetProtocol() Protocol {
+	if x != nil {
+		return x.Protocol
+	}
+	return Protocol_S3
+}
+
+type Annotation struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Mode        UploadMode       `protobuf:"varint,1,opt,name=mode,proto3,enum=titanium.UploadMode" json:"mode,omitempty"`
+	AssetId     string           `protobuf:"bytes,2,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	Asset       string           `protobuf:"bytes,3,opt,name=asset,proto3" json:"asset,omitempty"`
+	SubAsset    string           `protobuf:"bytes,4,opt,name=sub_asset,json=subAsset,proto3" json:"sub_asset,omitempty"`
+	Service     string           `protobuf:"bytes,5,opt,name=service,proto3" json:"service,omitempty"`
+	SnapTime    string           `protobuf:"bytes,6,opt,name=snap_time,json=snapTime,proto3" json:"snap_time,omitempty"`
+	Date        string           `protobuf:"bytes,7,opt,name=date,proto3" json:"date,omitempty"`
+	Description string           `protobuf:"bytes,8,opt,name=description,proto3" json:"description,omitempty"`
+	Annotations *structpb.Struct `protobuf:"bytes,9,opt,name=annotations,proto3" json:"annotations,omitempty"`
+}
+
+func (x *Annotation) Reset() {
+	*x = Annotation{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_data_proto_msgTypes[16]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Annotation) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Annotation) ProtoMessage() {}
+
+func (x *Annotation) ProtoReflect() protoreflect.Message {
+	mi := &file_common_data_proto_msgTypes[16]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Annotation.ProtoReflect.Descriptor instead.
+func (*Annotation) Descriptor() ([]byte, []int) {
+	return file_common_data_proto_rawDescGZIP(), []int{16}
+}
+
+func (x *Annotation) GetMode() UploadMode {
+	if x != nil {
+		return x.Mode
+	}
+	return UploadMode_SUBMISSION
+}
+
+func (x *Annotation) GetAssetId() string {
+	if x != nil {
+		return x.AssetId
+	}
+	return ""
+}
+
+func (x *Annotation) GetAsset() string {
+	if x != nil {
+		return x.Asset
+	}
+	return ""
+}
+
+func (x *Annotation) GetSubAsset() string {
+	if x != nil {
+		return x.SubAsset
+	}
+	return ""
+}
+
+func (x *Annotation) GetService() string {
+	if x != nil {
+		return x.Service
+	}
+	return ""
+}
+
+func (x *Annotation) GetSnapTime() string {
+	if x != nil {
+		return x.SnapTime
+	}
+	return ""
+}
+
+func (x *Annotation) GetDate() string {
+	if x != nil {
+		return x.Date
+	}
+	return ""
+}
+
+func (x *Annotation) GetDescription() string {
+	if x != nil {
+		return x.Description
+	}
+	return ""
+}
+
+func (x *Annotation) GetAnnotations() *structpb.Struct {
+	if x != nil {
+		return x.Annotations
+	}
+	return nil
+}
+
 var File_common_data_proto protoreflect.FileDescriptor
 
 var file_common_data_proto_rawDesc = []byte{
@@ -1114,15 +1683,85 @@ var file_common_data_proto_rawDesc = []byte{
 	0x61, 0x6d, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x74, 0x72, 0x61, 0x63, 0x65,
 	0x4e, 0x61, 0x6d, 0x65, 0x12, 0x27, 0x0a, 0x0f, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74,
 	0x6f, 0x72, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x64,
-	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x6f, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x42, 0x70, 0x0a,
-	0x20, 0x63, 0x6f, 0x6d, 0x2e, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2e, 0x74, 0x69,
-	0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65,
-	0x73, 0x42, 0x14, 0x44, 0x61, 0x74, 0x61, 0x55, 0x74, 0x69, 0x6c, 0x73, 0x50, 0x72, 0x6f, 0x74,
-	0x6f, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x50, 0x01, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75,
-	0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2f, 0x63,
-	0x6c, 0x65, 0x61, 0x72, 0x63, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x73, 0x75, 0x73, 0x2d, 0x73, 0x64,
-	0x6b, 0x2f, 0x73, 0x64, 0x6b, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62,
-	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x6f, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x22, 0x85, 0x01,
+	0x0a, 0x12, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x44, 0x61, 0x74, 0x61, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x17, 0x0a, 0x06, 0x73, 0x33, 0x5f, 0x75, 0x72, 0x6c, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x05, 0x73, 0x33, 0x55, 0x72, 0x6c, 0x12, 0x27, 0x0a,
+	0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x74,
+	0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x48, 0x00, 0x52,
+	0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x12, 0x21, 0x0a, 0x0b, 0x74, 0x75, 0x73, 0x5f, 0x70, 0x61,
+	0x79, 0x6c, 0x6f, 0x61, 0x64, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x48, 0x00, 0x52, 0x0a, 0x74,
+	0x75, 0x73, 0x50, 0x61, 0x79, 0x6c, 0x6f, 0x61, 0x64, 0x42, 0x0a, 0x0a, 0x08, 0x72, 0x65, 0x73,
+	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0xcc, 0x01, 0x0a, 0x19, 0x43, 0x6f, 0x6d, 0x70, 0x6c, 0x65,
+	0x74, 0x65, 0x44, 0x61, 0x74, 0x61, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x09, 0x52, 0x06, 0x63, 0x6c, 0x69, 0x65, 0x6e, 0x74, 0x12, 0x19, 0x0a, 0x08, 0x61,
+	0x73, 0x73, 0x65, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x61,
+	0x73, 0x73, 0x65, 0x74, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x61, 0x73, 0x73, 0x65, 0x74, 0x18,
+	0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x61, 0x73, 0x73, 0x65, 0x74, 0x12, 0x1b, 0x0a, 0x09,
+	0x73, 0x75, 0x62, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x08, 0x73, 0x75, 0x62, 0x41, 0x73, 0x73, 0x65, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x12, 0x1b, 0x0a, 0x09, 0x73, 0x6e, 0x61, 0x70, 0x5f, 0x74, 0x69, 0x6d, 0x65,
+	0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x73, 0x6e, 0x61, 0x70, 0x54, 0x69, 0x6d, 0x65,
+	0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04,
+	0x64, 0x61, 0x74, 0x65, 0x22, 0x6d, 0x0a, 0x1a, 0x43, 0x6f, 0x6d, 0x70, 0x6c, 0x65, 0x74, 0x65,
+	0x44, 0x61, 0x74, 0x61, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
+	0x73, 0x65, 0x12, 0x1a, 0x0a, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x08, 0x48, 0x00, 0x52, 0x07, 0x73, 0x75, 0x63, 0x63, 0x65, 0x73, 0x73, 0x12, 0x27,
+	0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e,
+	0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x48, 0x00,
+	0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x42, 0x0a, 0x0a, 0x08, 0x72, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0xae, 0x01, 0x0a, 0x11, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x44, 0x61,
+	0x74, 0x61, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x16, 0x0a, 0x06, 0x63, 0x6c, 0x69,
+	0x65, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x06, 0x63, 0x6c, 0x69, 0x65, 0x6e,
+	0x74, 0x12, 0x1b, 0x0a, 0x09, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x66, 0x69, 0x6c, 0x65, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x34,
+	0x0a, 0x0a, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x03, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x14, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x41, 0x6e,
+	0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0a, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61,
+	0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2e, 0x0a, 0x08, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x12, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75,
+	0x6d, 0x2e, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x63, 0x6f, 0x6c, 0x52, 0x08, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x63, 0x6f, 0x6c, 0x22, 0xac, 0x02, 0x0a, 0x0a, 0x41, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74,
+	0x69, 0x6f, 0x6e, 0x12, 0x28, 0x0a, 0x04, 0x6d, 0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0e, 0x32, 0x14, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x55, 0x70, 0x6c,
+	0x6f, 0x61, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x52, 0x04, 0x6d, 0x6f, 0x64, 0x65, 0x12, 0x19, 0x0a,
+	0x08, 0x61, 0x73, 0x73, 0x65, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x07, 0x61, 0x73, 0x73, 0x65, 0x74, 0x49, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x61, 0x73, 0x73, 0x65,
+	0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x61, 0x73, 0x73, 0x65, 0x74, 0x12, 0x1b,
+	0x0a, 0x09, 0x73, 0x75, 0x62, 0x5f, 0x61, 0x73, 0x73, 0x65, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x09, 0x52, 0x08, 0x73, 0x75, 0x62, 0x41, 0x73, 0x73, 0x65, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x73,
+	0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x12, 0x1b, 0x0a, 0x09, 0x73, 0x6e, 0x61, 0x70, 0x5f, 0x74, 0x69,
+	0x6d, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x73, 0x6e, 0x61, 0x70, 0x54, 0x69,
+	0x6d, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x04, 0x64, 0x61, 0x74, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69,
+	0x70, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x64, 0x65, 0x73,
+	0x63, 0x72, 0x69, 0x70, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x39, 0x0a, 0x0b, 0x61, 0x6e, 0x6e, 0x6f,
+	0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x73, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x17, 0x2e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
+	0x53, 0x74, 0x72, 0x75, 0x63, 0x74, 0x52, 0x0b, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69,
+	0x6f, 0x6e, 0x73, 0x2a, 0x82, 0x01, 0x0a, 0x0a, 0x55, 0x70, 0x6c, 0x6f, 0x61, 0x64, 0x4d, 0x6f,
+	0x64, 0x65, 0x12, 0x0e, 0x0a, 0x0a, 0x53, 0x55, 0x42, 0x4d, 0x49, 0x53, 0x53, 0x49, 0x4f, 0x4e,
+	0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x50, 0x41, 0x52, 0x54, 0x49, 0x41, 0x4c, 0x10, 0x01, 0x12,
+	0x0a, 0x0a, 0x06, 0x43, 0x55, 0x53, 0x54, 0x4f, 0x4d, 0x10, 0x02, 0x12, 0x0e, 0x0a, 0x0a, 0x43,
+	0x4f, 0x52, 0x52, 0x45, 0x43, 0x54, 0x49, 0x4f, 0x4e, 0x10, 0x03, 0x12, 0x0e, 0x0a, 0x0a, 0x73,
+	0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x10, 0x00, 0x12, 0x0b, 0x0a, 0x07, 0x70,
+	0x61, 0x72, 0x74, 0x69, 0x61, 0x6c, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x63, 0x75, 0x73, 0x74,
+	0x6f, 0x6d, 0x10, 0x02, 0x12, 0x0e, 0x0a, 0x0a, 0x63, 0x6f, 0x72, 0x72, 0x65, 0x63, 0x74, 0x69,
+	0x6f, 0x6e, 0x10, 0x03, 0x1a, 0x02, 0x10, 0x01, 0x2a, 0x30, 0x0a, 0x08, 0x50, 0x72, 0x6f, 0x74,
+	0x6f, 0x63, 0x6f, 0x6c, 0x12, 0x06, 0x0a, 0x02, 0x53, 0x33, 0x10, 0x00, 0x12, 0x07, 0x0a, 0x03,
+	0x54, 0x55, 0x53, 0x10, 0x01, 0x12, 0x06, 0x0a, 0x02, 0x73, 0x33, 0x10, 0x00, 0x12, 0x07, 0x0a,
+	0x03, 0x74, 0x75, 0x73, 0x10, 0x01, 0x1a, 0x02, 0x10, 0x01, 0x42, 0x70, 0x0a, 0x20, 0x63, 0x6f,
+	0x6d, 0x2e, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e,
+	0x69, 0x75, 0x6d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65, 0x73, 0x42, 0x14,
+	0x44, 0x61, 0x74, 0x61, 0x55, 0x74, 0x69, 0x6c, 0x73, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x43, 0x6f,
+	0x6d, 0x6d, 0x6f, 0x6e, 0x50, 0x01, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63,
+	0x6f, 0x6d, 0x2f, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2f, 0x63, 0x6c, 0x65, 0x61,
+	0x72, 0x63, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x73, 0x75, 0x73, 0x2d, 0x73, 0x64, 0x6b, 0x2f, 0x73,
+	0x64, 0x6b, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -1137,49 +1776,64 @@ func file_common_data_proto_rawDescGZIP() []byte {
 	return file_common_data_proto_rawDescData
 }
 
-var file_common_data_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_common_data_proto_enumTypes = make([]protoimpl.EnumInfo, 2)
+var file_common_data_proto_msgTypes = make([]protoimpl.MessageInfo, 17)
 var file_common_data_proto_goTypes = []interface{}{
-	(*UploadAuthorizationResponse)(nil),            // 0: titanium.UploadAuthorizationResponse
-	(*UploadNotifyRequest)(nil),                    // 1: titanium.UploadNotifyRequest
-	(*SubmittedRequest)(nil),                       // 2: titanium.SubmittedRequest
-	(*SubmittedResponse)(nil),                      // 3: titanium.SubmittedResponse
-	(*SubmittedResponseData)(nil),                  // 4: titanium.SubmittedResponseData
-	(*SubmittedRow)(nil),                           // 5: titanium.SubmittedRow
-	(*ExportRequest)(nil),                          // 6: titanium.ExportRequest
-	(*ExportReportRequest)(nil),                    // 7: titanium.ExportReportRequest
-	(*ExportResponse)(nil),                         // 8: titanium.ExportResponse
-	(*ExportPresignedUrlResponseResponseData)(nil), // 9: titanium.ExportPresignedUrlResponseResponseData
-	(*ExportResponseData)(nil),                     // 10: titanium.ExportResponseData
-	(*UploadURLRequest)(nil),                       // 11: titanium.UploadURLRequest
-	(*Filter)(nil),                                 // 12: titanium.Filter
-	(*FilterPack)(nil),                             // 13: titanium.FilterPack
-	(*OrderBy)(nil),                                // 14: titanium.OrderBy
-	(*Page)(nil),                                   // 15: titanium.Page
-	(*Error)(nil),                                  // 16: titanium.Error
-	(*ColumnInfo)(nil),                             // 17: titanium.ColumnInfo
-	(*structpb.Value)(nil),                         // 18: google.protobuf.Value
+	(UploadMode)(0),                                // 0: titanium.UploadMode
+	(Protocol)(0),                                  // 1: titanium.Protocol
+	(*UploadAuthorizationResponse)(nil),            // 2: titanium.UploadAuthorizationResponse
+	(*UploadNotifyRequest)(nil),                    // 3: titanium.UploadNotifyRequest
+	(*SubmittedRequest)(nil),                       // 4: titanium.SubmittedRequest
+	(*SubmittedResponse)(nil),                      // 5: titanium.SubmittedResponse
+	(*SubmittedResponseData)(nil),                  // 6: titanium.SubmittedResponseData
+	(*SubmittedRow)(nil),                           // 7: titanium.SubmittedRow
+	(*ExportRequest)(nil),                          // 8: titanium.ExportRequest
+	(*ExportReportRequest)(nil),                    // 9: titanium.ExportReportRequest
+	(*ExportResponse)(nil),                         // 10: titanium.ExportResponse
+	(*ExportPresignedUrlResponseResponseData)(nil), // 11: titanium.ExportPresignedUrlResponseResponseData
+	(*ExportResponseData)(nil),                     // 12: titanium.ExportResponseData
+	(*UploadURLRequest)(nil),                       // 13: titanium.UploadURLRequest
+	(*UploadDataResponse)(nil),                     // 14: titanium.UploadDataResponse
+	(*CompleteDataUploadRequest)(nil),              // 15: titanium.CompleteDataUploadRequest
+	(*CompleteDataUploadResponse)(nil),             // 16: titanium.CompleteDataUploadResponse
+	(*UploadDataRequest)(nil),                      // 17: titanium.UploadDataRequest
+	(*Annotation)(nil),                             // 18: titanium.Annotation
+	(*Filter)(nil),                                 // 19: titanium.Filter
+	(*FilterPack)(nil),                             // 20: titanium.FilterPack
+	(*OrderBy)(nil),                                // 21: titanium.OrderBy
+	(*Page)(nil),                                   // 22: titanium.Page
+	(*Error)(nil),                                  // 23: titanium.Error
+	(*ColumnInfo)(nil),                             // 24: titanium.ColumnInfo
+	(*structpb.Value)(nil),                         // 25: google.protobuf.Value
+	(*structpb.Struct)(nil),                        // 26: google.protobuf.Struct
 }
 var file_common_data_proto_depIdxs = []int32{
-	12, // 0: titanium.SubmittedRequest.filters:type_name -> titanium.Filter
-	13, // 1: titanium.SubmittedRequest.filter_pack:type_name -> titanium.FilterPack
-	14, // 2: titanium.SubmittedRequest.orderBy:type_name -> titanium.OrderBy
-	15, // 3: titanium.SubmittedRequest.page:type_name -> titanium.Page
-	4,  // 4: titanium.SubmittedResponse.data:type_name -> titanium.SubmittedResponseData
-	16, // 5: titanium.SubmittedResponse.error:type_name -> titanium.Error
-	17, // 6: titanium.SubmittedResponseData.columns:type_name -> titanium.ColumnInfo
-	5,  // 7: titanium.SubmittedResponseData.rows:type_name -> titanium.SubmittedRow
-	15, // 8: titanium.SubmittedResponseData.page:type_name -> titanium.Page
-	18, // 9: titanium.SubmittedRow.values:type_name -> google.protobuf.Value
-	13, // 10: titanium.ExportRequest.filter_pack:type_name -> titanium.FilterPack
-	12, // 11: titanium.ExportRequest.filters:type_name -> titanium.Filter
-	14, // 12: titanium.ExportRequest.orderBy:type_name -> titanium.OrderBy
-	9,  // 13: titanium.ExportResponse.data:type_name -> titanium.ExportPresignedUrlResponseResponseData
-	16, // 14: titanium.ExportResponse.error:type_name -> titanium.Error
-	15, // [15:15] is the sub-list for method output_type
-	15, // [15:15] is the sub-list for method input_type
-	15, // [15:15] is the sub-list for extension type_name
-	15, // [15:15] is the sub-list for extension extendee
-	0,  // [0:15] is the sub-list for field type_name
+	19, // 0: titanium.SubmittedRequest.filters:type_name -> titanium.Filter
+	20, // 1: titanium.SubmittedRequest.filter_pack:type_name -> titanium.FilterPack
+	21, // 2: titanium.SubmittedRequest.orderBy:type_name -> titanium.OrderBy
+	22, // 3: titanium.SubmittedRequest.page:type_name -> titanium.Page
+	6,  // 4: titanium.SubmittedResponse.data:type_name -> titanium.SubmittedResponseData
+	23, // 5: titanium.SubmittedResponse.error:type_name -> titanium.Error
+	24, // 6: titanium.SubmittedResponseData.columns:type_name -> titanium.ColumnInfo
+	7,  // 7: titanium.SubmittedResponseData.rows:type_name -> titanium.SubmittedRow
+	22, // 8: titanium.SubmittedResponseData.page:type_name -> titanium.Page
+	25, // 9: titanium.SubmittedRow.values:type_name -> google.protobuf.Value
+	20, // 10: titanium.ExportRequest.filter_pack:type_name -> titanium.FilterPack
+	19, // 11: titanium.ExportRequest.filters:type_name -> titanium.Filter
+	21, // 12: titanium.ExportRequest.orderBy:type_name -> titanium.OrderBy
+	11, // 13: titanium.ExportResponse.data:type_name -> titanium.ExportPresignedUrlResponseResponseData
+	23, // 14: titanium.ExportResponse.error:type_name -> titanium.Error
+	23, // 15: titanium.UploadDataResponse.error:type_name -> titanium.Error
+	23, // 16: titanium.CompleteDataUploadResponse.error:type_name -> titanium.Error
+	18, // 17: titanium.UploadDataRequest.annotation:type_name -> titanium.Annotation
+	1,  // 18: titanium.UploadDataRequest.protocol:type_name -> titanium.Protocol
+	0,  // 19: titanium.Annotation.mode:type_name -> titanium.UploadMode
+	26, // 20: titanium.Annotation.annotations:type_name -> google.protobuf.Struct
+	21, // [21:21] is the sub-list for method output_type
+	21, // [21:21] is the sub-list for method input_type
+	21, // [21:21] is the sub-list for extension type_name
+	21, // [21:21] is the sub-list for extension extendee
+	0,  // [0:21] is the sub-list for field type_name
 }
 
 func init() { file_common_data_proto_init() }
@@ -1333,6 +1987,66 @@ func file_common_data_proto_init() {
 				return nil
 			}
 		}
+		file_common_data_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UploadDataResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_common_data_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CompleteDataUploadRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_common_data_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CompleteDataUploadResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_common_data_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*UploadDataRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_common_data_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Annotation); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	file_common_data_proto_msgTypes[3].OneofWrappers = []interface{}{
 		(*SubmittedResponse_Data)(nil),
@@ -1347,18 +2061,28 @@ func file_common_data_proto_init() {
 		(*ExportResponse_Data)(nil),
 		(*ExportResponse_Error)(nil),
 	}
+	file_common_data_proto_msgTypes[12].OneofWrappers = []interface{}{
+		(*UploadDataResponse_S3Url)(nil),
+		(*UploadDataResponse_Error)(nil),
+		(*UploadDataResponse_TusPayload)(nil),
+	}
+	file_common_data_proto_msgTypes[14].OneofWrappers = []interface{}{
+		(*CompleteDataUploadResponse_Success)(nil),
+		(*CompleteDataUploadResponse_Error)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_common_data_proto_rawDesc,
-			NumEnums:      0,
-			NumMessages:   12,
+			NumEnums:      2,
+			NumMessages:   17,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
 		GoTypes:           file_common_data_proto_goTypes,
 		DependencyIndexes: file_common_data_proto_depIdxs,
+		EnumInfos:         file_common_data_proto_enumTypes,
 		MessageInfos:      file_common_data_proto_msgTypes,
 	}.Build()
 	File_common_data_proto = out.File

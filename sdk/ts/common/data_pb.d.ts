@@ -453,3 +453,234 @@ export namespace UploadURLRequest {
   }
 }
 
+export class UploadDataResponse extends jspb.Message {
+  hasS3Url(): boolean;
+  clearS3Url(): void;
+  getS3Url(): string;
+  setS3Url(value: string): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_gateway_base_pb.Error | undefined;
+  setError(value?: common_gateway_base_pb.Error): void;
+
+  hasTusPayload(): boolean;
+  clearTusPayload(): void;
+  getTusPayload(): string;
+  setTusPayload(value: string): void;
+
+  getResponseCase(): UploadDataResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadDataResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadDataResponse): UploadDataResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadDataResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadDataResponse;
+  static deserializeBinaryFromReader(message: UploadDataResponse, reader: jspb.BinaryReader): UploadDataResponse;
+}
+
+export namespace UploadDataResponse {
+  export type AsObject = {
+    s3Url: string,
+    error?: common_gateway_base_pb.Error.AsObject,
+    tusPayload: string,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    S3_URL = 1,
+    ERROR = 2,
+    TUS_PAYLOAD = 3,
+  }
+}
+
+export class CompleteDataUploadRequest extends jspb.Message {
+  getClient(): string;
+  setClient(value: string): void;
+
+  getAssetId(): string;
+  setAssetId(value: string): void;
+
+  getAsset(): string;
+  setAsset(value: string): void;
+
+  getSubAsset(): string;
+  setSubAsset(value: string): void;
+
+  getService(): string;
+  setService(value: string): void;
+
+  getSnapTime(): string;
+  setSnapTime(value: string): void;
+
+  getDate(): string;
+  setDate(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompleteDataUploadRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CompleteDataUploadRequest): CompleteDataUploadRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CompleteDataUploadRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompleteDataUploadRequest;
+  static deserializeBinaryFromReader(message: CompleteDataUploadRequest, reader: jspb.BinaryReader): CompleteDataUploadRequest;
+}
+
+export namespace CompleteDataUploadRequest {
+  export type AsObject = {
+    client: string,
+    assetId: string,
+    asset: string,
+    subAsset: string,
+    service: string,
+    snapTime: string,
+    date: string,
+  }
+}
+
+export class CompleteDataUploadResponse extends jspb.Message {
+  hasSuccess(): boolean;
+  clearSuccess(): void;
+  getSuccess(): boolean;
+  setSuccess(value: boolean): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_gateway_base_pb.Error | undefined;
+  setError(value?: common_gateway_base_pb.Error): void;
+
+  getResponseCase(): CompleteDataUploadResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CompleteDataUploadResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: CompleteDataUploadResponse): CompleteDataUploadResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CompleteDataUploadResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CompleteDataUploadResponse;
+  static deserializeBinaryFromReader(message: CompleteDataUploadResponse, reader: jspb.BinaryReader): CompleteDataUploadResponse;
+}
+
+export namespace CompleteDataUploadResponse {
+  export type AsObject = {
+    success: boolean,
+    error?: common_gateway_base_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    SUCCESS = 1,
+    ERROR = 2,
+  }
+}
+
+export class UploadDataRequest extends jspb.Message {
+  getClient(): string;
+  setClient(value: string): void;
+
+  getFileName(): string;
+  setFileName(value: string): void;
+
+  hasAnnotation(): boolean;
+  clearAnnotation(): void;
+  getAnnotation(): Annotation | undefined;
+  setAnnotation(value?: Annotation): void;
+
+  getProtocol(): ProtocolMap[keyof ProtocolMap];
+  setProtocol(value: ProtocolMap[keyof ProtocolMap]): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): UploadDataRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: UploadDataRequest): UploadDataRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: UploadDataRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): UploadDataRequest;
+  static deserializeBinaryFromReader(message: UploadDataRequest, reader: jspb.BinaryReader): UploadDataRequest;
+}
+
+export namespace UploadDataRequest {
+  export type AsObject = {
+    client: string,
+    fileName: string,
+    annotation?: Annotation.AsObject,
+    protocol: ProtocolMap[keyof ProtocolMap],
+  }
+}
+
+export class Annotation extends jspb.Message {
+  getMode(): UploadModeMap[keyof UploadModeMap];
+  setMode(value: UploadModeMap[keyof UploadModeMap]): void;
+
+  getAssetId(): string;
+  setAssetId(value: string): void;
+
+  getAsset(): string;
+  setAsset(value: string): void;
+
+  getSubAsset(): string;
+  setSubAsset(value: string): void;
+
+  getService(): string;
+  setService(value: string): void;
+
+  getSnapTime(): string;
+  setSnapTime(value: string): void;
+
+  getDate(): string;
+  setDate(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasAnnotations(): boolean;
+  clearAnnotations(): void;
+  getAnnotations(): google_protobuf_struct_pb.Struct | undefined;
+  setAnnotations(value?: google_protobuf_struct_pb.Struct): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Annotation.AsObject;
+  static toObject(includeInstance: boolean, msg: Annotation): Annotation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Annotation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Annotation;
+  static deserializeBinaryFromReader(message: Annotation, reader: jspb.BinaryReader): Annotation;
+}
+
+export namespace Annotation {
+  export type AsObject = {
+    mode: UploadModeMap[keyof UploadModeMap],
+    assetId: string,
+    asset: string,
+    subAsset: string,
+    service: string,
+    snapTime: string,
+    date: string,
+    description: string,
+    annotations?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export interface UploadModeMap {
+  SUBMISSION: 0;
+  PARTIAL: 1;
+  CUSTOM: 2;
+  CORRECTION: 3;
+  SUBMISSION: 0;
+  PARTIAL: 1;
+  CUSTOM: 2;
+  CORRECTION: 3;
+}
+
+export const UploadMode: UploadModeMap;
+
+export interface ProtocolMap {
+  S3: 0;
+  TUS: 1;
+  S3: 0;
+  TUS: 1;
+}
+
+export const Protocol: ProtocolMap;
+
