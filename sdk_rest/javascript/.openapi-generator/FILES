@@ -815,8 +815,3 @@ src/model/TitaniumValuesRow.js
 src/model/TitaniumVersion.js
 src/model/TitaniumVersionList.js
 src/model/TitaniumViewRow.js
-test/model/TitaniumAnnotation.spec.js
-test/model/TitaniumCompleteDataUploadRequest.spec.js
-test/model/TitaniumCompleteDataUploadResponse.spec.js
-test/model/TitaniumUploadDataRequest.spec.js
-test/model/TitaniumUploadDataResponse.spec.js

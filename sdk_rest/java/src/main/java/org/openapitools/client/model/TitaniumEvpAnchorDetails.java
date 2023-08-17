@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpAnchorDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T11:09:09.923566Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T13:04:07.757774Z[UTC]")
 public class TitaniumEvpAnchorDetails {
   public static final String SERIALIZED_NAME_DISTANCE_TO_CONSENSUS = "distanceToConsensus";
   @SerializedName(SERIALIZED_NAME_DISTANCE_TO_CONSENSUS)

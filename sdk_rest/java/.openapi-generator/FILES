@@ -840,8 +840,3 @@ src/main/java/org/openapitools/client/model/TitaniumValuesRow.java
 src/main/java/org/openapitools/client/model/TitaniumVersion.java
 src/main/java/org/openapitools/client/model/TitaniumVersionList.java
 src/main/java/org/openapitools/client/model/TitaniumViewRow.java
-src/test/java/org/openapitools/client/model/TitaniumAnnotationTest.java
-src/test/java/org/openapitools/client/model/TitaniumCompleteDataUploadRequestTest.java
-src/test/java/org/openapitools/client/model/TitaniumCompleteDataUploadResponseTest.java
-src/test/java/org/openapitools/client/model/TitaniumUploadDataRequestTest.java
-src/test/java/org/openapitools/client/model/TitaniumUploadDataResponseTest.java

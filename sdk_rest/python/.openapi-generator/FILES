@@ -826,9 +826,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_titanium_annotation.py
-test/test_titanium_complete_data_upload_request.py
-test/test_titanium_complete_data_upload_response.py
-test/test_titanium_upload_data_request.py
-test/test_titanium_upload_data_response.py
 tox.ini
