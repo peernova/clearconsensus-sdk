@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumCohortConsensusColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T15:16:31.525591Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T15:40:04.150653Z[UTC]")
 public class TitaniumCohortConsensusColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS = "absDiffFromConsensus";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS)
