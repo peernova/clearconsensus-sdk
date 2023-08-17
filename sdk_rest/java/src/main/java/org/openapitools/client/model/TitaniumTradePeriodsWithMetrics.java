@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradePeriodsWithMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T17:46:03.914930Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T22:57:04.952222Z[UTC]")
 public class TitaniumTradePeriodsWithMetrics {
   public static final String SERIALIZED_NAME_LESS_DAY = "lessDay";
   @SerializedName(SERIALIZED_NAME_LESS_DAY)

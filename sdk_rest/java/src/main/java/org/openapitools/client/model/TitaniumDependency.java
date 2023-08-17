@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumDependency
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T17:46:03.914930Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T22:57:04.952222Z[UTC]")
 public class TitaniumDependency {
   public static final String SERIALIZED_NAME_ENTITY = "entity";
   @SerializedName(SERIALIZED_NAME_ENTITY)
