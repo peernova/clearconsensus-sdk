@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumKVOperationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T16:24:50.963517Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T17:21:02.444709Z[UTC]")
 public class TitaniumKVOperationResponse {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
