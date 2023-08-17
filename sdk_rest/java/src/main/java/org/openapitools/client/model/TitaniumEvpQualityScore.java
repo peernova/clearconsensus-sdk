@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpQualityScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T13:04:07.757774Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T15:16:31.525591Z[UTC]")
 public class TitaniumEvpQualityScore {
   public static final String SERIALIZED_NAME_HISTORY = "history";
   @SerializedName(SERIALIZED_NAME_HISTORY)
