@@ -74,6 +74,7 @@ docs/SupportedFieldsServiceApi.md
 docs/TitaniumAcknowledgeResponse.md
 docs/TitaniumAddAssetRequest.md
 docs/TitaniumAddLookupTableRequest.md
+docs/TitaniumAnnotation.md
 docs/TitaniumAsset.md
 docs/TitaniumAssetM.md
 docs/TitaniumAssetsList.md
@@ -129,6 +130,8 @@ docs/TitaniumCohortConsensusRangeTabData.md
 docs/TitaniumColDependency.md
 docs/TitaniumColumnInfo.md
 docs/TitaniumComparisonTable.md
+docs/TitaniumCompleteDataUploadRequest.md
+docs/TitaniumCompleteDataUploadResponse.md
 docs/TitaniumConsensusActiveRequest.md
 docs/TitaniumConsensusActiveResponse.md
 docs/TitaniumConsensusDecisionRequest.md
@@ -375,6 +378,8 @@ docs/TitaniumUniqueKeyDefinitionResponse.md
 docs/TitaniumUniqueKeyList.md
 docs/TitaniumUploadAuthorizationResponse.md
 docs/TitaniumUploadDTCCRequest.md
+docs/TitaniumUploadDataRequest.md
+docs/TitaniumUploadDataResponse.md
 docs/TitaniumUploadEVPRequest.md
 docs/TitaniumUploadEvaluatedPriceRequest.md
 docs/TitaniumUploadNotifyRequest.md
@@ -484,6 +489,7 @@ openapi_client/model/rpc_status.py
 openapi_client/model/titanium_acknowledge_response.py
 openapi_client/model/titanium_add_asset_request.py
 openapi_client/model/titanium_add_lookup_table_request.py
+openapi_client/model/titanium_annotation.py
 openapi_client/model/titanium_asset.py
 openapi_client/model/titanium_asset_m.py
 openapi_client/model/titanium_assets_list.py
@@ -539,6 +545,8 @@ openapi_client/model/titanium_cohort_consensus_range_tab_data.py
 openapi_client/model/titanium_col_dependency.py
 openapi_client/model/titanium_column_info.py
 openapi_client/model/titanium_comparison_table.py
+openapi_client/model/titanium_complete_data_upload_request.py
+openapi_client/model/titanium_complete_data_upload_response.py
 openapi_client/model/titanium_consensus_active_request.py
 openapi_client/model/titanium_consensus_active_response.py
 openapi_client/model/titanium_consensus_decision_request.py
@@ -784,6 +792,8 @@ openapi_client/model/titanium_unique_key_definition.py
 openapi_client/model/titanium_unique_key_definition_response.py
 openapi_client/model/titanium_unique_key_list.py
 openapi_client/model/titanium_upload_authorization_response.py
+openapi_client/model/titanium_upload_data_request.py
+openapi_client/model/titanium_upload_data_response.py
 openapi_client/model/titanium_upload_dtcc_request.py
 openapi_client/model/titanium_upload_evaluated_price_request.py
 openapi_client/model/titanium_upload_evp_request.py
@@ -816,4 +826,9 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_titanium_annotation.py
+test/test_titanium_complete_data_upload_request.py
+test/test_titanium_complete_data_upload_response.py
+test/test_titanium_upload_data_request.py
+test/test_titanium_upload_data_response.py
 tox.ini

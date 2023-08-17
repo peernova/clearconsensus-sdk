@@ -14,12 +14,16 @@
 
 import ApiClient from "../ApiClient";
 import RpcStatus from '../model/RpcStatus';
+import TitaniumCompleteDataUploadRequest from '../model/TitaniumCompleteDataUploadRequest';
+import TitaniumCompleteDataUploadResponse from '../model/TitaniumCompleteDataUploadResponse';
 import TitaniumExportRequest from '../model/TitaniumExportRequest';
 import TitaniumExportResponse from '../model/TitaniumExportResponse';
 import TitaniumMessageResponse from '../model/TitaniumMessageResponse';
 import TitaniumSubmittedRequest from '../model/TitaniumSubmittedRequest';
 import TitaniumSubmittedResponse from '../model/TitaniumSubmittedResponse';
 import TitaniumUploadAuthorizationResponse from '../model/TitaniumUploadAuthorizationResponse';
+import TitaniumUploadDataRequest from '../model/TitaniumUploadDataRequest';
+import TitaniumUploadDataResponse from '../model/TitaniumUploadDataResponse';
 import TitaniumUploadNotifyRequest from '../model/TitaniumUploadNotifyRequest';
 import TitaniumUploadURLRequest from '../model/TitaniumUploadURLRequest';
 import TitaniumUploadURLResponse from '../model/TitaniumUploadURLResponse';
@@ -79,6 +83,46 @@ export default class DataServiceApi {
       let returnType = TitaniumUploadAuthorizationResponse;
       return this.apiClient.callApi(
         '/api/v1/internal/upload/authorize', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the dataServiceCompleteDataUpload operation.
+     * @callback module:api/DataServiceApi~dataServiceCompleteDataUploadCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumCompleteDataUploadResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumCompleteDataUploadRequest} body 
+     * @param {module:api/DataServiceApi~dataServiceCompleteDataUploadCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumCompleteDataUploadResponse}
+     */
+    dataServiceCompleteDataUpload(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dataServiceCompleteDataUpload");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumCompleteDataUploadResponse;
+      return this.apiClient.callApi(
+        '/api/v1/upload/done', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );
@@ -202,6 +246,46 @@ export default class DataServiceApi {
       let returnType = TitaniumSubmittedResponse;
       return this.apiClient.callApi(
         '/api/v1/submitted', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the dataServiceUploadData operation.
+     * @callback module:api/DataServiceApi~dataServiceUploadDataCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumUploadDataResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumUploadDataRequest} body 
+     * @param {module:api/DataServiceApi~dataServiceUploadDataCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumUploadDataResponse}
+     */
+    dataServiceUploadData(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling dataServiceUploadData");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumUploadDataResponse;
+      return this.apiClient.callApi(
+        '/api/v1/upload/data', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

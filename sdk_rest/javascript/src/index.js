@@ -54,6 +54,7 @@ import RpcStatus from './model/RpcStatus';
 import TitaniumAcknowledgeResponse from './model/TitaniumAcknowledgeResponse';
 import TitaniumAddAssetRequest from './model/TitaniumAddAssetRequest';
 import TitaniumAddLookupTableRequest from './model/TitaniumAddLookupTableRequest';
+import TitaniumAnnotation from './model/TitaniumAnnotation';
 import TitaniumAsset from './model/TitaniumAsset';
 import TitaniumAssetM from './model/TitaniumAssetM';
 import TitaniumAssetsList from './model/TitaniumAssetsList';
@@ -109,6 +110,8 @@ import TitaniumCohortConsensusRangeTabData from './model/TitaniumCohortConsensus
 import TitaniumColDependency from './model/TitaniumColDependency';
 import TitaniumColumnInfo from './model/TitaniumColumnInfo';
 import TitaniumComparisonTable from './model/TitaniumComparisonTable';
+import TitaniumCompleteDataUploadRequest from './model/TitaniumCompleteDataUploadRequest';
+import TitaniumCompleteDataUploadResponse from './model/TitaniumCompleteDataUploadResponse';
 import TitaniumConsensusActiveRequest from './model/TitaniumConsensusActiveRequest';
 import TitaniumConsensusActiveResponse from './model/TitaniumConsensusActiveResponse';
 import TitaniumConsensusDecisionRequest from './model/TitaniumConsensusDecisionRequest';
@@ -355,6 +358,8 @@ import TitaniumUniqueKeyDefinitionResponse from './model/TitaniumUniqueKeyDefini
 import TitaniumUniqueKeyList from './model/TitaniumUniqueKeyList';
 import TitaniumUploadAuthorizationResponse from './model/TitaniumUploadAuthorizationResponse';
 import TitaniumUploadDTCCRequest from './model/TitaniumUploadDTCCRequest';
+import TitaniumUploadDataRequest from './model/TitaniumUploadDataRequest';
+import TitaniumUploadDataResponse from './model/TitaniumUploadDataResponse';
 import TitaniumUploadEVPRequest from './model/TitaniumUploadEVPRequest';
 import TitaniumUploadEvaluatedPriceRequest from './model/TitaniumUploadEvaluatedPriceRequest';
 import TitaniumUploadNotifyRequest from './model/TitaniumUploadNotifyRequest';
@@ -699,6 +704,12 @@ export {
     TitaniumAddLookupTableRequest,
 
     /**
+     * The TitaniumAnnotation model constructor.
+     * @property {module:model/TitaniumAnnotation}
+     */
+    TitaniumAnnotation,
+
+    /**
      * The TitaniumAsset model constructor.
      * @property {module:model/TitaniumAsset}
      */
@@ -1027,6 +1038,18 @@ export {
      * @property {module:model/TitaniumComparisonTable}
      */
     TitaniumComparisonTable,
+
+    /**
+     * The TitaniumCompleteDataUploadRequest model constructor.
+     * @property {module:model/TitaniumCompleteDataUploadRequest}
+     */
+    TitaniumCompleteDataUploadRequest,
+
+    /**
+     * The TitaniumCompleteDataUploadResponse model constructor.
+     * @property {module:model/TitaniumCompleteDataUploadResponse}
+     */
+    TitaniumCompleteDataUploadResponse,
 
     /**
      * The TitaniumConsensusActiveRequest model constructor.
@@ -2503,6 +2526,18 @@ export {
      * @property {module:model/TitaniumUploadDTCCRequest}
      */
     TitaniumUploadDTCCRequest,
+
+    /**
+     * The TitaniumUploadDataRequest model constructor.
+     * @property {module:model/TitaniumUploadDataRequest}
+     */
+    TitaniumUploadDataRequest,
+
+    /**
+     * The TitaniumUploadDataResponse model constructor.
+     * @property {module:model/TitaniumUploadDataResponse}
+     */
+    TitaniumUploadDataResponse,
 
     /**
      * The TitaniumUploadEVPRequest model constructor.

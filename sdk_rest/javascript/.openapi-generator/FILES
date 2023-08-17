@@ -74,6 +74,7 @@ docs/SupportedFieldsServiceApi.md
 docs/TitaniumAcknowledgeResponse.md
 docs/TitaniumAddAssetRequest.md
 docs/TitaniumAddLookupTableRequest.md
+docs/TitaniumAnnotation.md
 docs/TitaniumAsset.md
 docs/TitaniumAssetM.md
 docs/TitaniumAssetsList.md
@@ -129,6 +130,8 @@ docs/TitaniumCohortConsensusRangeTabData.md
 docs/TitaniumColDependency.md
 docs/TitaniumColumnInfo.md
 docs/TitaniumComparisonTable.md
+docs/TitaniumCompleteDataUploadRequest.md
+docs/TitaniumCompleteDataUploadResponse.md
 docs/TitaniumConsensusActiveRequest.md
 docs/TitaniumConsensusActiveResponse.md
 docs/TitaniumConsensusDecisionRequest.md
@@ -375,6 +378,8 @@ docs/TitaniumUniqueKeyDefinitionResponse.md
 docs/TitaniumUniqueKeyList.md
 docs/TitaniumUploadAuthorizationResponse.md
 docs/TitaniumUploadDTCCRequest.md
+docs/TitaniumUploadDataRequest.md
+docs/TitaniumUploadDataResponse.md
 docs/TitaniumUploadEVPRequest.md
 docs/TitaniumUploadEvaluatedPriceRequest.md
 docs/TitaniumUploadNotifyRequest.md
@@ -481,6 +486,7 @@ src/model/RpcStatus.js
 src/model/TitaniumAcknowledgeResponse.js
 src/model/TitaniumAddAssetRequest.js
 src/model/TitaniumAddLookupTableRequest.js
+src/model/TitaniumAnnotation.js
 src/model/TitaniumAsset.js
 src/model/TitaniumAssetM.js
 src/model/TitaniumAssetsList.js
@@ -536,6 +542,8 @@ src/model/TitaniumCohortConsensusRangeTabData.js
 src/model/TitaniumColDependency.js
 src/model/TitaniumColumnInfo.js
 src/model/TitaniumComparisonTable.js
+src/model/TitaniumCompleteDataUploadRequest.js
+src/model/TitaniumCompleteDataUploadResponse.js
 src/model/TitaniumConsensusActiveRequest.js
 src/model/TitaniumConsensusActiveResponse.js
 src/model/TitaniumConsensusDecisionRequest.js
@@ -782,6 +790,8 @@ src/model/TitaniumUniqueKeyDefinitionResponse.js
 src/model/TitaniumUniqueKeyList.js
 src/model/TitaniumUploadAuthorizationResponse.js
 src/model/TitaniumUploadDTCCRequest.js
+src/model/TitaniumUploadDataRequest.js
+src/model/TitaniumUploadDataResponse.js
 src/model/TitaniumUploadEVPRequest.js
 src/model/TitaniumUploadEvaluatedPriceRequest.js
 src/model/TitaniumUploadNotifyRequest.js
@@ -805,3 +815,8 @@ src/model/TitaniumValuesRow.js
 src/model/TitaniumVersion.js
 src/model/TitaniumVersionList.js
 src/model/TitaniumViewRow.js
+test/model/TitaniumAnnotation.spec.js
+test/model/TitaniumCompleteDataUploadRequest.spec.js
+test/model/TitaniumCompleteDataUploadResponse.spec.js
+test/model/TitaniumUploadDataRequest.spec.js
+test/model/TitaniumUploadDataResponse.spec.js

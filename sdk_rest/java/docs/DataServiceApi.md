@@ -5,9 +5,11 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**dataServiceAuthorizeUpload**](DataServiceApi.md#dataServiceAuthorizeUpload) | **POST** /api/v1/internal/upload/authorize | AuthorizeUpload shows availability of uploading for user. |
+| [**dataServiceCompleteDataUpload**](DataServiceApi.md#dataServiceCompleteDataUpload) | **POST** /api/v1/upload/done |  |
 | [**dataServiceExport**](DataServiceApi.md#dataServiceExport) | **POST** /api/v1/export | Export exports data according to the request. |
 | [**dataServiceNotifyUpload**](DataServiceApi.md#dataServiceNotifyUpload) | **POST** /api/v1/internal/upload/notify | NotifyUpload returns message with notify that data was uploaded according to url in request. |
 | [**dataServiceSubmitted**](DataServiceApi.md#dataServiceSubmitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made. |
+| [**dataServiceUploadData**](DataServiceApi.md#dataServiceUploadData) | **POST** /api/v1/upload/data |  |
 | [**dataServiceUploadURL**](DataServiceApi.md#dataServiceUploadURL) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data. |
 
 
@@ -56,6 +58,67 @@ public class Example {
 ### Return type
 
 [**TitaniumUploadAuthorizationResponse**](TitaniumUploadAuthorizationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="dataServiceCompleteDataUpload"></a>
+# **dataServiceCompleteDataUpload**
+> TitaniumCompleteDataUploadResponse dataServiceCompleteDataUpload(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DataServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    DataServiceApi apiInstance = new DataServiceApi(defaultClient);
+    TitaniumCompleteDataUploadRequest body = new TitaniumCompleteDataUploadRequest(); // TitaniumCompleteDataUploadRequest | 
+    try {
+      TitaniumCompleteDataUploadResponse result = apiInstance.dataServiceCompleteDataUpload(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataServiceApi#dataServiceCompleteDataUpload");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumCompleteDataUploadRequest**](TitaniumCompleteDataUploadRequest.md)|  | |
+
+### Return type
+
+[**TitaniumCompleteDataUploadResponse**](TitaniumCompleteDataUploadResponse.md)
 
 ### Authorization
 
@@ -239,6 +302,67 @@ public class Example {
 ### Return type
 
 [**TitaniumSubmittedResponse**](TitaniumSubmittedResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="dataServiceUploadData"></a>
+# **dataServiceUploadData**
+> TitaniumUploadDataResponse dataServiceUploadData(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.DataServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    DataServiceApi apiInstance = new DataServiceApi(defaultClient);
+    TitaniumUploadDataRequest body = new TitaniumUploadDataRequest(); // TitaniumUploadDataRequest | 
+    try {
+      TitaniumUploadDataResponse result = apiInstance.dataServiceUploadData(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DataServiceApi#dataServiceUploadData");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumUploadDataRequest**](TitaniumUploadDataRequest.md)|  | |
+
+### Return type
+
+[**TitaniumUploadDataResponse**](TitaniumUploadDataResponse.md)
 
 ### Authorization
 

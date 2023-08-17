@@ -5,9 +5,11 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**dataServiceAuthorizeUpload**](DataServiceApi.md#dataServiceAuthorizeUpload) | **POST** /api/v1/internal/upload/authorize | AuthorizeUpload shows availability of uploading for user.
+[**dataServiceCompleteDataUpload**](DataServiceApi.md#dataServiceCompleteDataUpload) | **POST** /api/v1/upload/done | 
 [**dataServiceExport**](DataServiceApi.md#dataServiceExport) | **POST** /api/v1/export | Export exports data according to the request.
 [**dataServiceNotifyUpload**](DataServiceApi.md#dataServiceNotifyUpload) | **POST** /api/v1/internal/upload/notify | NotifyUpload returns message with notify that data was uploaded according to url in request.
 [**dataServiceSubmitted**](DataServiceApi.md#dataServiceSubmitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
+[**dataServiceUploadData**](DataServiceApi.md#dataServiceUploadData) | **POST** /api/v1/upload/data | 
 [**dataServiceUploadURL**](DataServiceApi.md#dataServiceUploadURL) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
 
 
@@ -44,6 +46,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumUploadAuthorizationResponse**](TitaniumUploadAuthorizationResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## dataServiceCompleteDataUpload
+
+> TitaniumCompleteDataUploadResponse dataServiceCompleteDataUpload(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.DataServiceApi();
+let body = new ClearconsensusSdk.TitaniumCompleteDataUploadRequest(); // TitaniumCompleteDataUploadRequest | 
+apiInstance.dataServiceCompleteDataUpload(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumCompleteDataUploadRequest**](TitaniumCompleteDataUploadRequest.md)|  | 
+
+### Return type
+
+[**TitaniumCompleteDataUploadResponse**](TitaniumCompleteDataUploadResponse.md)
 
 ### Authorization
 
@@ -173,6 +218,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**TitaniumSubmittedResponse**](TitaniumSubmittedResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: */*
+
+
+## dataServiceUploadData
+
+> TitaniumUploadDataResponse dataServiceUploadData(body)
+
+
+
+### Example
+
+```javascript
+import ClearconsensusSdk from 'clearconsensus_sdk';
+
+let apiInstance = new ClearconsensusSdk.DataServiceApi();
+let body = new ClearconsensusSdk.TitaniumUploadDataRequest(); // TitaniumUploadDataRequest | 
+apiInstance.dataServiceUploadData(body, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TitaniumUploadDataRequest**](TitaniumUploadDataRequest.md)|  | 
+
+### Return type
+
+[**TitaniumUploadDataResponse**](TitaniumUploadDataResponse.md)
 
 ### Authorization
 

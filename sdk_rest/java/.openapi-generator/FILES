@@ -77,6 +77,7 @@ docs/SupportedFieldsServiceApi.md
 docs/TitaniumAcknowledgeResponse.md
 docs/TitaniumAddAssetRequest.md
 docs/TitaniumAddLookupTableRequest.md
+docs/TitaniumAnnotation.md
 docs/TitaniumAsset.md
 docs/TitaniumAssetM.md
 docs/TitaniumAssetsList.md
@@ -132,6 +133,8 @@ docs/TitaniumCohortConsensusRangeTabData.md
 docs/TitaniumColDependency.md
 docs/TitaniumColumnInfo.md
 docs/TitaniumComparisonTable.md
+docs/TitaniumCompleteDataUploadRequest.md
+docs/TitaniumCompleteDataUploadResponse.md
 docs/TitaniumConsensusActiveRequest.md
 docs/TitaniumConsensusActiveResponse.md
 docs/TitaniumConsensusDecisionRequest.md
@@ -378,6 +381,8 @@ docs/TitaniumUniqueKeyDefinitionResponse.md
 docs/TitaniumUniqueKeyList.md
 docs/TitaniumUploadAuthorizationResponse.md
 docs/TitaniumUploadDTCCRequest.md
+docs/TitaniumUploadDataRequest.md
+docs/TitaniumUploadDataResponse.md
 docs/TitaniumUploadEVPRequest.md
 docs/TitaniumUploadEvaluatedPriceRequest.md
 docs/TitaniumUploadNotifyRequest.md
@@ -506,6 +511,7 @@ src/main/java/org/openapitools/client/model/RpcStatus.java
 src/main/java/org/openapitools/client/model/TitaniumAcknowledgeResponse.java
 src/main/java/org/openapitools/client/model/TitaniumAddAssetRequest.java
 src/main/java/org/openapitools/client/model/TitaniumAddLookupTableRequest.java
+src/main/java/org/openapitools/client/model/TitaniumAnnotation.java
 src/main/java/org/openapitools/client/model/TitaniumAsset.java
 src/main/java/org/openapitools/client/model/TitaniumAssetM.java
 src/main/java/org/openapitools/client/model/TitaniumAssetsList.java
@@ -561,6 +567,8 @@ src/main/java/org/openapitools/client/model/TitaniumCohortConsensusRangeTabData.
 src/main/java/org/openapitools/client/model/TitaniumColDependency.java
 src/main/java/org/openapitools/client/model/TitaniumColumnInfo.java
 src/main/java/org/openapitools/client/model/TitaniumComparisonTable.java
+src/main/java/org/openapitools/client/model/TitaniumCompleteDataUploadRequest.java
+src/main/java/org/openapitools/client/model/TitaniumCompleteDataUploadResponse.java
 src/main/java/org/openapitools/client/model/TitaniumConsensusActiveRequest.java
 src/main/java/org/openapitools/client/model/TitaniumConsensusActiveResponse.java
 src/main/java/org/openapitools/client/model/TitaniumConsensusDecisionRequest.java
@@ -807,6 +815,8 @@ src/main/java/org/openapitools/client/model/TitaniumUniqueKeyDefinitionResponse.
 src/main/java/org/openapitools/client/model/TitaniumUniqueKeyList.java
 src/main/java/org/openapitools/client/model/TitaniumUploadAuthorizationResponse.java
 src/main/java/org/openapitools/client/model/TitaniumUploadDTCCRequest.java
+src/main/java/org/openapitools/client/model/TitaniumUploadDataRequest.java
+src/main/java/org/openapitools/client/model/TitaniumUploadDataResponse.java
 src/main/java/org/openapitools/client/model/TitaniumUploadEVPRequest.java
 src/main/java/org/openapitools/client/model/TitaniumUploadEvaluatedPriceRequest.java
 src/main/java/org/openapitools/client/model/TitaniumUploadNotifyRequest.java
@@ -830,3 +840,8 @@ src/main/java/org/openapitools/client/model/TitaniumValuesRow.java
 src/main/java/org/openapitools/client/model/TitaniumVersion.java
 src/main/java/org/openapitools/client/model/TitaniumVersionList.java
 src/main/java/org/openapitools/client/model/TitaniumViewRow.java
+src/test/java/org/openapitools/client/model/TitaniumAnnotationTest.java
+src/test/java/org/openapitools/client/model/TitaniumCompleteDataUploadRequestTest.java
+src/test/java/org/openapitools/client/model/TitaniumCompleteDataUploadResponseTest.java
+src/test/java/org/openapitools/client/model/TitaniumUploadDataRequestTest.java
+src/test/java/org/openapitools/client/model/TitaniumUploadDataResponseTest.java

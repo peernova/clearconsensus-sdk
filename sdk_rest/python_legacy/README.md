@@ -131,9 +131,11 @@ Class | Method | HTTP request | Description
 *DataQualityServiceApi* | [**data_quality_service_dq_errors**](docs/DataQualityServiceApi.md#data_quality_service_dq_errors) | **POST** /api/v1/dqerrors | 
 *DataQualityServiceApi* | [**data_quality_service_get_data_quality_errors**](docs/DataQualityServiceApi.md#data_quality_service_get_data_quality_errors) | **POST** /api/v1/data-quality-errors | 
 *DataServiceApi* | [**data_service_authorize_upload**](docs/DataServiceApi.md#data_service_authorize_upload) | **POST** /api/v1/internal/upload/authorize | AuthorizeUpload shows availability of uploading for user.
+*DataServiceApi* | [**data_service_complete_data_upload**](docs/DataServiceApi.md#data_service_complete_data_upload) | **POST** /api/v1/upload/done | 
 *DataServiceApi* | [**data_service_export**](docs/DataServiceApi.md#data_service_export) | **POST** /api/v1/export | Export exports data according to the request.
 *DataServiceApi* | [**data_service_notify_upload**](docs/DataServiceApi.md#data_service_notify_upload) | **POST** /api/v1/internal/upload/notify | NotifyUpload returns message with notify that data was uploaded according to url in request.
 *DataServiceApi* | [**data_service_submitted**](docs/DataServiceApi.md#data_service_submitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
+*DataServiceApi* | [**data_service_upload_data**](docs/DataServiceApi.md#data_service_upload_data) | **POST** /api/v1/upload/data | 
 *DataServiceApi* | [**data_service_upload_url**](docs/DataServiceApi.md#data_service_upload_url) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
 *DbDescriptorServiceApi* | [**db_descriptor_service_add_db_descriptor**](docs/DbDescriptorServiceApi.md#db_descriptor_service_add_db_descriptor) | **POST** /api/v1/db/descriptor/add | 
 *DbDescriptorServiceApi* | [**db_descriptor_service_descriptor_dependencies**](docs/DbDescriptorServiceApi.md#db_descriptor_service_descriptor_dependencies) | **POST** /api/v1/db/descriptor/dependencies | 
@@ -303,6 +305,7 @@ Class | Method | HTTP request | Description
  - [TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)
  - [TitaniumAddAssetRequest](docs/TitaniumAddAssetRequest.md)
  - [TitaniumAddLookupTableRequest](docs/TitaniumAddLookupTableRequest.md)
+ - [TitaniumAnnotation](docs/TitaniumAnnotation.md)
  - [TitaniumAsset](docs/TitaniumAsset.md)
  - [TitaniumAssetM](docs/TitaniumAssetM.md)
  - [TitaniumAssetsList](docs/TitaniumAssetsList.md)
@@ -358,6 +361,8 @@ Class | Method | HTTP request | Description
  - [TitaniumColDependency](docs/TitaniumColDependency.md)
  - [TitaniumColumnInfo](docs/TitaniumColumnInfo.md)
  - [TitaniumComparisonTable](docs/TitaniumComparisonTable.md)
+ - [TitaniumCompleteDataUploadRequest](docs/TitaniumCompleteDataUploadRequest.md)
+ - [TitaniumCompleteDataUploadResponse](docs/TitaniumCompleteDataUploadResponse.md)
  - [TitaniumConsensusActiveRequest](docs/TitaniumConsensusActiveRequest.md)
  - [TitaniumConsensusActiveResponse](docs/TitaniumConsensusActiveResponse.md)
  - [TitaniumConsensusDecisionRequest](docs/TitaniumConsensusDecisionRequest.md)
@@ -604,6 +609,8 @@ Class | Method | HTTP request | Description
  - [TitaniumUniqueKeyList](docs/TitaniumUniqueKeyList.md)
  - [TitaniumUploadAuthorizationResponse](docs/TitaniumUploadAuthorizationResponse.md)
  - [TitaniumUploadDTCCRequest](docs/TitaniumUploadDTCCRequest.md)
+ - [TitaniumUploadDataRequest](docs/TitaniumUploadDataRequest.md)
+ - [TitaniumUploadDataResponse](docs/TitaniumUploadDataResponse.md)
  - [TitaniumUploadEVPRequest](docs/TitaniumUploadEVPRequest.md)
  - [TitaniumUploadEvaluatedPriceRequest](docs/TitaniumUploadEvaluatedPriceRequest.md)
  - [TitaniumUploadNotifyRequest](docs/TitaniumUploadNotifyRequest.md)

@@ -4146,6 +4146,60 @@ paths:
       x-codegen-request-body-name: body
       x-content-type: '*/*'
       x-accepts: '*/*'
+  /api/v1/upload/data:
+    post:
+      operationId: DataService_UploadData
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumUploadDataRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumUploadDataResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - DataService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/upload/done:
+    post:
+      operationId: DataService_CompleteDataUpload
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumCompleteDataUploadRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumCompleteDataUploadResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - DataService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
   /api/v1/upload/evaluated-price:
     post:
       operationId: AdminService_UploadEvaluatedPrice
@@ -6205,6 +6259,28 @@ components:
         scope:
           type: string
       type: object
+    titaniumAnnotation:
+      properties:
+        annotations:
+          properties: {}
+          type: object
+        asset:
+          type: string
+        assetId:
+          type: string
+        date:
+          type: string
+        description:
+          type: string
+        mode:
+          type: string
+        service:
+          type: string
+        snapTime:
+          type: string
+        subAsset:
+          type: string
+      type: object
     titaniumAsset:
       example:
         name: name
@@ -7554,6 +7630,35 @@ components:
           $ref: '#/components/schemas/titaniumSubmissionEvidenceTableColumn'
         submissionStatistics:
           $ref: '#/components/schemas/titaniumSubmissionStatisticsExplorerTableColumn'
+      type: object
+    titaniumCompleteDataUploadRequest:
+      properties:
+        asset:
+          type: string
+        assetId:
+          type: string
+        client:
+          type: string
+        date:
+          type: string
+        service:
+          type: string
+        snapTime:
+          type: string
+        subAsset:
+          type: string
+      type: object
+    titaniumCompleteDataUploadResponse:
+      example:
+        success: true
+        error:
+          code: 0
+          message: message
+      properties:
+        error:
+          $ref: '#/components/schemas/titaniumError'
+        success:
+          type: boolean
       type: object
     titaniumConsensusActiveRequest:
       properties:
@@ -12511,6 +12616,8 @@ components:
             $ref: '#/components/schemas/titaniumPredefinedFilter'
           type: array
       type: object
+    titaniumProtocol:
+      type: string
     titaniumRange:
       example:
         min:
@@ -13727,6 +13834,32 @@ components:
         traceName:
           type: string
       type: object
+    titaniumUploadDataRequest:
+      properties:
+        annotation:
+          $ref: '#/components/schemas/titaniumAnnotation'
+        client:
+          type: string
+        fileName:
+          type: string
+        protocol:
+          type: string
+      type: object
+    titaniumUploadDataResponse:
+      example:
+        s3Url: s3Url
+        tusPayload: tusPayload
+        error:
+          code: 0
+          message: message
+      properties:
+        error:
+          $ref: '#/components/schemas/titaniumError'
+        s3Url:
+          type: string
+        tusPayload:
+          type: string
+      type: object
     titaniumUploadEVPRequest:
       properties:
         assetId:
@@ -13751,6 +13884,8 @@ components:
         traceName:
           type: string
       type: object
+    titaniumUploadMode:
+      type: string
     titaniumUploadNotifyRequest:
       properties:
         currentPath:

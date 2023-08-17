@@ -171,9 +171,11 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.DataQualityServiceApi* | [**dataQualityServiceDQErrors**](docs/DataQualityServiceApi.md#dataQualityServiceDQErrors) | **POST** /api/v1/dqerrors | 
 *ClearconsensusSdk.DataQualityServiceApi* | [**dataQualityServiceGetDataQualityErrors**](docs/DataQualityServiceApi.md#dataQualityServiceGetDataQualityErrors) | **POST** /api/v1/data-quality-errors | 
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceAuthorizeUpload**](docs/DataServiceApi.md#dataServiceAuthorizeUpload) | **POST** /api/v1/internal/upload/authorize | AuthorizeUpload shows availability of uploading for user.
+*ClearconsensusSdk.DataServiceApi* | [**dataServiceCompleteDataUpload**](docs/DataServiceApi.md#dataServiceCompleteDataUpload) | **POST** /api/v1/upload/done | 
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceExport**](docs/DataServiceApi.md#dataServiceExport) | **POST** /api/v1/export | Export exports data according to the request.
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceNotifyUpload**](docs/DataServiceApi.md#dataServiceNotifyUpload) | **POST** /api/v1/internal/upload/notify | NotifyUpload returns message with notify that data was uploaded according to url in request.
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceSubmitted**](docs/DataServiceApi.md#dataServiceSubmitted) | **POST** /api/v1/submitted | Submitted returns submitted data based on the request made.
+*ClearconsensusSdk.DataServiceApi* | [**dataServiceUploadData**](docs/DataServiceApi.md#dataServiceUploadData) | **POST** /api/v1/upload/data | 
 *ClearconsensusSdk.DataServiceApi* | [**dataServiceUploadURL**](docs/DataServiceApi.md#dataServiceUploadURL) | **POST** /api/v1/upload/url | UploadURL returns a pre-signed S3 URL for uploading data.
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceAddDbDescriptor**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceAddDbDescriptor) | **POST** /api/v1/db/descriptor/add | 
 *ClearconsensusSdk.DbDescriptorServiceApi* | [**dbDescriptorServiceDescriptorDependencies**](docs/DbDescriptorServiceApi.md#dbDescriptorServiceDescriptorDependencies) | **POST** /api/v1/db/descriptor/dependencies | 
@@ -343,6 +345,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)
  - [ClearconsensusSdk.TitaniumAddAssetRequest](docs/TitaniumAddAssetRequest.md)
  - [ClearconsensusSdk.TitaniumAddLookupTableRequest](docs/TitaniumAddLookupTableRequest.md)
+ - [ClearconsensusSdk.TitaniumAnnotation](docs/TitaniumAnnotation.md)
  - [ClearconsensusSdk.TitaniumAsset](docs/TitaniumAsset.md)
  - [ClearconsensusSdk.TitaniumAssetM](docs/TitaniumAssetM.md)
  - [ClearconsensusSdk.TitaniumAssetsList](docs/TitaniumAssetsList.md)
@@ -398,6 +401,8 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumColDependency](docs/TitaniumColDependency.md)
  - [ClearconsensusSdk.TitaniumColumnInfo](docs/TitaniumColumnInfo.md)
  - [ClearconsensusSdk.TitaniumComparisonTable](docs/TitaniumComparisonTable.md)
+ - [ClearconsensusSdk.TitaniumCompleteDataUploadRequest](docs/TitaniumCompleteDataUploadRequest.md)
+ - [ClearconsensusSdk.TitaniumCompleteDataUploadResponse](docs/TitaniumCompleteDataUploadResponse.md)
  - [ClearconsensusSdk.TitaniumConsensusActiveRequest](docs/TitaniumConsensusActiveRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusActiveResponse](docs/TitaniumConsensusActiveResponse.md)
  - [ClearconsensusSdk.TitaniumConsensusDecisionRequest](docs/TitaniumConsensusDecisionRequest.md)
@@ -644,6 +649,8 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumUniqueKeyList](docs/TitaniumUniqueKeyList.md)
  - [ClearconsensusSdk.TitaniumUploadAuthorizationResponse](docs/TitaniumUploadAuthorizationResponse.md)
  - [ClearconsensusSdk.TitaniumUploadDTCCRequest](docs/TitaniumUploadDTCCRequest.md)
+ - [ClearconsensusSdk.TitaniumUploadDataRequest](docs/TitaniumUploadDataRequest.md)
+ - [ClearconsensusSdk.TitaniumUploadDataResponse](docs/TitaniumUploadDataResponse.md)
  - [ClearconsensusSdk.TitaniumUploadEVPRequest](docs/TitaniumUploadEVPRequest.md)
  - [ClearconsensusSdk.TitaniumUploadEvaluatedPriceRequest](docs/TitaniumUploadEvaluatedPriceRequest.md)
  - [ClearconsensusSdk.TitaniumUploadNotifyRequest](docs/TitaniumUploadNotifyRequest.md)
