@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChallengeFormMetaResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T17:21:02.444709Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T17:46:03.914930Z[UTC]")
 public class TitaniumChallengeFormMetaResponseData {
   public static final String SERIALIZED_NAME_ONE_OF_FIELDS = "oneOfFields";
   @SerializedName(SERIALIZED_NAME_ONE_OF_FIELDS)

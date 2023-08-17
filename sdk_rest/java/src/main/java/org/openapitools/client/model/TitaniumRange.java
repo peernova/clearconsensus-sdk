@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumRange
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T17:21:02.444709Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-17T17:46:03.914930Z[UTC]")
 public class TitaniumRange {
   public static final String SERIALIZED_NAME_MAX = "max";
   @SerializedName(SERIALIZED_NAME_MAX)
