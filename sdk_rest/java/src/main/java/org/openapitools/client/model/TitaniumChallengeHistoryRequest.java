@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChallengeHistoryRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T13:00:58.962458Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T14:16:39.422902Z[UTC]")
 public class TitaniumChallengeHistoryRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
