@@ -19,8 +19,6 @@ var global = Function('return this')();
 
 var common_usermanagement_error_pb = require('../common/usermanagement_error_pb.js');
 goog.object.extend(proto, common_usermanagement_error_pb);
-var common_usermanagement_fe_specific_pb = require('../common/usermanagement_fe_specific_pb.js');
-goog.object.extend(proto, common_usermanagement_fe_specific_pb);
 var common_usermanagement_entity_pb = require('../common/usermanagement_entity_pb.js');
 goog.object.extend(proto, common_usermanagement_entity_pb);
 goog.exportSymbol('proto.com.peernova.titanium.casbin.management.grpc.proto.UserDto', null, global);

@@ -67,15 +67,58 @@ export class SubmittedRequest extends jspb.Message {
   getAssetId(): string;
   setAssetId(value: string): void;
 
+  getTraceName(): string;
+  setTraceName(value: string): void;
+
   getSubmittedDate(): string;
   setSubmittedDate(value: string): void;
 
   getConsensusRunTimestamp(): string;
   setConsensusRunTimestamp(value: string): void;
 
-  getFilter(): string;
-  setFilter(value: string): void;
+  getDataType(): TabDataTypeMap[keyof TabDataTypeMap];
+  setDataType(value: TabDataTypeMap[keyof TabDataTypeMap]): void;
 
+  hasTableConfig(): boolean;
+  clearTableConfig(): void;
+  getTableConfig(): TableRequest | undefined;
+  setTableConfig(value?: TableRequest): void;
+
+  hasCollapseTableConfig(): boolean;
+  clearCollapseTableConfig(): void;
+  getCollapseTableConfig(): CollapseTableRequest | undefined;
+  setCollapseTableConfig(value?: CollapseTableRequest): void;
+
+  getSearchConfigurationCase(): SubmittedRequest.SearchConfigurationCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubmittedRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmittedRequest): SubmittedRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubmittedRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmittedRequest;
+  static deserializeBinaryFromReader(message: SubmittedRequest, reader: jspb.BinaryReader): SubmittedRequest;
+}
+
+export namespace SubmittedRequest {
+  export type AsObject = {
+    assetId: string,
+    traceName: string,
+    submittedDate: string,
+    consensusRunTimestamp: string,
+    dataType: TabDataTypeMap[keyof TabDataTypeMap],
+    tableConfig?: TableRequest.AsObject,
+    collapseTableConfig?: CollapseTableRequest.AsObject,
+  }
+
+  export enum SearchConfigurationCase {
+    SEARCH_CONFIGURATION_NOT_SET = 0,
+    TABLE_CONFIG = 6,
+    COLLAPSE_TABLE_CONFIG = 7,
+  }
+}
+
+export class TableRequest extends jspb.Message {
   clearFiltersList(): void;
   getFiltersList(): Array<common_gateway_base_pb.Filter>;
   setFiltersList(value: Array<common_gateway_base_pb.Filter>): void;
@@ -91,35 +134,49 @@ export class SubmittedRequest extends jspb.Message {
   getOrderby(): common_gateway_base_pb.OrderBy | undefined;
   setOrderby(value?: common_gateway_base_pb.OrderBy): void;
 
-  getTraceName(): string;
-  setTraceName(value: string): void;
-
   hasPage(): boolean;
   clearPage(): void;
   getPage(): common_gateway_base_pb.Page | undefined;
   setPage(value?: common_gateway_base_pb.Page): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SubmittedRequest.AsObject;
-  static toObject(includeInstance: boolean, msg: SubmittedRequest): SubmittedRequest.AsObject;
+  toObject(includeInstance?: boolean): TableRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: TableRequest): TableRequest.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SubmittedRequest, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SubmittedRequest;
-  static deserializeBinaryFromReader(message: SubmittedRequest, reader: jspb.BinaryReader): SubmittedRequest;
+  static serializeBinaryToWriter(message: TableRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): TableRequest;
+  static deserializeBinaryFromReader(message: TableRequest, reader: jspb.BinaryReader): TableRequest;
 }
 
-export namespace SubmittedRequest {
+export namespace TableRequest {
   export type AsObject = {
-    assetId: string,
-    submittedDate: string,
-    consensusRunTimestamp: string,
-    filter: string,
     filtersList: Array<common_gateway_base_pb.Filter.AsObject>,
     filterPack?: common_gateway_base_pb.FilterPack.AsObject,
     orderby?: common_gateway_base_pb.OrderBy.AsObject,
-    traceName: string,
     page?: common_gateway_base_pb.Page.AsObject,
+  }
+}
+
+export class CollapseTableRequest extends jspb.Message {
+  clearFiltersList(): void;
+  getFiltersList(): Array<common_gateway_base_pb.Filter>;
+  setFiltersList(value: Array<common_gateway_base_pb.Filter>): void;
+  addFilters(value?: common_gateway_base_pb.Filter, index?: number): common_gateway_base_pb.Filter;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): CollapseTableRequest.AsObject;
+  static toObject(includeInstance: boolean, msg: CollapseTableRequest): CollapseTableRequest.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: CollapseTableRequest, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): CollapseTableRequest;
+  static deserializeBinaryFromReader(message: CollapseTableRequest, reader: jspb.BinaryReader): CollapseTableRequest;
+}
+
+export namespace CollapseTableRequest {
+  export type AsObject = {
+    filtersList: Array<common_gateway_base_pb.Filter.AsObject>,
   }
 }
 
@@ -661,6 +718,13 @@ export namespace Annotation {
     annotations?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
+
+export interface TabDataTypeMap {
+  TABLE: 0;
+  COLLAPSE_TABLE: 1;
+}
+
+export const TabDataType: TabDataTypeMap;
 
 export interface UploadModeMap {
   SUBMISSION: 0;

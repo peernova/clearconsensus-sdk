@@ -10,14 +10,17 @@ export class GetPredefinedFiltersRequest extends jspb.Message {
   getAssetId(): string;
   setAssetId(value: string): void;
 
+  getTraceName(): string;
+  setTraceName(value: string): void;
+
   getSubmittedDate(): string;
   setSubmittedDate(value: string): void;
 
   getConsensusRunTimestamp(): string;
   setConsensusRunTimestamp(value: string): void;
 
-  getFilter(): string;
-  setFilter(value: string): void;
+  getFiltersType(): Predefined_Filters_TypeMap[keyof Predefined_Filters_TypeMap];
+  setFiltersType(value: Predefined_Filters_TypeMap[keyof Predefined_Filters_TypeMap]): void;
 
   clearFiltersList(): void;
   getFiltersList(): Array<common_gateway_base_pb.Filter>;
@@ -28,9 +31,6 @@ export class GetPredefinedFiltersRequest extends jspb.Message {
   clearFilterPack(): void;
   getFilterPack(): common_gateway_base_pb.FilterPack | undefined;
   setFilterPack(value?: common_gateway_base_pb.FilterPack): void;
-
-  getTraceName(): string;
-  setTraceName(value: string): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): GetPredefinedFiltersRequest.AsObject;
@@ -45,12 +45,12 @@ export class GetPredefinedFiltersRequest extends jspb.Message {
 export namespace GetPredefinedFiltersRequest {
   export type AsObject = {
     assetId: string,
+    traceName: string,
     submittedDate: string,
     consensusRunTimestamp: string,
-    filter: string,
+    filtersType: Predefined_Filters_TypeMap[keyof Predefined_Filters_TypeMap],
     filtersList: Array<common_gateway_base_pb.Filter.AsObject>,
     filterPack?: common_gateway_base_pb.FilterPack.AsObject,
-    traceName: string,
   }
 }
 
@@ -95,6 +95,11 @@ export class PredefinedFilters extends jspb.Message {
   setFiltersList(value: Array<common_gateway_base_pb.PredefinedFilter>): void;
   addFilters(value?: common_gateway_base_pb.PredefinedFilter, index?: number): common_gateway_base_pb.PredefinedFilter;
 
+  clearSpecificAssetFiltersList(): void;
+  getSpecificAssetFiltersList(): Array<common_gateway_base_pb.PredefinedFilter>;
+  setSpecificAssetFiltersList(value: Array<common_gateway_base_pb.PredefinedFilter>): void;
+  addSpecificAssetFilters(value?: common_gateway_base_pb.PredefinedFilter, index?: number): common_gateway_base_pb.PredefinedFilter;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredefinedFilters.AsObject;
   static toObject(includeInstance: boolean, msg: PredefinedFilters): PredefinedFilters.AsObject;
@@ -108,6 +113,7 @@ export class PredefinedFilters extends jspb.Message {
 export namespace PredefinedFilters {
   export type AsObject = {
     filtersList: Array<common_gateway_base_pb.PredefinedFilter.AsObject>,
+    specificAssetFiltersList: Array<common_gateway_base_pb.PredefinedFilter.AsObject>,
   }
 }
 
@@ -531,4 +537,11 @@ export namespace GenericChartMetadataDataQuality {
     DATE_RANGE_FILTER = 4,
   }
 }
+
+export interface Predefined_Filters_TypeMap {
+  SUBMITTED_TAB: 0;
+  CONSENSUS_TAB: 1;
+}
+
+export const Predefined_Filters_Type: Predefined_Filters_TypeMap;
 

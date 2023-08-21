@@ -5,7 +5,6 @@
 
 import * as jspb from "google-protobuf";
 import * as common_usermanagement_error_pb from "../common/usermanagement_error_pb";
-import * as common_usermanagement_fe_specific_pb from "../common/usermanagement_fe_specific_pb";
 import * as common_usermanagement_entity_pb from "../common/usermanagement_entity_pb";
 
 export class UserDto extends jspb.Message {

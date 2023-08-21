@@ -7,6 +7,7 @@ import * as jspb from "google-protobuf";
 import * as google_api_annotations_pb from "../google/api/annotations_pb";
 import * as common_gateway_base_pb from "../common/gateway_base_pb";
 import * as common_consensus_pb from "../common/consensus_pb";
+import * as common_data_pb from "../common/data_pb";
 import * as google_protobuf_struct_pb from "google-protobuf/google/protobuf/struct_pb";
 
 export class ConsensusExplorerRequest extends jspb.Message {
@@ -1522,21 +1523,20 @@ export class ConsensusTabRequest extends jspb.Message {
   getConsensusRunTimestamp(): string;
   setConsensusRunTimestamp(value: string): void;
 
-  hasFilterPack(): boolean;
-  clearFilterPack(): void;
-  getFilterPack(): common_gateway_base_pb.FilterPack | undefined;
-  setFilterPack(value?: common_gateway_base_pb.FilterPack): void;
+  getDataType(): common_data_pb.TabDataTypeMap[keyof common_data_pb.TabDataTypeMap];
+  setDataType(value: common_data_pb.TabDataTypeMap[keyof common_data_pb.TabDataTypeMap]): void;
 
-  hasOrderby(): boolean;
-  clearOrderby(): void;
-  getOrderby(): common_gateway_base_pb.OrderBy | undefined;
-  setOrderby(value?: common_gateway_base_pb.OrderBy): void;
+  hasTableConfig(): boolean;
+  clearTableConfig(): void;
+  getTableConfig(): common_data_pb.TableRequest | undefined;
+  setTableConfig(value?: common_data_pb.TableRequest): void;
 
-  hasPage(): boolean;
-  clearPage(): void;
-  getPage(): common_gateway_base_pb.Page | undefined;
-  setPage(value?: common_gateway_base_pb.Page): void;
+  hasCollapseTableConfig(): boolean;
+  clearCollapseTableConfig(): void;
+  getCollapseTableConfig(): common_data_pb.CollapseTableRequest | undefined;
+  setCollapseTableConfig(value?: common_data_pb.CollapseTableRequest): void;
 
+  getSearchConfigurationCase(): ConsensusTabRequest.SearchConfigurationCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ConsensusTabRequest.AsObject;
   static toObject(includeInstance: boolean, msg: ConsensusTabRequest): ConsensusTabRequest.AsObject;
@@ -1552,9 +1552,15 @@ export namespace ConsensusTabRequest {
     assetId: string,
     traceName: string,
     consensusRunTimestamp: string,
-    filterPack?: common_gateway_base_pb.FilterPack.AsObject,
-    orderby?: common_gateway_base_pb.OrderBy.AsObject,
-    page?: common_gateway_base_pb.Page.AsObject,
+    dataType: common_data_pb.TabDataTypeMap[keyof common_data_pb.TabDataTypeMap],
+    tableConfig?: common_data_pb.TableRequest.AsObject,
+    collapseTableConfig?: common_data_pb.CollapseTableRequest.AsObject,
+  }
+
+  export enum SearchConfigurationCase {
+    SEARCH_CONFIGURATION_NOT_SET = 0,
+    TABLE_CONFIG = 6,
+    COLLAPSE_TABLE_CONFIG = 7,
   }
 }
 

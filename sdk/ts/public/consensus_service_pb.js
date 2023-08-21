@@ -23,6 +23,8 @@ var common_gateway_base_pb = require('../common/gateway_base_pb.js');
 goog.object.extend(proto, common_gateway_base_pb);
 var common_consensus_pb = require('../common/consensus_pb.js');
 goog.object.extend(proto, common_consensus_pb);
+var common_data_pb = require('../common/data_pb.js');
+goog.object.extend(proto, common_data_pb);
 var google_protobuf_struct_pb = require('google-protobuf/google/protobuf/struct_pb.js');
 goog.object.extend(proto, google_protobuf_struct_pb);
 goog.exportSymbol('proto.titanium.AvailableTrades', null, global);
@@ -47,6 +49,7 @@ goog.exportSymbol('proto.titanium.ConsensusExplorerTableResponse', null, global)
 goog.exportSymbol('proto.titanium.ConsensusExplorerTableResponse.ResponseCase', null, global);
 goog.exportSymbol('proto.titanium.ConsensusScores', null, global);
 goog.exportSymbol('proto.titanium.ConsensusTabRequest', null, global);
+goog.exportSymbol('proto.titanium.ConsensusTabRequest.SearchConfigurationCase', null, global);
 goog.exportSymbol('proto.titanium.DateAndValue', null, global);
 goog.exportSymbol('proto.titanium.EvidentalPricing', null, global);
 goog.exportSymbol('proto.titanium.EvpAlignmentScore', null, global);
@@ -747,7 +750,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.titanium.ConsensusTabRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, null, proto.titanium.ConsensusTabRequest.oneofGroups_);
 };
 goog.inherits(proto.titanium.ConsensusTabRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -12087,6 +12090,32 @@ proto.titanium.AvailableTrades.prototype.setMonthtradenumber = function(value) {
 
 
 
+/**
+ * Oneof group definitions for this message. Each group defines the field
+ * numbers belonging to that group. When of these fields' value is set, all
+ * other fields in the group are cleared. During deserialization, if multiple
+ * fields are encountered for a group, only the last value seen will be kept.
+ * @private {!Array<!Array<number>>}
+ * @const
+ */
+proto.titanium.ConsensusTabRequest.oneofGroups_ = [[6,7]];
+
+/**
+ * @enum {number}
+ */
+proto.titanium.ConsensusTabRequest.SearchConfigurationCase = {
+  SEARCH_CONFIGURATION_NOT_SET: 0,
+  TABLE_CONFIG: 6,
+  COLLAPSE_TABLE_CONFIG: 7
+};
+
+/**
+ * @return {proto.titanium.ConsensusTabRequest.SearchConfigurationCase}
+ */
+proto.titanium.ConsensusTabRequest.prototype.getSearchConfigurationCase = function() {
+  return /** @type {proto.titanium.ConsensusTabRequest.SearchConfigurationCase} */(jspb.Message.computeOneofCase(this, proto.titanium.ConsensusTabRequest.oneofGroups_[0]));
+};
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -12121,9 +12150,9 @@ proto.titanium.ConsensusTabRequest.toObject = function(includeInstance, msg) {
     assetId: jspb.Message.getFieldWithDefault(msg, 1, ""),
     traceName: jspb.Message.getFieldWithDefault(msg, 2, ""),
     consensusRunTimestamp: jspb.Message.getFieldWithDefault(msg, 3, ""),
-    filterPack: (f = msg.getFilterPack()) && common_gateway_base_pb.FilterPack.toObject(includeInstance, f),
-    orderby: (f = msg.getOrderby()) && common_gateway_base_pb.OrderBy.toObject(includeInstance, f),
-    page: (f = msg.getPage()) && common_gateway_base_pb.Page.toObject(includeInstance, f)
+    dataType: jspb.Message.getFieldWithDefault(msg, 5, 0),
+    tableConfig: (f = msg.getTableConfig()) && common_data_pb.TableRequest.toObject(includeInstance, f),
+    collapseTableConfig: (f = msg.getCollapseTableConfig()) && common_data_pb.CollapseTableRequest.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -12172,20 +12201,19 @@ proto.titanium.ConsensusTabRequest.deserializeBinaryFromReader = function(msg, r
       var value = /** @type {string} */ (reader.readString());
       msg.setConsensusRunTimestamp(value);
       break;
-    case 4:
-      var value = new common_gateway_base_pb.FilterPack;
-      reader.readMessage(value,common_gateway_base_pb.FilterPack.deserializeBinaryFromReader);
-      msg.setFilterPack(value);
-      break;
     case 5:
-      var value = new common_gateway_base_pb.OrderBy;
-      reader.readMessage(value,common_gateway_base_pb.OrderBy.deserializeBinaryFromReader);
-      msg.setOrderby(value);
+      var value = /** @type {!proto.titanium.TabDataType} */ (reader.readEnum());
+      msg.setDataType(value);
       break;
     case 6:
-      var value = new common_gateway_base_pb.Page;
-      reader.readMessage(value,common_gateway_base_pb.Page.deserializeBinaryFromReader);
-      msg.setPage(value);
+      var value = new common_data_pb.TableRequest;
+      reader.readMessage(value,common_data_pb.TableRequest.deserializeBinaryFromReader);
+      msg.setTableConfig(value);
+      break;
+    case 7:
+      var value = new common_data_pb.CollapseTableRequest;
+      reader.readMessage(value,common_data_pb.CollapseTableRequest.deserializeBinaryFromReader);
+      msg.setCollapseTableConfig(value);
       break;
     default:
       reader.skipField();
@@ -12237,28 +12265,27 @@ proto.titanium.ConsensusTabRequest.serializeBinaryToWriter = function(message, w
       f
     );
   }
-  f = message.getFilterPack();
-  if (f != null) {
-    writer.writeMessage(
-      4,
-      f,
-      common_gateway_base_pb.FilterPack.serializeBinaryToWriter
-    );
-  }
-  f = message.getOrderby();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getDataType();
+  if (f !== 0.0) {
+    writer.writeEnum(
       5,
-      f,
-      common_gateway_base_pb.OrderBy.serializeBinaryToWriter
+      f
     );
   }
-  f = message.getPage();
+  f = message.getTableConfig();
   if (f != null) {
     writer.writeMessage(
       6,
       f,
-      common_gateway_base_pb.Page.serializeBinaryToWriter
+      common_data_pb.TableRequest.serializeBinaryToWriter
+    );
+  }
+  f = message.getCollapseTableConfig();
+  if (f != null) {
+    writer.writeMessage(
+      7,
+      f,
+      common_data_pb.CollapseTableRequest.serializeBinaryToWriter
     );
   }
 };
@@ -12319,21 +12346,39 @@ proto.titanium.ConsensusTabRequest.prototype.setConsensusRunTimestamp = function
 
 
 /**
- * optional FilterPack filter_pack = 4;
- * @return {?proto.titanium.FilterPack}
+ * optional TabDataType data_type = 5;
+ * @return {!proto.titanium.TabDataType}
  */
-proto.titanium.ConsensusTabRequest.prototype.getFilterPack = function() {
-  return /** @type{?proto.titanium.FilterPack} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.FilterPack, 4));
+proto.titanium.ConsensusTabRequest.prototype.getDataType = function() {
+  return /** @type {!proto.titanium.TabDataType} */ (jspb.Message.getFieldWithDefault(this, 5, 0));
 };
 
 
 /**
- * @param {?proto.titanium.FilterPack|undefined} value
+ * @param {!proto.titanium.TabDataType} value
+ * @return {!proto.titanium.ConsensusTabRequest} returns this
+ */
+proto.titanium.ConsensusTabRequest.prototype.setDataType = function(value) {
+  return jspb.Message.setProto3EnumField(this, 5, value);
+};
+
+
+/**
+ * optional TableRequest table_config = 6;
+ * @return {?proto.titanium.TableRequest}
+ */
+proto.titanium.ConsensusTabRequest.prototype.getTableConfig = function() {
+  return /** @type{?proto.titanium.TableRequest} */ (
+    jspb.Message.getWrapperField(this, common_data_pb.TableRequest, 6));
+};
+
+
+/**
+ * @param {?proto.titanium.TableRequest|undefined} value
  * @return {!proto.titanium.ConsensusTabRequest} returns this
 */
-proto.titanium.ConsensusTabRequest.prototype.setFilterPack = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+proto.titanium.ConsensusTabRequest.prototype.setTableConfig = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 6, proto.titanium.ConsensusTabRequest.oneofGroups_[0], value);
 };
 
 
@@ -12341,8 +12386,8 @@ proto.titanium.ConsensusTabRequest.prototype.setFilterPack = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.titanium.ConsensusTabRequest} returns this
  */
-proto.titanium.ConsensusTabRequest.prototype.clearFilterPack = function() {
-  return this.setFilterPack(undefined);
+proto.titanium.ConsensusTabRequest.prototype.clearTableConfig = function() {
+  return this.setTableConfig(undefined);
 };
 
 
@@ -12350,82 +12395,45 @@ proto.titanium.ConsensusTabRequest.prototype.clearFilterPack = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.ConsensusTabRequest.prototype.hasFilterPack = function() {
-  return jspb.Message.getField(this, 4) != null;
-};
-
-
-/**
- * optional OrderBy orderBy = 5;
- * @return {?proto.titanium.OrderBy}
- */
-proto.titanium.ConsensusTabRequest.prototype.getOrderby = function() {
-  return /** @type{?proto.titanium.OrderBy} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.OrderBy, 5));
-};
-
-
-/**
- * @param {?proto.titanium.OrderBy|undefined} value
- * @return {!proto.titanium.ConsensusTabRequest} returns this
-*/
-proto.titanium.ConsensusTabRequest.prototype.setOrderby = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.titanium.ConsensusTabRequest} returns this
- */
-proto.titanium.ConsensusTabRequest.prototype.clearOrderby = function() {
-  return this.setOrderby(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.titanium.ConsensusTabRequest.prototype.hasOrderby = function() {
-  return jspb.Message.getField(this, 5) != null;
-};
-
-
-/**
- * optional Page page = 6;
- * @return {?proto.titanium.Page}
- */
-proto.titanium.ConsensusTabRequest.prototype.getPage = function() {
-  return /** @type{?proto.titanium.Page} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.Page, 6));
-};
-
-
-/**
- * @param {?proto.titanium.Page|undefined} value
- * @return {!proto.titanium.ConsensusTabRequest} returns this
-*/
-proto.titanium.ConsensusTabRequest.prototype.setPage = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
-};
-
-
-/**
- * Clears the message field making it undefined.
- * @return {!proto.titanium.ConsensusTabRequest} returns this
- */
-proto.titanium.ConsensusTabRequest.prototype.clearPage = function() {
-  return this.setPage(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.titanium.ConsensusTabRequest.prototype.hasPage = function() {
+proto.titanium.ConsensusTabRequest.prototype.hasTableConfig = function() {
   return jspb.Message.getField(this, 6) != null;
+};
+
+
+/**
+ * optional CollapseTableRequest collapse_table_config = 7;
+ * @return {?proto.titanium.CollapseTableRequest}
+ */
+proto.titanium.ConsensusTabRequest.prototype.getCollapseTableConfig = function() {
+  return /** @type{?proto.titanium.CollapseTableRequest} */ (
+    jspb.Message.getWrapperField(this, common_data_pb.CollapseTableRequest, 7));
+};
+
+
+/**
+ * @param {?proto.titanium.CollapseTableRequest|undefined} value
+ * @return {!proto.titanium.ConsensusTabRequest} returns this
+*/
+proto.titanium.ConsensusTabRequest.prototype.setCollapseTableConfig = function(value) {
+  return jspb.Message.setOneofWrapperField(this, 7, proto.titanium.ConsensusTabRequest.oneofGroups_[0], value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusTabRequest} returns this
+ */
+proto.titanium.ConsensusTabRequest.prototype.clearCollapseTableConfig = function() {
+  return this.setCollapseTableConfig(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusTabRequest.prototype.hasCollapseTableConfig = function() {
+  return jspb.Message.getField(this, 7) != null;
 };
 
 

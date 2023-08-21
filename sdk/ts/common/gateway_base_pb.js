@@ -875,7 +875,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.titanium.PredefinedFilter = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.PredefinedFilter.repeatedFields_, null);
 };
 goog.inherits(proto.titanium.PredefinedFilter, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -8425,6 +8425,13 @@ proto.titanium.Filter.prototype.hasValue = function() {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.PredefinedFilter.repeatedFields_ = [6];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -8460,7 +8467,9 @@ proto.titanium.PredefinedFilter.toObject = function(includeInstance, msg) {
     operator: jspb.Message.getFieldWithDefault(msg, 2, ""),
     value: (f = msg.getValue()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     resultcount: jspb.Message.getFieldWithDefault(msg, 4, 0),
-    predefinedvaluelabel: jspb.Message.getFieldWithDefault(msg, 5, "")
+    predefinedvaluelabel: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    instrumentTypesWithCountList: jspb.Message.toObjectList(msg.getInstrumentTypesWithCountList(),
+    proto.titanium.KeyAndValue.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -8517,6 +8526,11 @@ proto.titanium.PredefinedFilter.deserializeBinaryFromReader = function(msg, read
     case 5:
       var value = /** @type {string} */ (reader.readString());
       msg.setPredefinedvaluelabel(value);
+      break;
+    case 6:
+      var value = new proto.titanium.KeyAndValue;
+      reader.readMessage(value,proto.titanium.KeyAndValue.deserializeBinaryFromReader);
+      msg.addInstrumentTypesWithCount(value);
       break;
     default:
       reader.skipField();
@@ -8581,6 +8595,14 @@ proto.titanium.PredefinedFilter.serializeBinaryToWriter = function(message, writ
     writer.writeString(
       5,
       f
+    );
+  }
+  f = message.getInstrumentTypesWithCountList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
+      6,
+      f,
+      proto.titanium.KeyAndValue.serializeBinaryToWriter
     );
   }
 };
@@ -8692,6 +8714,44 @@ proto.titanium.PredefinedFilter.prototype.getPredefinedvaluelabel = function() {
  */
 proto.titanium.PredefinedFilter.prototype.setPredefinedvaluelabel = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
+};
+
+
+/**
+ * repeated KeyAndValue instrument_types_with_count = 6;
+ * @return {!Array<!proto.titanium.KeyAndValue>}
+ */
+proto.titanium.PredefinedFilter.prototype.getInstrumentTypesWithCountList = function() {
+  return /** @type{!Array<!proto.titanium.KeyAndValue>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.KeyAndValue, 6));
+};
+
+
+/**
+ * @param {!Array<!proto.titanium.KeyAndValue>} value
+ * @return {!proto.titanium.PredefinedFilter} returns this
+*/
+proto.titanium.PredefinedFilter.prototype.setInstrumentTypesWithCountList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 6, value);
+};
+
+
+/**
+ * @param {!proto.titanium.KeyAndValue=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.KeyAndValue}
+ */
+proto.titanium.PredefinedFilter.prototype.addInstrumentTypesWithCount = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 6, opt_value, proto.titanium.KeyAndValue, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
+ * @return {!proto.titanium.PredefinedFilter} returns this
+ */
+proto.titanium.PredefinedFilter.prototype.clearInstrumentTypesWithCountList = function() {
+  return this.setInstrumentTypesWithCountList([]);
 };
 
 

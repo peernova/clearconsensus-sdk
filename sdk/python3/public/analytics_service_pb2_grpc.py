@@ -4,8 +4,7 @@ from ..common import analytics_pb2 as common_dot_analytics__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 class AnalyticsControllerStub(object):
-    """AnalyticsController is service that can provide analytics related to consensuses, errors in data processing and etc..
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def __init__(self, channel):
         """Constructor.
@@ -21,8 +20,7 @@ class AnalyticsControllerStub(object):
         self.GetHistogram = channel.unary_unary('/titanium.AnalyticsController/GetHistogram', request_serializer=common_dot_analytics__pb2.HistogramRequest.SerializeToString, response_deserializer=common_dot_analytics__pb2.HistogramResponse.FromString)
 
 class AnalyticsControllerServicer(object):
-    """AnalyticsController is service that can provide analytics related to consensuses, errors in data processing and etc..
-    """
+    """Missing associated documentation comment in .proto file."""
 
     def FindDataQualityErrors(self, request, context):
         """FindDataQualityErrors returns data quality errors according to request.
@@ -72,8 +70,7 @@ def add_AnalyticsControllerServicer_to_server(servicer, server):
     server.add_generic_rpc_handlers((generic_handler,))
 
 class AnalyticsController(object):
-    """AnalyticsController is service that can provide analytics related to consensuses, errors in data processing and etc..
-    """
+    """Missing associated documentation comment in .proto file."""
 
     @staticmethod
     def FindDataQualityErrors(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):

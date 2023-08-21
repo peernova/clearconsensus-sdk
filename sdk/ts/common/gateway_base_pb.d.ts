@@ -1060,6 +1060,11 @@ export class PredefinedFilter extends jspb.Message {
   getPredefinedvaluelabel(): string;
   setPredefinedvaluelabel(value: string): void;
 
+  clearInstrumentTypesWithCountList(): void;
+  getInstrumentTypesWithCountList(): Array<KeyAndValue>;
+  setInstrumentTypesWithCountList(value: Array<KeyAndValue>): void;
+  addInstrumentTypesWithCount(value?: KeyAndValue, index?: number): KeyAndValue;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): PredefinedFilter.AsObject;
   static toObject(includeInstance: boolean, msg: PredefinedFilter): PredefinedFilter.AsObject;
@@ -1077,6 +1082,7 @@ export namespace PredefinedFilter {
     value?: google_protobuf_struct_pb.Value.AsObject,
     resultcount: number,
     predefinedvaluelabel: string,
+    instrumentTypesWithCountList: Array<KeyAndValue.AsObject>,
   }
 }
 
