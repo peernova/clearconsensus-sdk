@@ -131,6 +131,7 @@ docs/TitaniumClientName.md
 docs/TitaniumCohortConsensusColumn.md
 docs/TitaniumCohortConsensusRangeTabData.md
 docs/TitaniumColDependency.md
+docs/TitaniumCollapseTableRequest.md
 docs/TitaniumColumnInfo.md
 docs/TitaniumComparisonTable.md
 docs/TitaniumCompleteDataUploadRequest.md
@@ -276,6 +277,7 @@ docs/TitaniumKVList.md
 docs/TitaniumKVListAsset.md
 docs/TitaniumKVOperationResponse.md
 docs/TitaniumKVRequest.md
+docs/TitaniumKeyAndValue.md
 docs/TitaniumLimit.md
 docs/TitaniumListClientsResponse.md
 docs/TitaniumListClientsResponseData.md
@@ -369,6 +371,7 @@ docs/TitaniumSupportedField.md
 docs/TitaniumSupportedFieldsValues.md
 docs/TitaniumTable.md
 docs/TitaniumTableColumn.md
+docs/TitaniumTableRequest.md
 docs/TitaniumTableRow.md
 docs/TitaniumTradeAligmentDateAndValue.md
 docs/TitaniumTradeAlignmentScore.md
@@ -565,6 +568,7 @@ src/main/java/org/openapitools/client/model/TitaniumClientName.java
 src/main/java/org/openapitools/client/model/TitaniumCohortConsensusColumn.java
 src/main/java/org/openapitools/client/model/TitaniumCohortConsensusRangeTabData.java
 src/main/java/org/openapitools/client/model/TitaniumColDependency.java
+src/main/java/org/openapitools/client/model/TitaniumCollapseTableRequest.java
 src/main/java/org/openapitools/client/model/TitaniumColumnInfo.java
 src/main/java/org/openapitools/client/model/TitaniumComparisonTable.java
 src/main/java/org/openapitools/client/model/TitaniumCompleteDataUploadRequest.java
@@ -710,6 +714,7 @@ src/main/java/org/openapitools/client/model/TitaniumKVList.java
 src/main/java/org/openapitools/client/model/TitaniumKVListAsset.java
 src/main/java/org/openapitools/client/model/TitaniumKVOperationResponse.java
 src/main/java/org/openapitools/client/model/TitaniumKVRequest.java
+src/main/java/org/openapitools/client/model/TitaniumKeyAndValue.java
 src/main/java/org/openapitools/client/model/TitaniumLimit.java
 src/main/java/org/openapitools/client/model/TitaniumListClientsResponse.java
 src/main/java/org/openapitools/client/model/TitaniumListClientsResponseData.java
@@ -803,6 +808,7 @@ src/main/java/org/openapitools/client/model/TitaniumSupportedField.java
 src/main/java/org/openapitools/client/model/TitaniumSupportedFieldsValues.java
 src/main/java/org/openapitools/client/model/TitaniumTable.java
 src/main/java/org/openapitools/client/model/TitaniumTableColumn.java
+src/main/java/org/openapitools/client/model/TitaniumTableRequest.java
 src/main/java/org/openapitools/client/model/TitaniumTableRow.java
 src/main/java/org/openapitools/client/model/TitaniumTradeAligmentDateAndValue.java
 src/main/java/org/openapitools/client/model/TitaniumTradeAlignmentScore.java
@@ -840,3 +846,5 @@ src/main/java/org/openapitools/client/model/TitaniumValuesRow.java
 src/main/java/org/openapitools/client/model/TitaniumVersion.java
 src/main/java/org/openapitools/client/model/TitaniumVersionList.java
 src/main/java/org/openapitools/client/model/TitaniumViewRow.java
+src/test/java/org/openapitools/client/model/TitaniumCollapseTableRequestTest.java
+src/test/java/org/openapitools/client/model/TitaniumTableRequestTest.java

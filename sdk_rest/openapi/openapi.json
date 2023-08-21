@@ -8617,6 +8617,17 @@
         },
         "type" : "object"
       },
+      "titaniumCollapseTableRequest" : {
+        "properties" : {
+          "filters" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumFilter"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumColumnInfo" : {
         "properties" : {
           "columnName" : {
@@ -9121,17 +9132,17 @@
           "assetId" : {
             "type" : "string"
           },
+          "collapseTableConfig" : {
+            "$ref" : "#/components/schemas/titaniumCollapseTableRequest"
+          },
           "consensusRunTimestamp" : {
             "type" : "string"
           },
-          "filterPack" : {
-            "$ref" : "#/components/schemas/titaniumFilterPack"
+          "dataType" : {
+            "$ref" : "#/components/schemas/titaniumTabDataType"
           },
-          "orderBy" : {
-            "$ref" : "#/components/schemas/titaniumOrderBy"
-          },
-          "page" : {
-            "$ref" : "#/components/schemas/titaniumPage"
+          "tableConfig" : {
+            "$ref" : "#/components/schemas/titaniumTableRequest"
           },
           "traceName" : {
             "type" : "string"
@@ -11067,6 +11078,18 @@
         },
         "type" : "object"
       },
+      "titaniumKeyAndValue" : {
+        "properties" : {
+          "key" : {
+            "type" : "string"
+          },
+          "value" : {
+            "properties" : { },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumLimit" : {
         "properties" : {
           "value" : {
@@ -11743,6 +11766,12 @@
       },
       "titaniumPredefinedFilter" : {
         "properties" : {
+          "instrumentTypesWithCount" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumKeyAndValue"
+            },
+            "type" : "array"
+          },
           "key" : {
             "type" : "string"
           },
@@ -11770,9 +11799,18 @@
               "$ref" : "#/components/schemas/titaniumPredefinedFilter"
             },
             "type" : "array"
+          },
+          "specificAssetFilters" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumPredefinedFilter"
+            },
+            "type" : "array"
           }
         },
         "type" : "object"
+      },
+      "titaniumPredefined_Filters_Type" : {
+        "type" : "string"
       },
       "titaniumProtocol" : {
         "type" : "string"
@@ -12401,29 +12439,20 @@
           "assetId" : {
             "type" : "string"
           },
+          "collapseTableConfig" : {
+            "$ref" : "#/components/schemas/titaniumCollapseTableRequest"
+          },
           "consensusRunTimestamp" : {
             "type" : "string"
           },
-          "filter" : {
-            "type" : "string"
-          },
-          "filterPack" : {
-            "$ref" : "#/components/schemas/titaniumFilterPack"
-          },
-          "filters" : {
-            "items" : {
-              "$ref" : "#/components/schemas/titaniumFilter"
-            },
-            "type" : "array"
-          },
-          "orderBy" : {
-            "$ref" : "#/components/schemas/titaniumOrderBy"
-          },
-          "page" : {
-            "$ref" : "#/components/schemas/titaniumPage"
+          "dataType" : {
+            "$ref" : "#/components/schemas/titaniumTabDataType"
           },
           "submittedDate" : {
             "type" : "string"
+          },
+          "tableConfig" : {
+            "$ref" : "#/components/schemas/titaniumTableRequest"
           },
           "traceName" : {
             "type" : "string"
@@ -12547,6 +12576,9 @@
       "titaniumTTLTypes" : {
         "type" : "string"
       },
+      "titaniumTabDataType" : {
+        "type" : "string"
+      },
       "titaniumTable" : {
         "properties" : {
           "columns" : {
@@ -12577,6 +12609,26 @@
           },
           "rawColumnName" : {
             "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumTableRequest" : {
+        "properties" : {
+          "filterPack" : {
+            "$ref" : "#/components/schemas/titaniumFilterPack"
+          },
+          "filters" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumFilter"
+            },
+            "type" : "array"
+          },
+          "orderBy" : {
+            "$ref" : "#/components/schemas/titaniumOrderBy"
+          },
+          "page" : {
+            "$ref" : "#/components/schemas/titaniumPage"
           }
         },
         "type" : "object"

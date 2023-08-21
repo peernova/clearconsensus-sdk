@@ -108,6 +108,7 @@ import TitaniumClientName from './model/TitaniumClientName';
 import TitaniumCohortConsensusColumn from './model/TitaniumCohortConsensusColumn';
 import TitaniumCohortConsensusRangeTabData from './model/TitaniumCohortConsensusRangeTabData';
 import TitaniumColDependency from './model/TitaniumColDependency';
+import TitaniumCollapseTableRequest from './model/TitaniumCollapseTableRequest';
 import TitaniumColumnInfo from './model/TitaniumColumnInfo';
 import TitaniumComparisonTable from './model/TitaniumComparisonTable';
 import TitaniumCompleteDataUploadRequest from './model/TitaniumCompleteDataUploadRequest';
@@ -253,6 +254,7 @@ import TitaniumKVList from './model/TitaniumKVList';
 import TitaniumKVListAsset from './model/TitaniumKVListAsset';
 import TitaniumKVOperationResponse from './model/TitaniumKVOperationResponse';
 import TitaniumKVRequest from './model/TitaniumKVRequest';
+import TitaniumKeyAndValue from './model/TitaniumKeyAndValue';
 import TitaniumLimit from './model/TitaniumLimit';
 import TitaniumListClientsResponse from './model/TitaniumListClientsResponse';
 import TitaniumListClientsResponseData from './model/TitaniumListClientsResponseData';
@@ -346,6 +348,7 @@ import TitaniumSupportedField from './model/TitaniumSupportedField';
 import TitaniumSupportedFieldsValues from './model/TitaniumSupportedFieldsValues';
 import TitaniumTable from './model/TitaniumTable';
 import TitaniumTableColumn from './model/TitaniumTableColumn';
+import TitaniumTableRequest from './model/TitaniumTableRequest';
 import TitaniumTableRow from './model/TitaniumTableRow';
 import TitaniumTradeAligmentDateAndValue from './model/TitaniumTradeAligmentDateAndValue';
 import TitaniumTradeAlignmentScore from './model/TitaniumTradeAlignmentScore';
@@ -1026,6 +1029,12 @@ export {
      * @property {module:model/TitaniumColDependency}
      */
     TitaniumColDependency,
+
+    /**
+     * The TitaniumCollapseTableRequest model constructor.
+     * @property {module:model/TitaniumCollapseTableRequest}
+     */
+    TitaniumCollapseTableRequest,
 
     /**
      * The TitaniumColumnInfo model constructor.
@@ -1898,6 +1907,12 @@ export {
     TitaniumKVRequest,
 
     /**
+     * The TitaniumKeyAndValue model constructor.
+     * @property {module:model/TitaniumKeyAndValue}
+     */
+    TitaniumKeyAndValue,
+
+    /**
      * The TitaniumLimit model constructor.
      * @property {module:model/TitaniumLimit}
      */
@@ -2454,6 +2469,12 @@ export {
      * @property {module:model/TitaniumTableColumn}
      */
     TitaniumTableColumn,
+
+    /**
+     * The TitaniumTableRequest model constructor.
+     * @property {module:model/TitaniumTableRequest}
+     */
+    TitaniumTableRequest,
 
     /**
      * The TitaniumTableRow model constructor.

@@ -12,9 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import TitaniumFilterPack from './TitaniumFilterPack';
-import TitaniumOrderBy from './TitaniumOrderBy';
-import TitaniumPage from './TitaniumPage';
+import TitaniumCollapseTableRequest from './TitaniumCollapseTableRequest';
+import TitaniumTableRequest from './TitaniumTableRequest';
 
 /**
  * The TitaniumConsensusTabRequest model module.
@@ -53,17 +52,17 @@ class TitaniumConsensusTabRequest {
             if (data.hasOwnProperty('assetId')) {
                 obj['assetId'] = ApiClient.convertToType(data['assetId'], 'String');
             }
+            if (data.hasOwnProperty('collapseTableConfig')) {
+                obj['collapseTableConfig'] = TitaniumCollapseTableRequest.constructFromObject(data['collapseTableConfig']);
+            }
             if (data.hasOwnProperty('consensusRunTimestamp')) {
                 obj['consensusRunTimestamp'] = ApiClient.convertToType(data['consensusRunTimestamp'], 'String');
             }
-            if (data.hasOwnProperty('filterPack')) {
-                obj['filterPack'] = TitaniumFilterPack.constructFromObject(data['filterPack']);
+            if (data.hasOwnProperty('dataType')) {
+                obj['dataType'] = ApiClient.convertToType(data['dataType'], 'String');
             }
-            if (data.hasOwnProperty('orderBy')) {
-                obj['orderBy'] = TitaniumOrderBy.constructFromObject(data['orderBy']);
-            }
-            if (data.hasOwnProperty('page')) {
-                obj['page'] = TitaniumPage.constructFromObject(data['page']);
+            if (data.hasOwnProperty('tableConfig')) {
+                obj['tableConfig'] = TitaniumTableRequest.constructFromObject(data['tableConfig']);
             }
             if (data.hasOwnProperty('traceName')) {
                 obj['traceName'] = ApiClient.convertToType(data['traceName'], 'String');
@@ -81,24 +80,24 @@ class TitaniumConsensusTabRequest {
 TitaniumConsensusTabRequest.prototype['assetId'] = undefined;
 
 /**
+ * @member {module:model/TitaniumCollapseTableRequest} collapseTableConfig
+ */
+TitaniumConsensusTabRequest.prototype['collapseTableConfig'] = undefined;
+
+/**
  * @member {String} consensusRunTimestamp
  */
 TitaniumConsensusTabRequest.prototype['consensusRunTimestamp'] = undefined;
 
 /**
- * @member {module:model/TitaniumFilterPack} filterPack
+ * @member {String} dataType
  */
-TitaniumConsensusTabRequest.prototype['filterPack'] = undefined;
+TitaniumConsensusTabRequest.prototype['dataType'] = undefined;
 
 /**
- * @member {module:model/TitaniumOrderBy} orderBy
+ * @member {module:model/TitaniumTableRequest} tableConfig
  */
-TitaniumConsensusTabRequest.prototype['orderBy'] = undefined;
-
-/**
- * @member {module:model/TitaniumPage} page
- */
-TitaniumConsensusTabRequest.prototype['page'] = undefined;
+TitaniumConsensusTabRequest.prototype['tableConfig'] = undefined;
 
 /**
  * @member {String} traceName

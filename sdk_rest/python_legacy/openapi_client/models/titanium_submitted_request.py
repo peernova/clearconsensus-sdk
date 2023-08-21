@@ -37,61 +37,51 @@ class TitaniumSubmittedRequest(object):
     """
     openapi_types = {
         'asset_id': 'str',
+        'collapse_table_config': 'TitaniumCollapseTableRequest',
         'consensus_run_timestamp': 'str',
-        'filter': 'str',
-        'filter_pack': 'TitaniumFilterPack',
-        'filters': 'list[TitaniumFilter]',
-        'order_by': 'TitaniumOrderBy',
-        'page': 'TitaniumPage',
+        'data_type': 'str',
         'submitted_date': 'str',
+        'table_config': 'TitaniumTableRequest',
         'trace_name': 'str'
     }
 
     attribute_map = {
         'asset_id': 'assetId',
+        'collapse_table_config': 'collapseTableConfig',
         'consensus_run_timestamp': 'consensusRunTimestamp',
-        'filter': 'filter',
-        'filter_pack': 'filterPack',
-        'filters': 'filters',
-        'order_by': 'orderBy',
-        'page': 'page',
+        'data_type': 'dataType',
         'submitted_date': 'submittedDate',
+        'table_config': 'tableConfig',
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, consensus_run_timestamp=None, filter=None, filter_pack=None, filters=None, order_by=None, page=None, submitted_date=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, collapse_table_config=None, consensus_run_timestamp=None, data_type=None, submitted_date=None, table_config=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumSubmittedRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._asset_id = None
+        self._collapse_table_config = None
         self._consensus_run_timestamp = None
-        self._filter = None
-        self._filter_pack = None
-        self._filters = None
-        self._order_by = None
-        self._page = None
+        self._data_type = None
         self._submitted_date = None
+        self._table_config = None
         self._trace_name = None
         self.discriminator = None
 
         if asset_id is not None:
             self.asset_id = asset_id
+        if collapse_table_config is not None:
+            self.collapse_table_config = collapse_table_config
         if consensus_run_timestamp is not None:
             self.consensus_run_timestamp = consensus_run_timestamp
-        if filter is not None:
-            self.filter = filter
-        if filter_pack is not None:
-            self.filter_pack = filter_pack
-        if filters is not None:
-            self.filters = filters
-        if order_by is not None:
-            self.order_by = order_by
-        if page is not None:
-            self.page = page
+        if data_type is not None:
+            self.data_type = data_type
         if submitted_date is not None:
             self.submitted_date = submitted_date
+        if table_config is not None:
+            self.table_config = table_config
         if trace_name is not None:
             self.trace_name = trace_name
 
@@ -117,6 +107,27 @@ class TitaniumSubmittedRequest(object):
         self._asset_id = asset_id
 
     @property
+    def collapse_table_config(self):
+        """Gets the collapse_table_config of this TitaniumSubmittedRequest.  # noqa: E501
+
+
+        :return: The collapse_table_config of this TitaniumSubmittedRequest.  # noqa: E501
+        :rtype: TitaniumCollapseTableRequest
+        """
+        return self._collapse_table_config
+
+    @collapse_table_config.setter
+    def collapse_table_config(self, collapse_table_config):
+        """Sets the collapse_table_config of this TitaniumSubmittedRequest.
+
+
+        :param collapse_table_config: The collapse_table_config of this TitaniumSubmittedRequest.  # noqa: E501
+        :type collapse_table_config: TitaniumCollapseTableRequest
+        """
+
+        self._collapse_table_config = collapse_table_config
+
+    @property
     def consensus_run_timestamp(self):
         """Gets the consensus_run_timestamp of this TitaniumSubmittedRequest.  # noqa: E501
 
@@ -138,109 +149,25 @@ class TitaniumSubmittedRequest(object):
         self._consensus_run_timestamp = consensus_run_timestamp
 
     @property
-    def filter(self):
-        """Gets the filter of this TitaniumSubmittedRequest.  # noqa: E501
+    def data_type(self):
+        """Gets the data_type of this TitaniumSubmittedRequest.  # noqa: E501
 
 
-        :return: The filter of this TitaniumSubmittedRequest.  # noqa: E501
+        :return: The data_type of this TitaniumSubmittedRequest.  # noqa: E501
         :rtype: str
         """
-        return self._filter
+        return self._data_type
 
-    @filter.setter
-    def filter(self, filter):
-        """Sets the filter of this TitaniumSubmittedRequest.
+    @data_type.setter
+    def data_type(self, data_type):
+        """Sets the data_type of this TitaniumSubmittedRequest.
 
 
-        :param filter: The filter of this TitaniumSubmittedRequest.  # noqa: E501
-        :type filter: str
+        :param data_type: The data_type of this TitaniumSubmittedRequest.  # noqa: E501
+        :type data_type: str
         """
 
-        self._filter = filter
-
-    @property
-    def filter_pack(self):
-        """Gets the filter_pack of this TitaniumSubmittedRequest.  # noqa: E501
-
-
-        :return: The filter_pack of this TitaniumSubmittedRequest.  # noqa: E501
-        :rtype: TitaniumFilterPack
-        """
-        return self._filter_pack
-
-    @filter_pack.setter
-    def filter_pack(self, filter_pack):
-        """Sets the filter_pack of this TitaniumSubmittedRequest.
-
-
-        :param filter_pack: The filter_pack of this TitaniumSubmittedRequest.  # noqa: E501
-        :type filter_pack: TitaniumFilterPack
-        """
-
-        self._filter_pack = filter_pack
-
-    @property
-    def filters(self):
-        """Gets the filters of this TitaniumSubmittedRequest.  # noqa: E501
-
-
-        :return: The filters of this TitaniumSubmittedRequest.  # noqa: E501
-        :rtype: list[TitaniumFilter]
-        """
-        return self._filters
-
-    @filters.setter
-    def filters(self, filters):
-        """Sets the filters of this TitaniumSubmittedRequest.
-
-
-        :param filters: The filters of this TitaniumSubmittedRequest.  # noqa: E501
-        :type filters: list[TitaniumFilter]
-        """
-
-        self._filters = filters
-
-    @property
-    def order_by(self):
-        """Gets the order_by of this TitaniumSubmittedRequest.  # noqa: E501
-
-
-        :return: The order_by of this TitaniumSubmittedRequest.  # noqa: E501
-        :rtype: TitaniumOrderBy
-        """
-        return self._order_by
-
-    @order_by.setter
-    def order_by(self, order_by):
-        """Sets the order_by of this TitaniumSubmittedRequest.
-
-
-        :param order_by: The order_by of this TitaniumSubmittedRequest.  # noqa: E501
-        :type order_by: TitaniumOrderBy
-        """
-
-        self._order_by = order_by
-
-    @property
-    def page(self):
-        """Gets the page of this TitaniumSubmittedRequest.  # noqa: E501
-
-
-        :return: The page of this TitaniumSubmittedRequest.  # noqa: E501
-        :rtype: TitaniumPage
-        """
-        return self._page
-
-    @page.setter
-    def page(self, page):
-        """Sets the page of this TitaniumSubmittedRequest.
-
-
-        :param page: The page of this TitaniumSubmittedRequest.  # noqa: E501
-        :type page: TitaniumPage
-        """
-
-        self._page = page
+        self._data_type = data_type
 
     @property
     def submitted_date(self):
@@ -262,6 +189,27 @@ class TitaniumSubmittedRequest(object):
         """
 
         self._submitted_date = submitted_date
+
+    @property
+    def table_config(self):
+        """Gets the table_config of this TitaniumSubmittedRequest.  # noqa: E501
+
+
+        :return: The table_config of this TitaniumSubmittedRequest.  # noqa: E501
+        :rtype: TitaniumTableRequest
+        """
+        return self._table_config
+
+    @table_config.setter
+    def table_config(self, table_config):
+        """Sets the table_config of this TitaniumSubmittedRequest.
+
+
+        :param table_config: The table_config of this TitaniumSubmittedRequest.  # noqa: E501
+        :type table_config: TitaniumTableRequest
+        """
+
+        self._table_config = table_config
 
     @property
     def trace_name(self):

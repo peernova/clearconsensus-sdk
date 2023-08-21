@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumKeyAndValue from './TitaniumKeyAndValue';
 
 /**
  * The TitaniumPredefinedFilter model module.
@@ -47,6 +48,9 @@ class TitaniumPredefinedFilter {
         if (data) {
             obj = obj || new TitaniumPredefinedFilter();
 
+            if (data.hasOwnProperty('instrumentTypesWithCount')) {
+                obj['instrumentTypesWithCount'] = ApiClient.convertToType(data['instrumentTypesWithCount'], [TitaniumKeyAndValue]);
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'String');
             }
@@ -68,6 +72,11 @@ class TitaniumPredefinedFilter {
 
 
 }
+
+/**
+ * @member {Array.<module:model/TitaniumKeyAndValue>} instrumentTypesWithCount
+ */
+TitaniumPredefinedFilter.prototype['instrumentTypesWithCount'] = undefined;
 
 /**
  * @member {String} key

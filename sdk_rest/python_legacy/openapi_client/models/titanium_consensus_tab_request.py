@@ -37,46 +37,46 @@ class TitaniumConsensusTabRequest(object):
     """
     openapi_types = {
         'asset_id': 'str',
+        'collapse_table_config': 'TitaniumCollapseTableRequest',
         'consensus_run_timestamp': 'str',
-        'filter_pack': 'TitaniumFilterPack',
-        'order_by': 'TitaniumOrderBy',
-        'page': 'TitaniumPage',
+        'data_type': 'str',
+        'table_config': 'TitaniumTableRequest',
         'trace_name': 'str'
     }
 
     attribute_map = {
         'asset_id': 'assetId',
+        'collapse_table_config': 'collapseTableConfig',
         'consensus_run_timestamp': 'consensusRunTimestamp',
-        'filter_pack': 'filterPack',
-        'order_by': 'orderBy',
-        'page': 'page',
+        'data_type': 'dataType',
+        'table_config': 'tableConfig',
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, consensus_run_timestamp=None, filter_pack=None, order_by=None, page=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, collapse_table_config=None, consensus_run_timestamp=None, data_type=None, table_config=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusTabRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._asset_id = None
+        self._collapse_table_config = None
         self._consensus_run_timestamp = None
-        self._filter_pack = None
-        self._order_by = None
-        self._page = None
+        self._data_type = None
+        self._table_config = None
         self._trace_name = None
         self.discriminator = None
 
         if asset_id is not None:
             self.asset_id = asset_id
+        if collapse_table_config is not None:
+            self.collapse_table_config = collapse_table_config
         if consensus_run_timestamp is not None:
             self.consensus_run_timestamp = consensus_run_timestamp
-        if filter_pack is not None:
-            self.filter_pack = filter_pack
-        if order_by is not None:
-            self.order_by = order_by
-        if page is not None:
-            self.page = page
+        if data_type is not None:
+            self.data_type = data_type
+        if table_config is not None:
+            self.table_config = table_config
         if trace_name is not None:
             self.trace_name = trace_name
 
@@ -102,6 +102,27 @@ class TitaniumConsensusTabRequest(object):
         self._asset_id = asset_id
 
     @property
+    def collapse_table_config(self):
+        """Gets the collapse_table_config of this TitaniumConsensusTabRequest.  # noqa: E501
+
+
+        :return: The collapse_table_config of this TitaniumConsensusTabRequest.  # noqa: E501
+        :rtype: TitaniumCollapseTableRequest
+        """
+        return self._collapse_table_config
+
+    @collapse_table_config.setter
+    def collapse_table_config(self, collapse_table_config):
+        """Sets the collapse_table_config of this TitaniumConsensusTabRequest.
+
+
+        :param collapse_table_config: The collapse_table_config of this TitaniumConsensusTabRequest.  # noqa: E501
+        :type collapse_table_config: TitaniumCollapseTableRequest
+        """
+
+        self._collapse_table_config = collapse_table_config
+
+    @property
     def consensus_run_timestamp(self):
         """Gets the consensus_run_timestamp of this TitaniumConsensusTabRequest.  # noqa: E501
 
@@ -123,67 +144,46 @@ class TitaniumConsensusTabRequest(object):
         self._consensus_run_timestamp = consensus_run_timestamp
 
     @property
-    def filter_pack(self):
-        """Gets the filter_pack of this TitaniumConsensusTabRequest.  # noqa: E501
+    def data_type(self):
+        """Gets the data_type of this TitaniumConsensusTabRequest.  # noqa: E501
 
 
-        :return: The filter_pack of this TitaniumConsensusTabRequest.  # noqa: E501
-        :rtype: TitaniumFilterPack
+        :return: The data_type of this TitaniumConsensusTabRequest.  # noqa: E501
+        :rtype: str
         """
-        return self._filter_pack
+        return self._data_type
 
-    @filter_pack.setter
-    def filter_pack(self, filter_pack):
-        """Sets the filter_pack of this TitaniumConsensusTabRequest.
+    @data_type.setter
+    def data_type(self, data_type):
+        """Sets the data_type of this TitaniumConsensusTabRequest.
 
 
-        :param filter_pack: The filter_pack of this TitaniumConsensusTabRequest.  # noqa: E501
-        :type filter_pack: TitaniumFilterPack
+        :param data_type: The data_type of this TitaniumConsensusTabRequest.  # noqa: E501
+        :type data_type: str
         """
 
-        self._filter_pack = filter_pack
+        self._data_type = data_type
 
     @property
-    def order_by(self):
-        """Gets the order_by of this TitaniumConsensusTabRequest.  # noqa: E501
+    def table_config(self):
+        """Gets the table_config of this TitaniumConsensusTabRequest.  # noqa: E501
 
 
-        :return: The order_by of this TitaniumConsensusTabRequest.  # noqa: E501
-        :rtype: TitaniumOrderBy
+        :return: The table_config of this TitaniumConsensusTabRequest.  # noqa: E501
+        :rtype: TitaniumTableRequest
         """
-        return self._order_by
+        return self._table_config
 
-    @order_by.setter
-    def order_by(self, order_by):
-        """Sets the order_by of this TitaniumConsensusTabRequest.
-
-
-        :param order_by: The order_by of this TitaniumConsensusTabRequest.  # noqa: E501
-        :type order_by: TitaniumOrderBy
-        """
-
-        self._order_by = order_by
-
-    @property
-    def page(self):
-        """Gets the page of this TitaniumConsensusTabRequest.  # noqa: E501
+    @table_config.setter
+    def table_config(self, table_config):
+        """Sets the table_config of this TitaniumConsensusTabRequest.
 
 
-        :return: The page of this TitaniumConsensusTabRequest.  # noqa: E501
-        :rtype: TitaniumPage
-        """
-        return self._page
-
-    @page.setter
-    def page(self, page):
-        """Sets the page of this TitaniumConsensusTabRequest.
-
-
-        :param page: The page of this TitaniumConsensusTabRequest.  # noqa: E501
-        :type page: TitaniumPage
+        :param table_config: The table_config of this TitaniumConsensusTabRequest.  # noqa: E501
+        :type table_config: TitaniumTableRequest
         """
 
-        self._page = page
+        self._table_config = table_config
 
     @property
     def trace_name(self):

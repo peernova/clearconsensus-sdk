@@ -12,10 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import TitaniumFilter from './TitaniumFilter';
-import TitaniumFilterPack from './TitaniumFilterPack';
-import TitaniumOrderBy from './TitaniumOrderBy';
-import TitaniumPage from './TitaniumPage';
+import TitaniumCollapseTableRequest from './TitaniumCollapseTableRequest';
+import TitaniumTableRequest from './TitaniumTableRequest';
 
 /**
  * The TitaniumSubmittedRequest model module.
@@ -54,26 +52,20 @@ class TitaniumSubmittedRequest {
             if (data.hasOwnProperty('assetId')) {
                 obj['assetId'] = ApiClient.convertToType(data['assetId'], 'String');
             }
+            if (data.hasOwnProperty('collapseTableConfig')) {
+                obj['collapseTableConfig'] = TitaniumCollapseTableRequest.constructFromObject(data['collapseTableConfig']);
+            }
             if (data.hasOwnProperty('consensusRunTimestamp')) {
                 obj['consensusRunTimestamp'] = ApiClient.convertToType(data['consensusRunTimestamp'], 'String');
             }
-            if (data.hasOwnProperty('filter')) {
-                obj['filter'] = ApiClient.convertToType(data['filter'], 'String');
-            }
-            if (data.hasOwnProperty('filterPack')) {
-                obj['filterPack'] = TitaniumFilterPack.constructFromObject(data['filterPack']);
-            }
-            if (data.hasOwnProperty('filters')) {
-                obj['filters'] = ApiClient.convertToType(data['filters'], [TitaniumFilter]);
-            }
-            if (data.hasOwnProperty('orderBy')) {
-                obj['orderBy'] = TitaniumOrderBy.constructFromObject(data['orderBy']);
-            }
-            if (data.hasOwnProperty('page')) {
-                obj['page'] = TitaniumPage.constructFromObject(data['page']);
+            if (data.hasOwnProperty('dataType')) {
+                obj['dataType'] = ApiClient.convertToType(data['dataType'], 'String');
             }
             if (data.hasOwnProperty('submittedDate')) {
                 obj['submittedDate'] = ApiClient.convertToType(data['submittedDate'], 'String');
+            }
+            if (data.hasOwnProperty('tableConfig')) {
+                obj['tableConfig'] = TitaniumTableRequest.constructFromObject(data['tableConfig']);
             }
             if (data.hasOwnProperty('traceName')) {
                 obj['traceName'] = ApiClient.convertToType(data['traceName'], 'String');
@@ -91,39 +83,29 @@ class TitaniumSubmittedRequest {
 TitaniumSubmittedRequest.prototype['assetId'] = undefined;
 
 /**
+ * @member {module:model/TitaniumCollapseTableRequest} collapseTableConfig
+ */
+TitaniumSubmittedRequest.prototype['collapseTableConfig'] = undefined;
+
+/**
  * @member {String} consensusRunTimestamp
  */
 TitaniumSubmittedRequest.prototype['consensusRunTimestamp'] = undefined;
 
 /**
- * @member {String} filter
+ * @member {String} dataType
  */
-TitaniumSubmittedRequest.prototype['filter'] = undefined;
-
-/**
- * @member {module:model/TitaniumFilterPack} filterPack
- */
-TitaniumSubmittedRequest.prototype['filterPack'] = undefined;
-
-/**
- * @member {Array.<module:model/TitaniumFilter>} filters
- */
-TitaniumSubmittedRequest.prototype['filters'] = undefined;
-
-/**
- * @member {module:model/TitaniumOrderBy} orderBy
- */
-TitaniumSubmittedRequest.prototype['orderBy'] = undefined;
-
-/**
- * @member {module:model/TitaniumPage} page
- */
-TitaniumSubmittedRequest.prototype['page'] = undefined;
+TitaniumSubmittedRequest.prototype['dataType'] = undefined;
 
 /**
  * @member {String} submittedDate
  */
 TitaniumSubmittedRequest.prototype['submittedDate'] = undefined;
+
+/**
+ * @member {module:model/TitaniumTableRequest} tableConfig
+ */
+TitaniumSubmittedRequest.prototype['tableConfig'] = undefined;
 
 /**
  * @member {String} traceName

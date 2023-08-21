@@ -23,6 +23,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.TitaniumKeyAndValue;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -47,8 +50,12 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumPredefinedFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T15:38:23.771664Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-21T18:19:33.138203Z[UTC]")
 public class TitaniumPredefinedFilter {
+  public static final String SERIALIZED_NAME_INSTRUMENT_TYPES_WITH_COUNT = "instrumentTypesWithCount";
+  @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPES_WITH_COUNT)
+  private List<TitaniumKeyAndValue> instrumentTypesWithCount = null;
+
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
   private String key;
@@ -71,6 +78,37 @@ public class TitaniumPredefinedFilter {
 
   public TitaniumPredefinedFilter() { 
   }
+
+  public TitaniumPredefinedFilter instrumentTypesWithCount(List<TitaniumKeyAndValue> instrumentTypesWithCount) {
+    
+    this.instrumentTypesWithCount = instrumentTypesWithCount;
+    return this;
+  }
+
+  public TitaniumPredefinedFilter addInstrumentTypesWithCountItem(TitaniumKeyAndValue instrumentTypesWithCountItem) {
+    if (this.instrumentTypesWithCount == null) {
+      this.instrumentTypesWithCount = new ArrayList<>();
+    }
+    this.instrumentTypesWithCount.add(instrumentTypesWithCountItem);
+    return this;
+  }
+
+   /**
+   * Get instrumentTypesWithCount
+   * @return instrumentTypesWithCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumKeyAndValue> getInstrumentTypesWithCount() {
+    return instrumentTypesWithCount;
+  }
+
+
+  public void setInstrumentTypesWithCount(List<TitaniumKeyAndValue> instrumentTypesWithCount) {
+    this.instrumentTypesWithCount = instrumentTypesWithCount;
+  }
+
 
   public TitaniumPredefinedFilter key(String key) {
     
@@ -197,7 +235,8 @@ public class TitaniumPredefinedFilter {
       return false;
     }
     TitaniumPredefinedFilter titaniumPredefinedFilter = (TitaniumPredefinedFilter) o;
-    return Objects.equals(this.key, titaniumPredefinedFilter.key) &&
+    return Objects.equals(this.instrumentTypesWithCount, titaniumPredefinedFilter.instrumentTypesWithCount) &&
+        Objects.equals(this.key, titaniumPredefinedFilter.key) &&
         Objects.equals(this.operator, titaniumPredefinedFilter.operator) &&
         Objects.equals(this.predefinedValueLabel, titaniumPredefinedFilter.predefinedValueLabel) &&
         Objects.equals(this.resultCount, titaniumPredefinedFilter.resultCount) &&
@@ -206,13 +245,14 @@ public class TitaniumPredefinedFilter {
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, operator, predefinedValueLabel, resultCount, value);
+    return Objects.hash(instrumentTypesWithCount, key, operator, predefinedValueLabel, resultCount, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumPredefinedFilter {\n");
+    sb.append("    instrumentTypesWithCount: ").append(toIndentedString(instrumentTypesWithCount)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    operator: ").append(toIndentedString(operator)).append("\n");
     sb.append("    predefinedValueLabel: ").append(toIndentedString(predefinedValueLabel)).append("\n");
@@ -240,6 +280,7 @@ public class TitaniumPredefinedFilter {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("instrumentTypesWithCount");
     openapiFields.add("key");
     openapiFields.add("operator");
     openapiFields.add("predefinedValueLabel");
@@ -271,6 +312,18 @@ public class TitaniumPredefinedFilter {
         if (!TitaniumPredefinedFilter.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumPredefinedFilter` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
+      }
+      JsonArray jsonArrayinstrumentTypesWithCount = jsonObj.getAsJsonArray("instrumentTypesWithCount");
+      if (jsonArrayinstrumentTypesWithCount != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("instrumentTypesWithCount").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `instrumentTypesWithCount` to be an array in the JSON string but got `%s`", jsonObj.get("instrumentTypesWithCount").toString()));
+        }
+
+        // validate the optional field `instrumentTypesWithCount` (array)
+        for (int i = 0; i < jsonArrayinstrumentTypesWithCount.size(); i++) {
+          TitaniumKeyAndValue.validateJsonObject(jsonArrayinstrumentTypesWithCount.get(i).getAsJsonObject());
+        };
       }
       if (jsonObj.get("key") != null && !jsonObj.get("key").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `key` to be a primitive type in the JSON string but got `%s`", jsonObj.get("key").toString()));

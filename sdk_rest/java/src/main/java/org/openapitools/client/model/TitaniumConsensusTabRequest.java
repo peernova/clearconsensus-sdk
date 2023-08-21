@@ -23,9 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.TitaniumFilterPack;
-import org.openapitools.client.model.TitaniumOrderBy;
-import org.openapitools.client.model.TitaniumPage;
+import org.openapitools.client.model.TitaniumCollapseTableRequest;
+import org.openapitools.client.model.TitaniumTableRequest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,27 +49,27 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusTabRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T15:38:23.771664Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-21T18:19:33.138203Z[UTC]")
 public class TitaniumConsensusTabRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
   private String assetId;
 
+  public static final String SERIALIZED_NAME_COLLAPSE_TABLE_CONFIG = "collapseTableConfig";
+  @SerializedName(SERIALIZED_NAME_COLLAPSE_TABLE_CONFIG)
+  private TitaniumCollapseTableRequest collapseTableConfig;
+
   public static final String SERIALIZED_NAME_CONSENSUS_RUN_TIMESTAMP = "consensusRunTimestamp";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_RUN_TIMESTAMP)
   private String consensusRunTimestamp;
 
-  public static final String SERIALIZED_NAME_FILTER_PACK = "filterPack";
-  @SerializedName(SERIALIZED_NAME_FILTER_PACK)
-  private TitaniumFilterPack filterPack;
+  public static final String SERIALIZED_NAME_DATA_TYPE = "dataType";
+  @SerializedName(SERIALIZED_NAME_DATA_TYPE)
+  private String dataType;
 
-  public static final String SERIALIZED_NAME_ORDER_BY = "orderBy";
-  @SerializedName(SERIALIZED_NAME_ORDER_BY)
-  private TitaniumOrderBy orderBy;
-
-  public static final String SERIALIZED_NAME_PAGE = "page";
-  @SerializedName(SERIALIZED_NAME_PAGE)
-  private TitaniumPage page;
+  public static final String SERIALIZED_NAME_TABLE_CONFIG = "tableConfig";
+  @SerializedName(SERIALIZED_NAME_TABLE_CONFIG)
+  private TitaniumTableRequest tableConfig;
 
   public static final String SERIALIZED_NAME_TRACE_NAME = "traceName";
   @SerializedName(SERIALIZED_NAME_TRACE_NAME)
@@ -102,6 +101,29 @@ public class TitaniumConsensusTabRequest {
   }
 
 
+  public TitaniumConsensusTabRequest collapseTableConfig(TitaniumCollapseTableRequest collapseTableConfig) {
+    
+    this.collapseTableConfig = collapseTableConfig;
+    return this;
+  }
+
+   /**
+   * Get collapseTableConfig
+   * @return collapseTableConfig
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumCollapseTableRequest getCollapseTableConfig() {
+    return collapseTableConfig;
+  }
+
+
+  public void setCollapseTableConfig(TitaniumCollapseTableRequest collapseTableConfig) {
+    this.collapseTableConfig = collapseTableConfig;
+  }
+
+
   public TitaniumConsensusTabRequest consensusRunTimestamp(String consensusRunTimestamp) {
     
     this.consensusRunTimestamp = consensusRunTimestamp;
@@ -125,72 +147,49 @@ public class TitaniumConsensusTabRequest {
   }
 
 
-  public TitaniumConsensusTabRequest filterPack(TitaniumFilterPack filterPack) {
+  public TitaniumConsensusTabRequest dataType(String dataType) {
     
-    this.filterPack = filterPack;
+    this.dataType = dataType;
     return this;
   }
 
    /**
-   * Get filterPack
-   * @return filterPack
+   * Get dataType
+   * @return dataType
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumFilterPack getFilterPack() {
-    return filterPack;
+  public String getDataType() {
+    return dataType;
   }
 
 
-  public void setFilterPack(TitaniumFilterPack filterPack) {
-    this.filterPack = filterPack;
+  public void setDataType(String dataType) {
+    this.dataType = dataType;
   }
 
 
-  public TitaniumConsensusTabRequest orderBy(TitaniumOrderBy orderBy) {
+  public TitaniumConsensusTabRequest tableConfig(TitaniumTableRequest tableConfig) {
     
-    this.orderBy = orderBy;
+    this.tableConfig = tableConfig;
     return this;
   }
 
    /**
-   * Get orderBy
-   * @return orderBy
+   * Get tableConfig
+   * @return tableConfig
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumOrderBy getOrderBy() {
-    return orderBy;
+  public TitaniumTableRequest getTableConfig() {
+    return tableConfig;
   }
 
 
-  public void setOrderBy(TitaniumOrderBy orderBy) {
-    this.orderBy = orderBy;
-  }
-
-
-  public TitaniumConsensusTabRequest page(TitaniumPage page) {
-    
-    this.page = page;
-    return this;
-  }
-
-   /**
-   * Get page
-   * @return page
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumPage getPage() {
-    return page;
-  }
-
-
-  public void setPage(TitaniumPage page) {
-    this.page = page;
+  public void setTableConfig(TitaniumTableRequest tableConfig) {
+    this.tableConfig = tableConfig;
   }
 
 
@@ -228,16 +227,16 @@ public class TitaniumConsensusTabRequest {
     }
     TitaniumConsensusTabRequest titaniumConsensusTabRequest = (TitaniumConsensusTabRequest) o;
     return Objects.equals(this.assetId, titaniumConsensusTabRequest.assetId) &&
+        Objects.equals(this.collapseTableConfig, titaniumConsensusTabRequest.collapseTableConfig) &&
         Objects.equals(this.consensusRunTimestamp, titaniumConsensusTabRequest.consensusRunTimestamp) &&
-        Objects.equals(this.filterPack, titaniumConsensusTabRequest.filterPack) &&
-        Objects.equals(this.orderBy, titaniumConsensusTabRequest.orderBy) &&
-        Objects.equals(this.page, titaniumConsensusTabRequest.page) &&
+        Objects.equals(this.dataType, titaniumConsensusTabRequest.dataType) &&
+        Objects.equals(this.tableConfig, titaniumConsensusTabRequest.tableConfig) &&
         Objects.equals(this.traceName, titaniumConsensusTabRequest.traceName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, consensusRunTimestamp, filterPack, orderBy, page, traceName);
+    return Objects.hash(assetId, collapseTableConfig, consensusRunTimestamp, dataType, tableConfig, traceName);
   }
 
   @Override
@@ -245,10 +244,10 @@ public class TitaniumConsensusTabRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumConsensusTabRequest {\n");
     sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+    sb.append("    collapseTableConfig: ").append(toIndentedString(collapseTableConfig)).append("\n");
     sb.append("    consensusRunTimestamp: ").append(toIndentedString(consensusRunTimestamp)).append("\n");
-    sb.append("    filterPack: ").append(toIndentedString(filterPack)).append("\n");
-    sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
-    sb.append("    page: ").append(toIndentedString(page)).append("\n");
+    sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
+    sb.append("    tableConfig: ").append(toIndentedString(tableConfig)).append("\n");
     sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -273,10 +272,10 @@ public class TitaniumConsensusTabRequest {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("assetId");
+    openapiFields.add("collapseTableConfig");
     openapiFields.add("consensusRunTimestamp");
-    openapiFields.add("filterPack");
-    openapiFields.add("orderBy");
-    openapiFields.add("page");
+    openapiFields.add("dataType");
+    openapiFields.add("tableConfig");
     openapiFields.add("traceName");
 
     // a set of required properties/fields (JSON key names)
@@ -308,20 +307,19 @@ public class TitaniumConsensusTabRequest {
       if (jsonObj.get("assetId") != null && !jsonObj.get("assetId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `assetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetId").toString()));
       }
+      // validate the optional field `collapseTableConfig`
+      if (jsonObj.getAsJsonObject("collapseTableConfig") != null) {
+        TitaniumCollapseTableRequest.validateJsonObject(jsonObj.getAsJsonObject("collapseTableConfig"));
+      }
       if (jsonObj.get("consensusRunTimestamp") != null && !jsonObj.get("consensusRunTimestamp").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `consensusRunTimestamp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("consensusRunTimestamp").toString()));
       }
-      // validate the optional field `filterPack`
-      if (jsonObj.getAsJsonObject("filterPack") != null) {
-        TitaniumFilterPack.validateJsonObject(jsonObj.getAsJsonObject("filterPack"));
+      if (jsonObj.get("dataType") != null && !jsonObj.get("dataType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `dataType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dataType").toString()));
       }
-      // validate the optional field `orderBy`
-      if (jsonObj.getAsJsonObject("orderBy") != null) {
-        TitaniumOrderBy.validateJsonObject(jsonObj.getAsJsonObject("orderBy"));
-      }
-      // validate the optional field `page`
-      if (jsonObj.getAsJsonObject("page") != null) {
-        TitaniumPage.validateJsonObject(jsonObj.getAsJsonObject("page"));
+      // validate the optional field `tableConfig`
+      if (jsonObj.getAsJsonObject("tableConfig") != null) {
+        TitaniumTableRequest.validateJsonObject(jsonObj.getAsJsonObject("tableConfig"));
       }
       if (jsonObj.get("traceName") != null && !jsonObj.get("traceName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `traceName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("traceName").toString()));

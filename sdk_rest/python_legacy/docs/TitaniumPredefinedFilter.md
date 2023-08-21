@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**instrument_types_with_count** | [**list[TitaniumKeyAndValue]**](TitaniumKeyAndValue.md) |  | [optional] 
 **key** | **str** |  | [optional] 
 **operator** | **str** |  | [optional] 
 **predefined_value_label** | **str** |  | [optional] 

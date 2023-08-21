@@ -50,11 +50,15 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumPredefinedFilters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T15:38:23.771664Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-21T18:19:33.138203Z[UTC]")
 public class TitaniumPredefinedFilters {
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
   private List<TitaniumPredefinedFilter> filters = null;
+
+  public static final String SERIALIZED_NAME_SPECIFIC_ASSET_FILTERS = "specificAssetFilters";
+  @SerializedName(SERIALIZED_NAME_SPECIFIC_ASSET_FILTERS)
+  private List<TitaniumPredefinedFilter> specificAssetFilters = null;
 
   public TitaniumPredefinedFilters() { 
   }
@@ -90,6 +94,37 @@ public class TitaniumPredefinedFilters {
   }
 
 
+  public TitaniumPredefinedFilters specificAssetFilters(List<TitaniumPredefinedFilter> specificAssetFilters) {
+    
+    this.specificAssetFilters = specificAssetFilters;
+    return this;
+  }
+
+  public TitaniumPredefinedFilters addSpecificAssetFiltersItem(TitaniumPredefinedFilter specificAssetFiltersItem) {
+    if (this.specificAssetFilters == null) {
+      this.specificAssetFilters = new ArrayList<>();
+    }
+    this.specificAssetFilters.add(specificAssetFiltersItem);
+    return this;
+  }
+
+   /**
+   * Get specificAssetFilters
+   * @return specificAssetFilters
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<TitaniumPredefinedFilter> getSpecificAssetFilters() {
+    return specificAssetFilters;
+  }
+
+
+  public void setSpecificAssetFilters(List<TitaniumPredefinedFilter> specificAssetFilters) {
+    this.specificAssetFilters = specificAssetFilters;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -100,12 +135,13 @@ public class TitaniumPredefinedFilters {
       return false;
     }
     TitaniumPredefinedFilters titaniumPredefinedFilters = (TitaniumPredefinedFilters) o;
-    return Objects.equals(this.filters, titaniumPredefinedFilters.filters);
+    return Objects.equals(this.filters, titaniumPredefinedFilters.filters) &&
+        Objects.equals(this.specificAssetFilters, titaniumPredefinedFilters.specificAssetFilters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(filters);
+    return Objects.hash(filters, specificAssetFilters);
   }
 
   @Override
@@ -113,6 +149,7 @@ public class TitaniumPredefinedFilters {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumPredefinedFilters {\n");
     sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
+    sb.append("    specificAssetFilters: ").append(toIndentedString(specificAssetFilters)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -136,6 +173,7 @@ public class TitaniumPredefinedFilters {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("filters");
+    openapiFields.add("specificAssetFilters");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -173,6 +211,18 @@ public class TitaniumPredefinedFilters {
         // validate the optional field `filters` (array)
         for (int i = 0; i < jsonArrayfilters.size(); i++) {
           TitaniumPredefinedFilter.validateJsonObject(jsonArrayfilters.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayspecificAssetFilters = jsonObj.getAsJsonArray("specificAssetFilters");
+      if (jsonArrayspecificAssetFilters != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("specificAssetFilters").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `specificAssetFilters` to be an array in the JSON string but got `%s`", jsonObj.get("specificAssetFilters").toString()));
+        }
+
+        // validate the optional field `specificAssetFilters` (array)
+        for (int i = 0; i < jsonArrayspecificAssetFilters.size(); i++) {
+          TitaniumPredefinedFilter.validateJsonObject(jsonArrayspecificAssetFilters.get(i).getAsJsonObject());
         };
       }
   }

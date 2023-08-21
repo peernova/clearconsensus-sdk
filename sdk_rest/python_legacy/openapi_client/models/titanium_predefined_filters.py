@@ -36,24 +36,29 @@ class TitaniumPredefinedFilters(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'filters': 'list[TitaniumPredefinedFilter]'
+        'filters': 'list[TitaniumPredefinedFilter]',
+        'specific_asset_filters': 'list[TitaniumPredefinedFilter]'
     }
 
     attribute_map = {
-        'filters': 'filters'
+        'filters': 'filters',
+        'specific_asset_filters': 'specificAssetFilters'
     }
 
-    def __init__(self, filters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, filters=None, specific_asset_filters=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumPredefinedFilters - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._filters = None
+        self._specific_asset_filters = None
         self.discriminator = None
 
         if filters is not None:
             self.filters = filters
+        if specific_asset_filters is not None:
+            self.specific_asset_filters = specific_asset_filters
 
     @property
     def filters(self):
@@ -75,6 +80,27 @@ class TitaniumPredefinedFilters(object):
         """
 
         self._filters = filters
+
+    @property
+    def specific_asset_filters(self):
+        """Gets the specific_asset_filters of this TitaniumPredefinedFilters.  # noqa: E501
+
+
+        :return: The specific_asset_filters of this TitaniumPredefinedFilters.  # noqa: E501
+        :rtype: list[TitaniumPredefinedFilter]
+        """
+        return self._specific_asset_filters
+
+    @specific_asset_filters.setter
+    def specific_asset_filters(self, specific_asset_filters):
+        """Sets the specific_asset_filters of this TitaniumPredefinedFilters.
+
+
+        :param specific_asset_filters: The specific_asset_filters of this TitaniumPredefinedFilters.  # noqa: E501
+        :type specific_asset_filters: list[TitaniumPredefinedFilter]
+        """
+
+        self._specific_asset_filters = specific_asset_filters
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

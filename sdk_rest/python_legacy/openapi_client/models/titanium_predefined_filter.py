@@ -36,6 +36,7 @@ class TitaniumPredefinedFilter(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'instrument_types_with_count': 'list[TitaniumKeyAndValue]',
         'key': 'str',
         'operator': 'str',
         'predefined_value_label': 'str',
@@ -44,6 +45,7 @@ class TitaniumPredefinedFilter(object):
     }
 
     attribute_map = {
+        'instrument_types_with_count': 'instrumentTypesWithCount',
         'key': 'key',
         'operator': 'operator',
         'predefined_value_label': 'predefinedValueLabel',
@@ -51,12 +53,13 @@ class TitaniumPredefinedFilter(object):
         'value': 'value'
     }
 
-    def __init__(self, key=None, operator=None, predefined_value_label=None, result_count=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, instrument_types_with_count=None, key=None, operator=None, predefined_value_label=None, result_count=None, value=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumPredefinedFilter - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._instrument_types_with_count = None
         self._key = None
         self._operator = None
         self._predefined_value_label = None
@@ -64,6 +67,8 @@ class TitaniumPredefinedFilter(object):
         self._value = None
         self.discriminator = None
 
+        if instrument_types_with_count is not None:
+            self.instrument_types_with_count = instrument_types_with_count
         if key is not None:
             self.key = key
         if operator is not None:
@@ -74,6 +79,27 @@ class TitaniumPredefinedFilter(object):
             self.result_count = result_count
         if value is not None:
             self.value = value
+
+    @property
+    def instrument_types_with_count(self):
+        """Gets the instrument_types_with_count of this TitaniumPredefinedFilter.  # noqa: E501
+
+
+        :return: The instrument_types_with_count of this TitaniumPredefinedFilter.  # noqa: E501
+        :rtype: list[TitaniumKeyAndValue]
+        """
+        return self._instrument_types_with_count
+
+    @instrument_types_with_count.setter
+    def instrument_types_with_count(self, instrument_types_with_count):
+        """Sets the instrument_types_with_count of this TitaniumPredefinedFilter.
+
+
+        :param instrument_types_with_count: The instrument_types_with_count of this TitaniumPredefinedFilter.  # noqa: E501
+        :type instrument_types_with_count: list[TitaniumKeyAndValue]
+        """
+
+        self._instrument_types_with_count = instrument_types_with_count
 
     @property
     def key(self):

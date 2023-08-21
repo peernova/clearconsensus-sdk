@@ -50,11 +50,7 @@ with openapi_client.ApiClient() as api_client:
     api_instance = consensus_service_api.ConsensusServiceApi(api_client)
     body = TitaniumConsensusTabRequest(
         asset_id="asset_id_example",
-        consensus_run_timestamp="consensus_run_timestamp_example",
-        filter_pack=TitaniumFilterPack(
-            filter_packs=[
-                TitaniumFilterPack(),
-            ],
+        collapse_table_config=TitaniumCollapseTableRequest(
             filters=[
                 TitaniumFilter(
                     key="key_example",
@@ -62,16 +58,39 @@ with openapi_client.ApiClient() as api_client:
                     value={},
                 ),
             ],
-            logical_operation="logical_operation_example",
         ),
-        order_by=TitaniumOrderBy(
-            column="column_example",
-            order="order_example",
-        ),
-        page=TitaniumPage(
-            page_number=1,
-            size=1,
-            total_number_of_elements="total_number_of_elements_example",
+        consensus_run_timestamp="consensus_run_timestamp_example",
+        data_type="data_type_example",
+        table_config=TitaniumTableRequest(
+            filter_pack=TitaniumFilterPack(
+                filter_packs=[
+                    TitaniumFilterPack(),
+                ],
+                filters=[
+                    TitaniumFilter(
+                        key="key_example",
+                        operator="operator_example",
+                        value={},
+                    ),
+                ],
+                logical_operation="logical_operation_example",
+            ),
+            filters=[
+                TitaniumFilter(
+                    key="key_example",
+                    operator="operator_example",
+                    value={},
+                ),
+            ],
+            order_by=TitaniumOrderBy(
+                column="column_example",
+                order="order_example",
+            ),
+            page=TitaniumPage(
+                page_number=1,
+                size=1,
+                total_number_of_elements="total_number_of_elements_example",
+            ),
         ),
         trace_name="trace_name_example",
     ) # TitaniumConsensusTabRequest | 
@@ -1132,11 +1151,7 @@ with openapi_client.ApiClient() as api_client:
     api_instance = consensus_service_api.ConsensusServiceApi(api_client)
     body = TitaniumConsensusTabRequest(
         asset_id="asset_id_example",
-        consensus_run_timestamp="consensus_run_timestamp_example",
-        filter_pack=TitaniumFilterPack(
-            filter_packs=[
-                TitaniumFilterPack(),
-            ],
+        collapse_table_config=TitaniumCollapseTableRequest(
             filters=[
                 TitaniumFilter(
                     key="key_example",
@@ -1144,16 +1159,39 @@ with openapi_client.ApiClient() as api_client:
                     value={},
                 ),
             ],
-            logical_operation="logical_operation_example",
         ),
-        order_by=TitaniumOrderBy(
-            column="column_example",
-            order="order_example",
-        ),
-        page=TitaniumPage(
-            page_number=1,
-            size=1,
-            total_number_of_elements="total_number_of_elements_example",
+        consensus_run_timestamp="consensus_run_timestamp_example",
+        data_type="data_type_example",
+        table_config=TitaniumTableRequest(
+            filter_pack=TitaniumFilterPack(
+                filter_packs=[
+                    TitaniumFilterPack(),
+                ],
+                filters=[
+                    TitaniumFilter(
+                        key="key_example",
+                        operator="operator_example",
+                        value={},
+                    ),
+                ],
+                logical_operation="logical_operation_example",
+            ),
+            filters=[
+                TitaniumFilter(
+                    key="key_example",
+                    operator="operator_example",
+                    value={},
+                ),
+            ],
+            order_by=TitaniumOrderBy(
+                column="column_example",
+                order="order_example",
+            ),
+            page=TitaniumPage(
+                page_number=1,
+                size=1,
+                total_number_of_elements="total_number_of_elements_example",
+            ),
         ),
         trace_name="trace_name_example",
     ) # TitaniumConsensusTabRequest | 

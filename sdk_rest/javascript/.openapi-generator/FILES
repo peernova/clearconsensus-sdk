@@ -128,6 +128,7 @@ docs/TitaniumClientName.md
 docs/TitaniumCohortConsensusColumn.md
 docs/TitaniumCohortConsensusRangeTabData.md
 docs/TitaniumColDependency.md
+docs/TitaniumCollapseTableRequest.md
 docs/TitaniumColumnInfo.md
 docs/TitaniumComparisonTable.md
 docs/TitaniumCompleteDataUploadRequest.md
@@ -273,6 +274,7 @@ docs/TitaniumKVList.md
 docs/TitaniumKVListAsset.md
 docs/TitaniumKVOperationResponse.md
 docs/TitaniumKVRequest.md
+docs/TitaniumKeyAndValue.md
 docs/TitaniumLimit.md
 docs/TitaniumListClientsResponse.md
 docs/TitaniumListClientsResponseData.md
@@ -366,6 +368,7 @@ docs/TitaniumSupportedField.md
 docs/TitaniumSupportedFieldsValues.md
 docs/TitaniumTable.md
 docs/TitaniumTableColumn.md
+docs/TitaniumTableRequest.md
 docs/TitaniumTableRow.md
 docs/TitaniumTradeAligmentDateAndValue.md
 docs/TitaniumTradeAlignmentScore.md
@@ -540,6 +543,7 @@ src/model/TitaniumClientName.js
 src/model/TitaniumCohortConsensusColumn.js
 src/model/TitaniumCohortConsensusRangeTabData.js
 src/model/TitaniumColDependency.js
+src/model/TitaniumCollapseTableRequest.js
 src/model/TitaniumColumnInfo.js
 src/model/TitaniumComparisonTable.js
 src/model/TitaniumCompleteDataUploadRequest.js
@@ -685,6 +689,7 @@ src/model/TitaniumKVList.js
 src/model/TitaniumKVListAsset.js
 src/model/TitaniumKVOperationResponse.js
 src/model/TitaniumKVRequest.js
+src/model/TitaniumKeyAndValue.js
 src/model/TitaniumLimit.js
 src/model/TitaniumListClientsResponse.js
 src/model/TitaniumListClientsResponseData.js
@@ -778,6 +783,7 @@ src/model/TitaniumSupportedField.js
 src/model/TitaniumSupportedFieldsValues.js
 src/model/TitaniumTable.js
 src/model/TitaniumTableColumn.js
+src/model/TitaniumTableRequest.js
 src/model/TitaniumTableRow.js
 src/model/TitaniumTradeAligmentDateAndValue.js
 src/model/TitaniumTradeAlignmentScore.js
@@ -815,3 +821,5 @@ src/model/TitaniumValuesRow.js
 src/model/TitaniumVersion.js
 src/model/TitaniumVersionList.js
 src/model/TitaniumViewRow.js
+test/model/TitaniumCollapseTableRequest.spec.js
+test/model/TitaniumTableRequest.spec.js

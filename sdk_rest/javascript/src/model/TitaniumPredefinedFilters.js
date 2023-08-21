@@ -51,6 +51,9 @@ class TitaniumPredefinedFilters {
             if (data.hasOwnProperty('filters')) {
                 obj['filters'] = ApiClient.convertToType(data['filters'], [TitaniumPredefinedFilter]);
             }
+            if (data.hasOwnProperty('specificAssetFilters')) {
+                obj['specificAssetFilters'] = ApiClient.convertToType(data['specificAssetFilters'], [TitaniumPredefinedFilter]);
+            }
         }
         return obj;
     }
@@ -62,6 +65,11 @@ class TitaniumPredefinedFilters {
  * @member {Array.<module:model/TitaniumPredefinedFilter>} filters
  */
 TitaniumPredefinedFilters.prototype['filters'] = undefined;
+
+/**
+ * @member {Array.<module:model/TitaniumPredefinedFilter>} specificAssetFilters
+ */
+TitaniumPredefinedFilters.prototype['specificAssetFilters'] = undefined;
 
 
 

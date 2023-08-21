@@ -30,14 +30,10 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from openapi_client.model.titanium_filter import TitaniumFilter
-    from openapi_client.model.titanium_filter_pack import TitaniumFilterPack
-    from openapi_client.model.titanium_order_by import TitaniumOrderBy
-    from openapi_client.model.titanium_page import TitaniumPage
-    globals()['TitaniumFilter'] = TitaniumFilter
-    globals()['TitaniumFilterPack'] = TitaniumFilterPack
-    globals()['TitaniumOrderBy'] = TitaniumOrderBy
-    globals()['TitaniumPage'] = TitaniumPage
+    from openapi_client.model.titanium_collapse_table_request import TitaniumCollapseTableRequest
+    from openapi_client.model.titanium_table_request import TitaniumTableRequest
+    globals()['TitaniumCollapseTableRequest'] = TitaniumCollapseTableRequest
+    globals()['TitaniumTableRequest'] = TitaniumTableRequest
 
 
 class TitaniumSubmittedRequest(ModelNormal):
@@ -94,13 +90,11 @@ class TitaniumSubmittedRequest(ModelNormal):
         lazy_import()
         return {
             'asset_id': (str,),  # noqa: E501
+            'collapse_table_config': (TitaniumCollapseTableRequest,),  # noqa: E501
             'consensus_run_timestamp': (str,),  # noqa: E501
-            'filter': (str,),  # noqa: E501
-            'filter_pack': (TitaniumFilterPack,),  # noqa: E501
-            'filters': ([TitaniumFilter],),  # noqa: E501
-            'order_by': (TitaniumOrderBy,),  # noqa: E501
-            'page': (TitaniumPage,),  # noqa: E501
+            'data_type': (str,),  # noqa: E501
             'submitted_date': (str,),  # noqa: E501
+            'table_config': (TitaniumTableRequest,),  # noqa: E501
             'trace_name': (str,),  # noqa: E501
         }
 
@@ -111,13 +105,11 @@ class TitaniumSubmittedRequest(ModelNormal):
 
     attribute_map = {
         'asset_id': 'assetId',  # noqa: E501
+        'collapse_table_config': 'collapseTableConfig',  # noqa: E501
         'consensus_run_timestamp': 'consensusRunTimestamp',  # noqa: E501
-        'filter': 'filter',  # noqa: E501
-        'filter_pack': 'filterPack',  # noqa: E501
-        'filters': 'filters',  # noqa: E501
-        'order_by': 'orderBy',  # noqa: E501
-        'page': 'page',  # noqa: E501
+        'data_type': 'dataType',  # noqa: E501
         'submitted_date': 'submittedDate',  # noqa: E501
+        'table_config': 'tableConfig',  # noqa: E501
         'trace_name': 'traceName',  # noqa: E501
     }
 
@@ -163,13 +155,11 @@ class TitaniumSubmittedRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             asset_id (str): [optional]  # noqa: E501
+            collapse_table_config (TitaniumCollapseTableRequest): [optional]  # noqa: E501
             consensus_run_timestamp (str): [optional]  # noqa: E501
-            filter (str): [optional]  # noqa: E501
-            filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
-            filters ([TitaniumFilter]): [optional]  # noqa: E501
-            order_by (TitaniumOrderBy): [optional]  # noqa: E501
-            page (TitaniumPage): [optional]  # noqa: E501
+            data_type (str): [optional]  # noqa: E501
             submitted_date (str): [optional]  # noqa: E501
+            table_config (TitaniumTableRequest): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """
 
@@ -257,13 +247,11 @@ class TitaniumSubmittedRequest(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             asset_id (str): [optional]  # noqa: E501
+            collapse_table_config (TitaniumCollapseTableRequest): [optional]  # noqa: E501
             consensus_run_timestamp (str): [optional]  # noqa: E501
-            filter (str): [optional]  # noqa: E501
-            filter_pack (TitaniumFilterPack): [optional]  # noqa: E501
-            filters ([TitaniumFilter]): [optional]  # noqa: E501
-            order_by (TitaniumOrderBy): [optional]  # noqa: E501
-            page (TitaniumPage): [optional]  # noqa: E501
+            data_type (str): [optional]  # noqa: E501
             submitted_date (str): [optional]  # noqa: E501
+            table_config (TitaniumTableRequest): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """
 

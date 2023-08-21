@@ -7548,6 +7548,13 @@ components:
             $ref: '#/components/schemas/titaniumDependency'
           type: array
       type: object
+    titaniumCollapseTableRequest:
+      properties:
+        filters:
+          items:
+            $ref: '#/components/schemas/titaniumFilter'
+          type: array
+      type: object
     titaniumColumnInfo:
       example:
         columnType: columnType
@@ -8364,6 +8371,11 @@ components:
       example:
         noConsensus:
           resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
@@ -8371,18 +8383,33 @@ components:
         totalParseErrors: 1
         highSeverity:
           resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
           predefinedValueLabel: predefinedValueLabel
         nonOutliers:
           resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
           predefinedValueLabel: predefinedValueLabel
         outliers:
           resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
@@ -8761,14 +8788,14 @@ components:
       properties:
         assetId:
           type: string
+        collapseTableConfig:
+          $ref: '#/components/schemas/titaniumCollapseTableRequest'
         consensusRunTimestamp:
           type: string
-        filterPack:
-          $ref: '#/components/schemas/titaniumFilterPack'
-        orderBy:
-          $ref: '#/components/schemas/titaniumOrderBy'
-        page:
-          $ref: '#/components/schemas/titaniumPage'
+        dataType:
+          type: string
+        tableConfig:
+          $ref: '#/components/schemas/titaniumTableRequest'
         traceName:
           type: string
       type: object
@@ -11023,13 +11050,44 @@ components:
     titaniumGetPredefinedFiltersResponse:
       example:
         data:
-          filters:
+          specificAssetFilters:
           - resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
             predefinedValueLabel: predefinedValueLabel
           - resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
+            value: "{}"
+            key: key
+            operator: operator
+            predefinedValueLabel: predefinedValueLabel
+          filters:
+          - resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
+            value: "{}"
+            key: key
+            operator: operator
+            predefinedValueLabel: predefinedValueLabel
+          - resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
@@ -11330,6 +11388,11 @@ components:
         submissionHistogram:
           valid:
             resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
@@ -11337,6 +11400,11 @@ components:
           totalParseErrors: 5
           highSeverity:
             resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
@@ -11344,6 +11412,11 @@ components:
           totalInvalidRows: 5
           lowSeverity:
             resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
@@ -11351,6 +11424,11 @@ components:
           totalRows: 2
           mediumSeverity:
             resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
@@ -11358,6 +11436,11 @@ components:
         consensusHistogram:
           noConsensus:
             resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
@@ -11365,18 +11448,33 @@ components:
           totalParseErrors: 1
           highSeverity:
             resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
             predefinedValueLabel: predefinedValueLabel
           nonOutliers:
             resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
             predefinedValueLabel: predefinedValueLabel
           outliers:
             resultCount: 0
+            instrumentTypesWithCount:
+            - value: "{}"
+              key: key
+            - value: "{}"
+              key: key
             value: "{}"
             key: key
             operator: operator
@@ -11395,6 +11493,11 @@ components:
           submissionHistogram:
             valid:
               resultCount: 0
+              instrumentTypesWithCount:
+              - value: "{}"
+                key: key
+              - value: "{}"
+                key: key
               value: "{}"
               key: key
               operator: operator
@@ -11402,6 +11505,11 @@ components:
             totalParseErrors: 5
             highSeverity:
               resultCount: 0
+              instrumentTypesWithCount:
+              - value: "{}"
+                key: key
+              - value: "{}"
+                key: key
               value: "{}"
               key: key
               operator: operator
@@ -11409,6 +11517,11 @@ components:
             totalInvalidRows: 5
             lowSeverity:
               resultCount: 0
+              instrumentTypesWithCount:
+              - value: "{}"
+                key: key
+              - value: "{}"
+                key: key
               value: "{}"
               key: key
               operator: operator
@@ -11416,6 +11529,11 @@ components:
             totalRows: 2
             mediumSeverity:
               resultCount: 0
+              instrumentTypesWithCount:
+              - value: "{}"
+                key: key
+              - value: "{}"
+                key: key
               value: "{}"
               key: key
               operator: operator
@@ -11423,6 +11541,11 @@ components:
           consensusHistogram:
             noConsensus:
               resultCount: 0
+              instrumentTypesWithCount:
+              - value: "{}"
+                key: key
+              - value: "{}"
+                key: key
               value: "{}"
               key: key
               operator: operator
@@ -11430,18 +11553,33 @@ components:
             totalParseErrors: 1
             highSeverity:
               resultCount: 0
+              instrumentTypesWithCount:
+              - value: "{}"
+                key: key
+              - value: "{}"
+                key: key
               value: "{}"
               key: key
               operator: operator
               predefinedValueLabel: predefinedValueLabel
             nonOutliers:
               resultCount: 0
+              instrumentTypesWithCount:
+              - value: "{}"
+                key: key
+              - value: "{}"
+                key: key
               value: "{}"
               key: key
               operator: operator
               predefinedValueLabel: predefinedValueLabel
             outliers:
               resultCount: 0
+              instrumentTypesWithCount:
+              - value: "{}"
+                key: key
+              - value: "{}"
+                key: key
               value: "{}"
               key: key
               operator: operator
@@ -11590,6 +11728,17 @@ components:
       properties:
         key:
           type: string
+      type: object
+    titaniumKeyAndValue:
+      example:
+        value: "{}"
+        key: key
+      properties:
+        key:
+          type: string
+        value:
+          properties: {}
+          type: object
       type: object
     titaniumLimit:
       properties:
@@ -12578,11 +12727,20 @@ components:
     titaniumPredefinedFilter:
       example:
         resultCount: 0
+        instrumentTypesWithCount:
+        - value: "{}"
+          key: key
+        - value: "{}"
+          key: key
         value: "{}"
         key: key
         operator: operator
         predefinedValueLabel: predefinedValueLabel
       properties:
+        instrumentTypesWithCount:
+          items:
+            $ref: '#/components/schemas/titaniumKeyAndValue'
+          type: array
         key:
           type: string
         operator:
@@ -12599,13 +12757,44 @@ components:
       type: object
     titaniumPredefinedFilters:
       example:
-        filters:
+        specificAssetFilters:
         - resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
           predefinedValueLabel: predefinedValueLabel
         - resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
+          value: "{}"
+          key: key
+          operator: operator
+          predefinedValueLabel: predefinedValueLabel
+        filters:
+        - resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
+          value: "{}"
+          key: key
+          operator: operator
+          predefinedValueLabel: predefinedValueLabel
+        - resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
@@ -12615,7 +12804,13 @@ components:
           items:
             $ref: '#/components/schemas/titaniumPredefinedFilter'
           type: array
+        specificAssetFilters:
+          items:
+            $ref: '#/components/schemas/titaniumPredefinedFilter'
+          type: array
       type: object
+    titaniumPredefined_Filters_Type:
+      type: string
     titaniumProtocol:
       type: string
     titaniumRange:
@@ -13284,6 +13479,11 @@ components:
       example:
         valid:
           resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
@@ -13291,6 +13491,11 @@ components:
         totalParseErrors: 5
         highSeverity:
           resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
@@ -13298,6 +13503,11 @@ components:
         totalInvalidRows: 5
         lowSeverity:
           resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
@@ -13305,6 +13515,11 @@ components:
         totalRows: 2
         mediumSeverity:
           resultCount: 0
+          instrumentTypesWithCount:
+          - value: "{}"
+            key: key
+          - value: "{}"
+            key: key
           value: "{}"
           key: key
           operator: operator
@@ -13384,22 +13599,16 @@ components:
       properties:
         assetId:
           type: string
+        collapseTableConfig:
+          $ref: '#/components/schemas/titaniumCollapseTableRequest'
         consensusRunTimestamp:
           type: string
-        filter:
+        dataType:
           type: string
-        filterPack:
-          $ref: '#/components/schemas/titaniumFilterPack'
-        filters:
-          items:
-            $ref: '#/components/schemas/titaniumFilter'
-          type: array
-        orderBy:
-          $ref: '#/components/schemas/titaniumOrderBy'
-        page:
-          $ref: '#/components/schemas/titaniumPage'
         submittedDate:
           type: string
+        tableConfig:
+          $ref: '#/components/schemas/titaniumTableRequest'
         traceName:
           type: string
       type: object
@@ -13542,6 +13751,8 @@ components:
       type: object
     titaniumTTLTypes:
       type: string
+    titaniumTabDataType:
+      type: string
     titaniumTable:
       example:
         columns:
@@ -13583,6 +13794,19 @@ components:
           type: string
         rawColumnName:
           type: string
+      type: object
+    titaniumTableRequest:
+      properties:
+        filterPack:
+          $ref: '#/components/schemas/titaniumFilterPack'
+        filters:
+          items:
+            $ref: '#/components/schemas/titaniumFilter'
+          type: array
+        orderBy:
+          $ref: '#/components/schemas/titaniumOrderBy'
+        page:
+          $ref: '#/components/schemas/titaniumPage'
       type: object
     titaniumTableRow:
       example:

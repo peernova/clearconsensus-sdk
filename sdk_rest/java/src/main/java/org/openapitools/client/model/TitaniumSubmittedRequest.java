@@ -23,12 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.openapitools.client.model.TitaniumFilter;
-import org.openapitools.client.model.TitaniumFilterPack;
-import org.openapitools.client.model.TitaniumOrderBy;
-import org.openapitools.client.model.TitaniumPage;
+import org.openapitools.client.model.TitaniumCollapseTableRequest;
+import org.openapitools.client.model.TitaniumTableRequest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,39 +49,31 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmittedRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-18T15:38:23.771664Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-21T18:19:33.138203Z[UTC]")
 public class TitaniumSubmittedRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
   private String assetId;
 
+  public static final String SERIALIZED_NAME_COLLAPSE_TABLE_CONFIG = "collapseTableConfig";
+  @SerializedName(SERIALIZED_NAME_COLLAPSE_TABLE_CONFIG)
+  private TitaniumCollapseTableRequest collapseTableConfig;
+
   public static final String SERIALIZED_NAME_CONSENSUS_RUN_TIMESTAMP = "consensusRunTimestamp";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_RUN_TIMESTAMP)
   private String consensusRunTimestamp;
 
-  public static final String SERIALIZED_NAME_FILTER = "filter";
-  @SerializedName(SERIALIZED_NAME_FILTER)
-  private String filter;
-
-  public static final String SERIALIZED_NAME_FILTER_PACK = "filterPack";
-  @SerializedName(SERIALIZED_NAME_FILTER_PACK)
-  private TitaniumFilterPack filterPack;
-
-  public static final String SERIALIZED_NAME_FILTERS = "filters";
-  @SerializedName(SERIALIZED_NAME_FILTERS)
-  private List<TitaniumFilter> filters = null;
-
-  public static final String SERIALIZED_NAME_ORDER_BY = "orderBy";
-  @SerializedName(SERIALIZED_NAME_ORDER_BY)
-  private TitaniumOrderBy orderBy;
-
-  public static final String SERIALIZED_NAME_PAGE = "page";
-  @SerializedName(SERIALIZED_NAME_PAGE)
-  private TitaniumPage page;
+  public static final String SERIALIZED_NAME_DATA_TYPE = "dataType";
+  @SerializedName(SERIALIZED_NAME_DATA_TYPE)
+  private String dataType;
 
   public static final String SERIALIZED_NAME_SUBMITTED_DATE = "submittedDate";
   @SerializedName(SERIALIZED_NAME_SUBMITTED_DATE)
   private String submittedDate;
+
+  public static final String SERIALIZED_NAME_TABLE_CONFIG = "tableConfig";
+  @SerializedName(SERIALIZED_NAME_TABLE_CONFIG)
+  private TitaniumTableRequest tableConfig;
 
   public static final String SERIALIZED_NAME_TRACE_NAME = "traceName";
   @SerializedName(SERIALIZED_NAME_TRACE_NAME)
@@ -117,6 +105,29 @@ public class TitaniumSubmittedRequest {
   }
 
 
+  public TitaniumSubmittedRequest collapseTableConfig(TitaniumCollapseTableRequest collapseTableConfig) {
+    
+    this.collapseTableConfig = collapseTableConfig;
+    return this;
+  }
+
+   /**
+   * Get collapseTableConfig
+   * @return collapseTableConfig
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumCollapseTableRequest getCollapseTableConfig() {
+    return collapseTableConfig;
+  }
+
+
+  public void setCollapseTableConfig(TitaniumCollapseTableRequest collapseTableConfig) {
+    this.collapseTableConfig = collapseTableConfig;
+  }
+
+
   public TitaniumSubmittedRequest consensusRunTimestamp(String consensusRunTimestamp) {
     
     this.consensusRunTimestamp = consensusRunTimestamp;
@@ -140,126 +151,26 @@ public class TitaniumSubmittedRequest {
   }
 
 
-  public TitaniumSubmittedRequest filter(String filter) {
+  public TitaniumSubmittedRequest dataType(String dataType) {
     
-    this.filter = filter;
+    this.dataType = dataType;
     return this;
   }
 
    /**
-   * Get filter
-   * @return filter
+   * Get dataType
+   * @return dataType
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getFilter() {
-    return filter;
+  public String getDataType() {
+    return dataType;
   }
 
 
-  public void setFilter(String filter) {
-    this.filter = filter;
-  }
-
-
-  public TitaniumSubmittedRequest filterPack(TitaniumFilterPack filterPack) {
-    
-    this.filterPack = filterPack;
-    return this;
-  }
-
-   /**
-   * Get filterPack
-   * @return filterPack
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumFilterPack getFilterPack() {
-    return filterPack;
-  }
-
-
-  public void setFilterPack(TitaniumFilterPack filterPack) {
-    this.filterPack = filterPack;
-  }
-
-
-  public TitaniumSubmittedRequest filters(List<TitaniumFilter> filters) {
-    
-    this.filters = filters;
-    return this;
-  }
-
-  public TitaniumSubmittedRequest addFiltersItem(TitaniumFilter filtersItem) {
-    if (this.filters == null) {
-      this.filters = new ArrayList<>();
-    }
-    this.filters.add(filtersItem);
-    return this;
-  }
-
-   /**
-   * Get filters
-   * @return filters
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<TitaniumFilter> getFilters() {
-    return filters;
-  }
-
-
-  public void setFilters(List<TitaniumFilter> filters) {
-    this.filters = filters;
-  }
-
-
-  public TitaniumSubmittedRequest orderBy(TitaniumOrderBy orderBy) {
-    
-    this.orderBy = orderBy;
-    return this;
-  }
-
-   /**
-   * Get orderBy
-   * @return orderBy
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumOrderBy getOrderBy() {
-    return orderBy;
-  }
-
-
-  public void setOrderBy(TitaniumOrderBy orderBy) {
-    this.orderBy = orderBy;
-  }
-
-
-  public TitaniumSubmittedRequest page(TitaniumPage page) {
-    
-    this.page = page;
-    return this;
-  }
-
-   /**
-   * Get page
-   * @return page
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumPage getPage() {
-    return page;
-  }
-
-
-  public void setPage(TitaniumPage page) {
-    this.page = page;
+  public void setDataType(String dataType) {
+    this.dataType = dataType;
   }
 
 
@@ -283,6 +194,29 @@ public class TitaniumSubmittedRequest {
 
   public void setSubmittedDate(String submittedDate) {
     this.submittedDate = submittedDate;
+  }
+
+
+  public TitaniumSubmittedRequest tableConfig(TitaniumTableRequest tableConfig) {
+    
+    this.tableConfig = tableConfig;
+    return this;
+  }
+
+   /**
+   * Get tableConfig
+   * @return tableConfig
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumTableRequest getTableConfig() {
+    return tableConfig;
+  }
+
+
+  public void setTableConfig(TitaniumTableRequest tableConfig) {
+    this.tableConfig = tableConfig;
   }
 
 
@@ -320,19 +254,17 @@ public class TitaniumSubmittedRequest {
     }
     TitaniumSubmittedRequest titaniumSubmittedRequest = (TitaniumSubmittedRequest) o;
     return Objects.equals(this.assetId, titaniumSubmittedRequest.assetId) &&
+        Objects.equals(this.collapseTableConfig, titaniumSubmittedRequest.collapseTableConfig) &&
         Objects.equals(this.consensusRunTimestamp, titaniumSubmittedRequest.consensusRunTimestamp) &&
-        Objects.equals(this.filter, titaniumSubmittedRequest.filter) &&
-        Objects.equals(this.filterPack, titaniumSubmittedRequest.filterPack) &&
-        Objects.equals(this.filters, titaniumSubmittedRequest.filters) &&
-        Objects.equals(this.orderBy, titaniumSubmittedRequest.orderBy) &&
-        Objects.equals(this.page, titaniumSubmittedRequest.page) &&
+        Objects.equals(this.dataType, titaniumSubmittedRequest.dataType) &&
         Objects.equals(this.submittedDate, titaniumSubmittedRequest.submittedDate) &&
+        Objects.equals(this.tableConfig, titaniumSubmittedRequest.tableConfig) &&
         Objects.equals(this.traceName, titaniumSubmittedRequest.traceName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, consensusRunTimestamp, filter, filterPack, filters, orderBy, page, submittedDate, traceName);
+    return Objects.hash(assetId, collapseTableConfig, consensusRunTimestamp, dataType, submittedDate, tableConfig, traceName);
   }
 
   @Override
@@ -340,13 +272,11 @@ public class TitaniumSubmittedRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumSubmittedRequest {\n");
     sb.append("    assetId: ").append(toIndentedString(assetId)).append("\n");
+    sb.append("    collapseTableConfig: ").append(toIndentedString(collapseTableConfig)).append("\n");
     sb.append("    consensusRunTimestamp: ").append(toIndentedString(consensusRunTimestamp)).append("\n");
-    sb.append("    filter: ").append(toIndentedString(filter)).append("\n");
-    sb.append("    filterPack: ").append(toIndentedString(filterPack)).append("\n");
-    sb.append("    filters: ").append(toIndentedString(filters)).append("\n");
-    sb.append("    orderBy: ").append(toIndentedString(orderBy)).append("\n");
-    sb.append("    page: ").append(toIndentedString(page)).append("\n");
+    sb.append("    dataType: ").append(toIndentedString(dataType)).append("\n");
     sb.append("    submittedDate: ").append(toIndentedString(submittedDate)).append("\n");
+    sb.append("    tableConfig: ").append(toIndentedString(tableConfig)).append("\n");
     sb.append("    traceName: ").append(toIndentedString(traceName)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -371,13 +301,11 @@ public class TitaniumSubmittedRequest {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("assetId");
+    openapiFields.add("collapseTableConfig");
     openapiFields.add("consensusRunTimestamp");
-    openapiFields.add("filter");
-    openapiFields.add("filterPack");
-    openapiFields.add("filters");
-    openapiFields.add("orderBy");
-    openapiFields.add("page");
+    openapiFields.add("dataType");
     openapiFields.add("submittedDate");
+    openapiFields.add("tableConfig");
     openapiFields.add("traceName");
 
     // a set of required properties/fields (JSON key names)
@@ -409,38 +337,22 @@ public class TitaniumSubmittedRequest {
       if (jsonObj.get("assetId") != null && !jsonObj.get("assetId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `assetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetId").toString()));
       }
+      // validate the optional field `collapseTableConfig`
+      if (jsonObj.getAsJsonObject("collapseTableConfig") != null) {
+        TitaniumCollapseTableRequest.validateJsonObject(jsonObj.getAsJsonObject("collapseTableConfig"));
+      }
       if (jsonObj.get("consensusRunTimestamp") != null && !jsonObj.get("consensusRunTimestamp").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `consensusRunTimestamp` to be a primitive type in the JSON string but got `%s`", jsonObj.get("consensusRunTimestamp").toString()));
       }
-      if (jsonObj.get("filter") != null && !jsonObj.get("filter").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `filter` to be a primitive type in the JSON string but got `%s`", jsonObj.get("filter").toString()));
-      }
-      // validate the optional field `filterPack`
-      if (jsonObj.getAsJsonObject("filterPack") != null) {
-        TitaniumFilterPack.validateJsonObject(jsonObj.getAsJsonObject("filterPack"));
-      }
-      JsonArray jsonArrayfilters = jsonObj.getAsJsonArray("filters");
-      if (jsonArrayfilters != null) {
-        // ensure the json data is an array
-        if (!jsonObj.get("filters").isJsonArray()) {
-          throw new IllegalArgumentException(String.format("Expected the field `filters` to be an array in the JSON string but got `%s`", jsonObj.get("filters").toString()));
-        }
-
-        // validate the optional field `filters` (array)
-        for (int i = 0; i < jsonArrayfilters.size(); i++) {
-          TitaniumFilter.validateJsonObject(jsonArrayfilters.get(i).getAsJsonObject());
-        };
-      }
-      // validate the optional field `orderBy`
-      if (jsonObj.getAsJsonObject("orderBy") != null) {
-        TitaniumOrderBy.validateJsonObject(jsonObj.getAsJsonObject("orderBy"));
-      }
-      // validate the optional field `page`
-      if (jsonObj.getAsJsonObject("page") != null) {
-        TitaniumPage.validateJsonObject(jsonObj.getAsJsonObject("page"));
+      if (jsonObj.get("dataType") != null && !jsonObj.get("dataType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `dataType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dataType").toString()));
       }
       if (jsonObj.get("submittedDate") != null && !jsonObj.get("submittedDate").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `submittedDate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("submittedDate").toString()));
+      }
+      // validate the optional field `tableConfig`
+      if (jsonObj.getAsJsonObject("tableConfig") != null) {
+        TitaniumTableRequest.validateJsonObject(jsonObj.getAsJsonObject("tableConfig"));
       }
       if (jsonObj.get("traceName") != null && !jsonObj.get("traceName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `traceName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("traceName").toString()));
