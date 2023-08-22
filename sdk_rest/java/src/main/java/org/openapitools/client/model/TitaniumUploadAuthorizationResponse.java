@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUploadAuthorizationResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:20:05.978352Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T20:56:14.323833Z[UTC]")
 public class TitaniumUploadAuthorizationResponse {
   public static final String SERIALIZED_NAME_IS_VALID = "isValid";
   @SerializedName(SERIALIZED_NAME_IS_VALID)

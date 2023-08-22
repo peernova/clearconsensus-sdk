@@ -846,4 +846,3 @@ src/main/java/org/openapitools/client/model/TitaniumValuesRow.java
 src/main/java/org/openapitools/client/model/TitaniumVersion.java
 src/main/java/org/openapitools/client/model/TitaniumVersionList.java
 src/main/java/org/openapitools/client/model/TitaniumViewRow.java
-src/test/java/org/openapitools/client/model/TitaniumAssetDetailsTest.java
