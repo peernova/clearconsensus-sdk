@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumCustomFunctionList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-21T18:19:33.138203Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:15:33.278978Z[UTC]")
 public class TitaniumCustomFunctionList {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)

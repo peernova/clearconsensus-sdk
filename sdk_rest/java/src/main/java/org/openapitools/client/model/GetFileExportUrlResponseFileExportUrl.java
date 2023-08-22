@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * GetFileExportUrlResponseFileExportUrl
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-21T18:19:33.138203Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:15:33.278978Z[UTC]")
 public class GetFileExportUrlResponseFileExportUrl {
   public static final String SERIALIZED_NAME_S3_URL = "s3Url";
   @SerializedName(SERIALIZED_NAME_S3_URL)
