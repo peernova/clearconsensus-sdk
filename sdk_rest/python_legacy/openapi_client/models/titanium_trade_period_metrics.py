@@ -36,6 +36,7 @@ class TitaniumTradePeriodMetrics(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'currency': 'str',
         'max_notional_amount': 'float',
         'min_notional_amount': 'float',
         'total_liquidity': 'float',
@@ -43,24 +44,28 @@ class TitaniumTradePeriodMetrics(object):
     }
 
     attribute_map = {
+        'currency': 'currency',
         'max_notional_amount': 'maxNotionalAmount',
         'min_notional_amount': 'minNotionalAmount',
         'total_liquidity': 'totalLiquidity',
         'trade_count': 'tradeCount'
     }
 
-    def __init__(self, max_notional_amount=None, min_notional_amount=None, total_liquidity=None, trade_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, currency=None, max_notional_amount=None, min_notional_amount=None, total_liquidity=None, trade_count=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumTradePeriodMetrics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._currency = None
         self._max_notional_amount = None
         self._min_notional_amount = None
         self._total_liquidity = None
         self._trade_count = None
         self.discriminator = None
 
+        if currency is not None:
+            self.currency = currency
         if max_notional_amount is not None:
             self.max_notional_amount = max_notional_amount
         if min_notional_amount is not None:
@@ -69,6 +74,27 @@ class TitaniumTradePeriodMetrics(object):
             self.total_liquidity = total_liquidity
         if trade_count is not None:
             self.trade_count = trade_count
+
+    @property
+    def currency(self):
+        """Gets the currency of this TitaniumTradePeriodMetrics.  # noqa: E501
+
+
+        :return: The currency of this TitaniumTradePeriodMetrics.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency
+
+    @currency.setter
+    def currency(self, currency):
+        """Sets the currency of this TitaniumTradePeriodMetrics.
+
+
+        :param currency: The currency of this TitaniumTradePeriodMetrics.  # noqa: E501
+        :type currency: str
+        """
+
+        self._currency = currency
 
     @property
     def max_notional_amount(self):

@@ -48,8 +48,12 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradeAnchorDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:15:33.278978Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:20:05.978352Z[UTC]")
 public class TitaniumTradeAnchorDetails {
+  public static final String SERIALIZED_NAME_CURRENCY = "currency";
+  @SerializedName(SERIALIZED_NAME_CURRENCY)
+  private String currency;
+
   public static final String SERIALIZED_NAME_DISTANCE_TO_CONSENSUS = "distanceToConsensus";
   @SerializedName(SERIALIZED_NAME_DISTANCE_TO_CONSENSUS)
   private BigDecimal distanceToConsensus;
@@ -76,6 +80,29 @@ public class TitaniumTradeAnchorDetails {
 
   public TitaniumTradeAnchorDetails() { 
   }
+
+  public TitaniumTradeAnchorDetails currency(String currency) {
+    
+    this.currency = currency;
+    return this;
+  }
+
+   /**
+   * Get currency
+   * @return currency
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getCurrency() {
+    return currency;
+  }
+
+
+  public void setCurrency(String currency) {
+    this.currency = currency;
+  }
+
 
   public TitaniumTradeAnchorDetails distanceToConsensus(BigDecimal distanceToConsensus) {
     
@@ -225,7 +252,8 @@ public class TitaniumTradeAnchorDetails {
       return false;
     }
     TitaniumTradeAnchorDetails titaniumTradeAnchorDetails = (TitaniumTradeAnchorDetails) o;
-    return Objects.equals(this.distanceToConsensus, titaniumTradeAnchorDetails.distanceToConsensus) &&
+    return Objects.equals(this.currency, titaniumTradeAnchorDetails.currency) &&
+        Objects.equals(this.distanceToConsensus, titaniumTradeAnchorDetails.distanceToConsensus) &&
         Objects.equals(this.latestTradePrice, titaniumTradeAnchorDetails.latestTradePrice) &&
         Objects.equals(this.notional, titaniumTradeAnchorDetails.notional) &&
         Objects.equals(this.pricingAge, titaniumTradeAnchorDetails.pricingAge) &&
@@ -235,13 +263,14 @@ public class TitaniumTradeAnchorDetails {
 
   @Override
   public int hashCode() {
-    return Objects.hash(distanceToConsensus, latestTradePrice, notional, pricingAge, source, tradeExecutionTime);
+    return Objects.hash(currency, distanceToConsensus, latestTradePrice, notional, pricingAge, source, tradeExecutionTime);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumTradeAnchorDetails {\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    distanceToConsensus: ").append(toIndentedString(distanceToConsensus)).append("\n");
     sb.append("    latestTradePrice: ").append(toIndentedString(latestTradePrice)).append("\n");
     sb.append("    notional: ").append(toIndentedString(notional)).append("\n");
@@ -270,6 +299,7 @@ public class TitaniumTradeAnchorDetails {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("currency");
     openapiFields.add("distanceToConsensus");
     openapiFields.add("latestTradePrice");
     openapiFields.add("notional");
@@ -302,6 +332,9 @@ public class TitaniumTradeAnchorDetails {
         if (!TitaniumTradeAnchorDetails.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumTradeAnchorDetails` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
+      }
+      if (jsonObj.get("currency") != null && !jsonObj.get("currency").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
       }
       if (jsonObj.get("pricingAge") != null && !jsonObj.get("pricingAge").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `pricingAge` to be a primitive type in the JSON string but got `%s`", jsonObj.get("pricingAge").toString()));

@@ -36,6 +36,7 @@ class TitaniumTradeAnchorDetails(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'currency': 'str',
         'distance_to_consensus': 'float',
         'latest_trade_price': 'float',
         'notional': 'float',
@@ -45,6 +46,7 @@ class TitaniumTradeAnchorDetails(object):
     }
 
     attribute_map = {
+        'currency': 'currency',
         'distance_to_consensus': 'distanceToConsensus',
         'latest_trade_price': 'latestTradePrice',
         'notional': 'notional',
@@ -53,12 +55,13 @@ class TitaniumTradeAnchorDetails(object):
         'trade_execution_time': 'tradeExecutionTime'
     }
 
-    def __init__(self, distance_to_consensus=None, latest_trade_price=None, notional=None, pricing_age=None, source=None, trade_execution_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, currency=None, distance_to_consensus=None, latest_trade_price=None, notional=None, pricing_age=None, source=None, trade_execution_time=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumTradeAnchorDetails - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._currency = None
         self._distance_to_consensus = None
         self._latest_trade_price = None
         self._notional = None
@@ -67,6 +70,8 @@ class TitaniumTradeAnchorDetails(object):
         self._trade_execution_time = None
         self.discriminator = None
 
+        if currency is not None:
+            self.currency = currency
         if distance_to_consensus is not None:
             self.distance_to_consensus = distance_to_consensus
         if latest_trade_price is not None:
@@ -79,6 +84,27 @@ class TitaniumTradeAnchorDetails(object):
             self.source = source
         if trade_execution_time is not None:
             self.trade_execution_time = trade_execution_time
+
+    @property
+    def currency(self):
+        """Gets the currency of this TitaniumTradeAnchorDetails.  # noqa: E501
+
+
+        :return: The currency of this TitaniumTradeAnchorDetails.  # noqa: E501
+        :rtype: str
+        """
+        return self._currency
+
+    @currency.setter
+    def currency(self, currency):
+        """Sets the currency of this TitaniumTradeAnchorDetails.
+
+
+        :param currency: The currency of this TitaniumTradeAnchorDetails.  # noqa: E501
+        :type currency: str
+        """
+
+        self._currency = currency
 
     @property
     def distance_to_consensus(self):

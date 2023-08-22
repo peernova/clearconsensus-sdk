@@ -23,7 +23,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.TitaniumAnnotation;
+import org.openapitools.client.model.TitaniumAssetDetails;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,19 +48,31 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUploadDataRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:15:33.278978Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:20:05.978352Z[UTC]")
 public class TitaniumUploadDataRequest {
   public static final String SERIALIZED_NAME_ANNOTATION = "annotation";
   @SerializedName(SERIALIZED_NAME_ANNOTATION)
-  private TitaniumAnnotation annotation;
+  private Object annotation;
+
+  public static final String SERIALIZED_NAME_ASSET = "asset";
+  @SerializedName(SERIALIZED_NAME_ASSET)
+  private TitaniumAssetDetails asset;
 
   public static final String SERIALIZED_NAME_CLIENT = "client";
   @SerializedName(SERIALIZED_NAME_CLIENT)
   private String client;
 
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
+  private String description;
+
   public static final String SERIALIZED_NAME_FILE_NAME = "fileName";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
   private String fileName;
+
+  public static final String SERIALIZED_NAME_MODE = "mode";
+  @SerializedName(SERIALIZED_NAME_MODE)
+  private String mode;
 
   public static final String SERIALIZED_NAME_PROTOCOL = "protocol";
   @SerializedName(SERIALIZED_NAME_PROTOCOL)
@@ -69,7 +81,7 @@ public class TitaniumUploadDataRequest {
   public TitaniumUploadDataRequest() { 
   }
 
-  public TitaniumUploadDataRequest annotation(TitaniumAnnotation annotation) {
+  public TitaniumUploadDataRequest annotation(Object annotation) {
     
     this.annotation = annotation;
     return this;
@@ -82,13 +94,36 @@ public class TitaniumUploadDataRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumAnnotation getAnnotation() {
+  public Object getAnnotation() {
     return annotation;
   }
 
 
-  public void setAnnotation(TitaniumAnnotation annotation) {
+  public void setAnnotation(Object annotation) {
     this.annotation = annotation;
+  }
+
+
+  public TitaniumUploadDataRequest asset(TitaniumAssetDetails asset) {
+    
+    this.asset = asset;
+    return this;
+  }
+
+   /**
+   * Get asset
+   * @return asset
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumAssetDetails getAsset() {
+    return asset;
+  }
+
+
+  public void setAsset(TitaniumAssetDetails asset) {
+    this.asset = asset;
   }
 
 
@@ -115,6 +150,29 @@ public class TitaniumUploadDataRequest {
   }
 
 
+  public TitaniumUploadDataRequest description(String description) {
+    
+    this.description = description;
+    return this;
+  }
+
+   /**
+   * Get description
+   * @return description
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getDescription() {
+    return description;
+  }
+
+
+  public void setDescription(String description) {
+    this.description = description;
+  }
+
+
   public TitaniumUploadDataRequest fileName(String fileName) {
     
     this.fileName = fileName;
@@ -135,6 +193,29 @@ public class TitaniumUploadDataRequest {
 
   public void setFileName(String fileName) {
     this.fileName = fileName;
+  }
+
+
+  public TitaniumUploadDataRequest mode(String mode) {
+    
+    this.mode = mode;
+    return this;
+  }
+
+   /**
+   * Get mode
+   * @return mode
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getMode() {
+    return mode;
+  }
+
+
+  public void setMode(String mode) {
+    this.mode = mode;
   }
 
 
@@ -172,14 +253,17 @@ public class TitaniumUploadDataRequest {
     }
     TitaniumUploadDataRequest titaniumUploadDataRequest = (TitaniumUploadDataRequest) o;
     return Objects.equals(this.annotation, titaniumUploadDataRequest.annotation) &&
+        Objects.equals(this.asset, titaniumUploadDataRequest.asset) &&
         Objects.equals(this.client, titaniumUploadDataRequest.client) &&
+        Objects.equals(this.description, titaniumUploadDataRequest.description) &&
         Objects.equals(this.fileName, titaniumUploadDataRequest.fileName) &&
+        Objects.equals(this.mode, titaniumUploadDataRequest.mode) &&
         Objects.equals(this.protocol, titaniumUploadDataRequest.protocol);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(annotation, client, fileName, protocol);
+    return Objects.hash(annotation, asset, client, description, fileName, mode, protocol);
   }
 
   @Override
@@ -187,8 +271,11 @@ public class TitaniumUploadDataRequest {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumUploadDataRequest {\n");
     sb.append("    annotation: ").append(toIndentedString(annotation)).append("\n");
+    sb.append("    asset: ").append(toIndentedString(asset)).append("\n");
     sb.append("    client: ").append(toIndentedString(client)).append("\n");
+    sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    fileName: ").append(toIndentedString(fileName)).append("\n");
+    sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
     sb.append("    protocol: ").append(toIndentedString(protocol)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -213,8 +300,11 @@ public class TitaniumUploadDataRequest {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("annotation");
+    openapiFields.add("asset");
     openapiFields.add("client");
+    openapiFields.add("description");
     openapiFields.add("fileName");
+    openapiFields.add("mode");
     openapiFields.add("protocol");
 
     // a set of required properties/fields (JSON key names)
@@ -243,15 +333,21 @@ public class TitaniumUploadDataRequest {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumUploadDataRequest` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      // validate the optional field `annotation`
-      if (jsonObj.getAsJsonObject("annotation") != null) {
-        TitaniumAnnotation.validateJsonObject(jsonObj.getAsJsonObject("annotation"));
+      // validate the optional field `asset`
+      if (jsonObj.getAsJsonObject("asset") != null) {
+        TitaniumAssetDetails.validateJsonObject(jsonObj.getAsJsonObject("asset"));
       }
       if (jsonObj.get("client") != null && !jsonObj.get("client").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `client` to be a primitive type in the JSON string but got `%s`", jsonObj.get("client").toString()));
       }
+      if (jsonObj.get("description") != null && !jsonObj.get("description").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `description` to be a primitive type in the JSON string but got `%s`", jsonObj.get("description").toString()));
+      }
       if (jsonObj.get("fileName") != null && !jsonObj.get("fileName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `fileName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fileName").toString()));
+      }
+      if (jsonObj.get("mode") != null && !jsonObj.get("mode").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `mode` to be a primitive type in the JSON string but got `%s`", jsonObj.get("mode").toString()));
       }
       if (jsonObj.get("protocol") != null && !jsonObj.get("protocol").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `protocol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("protocol").toString()));

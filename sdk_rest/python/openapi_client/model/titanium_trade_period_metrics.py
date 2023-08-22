@@ -81,6 +81,7 @@ class TitaniumTradePeriodMetrics(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'currency': (str,),  # noqa: E501
             'max_notional_amount': (float,),  # noqa: E501
             'min_notional_amount': (float,),  # noqa: E501
             'total_liquidity': (float,),  # noqa: E501
@@ -93,6 +94,7 @@ class TitaniumTradePeriodMetrics(ModelNormal):
 
 
     attribute_map = {
+        'currency': 'currency',  # noqa: E501
         'max_notional_amount': 'maxNotionalAmount',  # noqa: E501
         'min_notional_amount': 'minNotionalAmount',  # noqa: E501
         'total_liquidity': 'totalLiquidity',  # noqa: E501
@@ -140,6 +142,7 @@ class TitaniumTradePeriodMetrics(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            currency (str): [optional]  # noqa: E501
             max_notional_amount (float): [optional]  # noqa: E501
             min_notional_amount (float): [optional]  # noqa: E501
             total_liquidity (float): [optional]  # noqa: E501
@@ -229,6 +232,7 @@ class TitaniumTradePeriodMetrics(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            currency (str): [optional]  # noqa: E501
             max_notional_amount (float): [optional]  # noqa: E501
             min_notional_amount (float): [optional]  # noqa: E501
             total_liquidity (float): [optional]  # noqa: E501

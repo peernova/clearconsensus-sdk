@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**currency** | **String** |  | [optional] 
 **distanceToConsensus** | **Number** |  | [optional] 
 **latestTradePrice** | **Number** |  | [optional] 
 **notional** | **Number** |  | [optional] 

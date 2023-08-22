@@ -48,8 +48,12 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradePeriodMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:15:33.278978Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-22T19:20:05.978352Z[UTC]")
 public class TitaniumTradePeriodMetrics {
+  public static final String SERIALIZED_NAME_CURRENCY = "currency";
+  @SerializedName(SERIALIZED_NAME_CURRENCY)
+  private String currency;
+
   public static final String SERIALIZED_NAME_MAX_NOTIONAL_AMOUNT = "maxNotionalAmount";
   @SerializedName(SERIALIZED_NAME_MAX_NOTIONAL_AMOUNT)
   private BigDecimal maxNotionalAmount;
@@ -68,6 +72,29 @@ public class TitaniumTradePeriodMetrics {
 
   public TitaniumTradePeriodMetrics() { 
   }
+
+  public TitaniumTradePeriodMetrics currency(String currency) {
+    
+    this.currency = currency;
+    return this;
+  }
+
+   /**
+   * Get currency
+   * @return currency
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public String getCurrency() {
+    return currency;
+  }
+
+
+  public void setCurrency(String currency) {
+    this.currency = currency;
+  }
+
 
   public TitaniumTradePeriodMetrics maxNotionalAmount(BigDecimal maxNotionalAmount) {
     
@@ -171,7 +198,8 @@ public class TitaniumTradePeriodMetrics {
       return false;
     }
     TitaniumTradePeriodMetrics titaniumTradePeriodMetrics = (TitaniumTradePeriodMetrics) o;
-    return Objects.equals(this.maxNotionalAmount, titaniumTradePeriodMetrics.maxNotionalAmount) &&
+    return Objects.equals(this.currency, titaniumTradePeriodMetrics.currency) &&
+        Objects.equals(this.maxNotionalAmount, titaniumTradePeriodMetrics.maxNotionalAmount) &&
         Objects.equals(this.minNotionalAmount, titaniumTradePeriodMetrics.minNotionalAmount) &&
         Objects.equals(this.totalLiquidity, titaniumTradePeriodMetrics.totalLiquidity) &&
         Objects.equals(this.tradeCount, titaniumTradePeriodMetrics.tradeCount);
@@ -179,13 +207,14 @@ public class TitaniumTradePeriodMetrics {
 
   @Override
   public int hashCode() {
-    return Objects.hash(maxNotionalAmount, minNotionalAmount, totalLiquidity, tradeCount);
+    return Objects.hash(currency, maxNotionalAmount, minNotionalAmount, totalLiquidity, tradeCount);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumTradePeriodMetrics {\n");
+    sb.append("    currency: ").append(toIndentedString(currency)).append("\n");
     sb.append("    maxNotionalAmount: ").append(toIndentedString(maxNotionalAmount)).append("\n");
     sb.append("    minNotionalAmount: ").append(toIndentedString(minNotionalAmount)).append("\n");
     sb.append("    totalLiquidity: ").append(toIndentedString(totalLiquidity)).append("\n");
@@ -212,6 +241,7 @@ public class TitaniumTradePeriodMetrics {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("currency");
     openapiFields.add("maxNotionalAmount");
     openapiFields.add("minNotionalAmount");
     openapiFields.add("totalLiquidity");
@@ -242,6 +272,9 @@ public class TitaniumTradePeriodMetrics {
         if (!TitaniumTradePeriodMetrics.openapiFields.contains(entry.getKey())) {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumTradePeriodMetrics` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
+      }
+      if (jsonObj.get("currency") != null && !jsonObj.get("currency").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `currency` to be a primitive type in the JSON string but got `%s`", jsonObj.get("currency").toString()));
       }
       if (jsonObj.get("tradeCount") != null && !jsonObj.get("tradeCount").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `tradeCount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tradeCount").toString()));

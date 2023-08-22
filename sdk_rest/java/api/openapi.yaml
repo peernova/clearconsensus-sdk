@@ -6259,28 +6259,6 @@ components:
         scope:
           type: string
       type: object
-    titaniumAnnotation:
-      properties:
-        annotations:
-          properties: {}
-          type: object
-        asset:
-          type: string
-        assetId:
-          type: string
-        date:
-          type: string
-        description:
-          type: string
-        mode:
-          type: string
-        service:
-          type: string
-        snapTime:
-          type: string
-        subAsset:
-          type: string
-      type: object
     titaniumAsset:
       example:
         name: name
@@ -6308,6 +6286,21 @@ components:
           items:
             $ref: '#/components/schemas/titaniumService'
           type: array
+      type: object
+    titaniumAssetDetails:
+      properties:
+        assetId:
+          type: string
+        date:
+          type: string
+        name:
+          type: string
+        service:
+          type: string
+        snapTime:
+          type: string
+        subAsset:
+          type: string
       type: object
     titaniumAssetM:
       example:
@@ -7468,6 +7461,7 @@ components:
           notional: 7.061401241503109
           pricingAge: pricingAge
           latestTradePrice: 2.3021358869347655
+          currency: currency
           source: source
           tradeExecutionTime: tradeExecutionTime
           distanceToConsensus: 5.637376656633329
@@ -7478,16 +7472,19 @@ components:
           lessWeek:
             tradeCount: tradeCount
             totalLiquidity: 2.027123023002322
+            currency: currency
             minNotionalAmount: 3.616076749251911
             maxNotionalAmount: 9.301444243932576
           lessDay:
             tradeCount: tradeCount
             totalLiquidity: 2.027123023002322
+            currency: currency
             minNotionalAmount: 3.616076749251911
             maxNotionalAmount: 9.301444243932576
           lessMonth:
             tradeCount: tradeCount
             totalLiquidity: 2.027123023002322
+            currency: currency
             minNotionalAmount: 3.616076749251911
             maxNotionalAmount: 9.301444243932576
         distanceToConsensus: "{}"
@@ -8068,6 +8065,7 @@ components:
             notional: 7.061401241503109
             pricingAge: pricingAge
             latestTradePrice: 2.3021358869347655
+            currency: currency
             source: source
             tradeExecutionTime: tradeExecutionTime
             distanceToConsensus: 5.637376656633329
@@ -8078,16 +8076,19 @@ components:
             lessWeek:
               tradeCount: tradeCount
               totalLiquidity: 2.027123023002322
+              currency: currency
               minNotionalAmount: 3.616076749251911
               maxNotionalAmount: 9.301444243932576
             lessDay:
               tradeCount: tradeCount
               totalLiquidity: 2.027123023002322
+              currency: currency
               minNotionalAmount: 3.616076749251911
               maxNotionalAmount: 9.301444243932576
             lessMonth:
               tradeCount: tradeCount
               totalLiquidity: 2.027123023002322
+              currency: currency
               minNotionalAmount: 3.616076749251911
               maxNotionalAmount: 9.301444243932576
           distanceToConsensus: "{}"
@@ -8191,6 +8192,7 @@ components:
               notional: 7.061401241503109
               pricingAge: pricingAge
               latestTradePrice: 2.3021358869347655
+              currency: currency
               source: source
               tradeExecutionTime: tradeExecutionTime
               distanceToConsensus: 5.637376656633329
@@ -8201,16 +8203,19 @@ components:
               lessWeek:
                 tradeCount: tradeCount
                 totalLiquidity: 2.027123023002322
+                currency: currency
                 minNotionalAmount: 3.616076749251911
                 maxNotionalAmount: 9.301444243932576
               lessDay:
                 tradeCount: tradeCount
                 totalLiquidity: 2.027123023002322
+                currency: currency
                 minNotionalAmount: 3.616076749251911
                 maxNotionalAmount: 9.301444243932576
               lessMonth:
                 tradeCount: tradeCount
                 totalLiquidity: 2.027123023002322
+                currency: currency
                 minNotionalAmount: 3.616076749251911
                 maxNotionalAmount: 9.301444243932576
             distanceToConsensus: "{}"
@@ -13873,10 +13878,13 @@ components:
         notional: 7.061401241503109
         pricingAge: pricingAge
         latestTradePrice: 2.3021358869347655
+        currency: currency
         source: source
         tradeExecutionTime: tradeExecutionTime
         distanceToConsensus: 5.637376656633329
       properties:
+        currency:
+          type: string
         distanceToConsensus:
           type: number
         latestTradePrice:
@@ -13894,9 +13902,12 @@ components:
       example:
         tradeCount: tradeCount
         totalLiquidity: 2.027123023002322
+        currency: currency
         minNotionalAmount: 3.616076749251911
         maxNotionalAmount: 9.301444243932576
       properties:
+        currency:
+          type: string
         maxNotionalAmount:
           type: number
         minNotionalAmount:
@@ -13911,16 +13922,19 @@ components:
         lessWeek:
           tradeCount: tradeCount
           totalLiquidity: 2.027123023002322
+          currency: currency
           minNotionalAmount: 3.616076749251911
           maxNotionalAmount: 9.301444243932576
         lessDay:
           tradeCount: tradeCount
           totalLiquidity: 2.027123023002322
+          currency: currency
           minNotionalAmount: 3.616076749251911
           maxNotionalAmount: 9.301444243932576
         lessMonth:
           tradeCount: tradeCount
           totalLiquidity: 2.027123023002322
+          currency: currency
           minNotionalAmount: 3.616076749251911
           maxNotionalAmount: 9.301444243932576
       properties:
@@ -14061,10 +14075,17 @@ components:
     titaniumUploadDataRequest:
       properties:
         annotation:
-          $ref: '#/components/schemas/titaniumAnnotation'
+          properties: {}
+          type: object
+        asset:
+          $ref: '#/components/schemas/titaniumAssetDetails'
         client:
           type: string
+        description:
+          type: string
         fileName:
+          type: string
+        mode:
           type: string
         protocol:
           type: string

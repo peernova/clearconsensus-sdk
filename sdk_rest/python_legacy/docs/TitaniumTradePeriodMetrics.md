@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**currency** | **str** |  | [optional] 
 **max_notional_amount** | **float** |  | [optional] 
 **min_notional_amount** | **float** |  | [optional] 
 **total_liquidity** | **float** |  | [optional] 

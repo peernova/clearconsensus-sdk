@@ -7692,39 +7692,6 @@
         },
         "type" : "object"
       },
-      "titaniumAnnotation" : {
-        "properties" : {
-          "annotations" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "asset" : {
-            "type" : "string"
-          },
-          "assetId" : {
-            "type" : "string"
-          },
-          "date" : {
-            "type" : "string"
-          },
-          "description" : {
-            "type" : "string"
-          },
-          "mode" : {
-            "$ref" : "#/components/schemas/titaniumUploadMode"
-          },
-          "service" : {
-            "type" : "string"
-          },
-          "snapTime" : {
-            "type" : "string"
-          },
-          "subAsset" : {
-            "type" : "string"
-          }
-        },
-        "type" : "object"
-      },
       "titaniumAsset" : {
         "properties" : {
           "name" : {
@@ -7735,6 +7702,29 @@
               "$ref" : "#/components/schemas/titaniumService"
             },
             "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumAssetDetails" : {
+        "properties" : {
+          "assetId" : {
+            "type" : "string"
+          },
+          "date" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "service" : {
+            "type" : "string"
+          },
+          "snapTime" : {
+            "type" : "string"
+          },
+          "subAsset" : {
+            "type" : "string"
           }
         },
         "type" : "object"
@@ -12692,6 +12682,9 @@
       },
       "titaniumTradeAnchorDetails" : {
         "properties" : {
+          "currency" : {
+            "type" : "string"
+          },
           "distanceToConsensus" : {
             "type" : "number"
           },
@@ -12715,6 +12708,9 @@
       },
       "titaniumTradePeriodMetrics" : {
         "properties" : {
+          "currency" : {
+            "type" : "string"
+          },
           "maxNotionalAmount" : {
             "type" : "number"
           },
@@ -12849,13 +12845,23 @@
       "titaniumUploadDataRequest" : {
         "properties" : {
           "annotation" : {
-            "$ref" : "#/components/schemas/titaniumAnnotation"
+            "properties" : { },
+            "type" : "object"
+          },
+          "asset" : {
+            "$ref" : "#/components/schemas/titaniumAssetDetails"
           },
           "client" : {
             "type" : "string"
           },
+          "description" : {
+            "type" : "string"
+          },
           "fileName" : {
             "type" : "string"
+          },
+          "mode" : {
+            "$ref" : "#/components/schemas/titaniumUploadMode"
           },
           "protocol" : {
             "$ref" : "#/components/schemas/titaniumProtocol"

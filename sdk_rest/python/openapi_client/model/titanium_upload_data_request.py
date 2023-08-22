@@ -30,8 +30,8 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from openapi_client.model.titanium_annotation import TitaniumAnnotation
-    globals()['TitaniumAnnotation'] = TitaniumAnnotation
+    from openapi_client.model.titanium_asset_details import TitaniumAssetDetails
+    globals()['TitaniumAssetDetails'] = TitaniumAssetDetails
 
 
 class TitaniumUploadDataRequest(ModelNormal):
@@ -87,9 +87,12 @@ class TitaniumUploadDataRequest(ModelNormal):
         """
         lazy_import()
         return {
-            'annotation': (TitaniumAnnotation,),  # noqa: E501
+            'annotation': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'asset': (TitaniumAssetDetails,),  # noqa: E501
             'client': (str,),  # noqa: E501
+            'description': (str,),  # noqa: E501
             'file_name': (str,),  # noqa: E501
+            'mode': (str,),  # noqa: E501
             'protocol': (str,),  # noqa: E501
         }
 
@@ -100,8 +103,11 @@ class TitaniumUploadDataRequest(ModelNormal):
 
     attribute_map = {
         'annotation': 'annotation',  # noqa: E501
+        'asset': 'asset',  # noqa: E501
         'client': 'client',  # noqa: E501
+        'description': 'description',  # noqa: E501
         'file_name': 'fileName',  # noqa: E501
+        'mode': 'mode',  # noqa: E501
         'protocol': 'protocol',  # noqa: E501
     }
 
@@ -146,9 +152,12 @@ class TitaniumUploadDataRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            annotation (TitaniumAnnotation): [optional]  # noqa: E501
+            annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            asset (TitaniumAssetDetails): [optional]  # noqa: E501
             client (str): [optional]  # noqa: E501
+            description (str): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
+            mode (str): [optional]  # noqa: E501
             protocol (str): [optional]  # noqa: E501
         """
 
@@ -235,9 +244,12 @@ class TitaniumUploadDataRequest(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            annotation (TitaniumAnnotation): [optional]  # noqa: E501
+            annotation (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            asset (TitaniumAssetDetails): [optional]  # noqa: E501
             client (str): [optional]  # noqa: E501
+            description (str): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
+            mode (str): [optional]  # noqa: E501
             protocol (str): [optional]  # noqa: E501
         """
 

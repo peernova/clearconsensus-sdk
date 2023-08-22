@@ -50,8 +50,8 @@ from openapi_client.model.rpc_status import RpcStatus
 from openapi_client.model.titanium_acknowledge_response import TitaniumAcknowledgeResponse
 from openapi_client.model.titanium_add_asset_request import TitaniumAddAssetRequest
 from openapi_client.model.titanium_add_lookup_table_request import TitaniumAddLookupTableRequest
-from openapi_client.model.titanium_annotation import TitaniumAnnotation
 from openapi_client.model.titanium_asset import TitaniumAsset
+from openapi_client.model.titanium_asset_details import TitaniumAssetDetails
 from openapi_client.model.titanium_asset_m import TitaniumAssetM
 from openapi_client.model.titanium_assets_list import TitaniumAssetsList
 from openapi_client.model.titanium_assets_list_request import TitaniumAssetsListRequest

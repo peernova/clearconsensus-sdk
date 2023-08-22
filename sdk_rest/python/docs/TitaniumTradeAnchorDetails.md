@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**currency** | **str** |  | [optional] 
 **distance_to_consensus** | **float** |  | [optional] 
 **latest_trade_price** | **float** |  | [optional] 
 **notional** | **float** |  | [optional] 

@@ -4,9 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**annotation** | [**TitaniumAnnotation**](TitaniumAnnotation.md) |  | [optional] 
+**annotation** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
+**asset** | [**TitaniumAssetDetails**](TitaniumAssetDetails.md) |  | [optional] 
 **client** | **str** |  | [optional] 
+**description** | **str** |  | [optional] 
 **file_name** | **str** |  | [optional] 
+**mode** | **str** |  | [optional] 
 **protocol** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

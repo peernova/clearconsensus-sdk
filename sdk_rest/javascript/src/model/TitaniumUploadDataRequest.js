@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TitaniumAnnotation from './TitaniumAnnotation';
+import TitaniumAssetDetails from './TitaniumAssetDetails';
 
 /**
  * The TitaniumUploadDataRequest model module.
@@ -49,13 +49,22 @@ class TitaniumUploadDataRequest {
             obj = obj || new TitaniumUploadDataRequest();
 
             if (data.hasOwnProperty('annotation')) {
-                obj['annotation'] = TitaniumAnnotation.constructFromObject(data['annotation']);
+                obj['annotation'] = ApiClient.convertToType(data['annotation'], Object);
+            }
+            if (data.hasOwnProperty('asset')) {
+                obj['asset'] = TitaniumAssetDetails.constructFromObject(data['asset']);
             }
             if (data.hasOwnProperty('client')) {
                 obj['client'] = ApiClient.convertToType(data['client'], 'String');
             }
+            if (data.hasOwnProperty('description')) {
+                obj['description'] = ApiClient.convertToType(data['description'], 'String');
+            }
             if (data.hasOwnProperty('fileName')) {
                 obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
+            }
+            if (data.hasOwnProperty('mode')) {
+                obj['mode'] = ApiClient.convertToType(data['mode'], 'String');
             }
             if (data.hasOwnProperty('protocol')) {
                 obj['protocol'] = ApiClient.convertToType(data['protocol'], 'String');
@@ -68,9 +77,14 @@ class TitaniumUploadDataRequest {
 }
 
 /**
- * @member {module:model/TitaniumAnnotation} annotation
+ * @member {Object} annotation
  */
 TitaniumUploadDataRequest.prototype['annotation'] = undefined;
+
+/**
+ * @member {module:model/TitaniumAssetDetails} asset
+ */
+TitaniumUploadDataRequest.prototype['asset'] = undefined;
 
 /**
  * @member {String} client
@@ -78,9 +92,19 @@ TitaniumUploadDataRequest.prototype['annotation'] = undefined;
 TitaniumUploadDataRequest.prototype['client'] = undefined;
 
 /**
+ * @member {String} description
+ */
+TitaniumUploadDataRequest.prototype['description'] = undefined;
+
+/**
  * @member {String} fileName
  */
 TitaniumUploadDataRequest.prototype['fileName'] = undefined;
+
+/**
+ * @member {String} mode
+ */
+TitaniumUploadDataRequest.prototype['mode'] = undefined;
 
 /**
  * @member {String} protocol

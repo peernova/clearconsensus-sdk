@@ -54,8 +54,8 @@ import RpcStatus from './model/RpcStatus';
 import TitaniumAcknowledgeResponse from './model/TitaniumAcknowledgeResponse';
 import TitaniumAddAssetRequest from './model/TitaniumAddAssetRequest';
 import TitaniumAddLookupTableRequest from './model/TitaniumAddLookupTableRequest';
-import TitaniumAnnotation from './model/TitaniumAnnotation';
 import TitaniumAsset from './model/TitaniumAsset';
+import TitaniumAssetDetails from './model/TitaniumAssetDetails';
 import TitaniumAssetM from './model/TitaniumAssetM';
 import TitaniumAssetsList from './model/TitaniumAssetsList';
 import TitaniumAssetsListRequest from './model/TitaniumAssetsListRequest';
@@ -707,16 +707,16 @@ export {
     TitaniumAddLookupTableRequest,
 
     /**
-     * The TitaniumAnnotation model constructor.
-     * @property {module:model/TitaniumAnnotation}
-     */
-    TitaniumAnnotation,
-
-    /**
      * The TitaniumAsset model constructor.
      * @property {module:model/TitaniumAsset}
      */
     TitaniumAsset,
+
+    /**
+     * The TitaniumAssetDetails model constructor.
+     * @property {module:model/TitaniumAssetDetails}
+     */
+    TitaniumAssetDetails,
 
     /**
      * The TitaniumAssetM model constructor.

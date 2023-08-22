@@ -36,37 +36,52 @@ class TitaniumUploadDataRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'annotation': 'TitaniumAnnotation',
+        'annotation': 'object',
+        'asset': 'TitaniumAssetDetails',
         'client': 'str',
+        'description': 'str',
         'file_name': 'str',
+        'mode': 'str',
         'protocol': 'str'
     }
 
     attribute_map = {
         'annotation': 'annotation',
+        'asset': 'asset',
         'client': 'client',
+        'description': 'description',
         'file_name': 'fileName',
+        'mode': 'mode',
         'protocol': 'protocol'
     }
 
-    def __init__(self, annotation=None, client=None, file_name=None, protocol=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, annotation=None, asset=None, client=None, description=None, file_name=None, mode=None, protocol=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumUploadDataRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._annotation = None
+        self._asset = None
         self._client = None
+        self._description = None
         self._file_name = None
+        self._mode = None
         self._protocol = None
         self.discriminator = None
 
         if annotation is not None:
             self.annotation = annotation
+        if asset is not None:
+            self.asset = asset
         if client is not None:
             self.client = client
+        if description is not None:
+            self.description = description
         if file_name is not None:
             self.file_name = file_name
+        if mode is not None:
+            self.mode = mode
         if protocol is not None:
             self.protocol = protocol
 
@@ -76,7 +91,7 @@ class TitaniumUploadDataRequest(object):
 
 
         :return: The annotation of this TitaniumUploadDataRequest.  # noqa: E501
-        :rtype: TitaniumAnnotation
+        :rtype: object
         """
         return self._annotation
 
@@ -86,10 +101,31 @@ class TitaniumUploadDataRequest(object):
 
 
         :param annotation: The annotation of this TitaniumUploadDataRequest.  # noqa: E501
-        :type annotation: TitaniumAnnotation
+        :type annotation: object
         """
 
         self._annotation = annotation
+
+    @property
+    def asset(self):
+        """Gets the asset of this TitaniumUploadDataRequest.  # noqa: E501
+
+
+        :return: The asset of this TitaniumUploadDataRequest.  # noqa: E501
+        :rtype: TitaniumAssetDetails
+        """
+        return self._asset
+
+    @asset.setter
+    def asset(self, asset):
+        """Sets the asset of this TitaniumUploadDataRequest.
+
+
+        :param asset: The asset of this TitaniumUploadDataRequest.  # noqa: E501
+        :type asset: TitaniumAssetDetails
+        """
+
+        self._asset = asset
 
     @property
     def client(self):
@@ -113,6 +149,27 @@ class TitaniumUploadDataRequest(object):
         self._client = client
 
     @property
+    def description(self):
+        """Gets the description of this TitaniumUploadDataRequest.  # noqa: E501
+
+
+        :return: The description of this TitaniumUploadDataRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._description
+
+    @description.setter
+    def description(self, description):
+        """Sets the description of this TitaniumUploadDataRequest.
+
+
+        :param description: The description of this TitaniumUploadDataRequest.  # noqa: E501
+        :type description: str
+        """
+
+        self._description = description
+
+    @property
     def file_name(self):
         """Gets the file_name of this TitaniumUploadDataRequest.  # noqa: E501
 
@@ -132,6 +189,27 @@ class TitaniumUploadDataRequest(object):
         """
 
         self._file_name = file_name
+
+    @property
+    def mode(self):
+        """Gets the mode of this TitaniumUploadDataRequest.  # noqa: E501
+
+
+        :return: The mode of this TitaniumUploadDataRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._mode
+
+    @mode.setter
+    def mode(self, mode):
+        """Sets the mode of this TitaniumUploadDataRequest.
+
+
+        :param mode: The mode of this TitaniumUploadDataRequest.  # noqa: E501
+        :type mode: str
+        """
+
+        self._mode = mode
 
     @property
     def protocol(self):

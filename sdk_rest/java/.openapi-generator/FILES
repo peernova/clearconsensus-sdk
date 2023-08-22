@@ -77,8 +77,8 @@ docs/SupportedFieldsServiceApi.md
 docs/TitaniumAcknowledgeResponse.md
 docs/TitaniumAddAssetRequest.md
 docs/TitaniumAddLookupTableRequest.md
-docs/TitaniumAnnotation.md
 docs/TitaniumAsset.md
+docs/TitaniumAssetDetails.md
 docs/TitaniumAssetM.md
 docs/TitaniumAssetsList.md
 docs/TitaniumAssetsListRequest.md
@@ -514,8 +514,8 @@ src/main/java/org/openapitools/client/model/RpcStatus.java
 src/main/java/org/openapitools/client/model/TitaniumAcknowledgeResponse.java
 src/main/java/org/openapitools/client/model/TitaniumAddAssetRequest.java
 src/main/java/org/openapitools/client/model/TitaniumAddLookupTableRequest.java
-src/main/java/org/openapitools/client/model/TitaniumAnnotation.java
 src/main/java/org/openapitools/client/model/TitaniumAsset.java
+src/main/java/org/openapitools/client/model/TitaniumAssetDetails.java
 src/main/java/org/openapitools/client/model/TitaniumAssetM.java
 src/main/java/org/openapitools/client/model/TitaniumAssetsList.java
 src/main/java/org/openapitools/client/model/TitaniumAssetsListRequest.java
@@ -846,3 +846,4 @@ src/main/java/org/openapitools/client/model/TitaniumValuesRow.java
 src/main/java/org/openapitools/client/model/TitaniumVersion.java
 src/main/java/org/openapitools/client/model/TitaniumVersionList.java
 src/main/java/org/openapitools/client/model/TitaniumViewRow.java
+src/test/java/org/openapitools/client/model/TitaniumAssetDetailsTest.java

@@ -74,8 +74,8 @@ docs/SupportedFieldsServiceApi.md
 docs/TitaniumAcknowledgeResponse.md
 docs/TitaniumAddAssetRequest.md
 docs/TitaniumAddLookupTableRequest.md
-docs/TitaniumAnnotation.md
 docs/TitaniumAsset.md
+docs/TitaniumAssetDetails.md
 docs/TitaniumAssetM.md
 docs/TitaniumAssetsList.md
 docs/TitaniumAssetsListRequest.md
@@ -489,8 +489,8 @@ src/model/RpcStatus.js
 src/model/TitaniumAcknowledgeResponse.js
 src/model/TitaniumAddAssetRequest.js
 src/model/TitaniumAddLookupTableRequest.js
-src/model/TitaniumAnnotation.js
 src/model/TitaniumAsset.js
+src/model/TitaniumAssetDetails.js
 src/model/TitaniumAssetM.js
 src/model/TitaniumAssetsList.js
 src/model/TitaniumAssetsListRequest.js
@@ -821,3 +821,4 @@ src/model/TitaniumValuesRow.js
 src/model/TitaniumVersion.js
 src/model/TitaniumVersionList.js
 src/model/TitaniumViewRow.js
+test/model/TitaniumAssetDetails.spec.js

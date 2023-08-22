@@ -7,6 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
+|**currency** | **String** |  |  [optional] |
 |**distanceToConsensus** | **BigDecimal** |  |  [optional] |
 |**latestTradePrice** | **BigDecimal** |  |  [optional] |
 |**notional** | **BigDecimal** |  |  [optional] |

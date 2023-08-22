@@ -47,6 +47,9 @@ class TitaniumTradeAnchorDetails {
         if (data) {
             obj = obj || new TitaniumTradeAnchorDetails();
 
+            if (data.hasOwnProperty('currency')) {
+                obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
+            }
             if (data.hasOwnProperty('distanceToConsensus')) {
                 obj['distanceToConsensus'] = ApiClient.convertToType(data['distanceToConsensus'], 'Number');
             }
@@ -71,6 +74,11 @@ class TitaniumTradeAnchorDetails {
 
 
 }
+
+/**
+ * @member {String} currency
+ */
+TitaniumTradeAnchorDetails.prototype['currency'] = undefined;
 
 /**
  * @member {Number} distanceToConsensus

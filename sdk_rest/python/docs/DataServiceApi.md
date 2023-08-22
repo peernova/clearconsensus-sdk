@@ -475,19 +475,19 @@ with openapi_client.ApiClient() as api_client:
     # Create an instance of the API class
     api_instance = data_service_api.DataServiceApi(api_client)
     body = TitaniumUploadDataRequest(
-        annotation=TitaniumAnnotation(
-            annotations={},
-            asset="asset_example",
+        annotation={},
+        asset=TitaniumAssetDetails(
             asset_id="asset_id_example",
             date="date_example",
-            description="description_example",
-            mode="mode_example",
+            name="name_example",
             service="service_example",
             snap_time="snap_time_example",
             sub_asset="sub_asset_example",
         ),
         client="client_example",
+        description="description_example",
         file_name="file_name_example",
+        mode="mode_example",
         protocol="protocol_example",
     ) # TitaniumUploadDataRequest | 
 

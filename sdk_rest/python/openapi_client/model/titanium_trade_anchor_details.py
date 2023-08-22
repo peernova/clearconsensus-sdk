@@ -81,6 +81,7 @@ class TitaniumTradeAnchorDetails(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'currency': (str,),  # noqa: E501
             'distance_to_consensus': (float,),  # noqa: E501
             'latest_trade_price': (float,),  # noqa: E501
             'notional': (float,),  # noqa: E501
@@ -95,6 +96,7 @@ class TitaniumTradeAnchorDetails(ModelNormal):
 
 
     attribute_map = {
+        'currency': 'currency',  # noqa: E501
         'distance_to_consensus': 'distanceToConsensus',  # noqa: E501
         'latest_trade_price': 'latestTradePrice',  # noqa: E501
         'notional': 'notional',  # noqa: E501
@@ -144,6 +146,7 @@ class TitaniumTradeAnchorDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            currency (str): [optional]  # noqa: E501
             distance_to_consensus (float): [optional]  # noqa: E501
             latest_trade_price (float): [optional]  # noqa: E501
             notional (float): [optional]  # noqa: E501
@@ -235,6 +238,7 @@ class TitaniumTradeAnchorDetails(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            currency (str): [optional]  # noqa: E501
             distance_to_consensus (float): [optional]  # noqa: E501
             latest_trade_price (float): [optional]  # noqa: E501
             notional (float): [optional]  # noqa: E501

@@ -47,6 +47,9 @@ class TitaniumTradePeriodMetrics {
         if (data) {
             obj = obj || new TitaniumTradePeriodMetrics();
 
+            if (data.hasOwnProperty('currency')) {
+                obj['currency'] = ApiClient.convertToType(data['currency'], 'String');
+            }
             if (data.hasOwnProperty('maxNotionalAmount')) {
                 obj['maxNotionalAmount'] = ApiClient.convertToType(data['maxNotionalAmount'], 'Number');
             }
@@ -65,6 +68,11 @@ class TitaniumTradePeriodMetrics {
 
 
 }
+
+/**
+ * @member {String} currency
+ */
+TitaniumTradePeriodMetrics.prototype['currency'] = undefined;
 
 /**
  * @member {Number} maxNotionalAmount
