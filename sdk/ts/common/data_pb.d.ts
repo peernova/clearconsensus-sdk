@@ -638,13 +638,24 @@ export class UploadDataRequest extends jspb.Message {
   getFileName(): string;
   setFileName(value: string): void;
 
-  hasAnnotation(): boolean;
-  clearAnnotation(): void;
-  getAnnotation(): Annotation | undefined;
-  setAnnotation(value?: Annotation): void;
-
   getProtocol(): ProtocolMap[keyof ProtocolMap];
   setProtocol(value: ProtocolMap[keyof ProtocolMap]): void;
+
+  getMode(): UploadModeMap[keyof UploadModeMap];
+  setMode(value: UploadModeMap[keyof UploadModeMap]): void;
+
+  hasAsset(): boolean;
+  clearAsset(): void;
+  getAsset(): AssetDetails | undefined;
+  setAsset(value?: AssetDetails): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  hasAnnotation(): boolean;
+  clearAnnotation(): void;
+  getAnnotation(): google_protobuf_struct_pb.Struct | undefined;
+  setAnnotation(value?: google_protobuf_struct_pb.Struct): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UploadDataRequest.AsObject;
@@ -660,8 +671,51 @@ export namespace UploadDataRequest {
   export type AsObject = {
     client: string,
     fileName: string,
-    annotation?: Annotation.AsObject,
     protocol: ProtocolMap[keyof ProtocolMap],
+    mode: UploadModeMap[keyof UploadModeMap],
+    asset?: AssetDetails.AsObject,
+    description: string,
+    annotation?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class AssetDetails extends jspb.Message {
+  getAssetId(): string;
+  setAssetId(value: string): void;
+
+  getName(): string;
+  setName(value: string): void;
+
+  getSubAsset(): string;
+  setSubAsset(value: string): void;
+
+  getService(): string;
+  setService(value: string): void;
+
+  getSnapTime(): string;
+  setSnapTime(value: string): void;
+
+  getDate(): string;
+  setDate(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): AssetDetails.AsObject;
+  static toObject(includeInstance: boolean, msg: AssetDetails): AssetDetails.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: AssetDetails, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): AssetDetails;
+  static deserializeBinaryFromReader(message: AssetDetails, reader: jspb.BinaryReader): AssetDetails;
+}
+
+export namespace AssetDetails {
+  export type AsObject = {
+    assetId: string,
+    name: string,
+    subAsset: string,
+    service: string,
+    snapTime: string,
+    date: string,
   }
 }
 

@@ -7181,9 +7181,10 @@ proto.titanium.TradeAnchorDetails.toObject = function(includeInstance, msg) {
     latestTradePrice: jspb.Message.getFloatingPointFieldWithDefault(msg, 1, 0.0),
     distanceToConsensus: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     notional: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    tradeExecutionTime: jspb.Message.getFieldWithDefault(msg, 4, ""),
-    pricingAge: jspb.Message.getFieldWithDefault(msg, 5, ""),
-    source: jspb.Message.getFieldWithDefault(msg, 6, "")
+    currency: jspb.Message.getFieldWithDefault(msg, 4, ""),
+    tradeExecutionTime: jspb.Message.getFieldWithDefault(msg, 5, ""),
+    pricingAge: jspb.Message.getFieldWithDefault(msg, 6, ""),
+    source: jspb.Message.getFieldWithDefault(msg, 7, "")
   };
 
   if (includeInstance) {
@@ -7234,13 +7235,17 @@ proto.titanium.TradeAnchorDetails.deserializeBinaryFromReader = function(msg, re
       break;
     case 4:
       var value = /** @type {string} */ (reader.readString());
-      msg.setTradeExecutionTime(value);
+      msg.setCurrency(value);
       break;
     case 5:
       var value = /** @type {string} */ (reader.readString());
-      msg.setPricingAge(value);
+      msg.setTradeExecutionTime(value);
       break;
     case 6:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setPricingAge(value);
+      break;
+    case 7:
       var value = /** @type {string} */ (reader.readString());
       msg.setSource(value);
       break;
@@ -7294,24 +7299,31 @@ proto.titanium.TradeAnchorDetails.serializeBinaryToWriter = function(message, wr
       f
     );
   }
-  f = message.getTradeExecutionTime();
+  f = message.getCurrency();
   if (f.length > 0) {
     writer.writeString(
       4,
       f
     );
   }
-  f = message.getPricingAge();
+  f = message.getTradeExecutionTime();
   if (f.length > 0) {
     writer.writeString(
       5,
       f
     );
   }
-  f = message.getSource();
+  f = message.getPricingAge();
   if (f.length > 0) {
     writer.writeString(
       6,
+      f
+    );
+  }
+  f = message.getSource();
+  if (f.length > 0) {
+    writer.writeString(
+      7,
       f
     );
   }
@@ -7373,10 +7385,10 @@ proto.titanium.TradeAnchorDetails.prototype.setNotional = function(value) {
 
 
 /**
- * optional string trade_execution_time = 4;
+ * optional string currency = 4;
  * @return {string}
  */
-proto.titanium.TradeAnchorDetails.prototype.getTradeExecutionTime = function() {
+proto.titanium.TradeAnchorDetails.prototype.getCurrency = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 4, ""));
 };
 
@@ -7385,16 +7397,16 @@ proto.titanium.TradeAnchorDetails.prototype.getTradeExecutionTime = function() {
  * @param {string} value
  * @return {!proto.titanium.TradeAnchorDetails} returns this
  */
-proto.titanium.TradeAnchorDetails.prototype.setTradeExecutionTime = function(value) {
+proto.titanium.TradeAnchorDetails.prototype.setCurrency = function(value) {
   return jspb.Message.setProto3StringField(this, 4, value);
 };
 
 
 /**
- * optional string pricing_age = 5;
+ * optional string trade_execution_time = 5;
  * @return {string}
  */
-proto.titanium.TradeAnchorDetails.prototype.getPricingAge = function() {
+proto.titanium.TradeAnchorDetails.prototype.getTradeExecutionTime = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
 };
 
@@ -7403,16 +7415,16 @@ proto.titanium.TradeAnchorDetails.prototype.getPricingAge = function() {
  * @param {string} value
  * @return {!proto.titanium.TradeAnchorDetails} returns this
  */
-proto.titanium.TradeAnchorDetails.prototype.setPricingAge = function(value) {
+proto.titanium.TradeAnchorDetails.prototype.setTradeExecutionTime = function(value) {
   return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 
 /**
- * optional string source = 6;
+ * optional string pricing_age = 6;
  * @return {string}
  */
-proto.titanium.TradeAnchorDetails.prototype.getSource = function() {
+proto.titanium.TradeAnchorDetails.prototype.getPricingAge = function() {
   return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 6, ""));
 };
 
@@ -7421,8 +7433,26 @@ proto.titanium.TradeAnchorDetails.prototype.getSource = function() {
  * @param {string} value
  * @return {!proto.titanium.TradeAnchorDetails} returns this
  */
-proto.titanium.TradeAnchorDetails.prototype.setSource = function(value) {
+proto.titanium.TradeAnchorDetails.prototype.setPricingAge = function(value) {
   return jspb.Message.setProto3StringField(this, 6, value);
+};
+
+
+/**
+ * optional string source = 7;
+ * @return {string}
+ */
+proto.titanium.TradeAnchorDetails.prototype.getSource = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 7, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.TradeAnchorDetails} returns this
+ */
+proto.titanium.TradeAnchorDetails.prototype.setSource = function(value) {
+  return jspb.Message.setProto3StringField(this, 7, value);
 };
 
 
@@ -8106,7 +8136,8 @@ proto.titanium.TradePeriodMetrics.toObject = function(includeInstance, msg) {
     tradeCount: jspb.Message.getFieldWithDefault(msg, 1, 0),
     minNotionalAmount: jspb.Message.getFloatingPointFieldWithDefault(msg, 2, 0.0),
     maxNotionalAmount: jspb.Message.getFloatingPointFieldWithDefault(msg, 3, 0.0),
-    totalLiquidity: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0)
+    totalLiquidity: jspb.Message.getFloatingPointFieldWithDefault(msg, 4, 0.0),
+    currency: jspb.Message.getFieldWithDefault(msg, 5, "")
   };
 
   if (includeInstance) {
@@ -8158,6 +8189,10 @@ proto.titanium.TradePeriodMetrics.deserializeBinaryFromReader = function(msg, re
     case 4:
       var value = /** @type {number} */ (reader.readDouble());
       msg.setTotalLiquidity(value);
+      break;
+    case 5:
+      var value = /** @type {string} */ (reader.readString());
+      msg.setCurrency(value);
       break;
     default:
       reader.skipField();
@@ -8213,6 +8248,13 @@ proto.titanium.TradePeriodMetrics.serializeBinaryToWriter = function(message, wr
   if (f !== 0.0) {
     writer.writeDouble(
       4,
+      f
+    );
+  }
+  f = message.getCurrency();
+  if (f.length > 0) {
+    writer.writeString(
+      5,
       f
     );
   }
@@ -8288,6 +8330,24 @@ proto.titanium.TradePeriodMetrics.prototype.getTotalLiquidity = function() {
  */
 proto.titanium.TradePeriodMetrics.prototype.setTotalLiquidity = function(value) {
   return jspb.Message.setProto3FloatField(this, 4, value);
+};
+
+
+/**
+ * optional string currency = 5;
+ * @return {string}
+ */
+proto.titanium.TradePeriodMetrics.prototype.getCurrency = function() {
+  return /** @type {string} */ (jspb.Message.getFieldWithDefault(this, 5, ""));
+};
+
+
+/**
+ * @param {string} value
+ * @return {!proto.titanium.TradePeriodMetrics} returns this
+ */
+proto.titanium.TradePeriodMetrics.prototype.setCurrency = function(value) {
+  return jspb.Message.setProto3StringField(this, 5, value);
 };
 
 

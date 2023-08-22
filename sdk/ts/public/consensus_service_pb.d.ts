@@ -865,6 +865,9 @@ export class TradeAnchorDetails extends jspb.Message {
   getNotional(): number;
   setNotional(value: number): void;
 
+  getCurrency(): string;
+  setCurrency(value: string): void;
+
   getTradeExecutionTime(): string;
   setTradeExecutionTime(value: string): void;
 
@@ -889,6 +892,7 @@ export namespace TradeAnchorDetails {
     latestTradePrice: number,
     distanceToConsensus: number,
     notional: number,
+    currency: string,
     tradeExecutionTime: string,
     pricingAge: string,
     source: string,
@@ -998,6 +1002,9 @@ export class TradePeriodMetrics extends jspb.Message {
   getTotalLiquidity(): number;
   setTotalLiquidity(value: number): void;
 
+  getCurrency(): string;
+  setCurrency(value: string): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): TradePeriodMetrics.AsObject;
   static toObject(includeInstance: boolean, msg: TradePeriodMetrics): TradePeriodMetrics.AsObject;
@@ -1014,6 +1021,7 @@ export namespace TradePeriodMetrics {
     minNotionalAmount: number,
     maxNotionalAmount: number,
     totalLiquidity: number,
+    currency: string,
   }
 }
 
