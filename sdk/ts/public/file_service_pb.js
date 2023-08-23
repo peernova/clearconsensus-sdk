@@ -23,5 +23,5 @@ var google_protobuf_empty_pb = require('google-protobuf/google/protobuf/empty_pb
 goog.object.extend(proto, google_protobuf_empty_pb);
 var common_gateway_base_pb = require('../common/gateway_base_pb.js');
 goog.object.extend(proto, common_gateway_base_pb);
-var common_file_service_pb = require('../common/file_service_pb.js');
-goog.object.extend(proto, common_file_service_pb);
+var common_file_pb = require('../common/file_pb.js');
+goog.object.extend(proto, common_file_pb);

@@ -6,7 +6,7 @@
 var public_file_service_pb = require("../public/file_service_pb");
 var google_protobuf_empty_pb = require("google-protobuf/google/protobuf/empty_pb");
 var common_gateway_base_pb = require("../common/gateway_base_pb");
-var common_file_service_pb = require("../common/file_service_pb");
+var common_file_pb = require("../common/file_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var FileService = (function () {
@@ -20,8 +20,8 @@ FileService.GetFilePreview = {
   service: FileService,
   requestStream: false,
   responseStream: false,
-  requestType: common_file_service_pb.FileIdentifier,
-  responseType: common_file_service_pb.FilePreview
+  requestType: common_file_pb.FileIdentifier,
+  responseType: common_file_pb.FilePreview
 };
 
 FileService.ListFiles = {
@@ -30,7 +30,7 @@ FileService.ListFiles = {
   requestStream: false,
   responseStream: false,
   requestType: common_gateway_base_pb.ListRequest,
-  responseType: common_file_service_pb.FileList
+  responseType: common_file_pb.FileList
 };
 
 FileService.SetFileDelimiter = {
@@ -38,7 +38,7 @@ FileService.SetFileDelimiter = {
   service: FileService,
   requestStream: false,
   responseStream: false,
-  requestType: common_file_service_pb.SetFileDelimiterRequest,
+  requestType: common_file_pb.SetFileDelimiterRequest,
   responseType: google_protobuf_empty_pb.Empty
 };
 
@@ -47,8 +47,8 @@ FileService.GetFileDelimiter = {
   service: FileService,
   requestStream: false,
   responseStream: false,
-  requestType: common_file_service_pb.FileIdentifier,
-  responseType: common_file_service_pb.FileDelimiterSetting
+  requestType: common_file_pb.FileIdentifier,
+  responseType: common_file_pb.FileDelimiterSetting
 };
 
 FileService.SetFileDescriptor = {
@@ -56,7 +56,7 @@ FileService.SetFileDescriptor = {
   service: FileService,
   requestStream: false,
   responseStream: false,
-  requestType: common_file_service_pb.SetFileDescriptorRequest,
+  requestType: common_file_pb.SetFileDescriptorRequest,
   responseType: google_protobuf_empty_pb.Empty
 };
 
@@ -65,8 +65,8 @@ FileService.GetFileDescriptor = {
   service: FileService,
   requestStream: false,
   responseStream: false,
-  requestType: common_file_service_pb.FileIdentifier,
-  responseType: common_file_service_pb.FileDescriptorSetting
+  requestType: common_file_pb.FileIdentifier,
+  responseType: common_file_pb.FileDescriptorSetting
 };
 
 FileService.FileSubmission = {
@@ -74,7 +74,7 @@ FileService.FileSubmission = {
   service: FileService,
   requestStream: false,
   responseStream: false,
-  requestType: common_file_service_pb.FileSubmissionRequest,
+  requestType: common_file_pb.FileSubmissionRequest,
   responseType: common_gateway_base_pb.MessageResponse
 };
 
@@ -83,8 +83,8 @@ FileService.FileHistory = {
   service: FileService,
   requestStream: false,
   responseStream: false,
-  requestType: common_file_service_pb.FileHistoryRequest,
-  responseType: common_file_service_pb.FileHistoryResponse
+  requestType: common_file_pb.FileHistoryRequest,
+  responseType: common_file_pb.FileHistoryResponse
 };
 
 FileService.GetFileExportUrl = {
@@ -92,8 +92,8 @@ FileService.GetFileExportUrl = {
   service: FileService,
   requestStream: false,
   responseStream: false,
-  requestType: common_file_service_pb.GetFileExportUrlRequest,
-  responseType: common_file_service_pb.GetFileExportUrlResponse
+  requestType: common_file_pb.GetFileExportUrlRequest,
+  responseType: common_file_pb.GetFileExportUrlResponse
 };
 
 exports.FileService = FileService;

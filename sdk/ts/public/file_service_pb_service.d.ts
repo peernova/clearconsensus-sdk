@@ -6,7 +6,7 @@
 import * as public_file_service_pb from "../public/file_service_pb";
 import * as google_protobuf_empty_pb from "google-protobuf/google/protobuf/empty_pb";
 import * as common_gateway_base_pb from "../common/gateway_base_pb";
-import * as common_file_service_pb from "../common/file_service_pb";
+import * as common_file_pb from "../common/file_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type FileServiceGetFilePreview = {
@@ -14,8 +14,8 @@ type FileServiceGetFilePreview = {
   readonly service: typeof FileService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_file_service_pb.FileIdentifier;
-  readonly responseType: typeof common_file_service_pb.FilePreview;
+  readonly requestType: typeof common_file_pb.FileIdentifier;
+  readonly responseType: typeof common_file_pb.FilePreview;
 };
 
 type FileServiceListFiles = {
@@ -24,7 +24,7 @@ type FileServiceListFiles = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_gateway_base_pb.ListRequest;
-  readonly responseType: typeof common_file_service_pb.FileList;
+  readonly responseType: typeof common_file_pb.FileList;
 };
 
 type FileServiceSetFileDelimiter = {
@@ -32,7 +32,7 @@ type FileServiceSetFileDelimiter = {
   readonly service: typeof FileService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_file_service_pb.SetFileDelimiterRequest;
+  readonly requestType: typeof common_file_pb.SetFileDelimiterRequest;
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
@@ -41,8 +41,8 @@ type FileServiceGetFileDelimiter = {
   readonly service: typeof FileService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_file_service_pb.FileIdentifier;
-  readonly responseType: typeof common_file_service_pb.FileDelimiterSetting;
+  readonly requestType: typeof common_file_pb.FileIdentifier;
+  readonly responseType: typeof common_file_pb.FileDelimiterSetting;
 };
 
 type FileServiceSetFileDescriptor = {
@@ -50,7 +50,7 @@ type FileServiceSetFileDescriptor = {
   readonly service: typeof FileService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_file_service_pb.SetFileDescriptorRequest;
+  readonly requestType: typeof common_file_pb.SetFileDescriptorRequest;
   readonly responseType: typeof google_protobuf_empty_pb.Empty;
 };
 
@@ -59,8 +59,8 @@ type FileServiceGetFileDescriptor = {
   readonly service: typeof FileService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_file_service_pb.FileIdentifier;
-  readonly responseType: typeof common_file_service_pb.FileDescriptorSetting;
+  readonly requestType: typeof common_file_pb.FileIdentifier;
+  readonly responseType: typeof common_file_pb.FileDescriptorSetting;
 };
 
 type FileServiceFileSubmission = {
@@ -68,7 +68,7 @@ type FileServiceFileSubmission = {
   readonly service: typeof FileService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_file_service_pb.FileSubmissionRequest;
+  readonly requestType: typeof common_file_pb.FileSubmissionRequest;
   readonly responseType: typeof common_gateway_base_pb.MessageResponse;
 };
 
@@ -77,8 +77,8 @@ type FileServiceFileHistory = {
   readonly service: typeof FileService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_file_service_pb.FileHistoryRequest;
-  readonly responseType: typeof common_file_service_pb.FileHistoryResponse;
+  readonly requestType: typeof common_file_pb.FileHistoryRequest;
+  readonly responseType: typeof common_file_pb.FileHistoryResponse;
 };
 
 type FileServiceGetFileExportUrl = {
@@ -86,8 +86,8 @@ type FileServiceGetFileExportUrl = {
   readonly service: typeof FileService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_file_service_pb.GetFileExportUrlRequest;
-  readonly responseType: typeof common_file_service_pb.GetFileExportUrlResponse;
+  readonly requestType: typeof common_file_pb.GetFileExportUrlRequest;
+  readonly responseType: typeof common_file_pb.GetFileExportUrlResponse;
 };
 
 export class FileService {
@@ -136,85 +136,85 @@ export class FileServiceClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   getFilePreview(
-    requestMessage: common_file_service_pb.FileIdentifier,
+    requestMessage: common_file_pb.FileIdentifier,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FilePreview|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FilePreview|null) => void
   ): UnaryResponse;
   getFilePreview(
-    requestMessage: common_file_service_pb.FileIdentifier,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FilePreview|null) => void
+    requestMessage: common_file_pb.FileIdentifier,
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FilePreview|null) => void
   ): UnaryResponse;
   listFiles(
     requestMessage: common_gateway_base_pb.ListRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FileList|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FileList|null) => void
   ): UnaryResponse;
   listFiles(
     requestMessage: common_gateway_base_pb.ListRequest,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FileList|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FileList|null) => void
   ): UnaryResponse;
   setFileDelimiter(
-    requestMessage: common_file_service_pb.SetFileDelimiterRequest,
+    requestMessage: common_file_pb.SetFileDelimiterRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
   ): UnaryResponse;
   setFileDelimiter(
-    requestMessage: common_file_service_pb.SetFileDelimiterRequest,
+    requestMessage: common_file_pb.SetFileDelimiterRequest,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
   ): UnaryResponse;
   getFileDelimiter(
-    requestMessage: common_file_service_pb.FileIdentifier,
+    requestMessage: common_file_pb.FileIdentifier,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FileDelimiterSetting|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FileDelimiterSetting|null) => void
   ): UnaryResponse;
   getFileDelimiter(
-    requestMessage: common_file_service_pb.FileIdentifier,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FileDelimiterSetting|null) => void
+    requestMessage: common_file_pb.FileIdentifier,
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FileDelimiterSetting|null) => void
   ): UnaryResponse;
   setFileDescriptor(
-    requestMessage: common_file_service_pb.SetFileDescriptorRequest,
+    requestMessage: common_file_pb.SetFileDescriptorRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
   ): UnaryResponse;
   setFileDescriptor(
-    requestMessage: common_file_service_pb.SetFileDescriptorRequest,
+    requestMessage: common_file_pb.SetFileDescriptorRequest,
     callback: (error: ServiceError|null, responseMessage: google_protobuf_empty_pb.Empty|null) => void
   ): UnaryResponse;
   getFileDescriptor(
-    requestMessage: common_file_service_pb.FileIdentifier,
+    requestMessage: common_file_pb.FileIdentifier,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FileDescriptorSetting|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FileDescriptorSetting|null) => void
   ): UnaryResponse;
   getFileDescriptor(
-    requestMessage: common_file_service_pb.FileIdentifier,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FileDescriptorSetting|null) => void
+    requestMessage: common_file_pb.FileIdentifier,
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FileDescriptorSetting|null) => void
   ): UnaryResponse;
   fileSubmission(
-    requestMessage: common_file_service_pb.FileSubmissionRequest,
+    requestMessage: common_file_pb.FileSubmissionRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
   fileSubmission(
-    requestMessage: common_file_service_pb.FileSubmissionRequest,
+    requestMessage: common_file_pb.FileSubmissionRequest,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
   fileHistory(
-    requestMessage: common_file_service_pb.FileHistoryRequest,
+    requestMessage: common_file_pb.FileHistoryRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FileHistoryResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FileHistoryResponse|null) => void
   ): UnaryResponse;
   fileHistory(
-    requestMessage: common_file_service_pb.FileHistoryRequest,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.FileHistoryResponse|null) => void
+    requestMessage: common_file_pb.FileHistoryRequest,
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.FileHistoryResponse|null) => void
   ): UnaryResponse;
   getFileExportUrl(
-    requestMessage: common_file_service_pb.GetFileExportUrlRequest,
+    requestMessage: common_file_pb.GetFileExportUrlRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.GetFileExportUrlResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.GetFileExportUrlResponse|null) => void
   ): UnaryResponse;
   getFileExportUrl(
-    requestMessage: common_file_service_pb.GetFileExportUrlRequest,
-    callback: (error: ServiceError|null, responseMessage: common_file_service_pb.GetFileExportUrlResponse|null) => void
+    requestMessage: common_file_pb.GetFileExportUrlRequest,
+    callback: (error: ServiceError|null, responseMessage: common_file_pb.GetFileExportUrlResponse|null) => void
   ): UnaryResponse;
 }
 
