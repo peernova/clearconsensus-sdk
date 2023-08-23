@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetGeneratedValidationRuleResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T12:34:39.246234Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T13:58:25.807183Z[UTC]")
 public class TitaniumGetGeneratedValidationRuleResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
