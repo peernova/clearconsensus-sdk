@@ -5,7 +5,7 @@
 
 import * as public_validation_service_pb from "../public/validation_service_pb";
 import * as common_gateway_base_pb from "../common/gateway_base_pb";
-import * as common_validation_service_pb from "../common/validation_service_pb";
+import * as common_validation_pb from "../common/validation_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type ValidatorServiceAddValidationRule = {
@@ -13,7 +13,7 @@ type ValidatorServiceAddValidationRule = {
   readonly service: typeof ValidatorService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_validation_service_pb.ValidationRuleDefinition;
+  readonly requestType: typeof common_validation_pb.ValidationRuleDefinition;
   readonly responseType: typeof common_gateway_base_pb.AcknowledgeResponse;
 };
 
@@ -23,7 +23,7 @@ type ValidatorServiceGetValidationRule = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_gateway_base_pb.GetDefinition;
-  readonly responseType: typeof common_validation_service_pb.GetValidationRuleResponse;
+  readonly responseType: typeof common_validation_pb.GetValidationRuleResponse;
 };
 
 type ValidatorServiceDisableValidationRule = {
@@ -68,7 +68,7 @@ type ValidatorServiceGetValidationRuleVersion = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_gateway_base_pb.VersionRequest;
-  readonly responseType: typeof common_validation_service_pb.GetValidationRuleResponse;
+  readonly responseType: typeof common_validation_pb.GetValidationRuleResponse;
 };
 
 type ValidatorServiceGetGeneratedValidationRule = {
@@ -77,7 +77,7 @@ type ValidatorServiceGetGeneratedValidationRule = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_gateway_base_pb.GetDefinition;
-  readonly responseType: typeof common_validation_service_pb.GetGeneratedValidationRuleResponse;
+  readonly responseType: typeof common_validation_pb.GetGeneratedValidationRuleResponse;
 };
 
 type ValidatorServiceListGeneratedValidationRuleVersions = {
@@ -95,7 +95,7 @@ type ValidatorServiceGetGeneratedValidationRuleVersion = {
   readonly requestStream: false;
   readonly responseStream: false;
   readonly requestType: typeof common_gateway_base_pb.VersionRequest;
-  readonly responseType: typeof common_validation_service_pb.GetGeneratedValidationRuleResponse;
+  readonly responseType: typeof common_validation_pb.GetGeneratedValidationRuleResponse;
 };
 
 type ValidatorServiceRdlCheck = {
@@ -103,7 +103,7 @@ type ValidatorServiceRdlCheck = {
   readonly service: typeof ValidatorService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_validation_service_pb.RdlCheckRequest;
+  readonly requestType: typeof common_validation_pb.RdlCheckRequest;
   readonly responseType: typeof common_gateway_base_pb.MessageResponse;
 };
 
@@ -155,22 +155,22 @@ export class ValidatorServiceClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   addValidationRule(
-    requestMessage: common_validation_service_pb.ValidationRuleDefinition,
+    requestMessage: common_validation_pb.ValidationRuleDefinition,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
   ): UnaryResponse;
   addValidationRule(
-    requestMessage: common_validation_service_pb.ValidationRuleDefinition,
+    requestMessage: common_validation_pb.ValidationRuleDefinition,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
   ): UnaryResponse;
   getValidationRule(
     requestMessage: common_gateway_base_pb.GetDefinition,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_validation_service_pb.GetValidationRuleResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_validation_pb.GetValidationRuleResponse|null) => void
   ): UnaryResponse;
   getValidationRule(
     requestMessage: common_gateway_base_pb.GetDefinition,
-    callback: (error: ServiceError|null, responseMessage: common_validation_service_pb.GetValidationRuleResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_validation_pb.GetValidationRuleResponse|null) => void
   ): UnaryResponse;
   disableValidationRule(
     requestMessage: common_gateway_base_pb.GetDefinition,
@@ -211,20 +211,20 @@ export class ValidatorServiceClient {
   getValidationRuleVersion(
     requestMessage: common_gateway_base_pb.VersionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_validation_service_pb.GetValidationRuleResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_validation_pb.GetValidationRuleResponse|null) => void
   ): UnaryResponse;
   getValidationRuleVersion(
     requestMessage: common_gateway_base_pb.VersionRequest,
-    callback: (error: ServiceError|null, responseMessage: common_validation_service_pb.GetValidationRuleResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_validation_pb.GetValidationRuleResponse|null) => void
   ): UnaryResponse;
   getGeneratedValidationRule(
     requestMessage: common_gateway_base_pb.GetDefinition,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_validation_service_pb.GetGeneratedValidationRuleResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_validation_pb.GetGeneratedValidationRuleResponse|null) => void
   ): UnaryResponse;
   getGeneratedValidationRule(
     requestMessage: common_gateway_base_pb.GetDefinition,
-    callback: (error: ServiceError|null, responseMessage: common_validation_service_pb.GetGeneratedValidationRuleResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_validation_pb.GetGeneratedValidationRuleResponse|null) => void
   ): UnaryResponse;
   listGeneratedValidationRuleVersions(
     requestMessage: common_gateway_base_pb.GetDefinition,
@@ -238,19 +238,19 @@ export class ValidatorServiceClient {
   getGeneratedValidationRuleVersion(
     requestMessage: common_gateway_base_pb.VersionRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_validation_service_pb.GetGeneratedValidationRuleResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_validation_pb.GetGeneratedValidationRuleResponse|null) => void
   ): UnaryResponse;
   getGeneratedValidationRuleVersion(
     requestMessage: common_gateway_base_pb.VersionRequest,
-    callback: (error: ServiceError|null, responseMessage: common_validation_service_pb.GetGeneratedValidationRuleResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_validation_pb.GetGeneratedValidationRuleResponse|null) => void
   ): UnaryResponse;
   rdlCheck(
-    requestMessage: common_validation_service_pb.RdlCheckRequest,
+    requestMessage: common_validation_pb.RdlCheckRequest,
     metadata: grpc.Metadata,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
   rdlCheck(
-    requestMessage: common_validation_service_pb.RdlCheckRequest,
+    requestMessage: common_validation_pb.RdlCheckRequest,
     callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.MessageResponse|null) => void
   ): UnaryResponse;
 }

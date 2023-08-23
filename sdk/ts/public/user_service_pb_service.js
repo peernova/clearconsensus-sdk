@@ -4,7 +4,7 @@
 // file: public/user_service.proto
 
 var public_user_service_pb = require("../public/user_service_pb");
-var common_user_controller_pb = require("../common/user_controller_pb");
+var common_user_pb = require("../common/user_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var UserService = (function () {
@@ -18,8 +18,8 @@ UserService.GetUser = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.GetUserRequest,
-  responseType: common_user_controller_pb.UserResponse
+  requestType: common_user_pb.GetUserRequest,
+  responseType: common_user_pb.UserResponse
 };
 
 UserService.GetUserPermissions = {
@@ -27,8 +27,8 @@ UserService.GetUserPermissions = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.GetUserPermissionsRequest,
-  responseType: common_user_controller_pb.UserPermissionsResponse
+  requestType: common_user_pb.GetUserPermissionsRequest,
+  responseType: common_user_pb.UserPermissionsResponse
 };
 
 UserService.GetUserNotifications = {
@@ -36,8 +36,8 @@ UserService.GetUserNotifications = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.GetUserNotificationRequest,
-  responseType: common_user_controller_pb.UserNotificationsResponse
+  requestType: common_user_pb.GetUserNotificationRequest,
+  responseType: common_user_pb.UserNotificationsResponse
 };
 
 UserService.GetUserNotificationsByMarket = {
@@ -45,8 +45,8 @@ UserService.GetUserNotificationsByMarket = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.GetUserNotificationByMarketRequest,
-  responseType: common_user_controller_pb.UserNotificationsResponse
+  requestType: common_user_pb.GetUserNotificationByMarketRequest,
+  responseType: common_user_pb.UserNotificationsResponse
 };
 
 UserService.UpdateUserNotification = {
@@ -54,8 +54,8 @@ UserService.UpdateUserNotification = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.UserNotificationRequest,
-  responseType: common_user_controller_pb.UserNotificationResponse
+  requestType: common_user_pb.UserNotificationRequest,
+  responseType: common_user_pb.UserNotificationResponse
 };
 
 UserService.AddUserNotification = {
@@ -63,8 +63,8 @@ UserService.AddUserNotification = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.UserNotificationRequest,
-  responseType: common_user_controller_pb.UserNotificationResponse
+  requestType: common_user_pb.UserNotificationRequest,
+  responseType: common_user_pb.UserNotificationResponse
 };
 
 UserService.DeleteUserNotification = {
@@ -72,8 +72,8 @@ UserService.DeleteUserNotification = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.UserNotificationRequest,
-  responseType: common_user_controller_pb.UserNotificationResponse
+  requestType: common_user_pb.UserNotificationRequest,
+  responseType: common_user_pb.UserNotificationResponse
 };
 
 UserService.AddUser = {
@@ -81,8 +81,8 @@ UserService.AddUser = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.UserRequest,
-  responseType: common_user_controller_pb.UserResponse
+  requestType: common_user_pb.UserRequest,
+  responseType: common_user_pb.UserResponse
 };
 
 UserService.UpdateUser = {
@@ -90,8 +90,8 @@ UserService.UpdateUser = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.UserRequest,
-  responseType: common_user_controller_pb.UserResponse
+  requestType: common_user_pb.UserRequest,
+  responseType: common_user_pb.UserResponse
 };
 
 UserService.DeleteUser = {
@@ -99,8 +99,8 @@ UserService.DeleteUser = {
   service: UserService,
   requestStream: false,
   responseStream: false,
-  requestType: common_user_controller_pb.UserRequest,
-  responseType: common_user_controller_pb.UserResponse
+  requestType: common_user_pb.UserRequest,
+  responseType: common_user_pb.UserResponse
 };
 
 exports.UserService = UserService;

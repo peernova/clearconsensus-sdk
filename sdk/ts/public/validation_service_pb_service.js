@@ -5,7 +5,7 @@
 
 var public_validation_service_pb = require("../public/validation_service_pb");
 var common_gateway_base_pb = require("../common/gateway_base_pb");
-var common_validation_service_pb = require("../common/validation_service_pb");
+var common_validation_pb = require("../common/validation_pb");
 var grpc = require("@improbable-eng/grpc-web").grpc;
 
 var ValidatorService = (function () {
@@ -19,7 +19,7 @@ ValidatorService.AddValidationRule = {
   service: ValidatorService,
   requestStream: false,
   responseStream: false,
-  requestType: common_validation_service_pb.ValidationRuleDefinition,
+  requestType: common_validation_pb.ValidationRuleDefinition,
   responseType: common_gateway_base_pb.AcknowledgeResponse
 };
 
@@ -29,7 +29,7 @@ ValidatorService.GetValidationRule = {
   requestStream: false,
   responseStream: false,
   requestType: common_gateway_base_pb.GetDefinition,
-  responseType: common_validation_service_pb.GetValidationRuleResponse
+  responseType: common_validation_pb.GetValidationRuleResponse
 };
 
 ValidatorService.DisableValidationRule = {
@@ -74,7 +74,7 @@ ValidatorService.GetValidationRuleVersion = {
   requestStream: false,
   responseStream: false,
   requestType: common_gateway_base_pb.VersionRequest,
-  responseType: common_validation_service_pb.GetValidationRuleResponse
+  responseType: common_validation_pb.GetValidationRuleResponse
 };
 
 ValidatorService.GetGeneratedValidationRule = {
@@ -83,7 +83,7 @@ ValidatorService.GetGeneratedValidationRule = {
   requestStream: false,
   responseStream: false,
   requestType: common_gateway_base_pb.GetDefinition,
-  responseType: common_validation_service_pb.GetGeneratedValidationRuleResponse
+  responseType: common_validation_pb.GetGeneratedValidationRuleResponse
 };
 
 ValidatorService.ListGeneratedValidationRuleVersions = {
@@ -101,7 +101,7 @@ ValidatorService.GetGeneratedValidationRuleVersion = {
   requestStream: false,
   responseStream: false,
   requestType: common_gateway_base_pb.VersionRequest,
-  responseType: common_validation_service_pb.GetGeneratedValidationRuleResponse
+  responseType: common_validation_pb.GetGeneratedValidationRuleResponse
 };
 
 ValidatorService.RdlCheck = {
@@ -109,7 +109,7 @@ ValidatorService.RdlCheck = {
   service: ValidatorService,
   requestStream: false,
   responseStream: false,
-  requestType: common_validation_service_pb.RdlCheckRequest,
+  requestType: common_validation_pb.RdlCheckRequest,
   responseType: common_gateway_base_pb.MessageResponse
 };
 

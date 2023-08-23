@@ -6,5 +6,5 @@
 import * as jspb from "google-protobuf";
 import * as google_api_annotations_pb from "../google/api/annotations_pb";
 import * as common_gateway_base_pb from "../common/gateway_base_pb";
-import * as common_validation_service_pb from "../common/validation_service_pb";
+import * as common_validation_pb from "../common/validation_pb";
 

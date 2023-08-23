@@ -19,5 +19,5 @@ var global = Function('return this')();
 
 var google_api_annotations_pb = require('../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
-var common_user_controller_pb = require('../common/user_controller_pb.js');
-goog.object.extend(proto, common_user_controller_pb);
+var common_user_pb = require('../common/user_pb.js');
+goog.object.extend(proto, common_user_pb);

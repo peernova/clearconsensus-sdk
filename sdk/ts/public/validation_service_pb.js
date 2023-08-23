@@ -21,5 +21,5 @@ var google_api_annotations_pb = require('../google/api/annotations_pb.js');
 goog.object.extend(proto, google_api_annotations_pb);
 var common_gateway_base_pb = require('../common/gateway_base_pb.js');
 goog.object.extend(proto, common_gateway_base_pb);
-var common_validation_service_pb = require('../common/validation_service_pb.js');
-goog.object.extend(proto, common_validation_service_pb);
+var common_validation_pb = require('../common/validation_pb.js');
+goog.object.extend(proto, common_validation_pb);

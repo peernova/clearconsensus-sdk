@@ -4,7 +4,7 @@
 // file: public/user_service.proto
 
 import * as public_user_service_pb from "../public/user_service_pb";
-import * as common_user_controller_pb from "../common/user_controller_pb";
+import * as common_user_pb from "../common/user_pb";
 import {grpc} from "@improbable-eng/grpc-web";
 
 type UserServiceGetUser = {
@@ -12,8 +12,8 @@ type UserServiceGetUser = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.GetUserRequest;
-  readonly responseType: typeof common_user_controller_pb.UserResponse;
+  readonly requestType: typeof common_user_pb.GetUserRequest;
+  readonly responseType: typeof common_user_pb.UserResponse;
 };
 
 type UserServiceGetUserPermissions = {
@@ -21,8 +21,8 @@ type UserServiceGetUserPermissions = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.GetUserPermissionsRequest;
-  readonly responseType: typeof common_user_controller_pb.UserPermissionsResponse;
+  readonly requestType: typeof common_user_pb.GetUserPermissionsRequest;
+  readonly responseType: typeof common_user_pb.UserPermissionsResponse;
 };
 
 type UserServiceGetUserNotifications = {
@@ -30,8 +30,8 @@ type UserServiceGetUserNotifications = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.GetUserNotificationRequest;
-  readonly responseType: typeof common_user_controller_pb.UserNotificationsResponse;
+  readonly requestType: typeof common_user_pb.GetUserNotificationRequest;
+  readonly responseType: typeof common_user_pb.UserNotificationsResponse;
 };
 
 type UserServiceGetUserNotificationsByMarket = {
@@ -39,8 +39,8 @@ type UserServiceGetUserNotificationsByMarket = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.GetUserNotificationByMarketRequest;
-  readonly responseType: typeof common_user_controller_pb.UserNotificationsResponse;
+  readonly requestType: typeof common_user_pb.GetUserNotificationByMarketRequest;
+  readonly responseType: typeof common_user_pb.UserNotificationsResponse;
 };
 
 type UserServiceUpdateUserNotification = {
@@ -48,8 +48,8 @@ type UserServiceUpdateUserNotification = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.UserNotificationRequest;
-  readonly responseType: typeof common_user_controller_pb.UserNotificationResponse;
+  readonly requestType: typeof common_user_pb.UserNotificationRequest;
+  readonly responseType: typeof common_user_pb.UserNotificationResponse;
 };
 
 type UserServiceAddUserNotification = {
@@ -57,8 +57,8 @@ type UserServiceAddUserNotification = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.UserNotificationRequest;
-  readonly responseType: typeof common_user_controller_pb.UserNotificationResponse;
+  readonly requestType: typeof common_user_pb.UserNotificationRequest;
+  readonly responseType: typeof common_user_pb.UserNotificationResponse;
 };
 
 type UserServiceDeleteUserNotification = {
@@ -66,8 +66,8 @@ type UserServiceDeleteUserNotification = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.UserNotificationRequest;
-  readonly responseType: typeof common_user_controller_pb.UserNotificationResponse;
+  readonly requestType: typeof common_user_pb.UserNotificationRequest;
+  readonly responseType: typeof common_user_pb.UserNotificationResponse;
 };
 
 type UserServiceAddUser = {
@@ -75,8 +75,8 @@ type UserServiceAddUser = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.UserRequest;
-  readonly responseType: typeof common_user_controller_pb.UserResponse;
+  readonly requestType: typeof common_user_pb.UserRequest;
+  readonly responseType: typeof common_user_pb.UserResponse;
 };
 
 type UserServiceUpdateUser = {
@@ -84,8 +84,8 @@ type UserServiceUpdateUser = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.UserRequest;
-  readonly responseType: typeof common_user_controller_pb.UserResponse;
+  readonly requestType: typeof common_user_pb.UserRequest;
+  readonly responseType: typeof common_user_pb.UserResponse;
 };
 
 type UserServiceDeleteUser = {
@@ -93,8 +93,8 @@ type UserServiceDeleteUser = {
   readonly service: typeof UserService;
   readonly requestStream: false;
   readonly responseStream: false;
-  readonly requestType: typeof common_user_controller_pb.UserRequest;
-  readonly responseType: typeof common_user_controller_pb.UserResponse;
+  readonly requestType: typeof common_user_pb.UserRequest;
+  readonly responseType: typeof common_user_pb.UserResponse;
 };
 
 export class UserService {
@@ -144,94 +144,94 @@ export class UserServiceClient {
 
   constructor(serviceHost: string, options?: grpc.RpcOptions);
   getUser(
-    requestMessage: common_user_controller_pb.GetUserRequest,
+    requestMessage: common_user_pb.GetUserRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   getUser(
-    requestMessage: common_user_controller_pb.GetUserRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+    requestMessage: common_user_pb.GetUserRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   getUserPermissions(
-    requestMessage: common_user_controller_pb.GetUserPermissionsRequest,
+    requestMessage: common_user_pb.GetUserPermissionsRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserPermissionsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserPermissionsResponse|null) => void
   ): UnaryResponse;
   getUserPermissions(
-    requestMessage: common_user_controller_pb.GetUserPermissionsRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserPermissionsResponse|null) => void
+    requestMessage: common_user_pb.GetUserPermissionsRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserPermissionsResponse|null) => void
   ): UnaryResponse;
   getUserNotifications(
-    requestMessage: common_user_controller_pb.GetUserNotificationRequest,
+    requestMessage: common_user_pb.GetUserNotificationRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationsResponse|null) => void
   ): UnaryResponse;
   getUserNotifications(
-    requestMessage: common_user_controller_pb.GetUserNotificationRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationsResponse|null) => void
+    requestMessage: common_user_pb.GetUserNotificationRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationsResponse|null) => void
   ): UnaryResponse;
   getUserNotificationsByMarket(
-    requestMessage: common_user_controller_pb.GetUserNotificationByMarketRequest,
+    requestMessage: common_user_pb.GetUserNotificationByMarketRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationsResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationsResponse|null) => void
   ): UnaryResponse;
   getUserNotificationsByMarket(
-    requestMessage: common_user_controller_pb.GetUserNotificationByMarketRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationsResponse|null) => void
+    requestMessage: common_user_pb.GetUserNotificationByMarketRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationsResponse|null) => void
   ): UnaryResponse;
   updateUserNotification(
-    requestMessage: common_user_controller_pb.UserNotificationRequest,
+    requestMessage: common_user_pb.UserNotificationRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationResponse|null) => void
   ): UnaryResponse;
   updateUserNotification(
-    requestMessage: common_user_controller_pb.UserNotificationRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationResponse|null) => void
+    requestMessage: common_user_pb.UserNotificationRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationResponse|null) => void
   ): UnaryResponse;
   addUserNotification(
-    requestMessage: common_user_controller_pb.UserNotificationRequest,
+    requestMessage: common_user_pb.UserNotificationRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationResponse|null) => void
   ): UnaryResponse;
   addUserNotification(
-    requestMessage: common_user_controller_pb.UserNotificationRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationResponse|null) => void
+    requestMessage: common_user_pb.UserNotificationRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationResponse|null) => void
   ): UnaryResponse;
   deleteUserNotification(
-    requestMessage: common_user_controller_pb.UserNotificationRequest,
+    requestMessage: common_user_pb.UserNotificationRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationResponse|null) => void
   ): UnaryResponse;
   deleteUserNotification(
-    requestMessage: common_user_controller_pb.UserNotificationRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserNotificationResponse|null) => void
+    requestMessage: common_user_pb.UserNotificationRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserNotificationResponse|null) => void
   ): UnaryResponse;
   addUser(
-    requestMessage: common_user_controller_pb.UserRequest,
+    requestMessage: common_user_pb.UserRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   addUser(
-    requestMessage: common_user_controller_pb.UserRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+    requestMessage: common_user_pb.UserRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   updateUser(
-    requestMessage: common_user_controller_pb.UserRequest,
+    requestMessage: common_user_pb.UserRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   updateUser(
-    requestMessage: common_user_controller_pb.UserRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+    requestMessage: common_user_pb.UserRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   deleteUser(
-    requestMessage: common_user_controller_pb.UserRequest,
+    requestMessage: common_user_pb.UserRequest,
     metadata: grpc.Metadata,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserResponse|null) => void
   ): UnaryResponse;
   deleteUser(
-    requestMessage: common_user_controller_pb.UserRequest,
-    callback: (error: ServiceError|null, responseMessage: common_user_controller_pb.UserResponse|null) => void
+    requestMessage: common_user_pb.UserRequest,
+    callback: (error: ServiceError|null, responseMessage: common_user_pb.UserResponse|null) => void
   ): UnaryResponse;
 }
 
