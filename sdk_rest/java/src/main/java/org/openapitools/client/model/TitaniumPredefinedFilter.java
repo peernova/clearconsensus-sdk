@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumPredefinedFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T08:20:46.228696Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T10:04:56.045876Z[UTC]")
 public class TitaniumPredefinedFilter {
   public static final String SERIALIZED_NAME_INSTRUMENT_TYPES_WITH_COUNT = "instrumentTypesWithCount";
   @SerializedName(SERIALIZED_NAME_INSTRUMENT_TYPES_WITH_COUNT)

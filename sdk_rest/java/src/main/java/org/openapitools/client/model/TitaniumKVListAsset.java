@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumKVListAsset
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T08:20:46.228696Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T10:04:56.045876Z[UTC]")
 public class TitaniumKVListAsset {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
