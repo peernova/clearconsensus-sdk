@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GrpcprotoTableColumn;
 import org.openapitools.client.model.GrpcprotoTableRow;
+import org.openapitools.client.model.ProtoColumnDefinition;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,11 +51,11 @@ import org.openapitools.client.JSON;
 /**
  * GrpcprotoTable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T14:39:24.626712Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T07:13:26.014483Z[UTC]")
 public class GrpcprotoTable {
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
-  private List<GrpcprotoTableColumn> columns = null;
+  private List<ProtoColumnDefinition> columns = null;
 
   public static final String SERIALIZED_NAME_ROWS = "rows";
   @SerializedName(SERIALIZED_NAME_ROWS)
@@ -63,18 +63,18 @@ public class GrpcprotoTable {
 
   public static final String SERIALIZED_NAME_TOTAL_ROWS = "totalRows";
   @SerializedName(SERIALIZED_NAME_TOTAL_ROWS)
-  private String totalRows;
+  private Integer totalRows;
 
   public GrpcprotoTable() { 
   }
 
-  public GrpcprotoTable columns(List<GrpcprotoTableColumn> columns) {
+  public GrpcprotoTable columns(List<ProtoColumnDefinition> columns) {
     
     this.columns = columns;
     return this;
   }
 
-  public GrpcprotoTable addColumnsItem(GrpcprotoTableColumn columnsItem) {
+  public GrpcprotoTable addColumnsItem(ProtoColumnDefinition columnsItem) {
     if (this.columns == null) {
       this.columns = new ArrayList<>();
     }
@@ -89,12 +89,12 @@ public class GrpcprotoTable {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<GrpcprotoTableColumn> getColumns() {
+  public List<ProtoColumnDefinition> getColumns() {
     return columns;
   }
 
 
-  public void setColumns(List<GrpcprotoTableColumn> columns) {
+  public void setColumns(List<ProtoColumnDefinition> columns) {
     this.columns = columns;
   }
 
@@ -130,7 +130,7 @@ public class GrpcprotoTable {
   }
 
 
-  public GrpcprotoTable totalRows(String totalRows) {
+  public GrpcprotoTable totalRows(Integer totalRows) {
     
     this.totalRows = totalRows;
     return this;
@@ -143,12 +143,12 @@ public class GrpcprotoTable {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public String getTotalRows() {
+  public Integer getTotalRows() {
     return totalRows;
   }
 
 
-  public void setTotalRows(String totalRows) {
+  public void setTotalRows(Integer totalRows) {
     this.totalRows = totalRows;
   }
 
@@ -241,7 +241,7 @@ public class GrpcprotoTable {
 
         // validate the optional field `columns` (array)
         for (int i = 0; i < jsonArraycolumns.size(); i++) {
-          GrpcprotoTableColumn.validateJsonObject(jsonArraycolumns.get(i).getAsJsonObject());
+          ProtoColumnDefinition.validateJsonObject(jsonArraycolumns.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayrows = jsonObj.getAsJsonArray("rows");
@@ -255,9 +255,6 @@ public class GrpcprotoTable {
         for (int i = 0; i < jsonArrayrows.size(); i++) {
           GrpcprotoTableRow.validateJsonObject(jsonArrayrows.get(i).getAsJsonObject());
         };
-      }
-      if (jsonObj.get("totalRows") != null && !jsonObj.get("totalRows").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `totalRows` to be a primitive type in the JSON string but got `%s`", jsonObj.get("totalRows").toString()));
       }
   }
 

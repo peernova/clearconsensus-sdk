@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**columns** | [**[TitaniumTableColumn]**](TitaniumTableColumn.md) |  | [optional] 
+**columns** | [**[TableColumn]**](TableColumn.md) |  | [optional] 
 **rows** | [**[TitaniumTableRow]**](TitaniumTableRow.md) |  | [optional] 
 **totalRows** | **String** |  | [optional] 
 

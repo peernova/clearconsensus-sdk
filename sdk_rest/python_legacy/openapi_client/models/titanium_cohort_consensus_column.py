@@ -37,53 +37,57 @@ class TitaniumCohortConsensusColumn(object):
     """
     openapi_types = {
         'abs_diff_from_consensus': 'object',
+        'accepted_max': 'object',
+        'accepted_min': 'object',
         'cohort_consensus_price': 'object',
         'cons_abs_diff_from_anchor_evp_mid': 'object',
         'cons_abs_diff_from_anchor_evp_mid_calc': 'object',
         'cons_abs_diff_from_anchor_sub': 'object',
         'cons_abs_diff_from_anchor_trade': 'object',
-        'lower_boundary': 'object',
         'number_of_instruments': 'object',
         'std_dev': 'object',
-        'sub_price_diff': 'object',
-        'upper_boundary': 'object'
+        'sub_price_diff': 'object'
     }
 
     attribute_map = {
         'abs_diff_from_consensus': 'absDiffFromConsensus',
+        'accepted_max': 'acceptedMax',
+        'accepted_min': 'acceptedMin',
         'cohort_consensus_price': 'cohortConsensusPrice',
         'cons_abs_diff_from_anchor_evp_mid': 'consAbsDiffFromAnchorEvpMid',
         'cons_abs_diff_from_anchor_evp_mid_calc': 'consAbsDiffFromAnchorEvpMidCalc',
         'cons_abs_diff_from_anchor_sub': 'consAbsDiffFromAnchorSub',
         'cons_abs_diff_from_anchor_trade': 'consAbsDiffFromAnchorTrade',
-        'lower_boundary': 'lowerBoundary',
         'number_of_instruments': 'numberOfInstruments',
         'std_dev': 'stdDev',
-        'sub_price_diff': 'subPriceDiff',
-        'upper_boundary': 'upperBoundary'
+        'sub_price_diff': 'subPriceDiff'
     }
 
-    def __init__(self, abs_diff_from_consensus=None, cohort_consensus_price=None, cons_abs_diff_from_anchor_evp_mid=None, cons_abs_diff_from_anchor_evp_mid_calc=None, cons_abs_diff_from_anchor_sub=None, cons_abs_diff_from_anchor_trade=None, lower_boundary=None, number_of_instruments=None, std_dev=None, sub_price_diff=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_consensus=None, accepted_max=None, accepted_min=None, cohort_consensus_price=None, cons_abs_diff_from_anchor_evp_mid=None, cons_abs_diff_from_anchor_evp_mid_calc=None, cons_abs_diff_from_anchor_sub=None, cons_abs_diff_from_anchor_trade=None, number_of_instruments=None, std_dev=None, sub_price_diff=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumCohortConsensusColumn - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._abs_diff_from_consensus = None
+        self._accepted_max = None
+        self._accepted_min = None
         self._cohort_consensus_price = None
         self._cons_abs_diff_from_anchor_evp_mid = None
         self._cons_abs_diff_from_anchor_evp_mid_calc = None
         self._cons_abs_diff_from_anchor_sub = None
         self._cons_abs_diff_from_anchor_trade = None
-        self._lower_boundary = None
         self._number_of_instruments = None
         self._std_dev = None
         self._sub_price_diff = None
-        self._upper_boundary = None
         self.discriminator = None
 
         if abs_diff_from_consensus is not None:
             self.abs_diff_from_consensus = abs_diff_from_consensus
+        if accepted_max is not None:
+            self.accepted_max = accepted_max
+        if accepted_min is not None:
+            self.accepted_min = accepted_min
         if cohort_consensus_price is not None:
             self.cohort_consensus_price = cohort_consensus_price
         if cons_abs_diff_from_anchor_evp_mid is not None:
@@ -94,16 +98,12 @@ class TitaniumCohortConsensusColumn(object):
             self.cons_abs_diff_from_anchor_sub = cons_abs_diff_from_anchor_sub
         if cons_abs_diff_from_anchor_trade is not None:
             self.cons_abs_diff_from_anchor_trade = cons_abs_diff_from_anchor_trade
-        if lower_boundary is not None:
-            self.lower_boundary = lower_boundary
         if number_of_instruments is not None:
             self.number_of_instruments = number_of_instruments
         if std_dev is not None:
             self.std_dev = std_dev
         if sub_price_diff is not None:
             self.sub_price_diff = sub_price_diff
-        if upper_boundary is not None:
-            self.upper_boundary = upper_boundary
 
     @property
     def abs_diff_from_consensus(self):
@@ -125,6 +125,48 @@ class TitaniumCohortConsensusColumn(object):
         """
 
         self._abs_diff_from_consensus = abs_diff_from_consensus
+
+    @property
+    def accepted_max(self):
+        """Gets the accepted_max of this TitaniumCohortConsensusColumn.  # noqa: E501
+
+
+        :return: The accepted_max of this TitaniumCohortConsensusColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._accepted_max
+
+    @accepted_max.setter
+    def accepted_max(self, accepted_max):
+        """Sets the accepted_max of this TitaniumCohortConsensusColumn.
+
+
+        :param accepted_max: The accepted_max of this TitaniumCohortConsensusColumn.  # noqa: E501
+        :type accepted_max: object
+        """
+
+        self._accepted_max = accepted_max
+
+    @property
+    def accepted_min(self):
+        """Gets the accepted_min of this TitaniumCohortConsensusColumn.  # noqa: E501
+
+
+        :return: The accepted_min of this TitaniumCohortConsensusColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._accepted_min
+
+    @accepted_min.setter
+    def accepted_min(self, accepted_min):
+        """Sets the accepted_min of this TitaniumCohortConsensusColumn.
+
+
+        :param accepted_min: The accepted_min of this TitaniumCohortConsensusColumn.  # noqa: E501
+        :type accepted_min: object
+        """
+
+        self._accepted_min = accepted_min
 
     @property
     def cohort_consensus_price(self):
@@ -232,27 +274,6 @@ class TitaniumCohortConsensusColumn(object):
         self._cons_abs_diff_from_anchor_trade = cons_abs_diff_from_anchor_trade
 
     @property
-    def lower_boundary(self):
-        """Gets the lower_boundary of this TitaniumCohortConsensusColumn.  # noqa: E501
-
-
-        :return: The lower_boundary of this TitaniumCohortConsensusColumn.  # noqa: E501
-        :rtype: object
-        """
-        return self._lower_boundary
-
-    @lower_boundary.setter
-    def lower_boundary(self, lower_boundary):
-        """Sets the lower_boundary of this TitaniumCohortConsensusColumn.
-
-
-        :param lower_boundary: The lower_boundary of this TitaniumCohortConsensusColumn.  # noqa: E501
-        :type lower_boundary: object
-        """
-
-        self._lower_boundary = lower_boundary
-
-    @property
     def number_of_instruments(self):
         """Gets the number_of_instruments of this TitaniumCohortConsensusColumn.  # noqa: E501
 
@@ -314,27 +335,6 @@ class TitaniumCohortConsensusColumn(object):
         """
 
         self._sub_price_diff = sub_price_diff
-
-    @property
-    def upper_boundary(self):
-        """Gets the upper_boundary of this TitaniumCohortConsensusColumn.  # noqa: E501
-
-
-        :return: The upper_boundary of this TitaniumCohortConsensusColumn.  # noqa: E501
-        :rtype: object
-        """
-        return self._upper_boundary
-
-    @upper_boundary.setter
-    def upper_boundary(self, upper_boundary):
-        """Sets the upper_boundary of this TitaniumCohortConsensusColumn.
-
-
-        :param upper_boundary: The upper_boundary of this TitaniumCohortConsensusColumn.  # noqa: E501
-        :type upper_boundary: object
-        """
-
-        self._upper_boundary = upper_boundary
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

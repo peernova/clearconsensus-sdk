@@ -74,6 +74,9 @@ class TitaniumConsensusExplorerRangeData {
             if (data.hasOwnProperty('submissionEvidencePrice')) {
                 obj['submissionEvidencePrice'] = TitaniumRangePoint.constructFromObject(data['submissionEvidencePrice']);
             }
+            if (data.hasOwnProperty('submissionMean')) {
+                obj['submissionMean'] = TitaniumRangePoint.constructFromObject(data['submissionMean']);
+            }
             if (data.hasOwnProperty('submissionPoint')) {
                 obj['submissionPoint'] = TitaniumRangePoint.constructFromObject(data['submissionPoint']);
             }
@@ -123,6 +126,11 @@ TitaniumConsensusExplorerRangeData.prototype['evpMid'] = undefined;
  * @member {module:model/TitaniumRangePoint} submissionEvidencePrice
  */
 TitaniumConsensusExplorerRangeData.prototype['submissionEvidencePrice'] = undefined;
+
+/**
+ * @member {module:model/TitaniumRangePoint} submissionMean
+ */
+TitaniumConsensusExplorerRangeData.prototype['submissionMean'] = undefined;
 
 /**
  * @member {module:model/TitaniumRangePoint} submissionPoint

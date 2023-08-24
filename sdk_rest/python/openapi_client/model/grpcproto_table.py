@@ -30,10 +30,10 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from openapi_client.model.grpcproto_table_column import GrpcprotoTableColumn
     from openapi_client.model.grpcproto_table_row import GrpcprotoTableRow
-    globals()['GrpcprotoTableColumn'] = GrpcprotoTableColumn
+    from openapi_client.model.proto_column_definition import ProtoColumnDefinition
     globals()['GrpcprotoTableRow'] = GrpcprotoTableRow
+    globals()['ProtoColumnDefinition'] = ProtoColumnDefinition
 
 
 class GrpcprotoTable(ModelNormal):
@@ -89,9 +89,9 @@ class GrpcprotoTable(ModelNormal):
         """
         lazy_import()
         return {
-            'columns': ([GrpcprotoTableColumn],),  # noqa: E501
+            'columns': ([ProtoColumnDefinition],),  # noqa: E501
             'rows': ([GrpcprotoTableRow],),  # noqa: E501
-            'total_rows': (str,),  # noqa: E501
+            'total_rows': (int,),  # noqa: E501
         }
 
     @cached_property
@@ -146,9 +146,9 @@ class GrpcprotoTable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            columns ([GrpcprotoTableColumn]): [optional]  # noqa: E501
+            columns ([ProtoColumnDefinition]): [optional]  # noqa: E501
             rows ([GrpcprotoTableRow]): [optional]  # noqa: E501
-            total_rows (str): [optional]  # noqa: E501
+            total_rows (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -234,9 +234,9 @@ class GrpcprotoTable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            columns ([GrpcprotoTableColumn]): [optional]  # noqa: E501
+            columns ([ProtoColumnDefinition]): [optional]  # noqa: E501
             rows ([GrpcprotoTableRow]): [optional]  # noqa: E501
-            total_rows (str): [optional]  # noqa: E501
+            total_rows (int): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

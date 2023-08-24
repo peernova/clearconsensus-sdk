@@ -47,20 +47,14 @@ class TitaniumSubmissionStatisticsExplorerTableColumn {
         if (data) {
             obj = obj || new TitaniumSubmissionStatisticsExplorerTableColumn();
 
-            if (data.hasOwnProperty('absDiffFromStatisticalMean')) {
-                obj['absDiffFromStatisticalMean'] = ApiClient.convertToType(data['absDiffFromStatisticalMean'], Object);
+            if (data.hasOwnProperty('absDiffFromSubEvidence')) {
+                obj['absDiffFromSubEvidence'] = ApiClient.convertToType(data['absDiffFromSubEvidence'], Object);
             }
             if (data.hasOwnProperty('lowerBoundary')) {
                 obj['lowerBoundary'] = ApiClient.convertToType(data['lowerBoundary'], Object);
             }
-            if (data.hasOwnProperty('max')) {
-                obj['max'] = ApiClient.convertToType(data['max'], Object);
-            }
-            if (data.hasOwnProperty('mean')) {
-                obj['mean'] = ApiClient.convertToType(data['mean'], Object);
-            }
-            if (data.hasOwnProperty('min')) {
-                obj['min'] = ApiClient.convertToType(data['min'], Object);
+            if (data.hasOwnProperty('numberOfPartInBoundaries')) {
+                obj['numberOfPartInBoundaries'] = ApiClient.convertToType(data['numberOfPartInBoundaries'], Object);
             }
             if (data.hasOwnProperty('statMeanAbsDiffFromLatestTrade')) {
                 obj['statMeanAbsDiffFromLatestTrade'] = ApiClient.convertToType(data['statMeanAbsDiffFromLatestTrade'], Object);
@@ -71,8 +65,14 @@ class TitaniumSubmissionStatisticsExplorerTableColumn {
             if (data.hasOwnProperty('subPriceDiff')) {
                 obj['subPriceDiff'] = ApiClient.convertToType(data['subPriceDiff'], Object);
             }
-            if (data.hasOwnProperty('subValidPointsCount')) {
-                obj['subValidPointsCount'] = ApiClient.convertToType(data['subValidPointsCount'], Object);
+            if (data.hasOwnProperty('submissionEvidence')) {
+                obj['submissionEvidence'] = ApiClient.convertToType(data['submissionEvidence'], Object);
+            }
+            if (data.hasOwnProperty('submissionMax')) {
+                obj['submissionMax'] = ApiClient.convertToType(data['submissionMax'], Object);
+            }
+            if (data.hasOwnProperty('submissionMin')) {
+                obj['submissionMin'] = ApiClient.convertToType(data['submissionMin'], Object);
             }
             if (data.hasOwnProperty('upperBoundary')) {
                 obj['upperBoundary'] = ApiClient.convertToType(data['upperBoundary'], Object);
@@ -85,9 +85,9 @@ class TitaniumSubmissionStatisticsExplorerTableColumn {
 }
 
 /**
- * @member {Object} absDiffFromStatisticalMean
+ * @member {Object} absDiffFromSubEvidence
  */
-TitaniumSubmissionStatisticsExplorerTableColumn.prototype['absDiffFromStatisticalMean'] = undefined;
+TitaniumSubmissionStatisticsExplorerTableColumn.prototype['absDiffFromSubEvidence'] = undefined;
 
 /**
  * @member {Object} lowerBoundary
@@ -95,19 +95,9 @@ TitaniumSubmissionStatisticsExplorerTableColumn.prototype['absDiffFromStatistica
 TitaniumSubmissionStatisticsExplorerTableColumn.prototype['lowerBoundary'] = undefined;
 
 /**
- * @member {Object} max
+ * @member {Object} numberOfPartInBoundaries
  */
-TitaniumSubmissionStatisticsExplorerTableColumn.prototype['max'] = undefined;
-
-/**
- * @member {Object} mean
- */
-TitaniumSubmissionStatisticsExplorerTableColumn.prototype['mean'] = undefined;
-
-/**
- * @member {Object} min
- */
-TitaniumSubmissionStatisticsExplorerTableColumn.prototype['min'] = undefined;
+TitaniumSubmissionStatisticsExplorerTableColumn.prototype['numberOfPartInBoundaries'] = undefined;
 
 /**
  * @member {Object} statMeanAbsDiffFromLatestTrade
@@ -125,9 +115,19 @@ TitaniumSubmissionStatisticsExplorerTableColumn.prototype['stdDev'] = undefined;
 TitaniumSubmissionStatisticsExplorerTableColumn.prototype['subPriceDiff'] = undefined;
 
 /**
- * @member {Object} subValidPointsCount
+ * @member {Object} submissionEvidence
  */
-TitaniumSubmissionStatisticsExplorerTableColumn.prototype['subValidPointsCount'] = undefined;
+TitaniumSubmissionStatisticsExplorerTableColumn.prototype['submissionEvidence'] = undefined;
+
+/**
+ * @member {Object} submissionMax
+ */
+TitaniumSubmissionStatisticsExplorerTableColumn.prototype['submissionMax'] = undefined;
+
+/**
+ * @member {Object} submissionMin
+ */
+TitaniumSubmissionStatisticsExplorerTableColumn.prototype['submissionMin'] = undefined;
 
 /**
  * @member {Object} upperBoundary

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**columns** | [**[GrpcprotoTableColumn]**](GrpcprotoTableColumn.md) |  | [optional] 
+**columns** | [**[ProtoColumnDefinition]**](ProtoColumnDefinition.md) |  | [optional] 
 **rows** | [**[GrpcprotoTableRow]**](GrpcprotoTableRow.md) |  | [optional] 
-**totalRows** | **String** |  | [optional] 
+**totalRows** | **Number** |  | [optional] 
 
 

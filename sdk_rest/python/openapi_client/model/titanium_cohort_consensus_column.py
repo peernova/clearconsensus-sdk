@@ -82,16 +82,16 @@ class TitaniumCohortConsensusColumn(ModelNormal):
         """
         return {
             'abs_diff_from_consensus': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'accepted_max': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'accepted_min': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'cohort_consensus_price': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'cons_abs_diff_from_anchor_evp_mid': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'cons_abs_diff_from_anchor_evp_mid_calc': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'cons_abs_diff_from_anchor_sub': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'cons_abs_diff_from_anchor_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'lower_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'number_of_instruments': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'sub_price_diff': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'upper_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
     @cached_property
@@ -101,16 +101,16 @@ class TitaniumCohortConsensusColumn(ModelNormal):
 
     attribute_map = {
         'abs_diff_from_consensus': 'absDiffFromConsensus',  # noqa: E501
+        'accepted_max': 'acceptedMax',  # noqa: E501
+        'accepted_min': 'acceptedMin',  # noqa: E501
         'cohort_consensus_price': 'cohortConsensusPrice',  # noqa: E501
         'cons_abs_diff_from_anchor_evp_mid': 'consAbsDiffFromAnchorEvpMid',  # noqa: E501
         'cons_abs_diff_from_anchor_evp_mid_calc': 'consAbsDiffFromAnchorEvpMidCalc',  # noqa: E501
         'cons_abs_diff_from_anchor_sub': 'consAbsDiffFromAnchorSub',  # noqa: E501
         'cons_abs_diff_from_anchor_trade': 'consAbsDiffFromAnchorTrade',  # noqa: E501
-        'lower_boundary': 'lowerBoundary',  # noqa: E501
         'number_of_instruments': 'numberOfInstruments',  # noqa: E501
         'std_dev': 'stdDev',  # noqa: E501
         'sub_price_diff': 'subPriceDiff',  # noqa: E501
-        'upper_boundary': 'upperBoundary',  # noqa: E501
     }
 
     read_only_vars = {
@@ -155,16 +155,16 @@ class TitaniumCohortConsensusColumn(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             abs_diff_from_consensus (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            accepted_max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            accepted_min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cohort_consensus_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_evp_mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_evp_mid_calc (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_sub (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             number_of_instruments (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,16 +251,16 @@ class TitaniumCohortConsensusColumn(ModelNormal):
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
             abs_diff_from_consensus (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            accepted_max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            accepted_min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cohort_consensus_price (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_evp_mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_evp_mid_calc (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_sub (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             cons_abs_diff_from_anchor_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             number_of_instruments (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

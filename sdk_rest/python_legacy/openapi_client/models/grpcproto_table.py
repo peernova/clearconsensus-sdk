@@ -36,9 +36,9 @@ class GrpcprotoTable(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'columns': 'list[GrpcprotoTableColumn]',
+        'columns': 'list[ProtoColumnDefinition]',
         'rows': 'list[GrpcprotoTableRow]',
-        'total_rows': 'str'
+        'total_rows': 'int'
     }
 
     attribute_map = {
@@ -71,7 +71,7 @@ class GrpcprotoTable(object):
 
 
         :return: The columns of this GrpcprotoTable.  # noqa: E501
-        :rtype: list[GrpcprotoTableColumn]
+        :rtype: list[ProtoColumnDefinition]
         """
         return self._columns
 
@@ -81,7 +81,7 @@ class GrpcprotoTable(object):
 
 
         :param columns: The columns of this GrpcprotoTable.  # noqa: E501
-        :type columns: list[GrpcprotoTableColumn]
+        :type columns: list[ProtoColumnDefinition]
         """
 
         self._columns = columns
@@ -113,7 +113,7 @@ class GrpcprotoTable(object):
 
 
         :return: The total_rows of this GrpcprotoTable.  # noqa: E501
-        :rtype: str
+        :rtype: int
         """
         return self._total_rows
 
@@ -123,7 +123,7 @@ class GrpcprotoTable(object):
 
 
         :param total_rows: The total_rows of this GrpcprotoTable.  # noqa: E501
-        :type total_rows: str
+        :type total_rows: int
         """
 
         self._total_rows = total_rows

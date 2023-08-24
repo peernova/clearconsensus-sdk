@@ -99,6 +99,7 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
             'cohort_consensus_range_tab_data': (TitaniumCohortConsensusRangeTabData,),  # noqa: E501
             'evp_mid': (TitaniumRangePoint,),  # noqa: E501
             'submission_evidence_price': (TitaniumRangePoint,),  # noqa: E501
+            'submission_mean': (TitaniumRangePoint,),  # noqa: E501
             'submission_point': (TitaniumRangePoint,),  # noqa: E501
         }
 
@@ -116,6 +117,7 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
         'cohort_consensus_range_tab_data': 'cohortConsensusRangeTabData',  # noqa: E501
         'evp_mid': 'evpMid',  # noqa: E501
         'submission_evidence_price': 'submissionEvidencePrice',  # noqa: E501
+        'submission_mean': 'submissionMean',  # noqa: E501
         'submission_point': 'submissionPoint',  # noqa: E501
     }
 
@@ -168,6 +170,7 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
             cohort_consensus_range_tab_data (TitaniumCohortConsensusRangeTabData): [optional]  # noqa: E501
             evp_mid (TitaniumRangePoint): [optional]  # noqa: E501
             submission_evidence_price (TitaniumRangePoint): [optional]  # noqa: E501
+            submission_mean (TitaniumRangePoint): [optional]  # noqa: E501
             submission_point (TitaniumRangePoint): [optional]  # noqa: E501
         """
 
@@ -262,6 +265,7 @@ class TitaniumConsensusExplorerRangeData(ModelNormal):
             cohort_consensus_range_tab_data (TitaniumCohortConsensusRangeTabData): [optional]  # noqa: E501
             evp_mid (TitaniumRangePoint): [optional]  # noqa: E501
             submission_evidence_price (TitaniumRangePoint): [optional]  # noqa: E501
+            submission_mean (TitaniumRangePoint): [optional]  # noqa: E501
             submission_point (TitaniumRangePoint): [optional]  # noqa: E501
         """
 

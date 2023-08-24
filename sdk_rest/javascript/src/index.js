@@ -22,9 +22,9 @@ import GetChallengeDetailsResponseResult from './model/GetChallengeDetailsRespon
 import GetFileExportUrlResponseFileExportUrl from './model/GetFileExportUrlResponseFileExportUrl';
 import GrpcprotoError from './model/GrpcprotoError';
 import GrpcprotoTable from './model/GrpcprotoTable';
-import GrpcprotoTableColumn from './model/GrpcprotoTableColumn';
 import GrpcprotoTableRow from './model/GrpcprotoTableRow';
 import GrpcprotoUserResponse from './model/GrpcprotoUserResponse';
+import ProtoColumnDefinition from './model/ProtoColumnDefinition';
 import ProtoEntitiesDto from './model/ProtoEntitiesDto';
 import ProtoEntitiesResponse from './model/ProtoEntitiesResponse';
 import ProtoEntityDto from './model/ProtoEntityDto';
@@ -51,6 +51,7 @@ import ProtoUsersDto from './model/ProtoUsersDto';
 import ProtoUsersResponse from './model/ProtoUsersResponse';
 import ProtobufAny from './model/ProtobufAny';
 import RpcStatus from './model/RpcStatus';
+import TableColumn from './model/TableColumn';
 import TitaniumAcknowledgeResponse from './model/TitaniumAcknowledgeResponse';
 import TitaniumAddAssetRequest from './model/TitaniumAddAssetRequest';
 import TitaniumAddLookupTableRequest from './model/TitaniumAddLookupTableRequest';
@@ -347,7 +348,6 @@ import TitaniumSubmittedRow from './model/TitaniumSubmittedRow';
 import TitaniumSupportedField from './model/TitaniumSupportedField';
 import TitaniumSupportedFieldsValues from './model/TitaniumSupportedFieldsValues';
 import TitaniumTable from './model/TitaniumTable';
-import TitaniumTableColumn from './model/TitaniumTableColumn';
 import TitaniumTableRequest from './model/TitaniumTableRequest';
 import TitaniumTableRow from './model/TitaniumTableRow';
 import TitaniumTradeAligmentDateAndValue from './model/TitaniumTradeAligmentDateAndValue';
@@ -515,12 +515,6 @@ export {
     GrpcprotoTable,
 
     /**
-     * The GrpcprotoTableColumn model constructor.
-     * @property {module:model/GrpcprotoTableColumn}
-     */
-    GrpcprotoTableColumn,
-
-    /**
      * The GrpcprotoTableRow model constructor.
      * @property {module:model/GrpcprotoTableRow}
      */
@@ -531,6 +525,12 @@ export {
      * @property {module:model/GrpcprotoUserResponse}
      */
     GrpcprotoUserResponse,
+
+    /**
+     * The ProtoColumnDefinition model constructor.
+     * @property {module:model/ProtoColumnDefinition}
+     */
+    ProtoColumnDefinition,
 
     /**
      * The ProtoEntitiesDto model constructor.
@@ -687,6 +687,12 @@ export {
      * @property {module:model/RpcStatus}
      */
     RpcStatus,
+
+    /**
+     * The TableColumn model constructor.
+     * @property {module:model/TableColumn}
+     */
+    TableColumn,
 
     /**
      * The TitaniumAcknowledgeResponse model constructor.
@@ -2463,12 +2469,6 @@ export {
      * @property {module:model/TitaniumTable}
      */
     TitaniumTable,
-
-    /**
-     * The TitaniumTableColumn model constructor.
-     * @property {module:model/TitaniumTableColumn}
-     */
-    TitaniumTableColumn,
 
     /**
      * The TitaniumTableRequest model constructor.

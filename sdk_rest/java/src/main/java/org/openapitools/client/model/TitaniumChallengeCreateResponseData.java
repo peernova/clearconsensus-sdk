@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChallengeCreateResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T14:39:24.626712Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T07:13:26.014483Z[UTC]")
 public class TitaniumChallengeCreateResponseData {
   public static final String SERIALIZED_NAME_TICKET_ID = "ticketId";
   @SerializedName(SERIALIZED_NAME_TICKET_ID)

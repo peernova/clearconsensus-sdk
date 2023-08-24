@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.TitaniumTableColumn;
+import org.openapitools.client.model.TableColumn;
 import org.openapitools.client.model.TitaniumTableRow;
 
 import com.google.gson.Gson;
@@ -51,11 +51,11 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T14:39:24.626712Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T07:13:26.014483Z[UTC]")
 public class TitaniumTable {
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
-  private List<TitaniumTableColumn> columns = null;
+  private List<TableColumn> columns = null;
 
   public static final String SERIALIZED_NAME_ROWS = "rows";
   @SerializedName(SERIALIZED_NAME_ROWS)
@@ -68,13 +68,13 @@ public class TitaniumTable {
   public TitaniumTable() { 
   }
 
-  public TitaniumTable columns(List<TitaniumTableColumn> columns) {
+  public TitaniumTable columns(List<TableColumn> columns) {
     
     this.columns = columns;
     return this;
   }
 
-  public TitaniumTable addColumnsItem(TitaniumTableColumn columnsItem) {
+  public TitaniumTable addColumnsItem(TableColumn columnsItem) {
     if (this.columns == null) {
       this.columns = new ArrayList<>();
     }
@@ -89,12 +89,12 @@ public class TitaniumTable {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<TitaniumTableColumn> getColumns() {
+  public List<TableColumn> getColumns() {
     return columns;
   }
 
 
-  public void setColumns(List<TitaniumTableColumn> columns) {
+  public void setColumns(List<TableColumn> columns) {
     this.columns = columns;
   }
 
@@ -241,7 +241,7 @@ public class TitaniumTable {
 
         // validate the optional field `columns` (array)
         for (int i = 0; i < jsonArraycolumns.size(); i++) {
-          TitaniumTableColumn.validateJsonObject(jsonArraycolumns.get(i).getAsJsonObject());
+          TableColumn.validateJsonObject(jsonArraycolumns.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayrows = jsonObj.getAsJsonArray("rows");

@@ -36,7 +36,7 @@ class TitaniumTable(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'columns': 'list[TitaniumTableColumn]',
+        'columns': 'list[TableColumn]',
         'rows': 'list[TitaniumTableRow]',
         'total_rows': 'str'
     }
@@ -71,7 +71,7 @@ class TitaniumTable(object):
 
 
         :return: The columns of this TitaniumTable.  # noqa: E501
-        :rtype: list[TitaniumTableColumn]
+        :rtype: list[TableColumn]
         """
         return self._columns
 
@@ -81,7 +81,7 @@ class TitaniumTable(object):
 
 
         :param columns: The columns of this TitaniumTable.  # noqa: E501
-        :type columns: list[TitaniumTableColumn]
+        :type columns: list[TableColumn]
         """
 
         self._columns = columns

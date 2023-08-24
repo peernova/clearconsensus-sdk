@@ -23,9 +23,9 @@ from openapi_client.models.get_challenge_details_response_result import GetChall
 from openapi_client.models.get_file_export_url_response_file_export_url import GetFileExportUrlResponseFileExportUrl
 from openapi_client.models.grpcproto_error import GrpcprotoError
 from openapi_client.models.grpcproto_table import GrpcprotoTable
-from openapi_client.models.grpcproto_table_column import GrpcprotoTableColumn
 from openapi_client.models.grpcproto_table_row import GrpcprotoTableRow
 from openapi_client.models.grpcproto_user_response import GrpcprotoUserResponse
+from openapi_client.models.proto_column_definition import ProtoColumnDefinition
 from openapi_client.models.proto_entities_dto import ProtoEntitiesDto
 from openapi_client.models.proto_entities_response import ProtoEntitiesResponse
 from openapi_client.models.proto_entity_dto import ProtoEntityDto
@@ -52,6 +52,7 @@ from openapi_client.models.proto_users_dto import ProtoUsersDto
 from openapi_client.models.proto_users_response import ProtoUsersResponse
 from openapi_client.models.protobuf_any import ProtobufAny
 from openapi_client.models.rpc_status import RpcStatus
+from openapi_client.models.table_column import TableColumn
 from openapi_client.models.titanium_acknowledge_response import TitaniumAcknowledgeResponse
 from openapi_client.models.titanium_add_asset_request import TitaniumAddAssetRequest
 from openapi_client.models.titanium_add_lookup_table_request import TitaniumAddLookupTableRequest
@@ -348,7 +349,6 @@ from openapi_client.models.titanium_submitted_row import TitaniumSubmittedRow
 from openapi_client.models.titanium_supported_field import TitaniumSupportedField
 from openapi_client.models.titanium_supported_fields_values import TitaniumSupportedFieldsValues
 from openapi_client.models.titanium_table import TitaniumTable
-from openapi_client.models.titanium_table_column import TitaniumTableColumn
 from openapi_client.models.titanium_table_request import TitaniumTableRequest
 from openapi_client.models.titanium_table_row import TitaniumTableRow
 from openapi_client.models.titanium_trade_aligment_date_and_value import TitaniumTradeAligmentDateAndValue

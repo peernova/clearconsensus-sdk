@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusExplorerRangeData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T14:39:24.626712Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T07:13:26.014483Z[UTC]")
 public class TitaniumConsensusExplorerRangeData {
   public static final String SERIALIZED_NAME_ANCHOR_POINT = "anchorPoint";
   @SerializedName(SERIALIZED_NAME_ANCHOR_POINT)
@@ -83,6 +83,10 @@ public class TitaniumConsensusExplorerRangeData {
   public static final String SERIALIZED_NAME_SUBMISSION_EVIDENCE_PRICE = "submissionEvidencePrice";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_EVIDENCE_PRICE)
   private TitaniumRangePoint submissionEvidencePrice;
+
+  public static final String SERIALIZED_NAME_SUBMISSION_MEAN = "submissionMean";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_MEAN)
+  private TitaniumRangePoint submissionMean;
 
   public static final String SERIALIZED_NAME_SUBMISSION_POINT = "submissionPoint";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_POINT)
@@ -275,6 +279,29 @@ public class TitaniumConsensusExplorerRangeData {
   }
 
 
+  public TitaniumConsensusExplorerRangeData submissionMean(TitaniumRangePoint submissionMean) {
+    
+    this.submissionMean = submissionMean;
+    return this;
+  }
+
+   /**
+   * Get submissionMean
+   * @return submissionMean
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumRangePoint getSubmissionMean() {
+    return submissionMean;
+  }
+
+
+  public void setSubmissionMean(TitaniumRangePoint submissionMean) {
+    this.submissionMean = submissionMean;
+  }
+
+
   public TitaniumConsensusExplorerRangeData submissionPoint(TitaniumRangePoint submissionPoint) {
     
     this.submissionPoint = submissionPoint;
@@ -316,12 +343,13 @@ public class TitaniumConsensusExplorerRangeData {
         Objects.equals(this.cohortConsensusRangeTabData, titaniumConsensusExplorerRangeData.cohortConsensusRangeTabData) &&
         Objects.equals(this.evpMid, titaniumConsensusExplorerRangeData.evpMid) &&
         Objects.equals(this.submissionEvidencePrice, titaniumConsensusExplorerRangeData.submissionEvidencePrice) &&
+        Objects.equals(this.submissionMean, titaniumConsensusExplorerRangeData.submissionMean) &&
         Objects.equals(this.submissionPoint, titaniumConsensusExplorerRangeData.submissionPoint);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(anchorPoint, bimodalLeftMean, bimodalRightMean, chartRanges, cohortConsensusPrice, cohortConsensusRangeTabData, evpMid, submissionEvidencePrice, submissionPoint);
+    return Objects.hash(anchorPoint, bimodalLeftMean, bimodalRightMean, chartRanges, cohortConsensusPrice, cohortConsensusRangeTabData, evpMid, submissionEvidencePrice, submissionMean, submissionPoint);
   }
 
   @Override
@@ -336,6 +364,7 @@ public class TitaniumConsensusExplorerRangeData {
     sb.append("    cohortConsensusRangeTabData: ").append(toIndentedString(cohortConsensusRangeTabData)).append("\n");
     sb.append("    evpMid: ").append(toIndentedString(evpMid)).append("\n");
     sb.append("    submissionEvidencePrice: ").append(toIndentedString(submissionEvidencePrice)).append("\n");
+    sb.append("    submissionMean: ").append(toIndentedString(submissionMean)).append("\n");
     sb.append("    submissionPoint: ").append(toIndentedString(submissionPoint)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -367,6 +396,7 @@ public class TitaniumConsensusExplorerRangeData {
     openapiFields.add("cohortConsensusRangeTabData");
     openapiFields.add("evpMid");
     openapiFields.add("submissionEvidencePrice");
+    openapiFields.add("submissionMean");
     openapiFields.add("submissionPoint");
 
     // a set of required properties/fields (JSON key names)
@@ -426,6 +456,10 @@ public class TitaniumConsensusExplorerRangeData {
       // validate the optional field `submissionEvidencePrice`
       if (jsonObj.getAsJsonObject("submissionEvidencePrice") != null) {
         TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("submissionEvidencePrice"));
+      }
+      // validate the optional field `submissionMean`
+      if (jsonObj.getAsJsonObject("submissionMean") != null) {
+        TitaniumRangePoint.validateJsonObject(jsonObj.getAsJsonObject("submissionMean"));
       }
       // validate the optional field `submissionPoint`
       if (jsonObj.getAsJsonObject("submissionPoint") != null) {

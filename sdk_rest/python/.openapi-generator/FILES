@@ -28,7 +28,6 @@ docs/GetFileExportUrlResponseFileExportUrl.md
 docs/GroupPolicyServiceApi.md
 docs/GrpcprotoError.md
 docs/GrpcprotoTable.md
-docs/GrpcprotoTableColumn.md
 docs/GrpcprotoTableRow.md
 docs/GrpcprotoUserResponse.md
 docs/KVServiceApi.md
@@ -42,6 +41,7 @@ docs/OperatorServicePrivateApi.md
 docs/OutliersServiceApi.md
 docs/PolicyServiceApi.md
 docs/PopUpServiceApi.md
+docs/ProtoColumnDefinition.md
 docs/ProtoEntitiesDto.md
 docs/ProtoEntitiesResponse.md
 docs/ProtoEntityDto.md
@@ -71,6 +71,7 @@ docs/RpcStatus.md
 docs/ScopeServiceApi.md
 docs/SubmissionServiceApi.md
 docs/SupportedFieldsServiceApi.md
+docs/TableColumn.md
 docs/TitaniumAcknowledgeResponse.md
 docs/TitaniumAddAssetRequest.md
 docs/TitaniumAddLookupTableRequest.md
@@ -367,7 +368,6 @@ docs/TitaniumSubmittedRow.md
 docs/TitaniumSupportedField.md
 docs/TitaniumSupportedFieldsValues.md
 docs/TitaniumTable.md
-docs/TitaniumTableColumn.md
 docs/TitaniumTableRequest.md
 docs/TitaniumTableRow.md
 docs/TitaniumTradeAligmentDateAndValue.md
@@ -460,9 +460,9 @@ openapi_client/model/get_challenge_details_response_result.py
 openapi_client/model/get_file_export_url_response_file_export_url.py
 openapi_client/model/grpcproto_error.py
 openapi_client/model/grpcproto_table.py
-openapi_client/model/grpcproto_table_column.py
 openapi_client/model/grpcproto_table_row.py
 openapi_client/model/grpcproto_user_response.py
+openapi_client/model/proto_column_definition.py
 openapi_client/model/proto_entities_dto.py
 openapi_client/model/proto_entities_response.py
 openapi_client/model/proto_entity_dto.py
@@ -489,6 +489,7 @@ openapi_client/model/proto_users_dto.py
 openapi_client/model/proto_users_response.py
 openapi_client/model/protobuf_any.py
 openapi_client/model/rpc_status.py
+openapi_client/model/table_column.py
 openapi_client/model/titanium_acknowledge_response.py
 openapi_client/model/titanium_add_asset_request.py
 openapi_client/model/titanium_add_lookup_table_request.py
@@ -785,7 +786,6 @@ openapi_client/model/titanium_submitted_row.py
 openapi_client/model/titanium_supported_field.py
 openapi_client/model/titanium_supported_fields_values.py
 openapi_client/model/titanium_table.py
-openapi_client/model/titanium_table_column.py
 openapi_client/model/titanium_table_request.py
 openapi_client/model/titanium_table_row.py
 openapi_client/model/titanium_trade_aligment_date_and_value.py
@@ -832,4 +832,6 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_proto_column_definition.py
+test/test_table_column.py
 tox.ini

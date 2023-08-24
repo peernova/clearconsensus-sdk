@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **cohort_consensus_range_tab_data** | [**TitaniumCohortConsensusRangeTabData**](TitaniumCohortConsensusRangeTabData.md) |  | [optional] 
 **evp_mid** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 **submission_evidence_price** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
+**submission_mean** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 **submission_point** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]
 

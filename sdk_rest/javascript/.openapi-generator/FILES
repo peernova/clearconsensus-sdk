@@ -28,7 +28,6 @@ docs/GetFileExportUrlResponseFileExportUrl.md
 docs/GroupPolicyServiceApi.md
 docs/GrpcprotoError.md
 docs/GrpcprotoTable.md
-docs/GrpcprotoTableColumn.md
 docs/GrpcprotoTableRow.md
 docs/GrpcprotoUserResponse.md
 docs/KVServiceApi.md
@@ -42,6 +41,7 @@ docs/OperatorServicePrivateApi.md
 docs/OutliersServiceApi.md
 docs/PolicyServiceApi.md
 docs/PopUpServiceApi.md
+docs/ProtoColumnDefinition.md
 docs/ProtoEntitiesDto.md
 docs/ProtoEntitiesResponse.md
 docs/ProtoEntityDto.md
@@ -71,6 +71,7 @@ docs/RpcStatus.md
 docs/ScopeServiceApi.md
 docs/SubmissionServiceApi.md
 docs/SupportedFieldsServiceApi.md
+docs/TableColumn.md
 docs/TitaniumAcknowledgeResponse.md
 docs/TitaniumAddAssetRequest.md
 docs/TitaniumAddLookupTableRequest.md
@@ -367,7 +368,6 @@ docs/TitaniumSubmittedRow.md
 docs/TitaniumSupportedField.md
 docs/TitaniumSupportedFieldsValues.md
 docs/TitaniumTable.md
-docs/TitaniumTableColumn.md
 docs/TitaniumTableRequest.md
 docs/TitaniumTableRow.md
 docs/TitaniumTradeAligmentDateAndValue.md
@@ -457,9 +457,9 @@ src/model/GetChallengeDetailsResponseResult.js
 src/model/GetFileExportUrlResponseFileExportUrl.js
 src/model/GrpcprotoError.js
 src/model/GrpcprotoTable.js
-src/model/GrpcprotoTableColumn.js
 src/model/GrpcprotoTableRow.js
 src/model/GrpcprotoUserResponse.js
+src/model/ProtoColumnDefinition.js
 src/model/ProtoEntitiesDto.js
 src/model/ProtoEntitiesResponse.js
 src/model/ProtoEntityDto.js
@@ -486,6 +486,7 @@ src/model/ProtoUsersDto.js
 src/model/ProtoUsersResponse.js
 src/model/ProtobufAny.js
 src/model/RpcStatus.js
+src/model/TableColumn.js
 src/model/TitaniumAcknowledgeResponse.js
 src/model/TitaniumAddAssetRequest.js
 src/model/TitaniumAddLookupTableRequest.js
@@ -782,7 +783,6 @@ src/model/TitaniumSubmittedRow.js
 src/model/TitaniumSupportedField.js
 src/model/TitaniumSupportedFieldsValues.js
 src/model/TitaniumTable.js
-src/model/TitaniumTableColumn.js
 src/model/TitaniumTableRequest.js
 src/model/TitaniumTableRow.js
 src/model/TitaniumTradeAligmentDateAndValue.js
@@ -821,3 +821,5 @@ src/model/TitaniumValuesRow.js
 src/model/TitaniumVersion.js
 src/model/TitaniumVersionList.js
 src/model/TitaniumViewRow.js
+test/model/ProtoColumnDefinition.spec.js
+test/model/TableColumn.spec.js

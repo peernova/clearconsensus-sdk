@@ -12,8 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import GrpcprotoTableColumn from './GrpcprotoTableColumn';
 import GrpcprotoTableRow from './GrpcprotoTableRow';
+import ProtoColumnDefinition from './ProtoColumnDefinition';
 
 /**
  * The GrpcprotoTable model module.
@@ -50,13 +50,13 @@ class GrpcprotoTable {
             obj = obj || new GrpcprotoTable();
 
             if (data.hasOwnProperty('columns')) {
-                obj['columns'] = ApiClient.convertToType(data['columns'], [GrpcprotoTableColumn]);
+                obj['columns'] = ApiClient.convertToType(data['columns'], [ProtoColumnDefinition]);
             }
             if (data.hasOwnProperty('rows')) {
                 obj['rows'] = ApiClient.convertToType(data['rows'], [GrpcprotoTableRow]);
             }
             if (data.hasOwnProperty('totalRows')) {
-                obj['totalRows'] = ApiClient.convertToType(data['totalRows'], 'String');
+                obj['totalRows'] = ApiClient.convertToType(data['totalRows'], 'Number');
             }
         }
         return obj;
@@ -66,7 +66,7 @@ class GrpcprotoTable {
 }
 
 /**
- * @member {Array.<module:model/GrpcprotoTableColumn>} columns
+ * @member {Array.<module:model/ProtoColumnDefinition>} columns
  */
 GrpcprotoTable.prototype['columns'] = undefined;
 
@@ -76,7 +76,7 @@ GrpcprotoTable.prototype['columns'] = undefined;
 GrpcprotoTable.prototype['rows'] = undefined;
 
 /**
- * @member {String} totalRows
+ * @member {Number} totalRows
  */
 GrpcprotoTable.prototype['totalRows'] = undefined;
 

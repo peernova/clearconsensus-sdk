@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**absDiffFromStatisticalMean** | **Object** |  | [optional] 
+**absDiffFromSubEvidence** | **Object** |  | [optional] 
 **lowerBoundary** | **Object** |  | [optional] 
-**max** | **Object** |  | [optional] 
-**mean** | **Object** |  | [optional] 
-**min** | **Object** |  | [optional] 
+**numberOfPartInBoundaries** | **Object** |  | [optional] 
 **statMeanAbsDiffFromLatestTrade** | **Object** |  | [optional] 
 **stdDev** | **Object** |  | [optional] 
 **subPriceDiff** | **Object** |  | [optional] 
-**subValidPointsCount** | **Object** |  | [optional] 
+**submissionEvidence** | **Object** |  | [optional] 
+**submissionMax** | **Object** |  | [optional] 
+**submissionMin** | **Object** |  | [optional] 
 **upperBoundary** | **Object** |  | [optional] 
 
 

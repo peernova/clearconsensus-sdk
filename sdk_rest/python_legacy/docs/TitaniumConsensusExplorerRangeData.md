@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **cohort_consensus_range_tab_data** | [**TitaniumCohortConsensusRangeTabData**](TitaniumCohortConsensusRangeTabData.md) |  | [optional] 
 **evp_mid** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 **submission_evidence_price** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
+**submission_mean** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 **submission_point** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

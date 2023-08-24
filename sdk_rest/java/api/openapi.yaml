@@ -5672,6 +5672,19 @@ components:
       type: object
     RuleDefinitionRuleType:
       type: string
+    TableColumn:
+      example:
+        columnType: columnType
+        rawColumnName: rawColumnName
+        columnName: columnName
+      properties:
+        columnName:
+          type: string
+        columnType:
+          type: string
+        rawColumnName:
+          type: string
+      type: object
     grpcprotoError:
       example:
         code: 0
@@ -5702,7 +5715,7 @@ components:
           columnDbType: columnDbType
           rawColumnName: rawColumnName
           columnName: columnName
-        totalRows: totalRows
+        totalRows: 0
         rows:
         - values:
           - values
@@ -5713,30 +5726,14 @@ components:
       properties:
         columns:
           items:
-            $ref: '#/components/schemas/grpcprotoTableColumn'
+            $ref: '#/components/schemas/protoColumnDefinition'
           type: array
         rows:
           items:
             $ref: '#/components/schemas/grpcprotoTableRow'
           type: array
         totalRows:
-          type: string
-      type: object
-    grpcprotoTableColumn:
-      example:
-        columnType: columnType
-        columnDbType: columnDbType
-        rawColumnName: rawColumnName
-        columnName: columnName
-      properties:
-        columnDbType:
-          type: string
-        columnName:
-          type: string
-        columnType:
-          type: string
-        rawColumnName:
-          type: string
+          type: integer
       type: object
     grpcprotoTableRow:
       example:
@@ -5775,6 +5772,22 @@ components:
           $ref: '#/components/schemas/protoUserDto'
         error:
           $ref: '#/components/schemas/grpcprotoError'
+      type: object
+    protoColumnDefinition:
+      example:
+        columnType: columnType
+        columnDbType: columnDbType
+        rawColumnName: rawColumnName
+        columnName: columnName
+      properties:
+        columnDbType:
+          type: string
+        columnName:
+          type: string
+        columnType:
+          type: string
+        rawColumnName:
+          type: string
       type: object
     protoEntitiesDto:
       example:
@@ -6076,7 +6089,7 @@ components:
             columnDbType: columnDbType
             rawColumnName: rawColumnName
             columnName: columnName
-          totalRows: totalRows
+          totalRows: 0
           rows:
           - values:
             - values
@@ -7405,16 +7418,22 @@ components:
         consAbsDiffFromAnchorEvpMid: "{}"
         subPriceDiff: "{}"
         consAbsDiffFromAnchorSub: "{}"
+        acceptedMax: "{}"
         consAbsDiffFromAnchorEvpMidCalc: "{}"
         stdDev: "{}"
-        upperBoundary: "{}"
+        acceptedMin: "{}"
         cohortConsensusPrice: "{}"
         consAbsDiffFromAnchorTrade: "{}"
         numberOfInstruments: "{}"
         absDiffFromConsensus: "{}"
-        lowerBoundary: "{}"
       properties:
         absDiffFromConsensus:
+          properties: {}
+          type: object
+        acceptedMax:
+          properties: {}
+          type: object
+        acceptedMin:
           properties: {}
           type: object
         cohortConsensusPrice:
@@ -7432,9 +7451,6 @@ components:
         consAbsDiffFromAnchorTrade:
           properties: {}
           type: object
-        lowerBoundary:
-          properties: {}
-          type: object
         numberOfInstruments:
           properties: {}
           type: object
@@ -7442,9 +7458,6 @@ components:
           properties: {}
           type: object
         subPriceDiff:
-          properties: {}
-          type: object
-        upperBoundary:
           properties: {}
           type: object
       type: object
@@ -7571,24 +7584,24 @@ components:
           consAbsDiffFromAnchorEvpMid: "{}"
           subPriceDiff: "{}"
           consAbsDiffFromAnchorSub: "{}"
+          acceptedMax: "{}"
           consAbsDiffFromAnchorEvpMidCalc: "{}"
           stdDev: "{}"
-          upperBoundary: "{}"
+          acceptedMin: "{}"
           cohortConsensusPrice: "{}"
           consAbsDiffFromAnchorTrade: "{}"
           numberOfInstruments: "{}"
           absDiffFromConsensus: "{}"
-          lowerBoundary: "{}"
         submissionStatistics:
-          min: "{}"
-          max: "{}"
-          mean: "{}"
+          submissionMax: "{}"
+          absDiffFromSubEvidence: "{}"
           statMeanAbsDiffFromLatestTrade: "{}"
           subPriceDiff: "{}"
-          subValidPointsCount: "{}"
+          submissionEvidence: "{}"
+          submissionMin: "{}"
+          numberOfPartInBoundaries: "{}"
           stdDev: "{}"
           upperBoundary: "{}"
-          absDiffFromStatisticalMean: "{}"
           lowerBoundary: "{}"
         evidentialPricing:
           absDiffFromEvpMid: "{}"
@@ -8096,6 +8109,9 @@ components:
         evpMid:
           label: label
           value: "{}"
+        submissionMean:
+          label: label
+          value: "{}"
         submissionPoint:
           label: label
           value: "{}"
@@ -8124,6 +8140,8 @@ components:
         evpMid:
           $ref: '#/components/schemas/titaniumRangePoint'
         submissionEvidencePrice:
+          $ref: '#/components/schemas/titaniumRangePoint'
+        submissionMean:
           $ref: '#/components/schemas/titaniumRangePoint'
         submissionPoint:
           $ref: '#/components/schemas/titaniumRangePoint'
@@ -8223,6 +8241,9 @@ components:
           evpMid:
             label: label
             value: "{}"
+          submissionMean:
+            label: label
+            value: "{}"
           submissionPoint:
             label: label
             value: "{}"
@@ -8251,24 +8272,24 @@ components:
             consAbsDiffFromAnchorEvpMid: "{}"
             subPriceDiff: "{}"
             consAbsDiffFromAnchorSub: "{}"
+            acceptedMax: "{}"
             consAbsDiffFromAnchorEvpMidCalc: "{}"
             stdDev: "{}"
-            upperBoundary: "{}"
+            acceptedMin: "{}"
             cohortConsensusPrice: "{}"
             consAbsDiffFromAnchorTrade: "{}"
             numberOfInstruments: "{}"
             absDiffFromConsensus: "{}"
-            lowerBoundary: "{}"
           submissionStatistics:
-            min: "{}"
-            max: "{}"
-            mean: "{}"
+            submissionMax: "{}"
+            absDiffFromSubEvidence: "{}"
             statMeanAbsDiffFromLatestTrade: "{}"
             subPriceDiff: "{}"
-            subValidPointsCount: "{}"
+            submissionEvidence: "{}"
+            submissionMin: "{}"
+            numberOfPartInBoundaries: "{}"
             stdDev: "{}"
             upperBoundary: "{}"
-            absDiffFromStatisticalMean: "{}"
             lowerBoundary: "{}"
           evidentialPricing:
             absDiffFromEvpMid: "{}"
@@ -8313,24 +8334,24 @@ components:
               consAbsDiffFromAnchorEvpMid: "{}"
               subPriceDiff: "{}"
               consAbsDiffFromAnchorSub: "{}"
+              acceptedMax: "{}"
               consAbsDiffFromAnchorEvpMidCalc: "{}"
               stdDev: "{}"
-              upperBoundary: "{}"
+              acceptedMin: "{}"
               cohortConsensusPrice: "{}"
               consAbsDiffFromAnchorTrade: "{}"
               numberOfInstruments: "{}"
               absDiffFromConsensus: "{}"
-              lowerBoundary: "{}"
             submissionStatistics:
-              min: "{}"
-              max: "{}"
-              mean: "{}"
+              submissionMax: "{}"
+              absDiffFromSubEvidence: "{}"
               statMeanAbsDiffFromLatestTrade: "{}"
               subPriceDiff: "{}"
-              subValidPointsCount: "{}"
+              submissionEvidence: "{}"
+              submissionMin: "{}"
+              numberOfPartInBoundaries: "{}"
               stdDev: "{}"
               upperBoundary: "{}"
-              absDiffFromStatisticalMean: "{}"
               lowerBoundary: "{}"
             evidentialPricing:
               absDiffFromEvpMid: "{}"
@@ -13547,30 +13568,24 @@ components:
       type: object
     titaniumSubmissionStatisticsExplorerTableColumn:
       example:
-        min: "{}"
-        max: "{}"
-        mean: "{}"
+        submissionMax: "{}"
+        absDiffFromSubEvidence: "{}"
         statMeanAbsDiffFromLatestTrade: "{}"
         subPriceDiff: "{}"
-        subValidPointsCount: "{}"
+        submissionEvidence: "{}"
+        submissionMin: "{}"
+        numberOfPartInBoundaries: "{}"
         stdDev: "{}"
         upperBoundary: "{}"
-        absDiffFromStatisticalMean: "{}"
         lowerBoundary: "{}"
       properties:
-        absDiffFromStatisticalMean:
+        absDiffFromSubEvidence:
           properties: {}
           type: object
         lowerBoundary:
           properties: {}
           type: object
-        max:
-          properties: {}
-          type: object
-        mean:
-          properties: {}
-          type: object
-        min:
+        numberOfPartInBoundaries:
           properties: {}
           type: object
         statMeanAbsDiffFromLatestTrade:
@@ -13582,7 +13597,13 @@ components:
         subPriceDiff:
           properties: {}
           type: object
-        subValidPointsCount:
+        submissionEvidence:
+          properties: {}
+          type: object
+        submissionMax:
+          properties: {}
+          type: object
+        submissionMin:
           properties: {}
           type: object
         upperBoundary:
@@ -13778,26 +13799,13 @@ components:
       properties:
         columns:
           items:
-            $ref: '#/components/schemas/titaniumTableColumn'
+            $ref: '#/components/schemas/TableColumn'
           type: array
         rows:
           items:
             $ref: '#/components/schemas/titaniumTableRow'
           type: array
         totalRows:
-          type: string
-      type: object
-    titaniumTableColumn:
-      example:
-        columnType: columnType
-        rawColumnName: rawColumnName
-        columnName: columnName
-      properties:
-        columnName:
-          type: string
-        columnType:
-          type: string
-        rawColumnName:
           type: string
       type: object
     titaniumTableRequest:

@@ -30,9 +30,9 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from openapi_client.model.titanium_table_column import TitaniumTableColumn
+    from openapi_client.model.table_column import TableColumn
     from openapi_client.model.titanium_table_row import TitaniumTableRow
-    globals()['TitaniumTableColumn'] = TitaniumTableColumn
+    globals()['TableColumn'] = TableColumn
     globals()['TitaniumTableRow'] = TitaniumTableRow
 
 
@@ -89,7 +89,7 @@ class TitaniumTable(ModelNormal):
         """
         lazy_import()
         return {
-            'columns': ([TitaniumTableColumn],),  # noqa: E501
+            'columns': ([TableColumn],),  # noqa: E501
             'rows': ([TitaniumTableRow],),  # noqa: E501
             'total_rows': (str,),  # noqa: E501
         }
@@ -146,7 +146,7 @@ class TitaniumTable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            columns ([TitaniumTableColumn]): [optional]  # noqa: E501
+            columns ([TableColumn]): [optional]  # noqa: E501
             rows ([TitaniumTableRow]): [optional]  # noqa: E501
             total_rows (str): [optional]  # noqa: E501
         """
@@ -234,7 +234,7 @@ class TitaniumTable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            columns ([TitaniumTableColumn]): [optional]  # noqa: E501
+            columns ([TableColumn]): [optional]  # noqa: E501
             rows ([TitaniumTableRow]): [optional]  # noqa: E501
             total_rows (str): [optional]  # noqa: E501
         """

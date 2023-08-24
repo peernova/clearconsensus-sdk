@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import TitaniumTableColumn from './TitaniumTableColumn';
+import TableColumn from './TableColumn';
 import TitaniumTableRow from './TitaniumTableRow';
 
 /**
@@ -50,7 +50,7 @@ class TitaniumTable {
             obj = obj || new TitaniumTable();
 
             if (data.hasOwnProperty('columns')) {
-                obj['columns'] = ApiClient.convertToType(data['columns'], [TitaniumTableColumn]);
+                obj['columns'] = ApiClient.convertToType(data['columns'], [TableColumn]);
             }
             if (data.hasOwnProperty('rows')) {
                 obj['rows'] = ApiClient.convertToType(data['rows'], [TitaniumTableRow]);
@@ -66,7 +66,7 @@ class TitaniumTable {
 }
 
 /**
- * @member {Array.<module:model/TitaniumTableColumn>} columns
+ * @member {Array.<module:model/TableColumn>} columns
  */
 TitaniumTable.prototype['columns'] = undefined;
 

@@ -44,6 +44,7 @@ class TitaniumConsensusExplorerRangeData(object):
         'cohort_consensus_range_tab_data': 'TitaniumCohortConsensusRangeTabData',
         'evp_mid': 'TitaniumRangePoint',
         'submission_evidence_price': 'TitaniumRangePoint',
+        'submission_mean': 'TitaniumRangePoint',
         'submission_point': 'TitaniumRangePoint'
     }
 
@@ -56,10 +57,11 @@ class TitaniumConsensusExplorerRangeData(object):
         'cohort_consensus_range_tab_data': 'cohortConsensusRangeTabData',
         'evp_mid': 'evpMid',
         'submission_evidence_price': 'submissionEvidencePrice',
+        'submission_mean': 'submissionMean',
         'submission_point': 'submissionPoint'
     }
 
-    def __init__(self, anchor_point=None, bimodal_left_mean=None, bimodal_right_mean=None, chart_ranges=None, cohort_consensus_price=None, cohort_consensus_range_tab_data=None, evp_mid=None, submission_evidence_price=None, submission_point=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, anchor_point=None, bimodal_left_mean=None, bimodal_right_mean=None, chart_ranges=None, cohort_consensus_price=None, cohort_consensus_range_tab_data=None, evp_mid=None, submission_evidence_price=None, submission_mean=None, submission_point=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumConsensusExplorerRangeData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -73,6 +75,7 @@ class TitaniumConsensusExplorerRangeData(object):
         self._cohort_consensus_range_tab_data = None
         self._evp_mid = None
         self._submission_evidence_price = None
+        self._submission_mean = None
         self._submission_point = None
         self.discriminator = None
 
@@ -92,6 +95,8 @@ class TitaniumConsensusExplorerRangeData(object):
             self.evp_mid = evp_mid
         if submission_evidence_price is not None:
             self.submission_evidence_price = submission_evidence_price
+        if submission_mean is not None:
+            self.submission_mean = submission_mean
         if submission_point is not None:
             self.submission_point = submission_point
 
@@ -262,6 +267,27 @@ class TitaniumConsensusExplorerRangeData(object):
         """
 
         self._submission_evidence_price = submission_evidence_price
+
+    @property
+    def submission_mean(self):
+        """Gets the submission_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+
+
+        :return: The submission_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :rtype: TitaniumRangePoint
+        """
+        return self._submission_mean
+
+    @submission_mean.setter
+    def submission_mean(self, submission_mean):
+        """Sets the submission_mean of this TitaniumConsensusExplorerRangeData.
+
+
+        :param submission_mean: The submission_mean of this TitaniumConsensusExplorerRangeData.  # noqa: E501
+        :type submission_mean: TitaniumRangePoint
+        """
+
+        self._submission_mean = submission_mean
 
     @property
     def submission_point(self):

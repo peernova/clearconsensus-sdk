@@ -47,27 +47,19 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionStatisticsExplorerTableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T14:39:24.626712Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T07:13:26.014483Z[UTC]")
 public class TitaniumSubmissionStatisticsExplorerTableColumn {
-  public static final String SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN = "absDiffFromStatisticalMean";
-  @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_STATISTICAL_MEAN)
-  private Object absDiffFromStatisticalMean;
+  public static final String SERIALIZED_NAME_ABS_DIFF_FROM_SUB_EVIDENCE = "absDiffFromSubEvidence";
+  @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_SUB_EVIDENCE)
+  private Object absDiffFromSubEvidence;
 
   public static final String SERIALIZED_NAME_LOWER_BOUNDARY = "lowerBoundary";
   @SerializedName(SERIALIZED_NAME_LOWER_BOUNDARY)
   private Object lowerBoundary;
 
-  public static final String SERIALIZED_NAME_MAX = "max";
-  @SerializedName(SERIALIZED_NAME_MAX)
-  private Object max;
-
-  public static final String SERIALIZED_NAME_MEAN = "mean";
-  @SerializedName(SERIALIZED_NAME_MEAN)
-  private Object mean;
-
-  public static final String SERIALIZED_NAME_MIN = "min";
-  @SerializedName(SERIALIZED_NAME_MIN)
-  private Object min;
+  public static final String SERIALIZED_NAME_NUMBER_OF_PART_IN_BOUNDARIES = "numberOfPartInBoundaries";
+  @SerializedName(SERIALIZED_NAME_NUMBER_OF_PART_IN_BOUNDARIES)
+  private Object numberOfPartInBoundaries;
 
   public static final String SERIALIZED_NAME_STAT_MEAN_ABS_DIFF_FROM_LATEST_TRADE = "statMeanAbsDiffFromLatestTrade";
   @SerializedName(SERIALIZED_NAME_STAT_MEAN_ABS_DIFF_FROM_LATEST_TRADE)
@@ -81,9 +73,17 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   @SerializedName(SERIALIZED_NAME_SUB_PRICE_DIFF)
   private Object subPriceDiff;
 
-  public static final String SERIALIZED_NAME_SUB_VALID_POINTS_COUNT = "subValidPointsCount";
-  @SerializedName(SERIALIZED_NAME_SUB_VALID_POINTS_COUNT)
-  private Object subValidPointsCount;
+  public static final String SERIALIZED_NAME_SUBMISSION_EVIDENCE = "submissionEvidence";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_EVIDENCE)
+  private Object submissionEvidence;
+
+  public static final String SERIALIZED_NAME_SUBMISSION_MAX = "submissionMax";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_MAX)
+  private Object submissionMax;
+
+  public static final String SERIALIZED_NAME_SUBMISSION_MIN = "submissionMin";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_MIN)
+  private Object submissionMin;
 
   public static final String SERIALIZED_NAME_UPPER_BOUNDARY = "upperBoundary";
   @SerializedName(SERIALIZED_NAME_UPPER_BOUNDARY)
@@ -92,26 +92,26 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   public TitaniumSubmissionStatisticsExplorerTableColumn() { 
   }
 
-  public TitaniumSubmissionStatisticsExplorerTableColumn absDiffFromStatisticalMean(Object absDiffFromStatisticalMean) {
+  public TitaniumSubmissionStatisticsExplorerTableColumn absDiffFromSubEvidence(Object absDiffFromSubEvidence) {
     
-    this.absDiffFromStatisticalMean = absDiffFromStatisticalMean;
+    this.absDiffFromSubEvidence = absDiffFromSubEvidence;
     return this;
   }
 
    /**
-   * Get absDiffFromStatisticalMean
-   * @return absDiffFromStatisticalMean
+   * Get absDiffFromSubEvidence
+   * @return absDiffFromSubEvidence
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getAbsDiffFromStatisticalMean() {
-    return absDiffFromStatisticalMean;
+  public Object getAbsDiffFromSubEvidence() {
+    return absDiffFromSubEvidence;
   }
 
 
-  public void setAbsDiffFromStatisticalMean(Object absDiffFromStatisticalMean) {
-    this.absDiffFromStatisticalMean = absDiffFromStatisticalMean;
+  public void setAbsDiffFromSubEvidence(Object absDiffFromSubEvidence) {
+    this.absDiffFromSubEvidence = absDiffFromSubEvidence;
   }
 
 
@@ -138,72 +138,26 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   }
 
 
-  public TitaniumSubmissionStatisticsExplorerTableColumn max(Object max) {
+  public TitaniumSubmissionStatisticsExplorerTableColumn numberOfPartInBoundaries(Object numberOfPartInBoundaries) {
     
-    this.max = max;
+    this.numberOfPartInBoundaries = numberOfPartInBoundaries;
     return this;
   }
 
    /**
-   * Get max
-   * @return max
+   * Get numberOfPartInBoundaries
+   * @return numberOfPartInBoundaries
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getMax() {
-    return max;
+  public Object getNumberOfPartInBoundaries() {
+    return numberOfPartInBoundaries;
   }
 
 
-  public void setMax(Object max) {
-    this.max = max;
-  }
-
-
-  public TitaniumSubmissionStatisticsExplorerTableColumn mean(Object mean) {
-    
-    this.mean = mean;
-    return this;
-  }
-
-   /**
-   * Get mean
-   * @return mean
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getMean() {
-    return mean;
-  }
-
-
-  public void setMean(Object mean) {
-    this.mean = mean;
-  }
-
-
-  public TitaniumSubmissionStatisticsExplorerTableColumn min(Object min) {
-    
-    this.min = min;
-    return this;
-  }
-
-   /**
-   * Get min
-   * @return min
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getMin() {
-    return min;
-  }
-
-
-  public void setMin(Object min) {
-    this.min = min;
+  public void setNumberOfPartInBoundaries(Object numberOfPartInBoundaries) {
+    this.numberOfPartInBoundaries = numberOfPartInBoundaries;
   }
 
 
@@ -276,26 +230,72 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   }
 
 
-  public TitaniumSubmissionStatisticsExplorerTableColumn subValidPointsCount(Object subValidPointsCount) {
+  public TitaniumSubmissionStatisticsExplorerTableColumn submissionEvidence(Object submissionEvidence) {
     
-    this.subValidPointsCount = subValidPointsCount;
+    this.submissionEvidence = submissionEvidence;
     return this;
   }
 
    /**
-   * Get subValidPointsCount
-   * @return subValidPointsCount
+   * Get submissionEvidence
+   * @return submissionEvidence
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public Object getSubValidPointsCount() {
-    return subValidPointsCount;
+  public Object getSubmissionEvidence() {
+    return submissionEvidence;
   }
 
 
-  public void setSubValidPointsCount(Object subValidPointsCount) {
-    this.subValidPointsCount = subValidPointsCount;
+  public void setSubmissionEvidence(Object submissionEvidence) {
+    this.submissionEvidence = submissionEvidence;
+  }
+
+
+  public TitaniumSubmissionStatisticsExplorerTableColumn submissionMax(Object submissionMax) {
+    
+    this.submissionMax = submissionMax;
+    return this;
+  }
+
+   /**
+   * Get submissionMax
+   * @return submissionMax
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getSubmissionMax() {
+    return submissionMax;
+  }
+
+
+  public void setSubmissionMax(Object submissionMax) {
+    this.submissionMax = submissionMax;
+  }
+
+
+  public TitaniumSubmissionStatisticsExplorerTableColumn submissionMin(Object submissionMin) {
+    
+    this.submissionMin = submissionMin;
+    return this;
+  }
+
+   /**
+   * Get submissionMin
+   * @return submissionMin
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getSubmissionMin() {
+    return submissionMin;
+  }
+
+
+  public void setSubmissionMin(Object submissionMin) {
+    this.submissionMin = submissionMin;
   }
 
 
@@ -332,36 +332,36 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
       return false;
     }
     TitaniumSubmissionStatisticsExplorerTableColumn titaniumSubmissionStatisticsExplorerTableColumn = (TitaniumSubmissionStatisticsExplorerTableColumn) o;
-    return Objects.equals(this.absDiffFromStatisticalMean, titaniumSubmissionStatisticsExplorerTableColumn.absDiffFromStatisticalMean) &&
+    return Objects.equals(this.absDiffFromSubEvidence, titaniumSubmissionStatisticsExplorerTableColumn.absDiffFromSubEvidence) &&
         Objects.equals(this.lowerBoundary, titaniumSubmissionStatisticsExplorerTableColumn.lowerBoundary) &&
-        Objects.equals(this.max, titaniumSubmissionStatisticsExplorerTableColumn.max) &&
-        Objects.equals(this.mean, titaniumSubmissionStatisticsExplorerTableColumn.mean) &&
-        Objects.equals(this.min, titaniumSubmissionStatisticsExplorerTableColumn.min) &&
+        Objects.equals(this.numberOfPartInBoundaries, titaniumSubmissionStatisticsExplorerTableColumn.numberOfPartInBoundaries) &&
         Objects.equals(this.statMeanAbsDiffFromLatestTrade, titaniumSubmissionStatisticsExplorerTableColumn.statMeanAbsDiffFromLatestTrade) &&
         Objects.equals(this.stdDev, titaniumSubmissionStatisticsExplorerTableColumn.stdDev) &&
         Objects.equals(this.subPriceDiff, titaniumSubmissionStatisticsExplorerTableColumn.subPriceDiff) &&
-        Objects.equals(this.subValidPointsCount, titaniumSubmissionStatisticsExplorerTableColumn.subValidPointsCount) &&
+        Objects.equals(this.submissionEvidence, titaniumSubmissionStatisticsExplorerTableColumn.submissionEvidence) &&
+        Objects.equals(this.submissionMax, titaniumSubmissionStatisticsExplorerTableColumn.submissionMax) &&
+        Objects.equals(this.submissionMin, titaniumSubmissionStatisticsExplorerTableColumn.submissionMin) &&
         Objects.equals(this.upperBoundary, titaniumSubmissionStatisticsExplorerTableColumn.upperBoundary);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromStatisticalMean, lowerBoundary, max, mean, min, statMeanAbsDiffFromLatestTrade, stdDev, subPriceDiff, subValidPointsCount, upperBoundary);
+    return Objects.hash(absDiffFromSubEvidence, lowerBoundary, numberOfPartInBoundaries, statMeanAbsDiffFromLatestTrade, stdDev, subPriceDiff, submissionEvidence, submissionMax, submissionMin, upperBoundary);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumSubmissionStatisticsExplorerTableColumn {\n");
-    sb.append("    absDiffFromStatisticalMean: ").append(toIndentedString(absDiffFromStatisticalMean)).append("\n");
+    sb.append("    absDiffFromSubEvidence: ").append(toIndentedString(absDiffFromSubEvidence)).append("\n");
     sb.append("    lowerBoundary: ").append(toIndentedString(lowerBoundary)).append("\n");
-    sb.append("    max: ").append(toIndentedString(max)).append("\n");
-    sb.append("    mean: ").append(toIndentedString(mean)).append("\n");
-    sb.append("    min: ").append(toIndentedString(min)).append("\n");
+    sb.append("    numberOfPartInBoundaries: ").append(toIndentedString(numberOfPartInBoundaries)).append("\n");
     sb.append("    statMeanAbsDiffFromLatestTrade: ").append(toIndentedString(statMeanAbsDiffFromLatestTrade)).append("\n");
     sb.append("    stdDev: ").append(toIndentedString(stdDev)).append("\n");
     sb.append("    subPriceDiff: ").append(toIndentedString(subPriceDiff)).append("\n");
-    sb.append("    subValidPointsCount: ").append(toIndentedString(subValidPointsCount)).append("\n");
+    sb.append("    submissionEvidence: ").append(toIndentedString(submissionEvidence)).append("\n");
+    sb.append("    submissionMax: ").append(toIndentedString(submissionMax)).append("\n");
+    sb.append("    submissionMin: ").append(toIndentedString(submissionMin)).append("\n");
     sb.append("    upperBoundary: ").append(toIndentedString(upperBoundary)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -385,15 +385,15 @@ public class TitaniumSubmissionStatisticsExplorerTableColumn {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("absDiffFromStatisticalMean");
+    openapiFields.add("absDiffFromSubEvidence");
     openapiFields.add("lowerBoundary");
-    openapiFields.add("max");
-    openapiFields.add("mean");
-    openapiFields.add("min");
+    openapiFields.add("numberOfPartInBoundaries");
     openapiFields.add("statMeanAbsDiffFromLatestTrade");
     openapiFields.add("stdDev");
     openapiFields.add("subPriceDiff");
-    openapiFields.add("subValidPointsCount");
+    openapiFields.add("submissionEvidence");
+    openapiFields.add("submissionMax");
+    openapiFields.add("submissionMin");
     openapiFields.add("upperBoundary");
 
     // a set of required properties/fields (JSON key names)

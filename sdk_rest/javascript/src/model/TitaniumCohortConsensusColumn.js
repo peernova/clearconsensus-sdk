@@ -50,6 +50,12 @@ class TitaniumCohortConsensusColumn {
             if (data.hasOwnProperty('absDiffFromConsensus')) {
                 obj['absDiffFromConsensus'] = ApiClient.convertToType(data['absDiffFromConsensus'], Object);
             }
+            if (data.hasOwnProperty('acceptedMax')) {
+                obj['acceptedMax'] = ApiClient.convertToType(data['acceptedMax'], Object);
+            }
+            if (data.hasOwnProperty('acceptedMin')) {
+                obj['acceptedMin'] = ApiClient.convertToType(data['acceptedMin'], Object);
+            }
             if (data.hasOwnProperty('cohortConsensusPrice')) {
                 obj['cohortConsensusPrice'] = ApiClient.convertToType(data['cohortConsensusPrice'], Object);
             }
@@ -65,9 +71,6 @@ class TitaniumCohortConsensusColumn {
             if (data.hasOwnProperty('consAbsDiffFromAnchorTrade')) {
                 obj['consAbsDiffFromAnchorTrade'] = ApiClient.convertToType(data['consAbsDiffFromAnchorTrade'], Object);
             }
-            if (data.hasOwnProperty('lowerBoundary')) {
-                obj['lowerBoundary'] = ApiClient.convertToType(data['lowerBoundary'], Object);
-            }
             if (data.hasOwnProperty('numberOfInstruments')) {
                 obj['numberOfInstruments'] = ApiClient.convertToType(data['numberOfInstruments'], Object);
             }
@@ -76,9 +79,6 @@ class TitaniumCohortConsensusColumn {
             }
             if (data.hasOwnProperty('subPriceDiff')) {
                 obj['subPriceDiff'] = ApiClient.convertToType(data['subPriceDiff'], Object);
-            }
-            if (data.hasOwnProperty('upperBoundary')) {
-                obj['upperBoundary'] = ApiClient.convertToType(data['upperBoundary'], Object);
             }
         }
         return obj;
@@ -91,6 +91,16 @@ class TitaniumCohortConsensusColumn {
  * @member {Object} absDiffFromConsensus
  */
 TitaniumCohortConsensusColumn.prototype['absDiffFromConsensus'] = undefined;
+
+/**
+ * @member {Object} acceptedMax
+ */
+TitaniumCohortConsensusColumn.prototype['acceptedMax'] = undefined;
+
+/**
+ * @member {Object} acceptedMin
+ */
+TitaniumCohortConsensusColumn.prototype['acceptedMin'] = undefined;
 
 /**
  * @member {Object} cohortConsensusPrice
@@ -118,11 +128,6 @@ TitaniumCohortConsensusColumn.prototype['consAbsDiffFromAnchorSub'] = undefined;
 TitaniumCohortConsensusColumn.prototype['consAbsDiffFromAnchorTrade'] = undefined;
 
 /**
- * @member {Object} lowerBoundary
- */
-TitaniumCohortConsensusColumn.prototype['lowerBoundary'] = undefined;
-
-/**
  * @member {Object} numberOfInstruments
  */
 TitaniumCohortConsensusColumn.prototype['numberOfInstruments'] = undefined;
@@ -136,11 +141,6 @@ TitaniumCohortConsensusColumn.prototype['stdDev'] = undefined;
  * @member {Object} subPriceDiff
  */
 TitaniumCohortConsensusColumn.prototype['subPriceDiff'] = undefined;
-
-/**
- * @member {Object} upperBoundary
- */
-TitaniumCohortConsensusColumn.prototype['upperBoundary'] = undefined;
 
 
 

@@ -7,9 +7,9 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**columns** | [**List&lt;GrpcprotoTableColumn&gt;**](GrpcprotoTableColumn.md) |  |  [optional] |
+|**columns** | [**List&lt;ProtoColumnDefinition&gt;**](ProtoColumnDefinition.md) |  |  [optional] |
 |**rows** | [**List&lt;GrpcprotoTableRow&gt;**](GrpcprotoTableRow.md) |  |  [optional] |
-|**totalRows** | **String** |  |  [optional] |
+|**totalRows** | **Integer** |  |  [optional] |
 
 
 

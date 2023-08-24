@@ -81,15 +81,15 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
                 and the value is attribute type.
         """
         return {
-            'abs_diff_from_statistical_mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'abs_diff_from_sub_evidence': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'lower_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'max': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'min': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'number_of_part_in_boundaries': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'stat_mean_abs_diff_from_latest_trade': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'sub_price_diff': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
-            'sub_valid_points_count': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'submission_evidence': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'submission_max': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
+            'submission_min': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'upper_boundary': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
         }
 
@@ -99,15 +99,15 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
 
 
     attribute_map = {
-        'abs_diff_from_statistical_mean': 'absDiffFromStatisticalMean',  # noqa: E501
+        'abs_diff_from_sub_evidence': 'absDiffFromSubEvidence',  # noqa: E501
         'lower_boundary': 'lowerBoundary',  # noqa: E501
-        'max': 'max',  # noqa: E501
-        'mean': 'mean',  # noqa: E501
-        'min': 'min',  # noqa: E501
+        'number_of_part_in_boundaries': 'numberOfPartInBoundaries',  # noqa: E501
         'stat_mean_abs_diff_from_latest_trade': 'statMeanAbsDiffFromLatestTrade',  # noqa: E501
         'std_dev': 'stdDev',  # noqa: E501
         'sub_price_diff': 'subPriceDiff',  # noqa: E501
-        'sub_valid_points_count': 'subValidPointsCount',  # noqa: E501
+        'submission_evidence': 'submissionEvidence',  # noqa: E501
+        'submission_max': 'submissionMax',  # noqa: E501
+        'submission_min': 'submissionMin',  # noqa: E501
         'upper_boundary': 'upperBoundary',  # noqa: E501
     }
 
@@ -152,15 +152,15 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            abs_diff_from_statistical_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            abs_diff_from_sub_evidence (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            number_of_part_in_boundaries (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             stat_mean_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            sub_valid_points_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            submission_evidence (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            submission_max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            submission_min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 
@@ -247,15 +247,15 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            abs_diff_from_statistical_mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            abs_diff_from_sub_evidence (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             lower_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            number_of_part_in_boundaries (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             stat_mean_abs_diff_from_latest_trade (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             sub_price_diff (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
-            sub_valid_points_count (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            submission_evidence (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            submission_max (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
+            submission_min (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             upper_boundary (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
         """
 

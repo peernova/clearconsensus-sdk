@@ -36,90 +36,90 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'abs_diff_from_statistical_mean': 'object',
+        'abs_diff_from_sub_evidence': 'object',
         'lower_boundary': 'object',
-        'max': 'object',
-        'mean': 'object',
-        'min': 'object',
+        'number_of_part_in_boundaries': 'object',
         'stat_mean_abs_diff_from_latest_trade': 'object',
         'std_dev': 'object',
         'sub_price_diff': 'object',
-        'sub_valid_points_count': 'object',
+        'submission_evidence': 'object',
+        'submission_max': 'object',
+        'submission_min': 'object',
         'upper_boundary': 'object'
     }
 
     attribute_map = {
-        'abs_diff_from_statistical_mean': 'absDiffFromStatisticalMean',
+        'abs_diff_from_sub_evidence': 'absDiffFromSubEvidence',
         'lower_boundary': 'lowerBoundary',
-        'max': 'max',
-        'mean': 'mean',
-        'min': 'min',
+        'number_of_part_in_boundaries': 'numberOfPartInBoundaries',
         'stat_mean_abs_diff_from_latest_trade': 'statMeanAbsDiffFromLatestTrade',
         'std_dev': 'stdDev',
         'sub_price_diff': 'subPriceDiff',
-        'sub_valid_points_count': 'subValidPointsCount',
+        'submission_evidence': 'submissionEvidence',
+        'submission_max': 'submissionMax',
+        'submission_min': 'submissionMin',
         'upper_boundary': 'upperBoundary'
     }
 
-    def __init__(self, abs_diff_from_statistical_mean=None, lower_boundary=None, max=None, mean=None, min=None, stat_mean_abs_diff_from_latest_trade=None, std_dev=None, sub_price_diff=None, sub_valid_points_count=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_sub_evidence=None, lower_boundary=None, number_of_part_in_boundaries=None, stat_mean_abs_diff_from_latest_trade=None, std_dev=None, sub_price_diff=None, submission_evidence=None, submission_max=None, submission_min=None, upper_boundary=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumSubmissionStatisticsExplorerTableColumn - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._abs_diff_from_statistical_mean = None
+        self._abs_diff_from_sub_evidence = None
         self._lower_boundary = None
-        self._max = None
-        self._mean = None
-        self._min = None
+        self._number_of_part_in_boundaries = None
         self._stat_mean_abs_diff_from_latest_trade = None
         self._std_dev = None
         self._sub_price_diff = None
-        self._sub_valid_points_count = None
+        self._submission_evidence = None
+        self._submission_max = None
+        self._submission_min = None
         self._upper_boundary = None
         self.discriminator = None
 
-        if abs_diff_from_statistical_mean is not None:
-            self.abs_diff_from_statistical_mean = abs_diff_from_statistical_mean
+        if abs_diff_from_sub_evidence is not None:
+            self.abs_diff_from_sub_evidence = abs_diff_from_sub_evidence
         if lower_boundary is not None:
             self.lower_boundary = lower_boundary
-        if max is not None:
-            self.max = max
-        if mean is not None:
-            self.mean = mean
-        if min is not None:
-            self.min = min
+        if number_of_part_in_boundaries is not None:
+            self.number_of_part_in_boundaries = number_of_part_in_boundaries
         if stat_mean_abs_diff_from_latest_trade is not None:
             self.stat_mean_abs_diff_from_latest_trade = stat_mean_abs_diff_from_latest_trade
         if std_dev is not None:
             self.std_dev = std_dev
         if sub_price_diff is not None:
             self.sub_price_diff = sub_price_diff
-        if sub_valid_points_count is not None:
-            self.sub_valid_points_count = sub_valid_points_count
+        if submission_evidence is not None:
+            self.submission_evidence = submission_evidence
+        if submission_max is not None:
+            self.submission_max = submission_max
+        if submission_min is not None:
+            self.submission_min = submission_min
         if upper_boundary is not None:
             self.upper_boundary = upper_boundary
 
     @property
-    def abs_diff_from_statistical_mean(self):
-        """Gets the abs_diff_from_statistical_mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+    def abs_diff_from_sub_evidence(self):
+        """Gets the abs_diff_from_sub_evidence of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
 
 
-        :return: The abs_diff_from_statistical_mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :return: The abs_diff_from_sub_evidence of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
         :rtype: object
         """
-        return self._abs_diff_from_statistical_mean
+        return self._abs_diff_from_sub_evidence
 
-    @abs_diff_from_statistical_mean.setter
-    def abs_diff_from_statistical_mean(self, abs_diff_from_statistical_mean):
-        """Sets the abs_diff_from_statistical_mean of this TitaniumSubmissionStatisticsExplorerTableColumn.
+    @abs_diff_from_sub_evidence.setter
+    def abs_diff_from_sub_evidence(self, abs_diff_from_sub_evidence):
+        """Sets the abs_diff_from_sub_evidence of this TitaniumSubmissionStatisticsExplorerTableColumn.
 
 
-        :param abs_diff_from_statistical_mean: The abs_diff_from_statistical_mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :type abs_diff_from_statistical_mean: object
+        :param abs_diff_from_sub_evidence: The abs_diff_from_sub_evidence of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :type abs_diff_from_sub_evidence: object
         """
 
-        self._abs_diff_from_statistical_mean = abs_diff_from_statistical_mean
+        self._abs_diff_from_sub_evidence = abs_diff_from_sub_evidence
 
     @property
     def lower_boundary(self):
@@ -143,67 +143,25 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         self._lower_boundary = lower_boundary
 
     @property
-    def max(self):
-        """Gets the max of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+    def number_of_part_in_boundaries(self):
+        """Gets the number_of_part_in_boundaries of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
 
 
-        :return: The max of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :return: The number_of_part_in_boundaries of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
         :rtype: object
         """
-        return self._max
+        return self._number_of_part_in_boundaries
 
-    @max.setter
-    def max(self, max):
-        """Sets the max of this TitaniumSubmissionStatisticsExplorerTableColumn.
+    @number_of_part_in_boundaries.setter
+    def number_of_part_in_boundaries(self, number_of_part_in_boundaries):
+        """Sets the number_of_part_in_boundaries of this TitaniumSubmissionStatisticsExplorerTableColumn.
 
 
-        :param max: The max of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :type max: object
+        :param number_of_part_in_boundaries: The number_of_part_in_boundaries of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :type number_of_part_in_boundaries: object
         """
 
-        self._max = max
-
-    @property
-    def mean(self):
-        """Gets the mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-
-
-        :return: The mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :rtype: object
-        """
-        return self._mean
-
-    @mean.setter
-    def mean(self, mean):
-        """Sets the mean of this TitaniumSubmissionStatisticsExplorerTableColumn.
-
-
-        :param mean: The mean of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :type mean: object
-        """
-
-        self._mean = mean
-
-    @property
-    def min(self):
-        """Gets the min of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-
-
-        :return: The min of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :rtype: object
-        """
-        return self._min
-
-    @min.setter
-    def min(self, min):
-        """Sets the min of this TitaniumSubmissionStatisticsExplorerTableColumn.
-
-
-        :param min: The min of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :type min: object
-        """
-
-        self._min = min
+        self._number_of_part_in_boundaries = number_of_part_in_boundaries
 
     @property
     def stat_mean_abs_diff_from_latest_trade(self):
@@ -269,25 +227,67 @@ class TitaniumSubmissionStatisticsExplorerTableColumn(object):
         self._sub_price_diff = sub_price_diff
 
     @property
-    def sub_valid_points_count(self):
-        """Gets the sub_valid_points_count of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+    def submission_evidence(self):
+        """Gets the submission_evidence of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
 
 
-        :return: The sub_valid_points_count of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :return: The submission_evidence of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
         :rtype: object
         """
-        return self._sub_valid_points_count
+        return self._submission_evidence
 
-    @sub_valid_points_count.setter
-    def sub_valid_points_count(self, sub_valid_points_count):
-        """Sets the sub_valid_points_count of this TitaniumSubmissionStatisticsExplorerTableColumn.
+    @submission_evidence.setter
+    def submission_evidence(self, submission_evidence):
+        """Sets the submission_evidence of this TitaniumSubmissionStatisticsExplorerTableColumn.
 
 
-        :param sub_valid_points_count: The sub_valid_points_count of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
-        :type sub_valid_points_count: object
+        :param submission_evidence: The submission_evidence of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :type submission_evidence: object
         """
 
-        self._sub_valid_points_count = sub_valid_points_count
+        self._submission_evidence = submission_evidence
+
+    @property
+    def submission_max(self):
+        """Gets the submission_max of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+
+
+        :return: The submission_max of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._submission_max
+
+    @submission_max.setter
+    def submission_max(self, submission_max):
+        """Sets the submission_max of this TitaniumSubmissionStatisticsExplorerTableColumn.
+
+
+        :param submission_max: The submission_max of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :type submission_max: object
+        """
+
+        self._submission_max = submission_max
+
+    @property
+    def submission_min(self):
+        """Gets the submission_min of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+
+
+        :return: The submission_min of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :rtype: object
+        """
+        return self._submission_min
+
+    @submission_min.setter
+    def submission_min(self, submission_min):
+        """Sets the submission_min of this TitaniumSubmissionStatisticsExplorerTableColumn.
+
+
+        :param submission_min: The submission_min of this TitaniumSubmissionStatisticsExplorerTableColumn.  # noqa: E501
+        :type submission_min: object
+        """
+
+        self._submission_min = submission_min
 
     @property
     def upper_boundary(self):

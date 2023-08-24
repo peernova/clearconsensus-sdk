@@ -31,7 +31,6 @@ docs/GetFileExportUrlResponseFileExportUrl.md
 docs/GroupPolicyServiceApi.md
 docs/GrpcprotoError.md
 docs/GrpcprotoTable.md
-docs/GrpcprotoTableColumn.md
 docs/GrpcprotoTableRow.md
 docs/GrpcprotoUserResponse.md
 docs/KvServiceApi.md
@@ -45,6 +44,7 @@ docs/OperatorServicePrivateApi.md
 docs/OutliersServiceApi.md
 docs/PolicyServiceApi.md
 docs/PopUpServiceApi.md
+docs/ProtoColumnDefinition.md
 docs/ProtoEntitiesDto.md
 docs/ProtoEntitiesResponse.md
 docs/ProtoEntityDto.md
@@ -74,6 +74,7 @@ docs/RpcStatus.md
 docs/ScopeServiceApi.md
 docs/SubmissionServiceApi.md
 docs/SupportedFieldsServiceApi.md
+docs/TableColumn.md
 docs/TitaniumAcknowledgeResponse.md
 docs/TitaniumAddAssetRequest.md
 docs/TitaniumAddLookupTableRequest.md
@@ -370,7 +371,6 @@ docs/TitaniumSubmittedRow.md
 docs/TitaniumSupportedField.md
 docs/TitaniumSupportedFieldsValues.md
 docs/TitaniumTable.md
-docs/TitaniumTableColumn.md
 docs/TitaniumTableRequest.md
 docs/TitaniumTableRow.md
 docs/TitaniumTradeAligmentDateAndValue.md
@@ -482,9 +482,9 @@ src/main/java/org/openapitools/client/model/GetChallengeDetailsResponseResult.ja
 src/main/java/org/openapitools/client/model/GetFileExportUrlResponseFileExportUrl.java
 src/main/java/org/openapitools/client/model/GrpcprotoError.java
 src/main/java/org/openapitools/client/model/GrpcprotoTable.java
-src/main/java/org/openapitools/client/model/GrpcprotoTableColumn.java
 src/main/java/org/openapitools/client/model/GrpcprotoTableRow.java
 src/main/java/org/openapitools/client/model/GrpcprotoUserResponse.java
+src/main/java/org/openapitools/client/model/ProtoColumnDefinition.java
 src/main/java/org/openapitools/client/model/ProtoEntitiesDto.java
 src/main/java/org/openapitools/client/model/ProtoEntitiesResponse.java
 src/main/java/org/openapitools/client/model/ProtoEntityDto.java
@@ -511,6 +511,7 @@ src/main/java/org/openapitools/client/model/ProtoUsersDto.java
 src/main/java/org/openapitools/client/model/ProtoUsersResponse.java
 src/main/java/org/openapitools/client/model/ProtobufAny.java
 src/main/java/org/openapitools/client/model/RpcStatus.java
+src/main/java/org/openapitools/client/model/TableColumn.java
 src/main/java/org/openapitools/client/model/TitaniumAcknowledgeResponse.java
 src/main/java/org/openapitools/client/model/TitaniumAddAssetRequest.java
 src/main/java/org/openapitools/client/model/TitaniumAddLookupTableRequest.java
@@ -807,7 +808,6 @@ src/main/java/org/openapitools/client/model/TitaniumSubmittedRow.java
 src/main/java/org/openapitools/client/model/TitaniumSupportedField.java
 src/main/java/org/openapitools/client/model/TitaniumSupportedFieldsValues.java
 src/main/java/org/openapitools/client/model/TitaniumTable.java
-src/main/java/org/openapitools/client/model/TitaniumTableColumn.java
 src/main/java/org/openapitools/client/model/TitaniumTableRequest.java
 src/main/java/org/openapitools/client/model/TitaniumTableRow.java
 src/main/java/org/openapitools/client/model/TitaniumTradeAligmentDateAndValue.java
@@ -846,3 +846,5 @@ src/main/java/org/openapitools/client/model/TitaniumValuesRow.java
 src/main/java/org/openapitools/client/model/TitaniumVersion.java
 src/main/java/org/openapitools/client/model/TitaniumVersionList.java
 src/main/java/org/openapitools/client/model/TitaniumViewRow.java
+src/test/java/org/openapitools/client/model/ProtoColumnDefinitionTest.java
+src/test/java/org/openapitools/client/model/TableColumnTest.java

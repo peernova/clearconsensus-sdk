@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **cohortConsensusRangeTabData** | [**TitaniumCohortConsensusRangeTabData**](TitaniumCohortConsensusRangeTabData.md) |  | [optional] 
 **evpMid** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 **submissionEvidencePrice** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
+**submissionMean** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 **submissionPoint** | [**TitaniumRangePoint**](TitaniumRangePoint.md) |  | [optional] 
 
 

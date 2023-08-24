@@ -47,11 +47,19 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumCohortConsensusColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-23T14:39:24.626712Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T07:13:26.014483Z[UTC]")
 public class TitaniumCohortConsensusColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS = "absDiffFromConsensus";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_CONSENSUS)
   private Object absDiffFromConsensus;
+
+  public static final String SERIALIZED_NAME_ACCEPTED_MAX = "acceptedMax";
+  @SerializedName(SERIALIZED_NAME_ACCEPTED_MAX)
+  private Object acceptedMax;
+
+  public static final String SERIALIZED_NAME_ACCEPTED_MIN = "acceptedMin";
+  @SerializedName(SERIALIZED_NAME_ACCEPTED_MIN)
+  private Object acceptedMin;
 
   public static final String SERIALIZED_NAME_COHORT_CONSENSUS_PRICE = "cohortConsensusPrice";
   @SerializedName(SERIALIZED_NAME_COHORT_CONSENSUS_PRICE)
@@ -73,10 +81,6 @@ public class TitaniumCohortConsensusColumn {
   @SerializedName(SERIALIZED_NAME_CONS_ABS_DIFF_FROM_ANCHOR_TRADE)
   private Object consAbsDiffFromAnchorTrade;
 
-  public static final String SERIALIZED_NAME_LOWER_BOUNDARY = "lowerBoundary";
-  @SerializedName(SERIALIZED_NAME_LOWER_BOUNDARY)
-  private Object lowerBoundary;
-
   public static final String SERIALIZED_NAME_NUMBER_OF_INSTRUMENTS = "numberOfInstruments";
   @SerializedName(SERIALIZED_NAME_NUMBER_OF_INSTRUMENTS)
   private Object numberOfInstruments;
@@ -88,10 +92,6 @@ public class TitaniumCohortConsensusColumn {
   public static final String SERIALIZED_NAME_SUB_PRICE_DIFF = "subPriceDiff";
   @SerializedName(SERIALIZED_NAME_SUB_PRICE_DIFF)
   private Object subPriceDiff;
-
-  public static final String SERIALIZED_NAME_UPPER_BOUNDARY = "upperBoundary";
-  @SerializedName(SERIALIZED_NAME_UPPER_BOUNDARY)
-  private Object upperBoundary;
 
   public TitaniumCohortConsensusColumn() { 
   }
@@ -116,6 +116,52 @@ public class TitaniumCohortConsensusColumn {
 
   public void setAbsDiffFromConsensus(Object absDiffFromConsensus) {
     this.absDiffFromConsensus = absDiffFromConsensus;
+  }
+
+
+  public TitaniumCohortConsensusColumn acceptedMax(Object acceptedMax) {
+    
+    this.acceptedMax = acceptedMax;
+    return this;
+  }
+
+   /**
+   * Get acceptedMax
+   * @return acceptedMax
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getAcceptedMax() {
+    return acceptedMax;
+  }
+
+
+  public void setAcceptedMax(Object acceptedMax) {
+    this.acceptedMax = acceptedMax;
+  }
+
+
+  public TitaniumCohortConsensusColumn acceptedMin(Object acceptedMin) {
+    
+    this.acceptedMin = acceptedMin;
+    return this;
+  }
+
+   /**
+   * Get acceptedMin
+   * @return acceptedMin
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getAcceptedMin() {
+    return acceptedMin;
+  }
+
+
+  public void setAcceptedMin(Object acceptedMin) {
+    this.acceptedMin = acceptedMin;
   }
 
 
@@ -234,29 +280,6 @@ public class TitaniumCohortConsensusColumn {
   }
 
 
-  public TitaniumCohortConsensusColumn lowerBoundary(Object lowerBoundary) {
-    
-    this.lowerBoundary = lowerBoundary;
-    return this;
-  }
-
-   /**
-   * Get lowerBoundary
-   * @return lowerBoundary
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getLowerBoundary() {
-    return lowerBoundary;
-  }
-
-
-  public void setLowerBoundary(Object lowerBoundary) {
-    this.lowerBoundary = lowerBoundary;
-  }
-
-
   public TitaniumCohortConsensusColumn numberOfInstruments(Object numberOfInstruments) {
     
     this.numberOfInstruments = numberOfInstruments;
@@ -326,29 +349,6 @@ public class TitaniumCohortConsensusColumn {
   }
 
 
-  public TitaniumCohortConsensusColumn upperBoundary(Object upperBoundary) {
-    
-    this.upperBoundary = upperBoundary;
-    return this;
-  }
-
-   /**
-   * Get upperBoundary
-   * @return upperBoundary
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getUpperBoundary() {
-    return upperBoundary;
-  }
-
-
-  public void setUpperBoundary(Object upperBoundary) {
-    this.upperBoundary = upperBoundary;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -360,21 +360,21 @@ public class TitaniumCohortConsensusColumn {
     }
     TitaniumCohortConsensusColumn titaniumCohortConsensusColumn = (TitaniumCohortConsensusColumn) o;
     return Objects.equals(this.absDiffFromConsensus, titaniumCohortConsensusColumn.absDiffFromConsensus) &&
+        Objects.equals(this.acceptedMax, titaniumCohortConsensusColumn.acceptedMax) &&
+        Objects.equals(this.acceptedMin, titaniumCohortConsensusColumn.acceptedMin) &&
         Objects.equals(this.cohortConsensusPrice, titaniumCohortConsensusColumn.cohortConsensusPrice) &&
         Objects.equals(this.consAbsDiffFromAnchorEvpMid, titaniumCohortConsensusColumn.consAbsDiffFromAnchorEvpMid) &&
         Objects.equals(this.consAbsDiffFromAnchorEvpMidCalc, titaniumCohortConsensusColumn.consAbsDiffFromAnchorEvpMidCalc) &&
         Objects.equals(this.consAbsDiffFromAnchorSub, titaniumCohortConsensusColumn.consAbsDiffFromAnchorSub) &&
         Objects.equals(this.consAbsDiffFromAnchorTrade, titaniumCohortConsensusColumn.consAbsDiffFromAnchorTrade) &&
-        Objects.equals(this.lowerBoundary, titaniumCohortConsensusColumn.lowerBoundary) &&
         Objects.equals(this.numberOfInstruments, titaniumCohortConsensusColumn.numberOfInstruments) &&
         Objects.equals(this.stdDev, titaniumCohortConsensusColumn.stdDev) &&
-        Objects.equals(this.subPriceDiff, titaniumCohortConsensusColumn.subPriceDiff) &&
-        Objects.equals(this.upperBoundary, titaniumCohortConsensusColumn.upperBoundary);
+        Objects.equals(this.subPriceDiff, titaniumCohortConsensusColumn.subPriceDiff);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromConsensus, cohortConsensusPrice, consAbsDiffFromAnchorEvpMid, consAbsDiffFromAnchorEvpMidCalc, consAbsDiffFromAnchorSub, consAbsDiffFromAnchorTrade, lowerBoundary, numberOfInstruments, stdDev, subPriceDiff, upperBoundary);
+    return Objects.hash(absDiffFromConsensus, acceptedMax, acceptedMin, cohortConsensusPrice, consAbsDiffFromAnchorEvpMid, consAbsDiffFromAnchorEvpMidCalc, consAbsDiffFromAnchorSub, consAbsDiffFromAnchorTrade, numberOfInstruments, stdDev, subPriceDiff);
   }
 
   @Override
@@ -382,16 +382,16 @@ public class TitaniumCohortConsensusColumn {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumCohortConsensusColumn {\n");
     sb.append("    absDiffFromConsensus: ").append(toIndentedString(absDiffFromConsensus)).append("\n");
+    sb.append("    acceptedMax: ").append(toIndentedString(acceptedMax)).append("\n");
+    sb.append("    acceptedMin: ").append(toIndentedString(acceptedMin)).append("\n");
     sb.append("    cohortConsensusPrice: ").append(toIndentedString(cohortConsensusPrice)).append("\n");
     sb.append("    consAbsDiffFromAnchorEvpMid: ").append(toIndentedString(consAbsDiffFromAnchorEvpMid)).append("\n");
     sb.append("    consAbsDiffFromAnchorEvpMidCalc: ").append(toIndentedString(consAbsDiffFromAnchorEvpMidCalc)).append("\n");
     sb.append("    consAbsDiffFromAnchorSub: ").append(toIndentedString(consAbsDiffFromAnchorSub)).append("\n");
     sb.append("    consAbsDiffFromAnchorTrade: ").append(toIndentedString(consAbsDiffFromAnchorTrade)).append("\n");
-    sb.append("    lowerBoundary: ").append(toIndentedString(lowerBoundary)).append("\n");
     sb.append("    numberOfInstruments: ").append(toIndentedString(numberOfInstruments)).append("\n");
     sb.append("    stdDev: ").append(toIndentedString(stdDev)).append("\n");
     sb.append("    subPriceDiff: ").append(toIndentedString(subPriceDiff)).append("\n");
-    sb.append("    upperBoundary: ").append(toIndentedString(upperBoundary)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -415,16 +415,16 @@ public class TitaniumCohortConsensusColumn {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("absDiffFromConsensus");
+    openapiFields.add("acceptedMax");
+    openapiFields.add("acceptedMin");
     openapiFields.add("cohortConsensusPrice");
     openapiFields.add("consAbsDiffFromAnchorEvpMid");
     openapiFields.add("consAbsDiffFromAnchorEvpMidCalc");
     openapiFields.add("consAbsDiffFromAnchorSub");
     openapiFields.add("consAbsDiffFromAnchorTrade");
-    openapiFields.add("lowerBoundary");
     openapiFields.add("numberOfInstruments");
     openapiFields.add("stdDev");
     openapiFields.add("subPriceDiff");
-    openapiFields.add("upperBoundary");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
