@@ -5650,6 +5650,7 @@ proto.titanium.ConsensusExplorerRangeData.toObject = function(includeInstance, m
   var f, obj = {
     chartRanges: (f = msg.getChartRanges()) && proto.titanium.ChartRanges.toObject(includeInstance, f),
     submissionPoint: (f = msg.getSubmissionPoint()) && common_gateway_base_pb.RangePoint.toObject(includeInstance, f),
+    submissionMean: (f = msg.getSubmissionMean()) && common_gateway_base_pb.RangePoint.toObject(includeInstance, f),
     anchorPoint: (f = msg.getAnchorPoint()) && common_gateway_base_pb.RangePoint.toObject(includeInstance, f),
     evpMid: (f = msg.getEvpMid()) && common_gateway_base_pb.RangePoint.toObject(includeInstance, f),
     submissionEvidencePrice: (f = msg.getSubmissionEvidencePrice()) && common_gateway_base_pb.RangePoint.toObject(includeInstance, f),
@@ -5706,34 +5707,39 @@ proto.titanium.ConsensusExplorerRangeData.deserializeBinaryFromReader = function
     case 3:
       var value = new common_gateway_base_pb.RangePoint;
       reader.readMessage(value,common_gateway_base_pb.RangePoint.deserializeBinaryFromReader);
-      msg.setAnchorPoint(value);
+      msg.setSubmissionMean(value);
       break;
     case 4:
       var value = new common_gateway_base_pb.RangePoint;
       reader.readMessage(value,common_gateway_base_pb.RangePoint.deserializeBinaryFromReader);
-      msg.setEvpMid(value);
+      msg.setAnchorPoint(value);
       break;
     case 5:
       var value = new common_gateway_base_pb.RangePoint;
       reader.readMessage(value,common_gateway_base_pb.RangePoint.deserializeBinaryFromReader);
-      msg.setSubmissionEvidencePrice(value);
+      msg.setEvpMid(value);
       break;
     case 6:
       var value = new common_gateway_base_pb.RangePoint;
       reader.readMessage(value,common_gateway_base_pb.RangePoint.deserializeBinaryFromReader);
-      msg.setCohortConsensusPrice(value);
+      msg.setSubmissionEvidencePrice(value);
       break;
     case 7:
       var value = new common_gateway_base_pb.RangePoint;
       reader.readMessage(value,common_gateway_base_pb.RangePoint.deserializeBinaryFromReader);
-      msg.setBimodalLeftMean(value);
+      msg.setCohortConsensusPrice(value);
       break;
     case 8:
       var value = new common_gateway_base_pb.RangePoint;
       reader.readMessage(value,common_gateway_base_pb.RangePoint.deserializeBinaryFromReader);
-      msg.setBimodalRightMean(value);
+      msg.setBimodalLeftMean(value);
       break;
     case 9:
+      var value = new common_gateway_base_pb.RangePoint;
+      reader.readMessage(value,common_gateway_base_pb.RangePoint.deserializeBinaryFromReader);
+      msg.setBimodalRightMean(value);
+      break;
+    case 10:
       var value = new proto.titanium.CohortConsensusRangeTabData;
       reader.readMessage(value,proto.titanium.CohortConsensusRangeTabData.deserializeBinaryFromReader);
       msg.setCohortConsensusRangeTabData(value);
@@ -5783,7 +5789,7 @@ proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter = function(mes
       common_gateway_base_pb.RangePoint.serializeBinaryToWriter
     );
   }
-  f = message.getAnchorPoint();
+  f = message.getSubmissionMean();
   if (f != null) {
     writer.writeMessage(
       3,
@@ -5791,7 +5797,7 @@ proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter = function(mes
       common_gateway_base_pb.RangePoint.serializeBinaryToWriter
     );
   }
-  f = message.getEvpMid();
+  f = message.getAnchorPoint();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -5799,7 +5805,7 @@ proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter = function(mes
       common_gateway_base_pb.RangePoint.serializeBinaryToWriter
     );
   }
-  f = message.getSubmissionEvidencePrice();
+  f = message.getEvpMid();
   if (f != null) {
     writer.writeMessage(
       5,
@@ -5807,7 +5813,7 @@ proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter = function(mes
       common_gateway_base_pb.RangePoint.serializeBinaryToWriter
     );
   }
-  f = message.getCohortConsensusPrice();
+  f = message.getSubmissionEvidencePrice();
   if (f != null) {
     writer.writeMessage(
       6,
@@ -5815,7 +5821,7 @@ proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter = function(mes
       common_gateway_base_pb.RangePoint.serializeBinaryToWriter
     );
   }
-  f = message.getBimodalLeftMean();
+  f = message.getCohortConsensusPrice();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -5823,7 +5829,7 @@ proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter = function(mes
       common_gateway_base_pb.RangePoint.serializeBinaryToWriter
     );
   }
-  f = message.getBimodalRightMean();
+  f = message.getBimodalLeftMean();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -5831,10 +5837,18 @@ proto.titanium.ConsensusExplorerRangeData.serializeBinaryToWriter = function(mes
       common_gateway_base_pb.RangePoint.serializeBinaryToWriter
     );
   }
-  f = message.getCohortConsensusRangeTabData();
+  f = message.getBimodalRightMean();
   if (f != null) {
     writer.writeMessage(
       9,
+      f,
+      common_gateway_base_pb.RangePoint.serializeBinaryToWriter
+    );
+  }
+  f = message.getCohortConsensusRangeTabData();
+  if (f != null) {
+    writer.writeMessage(
+      10,
       f,
       proto.titanium.CohortConsensusRangeTabData.serializeBinaryToWriter
     );
@@ -5917,10 +5931,10 @@ proto.titanium.ConsensusExplorerRangeData.prototype.hasSubmissionPoint = functio
 
 
 /**
- * optional RangePoint anchor_point = 3;
+ * optional RangePoint submission_mean = 3;
  * @return {?proto.titanium.RangePoint}
  */
-proto.titanium.ConsensusExplorerRangeData.prototype.getAnchorPoint = function() {
+proto.titanium.ConsensusExplorerRangeData.prototype.getSubmissionMean = function() {
   return /** @type{?proto.titanium.RangePoint} */ (
     jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 3));
 };
@@ -5930,8 +5944,45 @@ proto.titanium.ConsensusExplorerRangeData.prototype.getAnchorPoint = function() 
  * @param {?proto.titanium.RangePoint|undefined} value
  * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
 */
-proto.titanium.ConsensusExplorerRangeData.prototype.setAnchorPoint = function(value) {
+proto.titanium.ConsensusExplorerRangeData.prototype.setSubmissionMean = function(value) {
   return jspb.Message.setWrapperField(this, 3, value);
+};
+
+
+/**
+ * Clears the message field making it undefined.
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.clearSubmissionMean = function() {
+  return this.setSubmissionMean(undefined);
+};
+
+
+/**
+ * Returns whether this field is set.
+ * @return {boolean}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.hasSubmissionMean = function() {
+  return jspb.Message.getField(this, 3) != null;
+};
+
+
+/**
+ * optional RangePoint anchor_point = 4;
+ * @return {?proto.titanium.RangePoint}
+ */
+proto.titanium.ConsensusExplorerRangeData.prototype.getAnchorPoint = function() {
+  return /** @type{?proto.titanium.RangePoint} */ (
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 4));
+};
+
+
+/**
+ * @param {?proto.titanium.RangePoint|undefined} value
+ * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
+*/
+proto.titanium.ConsensusExplorerRangeData.prototype.setAnchorPoint = function(value) {
+  return jspb.Message.setWrapperField(this, 4, value);
 };
 
 
@@ -5949,17 +6000,17 @@ proto.titanium.ConsensusExplorerRangeData.prototype.clearAnchorPoint = function(
  * @return {boolean}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.hasAnchorPoint = function() {
-  return jspb.Message.getField(this, 3) != null;
+  return jspb.Message.getField(this, 4) != null;
 };
 
 
 /**
- * optional RangePoint evp_mid = 4;
+ * optional RangePoint evp_mid = 5;
  * @return {?proto.titanium.RangePoint}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.getEvpMid = function() {
   return /** @type{?proto.titanium.RangePoint} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 4));
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 5));
 };
 
 
@@ -5968,7 +6019,7 @@ proto.titanium.ConsensusExplorerRangeData.prototype.getEvpMid = function() {
  * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
 */
 proto.titanium.ConsensusExplorerRangeData.prototype.setEvpMid = function(value) {
-  return jspb.Message.setWrapperField(this, 4, value);
+  return jspb.Message.setWrapperField(this, 5, value);
 };
 
 
@@ -5986,17 +6037,17 @@ proto.titanium.ConsensusExplorerRangeData.prototype.clearEvpMid = function() {
  * @return {boolean}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.hasEvpMid = function() {
-  return jspb.Message.getField(this, 4) != null;
+  return jspb.Message.getField(this, 5) != null;
 };
 
 
 /**
- * optional RangePoint submission_evidence_price = 5;
+ * optional RangePoint submission_evidence_price = 6;
  * @return {?proto.titanium.RangePoint}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.getSubmissionEvidencePrice = function() {
   return /** @type{?proto.titanium.RangePoint} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 5));
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 6));
 };
 
 
@@ -6005,7 +6056,7 @@ proto.titanium.ConsensusExplorerRangeData.prototype.getSubmissionEvidencePrice =
  * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
 */
 proto.titanium.ConsensusExplorerRangeData.prototype.setSubmissionEvidencePrice = function(value) {
-  return jspb.Message.setWrapperField(this, 5, value);
+  return jspb.Message.setWrapperField(this, 6, value);
 };
 
 
@@ -6023,17 +6074,17 @@ proto.titanium.ConsensusExplorerRangeData.prototype.clearSubmissionEvidencePrice
  * @return {boolean}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.hasSubmissionEvidencePrice = function() {
-  return jspb.Message.getField(this, 5) != null;
+  return jspb.Message.getField(this, 6) != null;
 };
 
 
 /**
- * optional RangePoint cohort_consensus_price = 6;
+ * optional RangePoint cohort_consensus_price = 7;
  * @return {?proto.titanium.RangePoint}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.getCohortConsensusPrice = function() {
   return /** @type{?proto.titanium.RangePoint} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 6));
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 7));
 };
 
 
@@ -6042,7 +6093,7 @@ proto.titanium.ConsensusExplorerRangeData.prototype.getCohortConsensusPrice = fu
  * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
 */
 proto.titanium.ConsensusExplorerRangeData.prototype.setCohortConsensusPrice = function(value) {
-  return jspb.Message.setWrapperField(this, 6, value);
+  return jspb.Message.setWrapperField(this, 7, value);
 };
 
 
@@ -6060,17 +6111,17 @@ proto.titanium.ConsensusExplorerRangeData.prototype.clearCohortConsensusPrice = 
  * @return {boolean}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.hasCohortConsensusPrice = function() {
-  return jspb.Message.getField(this, 6) != null;
+  return jspb.Message.getField(this, 7) != null;
 };
 
 
 /**
- * optional RangePoint bimodal_left_mean = 7;
+ * optional RangePoint bimodal_left_mean = 8;
  * @return {?proto.titanium.RangePoint}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.getBimodalLeftMean = function() {
   return /** @type{?proto.titanium.RangePoint} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 7));
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 8));
 };
 
 
@@ -6079,7 +6130,7 @@ proto.titanium.ConsensusExplorerRangeData.prototype.getBimodalLeftMean = functio
  * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
 */
 proto.titanium.ConsensusExplorerRangeData.prototype.setBimodalLeftMean = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+  return jspb.Message.setWrapperField(this, 8, value);
 };
 
 
@@ -6097,17 +6148,17 @@ proto.titanium.ConsensusExplorerRangeData.prototype.clearBimodalLeftMean = funct
  * @return {boolean}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.hasBimodalLeftMean = function() {
-  return jspb.Message.getField(this, 7) != null;
+  return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional RangePoint bimodal_right_mean = 8;
+ * optional RangePoint bimodal_right_mean = 9;
  * @return {?proto.titanium.RangePoint}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.getBimodalRightMean = function() {
   return /** @type{?proto.titanium.RangePoint} */ (
-    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 8));
+    jspb.Message.getWrapperField(this, common_gateway_base_pb.RangePoint, 9));
 };
 
 
@@ -6116,7 +6167,7 @@ proto.titanium.ConsensusExplorerRangeData.prototype.getBimodalRightMean = functi
  * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
 */
 proto.titanium.ConsensusExplorerRangeData.prototype.setBimodalRightMean = function(value) {
-  return jspb.Message.setWrapperField(this, 8, value);
+  return jspb.Message.setWrapperField(this, 9, value);
 };
 
 
@@ -6134,17 +6185,17 @@ proto.titanium.ConsensusExplorerRangeData.prototype.clearBimodalRightMean = func
  * @return {boolean}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.hasBimodalRightMean = function() {
-  return jspb.Message.getField(this, 8) != null;
+  return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional CohortConsensusRangeTabData cohort_consensus_range_tab_data = 9;
+ * optional CohortConsensusRangeTabData cohort_consensus_range_tab_data = 10;
  * @return {?proto.titanium.CohortConsensusRangeTabData}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.getCohortConsensusRangeTabData = function() {
   return /** @type{?proto.titanium.CohortConsensusRangeTabData} */ (
-    jspb.Message.getWrapperField(this, proto.titanium.CohortConsensusRangeTabData, 9));
+    jspb.Message.getWrapperField(this, proto.titanium.CohortConsensusRangeTabData, 10));
 };
 
 
@@ -6153,7 +6204,7 @@ proto.titanium.ConsensusExplorerRangeData.prototype.getCohortConsensusRangeTabDa
  * @return {!proto.titanium.ConsensusExplorerRangeData} returns this
 */
 proto.titanium.ConsensusExplorerRangeData.prototype.setCohortConsensusRangeTabData = function(value) {
-  return jspb.Message.setWrapperField(this, 9, value);
+  return jspb.Message.setWrapperField(this, 10, value);
 };
 
 
@@ -6171,7 +6222,7 @@ proto.titanium.ConsensusExplorerRangeData.prototype.clearCohortConsensusRangeTab
  * @return {boolean}
  */
 proto.titanium.ConsensusExplorerRangeData.prototype.hasCohortConsensusRangeTabData = function() {
-  return jspb.Message.getField(this, 9) != null;
+  return jspb.Message.getField(this, 10) != null;
 };
 
 
@@ -9203,8 +9254,8 @@ proto.titanium.CohortConsensusColumn.toObject = function(includeInstance, msg) {
     consAbsDiffFromAnchorEvpMid: (f = msg.getConsAbsDiffFromAnchorEvpMid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     consAbsDiffFromAnchorEvpMidCalc: (f = msg.getConsAbsDiffFromAnchorEvpMidCalc()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     consAbsDiffFromAnchorSub: (f = msg.getConsAbsDiffFromAnchorSub()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    lowerBoundary: (f = msg.getLowerBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    upperBoundary: (f = msg.getUpperBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    acceptedMin: (f = msg.getAcceptedMin()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    acceptedMax: (f = msg.getAcceptedMax()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     numberOfInstruments: (f = msg.getNumberOfInstruments()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
   };
@@ -9281,12 +9332,12 @@ proto.titanium.CohortConsensusColumn.deserializeBinaryFromReader = function(msg,
     case 8:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setLowerBoundary(value);
+      msg.setAcceptedMin(value);
       break;
     case 9:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setUpperBoundary(value);
+      msg.setAcceptedMax(value);
       break;
     case 10:
       var value = new google_protobuf_struct_pb.Value;
@@ -9383,7 +9434,7 @@ proto.titanium.CohortConsensusColumn.serializeBinaryToWriter = function(message,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getLowerBoundary();
+  f = message.getAcceptedMin();
   if (f != null) {
     writer.writeMessage(
       8,
@@ -9391,7 +9442,7 @@ proto.titanium.CohortConsensusColumn.serializeBinaryToWriter = function(message,
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getUpperBoundary();
+  f = message.getAcceptedMax();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -9678,10 +9729,10 @@ proto.titanium.CohortConsensusColumn.prototype.hasConsAbsDiffFromAnchorSub = fun
 
 
 /**
- * optional google.protobuf.Value lower_boundary = 8;
+ * optional google.protobuf.Value accepted_min = 8;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.CohortConsensusColumn.prototype.getLowerBoundary = function() {
+proto.titanium.CohortConsensusColumn.prototype.getAcceptedMin = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 8));
 };
@@ -9691,7 +9742,7 @@ proto.titanium.CohortConsensusColumn.prototype.getLowerBoundary = function() {
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.CohortConsensusColumn} returns this
 */
-proto.titanium.CohortConsensusColumn.prototype.setLowerBoundary = function(value) {
+proto.titanium.CohortConsensusColumn.prototype.setAcceptedMin = function(value) {
   return jspb.Message.setWrapperField(this, 8, value);
 };
 
@@ -9700,8 +9751,8 @@ proto.titanium.CohortConsensusColumn.prototype.setLowerBoundary = function(value
  * Clears the message field making it undefined.
  * @return {!proto.titanium.CohortConsensusColumn} returns this
  */
-proto.titanium.CohortConsensusColumn.prototype.clearLowerBoundary = function() {
-  return this.setLowerBoundary(undefined);
+proto.titanium.CohortConsensusColumn.prototype.clearAcceptedMin = function() {
+  return this.setAcceptedMin(undefined);
 };
 
 
@@ -9709,16 +9760,16 @@ proto.titanium.CohortConsensusColumn.prototype.clearLowerBoundary = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.CohortConsensusColumn.prototype.hasLowerBoundary = function() {
+proto.titanium.CohortConsensusColumn.prototype.hasAcceptedMin = function() {
   return jspb.Message.getField(this, 8) != null;
 };
 
 
 /**
- * optional google.protobuf.Value upper_boundary = 9;
+ * optional google.protobuf.Value accepted_max = 9;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.CohortConsensusColumn.prototype.getUpperBoundary = function() {
+proto.titanium.CohortConsensusColumn.prototype.getAcceptedMax = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 9));
 };
@@ -9728,7 +9779,7 @@ proto.titanium.CohortConsensusColumn.prototype.getUpperBoundary = function() {
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.CohortConsensusColumn} returns this
 */
-proto.titanium.CohortConsensusColumn.prototype.setUpperBoundary = function(value) {
+proto.titanium.CohortConsensusColumn.prototype.setAcceptedMax = function(value) {
   return jspb.Message.setWrapperField(this, 9, value);
 };
 
@@ -9737,8 +9788,8 @@ proto.titanium.CohortConsensusColumn.prototype.setUpperBoundary = function(value
  * Clears the message field making it undefined.
  * @return {!proto.titanium.CohortConsensusColumn} returns this
  */
-proto.titanium.CohortConsensusColumn.prototype.clearUpperBoundary = function() {
-  return this.setUpperBoundary(undefined);
+proto.titanium.CohortConsensusColumn.prototype.clearAcceptedMax = function() {
+  return this.setAcceptedMax(undefined);
 };
 
 
@@ -9746,7 +9797,7 @@ proto.titanium.CohortConsensusColumn.prototype.clearUpperBoundary = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.CohortConsensusColumn.prototype.hasUpperBoundary = function() {
+proto.titanium.CohortConsensusColumn.prototype.hasAcceptedMax = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
@@ -10008,16 +10059,16 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.toObject = func
  */
 proto.titanium.SubmissionStatisticsExplorerTableColumn.toObject = function(includeInstance, msg) {
   var f, obj = {
-    mean: (f = msg.getMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    absDiffFromStatisticalMean: (f = msg.getAbsDiffFromStatisticalMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    submissionEvidence: (f = msg.getSubmissionEvidence()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    absDiffFromSubEvidence: (f = msg.getAbsDiffFromSubEvidence()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     subPriceDiff: (f = msg.getSubPriceDiff()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     statMeanAbsDiffFromLatestTrade: (f = msg.getStatMeanAbsDiffFromLatestTrade()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     lowerBoundary: (f = msg.getLowerBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     upperBoundary: (f = msg.getUpperBoundary()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    subValidPointsCount: (f = msg.getSubValidPointsCount()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    numberOfPartInBoundaries: (f = msg.getNumberOfPartInBoundaries()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    min: (f = msg.getMin()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    max: (f = msg.getMax()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
+    submissionMin: (f = msg.getSubmissionMin()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    submissionMax: (f = msg.getSubmissionMax()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f)
   };
 
   if (includeInstance) {
@@ -10057,12 +10108,12 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.deserializeBinaryFromRead
     case 1:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setMean(value);
+      msg.setSubmissionEvidence(value);
       break;
     case 2:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setAbsDiffFromStatisticalMean(value);
+      msg.setAbsDiffFromSubEvidence(value);
       break;
     case 3:
       var value = new google_protobuf_struct_pb.Value;
@@ -10087,7 +10138,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.deserializeBinaryFromRead
     case 7:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setSubValidPointsCount(value);
+      msg.setNumberOfPartInBoundaries(value);
       break;
     case 8:
       var value = new google_protobuf_struct_pb.Value;
@@ -10097,12 +10148,12 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.deserializeBinaryFromRead
     case 9:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setMin(value);
+      msg.setSubmissionMin(value);
       break;
     case 10:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setMax(value);
+      msg.setSubmissionMax(value);
       break;
     default:
       reader.skipField();
@@ -10133,7 +10184,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.serializeBinary
  */
 proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter = function(message, writer) {
   var f = undefined;
-  f = message.getMean();
+  f = message.getSubmissionEvidence();
   if (f != null) {
     writer.writeMessage(
       1,
@@ -10141,7 +10192,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter =
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getAbsDiffFromStatisticalMean();
+  f = message.getAbsDiffFromSubEvidence();
   if (f != null) {
     writer.writeMessage(
       2,
@@ -10181,7 +10232,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter =
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getSubValidPointsCount();
+  f = message.getNumberOfPartInBoundaries();
   if (f != null) {
     writer.writeMessage(
       7,
@@ -10197,7 +10248,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter =
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getMin();
+  f = message.getSubmissionMin();
   if (f != null) {
     writer.writeMessage(
       9,
@@ -10205,7 +10256,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter =
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getMax();
+  f = message.getSubmissionMax();
   if (f != null) {
     writer.writeMessage(
       10,
@@ -10217,10 +10268,10 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.serializeBinaryToWriter =
 
 
 /**
- * optional google.protobuf.Value mean = 1;
+ * optional google.protobuf.Value submission_evidence = 1;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getMean = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getSubmissionEvidence = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 1));
 };
@@ -10230,7 +10281,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getMean = funct
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
 */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setMean = function(value) {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubmissionEvidence = function(value) {
   return jspb.Message.setWrapperField(this, 1, value);
 };
 
@@ -10239,8 +10290,8 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setMean = funct
  * Clears the message field making it undefined.
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearMean = function() {
-  return this.setMean(undefined);
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearSubmissionEvidence = function() {
+  return this.setSubmissionEvidence(undefined);
 };
 
 
@@ -10248,16 +10299,16 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearMean = fun
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasMean = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasSubmissionEvidence = function() {
   return jspb.Message.getField(this, 1) != null;
 };
 
 
 /**
- * optional google.protobuf.Value abs_diff_from_statistical_mean = 2;
+ * optional google.protobuf.Value abs_diff_from_sub_evidence = 2;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getAbsDiffFromStatisticalMean = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getAbsDiffFromSubEvidence = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 2));
 };
@@ -10267,7 +10318,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getAbsDiffFromS
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
 */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setAbsDiffFromStatisticalMean = function(value) {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setAbsDiffFromSubEvidence = function(value) {
   return jspb.Message.setWrapperField(this, 2, value);
 };
 
@@ -10276,8 +10327,8 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setAbsDiffFromS
  * Clears the message field making it undefined.
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearAbsDiffFromStatisticalMean = function() {
-  return this.setAbsDiffFromStatisticalMean(undefined);
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearAbsDiffFromSubEvidence = function() {
+  return this.setAbsDiffFromSubEvidence(undefined);
 };
 
 
@@ -10285,7 +10336,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearAbsDiffFro
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasAbsDiffFromStatisticalMean = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasAbsDiffFromSubEvidence = function() {
   return jspb.Message.getField(this, 2) != null;
 };
 
@@ -10439,10 +10490,10 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasUpperBoundar
 
 
 /**
- * optional google.protobuf.Value sub_valid_points_count = 7;
+ * optional google.protobuf.Value number_of_part_in_boundaries = 7;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getSubValidPointsCount = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getNumberOfPartInBoundaries = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 7));
 };
@@ -10452,7 +10503,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getSubValidPoin
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
 */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubValidPointsCount = function(value) {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setNumberOfPartInBoundaries = function(value) {
   return jspb.Message.setWrapperField(this, 7, value);
 };
 
@@ -10461,8 +10512,8 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubValidPoin
  * Clears the message field making it undefined.
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearSubValidPointsCount = function() {
-  return this.setSubValidPointsCount(undefined);
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearNumberOfPartInBoundaries = function() {
+  return this.setNumberOfPartInBoundaries(undefined);
 };
 
 
@@ -10470,7 +10521,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearSubValidPo
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasSubValidPointsCount = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasNumberOfPartInBoundaries = function() {
   return jspb.Message.getField(this, 7) != null;
 };
 
@@ -10513,10 +10564,10 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasStdDev = fun
 
 
 /**
- * optional google.protobuf.Value min = 9;
+ * optional google.protobuf.Value submission_min = 9;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getMin = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getSubmissionMin = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 9));
 };
@@ -10526,7 +10577,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getMin = functi
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
 */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setMin = function(value) {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubmissionMin = function(value) {
   return jspb.Message.setWrapperField(this, 9, value);
 };
 
@@ -10535,8 +10586,8 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setMin = functi
  * Clears the message field making it undefined.
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearMin = function() {
-  return this.setMin(undefined);
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearSubmissionMin = function() {
+  return this.setSubmissionMin(undefined);
 };
 
 
@@ -10544,16 +10595,16 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearMin = func
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasMin = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasSubmissionMin = function() {
   return jspb.Message.getField(this, 9) != null;
 };
 
 
 /**
- * optional google.protobuf.Value max = 10;
+ * optional google.protobuf.Value submission_max = 10;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getMax = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getSubmissionMax = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 10));
 };
@@ -10563,7 +10614,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.getMax = functi
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
 */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setMax = function(value) {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setSubmissionMax = function(value) {
   return jspb.Message.setWrapperField(this, 10, value);
 };
 
@@ -10572,8 +10623,8 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.setMax = functi
  * Clears the message field making it undefined.
  * @return {!proto.titanium.SubmissionStatisticsExplorerTableColumn} returns this
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearMax = function() {
-  return this.setMax(undefined);
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearSubmissionMax = function() {
+  return this.setSubmissionMax(undefined);
 };
 
 
@@ -10581,7 +10632,7 @@ proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.clearMax = func
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasMax = function() {
+proto.titanium.SubmissionStatisticsExplorerTableColumn.prototype.hasSubmissionMax = function() {
   return jspb.Message.getField(this, 10) != null;
 };
 

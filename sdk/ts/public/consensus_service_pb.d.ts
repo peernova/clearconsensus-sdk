@@ -668,6 +668,11 @@ export class ConsensusExplorerRangeData extends jspb.Message {
   getSubmissionPoint(): common_gateway_base_pb.RangePoint | undefined;
   setSubmissionPoint(value?: common_gateway_base_pb.RangePoint): void;
 
+  hasSubmissionMean(): boolean;
+  clearSubmissionMean(): void;
+  getSubmissionMean(): common_gateway_base_pb.RangePoint | undefined;
+  setSubmissionMean(value?: common_gateway_base_pb.RangePoint): void;
+
   hasAnchorPoint(): boolean;
   clearAnchorPoint(): void;
   getAnchorPoint(): common_gateway_base_pb.RangePoint | undefined;
@@ -717,6 +722,7 @@ export namespace ConsensusExplorerRangeData {
   export type AsObject = {
     chartRanges?: ChartRanges.AsObject,
     submissionPoint?: common_gateway_base_pb.RangePoint.AsObject,
+    submissionMean?: common_gateway_base_pb.RangePoint.AsObject,
     anchorPoint?: common_gateway_base_pb.RangePoint.AsObject,
     evpMid?: common_gateway_base_pb.RangePoint.AsObject,
     submissionEvidencePrice?: common_gateway_base_pb.RangePoint.AsObject,
@@ -1170,15 +1176,15 @@ export class CohortConsensusColumn extends jspb.Message {
   getConsAbsDiffFromAnchorSub(): google_protobuf_struct_pb.Value | undefined;
   setConsAbsDiffFromAnchorSub(value?: google_protobuf_struct_pb.Value): void;
 
-  hasLowerBoundary(): boolean;
-  clearLowerBoundary(): void;
-  getLowerBoundary(): google_protobuf_struct_pb.Value | undefined;
-  setLowerBoundary(value?: google_protobuf_struct_pb.Value): void;
+  hasAcceptedMin(): boolean;
+  clearAcceptedMin(): void;
+  getAcceptedMin(): google_protobuf_struct_pb.Value | undefined;
+  setAcceptedMin(value?: google_protobuf_struct_pb.Value): void;
 
-  hasUpperBoundary(): boolean;
-  clearUpperBoundary(): void;
-  getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
-  setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
+  hasAcceptedMax(): boolean;
+  clearAcceptedMax(): void;
+  getAcceptedMax(): google_protobuf_struct_pb.Value | undefined;
+  setAcceptedMax(value?: google_protobuf_struct_pb.Value): void;
 
   hasNumberOfInstruments(): boolean;
   clearNumberOfInstruments(): void;
@@ -1210,8 +1216,8 @@ export namespace CohortConsensusColumn {
     consAbsDiffFromAnchorEvpMid?: google_protobuf_struct_pb.Value.AsObject,
     consAbsDiffFromAnchorEvpMidCalc?: google_protobuf_struct_pb.Value.AsObject,
     consAbsDiffFromAnchorSub?: google_protobuf_struct_pb.Value.AsObject,
-    lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    acceptedMin?: google_protobuf_struct_pb.Value.AsObject,
+    acceptedMax?: google_protobuf_struct_pb.Value.AsObject,
     numberOfInstruments?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
   }
@@ -1248,15 +1254,15 @@ export namespace SubmissionExplorerTableColumn {
 }
 
 export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
-  hasMean(): boolean;
-  clearMean(): void;
-  getMean(): google_protobuf_struct_pb.Value | undefined;
-  setMean(value?: google_protobuf_struct_pb.Value): void;
+  hasSubmissionEvidence(): boolean;
+  clearSubmissionEvidence(): void;
+  getSubmissionEvidence(): google_protobuf_struct_pb.Value | undefined;
+  setSubmissionEvidence(value?: google_protobuf_struct_pb.Value): void;
 
-  hasAbsDiffFromStatisticalMean(): boolean;
-  clearAbsDiffFromStatisticalMean(): void;
-  getAbsDiffFromStatisticalMean(): google_protobuf_struct_pb.Value | undefined;
-  setAbsDiffFromStatisticalMean(value?: google_protobuf_struct_pb.Value): void;
+  hasAbsDiffFromSubEvidence(): boolean;
+  clearAbsDiffFromSubEvidence(): void;
+  getAbsDiffFromSubEvidence(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDiffFromSubEvidence(value?: google_protobuf_struct_pb.Value): void;
 
   hasSubPriceDiff(): boolean;
   clearSubPriceDiff(): void;
@@ -1278,25 +1284,25 @@ export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
   getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
   setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
 
-  hasSubValidPointsCount(): boolean;
-  clearSubValidPointsCount(): void;
-  getSubValidPointsCount(): google_protobuf_struct_pb.Value | undefined;
-  setSubValidPointsCount(value?: google_protobuf_struct_pb.Value): void;
+  hasNumberOfPartInBoundaries(): boolean;
+  clearNumberOfPartInBoundaries(): void;
+  getNumberOfPartInBoundaries(): google_protobuf_struct_pb.Value | undefined;
+  setNumberOfPartInBoundaries(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
   getStdDev(): google_protobuf_struct_pb.Value | undefined;
   setStdDev(value?: google_protobuf_struct_pb.Value): void;
 
-  hasMin(): boolean;
-  clearMin(): void;
-  getMin(): google_protobuf_struct_pb.Value | undefined;
-  setMin(value?: google_protobuf_struct_pb.Value): void;
+  hasSubmissionMin(): boolean;
+  clearSubmissionMin(): void;
+  getSubmissionMin(): google_protobuf_struct_pb.Value | undefined;
+  setSubmissionMin(value?: google_protobuf_struct_pb.Value): void;
 
-  hasMax(): boolean;
-  clearMax(): void;
-  getMax(): google_protobuf_struct_pb.Value | undefined;
-  setMax(value?: google_protobuf_struct_pb.Value): void;
+  hasSubmissionMax(): boolean;
+  clearSubmissionMax(): void;
+  getSubmissionMax(): google_protobuf_struct_pb.Value | undefined;
+  setSubmissionMax(value?: google_protobuf_struct_pb.Value): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): SubmissionStatisticsExplorerTableColumn.AsObject;
@@ -1310,16 +1316,16 @@ export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
 
 export namespace SubmissionStatisticsExplorerTableColumn {
   export type AsObject = {
-    mean?: google_protobuf_struct_pb.Value.AsObject,
-    absDiffFromStatisticalMean?: google_protobuf_struct_pb.Value.AsObject,
+    submissionEvidence?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromSubEvidence?: google_protobuf_struct_pb.Value.AsObject,
     subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
     statMeanAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
     lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
     upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    subValidPointsCount?: google_protobuf_struct_pb.Value.AsObject,
+    numberOfPartInBoundaries?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
-    min?: google_protobuf_struct_pb.Value.AsObject,
-    max?: google_protobuf_struct_pb.Value.AsObject,
+    submissionMin?: google_protobuf_struct_pb.Value.AsObject,
+    submissionMax?: google_protobuf_struct_pb.Value.AsObject,
   }
 }
 

@@ -5,13 +5,14 @@
 
 import * as jspb from "google-protobuf";
 import * as common_usermanagement_error_pb from "../common/usermanagement_error_pb";
+import * as common_usermanagement_fe_specific_pb from "../common/usermanagement_fe_specific_pb";
 
 export class EntityDto extends jspb.Message {
   getId(): string;
   setId(value: string): void;
 
-  getExternalid(): string;
-  setExternalid(value: string): void;
+  getExternalId(): string;
+  setExternalId(value: string): void;
 
   getName(): string;
   setName(value: string): void;
@@ -32,7 +33,7 @@ export class EntityDto extends jspb.Message {
 export namespace EntityDto {
   export type AsObject = {
     id: string,
-    externalid: string,
+    externalId: string,
     name: string,
     enabled: boolean,
   }
@@ -140,6 +141,73 @@ export class EntitiesResponse extends jspb.Message {
 export namespace EntitiesResponse {
   export type AsObject = {
     data?: EntitiesDto.AsObject,
+    error?: common_usermanagement_error_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DATA = 1,
+    ERROR = 2,
+  }
+}
+
+export class EntitiesTable extends jspb.Message {
+  getTotalRows(): number;
+  setTotalRows(value: number): void;
+
+  clearColumnsList(): void;
+  getColumnsList(): Array<common_usermanagement_fe_specific_pb.ColumnDefinition>;
+  setColumnsList(value: Array<common_usermanagement_fe_specific_pb.ColumnDefinition>): void;
+  addColumns(value?: common_usermanagement_fe_specific_pb.ColumnDefinition, index?: number): common_usermanagement_fe_specific_pb.ColumnDefinition;
+
+  clearRowsList(): void;
+  getRowsList(): Array<EntityDto>;
+  setRowsList(value: Array<EntityDto>): void;
+  addRows(value?: EntityDto, index?: number): EntityDto;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntitiesTable.AsObject;
+  static toObject(includeInstance: boolean, msg: EntitiesTable): EntitiesTable.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntitiesTable, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntitiesTable;
+  static deserializeBinaryFromReader(message: EntitiesTable, reader: jspb.BinaryReader): EntitiesTable;
+}
+
+export namespace EntitiesTable {
+  export type AsObject = {
+    totalRows: number,
+    columnsList: Array<common_usermanagement_fe_specific_pb.ColumnDefinition.AsObject>,
+    rowsList: Array<EntityDto.AsObject>,
+  }
+}
+
+export class EntitiesTableResponse extends jspb.Message {
+  hasData(): boolean;
+  clearData(): void;
+  getData(): EntitiesTable | undefined;
+  setData(value?: EntitiesTable): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_usermanagement_error_pb.Error | undefined;
+  setError(value?: common_usermanagement_error_pb.Error): void;
+
+  getResponseCase(): EntitiesTableResponse.ResponseCase;
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): EntitiesTableResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: EntitiesTableResponse): EntitiesTableResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: EntitiesTableResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): EntitiesTableResponse;
+  static deserializeBinaryFromReader(message: EntitiesTableResponse, reader: jspb.BinaryReader): EntitiesTableResponse;
+}
+
+export namespace EntitiesTableResponse {
+  export type AsObject = {
+    data?: EntitiesTable.AsObject,
     error?: common_usermanagement_error_pb.Error.AsObject,
   }
 

@@ -7,14 +7,46 @@ import * as jspb from "google-protobuf";
 import * as common_usermanagement_error_pb from "../common/usermanagement_error_pb";
 import * as google_protobuf_any_pb from "google-protobuf/google/protobuf/any_pb";
 
+export class ColumnDefinition extends jspb.Message {
+  getColumnDbType(): string;
+  setColumnDbType(value: string): void;
+
+  getColumnName(): string;
+  setColumnName(value: string): void;
+
+  getColumnType(): string;
+  setColumnType(value: string): void;
+
+  getRawColumnName(): string;
+  setRawColumnName(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ColumnDefinition.AsObject;
+  static toObject(includeInstance: boolean, msg: ColumnDefinition): ColumnDefinition.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ColumnDefinition, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColumnDefinition;
+  static deserializeBinaryFromReader(message: ColumnDefinition, reader: jspb.BinaryReader): ColumnDefinition;
+}
+
+export namespace ColumnDefinition {
+  export type AsObject = {
+    columnDbType: string,
+    columnName: string,
+    columnType: string,
+    rawColumnName: string,
+  }
+}
+
 export class Table extends jspb.Message {
-  getTotalrows(): number;
-  setTotalrows(value: number): void;
+  getTotalRows(): number;
+  setTotalRows(value: number): void;
 
   clearColumnsList(): void;
-  getColumnsList(): Array<Table.Column>;
-  setColumnsList(value: Array<Table.Column>): void;
-  addColumns(value?: Table.Column, index?: number): Table.Column;
+  getColumnsList(): Array<ColumnDefinition>;
+  setColumnsList(value: Array<ColumnDefinition>): void;
+  addColumns(value?: ColumnDefinition, index?: number): ColumnDefinition;
 
   clearRowsList(): void;
   getRowsList(): Array<Table.Row>;
@@ -33,41 +65,9 @@ export class Table extends jspb.Message {
 
 export namespace Table {
   export type AsObject = {
-    totalrows: number,
-    columnsList: Array<Table.Column.AsObject>,
+    totalRows: number,
+    columnsList: Array<ColumnDefinition.AsObject>,
     rowsList: Array<Table.Row.AsObject>,
-  }
-
-  export class Column extends jspb.Message {
-    getColumndbtype(): string;
-    setColumndbtype(value: string): void;
-
-    getColumnname(): string;
-    setColumnname(value: string): void;
-
-    getColumntype(): string;
-    setColumntype(value: string): void;
-
-    getRawcolumnname(): string;
-    setRawcolumnname(value: string): void;
-
-    serializeBinary(): Uint8Array;
-    toObject(includeInstance?: boolean): Column.AsObject;
-    static toObject(includeInstance: boolean, msg: Column): Column.AsObject;
-    static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-    static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-    static serializeBinaryToWriter(message: Column, writer: jspb.BinaryWriter): void;
-    static deserializeBinary(bytes: Uint8Array): Column;
-    static deserializeBinaryFromReader(message: Column, reader: jspb.BinaryReader): Column;
-  }
-
-  export namespace Column {
-    export type AsObject = {
-      columndbtype: string,
-      columnname: string,
-      columntype: string,
-      rawcolumnname: string,
-    }
   }
 
   export class Row extends jspb.Message {
