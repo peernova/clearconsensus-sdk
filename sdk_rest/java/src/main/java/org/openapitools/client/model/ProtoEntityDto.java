@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * ProtoEntityDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T15:48:56.775578Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T16:35:00.030839Z[UTC]")
 public class ProtoEntityDto {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
