@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusExplorerRangeData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T16:35:00.030839Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T16:46:46.550688Z[UTC]")
 public class TitaniumConsensusExplorerRangeData {
   public static final String SERIALIZED_NAME_ANCHOR_POINT = "anchorPoint";
   @SerializedName(SERIALIZED_NAME_ANCHOR_POINT)
