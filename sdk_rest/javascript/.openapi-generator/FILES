@@ -821,5 +821,3 @@ src/model/TitaniumValuesRow.js
 src/model/TitaniumVersion.js
 src/model/TitaniumVersionList.js
 src/model/TitaniumViewRow.js
-test/model/ProtoColumnDefinition.spec.js
-test/model/TableColumn.spec.js

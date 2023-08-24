@@ -829,6 +829,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_proto_column_definition.py
-test/test_table_column.py
 tox.ini
