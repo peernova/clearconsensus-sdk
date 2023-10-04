@@ -53,6 +53,24 @@ type UniqueKeyServiceGetUniqueKeyVersion = {
   readonly responseType: typeof common_unique_key_pb.UniqueKeyDefinitionResponse;
 };
 
+type UniqueKeyServiceEnableUniqueKey = {
+  readonly methodName: string;
+  readonly service: typeof UniqueKeyService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_gateway_base_pb.EnableDisableRequest;
+  readonly responseType: typeof common_gateway_base_pb.AcknowledgeResponse;
+};
+
+type UniqueKeyServiceDisableUniqueKey = {
+  readonly methodName: string;
+  readonly service: typeof UniqueKeyService;
+  readonly requestStream: false;
+  readonly responseStream: false;
+  readonly requestType: typeof common_gateway_base_pb.EnableDisableRequest;
+  readonly responseType: typeof common_gateway_base_pb.AcknowledgeResponse;
+};
+
 export class UniqueKeyService {
   static readonly serviceName: string;
   static readonly AddUniqueKey: UniqueKeyServiceAddUniqueKey;
@@ -60,6 +78,8 @@ export class UniqueKeyService {
   static readonly ListUniqueKeys: UniqueKeyServiceListUniqueKeys;
   static readonly ListUniqueKeyVersions: UniqueKeyServiceListUniqueKeyVersions;
   static readonly GetUniqueKeyVersion: UniqueKeyServiceGetUniqueKeyVersion;
+  static readonly EnableUniqueKey: UniqueKeyServiceEnableUniqueKey;
+  static readonly DisableUniqueKey: UniqueKeyServiceDisableUniqueKey;
 }
 
 export type ServiceError = { message: string, code: number; metadata: grpc.Metadata }
@@ -138,6 +158,24 @@ export class UniqueKeyServiceClient {
   getUniqueKeyVersion(
     requestMessage: common_gateway_base_pb.VersionRequest,
     callback: (error: ServiceError|null, responseMessage: common_unique_key_pb.UniqueKeyDefinitionResponse|null) => void
+  ): UnaryResponse;
+  enableUniqueKey(
+    requestMessage: common_gateway_base_pb.EnableDisableRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
+  ): UnaryResponse;
+  enableUniqueKey(
+    requestMessage: common_gateway_base_pb.EnableDisableRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
+  ): UnaryResponse;
+  disableUniqueKey(
+    requestMessage: common_gateway_base_pb.EnableDisableRequest,
+    metadata: grpc.Metadata,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
+  ): UnaryResponse;
+  disableUniqueKey(
+    requestMessage: common_gateway_base_pb.EnableDisableRequest,
+    callback: (error: ServiceError|null, responseMessage: common_gateway_base_pb.AcknowledgeResponse|null) => void
   ): UnaryResponse;
 }
 

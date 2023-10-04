@@ -2832,7 +2832,7 @@ func (x *GenericChartResponseRow) GetValues() []*structpb.Value {
 	return nil
 }
 
-// TODO: remove this, just use GetDefinition
+// TODO: remove this, just use Get  Definition
 type EnableDisableRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache

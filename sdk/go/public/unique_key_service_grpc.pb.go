@@ -195,6 +195,8 @@ type UniqueKeyServiceClient interface {
 	//	   }
 	//	}
 	GetUniqueKeyVersion(ctx context.Context, in *common.VersionRequest, opts ...grpc.CallOption) (*common.UniqueKeyDefinitionResponse, error)
+	EnableUniqueKey(ctx context.Context, in *common.EnableDisableRequest, opts ...grpc.CallOption) (*common.AcknowledgeResponse, error)
+	DisableUniqueKey(ctx context.Context, in *common.EnableDisableRequest, opts ...grpc.CallOption) (*common.AcknowledgeResponse, error)
 }
 
 type uniqueKeyServiceClient struct {
@@ -244,6 +246,24 @@ func (c *uniqueKeyServiceClient) ListUniqueKeyVersions(ctx context.Context, in *
 func (c *uniqueKeyServiceClient) GetUniqueKeyVersion(ctx context.Context, in *common.VersionRequest, opts ...grpc.CallOption) (*common.UniqueKeyDefinitionResponse, error) {
 	out := new(common.UniqueKeyDefinitionResponse)
 	err := c.cc.Invoke(ctx, "/titanium.UniqueKeyService/GetUniqueKeyVersion", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *uniqueKeyServiceClient) EnableUniqueKey(ctx context.Context, in *common.EnableDisableRequest, opts ...grpc.CallOption) (*common.AcknowledgeResponse, error) {
+	out := new(common.AcknowledgeResponse)
+	err := c.cc.Invoke(ctx, "/titanium.UniqueKeyService/EnableUniqueKey", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *uniqueKeyServiceClient) DisableUniqueKey(ctx context.Context, in *common.EnableDisableRequest, opts ...grpc.CallOption) (*common.AcknowledgeResponse, error) {
+	out := new(common.AcknowledgeResponse)
+	err := c.cc.Invoke(ctx, "/titanium.UniqueKeyService/DisableUniqueKey", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -430,6 +450,8 @@ type UniqueKeyServiceServer interface {
 	//	   }
 	//	}
 	GetUniqueKeyVersion(context.Context, *common.VersionRequest) (*common.UniqueKeyDefinitionResponse, error)
+	EnableUniqueKey(context.Context, *common.EnableDisableRequest) (*common.AcknowledgeResponse, error)
+	DisableUniqueKey(context.Context, *common.EnableDisableRequest) (*common.AcknowledgeResponse, error)
 	mustEmbedUnimplementedUniqueKeyServiceServer()
 }
 
@@ -451,6 +473,12 @@ func (UnimplementedUniqueKeyServiceServer) ListUniqueKeyVersions(context.Context
 }
 func (UnimplementedUniqueKeyServiceServer) GetUniqueKeyVersion(context.Context, *common.VersionRequest) (*common.UniqueKeyDefinitionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method GetUniqueKeyVersion not implemented")
+}
+func (UnimplementedUniqueKeyServiceServer) EnableUniqueKey(context.Context, *common.EnableDisableRequest) (*common.AcknowledgeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method EnableUniqueKey not implemented")
+}
+func (UnimplementedUniqueKeyServiceServer) DisableUniqueKey(context.Context, *common.EnableDisableRequest) (*common.AcknowledgeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DisableUniqueKey not implemented")
 }
 func (UnimplementedUniqueKeyServiceServer) mustEmbedUnimplementedUniqueKeyServiceServer() {}
 
@@ -555,6 +583,42 @@ func _UniqueKeyService_GetUniqueKeyVersion_Handler(srv interface{}, ctx context.
 	return interceptor(ctx, in, info, handler)
 }
 
+func _UniqueKeyService_EnableUniqueKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.EnableDisableRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UniqueKeyServiceServer).EnableUniqueKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.UniqueKeyService/EnableUniqueKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UniqueKeyServiceServer).EnableUniqueKey(ctx, req.(*common.EnableDisableRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _UniqueKeyService_DisableUniqueKey_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(common.EnableDisableRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(UniqueKeyServiceServer).DisableUniqueKey(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/titanium.UniqueKeyService/DisableUniqueKey",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(UniqueKeyServiceServer).DisableUniqueKey(ctx, req.(*common.EnableDisableRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // UniqueKeyService_ServiceDesc is the grpc.ServiceDesc for UniqueKeyService service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -581,6 +645,14 @@ var UniqueKeyService_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "GetUniqueKeyVersion",
 			Handler:    _UniqueKeyService_GetUniqueKeyVersion_Handler,
+		},
+		{
+			MethodName: "EnableUniqueKey",
+			Handler:    _UniqueKeyService_EnableUniqueKey_Handler,
+		},
+		{
+			MethodName: "DisableUniqueKey",
+			Handler:    _UniqueKeyService_DisableUniqueKey_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

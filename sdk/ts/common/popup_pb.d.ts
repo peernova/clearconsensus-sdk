@@ -210,3 +210,35 @@ export namespace ViewRow {
   }
 }
 
+export class PopViewStatus extends jspb.Message {
+  getParsingstatus(): string;
+  setParsingstatus(value: string): void;
+
+  getHighestseverity(): string;
+  setHighestseverity(value: string): void;
+
+  getConsensuscalculationstatus(): string;
+  setConsensuscalculationstatus(value: string): void;
+
+  getConsensusdetailstatus(): string;
+  setConsensusdetailstatus(value: string): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): PopViewStatus.AsObject;
+  static toObject(includeInstance: boolean, msg: PopViewStatus): PopViewStatus.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: PopViewStatus, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): PopViewStatus;
+  static deserializeBinaryFromReader(message: PopViewStatus, reader: jspb.BinaryReader): PopViewStatus;
+}
+
+export namespace PopViewStatus {
+  export type AsObject = {
+    parsingstatus: string,
+    highestseverity: string,
+    consensuscalculationstatus: string,
+    consensusdetailstatus: string,
+  }
+}
+

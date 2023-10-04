@@ -59,6 +59,24 @@ UniqueKeyService.GetUniqueKeyVersion = {
   responseType: common_unique_key_pb.UniqueKeyDefinitionResponse
 };
 
+UniqueKeyService.EnableUniqueKey = {
+  methodName: "EnableUniqueKey",
+  service: UniqueKeyService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_gateway_base_pb.EnableDisableRequest,
+  responseType: common_gateway_base_pb.AcknowledgeResponse
+};
+
+UniqueKeyService.DisableUniqueKey = {
+  methodName: "DisableUniqueKey",
+  service: UniqueKeyService,
+  requestStream: false,
+  responseStream: false,
+  requestType: common_gateway_base_pb.EnableDisableRequest,
+  responseType: common_gateway_base_pb.AcknowledgeResponse
+};
+
 exports.UniqueKeyService = UniqueKeyService;
 
 function UniqueKeyServiceClient(serviceHost, options) {
@@ -195,6 +213,68 @@ UniqueKeyServiceClient.prototype.getUniqueKeyVersion = function getUniqueKeyVers
     callback = arguments[1];
   }
   var client = grpc.unary(UniqueKeyService.GetUniqueKeyVersion, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UniqueKeyServiceClient.prototype.enableUniqueKey = function enableUniqueKey(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UniqueKeyService.EnableUniqueKey, {
+    request: requestMessage,
+    host: this.serviceHost,
+    metadata: metadata,
+    transport: this.options.transport,
+    debug: this.options.debug,
+    onEnd: function (response) {
+      if (callback) {
+        if (response.status !== grpc.Code.OK) {
+          var err = new Error(response.statusMessage);
+          err.code = response.status;
+          err.metadata = response.trailers;
+          callback(err, null);
+        } else {
+          callback(null, response.message);
+        }
+      }
+    }
+  });
+  return {
+    cancel: function () {
+      callback = null;
+      client.close();
+    }
+  };
+};
+
+UniqueKeyServiceClient.prototype.disableUniqueKey = function disableUniqueKey(requestMessage, metadata, callback) {
+  if (arguments.length === 2) {
+    callback = arguments[1];
+  }
+  var client = grpc.unary(UniqueKeyService.DisableUniqueKey, {
     request: requestMessage,
     host: this.serviceHost,
     metadata: metadata,

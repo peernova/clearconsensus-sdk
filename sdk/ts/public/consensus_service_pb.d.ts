@@ -1089,35 +1089,35 @@ export namespace ConsensusExplorerTableData {
 }
 
 export class ComparisonTable extends jspb.Message {
-  hasCohortConsensusColumn(): boolean;
-  clearCohortConsensusColumn(): void;
-  getCohortConsensusColumn(): CohortConsensusColumn | undefined;
-  setCohortConsensusColumn(value?: CohortConsensusColumn): void;
+  hasConsensus(): boolean;
+  clearConsensus(): void;
+  getConsensus(): ConsensusColumn | undefined;
+  setConsensus(value?: ConsensusColumn): void;
 
-  hasSubmission(): boolean;
-  clearSubmission(): void;
-  getSubmission(): SubmissionExplorerTableColumn | undefined;
-  setSubmission(value?: SubmissionExplorerTableColumn): void;
+  hasMySubmission(): boolean;
+  clearMySubmission(): void;
+  getMySubmission(): SubmissionColumn | undefined;
+  setMySubmission(value?: SubmissionColumn): void;
 
-  hasSubmissionStatistics(): boolean;
-  clearSubmissionStatistics(): void;
-  getSubmissionStatistics(): SubmissionStatisticsExplorerTableColumn | undefined;
-  setSubmissionStatistics(value?: SubmissionStatisticsExplorerTableColumn): void;
+  hasSubmissionRange(): boolean;
+  clearSubmissionRange(): void;
+  getSubmissionRange(): SubmissionRangeColumn | undefined;
+  setSubmissionRange(value?: SubmissionRangeColumn): void;
 
-  hasSubmissionEvidence(): boolean;
-  clearSubmissionEvidence(): void;
-  getSubmissionEvidence(): SubmissionEvidenceTableColumn | undefined;
-  setSubmissionEvidence(value?: SubmissionEvidenceTableColumn): void;
+  hasTradeTimeSeries(): boolean;
+  clearTradeTimeSeries(): void;
+  getTradeTimeSeries(): AvailableTrades | undefined;
+  setTradeTimeSeries(value?: AvailableTrades): void;
 
-  hasEvidentialpricing(): boolean;
-  clearEvidentialpricing(): void;
-  getEvidentialpricing(): EvidentalPricing | undefined;
-  setEvidentialpricing(value?: EvidentalPricing): void;
+  hasEvidentialPricing(): boolean;
+  clearEvidentialPricing(): void;
+  getEvidentialPricing(): EvidentalPricing | undefined;
+  setEvidentialPricing(value?: EvidentalPricing): void;
 
-  hasAvailableTrades(): boolean;
-  clearAvailableTrades(): void;
-  getAvailableTrades(): AvailableTrades | undefined;
-  setAvailableTrades(value?: AvailableTrades): void;
+  hasSubmissionStatisticalBoundaries(): boolean;
+  clearSubmissionStatisticalBoundaries(): void;
+  getSubmissionStatisticalBoundaries(): SubmissionStatisticsColumn | undefined;
+  setSubmissionStatisticalBoundaries(value?: SubmissionStatisticsColumn): void;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): ComparisonTable.AsObject;
@@ -1131,20 +1131,20 @@ export class ComparisonTable extends jspb.Message {
 
 export namespace ComparisonTable {
   export type AsObject = {
-    cohortConsensusColumn?: CohortConsensusColumn.AsObject,
-    submission?: SubmissionExplorerTableColumn.AsObject,
-    submissionStatistics?: SubmissionStatisticsExplorerTableColumn.AsObject,
-    submissionEvidence?: SubmissionEvidenceTableColumn.AsObject,
-    evidentialpricing?: EvidentalPricing.AsObject,
-    availableTrades?: AvailableTrades.AsObject,
+    consensus?: ConsensusColumn.AsObject,
+    mySubmission?: SubmissionColumn.AsObject,
+    submissionRange?: SubmissionRangeColumn.AsObject,
+    tradeTimeSeries?: AvailableTrades.AsObject,
+    evidentialPricing?: EvidentalPricing.AsObject,
+    submissionStatisticalBoundaries?: SubmissionStatisticsColumn.AsObject,
   }
 }
 
-export class CohortConsensusColumn extends jspb.Message {
-  hasCohortConsensusPrice(): boolean;
-  clearCohortConsensusPrice(): void;
-  getCohortConsensusPrice(): google_protobuf_struct_pb.Value | undefined;
-  setCohortConsensusPrice(value?: google_protobuf_struct_pb.Value): void;
+export class ConsensusColumn extends jspb.Message {
+  hasConsensus(): boolean;
+  clearConsensus(): void;
+  getConsensus(): google_protobuf_struct_pb.Value | undefined;
+  setConsensus(value?: google_protobuf_struct_pb.Value): void;
 
   hasAbsDiffFromConsensus(): boolean;
   clearAbsDiffFromConsensus(): void;
@@ -1196,20 +1196,20 @@ export class CohortConsensusColumn extends jspb.Message {
   getStdDev(): google_protobuf_struct_pb.Value | undefined;
   setStdDev(value?: google_protobuf_struct_pb.Value): void;
 
-  getAnchorDiffCase(): CohortConsensusColumn.AnchorDiffCase;
+  getAnchorDiffCase(): ConsensusColumn.AnchorDiffCase;
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): CohortConsensusColumn.AsObject;
-  static toObject(includeInstance: boolean, msg: CohortConsensusColumn): CohortConsensusColumn.AsObject;
+  toObject(includeInstance?: boolean): ConsensusColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: ConsensusColumn): ConsensusColumn.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: CohortConsensusColumn, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): CohortConsensusColumn;
-  static deserializeBinaryFromReader(message: CohortConsensusColumn, reader: jspb.BinaryReader): CohortConsensusColumn;
+  static serializeBinaryToWriter(message: ConsensusColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ConsensusColumn;
+  static deserializeBinaryFromReader(message: ConsensusColumn, reader: jspb.BinaryReader): ConsensusColumn;
 }
 
-export namespace CohortConsensusColumn {
+export namespace ConsensusColumn {
   export type AsObject = {
-    cohortConsensusPrice?: google_protobuf_struct_pb.Value.AsObject,
+    consensus?: google_protobuf_struct_pb.Value.AsObject,
     absDiffFromConsensus?: google_protobuf_struct_pb.Value.AsObject,
     subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
     consAbsDiffFromAnchorTrade?: google_protobuf_struct_pb.Value.AsObject,
@@ -1231,29 +1231,29 @@ export namespace CohortConsensusColumn {
   }
 }
 
-export class SubmissionExplorerTableColumn extends jspb.Message {
+export class SubmissionColumn extends jspb.Message {
   hasSubmissionPrice(): boolean;
   clearSubmissionPrice(): void;
   getSubmissionPrice(): google_protobuf_struct_pb.Value | undefined;
   setSubmissionPrice(value?: google_protobuf_struct_pb.Value): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SubmissionExplorerTableColumn.AsObject;
-  static toObject(includeInstance: boolean, msg: SubmissionExplorerTableColumn): SubmissionExplorerTableColumn.AsObject;
+  toObject(includeInstance?: boolean): SubmissionColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmissionColumn): SubmissionColumn.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SubmissionExplorerTableColumn, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SubmissionExplorerTableColumn;
-  static deserializeBinaryFromReader(message: SubmissionExplorerTableColumn, reader: jspb.BinaryReader): SubmissionExplorerTableColumn;
+  static serializeBinaryToWriter(message: SubmissionColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmissionColumn;
+  static deserializeBinaryFromReader(message: SubmissionColumn, reader: jspb.BinaryReader): SubmissionColumn;
 }
 
-export namespace SubmissionExplorerTableColumn {
+export namespace SubmissionColumn {
   export type AsObject = {
     submissionPrice?: google_protobuf_struct_pb.Value.AsObject,
   }
 }
 
-export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
+export class SubmissionStatisticsColumn extends jspb.Message {
   hasSubmissionEvidence(): boolean;
   clearSubmissionEvidence(): void;
   getSubmissionEvidence(): google_protobuf_struct_pb.Value | undefined;
@@ -1269,10 +1269,10 @@ export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
   getSubPriceDiff(): google_protobuf_struct_pb.Value | undefined;
   setSubPriceDiff(value?: google_protobuf_struct_pb.Value): void;
 
-  hasStatMeanAbsDiffFromLatestTrade(): boolean;
-  clearStatMeanAbsDiffFromLatestTrade(): void;
-  getStatMeanAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
-  setStatMeanAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
+  hasAbsDiffFromLatestTrade(): boolean;
+  clearAbsDiffFromLatestTrade(): void;
+  getAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
 
   hasLowerBoundary(): boolean;
   clearLowerBoundary(): void;
@@ -1294,6 +1294,50 @@ export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
   getStdDev(): google_protobuf_struct_pb.Value | undefined;
   setStdDev(value?: google_protobuf_struct_pb.Value): void;
 
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): SubmissionStatisticsColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmissionStatisticsColumn): SubmissionStatisticsColumn.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: SubmissionStatisticsColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmissionStatisticsColumn;
+  static deserializeBinaryFromReader(message: SubmissionStatisticsColumn, reader: jspb.BinaryReader): SubmissionStatisticsColumn;
+}
+
+export namespace SubmissionStatisticsColumn {
+  export type AsObject = {
+    submissionEvidence?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromSubEvidence?: google_protobuf_struct_pb.Value.AsObject,
+    subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
+    lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
+    numberOfPartInBoundaries?: google_protobuf_struct_pb.Value.AsObject,
+    stdDev?: google_protobuf_struct_pb.Value.AsObject,
+  }
+}
+
+export class SubmissionRangeColumn extends jspb.Message {
+  hasMean(): boolean;
+  clearMean(): void;
+  getMean(): google_protobuf_struct_pb.Value | undefined;
+  setMean(value?: google_protobuf_struct_pb.Value): void;
+
+  hasAbsDiffFromMean(): boolean;
+  clearAbsDiffFromMean(): void;
+  getAbsDiffFromMean(): google_protobuf_struct_pb.Value | undefined;
+  setAbsDiffFromMean(value?: google_protobuf_struct_pb.Value): void;
+
+  hasSubPriceDiff(): boolean;
+  clearSubPriceDiff(): void;
+  getSubPriceDiff(): google_protobuf_struct_pb.Value | undefined;
+  setSubPriceDiff(value?: google_protobuf_struct_pb.Value): void;
+
+  hasMeanAbsDiffFromLatestTrade(): boolean;
+  clearMeanAbsDiffFromLatestTrade(): void;
+  getMeanAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
+  setMeanAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
+
   hasSubmissionMin(): boolean;
   clearSubmissionMin(): void;
   getSubmissionMin(): google_protobuf_struct_pb.Value | undefined;
@@ -1304,66 +1348,10 @@ export class SubmissionStatisticsExplorerTableColumn extends jspb.Message {
   getSubmissionMax(): google_protobuf_struct_pb.Value | undefined;
   setSubmissionMax(value?: google_protobuf_struct_pb.Value): void;
 
-  serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SubmissionStatisticsExplorerTableColumn.AsObject;
-  static toObject(includeInstance: boolean, msg: SubmissionStatisticsExplorerTableColumn): SubmissionStatisticsExplorerTableColumn.AsObject;
-  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
-  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SubmissionStatisticsExplorerTableColumn, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SubmissionStatisticsExplorerTableColumn;
-  static deserializeBinaryFromReader(message: SubmissionStatisticsExplorerTableColumn, reader: jspb.BinaryReader): SubmissionStatisticsExplorerTableColumn;
-}
-
-export namespace SubmissionStatisticsExplorerTableColumn {
-  export type AsObject = {
-    submissionEvidence?: google_protobuf_struct_pb.Value.AsObject,
-    absDiffFromSubEvidence?: google_protobuf_struct_pb.Value.AsObject,
-    subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
-    statMeanAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
-    lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    numberOfPartInBoundaries?: google_protobuf_struct_pb.Value.AsObject,
-    stdDev?: google_protobuf_struct_pb.Value.AsObject,
-    submissionMin?: google_protobuf_struct_pb.Value.AsObject,
-    submissionMax?: google_protobuf_struct_pb.Value.AsObject,
-  }
-}
-
-export class SubmissionEvidenceTableColumn extends jspb.Message {
-  hasEvidence(): boolean;
-  clearEvidence(): void;
-  getEvidence(): google_protobuf_struct_pb.Value | undefined;
-  setEvidence(value?: google_protobuf_struct_pb.Value): void;
-
-  hasAbsDiffFromEvidence(): boolean;
-  clearAbsDiffFromEvidence(): void;
-  getAbsDiffFromEvidence(): google_protobuf_struct_pb.Value | undefined;
-  setAbsDiffFromEvidence(value?: google_protobuf_struct_pb.Value): void;
-
-  hasSubPriceDiff(): boolean;
-  clearSubPriceDiff(): void;
-  getSubPriceDiff(): google_protobuf_struct_pb.Value | undefined;
-  setSubPriceDiff(value?: google_protobuf_struct_pb.Value): void;
-
-  hasEviPriceAbsDiffFromLatestTrade(): boolean;
-  clearEviPriceAbsDiffFromLatestTrade(): void;
-  getEviPriceAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
-  setEviPriceAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
-
-  hasLowerBoundary(): boolean;
-  clearLowerBoundary(): void;
-  getLowerBoundary(): google_protobuf_struct_pb.Value | undefined;
-  setLowerBoundary(value?: google_protobuf_struct_pb.Value): void;
-
-  hasUpperBoundary(): boolean;
-  clearUpperBoundary(): void;
-  getUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
-  setUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
-
-  hasParticipantsCount(): boolean;
-  clearParticipantsCount(): void;
-  getParticipantsCount(): google_protobuf_struct_pb.Value | undefined;
-  setParticipantsCount(value?: google_protobuf_struct_pb.Value): void;
+  hasValidCount(): boolean;
+  clearValidCount(): void;
+  getValidCount(): google_protobuf_struct_pb.Value | undefined;
+  setValidCount(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
@@ -1371,24 +1359,24 @@ export class SubmissionEvidenceTableColumn extends jspb.Message {
   setStdDev(value?: google_protobuf_struct_pb.Value): void;
 
   serializeBinary(): Uint8Array;
-  toObject(includeInstance?: boolean): SubmissionEvidenceTableColumn.AsObject;
-  static toObject(includeInstance: boolean, msg: SubmissionEvidenceTableColumn): SubmissionEvidenceTableColumn.AsObject;
+  toObject(includeInstance?: boolean): SubmissionRangeColumn.AsObject;
+  static toObject(includeInstance: boolean, msg: SubmissionRangeColumn): SubmissionRangeColumn.AsObject;
   static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
   static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
-  static serializeBinaryToWriter(message: SubmissionEvidenceTableColumn, writer: jspb.BinaryWriter): void;
-  static deserializeBinary(bytes: Uint8Array): SubmissionEvidenceTableColumn;
-  static deserializeBinaryFromReader(message: SubmissionEvidenceTableColumn, reader: jspb.BinaryReader): SubmissionEvidenceTableColumn;
+  static serializeBinaryToWriter(message: SubmissionRangeColumn, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): SubmissionRangeColumn;
+  static deserializeBinaryFromReader(message: SubmissionRangeColumn, reader: jspb.BinaryReader): SubmissionRangeColumn;
 }
 
-export namespace SubmissionEvidenceTableColumn {
+export namespace SubmissionRangeColumn {
   export type AsObject = {
-    evidence?: google_protobuf_struct_pb.Value.AsObject,
-    absDiffFromEvidence?: google_protobuf_struct_pb.Value.AsObject,
+    mean?: google_protobuf_struct_pb.Value.AsObject,
+    absDiffFromMean?: google_protobuf_struct_pb.Value.AsObject,
     subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
-    eviPriceAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
-    lowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    upperBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    participantsCount?: google_protobuf_struct_pb.Value.AsObject,
+    meanAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
+    submissionMin?: google_protobuf_struct_pb.Value.AsObject,
+    submissionMax?: google_protobuf_struct_pb.Value.AsObject,
+    validCount?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
   }
 }
@@ -1424,16 +1412,6 @@ export class EvidentalPricing extends jspb.Message {
   getEvpMidAbsDiffFromLatestTrade(): google_protobuf_struct_pb.Value | undefined;
   setEvpMidAbsDiffFromLatestTrade(value?: google_protobuf_struct_pb.Value): void;
 
-  hasEvpLowerBoundary(): boolean;
-  clearEvpLowerBoundary(): void;
-  getEvpLowerBoundary(): google_protobuf_struct_pb.Value | undefined;
-  setEvpLowerBoundary(value?: google_protobuf_struct_pb.Value): void;
-
-  hasEvpUpperBoundary(): boolean;
-  clearEvpUpperBoundary(): void;
-  getEvpUpperBoundary(): google_protobuf_struct_pb.Value | undefined;
-  setEvpUpperBoundary(value?: google_protobuf_struct_pb.Value): void;
-
   hasTradesOrOrdersCount(): boolean;
   clearTradesOrOrdersCount(): void;
   getTradesOrOrdersCount(): google_protobuf_struct_pb.Value | undefined;
@@ -1457,8 +1435,6 @@ export namespace EvidentalPricing {
     absDiffFromEvpMid?: google_protobuf_struct_pb.Value.AsObject,
     subPriceDiff?: google_protobuf_struct_pb.Value.AsObject,
     evpMidAbsDiffFromLatestTrade?: google_protobuf_struct_pb.Value.AsObject,
-    evpLowerBoundary?: google_protobuf_struct_pb.Value.AsObject,
-    evpUpperBoundary?: google_protobuf_struct_pb.Value.AsObject,
     tradesOrOrdersCount?: google_protobuf_struct_pb.Value.AsObject,
   }
 }

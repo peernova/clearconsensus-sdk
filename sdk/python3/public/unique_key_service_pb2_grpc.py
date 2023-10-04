@@ -19,6 +19,8 @@ class UniqueKeyServiceStub(object):
         self.ListUniqueKeys = channel.unary_unary('/titanium.UniqueKeyService/ListUniqueKeys', request_serializer=common_dot_gateway__base__pb2.ListRequest.SerializeToString, response_deserializer=common_dot_unique__key__pb2.ListUniqueKeysResponse.FromString)
         self.ListUniqueKeyVersions = channel.unary_unary('/titanium.UniqueKeyService/ListUniqueKeyVersions', request_serializer=common_dot_gateway__base__pb2.GetDefinition.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.ListVersionResponse.FromString)
         self.GetUniqueKeyVersion = channel.unary_unary('/titanium.UniqueKeyService/GetUniqueKeyVersion', request_serializer=common_dot_gateway__base__pb2.VersionRequest.SerializeToString, response_deserializer=common_dot_unique__key__pb2.UniqueKeyDefinitionResponse.FromString)
+        self.EnableUniqueKey = channel.unary_unary('/titanium.UniqueKeyService/EnableUniqueKey', request_serializer=common_dot_gateway__base__pb2.EnableDisableRequest.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.AcknowledgeResponse.FromString)
+        self.DisableUniqueKey = channel.unary_unary('/titanium.UniqueKeyService/DisableUniqueKey', request_serializer=common_dot_gateway__base__pb2.EnableDisableRequest.SerializeToString, response_deserializer=common_dot_gateway__base__pb2.AcknowledgeResponse.FromString)
 
 class UniqueKeyServiceServicer(object):
     """UniqueKeyService is a service that is responsible for unique keys.
@@ -218,8 +220,20 @@ class UniqueKeyServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def EnableUniqueKey(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DisableUniqueKey(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 def add_UniqueKeyServiceServicer_to_server(servicer, server):
-    rpc_method_handlers = {'AddUniqueKey': grpc.unary_unary_rpc_method_handler(servicer.AddUniqueKey, request_deserializer=common_dot_unique__key__pb2.UniqueKeyDefinition.FromString, response_serializer=common_dot_gateway__base__pb2.AcknowledgeResponse.SerializeToString), 'GetUniqueKey': grpc.unary_unary_rpc_method_handler(servicer.GetUniqueKey, request_deserializer=common_dot_gateway__base__pb2.GetDefinition.FromString, response_serializer=common_dot_unique__key__pb2.UniqueKeyDefinitionResponse.SerializeToString), 'ListUniqueKeys': grpc.unary_unary_rpc_method_handler(servicer.ListUniqueKeys, request_deserializer=common_dot_gateway__base__pb2.ListRequest.FromString, response_serializer=common_dot_unique__key__pb2.ListUniqueKeysResponse.SerializeToString), 'ListUniqueKeyVersions': grpc.unary_unary_rpc_method_handler(servicer.ListUniqueKeyVersions, request_deserializer=common_dot_gateway__base__pb2.GetDefinition.FromString, response_serializer=common_dot_gateway__base__pb2.ListVersionResponse.SerializeToString), 'GetUniqueKeyVersion': grpc.unary_unary_rpc_method_handler(servicer.GetUniqueKeyVersion, request_deserializer=common_dot_gateway__base__pb2.VersionRequest.FromString, response_serializer=common_dot_unique__key__pb2.UniqueKeyDefinitionResponse.SerializeToString)}
+    rpc_method_handlers = {'AddUniqueKey': grpc.unary_unary_rpc_method_handler(servicer.AddUniqueKey, request_deserializer=common_dot_unique__key__pb2.UniqueKeyDefinition.FromString, response_serializer=common_dot_gateway__base__pb2.AcknowledgeResponse.SerializeToString), 'GetUniqueKey': grpc.unary_unary_rpc_method_handler(servicer.GetUniqueKey, request_deserializer=common_dot_gateway__base__pb2.GetDefinition.FromString, response_serializer=common_dot_unique__key__pb2.UniqueKeyDefinitionResponse.SerializeToString), 'ListUniqueKeys': grpc.unary_unary_rpc_method_handler(servicer.ListUniqueKeys, request_deserializer=common_dot_gateway__base__pb2.ListRequest.FromString, response_serializer=common_dot_unique__key__pb2.ListUniqueKeysResponse.SerializeToString), 'ListUniqueKeyVersions': grpc.unary_unary_rpc_method_handler(servicer.ListUniqueKeyVersions, request_deserializer=common_dot_gateway__base__pb2.GetDefinition.FromString, response_serializer=common_dot_gateway__base__pb2.ListVersionResponse.SerializeToString), 'GetUniqueKeyVersion': grpc.unary_unary_rpc_method_handler(servicer.GetUniqueKeyVersion, request_deserializer=common_dot_gateway__base__pb2.VersionRequest.FromString, response_serializer=common_dot_unique__key__pb2.UniqueKeyDefinitionResponse.SerializeToString), 'EnableUniqueKey': grpc.unary_unary_rpc_method_handler(servicer.EnableUniqueKey, request_deserializer=common_dot_gateway__base__pb2.EnableDisableRequest.FromString, response_serializer=common_dot_gateway__base__pb2.AcknowledgeResponse.SerializeToString), 'DisableUniqueKey': grpc.unary_unary_rpc_method_handler(servicer.DisableUniqueKey, request_deserializer=common_dot_gateway__base__pb2.EnableDisableRequest.FromString, response_serializer=common_dot_gateway__base__pb2.AcknowledgeResponse.SerializeToString)}
     generic_handler = grpc.method_handlers_generic_handler('titanium.UniqueKeyService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
@@ -247,3 +261,11 @@ class UniqueKeyService(object):
     @staticmethod
     def GetUniqueKeyVersion(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
         return grpc.experimental.unary_unary(request, target, '/titanium.UniqueKeyService/GetUniqueKeyVersion', common_dot_gateway__base__pb2.VersionRequest.SerializeToString, common_dot_unique__key__pb2.UniqueKeyDefinitionResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def EnableUniqueKey(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.UniqueKeyService/EnableUniqueKey', common_dot_gateway__base__pb2.EnableDisableRequest.SerializeToString, common_dot_gateway__base__pb2.AcknowledgeResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DisableUniqueKey(request, target, options=(), channel_credentials=None, call_credentials=None, insecure=False, compression=None, wait_for_ready=None, timeout=None, metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/titanium.UniqueKeyService/DisableUniqueKey', common_dot_gateway__base__pb2.EnableDisableRequest.SerializeToString, common_dot_gateway__base__pb2.AcknowledgeResponse.FromString, options, channel_credentials, insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

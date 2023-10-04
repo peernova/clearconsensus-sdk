@@ -489,6 +489,11 @@ export class UploadURLRequest extends jspb.Message {
   getDescriptorName(): string;
   setDescriptorName(value: string): void;
 
+  hasFileAnnotation(): boolean;
+  clearFileAnnotation(): void;
+  getFileAnnotation(): FileAnnotation | undefined;
+  setFileAnnotation(value?: FileAnnotation): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UploadURLRequest.AsObject;
   static toObject(includeInstance: boolean, msg: UploadURLRequest): UploadURLRequest.AsObject;
@@ -507,6 +512,103 @@ export namespace UploadURLRequest {
     client: string,
     traceName: string,
     descriptorName: string,
+    fileAnnotation?: FileAnnotation.AsObject,
+  }
+}
+
+export class FileAnnotation extends jspb.Message {
+  getFileName(): string;
+  setFileName(value: string): void;
+
+  getUploadTime(): string;
+  setUploadTime(value: string): void;
+
+  getMode(): UploadModeMap[keyof UploadModeMap];
+  setMode(value: UploadModeMap[keyof UploadModeMap]): void;
+
+  getClient(): string;
+  setClient(value: string): void;
+
+  hasAsset(): boolean;
+  clearAsset(): void;
+  getAsset(): AssetDetails | undefined;
+  setAsset(value?: AssetDetails): void;
+
+  clearChunksList(): void;
+  getChunksList(): Array<Chunk>;
+  setChunksList(value: Array<Chunk>): void;
+  addChunks(value?: Chunk, index?: number): Chunk;
+
+  hasAnnotation(): boolean;
+  clearAnnotation(): void;
+  getAnnotation(): google_protobuf_struct_pb.Struct | undefined;
+  setAnnotation(value?: google_protobuf_struct_pb.Struct): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): FileAnnotation.AsObject;
+  static toObject(includeInstance: boolean, msg: FileAnnotation): FileAnnotation.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: FileAnnotation, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): FileAnnotation;
+  static deserializeBinaryFromReader(message: FileAnnotation, reader: jspb.BinaryReader): FileAnnotation;
+}
+
+export namespace FileAnnotation {
+  export type AsObject = {
+    fileName: string,
+    uploadTime: string,
+    mode: UploadModeMap[keyof UploadModeMap],
+    client: string,
+    asset?: AssetDetails.AsObject,
+    chunksList: Array<Chunk.AsObject>,
+    annotation?: google_protobuf_struct_pb.Struct.AsObject,
+  }
+}
+
+export class Chunk extends jspb.Message {
+  getChunkId(): string;
+  setChunkId(value: string): void;
+
+  getOriginalFileName(): string;
+  setOriginalFileName(value: string): void;
+
+  getDescription(): string;
+  setDescription(value: string): void;
+
+  getUser(): string;
+  setUser(value: string): void;
+
+  getStartRow(): number;
+  setStartRow(value: number): void;
+
+  getRowsCount(): number;
+  setRowsCount(value: number): void;
+
+  hasAnnotation(): boolean;
+  clearAnnotation(): void;
+  getAnnotation(): google_protobuf_struct_pb.Struct | undefined;
+  setAnnotation(value?: google_protobuf_struct_pb.Struct): void;
+
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): Chunk.AsObject;
+  static toObject(includeInstance: boolean, msg: Chunk): Chunk.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: Chunk, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): Chunk;
+  static deserializeBinaryFromReader(message: Chunk, reader: jspb.BinaryReader): Chunk;
+}
+
+export namespace Chunk {
+  export type AsObject = {
+    chunkId: string,
+    originalFileName: string,
+    description: string,
+    user: string,
+    startRow: number,
+    rowsCount: number,
+    annotation?: google_protobuf_struct_pb.Struct.AsObject,
   }
 }
 
