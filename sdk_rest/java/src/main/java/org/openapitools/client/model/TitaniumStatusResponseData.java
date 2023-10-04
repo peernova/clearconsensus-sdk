@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumStatusResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T18:50:00.019029Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T20:23:54.560156Z[UTC]")
 public class TitaniumStatusResponseData {
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
