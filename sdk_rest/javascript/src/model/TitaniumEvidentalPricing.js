@@ -56,14 +56,8 @@ class TitaniumEvidentalPricing {
             if (data.hasOwnProperty('bid')) {
                 obj['bid'] = ApiClient.convertToType(data['bid'], Object);
             }
-            if (data.hasOwnProperty('evpLowerBoundary')) {
-                obj['evpLowerBoundary'] = ApiClient.convertToType(data['evpLowerBoundary'], Object);
-            }
             if (data.hasOwnProperty('evpMidAbsDiffFromLatestTrade')) {
                 obj['evpMidAbsDiffFromLatestTrade'] = ApiClient.convertToType(data['evpMidAbsDiffFromLatestTrade'], Object);
-            }
-            if (data.hasOwnProperty('evpUpperBoundary')) {
-                obj['evpUpperBoundary'] = ApiClient.convertToType(data['evpUpperBoundary'], Object);
             }
             if (data.hasOwnProperty('mid')) {
                 obj['mid'] = ApiClient.convertToType(data['mid'], Object);
@@ -97,19 +91,9 @@ TitaniumEvidentalPricing.prototype['ask'] = undefined;
 TitaniumEvidentalPricing.prototype['bid'] = undefined;
 
 /**
- * @member {Object} evpLowerBoundary
- */
-TitaniumEvidentalPricing.prototype['evpLowerBoundary'] = undefined;
-
-/**
  * @member {Object} evpMidAbsDiffFromLatestTrade
  */
 TitaniumEvidentalPricing.prototype['evpMidAbsDiffFromLatestTrade'] = undefined;
-
-/**
- * @member {Object} evpUpperBoundary
- */
-TitaniumEvidentalPricing.prototype['evpUpperBoundary'] = undefined;
 
 /**
  * @member {Object} mid

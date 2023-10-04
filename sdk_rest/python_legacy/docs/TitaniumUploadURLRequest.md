@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **client** | **str** |  | [optional] 
 **date** | **str** |  | [optional] 
 **descriptor_name** | **str** |  | [optional] 
+**file_annotation** | [**TitaniumFileAnnotation**](TitaniumFileAnnotation.md) |  | [optional] 
 **file_name** | **str** |  | [optional] 
 **trace_name** | **str** |  | [optional] 
 

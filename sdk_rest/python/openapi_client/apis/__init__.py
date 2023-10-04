@@ -48,3 +48,4 @@ from openapi_client.api.supported_fields_service_api import SupportedFieldsServi
 from openapi_client.api.unique_key_service_api import UniqueKeyServiceApi
 from openapi_client.api.user_service_api import UserServiceApi
 from openapi_client.api.validator_service_api import ValidatorServiceApi
+from openapi_client.api.workflow_service_api import WorkflowServiceApi

@@ -271,6 +271,8 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.SupportedFieldsServiceApi* | [**supportedFieldsServiceGetSupportedFieldsValues**](docs/SupportedFieldsServiceApi.md#supportedFieldsServiceGetSupportedFieldsValues) | **POST** /api/v1/list/field-values | 
 *ClearconsensusSdk.SupportedFieldsServiceApi* | [**supportedFieldsServiceListSupportedFields**](docs/SupportedFieldsServiceApi.md#supportedFieldsServiceListSupportedFields) | **POST** /api/v1/list/fields | 
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceAddUniqueKey**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceAddUniqueKey) | **POST** /api/v1/uniquekey/add | AddUniqueKey is used to add a new unique key definition to the system.
+*ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceDisableUniqueKey**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceDisableUniqueKey) | **POST** /api/v1/uniquekey/disable | 
+*ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceEnableUniqueKey**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceEnableUniqueKey) | **POST** /api/v1/uniquekey/enable | 
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceGetUniqueKey**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceGetUniqueKey) | **POST** /api/v1/uniquekey/get | GetUniqueKey is used to retrieve a unique key definition by its scope and name. Request: {   \&quot;identifier\&quot;:{      \&quot;name\&quot;:\&quot;foreign_exchange-vanilla-forwards\&quot;   },   \&quot;scope\&quot;:\&quot;global\&quot; }
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceGetUniqueKeyVersion**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceGetUniqueKeyVersion) | **GET** /api/v1/uniquekey/version/{scope}/{name}/{versionId} | GetUniqueKeyVersion is used to retrieve a specific version of a unique key definition by its scope, name, and version ID. Response: {    \&quot;data\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;,        \&quot;scope\&quot;: \&quot;global\&quot;,        \&quot;uniqueKey\&quot;: [            \&quot;asset\&quot;,            \&quot;service\&quot;,            \&quot;sub-asset\&quot;,            \&quot;instrument_type\&quot;,            \&quot;tenor\&quot;,            \&quot;snap_date\&quot;,            \&quot;snap_time\&quot;,            \&quot;curr_1\&quot;,            \&quot;curr_2\&quot;,            \&quot;onshore_offshore_curr_1\&quot;,            \&quot;onshore_offshore_curr_2\&quot;        ],        \&quot;orderBy\&quot;: [            \&quot;__input_row_num\&quot;        ],        \&quot;order\&quot;: \&quot;ASC\&quot;    } }
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceListUniqueKeyVersions**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceListUniqueKeyVersions) | **POST** /api/v1/uniquekey/versions | ListUniqueKeyVersions is used to retrieve a list of all versions of a specific unique key definition by its scope and name. Request: {   \&quot;scope\&quot;:\&quot;global\&quot;,   \&quot;identifier\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
@@ -300,6 +302,15 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.ValidatorServiceApi* | [**validatorServiceListValidationRuleVersions**](docs/ValidatorServiceApi.md#validatorServiceListValidationRuleVersions) | **POST** /api/v1/validation/rule/versions | ListValidationRuleVersions method is used to retrieve a list of versions for a given validation rule. Both back office users and participant users can retrieve versions of validation rulesets, but the scope will depend on the user. The request must specify the descriptor name for the validation rule. The response will include a list of versions and their created timestamp. If the requested rule is not found, an error response will be returned.
 *ClearconsensusSdk.ValidatorServiceApi* | [**validatorServiceListValidationRules**](docs/ValidatorServiceApi.md#validatorServiceListValidationRules) | **POST** /api/v1/validation/rule/list | ListValidationRules method is used to retrieve a list of validation rule names. Both back office users and participant users can retrieve validation rulesets, but the scope and authorization will depend on the user. The default scope is used if no scope is specified in the request. The request may include an optional filter and orderBy parameter to refine the search results. Pagination is also supported. The response will include a list of rule names matching the filter criteria.
 *ClearconsensusSdk.ValidatorServiceApi* | [**validatorServiceRdlCheck**](docs/ValidatorServiceApi.md#validatorServiceRdlCheck) | **POST** /api/v1/validation/rule/check | RdlCheck method checks the syntax of a given RDL (Rule Description Language) expression. It takes a RdlCheckRequest message as input and returns a MessageResponse message.
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceAddWorkflow**](docs/WorkflowServiceApi.md#workflowServiceAddWorkflow) | **POST** /api/v1/workflow/add | 
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceDisableWorkflow**](docs/WorkflowServiceApi.md#workflowServiceDisableWorkflow) | **POST** /api/v1/workflow/disable | 
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceEnableWorkflow**](docs/WorkflowServiceApi.md#workflowServiceEnableWorkflow) | **POST** /api/v1/workflow/enable | 
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceGetWorkflow**](docs/WorkflowServiceApi.md#workflowServiceGetWorkflow) | **POST** /api/v1/workflow/get | 
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceGetWorkflowAction**](docs/WorkflowServiceApi.md#workflowServiceGetWorkflowAction) | **GET** /api/v1/workflow/action/{name} | 
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceListWorkflowActions**](docs/WorkflowServiceApi.md#workflowServiceListWorkflowActions) | **POST** /api/v1/workflow/action/list | 
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceListWorkflows**](docs/WorkflowServiceApi.md#workflowServiceListWorkflows) | **POST** /api/v1/workflow/list | 
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceReprocessWorkflow**](docs/WorkflowServiceApi.md#workflowServiceReprocessWorkflow) | **POST** /api/v1/workflow/reprocess | 
+*ClearconsensusSdk.WorkflowServiceApi* | [**workflowServiceRunWorkflow**](docs/WorkflowServiceApi.md#workflowServiceRunWorkflow) | **POST** /api/v1/workflow/run | 
 
 
 ## Documentation for Models
@@ -344,8 +355,11 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.RpcStatus](docs/RpcStatus.md)
  - [ClearconsensusSdk.TableColumn](docs/TableColumn.md)
  - [ClearconsensusSdk.TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)
+ - [ClearconsensusSdk.TitaniumActionDefinition](docs/TitaniumActionDefinition.md)
  - [ClearconsensusSdk.TitaniumAddAssetRequest](docs/TitaniumAddAssetRequest.md)
  - [ClearconsensusSdk.TitaniumAddLookupTableRequest](docs/TitaniumAddLookupTableRequest.md)
+ - [ClearconsensusSdk.TitaniumAddWorkflowDefinitionRequest](docs/TitaniumAddWorkflowDefinitionRequest.md)
+ - [ClearconsensusSdk.TitaniumArgument](docs/TitaniumArgument.md)
  - [ClearconsensusSdk.TitaniumAsset](docs/TitaniumAsset.md)
  - [ClearconsensusSdk.TitaniumAssetDetails](docs/TitaniumAssetDetails.md)
  - [ClearconsensusSdk.TitaniumAssetM](docs/TitaniumAssetM.md)
@@ -396,8 +410,8 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumChartsRequest](docs/TitaniumChartsRequest.md)
  - [ClearconsensusSdk.TitaniumChartsResponse](docs/TitaniumChartsResponse.md)
  - [ClearconsensusSdk.TitaniumChartsResponseData](docs/TitaniumChartsResponseData.md)
+ - [ClearconsensusSdk.TitaniumChunk](docs/TitaniumChunk.md)
  - [ClearconsensusSdk.TitaniumClientName](docs/TitaniumClientName.md)
- - [ClearconsensusSdk.TitaniumCohortConsensusColumn](docs/TitaniumCohortConsensusColumn.md)
  - [ClearconsensusSdk.TitaniumCohortConsensusRangeTabData](docs/TitaniumCohortConsensusRangeTabData.md)
  - [ClearconsensusSdk.TitaniumColDependency](docs/TitaniumColDependency.md)
  - [ClearconsensusSdk.TitaniumCollapseTableRequest](docs/TitaniumCollapseTableRequest.md)
@@ -407,6 +421,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumCompleteDataUploadResponse](docs/TitaniumCompleteDataUploadResponse.md)
  - [ClearconsensusSdk.TitaniumConsensusActiveRequest](docs/TitaniumConsensusActiveRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusActiveResponse](docs/TitaniumConsensusActiveResponse.md)
+ - [ClearconsensusSdk.TitaniumConsensusColumn](docs/TitaniumConsensusColumn.md)
  - [ClearconsensusSdk.TitaniumConsensusDecisionRequest](docs/TitaniumConsensusDecisionRequest.md)
  - [ClearconsensusSdk.TitaniumConsensusDensityScore](docs/TitaniumConsensusDensityScore.md)
  - [ClearconsensusSdk.TitaniumConsensusDetail](docs/TitaniumConsensusDetail.md)
@@ -490,6 +505,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumExportRequest](docs/TitaniumExportRequest.md)
  - [ClearconsensusSdk.TitaniumExportResponse](docs/TitaniumExportResponse.md)
  - [ClearconsensusSdk.TitaniumFields](docs/TitaniumFields.md)
+ - [ClearconsensusSdk.TitaniumFileAnnotation](docs/TitaniumFileAnnotation.md)
  - [ClearconsensusSdk.TitaniumFileDelimiterSetting](docs/TitaniumFileDelimiterSetting.md)
  - [ClearconsensusSdk.TitaniumFileDescriptorSetting](docs/TitaniumFileDescriptorSetting.md)
  - [ClearconsensusSdk.TitaniumFileHistoryRequest](docs/TitaniumFileHistoryRequest.md)
@@ -537,6 +553,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumGetUserPermissionsRequest](docs/TitaniumGetUserPermissionsRequest.md)
  - [ClearconsensusSdk.TitaniumGetUserRequest](docs/TitaniumGetUserRequest.md)
  - [ClearconsensusSdk.TitaniumGetValidationRuleResponse](docs/TitaniumGetValidationRuleResponse.md)
+ - [ClearconsensusSdk.TitaniumGetWorkflowActionResponse](docs/TitaniumGetWorkflowActionResponse.md)
  - [ClearconsensusSdk.TitaniumHistogramData](docs/TitaniumHistogramData.md)
  - [ClearconsensusSdk.TitaniumHistogramResponse](docs/TitaniumHistogramResponse.md)
  - [ClearconsensusSdk.TitaniumIdentifier](docs/TitaniumIdentifier.md)
@@ -602,6 +619,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumRecentAssetsResponse](docs/TitaniumRecentAssetsResponse.md)
  - [ClearconsensusSdk.TitaniumRecentAssetsResponseData](docs/TitaniumRecentAssetsResponseData.md)
  - [ClearconsensusSdk.TitaniumRecentAssetsRow](docs/TitaniumRecentAssetsRow.md)
+ - [ClearconsensusSdk.TitaniumReprocessWorkflowRequest](docs/TitaniumReprocessWorkflowRequest.md)
  - [ClearconsensusSdk.TitaniumResponseData](docs/TitaniumResponseData.md)
  - [ClearconsensusSdk.TitaniumResultsList](docs/TitaniumResultsList.md)
  - [ClearconsensusSdk.TitaniumRuleDefinition](docs/TitaniumRuleDefinition.md)
@@ -610,6 +628,8 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumRunConsensusRequest](docs/TitaniumRunConsensusRequest.md)
  - [ClearconsensusSdk.TitaniumRunDataProcessingAppRequest](docs/TitaniumRunDataProcessingAppRequest.md)
  - [ClearconsensusSdk.TitaniumRunDataProcessingAppResponse](docs/TitaniumRunDataProcessingAppResponse.md)
+ - [ClearconsensusSdk.TitaniumRunWorkflowRequest](docs/TitaniumRunWorkflowRequest.md)
+ - [ClearconsensusSdk.TitaniumRunWorkflowResponse](docs/TitaniumRunWorkflowResponse.md)
  - [ClearconsensusSdk.TitaniumScopeExistResponse](docs/TitaniumScopeExistResponse.md)
  - [ClearconsensusSdk.TitaniumScopeIdentifier](docs/TitaniumScopeIdentifier.md)
  - [ClearconsensusSdk.TitaniumScopeListResponse](docs/TitaniumScopeListResponse.md)
@@ -626,11 +646,11 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumStringKeyVal](docs/TitaniumStringKeyVal.md)
  - [ClearconsensusSdk.TitaniumSubAsset](docs/TitaniumSubAsset.md)
  - [ClearconsensusSdk.TitaniumSubGroupKeySearch](docs/TitaniumSubGroupKeySearch.md)
+ - [ClearconsensusSdk.TitaniumSubmissionColumn](docs/TitaniumSubmissionColumn.md)
  - [ClearconsensusSdk.TitaniumSubmissionEvidenceAnchorDetails](docs/TitaniumSubmissionEvidenceAnchorDetails.md)
- - [ClearconsensusSdk.TitaniumSubmissionEvidenceTableColumn](docs/TitaniumSubmissionEvidenceTableColumn.md)
- - [ClearconsensusSdk.TitaniumSubmissionExplorerTableColumn](docs/TitaniumSubmissionExplorerTableColumn.md)
  - [ClearconsensusSdk.TitaniumSubmissionHistogram](docs/TitaniumSubmissionHistogram.md)
- - [ClearconsensusSdk.TitaniumSubmissionStatisticsExplorerTableColumn](docs/TitaniumSubmissionStatisticsExplorerTableColumn.md)
+ - [ClearconsensusSdk.TitaniumSubmissionRangeColumn](docs/TitaniumSubmissionRangeColumn.md)
+ - [ClearconsensusSdk.TitaniumSubmissionStatisticsColumn](docs/TitaniumSubmissionStatisticsColumn.md)
  - [ClearconsensusSdk.TitaniumSubmittedData](docs/TitaniumSubmittedData.md)
  - [ClearconsensusSdk.TitaniumSubmittedRequest](docs/TitaniumSubmittedRequest.md)
  - [ClearconsensusSdk.TitaniumSubmittedResponse](docs/TitaniumSubmittedResponse.md)
@@ -677,6 +697,9 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumVersion](docs/TitaniumVersion.md)
  - [ClearconsensusSdk.TitaniumVersionList](docs/TitaniumVersionList.md)
  - [ClearconsensusSdk.TitaniumViewRow](docs/TitaniumViewRow.md)
+ - [ClearconsensusSdk.TitaniumWorkflowDefinition](docs/TitaniumWorkflowDefinition.md)
+ - [ClearconsensusSdk.TitaniumWorkflowDefinitionResponse](docs/TitaniumWorkflowDefinitionResponse.md)
+ - [ClearconsensusSdk.TitaniumWorkflowList](docs/TitaniumWorkflowList.md)
 
 
 ## Documentation for Authorization

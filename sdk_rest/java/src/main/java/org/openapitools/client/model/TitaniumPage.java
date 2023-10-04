@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumPage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T18:40:39.548142Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T18:50:00.019029Z[UTC]")
 public class TitaniumPage {
   public static final String SERIALIZED_NAME_PAGE_NUMBER = "pageNumber";
   @SerializedName(SERIALIZED_NAME_PAGE_NUMBER)

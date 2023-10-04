@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**availableTrades** | [**TitaniumAvailableTrades**](TitaniumAvailableTrades.md) |  | [optional] 
-**cohortConsensusColumn** | [**TitaniumCohortConsensusColumn**](TitaniumCohortConsensusColumn.md) |  | [optional] 
+**consensus** | [**TitaniumConsensusColumn**](TitaniumConsensusColumn.md) |  | [optional] 
 **evidentialPricing** | [**TitaniumEvidentalPricing**](TitaniumEvidentalPricing.md) |  | [optional] 
-**submission** | [**TitaniumSubmissionExplorerTableColumn**](TitaniumSubmissionExplorerTableColumn.md) |  | [optional] 
-**submissionEvidence** | [**TitaniumSubmissionEvidenceTableColumn**](TitaniumSubmissionEvidenceTableColumn.md) |  | [optional] 
-**submissionStatistics** | [**TitaniumSubmissionStatisticsExplorerTableColumn**](TitaniumSubmissionStatisticsExplorerTableColumn.md) |  | [optional] 
+**mySubmission** | [**TitaniumSubmissionColumn**](TitaniumSubmissionColumn.md) |  | [optional] 
+**submissionRange** | [**TitaniumSubmissionRangeColumn**](TitaniumSubmissionRangeColumn.md) |  | [optional] 
+**submissionStatisticalBoundaries** | [**TitaniumSubmissionStatisticsColumn**](TitaniumSubmissionStatisticsColumn.md) |  | [optional] 
+**tradeTimeSeries** | [**TitaniumAvailableTrades**](TitaniumAvailableTrades.md) |  | [optional] 
 
 

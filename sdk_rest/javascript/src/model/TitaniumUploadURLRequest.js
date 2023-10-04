@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import TitaniumFileAnnotation from './TitaniumFileAnnotation';
 
 /**
  * The TitaniumUploadURLRequest model module.
@@ -59,6 +60,9 @@ class TitaniumUploadURLRequest {
             if (data.hasOwnProperty('descriptorName')) {
                 obj['descriptorName'] = ApiClient.convertToType(data['descriptorName'], 'String');
             }
+            if (data.hasOwnProperty('fileAnnotation')) {
+                obj['fileAnnotation'] = TitaniumFileAnnotation.constructFromObject(data['fileAnnotation']);
+            }
             if (data.hasOwnProperty('fileName')) {
                 obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
             }
@@ -91,6 +95,11 @@ TitaniumUploadURLRequest.prototype['date'] = undefined;
  * @member {String} descriptorName
  */
 TitaniumUploadURLRequest.prototype['descriptorName'] = undefined;
+
+/**
+ * @member {module:model/TitaniumFileAnnotation} fileAnnotation
+ */
+TitaniumUploadURLRequest.prototype['fileAnnotation'] = undefined;
 
 /**
  * @member {String} fileName

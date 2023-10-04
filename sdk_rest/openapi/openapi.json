@@ -5274,6 +5274,84 @@
         "x-codegen-request-body-name" : "body"
       }
     },
+    "/api/v1/uniquekey/disable" : {
+      "post" : {
+        "operationId" : "UniqueKeyService_DisableUniqueKey",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumEnableDisableRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumAcknowledgeResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UniqueKeyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/uniquekey/enable" : {
+      "post" : {
+        "operationId" : "UniqueKeyService_EnableUniqueKey",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumEnableDisableRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumAcknowledgeResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UniqueKeyService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
     "/api/v1/uniquekey/get" : {
       "post" : {
         "description" : "Response:\n{\n   \"data\": {\n       \"name\": \"foreign_exchange-vanilla-forwards\",\n       \"scope\": \"global\",\n       \"uniqueKey\": [\n           \"snap_date\",\n           \"asset\",\n           \"service\",\n           \"client\",\n           \"service\",\n           \"tenor\",\n           \"snap_time\",\n           \"instrument_type\",\n           \"spot_reference_price\",\n           \"mid_fwrd_outright\",\n           \"mid_fwrd_points\",\n           \"onshore_offshore_curr_1\",\n           \"onshore_offshore_curr_2\"\n       ],\n       \"orderBy\": [\n           \"__input_row_num\"\n       ],\n       \"order\": \"ASC\"\n   }\n}",
@@ -7175,6 +7253,354 @@
         "tags" : [ "ValidatorService" ],
         "x-codegen-request-body-name" : "body"
       }
+    },
+    "/api/v1/workflow/action/list" : {
+      "post" : {
+        "operationId" : "WorkflowService_ListWorkflowActions",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumListRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumWorkflowList"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/workflow/action/{name}" : {
+      "get" : {
+        "operationId" : "WorkflowService_GetWorkflowAction",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "name",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumGetWorkflowActionResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ]
+      }
+    },
+    "/api/v1/workflow/add" : {
+      "post" : {
+        "operationId" : "WorkflowService_AddWorkflow",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumAddWorkflowDefinitionRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumAcknowledgeResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/workflow/disable" : {
+      "post" : {
+        "operationId" : "WorkflowService_DisableWorkflow",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumEnableDisableRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumAcknowledgeResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/workflow/enable" : {
+      "post" : {
+        "operationId" : "WorkflowService_EnableWorkflow",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumEnableDisableRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumAcknowledgeResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/workflow/get" : {
+      "post" : {
+        "operationId" : "WorkflowService_GetWorkflow",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumGetDefinition"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumWorkflowDefinitionResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/workflow/list" : {
+      "post" : {
+        "operationId" : "WorkflowService_ListWorkflows",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumListRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumWorkflowList"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/workflow/reprocess" : {
+      "post" : {
+        "operationId" : "WorkflowService_ReprocessWorkflow",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumReprocessWorkflowRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumRunWorkflowResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/workflow/run" : {
+      "post" : {
+        "operationId" : "WorkflowService_RunWorkflow",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumRunWorkflowRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumRunWorkflowResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "WorkflowService" ],
+        "x-codegen-request-body-name" : "body"
+      }
     }
   },
   "components" : {
@@ -7681,6 +8107,50 @@
         "title" : "common response that notify the user that some action was executed",
         "type" : "object"
       },
+      "titaniumActionDefinition" : {
+        "properties" : {
+          "actionType" : {
+            "type" : "string"
+          },
+          "dependsOn" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "doNotRunIf" : {
+            "type" : "string"
+          },
+          "id" : {
+            "type" : "string"
+          },
+          "ignoreFailure" : {
+            "type" : "boolean"
+          },
+          "inputArguments" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumArgument"
+            },
+            "type" : "array"
+          },
+          "outputArgument" : {
+            "type" : "string"
+          },
+          "queue" : {
+            "type" : "string"
+          },
+          "retries" : {
+            "type" : "integer"
+          },
+          "runIf" : {
+            "type" : "string"
+          },
+          "timeoutSeconds" : {
+            "type" : "integer"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumAddAssetRequest" : {
         "properties" : {
           "asset" : {
@@ -7701,6 +8171,35 @@
             "$ref" : "#/components/schemas/titaniumLookupTableDefinition"
           },
           "scope" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumAddWorkflowDefinitionRequest" : {
+        "properties" : {
+          "definition" : {
+            "$ref" : "#/components/schemas/titaniumWorkflowDefinition"
+          },
+          "scope" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumArgument" : {
+        "properties" : {
+          "definition" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "value" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "variable" : {
             "type" : "string"
           }
         },
@@ -8511,6 +9010,33 @@
         },
         "type" : "object"
       },
+      "titaniumChunk" : {
+        "properties" : {
+          "annotation" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "chunkId" : {
+            "type" : "string"
+          },
+          "description" : {
+            "type" : "string"
+          },
+          "originalFileName" : {
+            "type" : "string"
+          },
+          "rowsCount" : {
+            "type" : "integer"
+          },
+          "startRow" : {
+            "type" : "integer"
+          },
+          "user" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumClientName" : {
         "properties" : {
           "displayName" : {
@@ -8518,55 +9044,6 @@
           },
           "name" : {
             "type" : "string"
-          }
-        },
-        "type" : "object"
-      },
-      "titaniumCohortConsensusColumn" : {
-        "properties" : {
-          "absDiffFromConsensus" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "acceptedMax" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "acceptedMin" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "cohortConsensusPrice" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "consAbsDiffFromAnchorEvpMid" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "consAbsDiffFromAnchorEvpMidCalc" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "consAbsDiffFromAnchorSub" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "consAbsDiffFromAnchorTrade" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "numberOfInstruments" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "stdDev" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "subPriceDiff" : {
-            "properties" : { },
-            "type" : "object"
           }
         },
         "type" : "object"
@@ -8648,23 +9125,23 @@
       },
       "titaniumComparisonTable" : {
         "properties" : {
-          "availableTrades" : {
-            "$ref" : "#/components/schemas/titaniumAvailableTrades"
-          },
-          "cohortConsensusColumn" : {
-            "$ref" : "#/components/schemas/titaniumCohortConsensusColumn"
+          "consensus" : {
+            "$ref" : "#/components/schemas/titaniumConsensusColumn"
           },
           "evidentialPricing" : {
             "$ref" : "#/components/schemas/titaniumEvidentalPricing"
           },
-          "submission" : {
-            "$ref" : "#/components/schemas/titaniumSubmissionExplorerTableColumn"
+          "mySubmission" : {
+            "$ref" : "#/components/schemas/titaniumSubmissionColumn"
           },
-          "submissionEvidence" : {
-            "$ref" : "#/components/schemas/titaniumSubmissionEvidenceTableColumn"
+          "submissionRange" : {
+            "$ref" : "#/components/schemas/titaniumSubmissionRangeColumn"
           },
-          "submissionStatistics" : {
-            "$ref" : "#/components/schemas/titaniumSubmissionStatisticsExplorerTableColumn"
+          "submissionStatisticalBoundaries" : {
+            "$ref" : "#/components/schemas/titaniumSubmissionStatisticsColumn"
+          },
+          "tradeTimeSeries" : {
+            "$ref" : "#/components/schemas/titaniumAvailableTrades"
           }
         },
         "type" : "object"
@@ -8730,6 +9207,55 @@
           },
           "error" : {
             "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumConsensusColumn" : {
+        "properties" : {
+          "absDiffFromConsensus" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "acceptedMax" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "acceptedMin" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "consAbsDiffFromAnchorEvpMid" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "consAbsDiffFromAnchorEvpMidCalc" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "consAbsDiffFromAnchorSub" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "consAbsDiffFromAnchorTrade" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "consensus" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "numberOfInstruments" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "stdDev" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "subPriceDiff" : {
+            "properties" : { },
+            "type" : "object"
           }
         },
         "type" : "object"
@@ -9813,7 +10339,7 @@
             "type" : "string"
           }
         },
-        "title" : "TODO: remove this, just use GetDefinition",
+        "title" : "TODO: remove this, just use Get  Definition",
         "type" : "object"
       },
       "titaniumEntityDefinition" : {
@@ -9892,15 +10418,7 @@
             "properties" : { },
             "type" : "object"
           },
-          "evpLowerBoundary" : {
-            "properties" : { },
-            "type" : "object"
-          },
           "evpMidAbsDiffFromLatestTrade" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "evpUpperBoundary" : {
             "properties" : { },
             "type" : "object"
           },
@@ -10200,6 +10718,36 @@
               "$ref" : "#/components/schemas/titaniumColumnInfo"
             },
             "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumFileAnnotation" : {
+        "properties" : {
+          "annotation" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "asset" : {
+            "$ref" : "#/components/schemas/titaniumAssetDetails"
+          },
+          "chunks" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumChunk"
+            },
+            "type" : "array"
+          },
+          "client" : {
+            "type" : "string"
+          },
+          "fileName" : {
+            "type" : "string"
+          },
+          "mode" : {
+            "$ref" : "#/components/schemas/titaniumUploadMode"
+          },
+          "uploadTime" : {
+            "type" : "string"
           }
         },
         "type" : "object"
@@ -10934,6 +11482,23 @@
           },
           "error" : {
             "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumGetWorkflowActionResponse" : {
+        "properties" : {
+          "description" : {
+            "type" : "string"
+          },
+          "inputArguments" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "outputArgument" : {
+            "type" : "string"
           }
         },
         "type" : "object"
@@ -11913,6 +12478,17 @@
         },
         "type" : "object"
       },
+      "titaniumReprocessWorkflowRequest" : {
+        "properties" : {
+          "runId" : {
+            "type" : "string"
+          },
+          "workflowId" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumResponseData" : {
         "properties" : {
           "columns" : {
@@ -12097,6 +12673,32 @@
           }
         },
         "title" : "response to notify requester of processing with data indicator or error",
+        "type" : "object"
+      },
+      "titaniumRunWorkflowRequest" : {
+        "properties" : {
+          "args" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "scope" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumRunWorkflowResponse" : {
+        "properties" : {
+          "runId" : {
+            "type" : "string"
+          },
+          "workflowId" : {
+            "type" : "string"
+          }
+        },
         "type" : "object"
       },
       "titaniumScopeExistResponse" : {
@@ -12301,6 +12903,15 @@
         },
         "type" : "object"
       },
+      "titaniumSubmissionColumn" : {
+        "properties" : {
+          "submissionPrice" : {
+            "properties" : { },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumSubmissionEvidenceAnchorDetails" : {
         "properties" : {
           "distanceToConsensus" : {
@@ -12308,52 +12919,6 @@
           },
           "submissionEvidence" : {
             "type" : "number"
-          }
-        },
-        "type" : "object"
-      },
-      "titaniumSubmissionEvidenceTableColumn" : {
-        "properties" : {
-          "absDiffFromEvidence" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "eviPriceAbsDiffFromLatestTrade" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "evidence" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "lowerBoundary" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "participantsCount" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "stdDev" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "subPriceDiff" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "upperBoundary" : {
-            "properties" : { },
-            "type" : "object"
-          }
-        },
-        "type" : "object"
-      },
-      "titaniumSubmissionExplorerTableColumn" : {
-        "properties" : {
-          "submissionPrice" : {
-            "properties" : { },
-            "type" : "object"
           }
         },
         "type" : "object"
@@ -12384,8 +12949,49 @@
         },
         "type" : "object"
       },
-      "titaniumSubmissionStatisticsExplorerTableColumn" : {
+      "titaniumSubmissionRangeColumn" : {
         "properties" : {
+          "absDiffFromMean" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "mean" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "meanAbsDiffFromLatestTrade" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "stdDev" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "subPriceDiff" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "submissionMax" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "submissionMin" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "validCount" : {
+            "properties" : { },
+            "type" : "object"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumSubmissionStatisticsColumn" : {
+        "properties" : {
+          "absDiffFromLatestTrade" : {
+            "properties" : { },
+            "type" : "object"
+          },
           "absDiffFromSubEvidence" : {
             "properties" : { },
             "type" : "object"
@@ -12398,10 +13004,6 @@
             "properties" : { },
             "type" : "object"
           },
-          "statMeanAbsDiffFromLatestTrade" : {
-            "properties" : { },
-            "type" : "object"
-          },
           "stdDev" : {
             "properties" : { },
             "type" : "object"
@@ -12411,14 +13013,6 @@
             "type" : "object"
           },
           "submissionEvidence" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "submissionMax" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "submissionMin" : {
             "properties" : { },
             "type" : "object"
           },
@@ -12954,6 +13548,9 @@
           "descriptorName" : {
             "type" : "string"
           },
+          "fileAnnotation" : {
+            "$ref" : "#/components/schemas/titaniumFileAnnotation"
+          },
           "fileName" : {
             "type" : "string"
           },
@@ -13212,6 +13809,64 @@
               "type" : "object"
             },
             "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumWorkflowDefinition" : {
+        "properties" : {
+          "actionList" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumActionDefinition"
+            },
+            "type" : "array"
+          },
+          "maxAttempts" : {
+            "type" : "integer"
+          },
+          "predefinedArguments" : {
+            "properties" : { },
+            "type" : "object"
+          },
+          "runtimeArguments" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "schedule" : {
+            "type" : "string"
+          },
+          "timeout" : {
+            "type" : "string"
+          },
+          "workflowName" : {
+            "type" : "string"
+          },
+          "workflowQueue" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumWorkflowDefinitionResponse" : {
+        "properties" : {
+          "definition" : {
+            "type" : "string"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumWorkflowList" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumResultsList"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
           }
         },
         "type" : "object"

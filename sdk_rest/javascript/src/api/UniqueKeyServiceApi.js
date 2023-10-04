@@ -15,6 +15,7 @@
 import ApiClient from "../ApiClient";
 import RpcStatus from '../model/RpcStatus';
 import TitaniumAcknowledgeResponse from '../model/TitaniumAcknowledgeResponse';
+import TitaniumEnableDisableRequest from '../model/TitaniumEnableDisableRequest';
 import TitaniumGetDefinition from '../model/TitaniumGetDefinition';
 import TitaniumListRequest from '../model/TitaniumListRequest';
 import TitaniumListUniqueKeysResponse from '../model/TitaniumListUniqueKeysResponse';
@@ -78,6 +79,86 @@ export default class UniqueKeyServiceApi {
       let returnType = TitaniumAcknowledgeResponse;
       return this.apiClient.callApi(
         '/api/v1/uniquekey/add', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the uniqueKeyServiceDisableUniqueKey operation.
+     * @callback module:api/UniqueKeyServiceApi~uniqueKeyServiceDisableUniqueKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumAcknowledgeResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumEnableDisableRequest} body 
+     * @param {module:api/UniqueKeyServiceApi~uniqueKeyServiceDisableUniqueKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumAcknowledgeResponse}
+     */
+    uniqueKeyServiceDisableUniqueKey(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling uniqueKeyServiceDisableUniqueKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumAcknowledgeResponse;
+      return this.apiClient.callApi(
+        '/api/v1/uniquekey/disable', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the uniqueKeyServiceEnableUniqueKey operation.
+     * @callback module:api/UniqueKeyServiceApi~uniqueKeyServiceEnableUniqueKeyCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/TitaniumAcknowledgeResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * @param {module:model/TitaniumEnableDisableRequest} body 
+     * @param {module:api/UniqueKeyServiceApi~uniqueKeyServiceEnableUniqueKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TitaniumAcknowledgeResponse}
+     */
+    uniqueKeyServiceEnableUniqueKey(body, callback) {
+      let postBody = body;
+      // verify the required parameter 'body' is set
+      if (body === undefined || body === null) {
+        throw new Error("Missing the required parameter 'body' when calling uniqueKeyServiceEnableUniqueKey");
+      }
+
+      let pathParams = {
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = [];
+      let accepts = ['*/*'];
+      let returnType = TitaniumAcknowledgeResponse;
+      return this.apiClient.callApi(
+        '/api/v1/uniquekey/enable', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **client** | **str** |  | [optional] 
 **date** | **str** |  | [optional] 
 **descriptor_name** | **str** |  | [optional] 
+**file_annotation** | [**TitaniumFileAnnotation**](TitaniumFileAnnotation.md) |  | [optional] 
 **file_name** | **str** |  | [optional] 
 **trace_name** | **str** |  | [optional] 
 **any string name** | **bool, date, datetime, dict, float, int, list, str, none_type** | any string name can be used but the value must be the correct type | [optional]

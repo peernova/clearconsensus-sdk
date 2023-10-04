@@ -3960,6 +3960,60 @@ paths:
       x-codegen-request-body-name: body
       x-content-type: '*/*'
       x-accepts: '*/*'
+  /api/v1/uniquekey/disable:
+    post:
+      operationId: UniqueKeyService_DisableUniqueKey
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumEnableDisableRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumAcknowledgeResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UniqueKeyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/uniquekey/enable:
+    post:
+      operationId: UniqueKeyService_EnableUniqueKey
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumEnableDisableRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumAcknowledgeResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UniqueKeyService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
   /api/v1/uniquekey/get:
     post:
       description: "Response:\n{\n   \"data\": {\n       \"name\": \"foreign_exchange-vanilla-forwards\"\
@@ -5594,6 +5648,249 @@ paths:
       x-codegen-request-body-name: body
       x-content-type: '*/*'
       x-accepts: '*/*'
+  /api/v1/workflow/action/list:
+    post:
+      operationId: WorkflowService_ListWorkflowActions
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumListRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumWorkflowList'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/workflow/action/{name}:
+    get:
+      operationId: WorkflowService_GetWorkflowAction
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumGetWorkflowActionResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-accepts: '*/*'
+  /api/v1/workflow/add:
+    post:
+      operationId: WorkflowService_AddWorkflow
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumAddWorkflowDefinitionRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumAcknowledgeResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/workflow/disable:
+    post:
+      operationId: WorkflowService_DisableWorkflow
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumEnableDisableRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumAcknowledgeResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/workflow/enable:
+    post:
+      operationId: WorkflowService_EnableWorkflow
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumEnableDisableRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumAcknowledgeResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/workflow/get:
+    post:
+      operationId: WorkflowService_GetWorkflow
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumGetDefinition'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumWorkflowDefinitionResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/workflow/list:
+    post:
+      operationId: WorkflowService_ListWorkflows
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumListRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumWorkflowList'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/workflow/reprocess:
+    post:
+      operationId: WorkflowService_ReprocessWorkflow
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumReprocessWorkflowRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumRunWorkflowResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/workflow/run:
+    post:
+      operationId: WorkflowService_RunWorkflow
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumRunWorkflowRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumRunWorkflowResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - WorkflowService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
 components:
   schemas:
     DynamicLutDynamicLutType:
@@ -6256,6 +6553,35 @@ components:
           $ref: '#/components/schemas/titaniumError'
       title: common response that notify the user that some action was executed
       type: object
+    titaniumActionDefinition:
+      properties:
+        actionType:
+          type: string
+        dependsOn:
+          items:
+            type: string
+          type: array
+        doNotRunIf:
+          type: string
+        id:
+          type: string
+        ignoreFailure:
+          type: boolean
+        inputArguments:
+          items:
+            $ref: '#/components/schemas/titaniumArgument'
+          type: array
+        outputArgument:
+          type: string
+        queue:
+          type: string
+        retries:
+          type: integer
+        runIf:
+          type: string
+        timeoutSeconds:
+          type: integer
+      type: object
     titaniumAddAssetRequest:
       properties:
         asset:
@@ -6270,6 +6596,25 @@ components:
         lookuptable:
           $ref: '#/components/schemas/titaniumLookupTableDefinition'
         scope:
+          type: string
+      type: object
+    titaniumAddWorkflowDefinitionRequest:
+      properties:
+        definition:
+          $ref: '#/components/schemas/titaniumWorkflowDefinition'
+        scope:
+          type: string
+      type: object
+    titaniumArgument:
+      properties:
+        definition:
+          type: string
+        name:
+          type: string
+        value:
+          properties: {}
+          type: object
+        variable:
           type: string
       type: object
     titaniumAsset:
@@ -7403,6 +7748,24 @@ components:
             type: string
           type: array
       type: object
+    titaniumChunk:
+      properties:
+        annotation:
+          properties: {}
+          type: object
+        chunkId:
+          type: string
+        description:
+          type: string
+        originalFileName:
+          type: string
+        rowsCount:
+          type: integer
+        startRow:
+          type: integer
+        user:
+          type: string
+      type: object
     titaniumClientName:
       example:
         displayName: displayName
@@ -7412,54 +7775,6 @@ components:
           type: string
         name:
           type: string
-      type: object
-    titaniumCohortConsensusColumn:
-      example:
-        consAbsDiffFromAnchorEvpMid: "{}"
-        subPriceDiff: "{}"
-        consAbsDiffFromAnchorSub: "{}"
-        acceptedMax: "{}"
-        consAbsDiffFromAnchorEvpMidCalc: "{}"
-        stdDev: "{}"
-        acceptedMin: "{}"
-        cohortConsensusPrice: "{}"
-        consAbsDiffFromAnchorTrade: "{}"
-        numberOfInstruments: "{}"
-        absDiffFromConsensus: "{}"
-      properties:
-        absDiffFromConsensus:
-          properties: {}
-          type: object
-        acceptedMax:
-          properties: {}
-          type: object
-        acceptedMin:
-          properties: {}
-          type: object
-        cohortConsensusPrice:
-          properties: {}
-          type: object
-        consAbsDiffFromAnchorEvpMid:
-          properties: {}
-          type: object
-        consAbsDiffFromAnchorEvpMidCalc:
-          properties: {}
-          type: object
-        consAbsDiffFromAnchorSub:
-          properties: {}
-          type: object
-        consAbsDiffFromAnchorTrade:
-          properties: {}
-          type: object
-        numberOfInstruments:
-          properties: {}
-          type: object
-        stdDev:
-          properties: {}
-          type: object
-        subPriceDiff:
-          properties: {}
-          type: object
       type: object
     titaniumCohortConsensusRangeTabData:
       example:
@@ -7580,7 +7895,8 @@ components:
       type: object
     titaniumComparisonTable:
       example:
-        cohortConsensusColumn:
+        consensus:
+          consensus: "{}"
           consAbsDiffFromAnchorEvpMid: "{}"
           subPriceDiff: "{}"
           consAbsDiffFromAnchorSub: "{}"
@@ -7588,32 +7904,19 @@ components:
           consAbsDiffFromAnchorEvpMidCalc: "{}"
           stdDev: "{}"
           acceptedMin: "{}"
-          cohortConsensusPrice: "{}"
           consAbsDiffFromAnchorTrade: "{}"
           numberOfInstruments: "{}"
           absDiffFromConsensus: "{}"
-        submissionStatistics:
-          submissionMax: "{}"
+        submissionStatisticalBoundaries:
+          absDiffFromLatestTrade: "{}"
           absDiffFromSubEvidence: "{}"
-          statMeanAbsDiffFromLatestTrade: "{}"
           subPriceDiff: "{}"
           submissionEvidence: "{}"
-          submissionMin: "{}"
           numberOfPartInBoundaries: "{}"
           stdDev: "{}"
           upperBoundary: "{}"
           lowerBoundary: "{}"
-        evidentialPricing:
-          absDiffFromEvpMid: "{}"
-          evpLowerBoundary: "{}"
-          ask: "{}"
-          subPriceDiff: "{}"
-          mid: "{}"
-          tradesOrOrdersCount: "{}"
-          evpUpperBoundary: "{}"
-          bid: "{}"
-          evpMidAbsDiffFromLatestTrade: "{}"
-        availableTrades:
+        tradeTimeSeries:
           absDiffFromLatestTrade: "{}"
           min: "{}"
           subPriceAbsDiffFromLatestTrade: "{}"
@@ -7623,30 +7926,38 @@ components:
           subPriceDiff: "{}"
           latestTradePrice: "{}"
           weekTradeNumber: weekTradeNumber
-        submissionEvidence:
-          eviPriceAbsDiffFromLatestTrade: "{}"
-          participantsCount: "{}"
-          absDiffFromEvidence: "{}"
-          evidence: "{}"
+        evidentialPricing:
+          absDiffFromEvpMid: "{}"
+          ask: "{}"
           subPriceDiff: "{}"
+          mid: "{}"
+          tradesOrOrdersCount: "{}"
+          bid: "{}"
+          evpMidAbsDiffFromLatestTrade: "{}"
+        submissionRange:
+          meanAbsDiffFromLatestTrade: "{}"
+          absDiffFromMean: "{}"
+          mean: "{}"
+          submissionMax: "{}"
+          subPriceDiff: "{}"
+          submissionMin: "{}"
           stdDev: "{}"
-          upperBoundary: "{}"
-          lowerBoundary: "{}"
-        submission:
+          validCount: "{}"
+        mySubmission:
           submissionPrice: "{}"
       properties:
-        availableTrades:
-          $ref: '#/components/schemas/titaniumAvailableTrades'
-        cohortConsensusColumn:
-          $ref: '#/components/schemas/titaniumCohortConsensusColumn'
+        consensus:
+          $ref: '#/components/schemas/titaniumConsensusColumn'
         evidentialPricing:
           $ref: '#/components/schemas/titaniumEvidentalPricing'
-        submission:
-          $ref: '#/components/schemas/titaniumSubmissionExplorerTableColumn'
-        submissionEvidence:
-          $ref: '#/components/schemas/titaniumSubmissionEvidenceTableColumn'
-        submissionStatistics:
-          $ref: '#/components/schemas/titaniumSubmissionStatisticsExplorerTableColumn'
+        mySubmission:
+          $ref: '#/components/schemas/titaniumSubmissionColumn'
+        submissionRange:
+          $ref: '#/components/schemas/titaniumSubmissionRangeColumn'
+        submissionStatisticalBoundaries:
+          $ref: '#/components/schemas/titaniumSubmissionStatisticsColumn'
+        tradeTimeSeries:
+          $ref: '#/components/schemas/titaniumAvailableTrades'
       type: object
     titaniumCompleteDataUploadRequest:
       properties:
@@ -7718,6 +8029,54 @@ components:
           $ref: '#/components/schemas/titaniumResponseData'
         error:
           $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumConsensusColumn:
+      example:
+        consensus: "{}"
+        consAbsDiffFromAnchorEvpMid: "{}"
+        subPriceDiff: "{}"
+        consAbsDiffFromAnchorSub: "{}"
+        acceptedMax: "{}"
+        consAbsDiffFromAnchorEvpMidCalc: "{}"
+        stdDev: "{}"
+        acceptedMin: "{}"
+        consAbsDiffFromAnchorTrade: "{}"
+        numberOfInstruments: "{}"
+        absDiffFromConsensus: "{}"
+      properties:
+        absDiffFromConsensus:
+          properties: {}
+          type: object
+        acceptedMax:
+          properties: {}
+          type: object
+        acceptedMin:
+          properties: {}
+          type: object
+        consAbsDiffFromAnchorEvpMid:
+          properties: {}
+          type: object
+        consAbsDiffFromAnchorEvpMidCalc:
+          properties: {}
+          type: object
+        consAbsDiffFromAnchorSub:
+          properties: {}
+          type: object
+        consAbsDiffFromAnchorTrade:
+          properties: {}
+          type: object
+        consensus:
+          properties: {}
+          type: object
+        numberOfInstruments:
+          properties: {}
+          type: object
+        stdDev:
+          properties: {}
+          type: object
+        subPriceDiff:
+          properties: {}
+          type: object
       type: object
     titaniumConsensusDecisionRequest:
       properties:
@@ -8268,7 +8627,8 @@ components:
     titaniumConsensusExplorerTableData:
       example:
         comparisonTable:
-          cohortConsensusColumn:
+          consensus:
+            consensus: "{}"
             consAbsDiffFromAnchorEvpMid: "{}"
             subPriceDiff: "{}"
             consAbsDiffFromAnchorSub: "{}"
@@ -8276,32 +8636,19 @@ components:
             consAbsDiffFromAnchorEvpMidCalc: "{}"
             stdDev: "{}"
             acceptedMin: "{}"
-            cohortConsensusPrice: "{}"
             consAbsDiffFromAnchorTrade: "{}"
             numberOfInstruments: "{}"
             absDiffFromConsensus: "{}"
-          submissionStatistics:
-            submissionMax: "{}"
+          submissionStatisticalBoundaries:
+            absDiffFromLatestTrade: "{}"
             absDiffFromSubEvidence: "{}"
-            statMeanAbsDiffFromLatestTrade: "{}"
             subPriceDiff: "{}"
             submissionEvidence: "{}"
-            submissionMin: "{}"
             numberOfPartInBoundaries: "{}"
             stdDev: "{}"
             upperBoundary: "{}"
             lowerBoundary: "{}"
-          evidentialPricing:
-            absDiffFromEvpMid: "{}"
-            evpLowerBoundary: "{}"
-            ask: "{}"
-            subPriceDiff: "{}"
-            mid: "{}"
-            tradesOrOrdersCount: "{}"
-            evpUpperBoundary: "{}"
-            bid: "{}"
-            evpMidAbsDiffFromLatestTrade: "{}"
-          availableTrades:
+          tradeTimeSeries:
             absDiffFromLatestTrade: "{}"
             min: "{}"
             subPriceAbsDiffFromLatestTrade: "{}"
@@ -8311,16 +8658,24 @@ components:
             subPriceDiff: "{}"
             latestTradePrice: "{}"
             weekTradeNumber: weekTradeNumber
-          submissionEvidence:
-            eviPriceAbsDiffFromLatestTrade: "{}"
-            participantsCount: "{}"
-            absDiffFromEvidence: "{}"
-            evidence: "{}"
+          evidentialPricing:
+            absDiffFromEvpMid: "{}"
+            ask: "{}"
             subPriceDiff: "{}"
+            mid: "{}"
+            tradesOrOrdersCount: "{}"
+            bid: "{}"
+            evpMidAbsDiffFromLatestTrade: "{}"
+          submissionRange:
+            meanAbsDiffFromLatestTrade: "{}"
+            absDiffFromMean: "{}"
+            mean: "{}"
+            submissionMax: "{}"
+            subPriceDiff: "{}"
+            submissionMin: "{}"
             stdDev: "{}"
-            upperBoundary: "{}"
-            lowerBoundary: "{}"
-          submission:
+            validCount: "{}"
+          mySubmission:
             submissionPrice: "{}"
       properties:
         comparisonTable:
@@ -8330,7 +8685,8 @@ components:
       example:
         data:
           comparisonTable:
-            cohortConsensusColumn:
+            consensus:
+              consensus: "{}"
               consAbsDiffFromAnchorEvpMid: "{}"
               subPriceDiff: "{}"
               consAbsDiffFromAnchorSub: "{}"
@@ -8338,32 +8694,19 @@ components:
               consAbsDiffFromAnchorEvpMidCalc: "{}"
               stdDev: "{}"
               acceptedMin: "{}"
-              cohortConsensusPrice: "{}"
               consAbsDiffFromAnchorTrade: "{}"
               numberOfInstruments: "{}"
               absDiffFromConsensus: "{}"
-            submissionStatistics:
-              submissionMax: "{}"
+            submissionStatisticalBoundaries:
+              absDiffFromLatestTrade: "{}"
               absDiffFromSubEvidence: "{}"
-              statMeanAbsDiffFromLatestTrade: "{}"
               subPriceDiff: "{}"
               submissionEvidence: "{}"
-              submissionMin: "{}"
               numberOfPartInBoundaries: "{}"
               stdDev: "{}"
               upperBoundary: "{}"
               lowerBoundary: "{}"
-            evidentialPricing:
-              absDiffFromEvpMid: "{}"
-              evpLowerBoundary: "{}"
-              ask: "{}"
-              subPriceDiff: "{}"
-              mid: "{}"
-              tradesOrOrdersCount: "{}"
-              evpUpperBoundary: "{}"
-              bid: "{}"
-              evpMidAbsDiffFromLatestTrade: "{}"
-            availableTrades:
+            tradeTimeSeries:
               absDiffFromLatestTrade: "{}"
               min: "{}"
               subPriceAbsDiffFromLatestTrade: "{}"
@@ -8373,16 +8716,24 @@ components:
               subPriceDiff: "{}"
               latestTradePrice: "{}"
               weekTradeNumber: weekTradeNumber
-            submissionEvidence:
-              eviPriceAbsDiffFromLatestTrade: "{}"
-              participantsCount: "{}"
-              absDiffFromEvidence: "{}"
-              evidence: "{}"
+            evidentialPricing:
+              absDiffFromEvpMid: "{}"
+              ask: "{}"
               subPriceDiff: "{}"
+              mid: "{}"
+              tradesOrOrdersCount: "{}"
+              bid: "{}"
+              evpMidAbsDiffFromLatestTrade: "{}"
+            submissionRange:
+              meanAbsDiffFromLatestTrade: "{}"
+              absDiffFromMean: "{}"
+              mean: "{}"
+              submissionMax: "{}"
+              subPriceDiff: "{}"
+              submissionMin: "{}"
               stdDev: "{}"
-              upperBoundary: "{}"
-              lowerBoundary: "{}"
-            submission:
+              validCount: "{}"
+            mySubmission:
               submissionPrice: "{}"
         error:
           code: 0
@@ -9750,7 +10101,7 @@ components:
           type: string
         scope:
           type: string
-      title: "TODO: remove this, just use GetDefinition"
+      title: "TODO: remove this, just use Get  Definition"
       type: object
     titaniumEntityDefinition:
       example:
@@ -9808,12 +10159,10 @@ components:
     titaniumEvidentalPricing:
       example:
         absDiffFromEvpMid: "{}"
-        evpLowerBoundary: "{}"
         ask: "{}"
         subPriceDiff: "{}"
         mid: "{}"
         tradesOrOrdersCount: "{}"
-        evpUpperBoundary: "{}"
         bid: "{}"
         evpMidAbsDiffFromLatestTrade: "{}"
       properties:
@@ -9826,13 +10175,7 @@ components:
         bid:
           properties: {}
           type: object
-        evpLowerBoundary:
-          properties: {}
-          type: object
         evpMidAbsDiffFromLatestTrade:
-          properties: {}
-          type: object
-        evpUpperBoundary:
           properties: {}
           type: object
         mid:
@@ -10189,6 +10532,26 @@ components:
           items:
             $ref: '#/components/schemas/titaniumColumnInfo'
           type: array
+      type: object
+    titaniumFileAnnotation:
+      properties:
+        annotation:
+          properties: {}
+          type: object
+        asset:
+          $ref: '#/components/schemas/titaniumAssetDetails'
+        chunks:
+          items:
+            $ref: '#/components/schemas/titaniumChunk'
+          type: array
+        client:
+          type: string
+        fileName:
+          type: string
+        mode:
+          type: string
+        uploadTime:
+          type: string
       type: object
     titaniumFileDelimiterSetting:
       example:
@@ -11408,6 +11771,23 @@ components:
           $ref: '#/components/schemas/titaniumValidationRuleDefinition'
         error:
           $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumGetWorkflowActionResponse:
+      example:
+        inputArguments:
+        - inputArguments
+        - inputArguments
+        outputArgument: outputArgument
+        description: description
+      properties:
+        description:
+          type: string
+        inputArguments:
+          items:
+            type: string
+          type: array
+        outputArgument:
+          type: string
       type: object
     titaniumHistogramData:
       example:
@@ -12948,6 +13328,13 @@ components:
             type: string
           type: array
       type: object
+    titaniumReprocessWorkflowRequest:
+      properties:
+        runId:
+          type: string
+        workflowId:
+          type: string
+      type: object
     titaniumResponseData:
       example:
         columns:
@@ -13230,6 +13617,26 @@ components:
           $ref: '#/components/schemas/titaniumError'
       title: response to notify requester of processing with data indicator or error
       type: object
+    titaniumRunWorkflowRequest:
+      properties:
+        args:
+          properties: {}
+          type: object
+        name:
+          type: string
+        scope:
+          type: string
+      type: object
+    titaniumRunWorkflowResponse:
+      example:
+        runId: runId
+        workflowId: workflowId
+      properties:
+        runId:
+          type: string
+        workflowId:
+          type: string
+      type: object
     titaniumScopeExistResponse:
       example:
         exist: true
@@ -13447,6 +13854,14 @@ components:
         subSubmittedDate:
           type: string
       type: object
+    titaniumSubmissionColumn:
+      example:
+        submissionPrice: "{}"
+      properties:
+        submissionPrice:
+          properties: {}
+          type: object
+      type: object
     titaniumSubmissionEvidenceAnchorDetails:
       example:
         submissionEvidence: 5.962133916683182
@@ -13456,50 +13871,6 @@ components:
           type: number
         submissionEvidence:
           type: number
-      type: object
-    titaniumSubmissionEvidenceTableColumn:
-      example:
-        eviPriceAbsDiffFromLatestTrade: "{}"
-        participantsCount: "{}"
-        absDiffFromEvidence: "{}"
-        evidence: "{}"
-        subPriceDiff: "{}"
-        stdDev: "{}"
-        upperBoundary: "{}"
-        lowerBoundary: "{}"
-      properties:
-        absDiffFromEvidence:
-          properties: {}
-          type: object
-        eviPriceAbsDiffFromLatestTrade:
-          properties: {}
-          type: object
-        evidence:
-          properties: {}
-          type: object
-        lowerBoundary:
-          properties: {}
-          type: object
-        participantsCount:
-          properties: {}
-          type: object
-        stdDev:
-          properties: {}
-          type: object
-        subPriceDiff:
-          properties: {}
-          type: object
-        upperBoundary:
-          properties: {}
-          type: object
-      type: object
-    titaniumSubmissionExplorerTableColumn:
-      example:
-        submissionPrice: "{}"
-      properties:
-        submissionPrice:
-          properties: {}
-          type: object
       type: object
     titaniumSubmissionHistogram:
       example:
@@ -13566,19 +13937,56 @@ components:
         valid:
           $ref: '#/components/schemas/titaniumPredefinedFilter'
       type: object
-    titaniumSubmissionStatisticsExplorerTableColumn:
+    titaniumSubmissionRangeColumn:
       example:
+        meanAbsDiffFromLatestTrade: "{}"
+        absDiffFromMean: "{}"
+        mean: "{}"
         submissionMax: "{}"
+        subPriceDiff: "{}"
+        submissionMin: "{}"
+        stdDev: "{}"
+        validCount: "{}"
+      properties:
+        absDiffFromMean:
+          properties: {}
+          type: object
+        mean:
+          properties: {}
+          type: object
+        meanAbsDiffFromLatestTrade:
+          properties: {}
+          type: object
+        stdDev:
+          properties: {}
+          type: object
+        subPriceDiff:
+          properties: {}
+          type: object
+        submissionMax:
+          properties: {}
+          type: object
+        submissionMin:
+          properties: {}
+          type: object
+        validCount:
+          properties: {}
+          type: object
+      type: object
+    titaniumSubmissionStatisticsColumn:
+      example:
+        absDiffFromLatestTrade: "{}"
         absDiffFromSubEvidence: "{}"
-        statMeanAbsDiffFromLatestTrade: "{}"
         subPriceDiff: "{}"
         submissionEvidence: "{}"
-        submissionMin: "{}"
         numberOfPartInBoundaries: "{}"
         stdDev: "{}"
         upperBoundary: "{}"
         lowerBoundary: "{}"
       properties:
+        absDiffFromLatestTrade:
+          properties: {}
+          type: object
         absDiffFromSubEvidence:
           properties: {}
           type: object
@@ -13588,9 +13996,6 @@ components:
         numberOfPartInBoundaries:
           properties: {}
           type: object
-        statMeanAbsDiffFromLatestTrade:
-          properties: {}
-          type: object
         stdDev:
           properties: {}
           type: object
@@ -13598,12 +14003,6 @@ components:
           properties: {}
           type: object
         submissionEvidence:
-          properties: {}
-          type: object
-        submissionMax:
-          properties: {}
-          type: object
-        submissionMin:
           properties: {}
           type: object
         upperBoundary:
@@ -14158,6 +14557,8 @@ components:
           type: string
         descriptorName:
           type: string
+        fileAnnotation:
+          $ref: '#/components/schemas/titaniumFileAnnotation'
         fileName:
           type: string
         traceName:
@@ -14678,6 +15079,59 @@ components:
             properties: {}
             type: object
           type: array
+      type: object
+    titaniumWorkflowDefinition:
+      properties:
+        actionList:
+          items:
+            $ref: '#/components/schemas/titaniumActionDefinition'
+          type: array
+        maxAttempts:
+          type: integer
+        predefinedArguments:
+          properties: {}
+          type: object
+        runtimeArguments:
+          items:
+            type: string
+          type: array
+        schedule:
+          type: string
+        timeout:
+          type: string
+        workflowName:
+          type: string
+        workflowQueue:
+          type: string
+      type: object
+    titaniumWorkflowDefinitionResponse:
+      example:
+        definition: definition
+        error:
+          code: 0
+          message: message
+      properties:
+        definition:
+          type: string
+        error:
+          $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumWorkflowList:
+      example:
+        data:
+          results:
+          - uid: uid
+            name: name
+          - uid: uid
+            name: name
+        error:
+          code: 0
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/titaniumResultsList'
+        error:
+          $ref: '#/components/schemas/titaniumError'
       type: object
     FileService_GetFilePreview_request:
       description: "FileIdentifier contains information about a file including its\

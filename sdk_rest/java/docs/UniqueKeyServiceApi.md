@@ -5,6 +5,8 @@ All URIs are relative to *http://api-dev.clearconsensus.io*
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**uniqueKeyServiceAddUniqueKey**](UniqueKeyServiceApi.md#uniqueKeyServiceAddUniqueKey) | **POST** /api/v1/uniquekey/add | AddUniqueKey is used to add a new unique key definition to the system. |
+| [**uniqueKeyServiceDisableUniqueKey**](UniqueKeyServiceApi.md#uniqueKeyServiceDisableUniqueKey) | **POST** /api/v1/uniquekey/disable |  |
+| [**uniqueKeyServiceEnableUniqueKey**](UniqueKeyServiceApi.md#uniqueKeyServiceEnableUniqueKey) | **POST** /api/v1/uniquekey/enable |  |
 | [**uniqueKeyServiceGetUniqueKey**](UniqueKeyServiceApi.md#uniqueKeyServiceGetUniqueKey) | **POST** /api/v1/uniquekey/get | GetUniqueKey is used to retrieve a unique key definition by its scope and name. Request: {   \&quot;identifier\&quot;:{      \&quot;name\&quot;:\&quot;foreign_exchange-vanilla-forwards\&quot;   },   \&quot;scope\&quot;:\&quot;global\&quot; } |
 | [**uniqueKeyServiceGetUniqueKeyVersion**](UniqueKeyServiceApi.md#uniqueKeyServiceGetUniqueKeyVersion) | **GET** /api/v1/uniquekey/version/{scope}/{name}/{versionId} | GetUniqueKeyVersion is used to retrieve a specific version of a unique key definition by its scope, name, and version ID. Response: {    \&quot;data\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;,        \&quot;scope\&quot;: \&quot;global\&quot;,        \&quot;uniqueKey\&quot;: [            \&quot;asset\&quot;,            \&quot;service\&quot;,            \&quot;sub-asset\&quot;,            \&quot;instrument_type\&quot;,            \&quot;tenor\&quot;,            \&quot;snap_date\&quot;,            \&quot;snap_time\&quot;,            \&quot;curr_1\&quot;,            \&quot;curr_2\&quot;,            \&quot;onshore_offshore_curr_1\&quot;,            \&quot;onshore_offshore_curr_2\&quot;        ],        \&quot;orderBy\&quot;: [            \&quot;__input_row_num\&quot;        ],        \&quot;order\&quot;: \&quot;ASC\&quot;    } } |
 | [**uniqueKeyServiceListUniqueKeyVersions**](UniqueKeyServiceApi.md#uniqueKeyServiceListUniqueKeyVersions) | **POST** /api/v1/uniquekey/versions | ListUniqueKeyVersions is used to retrieve a list of all versions of a specific unique key definition by its scope and name. Request: {   \&quot;scope\&quot;:\&quot;global\&quot;,   \&quot;identifier\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } } |
@@ -54,6 +56,128 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **body** | [**TitaniumUniqueKeyDefinition**](TitaniumUniqueKeyDefinition.md)|  | |
+
+### Return type
+
+[**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="uniqueKeyServiceDisableUniqueKey"></a>
+# **uniqueKeyServiceDisableUniqueKey**
+> TitaniumAcknowledgeResponse uniqueKeyServiceDisableUniqueKey(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.UniqueKeyServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    UniqueKeyServiceApi apiInstance = new UniqueKeyServiceApi(defaultClient);
+    TitaniumEnableDisableRequest body = new TitaniumEnableDisableRequest(); // TitaniumEnableDisableRequest | 
+    try {
+      TitaniumAcknowledgeResponse result = apiInstance.uniqueKeyServiceDisableUniqueKey(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UniqueKeyServiceApi#uniqueKeyServiceDisableUniqueKey");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumEnableDisableRequest**](TitaniumEnableDisableRequest.md)|  | |
+
+### Return type
+
+[**TitaniumAcknowledgeResponse**](TitaniumAcknowledgeResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | A successful response. |  -  |
+| **0** | An unexpected error response. |  -  |
+
+<a name="uniqueKeyServiceEnableUniqueKey"></a>
+# **uniqueKeyServiceEnableUniqueKey**
+> TitaniumAcknowledgeResponse uniqueKeyServiceEnableUniqueKey(body)
+
+
+
+### Example
+```java
+// Import classes:
+import org.openapitools.client.ApiClient;
+import org.openapitools.client.ApiException;
+import org.openapitools.client.Configuration;
+import org.openapitools.client.models.*;
+import org.openapitools.client.api.UniqueKeyServiceApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://api-dev.clearconsensus.io");
+
+    UniqueKeyServiceApi apiInstance = new UniqueKeyServiceApi(defaultClient);
+    TitaniumEnableDisableRequest body = new TitaniumEnableDisableRequest(); // TitaniumEnableDisableRequest | 
+    try {
+      TitaniumAcknowledgeResponse result = apiInstance.uniqueKeyServiceEnableUniqueKey(body);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling UniqueKeyServiceApi#uniqueKeyServiceEnableUniqueKey");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **body** | [**TitaniumEnableDisableRequest**](TitaniumEnableDisableRequest.md)|  | |
 
 ### Return type
 

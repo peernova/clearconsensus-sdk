@@ -31,17 +31,17 @@ from openapi_client.exceptions import ApiAttributeError
 
 def lazy_import():
     from openapi_client.model.titanium_available_trades import TitaniumAvailableTrades
-    from openapi_client.model.titanium_cohort_consensus_column import TitaniumCohortConsensusColumn
+    from openapi_client.model.titanium_consensus_column import TitaniumConsensusColumn
     from openapi_client.model.titanium_evidental_pricing import TitaniumEvidentalPricing
-    from openapi_client.model.titanium_submission_evidence_table_column import TitaniumSubmissionEvidenceTableColumn
-    from openapi_client.model.titanium_submission_explorer_table_column import TitaniumSubmissionExplorerTableColumn
-    from openapi_client.model.titanium_submission_statistics_explorer_table_column import TitaniumSubmissionStatisticsExplorerTableColumn
+    from openapi_client.model.titanium_submission_column import TitaniumSubmissionColumn
+    from openapi_client.model.titanium_submission_range_column import TitaniumSubmissionRangeColumn
+    from openapi_client.model.titanium_submission_statistics_column import TitaniumSubmissionStatisticsColumn
     globals()['TitaniumAvailableTrades'] = TitaniumAvailableTrades
-    globals()['TitaniumCohortConsensusColumn'] = TitaniumCohortConsensusColumn
+    globals()['TitaniumConsensusColumn'] = TitaniumConsensusColumn
     globals()['TitaniumEvidentalPricing'] = TitaniumEvidentalPricing
-    globals()['TitaniumSubmissionEvidenceTableColumn'] = TitaniumSubmissionEvidenceTableColumn
-    globals()['TitaniumSubmissionExplorerTableColumn'] = TitaniumSubmissionExplorerTableColumn
-    globals()['TitaniumSubmissionStatisticsExplorerTableColumn'] = TitaniumSubmissionStatisticsExplorerTableColumn
+    globals()['TitaniumSubmissionColumn'] = TitaniumSubmissionColumn
+    globals()['TitaniumSubmissionRangeColumn'] = TitaniumSubmissionRangeColumn
+    globals()['TitaniumSubmissionStatisticsColumn'] = TitaniumSubmissionStatisticsColumn
 
 
 class TitaniumComparisonTable(ModelNormal):
@@ -97,12 +97,12 @@ class TitaniumComparisonTable(ModelNormal):
         """
         lazy_import()
         return {
-            'available_trades': (TitaniumAvailableTrades,),  # noqa: E501
-            'cohort_consensus_column': (TitaniumCohortConsensusColumn,),  # noqa: E501
+            'consensus': (TitaniumConsensusColumn,),  # noqa: E501
             'evidential_pricing': (TitaniumEvidentalPricing,),  # noqa: E501
-            'submission': (TitaniumSubmissionExplorerTableColumn,),  # noqa: E501
-            'submission_evidence': (TitaniumSubmissionEvidenceTableColumn,),  # noqa: E501
-            'submission_statistics': (TitaniumSubmissionStatisticsExplorerTableColumn,),  # noqa: E501
+            'my_submission': (TitaniumSubmissionColumn,),  # noqa: E501
+            'submission_range': (TitaniumSubmissionRangeColumn,),  # noqa: E501
+            'submission_statistical_boundaries': (TitaniumSubmissionStatisticsColumn,),  # noqa: E501
+            'trade_time_series': (TitaniumAvailableTrades,),  # noqa: E501
         }
 
     @cached_property
@@ -111,12 +111,12 @@ class TitaniumComparisonTable(ModelNormal):
 
 
     attribute_map = {
-        'available_trades': 'availableTrades',  # noqa: E501
-        'cohort_consensus_column': 'cohortConsensusColumn',  # noqa: E501
+        'consensus': 'consensus',  # noqa: E501
         'evidential_pricing': 'evidentialPricing',  # noqa: E501
-        'submission': 'submission',  # noqa: E501
-        'submission_evidence': 'submissionEvidence',  # noqa: E501
-        'submission_statistics': 'submissionStatistics',  # noqa: E501
+        'my_submission': 'mySubmission',  # noqa: E501
+        'submission_range': 'submissionRange',  # noqa: E501
+        'submission_statistical_boundaries': 'submissionStatisticalBoundaries',  # noqa: E501
+        'trade_time_series': 'tradeTimeSeries',  # noqa: E501
     }
 
     read_only_vars = {
@@ -160,12 +160,12 @@ class TitaniumComparisonTable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            available_trades (TitaniumAvailableTrades): [optional]  # noqa: E501
-            cohort_consensus_column (TitaniumCohortConsensusColumn): [optional]  # noqa: E501
+            consensus (TitaniumConsensusColumn): [optional]  # noqa: E501
             evidential_pricing (TitaniumEvidentalPricing): [optional]  # noqa: E501
-            submission (TitaniumSubmissionExplorerTableColumn): [optional]  # noqa: E501
-            submission_evidence (TitaniumSubmissionEvidenceTableColumn): [optional]  # noqa: E501
-            submission_statistics (TitaniumSubmissionStatisticsExplorerTableColumn): [optional]  # noqa: E501
+            my_submission (TitaniumSubmissionColumn): [optional]  # noqa: E501
+            submission_range (TitaniumSubmissionRangeColumn): [optional]  # noqa: E501
+            submission_statistical_boundaries (TitaniumSubmissionStatisticsColumn): [optional]  # noqa: E501
+            trade_time_series (TitaniumAvailableTrades): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -251,12 +251,12 @@ class TitaniumComparisonTable(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            available_trades (TitaniumAvailableTrades): [optional]  # noqa: E501
-            cohort_consensus_column (TitaniumCohortConsensusColumn): [optional]  # noqa: E501
+            consensus (TitaniumConsensusColumn): [optional]  # noqa: E501
             evidential_pricing (TitaniumEvidentalPricing): [optional]  # noqa: E501
-            submission (TitaniumSubmissionExplorerTableColumn): [optional]  # noqa: E501
-            submission_evidence (TitaniumSubmissionEvidenceTableColumn): [optional]  # noqa: E501
-            submission_statistics (TitaniumSubmissionStatisticsExplorerTableColumn): [optional]  # noqa: E501
+            my_submission (TitaniumSubmissionColumn): [optional]  # noqa: E501
+            submission_range (TitaniumSubmissionRangeColumn): [optional]  # noqa: E501
+            submission_statistical_boundaries (TitaniumSubmissionStatisticsColumn): [optional]  # noqa: E501
+            trade_time_series (TitaniumAvailableTrades): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

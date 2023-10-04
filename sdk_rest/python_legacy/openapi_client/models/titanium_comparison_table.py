@@ -36,91 +36,70 @@ class TitaniumComparisonTable(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'available_trades': 'TitaniumAvailableTrades',
-        'cohort_consensus_column': 'TitaniumCohortConsensusColumn',
+        'consensus': 'TitaniumConsensusColumn',
         'evidential_pricing': 'TitaniumEvidentalPricing',
-        'submission': 'TitaniumSubmissionExplorerTableColumn',
-        'submission_evidence': 'TitaniumSubmissionEvidenceTableColumn',
-        'submission_statistics': 'TitaniumSubmissionStatisticsExplorerTableColumn'
+        'my_submission': 'TitaniumSubmissionColumn',
+        'submission_range': 'TitaniumSubmissionRangeColumn',
+        'submission_statistical_boundaries': 'TitaniumSubmissionStatisticsColumn',
+        'trade_time_series': 'TitaniumAvailableTrades'
     }
 
     attribute_map = {
-        'available_trades': 'availableTrades',
-        'cohort_consensus_column': 'cohortConsensusColumn',
+        'consensus': 'consensus',
         'evidential_pricing': 'evidentialPricing',
-        'submission': 'submission',
-        'submission_evidence': 'submissionEvidence',
-        'submission_statistics': 'submissionStatistics'
+        'my_submission': 'mySubmission',
+        'submission_range': 'submissionRange',
+        'submission_statistical_boundaries': 'submissionStatisticalBoundaries',
+        'trade_time_series': 'tradeTimeSeries'
     }
 
-    def __init__(self, available_trades=None, cohort_consensus_column=None, evidential_pricing=None, submission=None, submission_evidence=None, submission_statistics=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, consensus=None, evidential_pricing=None, my_submission=None, submission_range=None, submission_statistical_boundaries=None, trade_time_series=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumComparisonTable - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
-        self._available_trades = None
-        self._cohort_consensus_column = None
+        self._consensus = None
         self._evidential_pricing = None
-        self._submission = None
-        self._submission_evidence = None
-        self._submission_statistics = None
+        self._my_submission = None
+        self._submission_range = None
+        self._submission_statistical_boundaries = None
+        self._trade_time_series = None
         self.discriminator = None
 
-        if available_trades is not None:
-            self.available_trades = available_trades
-        if cohort_consensus_column is not None:
-            self.cohort_consensus_column = cohort_consensus_column
+        if consensus is not None:
+            self.consensus = consensus
         if evidential_pricing is not None:
             self.evidential_pricing = evidential_pricing
-        if submission is not None:
-            self.submission = submission
-        if submission_evidence is not None:
-            self.submission_evidence = submission_evidence
-        if submission_statistics is not None:
-            self.submission_statistics = submission_statistics
+        if my_submission is not None:
+            self.my_submission = my_submission
+        if submission_range is not None:
+            self.submission_range = submission_range
+        if submission_statistical_boundaries is not None:
+            self.submission_statistical_boundaries = submission_statistical_boundaries
+        if trade_time_series is not None:
+            self.trade_time_series = trade_time_series
 
     @property
-    def available_trades(self):
-        """Gets the available_trades of this TitaniumComparisonTable.  # noqa: E501
+    def consensus(self):
+        """Gets the consensus of this TitaniumComparisonTable.  # noqa: E501
 
 
-        :return: The available_trades of this TitaniumComparisonTable.  # noqa: E501
-        :rtype: TitaniumAvailableTrades
+        :return: The consensus of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumConsensusColumn
         """
-        return self._available_trades
+        return self._consensus
 
-    @available_trades.setter
-    def available_trades(self, available_trades):
-        """Sets the available_trades of this TitaniumComparisonTable.
-
-
-        :param available_trades: The available_trades of this TitaniumComparisonTable.  # noqa: E501
-        :type available_trades: TitaniumAvailableTrades
-        """
-
-        self._available_trades = available_trades
-
-    @property
-    def cohort_consensus_column(self):
-        """Gets the cohort_consensus_column of this TitaniumComparisonTable.  # noqa: E501
+    @consensus.setter
+    def consensus(self, consensus):
+        """Sets the consensus of this TitaniumComparisonTable.
 
 
-        :return: The cohort_consensus_column of this TitaniumComparisonTable.  # noqa: E501
-        :rtype: TitaniumCohortConsensusColumn
-        """
-        return self._cohort_consensus_column
-
-    @cohort_consensus_column.setter
-    def cohort_consensus_column(self, cohort_consensus_column):
-        """Sets the cohort_consensus_column of this TitaniumComparisonTable.
-
-
-        :param cohort_consensus_column: The cohort_consensus_column of this TitaniumComparisonTable.  # noqa: E501
-        :type cohort_consensus_column: TitaniumCohortConsensusColumn
+        :param consensus: The consensus of this TitaniumComparisonTable.  # noqa: E501
+        :type consensus: TitaniumConsensusColumn
         """
 
-        self._cohort_consensus_column = cohort_consensus_column
+        self._consensus = consensus
 
     @property
     def evidential_pricing(self):
@@ -144,67 +123,88 @@ class TitaniumComparisonTable(object):
         self._evidential_pricing = evidential_pricing
 
     @property
-    def submission(self):
-        """Gets the submission of this TitaniumComparisonTable.  # noqa: E501
+    def my_submission(self):
+        """Gets the my_submission of this TitaniumComparisonTable.  # noqa: E501
 
 
-        :return: The submission of this TitaniumComparisonTable.  # noqa: E501
-        :rtype: TitaniumSubmissionExplorerTableColumn
+        :return: The my_submission of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumSubmissionColumn
         """
-        return self._submission
+        return self._my_submission
 
-    @submission.setter
-    def submission(self, submission):
-        """Sets the submission of this TitaniumComparisonTable.
+    @my_submission.setter
+    def my_submission(self, my_submission):
+        """Sets the my_submission of this TitaniumComparisonTable.
 
 
-        :param submission: The submission of this TitaniumComparisonTable.  # noqa: E501
-        :type submission: TitaniumSubmissionExplorerTableColumn
+        :param my_submission: The my_submission of this TitaniumComparisonTable.  # noqa: E501
+        :type my_submission: TitaniumSubmissionColumn
         """
 
-        self._submission = submission
+        self._my_submission = my_submission
 
     @property
-    def submission_evidence(self):
-        """Gets the submission_evidence of this TitaniumComparisonTable.  # noqa: E501
+    def submission_range(self):
+        """Gets the submission_range of this TitaniumComparisonTable.  # noqa: E501
 
 
-        :return: The submission_evidence of this TitaniumComparisonTable.  # noqa: E501
-        :rtype: TitaniumSubmissionEvidenceTableColumn
+        :return: The submission_range of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumSubmissionRangeColumn
         """
-        return self._submission_evidence
+        return self._submission_range
 
-    @submission_evidence.setter
-    def submission_evidence(self, submission_evidence):
-        """Sets the submission_evidence of this TitaniumComparisonTable.
+    @submission_range.setter
+    def submission_range(self, submission_range):
+        """Sets the submission_range of this TitaniumComparisonTable.
 
 
-        :param submission_evidence: The submission_evidence of this TitaniumComparisonTable.  # noqa: E501
-        :type submission_evidence: TitaniumSubmissionEvidenceTableColumn
+        :param submission_range: The submission_range of this TitaniumComparisonTable.  # noqa: E501
+        :type submission_range: TitaniumSubmissionRangeColumn
         """
 
-        self._submission_evidence = submission_evidence
+        self._submission_range = submission_range
 
     @property
-    def submission_statistics(self):
-        """Gets the submission_statistics of this TitaniumComparisonTable.  # noqa: E501
+    def submission_statistical_boundaries(self):
+        """Gets the submission_statistical_boundaries of this TitaniumComparisonTable.  # noqa: E501
 
 
-        :return: The submission_statistics of this TitaniumComparisonTable.  # noqa: E501
-        :rtype: TitaniumSubmissionStatisticsExplorerTableColumn
+        :return: The submission_statistical_boundaries of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumSubmissionStatisticsColumn
         """
-        return self._submission_statistics
+        return self._submission_statistical_boundaries
 
-    @submission_statistics.setter
-    def submission_statistics(self, submission_statistics):
-        """Sets the submission_statistics of this TitaniumComparisonTable.
+    @submission_statistical_boundaries.setter
+    def submission_statistical_boundaries(self, submission_statistical_boundaries):
+        """Sets the submission_statistical_boundaries of this TitaniumComparisonTable.
 
 
-        :param submission_statistics: The submission_statistics of this TitaniumComparisonTable.  # noqa: E501
-        :type submission_statistics: TitaniumSubmissionStatisticsExplorerTableColumn
+        :param submission_statistical_boundaries: The submission_statistical_boundaries of this TitaniumComparisonTable.  # noqa: E501
+        :type submission_statistical_boundaries: TitaniumSubmissionStatisticsColumn
         """
 
-        self._submission_statistics = submission_statistics
+        self._submission_statistical_boundaries = submission_statistical_boundaries
+
+    @property
+    def trade_time_series(self):
+        """Gets the trade_time_series of this TitaniumComparisonTable.  # noqa: E501
+
+
+        :return: The trade_time_series of this TitaniumComparisonTable.  # noqa: E501
+        :rtype: TitaniumAvailableTrades
+        """
+        return self._trade_time_series
+
+    @trade_time_series.setter
+    def trade_time_series(self, trade_time_series):
+        """Sets the trade_time_series of this TitaniumComparisonTable.
+
+
+        :param trade_time_series: The trade_time_series of this TitaniumComparisonTable.  # noqa: E501
+        :type trade_time_series: TitaniumAvailableTrades
+        """
+
+        self._trade_time_series = trade_time_series
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

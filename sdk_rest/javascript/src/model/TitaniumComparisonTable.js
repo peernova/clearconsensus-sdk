@@ -13,11 +13,11 @@
 
 import ApiClient from '../ApiClient';
 import TitaniumAvailableTrades from './TitaniumAvailableTrades';
-import TitaniumCohortConsensusColumn from './TitaniumCohortConsensusColumn';
+import TitaniumConsensusColumn from './TitaniumConsensusColumn';
 import TitaniumEvidentalPricing from './TitaniumEvidentalPricing';
-import TitaniumSubmissionEvidenceTableColumn from './TitaniumSubmissionEvidenceTableColumn';
-import TitaniumSubmissionExplorerTableColumn from './TitaniumSubmissionExplorerTableColumn';
-import TitaniumSubmissionStatisticsExplorerTableColumn from './TitaniumSubmissionStatisticsExplorerTableColumn';
+import TitaniumSubmissionColumn from './TitaniumSubmissionColumn';
+import TitaniumSubmissionRangeColumn from './TitaniumSubmissionRangeColumn';
+import TitaniumSubmissionStatisticsColumn from './TitaniumSubmissionStatisticsColumn';
 
 /**
  * The TitaniumComparisonTable model module.
@@ -53,23 +53,23 @@ class TitaniumComparisonTable {
         if (data) {
             obj = obj || new TitaniumComparisonTable();
 
-            if (data.hasOwnProperty('availableTrades')) {
-                obj['availableTrades'] = TitaniumAvailableTrades.constructFromObject(data['availableTrades']);
-            }
-            if (data.hasOwnProperty('cohortConsensusColumn')) {
-                obj['cohortConsensusColumn'] = TitaniumCohortConsensusColumn.constructFromObject(data['cohortConsensusColumn']);
+            if (data.hasOwnProperty('consensus')) {
+                obj['consensus'] = TitaniumConsensusColumn.constructFromObject(data['consensus']);
             }
             if (data.hasOwnProperty('evidentialPricing')) {
                 obj['evidentialPricing'] = TitaniumEvidentalPricing.constructFromObject(data['evidentialPricing']);
             }
-            if (data.hasOwnProperty('submission')) {
-                obj['submission'] = TitaniumSubmissionExplorerTableColumn.constructFromObject(data['submission']);
+            if (data.hasOwnProperty('mySubmission')) {
+                obj['mySubmission'] = TitaniumSubmissionColumn.constructFromObject(data['mySubmission']);
             }
-            if (data.hasOwnProperty('submissionEvidence')) {
-                obj['submissionEvidence'] = TitaniumSubmissionEvidenceTableColumn.constructFromObject(data['submissionEvidence']);
+            if (data.hasOwnProperty('submissionRange')) {
+                obj['submissionRange'] = TitaniumSubmissionRangeColumn.constructFromObject(data['submissionRange']);
             }
-            if (data.hasOwnProperty('submissionStatistics')) {
-                obj['submissionStatistics'] = TitaniumSubmissionStatisticsExplorerTableColumn.constructFromObject(data['submissionStatistics']);
+            if (data.hasOwnProperty('submissionStatisticalBoundaries')) {
+                obj['submissionStatisticalBoundaries'] = TitaniumSubmissionStatisticsColumn.constructFromObject(data['submissionStatisticalBoundaries']);
+            }
+            if (data.hasOwnProperty('tradeTimeSeries')) {
+                obj['tradeTimeSeries'] = TitaniumAvailableTrades.constructFromObject(data['tradeTimeSeries']);
             }
         }
         return obj;
@@ -79,14 +79,9 @@ class TitaniumComparisonTable {
 }
 
 /**
- * @member {module:model/TitaniumAvailableTrades} availableTrades
+ * @member {module:model/TitaniumConsensusColumn} consensus
  */
-TitaniumComparisonTable.prototype['availableTrades'] = undefined;
-
-/**
- * @member {module:model/TitaniumCohortConsensusColumn} cohortConsensusColumn
- */
-TitaniumComparisonTable.prototype['cohortConsensusColumn'] = undefined;
+TitaniumComparisonTable.prototype['consensus'] = undefined;
 
 /**
  * @member {module:model/TitaniumEvidentalPricing} evidentialPricing
@@ -94,19 +89,24 @@ TitaniumComparisonTable.prototype['cohortConsensusColumn'] = undefined;
 TitaniumComparisonTable.prototype['evidentialPricing'] = undefined;
 
 /**
- * @member {module:model/TitaniumSubmissionExplorerTableColumn} submission
+ * @member {module:model/TitaniumSubmissionColumn} mySubmission
  */
-TitaniumComparisonTable.prototype['submission'] = undefined;
+TitaniumComparisonTable.prototype['mySubmission'] = undefined;
 
 /**
- * @member {module:model/TitaniumSubmissionEvidenceTableColumn} submissionEvidence
+ * @member {module:model/TitaniumSubmissionRangeColumn} submissionRange
  */
-TitaniumComparisonTable.prototype['submissionEvidence'] = undefined;
+TitaniumComparisonTable.prototype['submissionRange'] = undefined;
 
 /**
- * @member {module:model/TitaniumSubmissionStatisticsExplorerTableColumn} submissionStatistics
+ * @member {module:model/TitaniumSubmissionStatisticsColumn} submissionStatisticalBoundaries
  */
-TitaniumComparisonTable.prototype['submissionStatistics'] = undefined;
+TitaniumComparisonTable.prototype['submissionStatisticalBoundaries'] = undefined;
+
+/**
+ * @member {module:model/TitaniumAvailableTrades} tradeTimeSeries
+ */
+TitaniumComparisonTable.prototype['tradeTimeSeries'] = undefined;
 
 
 

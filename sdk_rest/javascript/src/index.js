@@ -53,8 +53,11 @@ import ProtobufAny from './model/ProtobufAny';
 import RpcStatus from './model/RpcStatus';
 import TableColumn from './model/TableColumn';
 import TitaniumAcknowledgeResponse from './model/TitaniumAcknowledgeResponse';
+import TitaniumActionDefinition from './model/TitaniumActionDefinition';
 import TitaniumAddAssetRequest from './model/TitaniumAddAssetRequest';
 import TitaniumAddLookupTableRequest from './model/TitaniumAddLookupTableRequest';
+import TitaniumAddWorkflowDefinitionRequest from './model/TitaniumAddWorkflowDefinitionRequest';
+import TitaniumArgument from './model/TitaniumArgument';
 import TitaniumAsset from './model/TitaniumAsset';
 import TitaniumAssetDetails from './model/TitaniumAssetDetails';
 import TitaniumAssetM from './model/TitaniumAssetM';
@@ -105,8 +108,8 @@ import TitaniumChartsCurrenciesResponseData from './model/TitaniumChartsCurrenci
 import TitaniumChartsRequest from './model/TitaniumChartsRequest';
 import TitaniumChartsResponse from './model/TitaniumChartsResponse';
 import TitaniumChartsResponseData from './model/TitaniumChartsResponseData';
+import TitaniumChunk from './model/TitaniumChunk';
 import TitaniumClientName from './model/TitaniumClientName';
-import TitaniumCohortConsensusColumn from './model/TitaniumCohortConsensusColumn';
 import TitaniumCohortConsensusRangeTabData from './model/TitaniumCohortConsensusRangeTabData';
 import TitaniumColDependency from './model/TitaniumColDependency';
 import TitaniumCollapseTableRequest from './model/TitaniumCollapseTableRequest';
@@ -116,6 +119,7 @@ import TitaniumCompleteDataUploadRequest from './model/TitaniumCompleteDataUploa
 import TitaniumCompleteDataUploadResponse from './model/TitaniumCompleteDataUploadResponse';
 import TitaniumConsensusActiveRequest from './model/TitaniumConsensusActiveRequest';
 import TitaniumConsensusActiveResponse from './model/TitaniumConsensusActiveResponse';
+import TitaniumConsensusColumn from './model/TitaniumConsensusColumn';
 import TitaniumConsensusDecisionRequest from './model/TitaniumConsensusDecisionRequest';
 import TitaniumConsensusDensityScore from './model/TitaniumConsensusDensityScore';
 import TitaniumConsensusDetail from './model/TitaniumConsensusDetail';
@@ -199,6 +203,7 @@ import TitaniumExportReportRequest from './model/TitaniumExportReportRequest';
 import TitaniumExportRequest from './model/TitaniumExportRequest';
 import TitaniumExportResponse from './model/TitaniumExportResponse';
 import TitaniumFields from './model/TitaniumFields';
+import TitaniumFileAnnotation from './model/TitaniumFileAnnotation';
 import TitaniumFileDelimiterSetting from './model/TitaniumFileDelimiterSetting';
 import TitaniumFileDescriptorSetting from './model/TitaniumFileDescriptorSetting';
 import TitaniumFileHistoryRequest from './model/TitaniumFileHistoryRequest';
@@ -246,6 +251,7 @@ import TitaniumGetUserNotificationRequest from './model/TitaniumGetUserNotificat
 import TitaniumGetUserPermissionsRequest from './model/TitaniumGetUserPermissionsRequest';
 import TitaniumGetUserRequest from './model/TitaniumGetUserRequest';
 import TitaniumGetValidationRuleResponse from './model/TitaniumGetValidationRuleResponse';
+import TitaniumGetWorkflowActionResponse from './model/TitaniumGetWorkflowActionResponse';
 import TitaniumHistogramData from './model/TitaniumHistogramData';
 import TitaniumHistogramResponse from './model/TitaniumHistogramResponse';
 import TitaniumIdentifier from './model/TitaniumIdentifier';
@@ -311,6 +317,7 @@ import TitaniumRecentAssetsRequest from './model/TitaniumRecentAssetsRequest';
 import TitaniumRecentAssetsResponse from './model/TitaniumRecentAssetsResponse';
 import TitaniumRecentAssetsResponseData from './model/TitaniumRecentAssetsResponseData';
 import TitaniumRecentAssetsRow from './model/TitaniumRecentAssetsRow';
+import TitaniumReprocessWorkflowRequest from './model/TitaniumReprocessWorkflowRequest';
 import TitaniumResponseData from './model/TitaniumResponseData';
 import TitaniumResultsList from './model/TitaniumResultsList';
 import TitaniumRuleDefinition from './model/TitaniumRuleDefinition';
@@ -319,6 +326,8 @@ import TitaniumRunCalculatorRequest from './model/TitaniumRunCalculatorRequest';
 import TitaniumRunConsensusRequest from './model/TitaniumRunConsensusRequest';
 import TitaniumRunDataProcessingAppRequest from './model/TitaniumRunDataProcessingAppRequest';
 import TitaniumRunDataProcessingAppResponse from './model/TitaniumRunDataProcessingAppResponse';
+import TitaniumRunWorkflowRequest from './model/TitaniumRunWorkflowRequest';
+import TitaniumRunWorkflowResponse from './model/TitaniumRunWorkflowResponse';
 import TitaniumScopeExistResponse from './model/TitaniumScopeExistResponse';
 import TitaniumScopeIdentifier from './model/TitaniumScopeIdentifier';
 import TitaniumScopeListResponse from './model/TitaniumScopeListResponse';
@@ -335,11 +344,11 @@ import TitaniumStatusResponseData from './model/TitaniumStatusResponseData';
 import TitaniumStringKeyVal from './model/TitaniumStringKeyVal';
 import TitaniumSubAsset from './model/TitaniumSubAsset';
 import TitaniumSubGroupKeySearch from './model/TitaniumSubGroupKeySearch';
+import TitaniumSubmissionColumn from './model/TitaniumSubmissionColumn';
 import TitaniumSubmissionEvidenceAnchorDetails from './model/TitaniumSubmissionEvidenceAnchorDetails';
-import TitaniumSubmissionEvidenceTableColumn from './model/TitaniumSubmissionEvidenceTableColumn';
-import TitaniumSubmissionExplorerTableColumn from './model/TitaniumSubmissionExplorerTableColumn';
 import TitaniumSubmissionHistogram from './model/TitaniumSubmissionHistogram';
-import TitaniumSubmissionStatisticsExplorerTableColumn from './model/TitaniumSubmissionStatisticsExplorerTableColumn';
+import TitaniumSubmissionRangeColumn from './model/TitaniumSubmissionRangeColumn';
+import TitaniumSubmissionStatisticsColumn from './model/TitaniumSubmissionStatisticsColumn';
 import TitaniumSubmittedData from './model/TitaniumSubmittedData';
 import TitaniumSubmittedRequest from './model/TitaniumSubmittedRequest';
 import TitaniumSubmittedResponse from './model/TitaniumSubmittedResponse';
@@ -386,6 +395,9 @@ import TitaniumValuesRow from './model/TitaniumValuesRow';
 import TitaniumVersion from './model/TitaniumVersion';
 import TitaniumVersionList from './model/TitaniumVersionList';
 import TitaniumViewRow from './model/TitaniumViewRow';
+import TitaniumWorkflowDefinition from './model/TitaniumWorkflowDefinition';
+import TitaniumWorkflowDefinitionResponse from './model/TitaniumWorkflowDefinitionResponse';
+import TitaniumWorkflowList from './model/TitaniumWorkflowList';
 import AdminServiceApi from './api/AdminServiceApi';
 import AnalyticsControllerApi from './api/AnalyticsControllerApi';
 import AssetsServiceApi from './api/AssetsServiceApi';
@@ -420,6 +432,7 @@ import SupportedFieldsServiceApi from './api/SupportedFieldsServiceApi';
 import UniqueKeyServiceApi from './api/UniqueKeyServiceApi';
 import UserServiceApi from './api/UserServiceApi';
 import ValidatorServiceApi from './api/ValidatorServiceApi';
+import WorkflowServiceApi from './api/WorkflowServiceApi';
 
 
 /**
@@ -701,6 +714,12 @@ export {
     TitaniumAcknowledgeResponse,
 
     /**
+     * The TitaniumActionDefinition model constructor.
+     * @property {module:model/TitaniumActionDefinition}
+     */
+    TitaniumActionDefinition,
+
+    /**
      * The TitaniumAddAssetRequest model constructor.
      * @property {module:model/TitaniumAddAssetRequest}
      */
@@ -711,6 +730,18 @@ export {
      * @property {module:model/TitaniumAddLookupTableRequest}
      */
     TitaniumAddLookupTableRequest,
+
+    /**
+     * The TitaniumAddWorkflowDefinitionRequest model constructor.
+     * @property {module:model/TitaniumAddWorkflowDefinitionRequest}
+     */
+    TitaniumAddWorkflowDefinitionRequest,
+
+    /**
+     * The TitaniumArgument model constructor.
+     * @property {module:model/TitaniumArgument}
+     */
+    TitaniumArgument,
 
     /**
      * The TitaniumAsset model constructor.
@@ -1013,16 +1044,16 @@ export {
     TitaniumChartsResponseData,
 
     /**
+     * The TitaniumChunk model constructor.
+     * @property {module:model/TitaniumChunk}
+     */
+    TitaniumChunk,
+
+    /**
      * The TitaniumClientName model constructor.
      * @property {module:model/TitaniumClientName}
      */
     TitaniumClientName,
-
-    /**
-     * The TitaniumCohortConsensusColumn model constructor.
-     * @property {module:model/TitaniumCohortConsensusColumn}
-     */
-    TitaniumCohortConsensusColumn,
 
     /**
      * The TitaniumCohortConsensusRangeTabData model constructor.
@@ -1077,6 +1108,12 @@ export {
      * @property {module:model/TitaniumConsensusActiveResponse}
      */
     TitaniumConsensusActiveResponse,
+
+    /**
+     * The TitaniumConsensusColumn model constructor.
+     * @property {module:model/TitaniumConsensusColumn}
+     */
+    TitaniumConsensusColumn,
 
     /**
      * The TitaniumConsensusDecisionRequest model constructor.
@@ -1577,6 +1614,12 @@ export {
     TitaniumFields,
 
     /**
+     * The TitaniumFileAnnotation model constructor.
+     * @property {module:model/TitaniumFileAnnotation}
+     */
+    TitaniumFileAnnotation,
+
+    /**
      * The TitaniumFileDelimiterSetting model constructor.
      * @property {module:model/TitaniumFileDelimiterSetting}
      */
@@ -1857,6 +1900,12 @@ export {
      * @property {module:model/TitaniumGetValidationRuleResponse}
      */
     TitaniumGetValidationRuleResponse,
+
+    /**
+     * The TitaniumGetWorkflowActionResponse model constructor.
+     * @property {module:model/TitaniumGetWorkflowActionResponse}
+     */
+    TitaniumGetWorkflowActionResponse,
 
     /**
      * The TitaniumHistogramData model constructor.
@@ -2249,6 +2298,12 @@ export {
     TitaniumRecentAssetsRow,
 
     /**
+     * The TitaniumReprocessWorkflowRequest model constructor.
+     * @property {module:model/TitaniumReprocessWorkflowRequest}
+     */
+    TitaniumReprocessWorkflowRequest,
+
+    /**
      * The TitaniumResponseData model constructor.
      * @property {module:model/TitaniumResponseData}
      */
@@ -2295,6 +2350,18 @@ export {
      * @property {module:model/TitaniumRunDataProcessingAppResponse}
      */
     TitaniumRunDataProcessingAppResponse,
+
+    /**
+     * The TitaniumRunWorkflowRequest model constructor.
+     * @property {module:model/TitaniumRunWorkflowRequest}
+     */
+    TitaniumRunWorkflowRequest,
+
+    /**
+     * The TitaniumRunWorkflowResponse model constructor.
+     * @property {module:model/TitaniumRunWorkflowResponse}
+     */
+    TitaniumRunWorkflowResponse,
 
     /**
      * The TitaniumScopeExistResponse model constructor.
@@ -2393,22 +2460,16 @@ export {
     TitaniumSubGroupKeySearch,
 
     /**
+     * The TitaniumSubmissionColumn model constructor.
+     * @property {module:model/TitaniumSubmissionColumn}
+     */
+    TitaniumSubmissionColumn,
+
+    /**
      * The TitaniumSubmissionEvidenceAnchorDetails model constructor.
      * @property {module:model/TitaniumSubmissionEvidenceAnchorDetails}
      */
     TitaniumSubmissionEvidenceAnchorDetails,
-
-    /**
-     * The TitaniumSubmissionEvidenceTableColumn model constructor.
-     * @property {module:model/TitaniumSubmissionEvidenceTableColumn}
-     */
-    TitaniumSubmissionEvidenceTableColumn,
-
-    /**
-     * The TitaniumSubmissionExplorerTableColumn model constructor.
-     * @property {module:model/TitaniumSubmissionExplorerTableColumn}
-     */
-    TitaniumSubmissionExplorerTableColumn,
 
     /**
      * The TitaniumSubmissionHistogram model constructor.
@@ -2417,10 +2478,16 @@ export {
     TitaniumSubmissionHistogram,
 
     /**
-     * The TitaniumSubmissionStatisticsExplorerTableColumn model constructor.
-     * @property {module:model/TitaniumSubmissionStatisticsExplorerTableColumn}
+     * The TitaniumSubmissionRangeColumn model constructor.
+     * @property {module:model/TitaniumSubmissionRangeColumn}
      */
-    TitaniumSubmissionStatisticsExplorerTableColumn,
+    TitaniumSubmissionRangeColumn,
+
+    /**
+     * The TitaniumSubmissionStatisticsColumn model constructor.
+     * @property {module:model/TitaniumSubmissionStatisticsColumn}
+     */
+    TitaniumSubmissionStatisticsColumn,
 
     /**
      * The TitaniumSubmittedData model constructor.
@@ -2699,6 +2766,24 @@ export {
     TitaniumViewRow,
 
     /**
+     * The TitaniumWorkflowDefinition model constructor.
+     * @property {module:model/TitaniumWorkflowDefinition}
+     */
+    TitaniumWorkflowDefinition,
+
+    /**
+     * The TitaniumWorkflowDefinitionResponse model constructor.
+     * @property {module:model/TitaniumWorkflowDefinitionResponse}
+     */
+    TitaniumWorkflowDefinitionResponse,
+
+    /**
+     * The TitaniumWorkflowList model constructor.
+     * @property {module:model/TitaniumWorkflowList}
+     */
+    TitaniumWorkflowList,
+
+    /**
     * The AdminServiceApi service constructor.
     * @property {module:api/AdminServiceApi}
     */
@@ -2900,5 +2985,11 @@ export {
     * The ValidatorServiceApi service constructor.
     * @property {module:api/ValidatorServiceApi}
     */
-    ValidatorServiceApi
+    ValidatorServiceApi,
+
+    /**
+    * The WorkflowServiceApi service constructor.
+    * @property {module:api/WorkflowServiceApi}
+    */
+    WorkflowServiceApi
 };

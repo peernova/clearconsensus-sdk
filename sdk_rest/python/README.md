@@ -258,6 +258,8 @@ Class | Method | HTTP request | Description
 *SupportedFieldsServiceApi* | [**supported_fields_service_get_supported_fields_values**](docs/SupportedFieldsServiceApi.md#supported_fields_service_get_supported_fields_values) | **POST** /api/v1/list/field-values | 
 *SupportedFieldsServiceApi* | [**supported_fields_service_list_supported_fields**](docs/SupportedFieldsServiceApi.md#supported_fields_service_list_supported_fields) | **POST** /api/v1/list/fields | 
 *UniqueKeyServiceApi* | [**unique_key_service_add_unique_key**](docs/UniqueKeyServiceApi.md#unique_key_service_add_unique_key) | **POST** /api/v1/uniquekey/add | AddUniqueKey is used to add a new unique key definition to the system.
+*UniqueKeyServiceApi* | [**unique_key_service_disable_unique_key**](docs/UniqueKeyServiceApi.md#unique_key_service_disable_unique_key) | **POST** /api/v1/uniquekey/disable | 
+*UniqueKeyServiceApi* | [**unique_key_service_enable_unique_key**](docs/UniqueKeyServiceApi.md#unique_key_service_enable_unique_key) | **POST** /api/v1/uniquekey/enable | 
 *UniqueKeyServiceApi* | [**unique_key_service_get_unique_key**](docs/UniqueKeyServiceApi.md#unique_key_service_get_unique_key) | **POST** /api/v1/uniquekey/get | GetUniqueKey is used to retrieve a unique key definition by its scope and name. Request: {   \&quot;identifier\&quot;:{      \&quot;name\&quot;:\&quot;foreign_exchange-vanilla-forwards\&quot;   },   \&quot;scope\&quot;:\&quot;global\&quot; }
 *UniqueKeyServiceApi* | [**unique_key_service_get_unique_key_version**](docs/UniqueKeyServiceApi.md#unique_key_service_get_unique_key_version) | **GET** /api/v1/uniquekey/version/{scope}/{name}/{versionId} | GetUniqueKeyVersion is used to retrieve a specific version of a unique key definition by its scope, name, and version ID. Response: {    \&quot;data\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;,        \&quot;scope\&quot;: \&quot;global\&quot;,        \&quot;uniqueKey\&quot;: [            \&quot;asset\&quot;,            \&quot;service\&quot;,            \&quot;sub-asset\&quot;,            \&quot;instrument_type\&quot;,            \&quot;tenor\&quot;,            \&quot;snap_date\&quot;,            \&quot;snap_time\&quot;,            \&quot;curr_1\&quot;,            \&quot;curr_2\&quot;,            \&quot;onshore_offshore_curr_1\&quot;,            \&quot;onshore_offshore_curr_2\&quot;        ],        \&quot;orderBy\&quot;: [            \&quot;__input_row_num\&quot;        ],        \&quot;order\&quot;: \&quot;ASC\&quot;    } }
 *UniqueKeyServiceApi* | [**unique_key_service_list_unique_key_versions**](docs/UniqueKeyServiceApi.md#unique_key_service_list_unique_key_versions) | **POST** /api/v1/uniquekey/versions | ListUniqueKeyVersions is used to retrieve a list of all versions of a specific unique key definition by its scope and name. Request: {   \&quot;scope\&quot;:\&quot;global\&quot;,   \&quot;identifier\&quot;: {        \&quot;name\&quot;: \&quot;foreign_exchange-vanilla-forwards\&quot;    } }
@@ -287,6 +289,15 @@ Class | Method | HTTP request | Description
 *ValidatorServiceApi* | [**validator_service_list_validation_rule_versions**](docs/ValidatorServiceApi.md#validator_service_list_validation_rule_versions) | **POST** /api/v1/validation/rule/versions | ListValidationRuleVersions method is used to retrieve a list of versions for a given validation rule. Both back office users and participant users can retrieve versions of validation rulesets, but the scope will depend on the user. The request must specify the descriptor name for the validation rule. The response will include a list of versions and their created timestamp. If the requested rule is not found, an error response will be returned.
 *ValidatorServiceApi* | [**validator_service_list_validation_rules**](docs/ValidatorServiceApi.md#validator_service_list_validation_rules) | **POST** /api/v1/validation/rule/list | ListValidationRules method is used to retrieve a list of validation rule names. Both back office users and participant users can retrieve validation rulesets, but the scope and authorization will depend on the user. The default scope is used if no scope is specified in the request. The request may include an optional filter and orderBy parameter to refine the search results. Pagination is also supported. The response will include a list of rule names matching the filter criteria.
 *ValidatorServiceApi* | [**validator_service_rdl_check**](docs/ValidatorServiceApi.md#validator_service_rdl_check) | **POST** /api/v1/validation/rule/check | RdlCheck method checks the syntax of a given RDL (Rule Description Language) expression. It takes a RdlCheckRequest message as input and returns a MessageResponse message.
+*WorkflowServiceApi* | [**workflow_service_add_workflow**](docs/WorkflowServiceApi.md#workflow_service_add_workflow) | **POST** /api/v1/workflow/add | 
+*WorkflowServiceApi* | [**workflow_service_disable_workflow**](docs/WorkflowServiceApi.md#workflow_service_disable_workflow) | **POST** /api/v1/workflow/disable | 
+*WorkflowServiceApi* | [**workflow_service_enable_workflow**](docs/WorkflowServiceApi.md#workflow_service_enable_workflow) | **POST** /api/v1/workflow/enable | 
+*WorkflowServiceApi* | [**workflow_service_get_workflow**](docs/WorkflowServiceApi.md#workflow_service_get_workflow) | **POST** /api/v1/workflow/get | 
+*WorkflowServiceApi* | [**workflow_service_get_workflow_action**](docs/WorkflowServiceApi.md#workflow_service_get_workflow_action) | **GET** /api/v1/workflow/action/{name} | 
+*WorkflowServiceApi* | [**workflow_service_list_workflow_actions**](docs/WorkflowServiceApi.md#workflow_service_list_workflow_actions) | **POST** /api/v1/workflow/action/list | 
+*WorkflowServiceApi* | [**workflow_service_list_workflows**](docs/WorkflowServiceApi.md#workflow_service_list_workflows) | **POST** /api/v1/workflow/list | 
+*WorkflowServiceApi* | [**workflow_service_reprocess_workflow**](docs/WorkflowServiceApi.md#workflow_service_reprocess_workflow) | **POST** /api/v1/workflow/reprocess | 
+*WorkflowServiceApi* | [**workflow_service_run_workflow**](docs/WorkflowServiceApi.md#workflow_service_run_workflow) | **POST** /api/v1/workflow/run | 
 
 
 ## Documentation For Models
@@ -331,8 +342,11 @@ Class | Method | HTTP request | Description
  - [RpcStatus](docs/RpcStatus.md)
  - [TableColumn](docs/TableColumn.md)
  - [TitaniumAcknowledgeResponse](docs/TitaniumAcknowledgeResponse.md)
+ - [TitaniumActionDefinition](docs/TitaniumActionDefinition.md)
  - [TitaniumAddAssetRequest](docs/TitaniumAddAssetRequest.md)
  - [TitaniumAddLookupTableRequest](docs/TitaniumAddLookupTableRequest.md)
+ - [TitaniumAddWorkflowDefinitionRequest](docs/TitaniumAddWorkflowDefinitionRequest.md)
+ - [TitaniumArgument](docs/TitaniumArgument.md)
  - [TitaniumAsset](docs/TitaniumAsset.md)
  - [TitaniumAssetDetails](docs/TitaniumAssetDetails.md)
  - [TitaniumAssetM](docs/TitaniumAssetM.md)
@@ -383,8 +397,8 @@ Class | Method | HTTP request | Description
  - [TitaniumChartsRequest](docs/TitaniumChartsRequest.md)
  - [TitaniumChartsResponse](docs/TitaniumChartsResponse.md)
  - [TitaniumChartsResponseData](docs/TitaniumChartsResponseData.md)
+ - [TitaniumChunk](docs/TitaniumChunk.md)
  - [TitaniumClientName](docs/TitaniumClientName.md)
- - [TitaniumCohortConsensusColumn](docs/TitaniumCohortConsensusColumn.md)
  - [TitaniumCohortConsensusRangeTabData](docs/TitaniumCohortConsensusRangeTabData.md)
  - [TitaniumColDependency](docs/TitaniumColDependency.md)
  - [TitaniumCollapseTableRequest](docs/TitaniumCollapseTableRequest.md)
@@ -394,6 +408,7 @@ Class | Method | HTTP request | Description
  - [TitaniumCompleteDataUploadResponse](docs/TitaniumCompleteDataUploadResponse.md)
  - [TitaniumConsensusActiveRequest](docs/TitaniumConsensusActiveRequest.md)
  - [TitaniumConsensusActiveResponse](docs/TitaniumConsensusActiveResponse.md)
+ - [TitaniumConsensusColumn](docs/TitaniumConsensusColumn.md)
  - [TitaniumConsensusDecisionRequest](docs/TitaniumConsensusDecisionRequest.md)
  - [TitaniumConsensusDensityScore](docs/TitaniumConsensusDensityScore.md)
  - [TitaniumConsensusDetail](docs/TitaniumConsensusDetail.md)
@@ -477,6 +492,7 @@ Class | Method | HTTP request | Description
  - [TitaniumExportRequest](docs/TitaniumExportRequest.md)
  - [TitaniumExportResponse](docs/TitaniumExportResponse.md)
  - [TitaniumFields](docs/TitaniumFields.md)
+ - [TitaniumFileAnnotation](docs/TitaniumFileAnnotation.md)
  - [TitaniumFileDelimiterSetting](docs/TitaniumFileDelimiterSetting.md)
  - [TitaniumFileDescriptorSetting](docs/TitaniumFileDescriptorSetting.md)
  - [TitaniumFileHistoryRequest](docs/TitaniumFileHistoryRequest.md)
@@ -524,6 +540,7 @@ Class | Method | HTTP request | Description
  - [TitaniumGetUserPermissionsRequest](docs/TitaniumGetUserPermissionsRequest.md)
  - [TitaniumGetUserRequest](docs/TitaniumGetUserRequest.md)
  - [TitaniumGetValidationRuleResponse](docs/TitaniumGetValidationRuleResponse.md)
+ - [TitaniumGetWorkflowActionResponse](docs/TitaniumGetWorkflowActionResponse.md)
  - [TitaniumHistogramData](docs/TitaniumHistogramData.md)
  - [TitaniumHistogramResponse](docs/TitaniumHistogramResponse.md)
  - [TitaniumIdentifier](docs/TitaniumIdentifier.md)
@@ -589,6 +606,7 @@ Class | Method | HTTP request | Description
  - [TitaniumRecentAssetsResponse](docs/TitaniumRecentAssetsResponse.md)
  - [TitaniumRecentAssetsResponseData](docs/TitaniumRecentAssetsResponseData.md)
  - [TitaniumRecentAssetsRow](docs/TitaniumRecentAssetsRow.md)
+ - [TitaniumReprocessWorkflowRequest](docs/TitaniumReprocessWorkflowRequest.md)
  - [TitaniumResponseData](docs/TitaniumResponseData.md)
  - [TitaniumResultsList](docs/TitaniumResultsList.md)
  - [TitaniumRuleDefinition](docs/TitaniumRuleDefinition.md)
@@ -597,6 +615,8 @@ Class | Method | HTTP request | Description
  - [TitaniumRunConsensusRequest](docs/TitaniumRunConsensusRequest.md)
  - [TitaniumRunDataProcessingAppRequest](docs/TitaniumRunDataProcessingAppRequest.md)
  - [TitaniumRunDataProcessingAppResponse](docs/TitaniumRunDataProcessingAppResponse.md)
+ - [TitaniumRunWorkflowRequest](docs/TitaniumRunWorkflowRequest.md)
+ - [TitaniumRunWorkflowResponse](docs/TitaniumRunWorkflowResponse.md)
  - [TitaniumScopeExistResponse](docs/TitaniumScopeExistResponse.md)
  - [TitaniumScopeIdentifier](docs/TitaniumScopeIdentifier.md)
  - [TitaniumScopeListResponse](docs/TitaniumScopeListResponse.md)
@@ -613,11 +633,11 @@ Class | Method | HTTP request | Description
  - [TitaniumStringKeyVal](docs/TitaniumStringKeyVal.md)
  - [TitaniumSubAsset](docs/TitaniumSubAsset.md)
  - [TitaniumSubGroupKeySearch](docs/TitaniumSubGroupKeySearch.md)
+ - [TitaniumSubmissionColumn](docs/TitaniumSubmissionColumn.md)
  - [TitaniumSubmissionEvidenceAnchorDetails](docs/TitaniumSubmissionEvidenceAnchorDetails.md)
- - [TitaniumSubmissionEvidenceTableColumn](docs/TitaniumSubmissionEvidenceTableColumn.md)
- - [TitaniumSubmissionExplorerTableColumn](docs/TitaniumSubmissionExplorerTableColumn.md)
  - [TitaniumSubmissionHistogram](docs/TitaniumSubmissionHistogram.md)
- - [TitaniumSubmissionStatisticsExplorerTableColumn](docs/TitaniumSubmissionStatisticsExplorerTableColumn.md)
+ - [TitaniumSubmissionRangeColumn](docs/TitaniumSubmissionRangeColumn.md)
+ - [TitaniumSubmissionStatisticsColumn](docs/TitaniumSubmissionStatisticsColumn.md)
  - [TitaniumSubmittedData](docs/TitaniumSubmittedData.md)
  - [TitaniumSubmittedRequest](docs/TitaniumSubmittedRequest.md)
  - [TitaniumSubmittedResponse](docs/TitaniumSubmittedResponse.md)
@@ -664,6 +684,9 @@ Class | Method | HTTP request | Description
  - [TitaniumVersion](docs/TitaniumVersion.md)
  - [TitaniumVersionList](docs/TitaniumVersionList.md)
  - [TitaniumViewRow](docs/TitaniumViewRow.md)
+ - [TitaniumWorkflowDefinition](docs/TitaniumWorkflowDefinition.md)
+ - [TitaniumWorkflowDefinitionResponse](docs/TitaniumWorkflowDefinitionResponse.md)
+ - [TitaniumWorkflowList](docs/TitaniumWorkflowList.md)
 
 
 ## Documentation For Authorization

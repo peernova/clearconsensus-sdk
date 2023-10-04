@@ -39,9 +39,7 @@ class TitaniumEvidentalPricing(object):
         'abs_diff_from_evp_mid': 'object',
         'ask': 'object',
         'bid': 'object',
-        'evp_lower_boundary': 'object',
         'evp_mid_abs_diff_from_latest_trade': 'object',
-        'evp_upper_boundary': 'object',
         'mid': 'object',
         'sub_price_diff': 'object',
         'trades_or_orders_count': 'object'
@@ -51,15 +49,13 @@ class TitaniumEvidentalPricing(object):
         'abs_diff_from_evp_mid': 'absDiffFromEvpMid',
         'ask': 'ask',
         'bid': 'bid',
-        'evp_lower_boundary': 'evpLowerBoundary',
         'evp_mid_abs_diff_from_latest_trade': 'evpMidAbsDiffFromLatestTrade',
-        'evp_upper_boundary': 'evpUpperBoundary',
         'mid': 'mid',
         'sub_price_diff': 'subPriceDiff',
         'trades_or_orders_count': 'tradesOrOrdersCount'
     }
 
-    def __init__(self, abs_diff_from_evp_mid=None, ask=None, bid=None, evp_lower_boundary=None, evp_mid_abs_diff_from_latest_trade=None, evp_upper_boundary=None, mid=None, sub_price_diff=None, trades_or_orders_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, abs_diff_from_evp_mid=None, ask=None, bid=None, evp_mid_abs_diff_from_latest_trade=None, mid=None, sub_price_diff=None, trades_or_orders_count=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumEvidentalPricing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -68,9 +64,7 @@ class TitaniumEvidentalPricing(object):
         self._abs_diff_from_evp_mid = None
         self._ask = None
         self._bid = None
-        self._evp_lower_boundary = None
         self._evp_mid_abs_diff_from_latest_trade = None
-        self._evp_upper_boundary = None
         self._mid = None
         self._sub_price_diff = None
         self._trades_or_orders_count = None
@@ -82,12 +76,8 @@ class TitaniumEvidentalPricing(object):
             self.ask = ask
         if bid is not None:
             self.bid = bid
-        if evp_lower_boundary is not None:
-            self.evp_lower_boundary = evp_lower_boundary
         if evp_mid_abs_diff_from_latest_trade is not None:
             self.evp_mid_abs_diff_from_latest_trade = evp_mid_abs_diff_from_latest_trade
-        if evp_upper_boundary is not None:
-            self.evp_upper_boundary = evp_upper_boundary
         if mid is not None:
             self.mid = mid
         if sub_price_diff is not None:
@@ -159,27 +149,6 @@ class TitaniumEvidentalPricing(object):
         self._bid = bid
 
     @property
-    def evp_lower_boundary(self):
-        """Gets the evp_lower_boundary of this TitaniumEvidentalPricing.  # noqa: E501
-
-
-        :return: The evp_lower_boundary of this TitaniumEvidentalPricing.  # noqa: E501
-        :rtype: object
-        """
-        return self._evp_lower_boundary
-
-    @evp_lower_boundary.setter
-    def evp_lower_boundary(self, evp_lower_boundary):
-        """Sets the evp_lower_boundary of this TitaniumEvidentalPricing.
-
-
-        :param evp_lower_boundary: The evp_lower_boundary of this TitaniumEvidentalPricing.  # noqa: E501
-        :type evp_lower_boundary: object
-        """
-
-        self._evp_lower_boundary = evp_lower_boundary
-
-    @property
     def evp_mid_abs_diff_from_latest_trade(self):
         """Gets the evp_mid_abs_diff_from_latest_trade of this TitaniumEvidentalPricing.  # noqa: E501
 
@@ -199,27 +168,6 @@ class TitaniumEvidentalPricing(object):
         """
 
         self._evp_mid_abs_diff_from_latest_trade = evp_mid_abs_diff_from_latest_trade
-
-    @property
-    def evp_upper_boundary(self):
-        """Gets the evp_upper_boundary of this TitaniumEvidentalPricing.  # noqa: E501
-
-
-        :return: The evp_upper_boundary of this TitaniumEvidentalPricing.  # noqa: E501
-        :rtype: object
-        """
-        return self._evp_upper_boundary
-
-    @evp_upper_boundary.setter
-    def evp_upper_boundary(self, evp_upper_boundary):
-        """Sets the evp_upper_boundary of this TitaniumEvidentalPricing.
-
-
-        :param evp_upper_boundary: The evp_upper_boundary of this TitaniumEvidentalPricing.  # noqa: E501
-        :type evp_upper_boundary: object
-        """
-
-        self._evp_upper_boundary = evp_upper_boundary
 
     @property
     def mid(self):

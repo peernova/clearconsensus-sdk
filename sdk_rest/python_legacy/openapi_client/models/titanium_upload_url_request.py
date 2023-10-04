@@ -40,6 +40,7 @@ class TitaniumUploadURLRequest(object):
         'client': 'str',
         'date': 'str',
         'descriptor_name': 'str',
+        'file_annotation': 'TitaniumFileAnnotation',
         'file_name': 'str',
         'trace_name': 'str'
     }
@@ -49,11 +50,12 @@ class TitaniumUploadURLRequest(object):
         'client': 'client',
         'date': 'date',
         'descriptor_name': 'descriptorName',
+        'file_annotation': 'fileAnnotation',
         'file_name': 'fileName',
         'trace_name': 'traceName'
     }
 
-    def __init__(self, asset_id=None, client=None, date=None, descriptor_name=None, file_name=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, asset_id=None, client=None, date=None, descriptor_name=None, file_annotation=None, file_name=None, trace_name=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumUploadURLRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -63,6 +65,7 @@ class TitaniumUploadURLRequest(object):
         self._client = None
         self._date = None
         self._descriptor_name = None
+        self._file_annotation = None
         self._file_name = None
         self._trace_name = None
         self.discriminator = None
@@ -75,6 +78,8 @@ class TitaniumUploadURLRequest(object):
             self.date = date
         if descriptor_name is not None:
             self.descriptor_name = descriptor_name
+        if file_annotation is not None:
+            self.file_annotation = file_annotation
         if file_name is not None:
             self.file_name = file_name
         if trace_name is not None:
@@ -163,6 +168,27 @@ class TitaniumUploadURLRequest(object):
         """
 
         self._descriptor_name = descriptor_name
+
+    @property
+    def file_annotation(self):
+        """Gets the file_annotation of this TitaniumUploadURLRequest.  # noqa: E501
+
+
+        :return: The file_annotation of this TitaniumUploadURLRequest.  # noqa: E501
+        :rtype: TitaniumFileAnnotation
+        """
+        return self._file_annotation
+
+    @file_annotation.setter
+    def file_annotation(self, file_annotation):
+        """Sets the file_annotation of this TitaniumUploadURLRequest.
+
+
+        :param file_annotation: The file_annotation of this TitaniumUploadURLRequest.  # noqa: E501
+        :type file_annotation: TitaniumFileAnnotation
+        """
+
+        self._file_annotation = file_annotation
 
     @property
     def file_name(self):

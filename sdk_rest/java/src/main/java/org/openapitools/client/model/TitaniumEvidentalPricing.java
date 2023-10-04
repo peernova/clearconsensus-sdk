@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvidentalPricing
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T18:40:39.548142Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T18:50:00.019029Z[UTC]")
 public class TitaniumEvidentalPricing {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_EVP_MID = "absDiffFromEvpMid";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_EVP_MID)
@@ -61,17 +61,9 @@ public class TitaniumEvidentalPricing {
   @SerializedName(SERIALIZED_NAME_BID)
   private Object bid;
 
-  public static final String SERIALIZED_NAME_EVP_LOWER_BOUNDARY = "evpLowerBoundary";
-  @SerializedName(SERIALIZED_NAME_EVP_LOWER_BOUNDARY)
-  private Object evpLowerBoundary;
-
   public static final String SERIALIZED_NAME_EVP_MID_ABS_DIFF_FROM_LATEST_TRADE = "evpMidAbsDiffFromLatestTrade";
   @SerializedName(SERIALIZED_NAME_EVP_MID_ABS_DIFF_FROM_LATEST_TRADE)
   private Object evpMidAbsDiffFromLatestTrade;
-
-  public static final String SERIALIZED_NAME_EVP_UPPER_BOUNDARY = "evpUpperBoundary";
-  @SerializedName(SERIALIZED_NAME_EVP_UPPER_BOUNDARY)
-  private Object evpUpperBoundary;
 
   public static final String SERIALIZED_NAME_MID = "mid";
   @SerializedName(SERIALIZED_NAME_MID)
@@ -157,29 +149,6 @@ public class TitaniumEvidentalPricing {
   }
 
 
-  public TitaniumEvidentalPricing evpLowerBoundary(Object evpLowerBoundary) {
-    
-    this.evpLowerBoundary = evpLowerBoundary;
-    return this;
-  }
-
-   /**
-   * Get evpLowerBoundary
-   * @return evpLowerBoundary
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getEvpLowerBoundary() {
-    return evpLowerBoundary;
-  }
-
-
-  public void setEvpLowerBoundary(Object evpLowerBoundary) {
-    this.evpLowerBoundary = evpLowerBoundary;
-  }
-
-
   public TitaniumEvidentalPricing evpMidAbsDiffFromLatestTrade(Object evpMidAbsDiffFromLatestTrade) {
     
     this.evpMidAbsDiffFromLatestTrade = evpMidAbsDiffFromLatestTrade;
@@ -200,29 +169,6 @@ public class TitaniumEvidentalPricing {
 
   public void setEvpMidAbsDiffFromLatestTrade(Object evpMidAbsDiffFromLatestTrade) {
     this.evpMidAbsDiffFromLatestTrade = evpMidAbsDiffFromLatestTrade;
-  }
-
-
-  public TitaniumEvidentalPricing evpUpperBoundary(Object evpUpperBoundary) {
-    
-    this.evpUpperBoundary = evpUpperBoundary;
-    return this;
-  }
-
-   /**
-   * Get evpUpperBoundary
-   * @return evpUpperBoundary
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getEvpUpperBoundary() {
-    return evpUpperBoundary;
-  }
-
-
-  public void setEvpUpperBoundary(Object evpUpperBoundary) {
-    this.evpUpperBoundary = evpUpperBoundary;
   }
 
 
@@ -308,9 +254,7 @@ public class TitaniumEvidentalPricing {
     return Objects.equals(this.absDiffFromEvpMid, titaniumEvidentalPricing.absDiffFromEvpMid) &&
         Objects.equals(this.ask, titaniumEvidentalPricing.ask) &&
         Objects.equals(this.bid, titaniumEvidentalPricing.bid) &&
-        Objects.equals(this.evpLowerBoundary, titaniumEvidentalPricing.evpLowerBoundary) &&
         Objects.equals(this.evpMidAbsDiffFromLatestTrade, titaniumEvidentalPricing.evpMidAbsDiffFromLatestTrade) &&
-        Objects.equals(this.evpUpperBoundary, titaniumEvidentalPricing.evpUpperBoundary) &&
         Objects.equals(this.mid, titaniumEvidentalPricing.mid) &&
         Objects.equals(this.subPriceDiff, titaniumEvidentalPricing.subPriceDiff) &&
         Objects.equals(this.tradesOrOrdersCount, titaniumEvidentalPricing.tradesOrOrdersCount);
@@ -318,7 +262,7 @@ public class TitaniumEvidentalPricing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(absDiffFromEvpMid, ask, bid, evpLowerBoundary, evpMidAbsDiffFromLatestTrade, evpUpperBoundary, mid, subPriceDiff, tradesOrOrdersCount);
+    return Objects.hash(absDiffFromEvpMid, ask, bid, evpMidAbsDiffFromLatestTrade, mid, subPriceDiff, tradesOrOrdersCount);
   }
 
   @Override
@@ -328,9 +272,7 @@ public class TitaniumEvidentalPricing {
     sb.append("    absDiffFromEvpMid: ").append(toIndentedString(absDiffFromEvpMid)).append("\n");
     sb.append("    ask: ").append(toIndentedString(ask)).append("\n");
     sb.append("    bid: ").append(toIndentedString(bid)).append("\n");
-    sb.append("    evpLowerBoundary: ").append(toIndentedString(evpLowerBoundary)).append("\n");
     sb.append("    evpMidAbsDiffFromLatestTrade: ").append(toIndentedString(evpMidAbsDiffFromLatestTrade)).append("\n");
-    sb.append("    evpUpperBoundary: ").append(toIndentedString(evpUpperBoundary)).append("\n");
     sb.append("    mid: ").append(toIndentedString(mid)).append("\n");
     sb.append("    subPriceDiff: ").append(toIndentedString(subPriceDiff)).append("\n");
     sb.append("    tradesOrOrdersCount: ").append(toIndentedString(tradesOrOrdersCount)).append("\n");
@@ -359,9 +301,7 @@ public class TitaniumEvidentalPricing {
     openapiFields.add("absDiffFromEvpMid");
     openapiFields.add("ask");
     openapiFields.add("bid");
-    openapiFields.add("evpLowerBoundary");
     openapiFields.add("evpMidAbsDiffFromLatestTrade");
-    openapiFields.add("evpUpperBoundary");
     openapiFields.add("mid");
     openapiFields.add("subPriceDiff");
     openapiFields.add("tradesOrOrdersCount");

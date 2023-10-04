@@ -24,11 +24,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.TitaniumAvailableTrades;
-import org.openapitools.client.model.TitaniumCohortConsensusColumn;
+import org.openapitools.client.model.TitaniumConsensusColumn;
 import org.openapitools.client.model.TitaniumEvidentalPricing;
-import org.openapitools.client.model.TitaniumSubmissionEvidenceTableColumn;
-import org.openapitools.client.model.TitaniumSubmissionExplorerTableColumn;
-import org.openapitools.client.model.TitaniumSubmissionStatisticsExplorerTableColumn;
+import org.openapitools.client.model.TitaniumSubmissionColumn;
+import org.openapitools.client.model.TitaniumSubmissionRangeColumn;
+import org.openapitools.client.model.TitaniumSubmissionStatisticsColumn;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,78 +53,55 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumComparisonTable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-08-24T18:40:39.548142Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T18:50:00.019029Z[UTC]")
 public class TitaniumComparisonTable {
-  public static final String SERIALIZED_NAME_AVAILABLE_TRADES = "availableTrades";
-  @SerializedName(SERIALIZED_NAME_AVAILABLE_TRADES)
-  private TitaniumAvailableTrades availableTrades;
-
-  public static final String SERIALIZED_NAME_COHORT_CONSENSUS_COLUMN = "cohortConsensusColumn";
-  @SerializedName(SERIALIZED_NAME_COHORT_CONSENSUS_COLUMN)
-  private TitaniumCohortConsensusColumn cohortConsensusColumn;
+  public static final String SERIALIZED_NAME_CONSENSUS = "consensus";
+  @SerializedName(SERIALIZED_NAME_CONSENSUS)
+  private TitaniumConsensusColumn consensus;
 
   public static final String SERIALIZED_NAME_EVIDENTIAL_PRICING = "evidentialPricing";
   @SerializedName(SERIALIZED_NAME_EVIDENTIAL_PRICING)
   private TitaniumEvidentalPricing evidentialPricing;
 
-  public static final String SERIALIZED_NAME_SUBMISSION = "submission";
-  @SerializedName(SERIALIZED_NAME_SUBMISSION)
-  private TitaniumSubmissionExplorerTableColumn submission;
+  public static final String SERIALIZED_NAME_MY_SUBMISSION = "mySubmission";
+  @SerializedName(SERIALIZED_NAME_MY_SUBMISSION)
+  private TitaniumSubmissionColumn mySubmission;
 
-  public static final String SERIALIZED_NAME_SUBMISSION_EVIDENCE = "submissionEvidence";
-  @SerializedName(SERIALIZED_NAME_SUBMISSION_EVIDENCE)
-  private TitaniumSubmissionEvidenceTableColumn submissionEvidence;
+  public static final String SERIALIZED_NAME_SUBMISSION_RANGE = "submissionRange";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_RANGE)
+  private TitaniumSubmissionRangeColumn submissionRange;
 
-  public static final String SERIALIZED_NAME_SUBMISSION_STATISTICS = "submissionStatistics";
-  @SerializedName(SERIALIZED_NAME_SUBMISSION_STATISTICS)
-  private TitaniumSubmissionStatisticsExplorerTableColumn submissionStatistics;
+  public static final String SERIALIZED_NAME_SUBMISSION_STATISTICAL_BOUNDARIES = "submissionStatisticalBoundaries";
+  @SerializedName(SERIALIZED_NAME_SUBMISSION_STATISTICAL_BOUNDARIES)
+  private TitaniumSubmissionStatisticsColumn submissionStatisticalBoundaries;
+
+  public static final String SERIALIZED_NAME_TRADE_TIME_SERIES = "tradeTimeSeries";
+  @SerializedName(SERIALIZED_NAME_TRADE_TIME_SERIES)
+  private TitaniumAvailableTrades tradeTimeSeries;
 
   public TitaniumComparisonTable() { 
   }
 
-  public TitaniumComparisonTable availableTrades(TitaniumAvailableTrades availableTrades) {
+  public TitaniumComparisonTable consensus(TitaniumConsensusColumn consensus) {
     
-    this.availableTrades = availableTrades;
+    this.consensus = consensus;
     return this;
   }
 
    /**
-   * Get availableTrades
-   * @return availableTrades
+   * Get consensus
+   * @return consensus
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumAvailableTrades getAvailableTrades() {
-    return availableTrades;
+  public TitaniumConsensusColumn getConsensus() {
+    return consensus;
   }
 
 
-  public void setAvailableTrades(TitaniumAvailableTrades availableTrades) {
-    this.availableTrades = availableTrades;
-  }
-
-
-  public TitaniumComparisonTable cohortConsensusColumn(TitaniumCohortConsensusColumn cohortConsensusColumn) {
-    
-    this.cohortConsensusColumn = cohortConsensusColumn;
-    return this;
-  }
-
-   /**
-   * Get cohortConsensusColumn
-   * @return cohortConsensusColumn
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public TitaniumCohortConsensusColumn getCohortConsensusColumn() {
-    return cohortConsensusColumn;
-  }
-
-
-  public void setCohortConsensusColumn(TitaniumCohortConsensusColumn cohortConsensusColumn) {
-    this.cohortConsensusColumn = cohortConsensusColumn;
+  public void setConsensus(TitaniumConsensusColumn consensus) {
+    this.consensus = consensus;
   }
 
 
@@ -151,72 +128,95 @@ public class TitaniumComparisonTable {
   }
 
 
-  public TitaniumComparisonTable submission(TitaniumSubmissionExplorerTableColumn submission) {
+  public TitaniumComparisonTable mySubmission(TitaniumSubmissionColumn mySubmission) {
     
-    this.submission = submission;
+    this.mySubmission = mySubmission;
     return this;
   }
 
    /**
-   * Get submission
-   * @return submission
+   * Get mySubmission
+   * @return mySubmission
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumSubmissionExplorerTableColumn getSubmission() {
-    return submission;
+  public TitaniumSubmissionColumn getMySubmission() {
+    return mySubmission;
   }
 
 
-  public void setSubmission(TitaniumSubmissionExplorerTableColumn submission) {
-    this.submission = submission;
+  public void setMySubmission(TitaniumSubmissionColumn mySubmission) {
+    this.mySubmission = mySubmission;
   }
 
 
-  public TitaniumComparisonTable submissionEvidence(TitaniumSubmissionEvidenceTableColumn submissionEvidence) {
+  public TitaniumComparisonTable submissionRange(TitaniumSubmissionRangeColumn submissionRange) {
     
-    this.submissionEvidence = submissionEvidence;
+    this.submissionRange = submissionRange;
     return this;
   }
 
    /**
-   * Get submissionEvidence
-   * @return submissionEvidence
+   * Get submissionRange
+   * @return submissionRange
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumSubmissionEvidenceTableColumn getSubmissionEvidence() {
-    return submissionEvidence;
+  public TitaniumSubmissionRangeColumn getSubmissionRange() {
+    return submissionRange;
   }
 
 
-  public void setSubmissionEvidence(TitaniumSubmissionEvidenceTableColumn submissionEvidence) {
-    this.submissionEvidence = submissionEvidence;
+  public void setSubmissionRange(TitaniumSubmissionRangeColumn submissionRange) {
+    this.submissionRange = submissionRange;
   }
 
 
-  public TitaniumComparisonTable submissionStatistics(TitaniumSubmissionStatisticsExplorerTableColumn submissionStatistics) {
+  public TitaniumComparisonTable submissionStatisticalBoundaries(TitaniumSubmissionStatisticsColumn submissionStatisticalBoundaries) {
     
-    this.submissionStatistics = submissionStatistics;
+    this.submissionStatisticalBoundaries = submissionStatisticalBoundaries;
     return this;
   }
 
    /**
-   * Get submissionStatistics
-   * @return submissionStatistics
+   * Get submissionStatisticalBoundaries
+   * @return submissionStatisticalBoundaries
   **/
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumSubmissionStatisticsExplorerTableColumn getSubmissionStatistics() {
-    return submissionStatistics;
+  public TitaniumSubmissionStatisticsColumn getSubmissionStatisticalBoundaries() {
+    return submissionStatisticalBoundaries;
   }
 
 
-  public void setSubmissionStatistics(TitaniumSubmissionStatisticsExplorerTableColumn submissionStatistics) {
-    this.submissionStatistics = submissionStatistics;
+  public void setSubmissionStatisticalBoundaries(TitaniumSubmissionStatisticsColumn submissionStatisticalBoundaries) {
+    this.submissionStatisticalBoundaries = submissionStatisticalBoundaries;
+  }
+
+
+  public TitaniumComparisonTable tradeTimeSeries(TitaniumAvailableTrades tradeTimeSeries) {
+    
+    this.tradeTimeSeries = tradeTimeSeries;
+    return this;
+  }
+
+   /**
+   * Get tradeTimeSeries
+   * @return tradeTimeSeries
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public TitaniumAvailableTrades getTradeTimeSeries() {
+    return tradeTimeSeries;
+  }
+
+
+  public void setTradeTimeSeries(TitaniumAvailableTrades tradeTimeSeries) {
+    this.tradeTimeSeries = tradeTimeSeries;
   }
 
 
@@ -230,29 +230,29 @@ public class TitaniumComparisonTable {
       return false;
     }
     TitaniumComparisonTable titaniumComparisonTable = (TitaniumComparisonTable) o;
-    return Objects.equals(this.availableTrades, titaniumComparisonTable.availableTrades) &&
-        Objects.equals(this.cohortConsensusColumn, titaniumComparisonTable.cohortConsensusColumn) &&
+    return Objects.equals(this.consensus, titaniumComparisonTable.consensus) &&
         Objects.equals(this.evidentialPricing, titaniumComparisonTable.evidentialPricing) &&
-        Objects.equals(this.submission, titaniumComparisonTable.submission) &&
-        Objects.equals(this.submissionEvidence, titaniumComparisonTable.submissionEvidence) &&
-        Objects.equals(this.submissionStatistics, titaniumComparisonTable.submissionStatistics);
+        Objects.equals(this.mySubmission, titaniumComparisonTable.mySubmission) &&
+        Objects.equals(this.submissionRange, titaniumComparisonTable.submissionRange) &&
+        Objects.equals(this.submissionStatisticalBoundaries, titaniumComparisonTable.submissionStatisticalBoundaries) &&
+        Objects.equals(this.tradeTimeSeries, titaniumComparisonTable.tradeTimeSeries);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(availableTrades, cohortConsensusColumn, evidentialPricing, submission, submissionEvidence, submissionStatistics);
+    return Objects.hash(consensus, evidentialPricing, mySubmission, submissionRange, submissionStatisticalBoundaries, tradeTimeSeries);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumComparisonTable {\n");
-    sb.append("    availableTrades: ").append(toIndentedString(availableTrades)).append("\n");
-    sb.append("    cohortConsensusColumn: ").append(toIndentedString(cohortConsensusColumn)).append("\n");
+    sb.append("    consensus: ").append(toIndentedString(consensus)).append("\n");
     sb.append("    evidentialPricing: ").append(toIndentedString(evidentialPricing)).append("\n");
-    sb.append("    submission: ").append(toIndentedString(submission)).append("\n");
-    sb.append("    submissionEvidence: ").append(toIndentedString(submissionEvidence)).append("\n");
-    sb.append("    submissionStatistics: ").append(toIndentedString(submissionStatistics)).append("\n");
+    sb.append("    mySubmission: ").append(toIndentedString(mySubmission)).append("\n");
+    sb.append("    submissionRange: ").append(toIndentedString(submissionRange)).append("\n");
+    sb.append("    submissionStatisticalBoundaries: ").append(toIndentedString(submissionStatisticalBoundaries)).append("\n");
+    sb.append("    tradeTimeSeries: ").append(toIndentedString(tradeTimeSeries)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -275,12 +275,12 @@ public class TitaniumComparisonTable {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
-    openapiFields.add("availableTrades");
-    openapiFields.add("cohortConsensusColumn");
+    openapiFields.add("consensus");
     openapiFields.add("evidentialPricing");
-    openapiFields.add("submission");
-    openapiFields.add("submissionEvidence");
-    openapiFields.add("submissionStatistics");
+    openapiFields.add("mySubmission");
+    openapiFields.add("submissionRange");
+    openapiFields.add("submissionStatisticalBoundaries");
+    openapiFields.add("tradeTimeSeries");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -308,29 +308,29 @@ public class TitaniumComparisonTable {
           throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TitaniumComparisonTable` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
         }
       }
-      // validate the optional field `availableTrades`
-      if (jsonObj.getAsJsonObject("availableTrades") != null) {
-        TitaniumAvailableTrades.validateJsonObject(jsonObj.getAsJsonObject("availableTrades"));
-      }
-      // validate the optional field `cohortConsensusColumn`
-      if (jsonObj.getAsJsonObject("cohortConsensusColumn") != null) {
-        TitaniumCohortConsensusColumn.validateJsonObject(jsonObj.getAsJsonObject("cohortConsensusColumn"));
+      // validate the optional field `consensus`
+      if (jsonObj.getAsJsonObject("consensus") != null) {
+        TitaniumConsensusColumn.validateJsonObject(jsonObj.getAsJsonObject("consensus"));
       }
       // validate the optional field `evidentialPricing`
       if (jsonObj.getAsJsonObject("evidentialPricing") != null) {
         TitaniumEvidentalPricing.validateJsonObject(jsonObj.getAsJsonObject("evidentialPricing"));
       }
-      // validate the optional field `submission`
-      if (jsonObj.getAsJsonObject("submission") != null) {
-        TitaniumSubmissionExplorerTableColumn.validateJsonObject(jsonObj.getAsJsonObject("submission"));
+      // validate the optional field `mySubmission`
+      if (jsonObj.getAsJsonObject("mySubmission") != null) {
+        TitaniumSubmissionColumn.validateJsonObject(jsonObj.getAsJsonObject("mySubmission"));
       }
-      // validate the optional field `submissionEvidence`
-      if (jsonObj.getAsJsonObject("submissionEvidence") != null) {
-        TitaniumSubmissionEvidenceTableColumn.validateJsonObject(jsonObj.getAsJsonObject("submissionEvidence"));
+      // validate the optional field `submissionRange`
+      if (jsonObj.getAsJsonObject("submissionRange") != null) {
+        TitaniumSubmissionRangeColumn.validateJsonObject(jsonObj.getAsJsonObject("submissionRange"));
       }
-      // validate the optional field `submissionStatistics`
-      if (jsonObj.getAsJsonObject("submissionStatistics") != null) {
-        TitaniumSubmissionStatisticsExplorerTableColumn.validateJsonObject(jsonObj.getAsJsonObject("submissionStatistics"));
+      // validate the optional field `submissionStatisticalBoundaries`
+      if (jsonObj.getAsJsonObject("submissionStatisticalBoundaries") != null) {
+        TitaniumSubmissionStatisticsColumn.validateJsonObject(jsonObj.getAsJsonObject("submissionStatisticalBoundaries"));
+      }
+      // validate the optional field `tradeTimeSeries`
+      if (jsonObj.getAsJsonObject("tradeTimeSeries") != null) {
+        TitaniumAvailableTrades.validateJsonObject(jsonObj.getAsJsonObject("tradeTimeSeries"));
       }
   }
 
