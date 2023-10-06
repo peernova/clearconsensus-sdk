@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
  * FileIdentifier contains information about a file including its filename, upload date, and status.
  */
 @ApiModel(description = "FileIdentifier contains information about a file including its filename, upload date, and status.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-04T20:23:54.560156Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-06T18:33:51.913217Z[UTC]")
 public class FileServiceGetFilePreviewRequest {
   public static final String SERIALIZED_NAME_FILE_STATUS = "fileStatus";
   @SerializedName(SERIALIZED_NAME_FILE_STATUS)
