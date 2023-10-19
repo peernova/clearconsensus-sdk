@@ -3889,7 +3889,7 @@ proto.titanium.TradeAlignmentScore.toObject = function(includeInstance, msg) {
     score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     scoreStatus: jspb.Message.getFieldWithDefault(msg, 2, ""),
     latestTradePrice: (f = msg.getLatestTradePrice()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    mean: (f = msg.getMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    centroid: (f = msg.getCentroid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     historyList: jspb.Message.toObjectList(msg.getHistoryList(),
     proto.titanium.TradeAligmentDateAndValue.toObject, includeInstance)
@@ -3946,7 +3946,7 @@ proto.titanium.TradeAlignmentScore.deserializeBinaryFromReader = function(msg, r
     case 4:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setMean(value);
+      msg.setCentroid(value);
       break;
     case 5:
       var value = new google_protobuf_struct_pb.Value;
@@ -4010,7 +4010,7 @@ proto.titanium.TradeAlignmentScore.serializeBinaryToWriter = function(message, w
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getMean();
+  f = message.getCentroid();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -4130,10 +4130,10 @@ proto.titanium.TradeAlignmentScore.prototype.hasLatestTradePrice = function() {
 
 
 /**
- * optional google.protobuf.Value mean = 4;
+ * optional google.protobuf.Value centroid = 4;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.TradeAlignmentScore.prototype.getMean = function() {
+proto.titanium.TradeAlignmentScore.prototype.getCentroid = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
 };
@@ -4143,7 +4143,7 @@ proto.titanium.TradeAlignmentScore.prototype.getMean = function() {
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.TradeAlignmentScore} returns this
 */
-proto.titanium.TradeAlignmentScore.prototype.setMean = function(value) {
+proto.titanium.TradeAlignmentScore.prototype.setCentroid = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -4152,8 +4152,8 @@ proto.titanium.TradeAlignmentScore.prototype.setMean = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.titanium.TradeAlignmentScore} returns this
  */
-proto.titanium.TradeAlignmentScore.prototype.clearMean = function() {
-  return this.setMean(undefined);
+proto.titanium.TradeAlignmentScore.prototype.clearCentroid = function() {
+  return this.setCentroid(undefined);
 };
 
 
@@ -4161,7 +4161,7 @@ proto.titanium.TradeAlignmentScore.prototype.clearMean = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.TradeAlignmentScore.prototype.hasMean = function() {
+proto.titanium.TradeAlignmentScore.prototype.hasCentroid = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 
@@ -4494,7 +4494,7 @@ proto.titanium.EvpAlignmentScore.toObject = function(includeInstance, msg) {
     score: (f = msg.getScore()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     scoreStatus: jspb.Message.getFieldWithDefault(msg, 2, ""),
     evpMid: (f = msg.getEvpMid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
-    mean: (f = msg.getMean()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
+    centroid: (f = msg.getCentroid()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     stdDev: (f = msg.getStdDev()) && google_protobuf_struct_pb.Value.toObject(includeInstance, f),
     historyList: jspb.Message.toObjectList(msg.getHistoryList(),
     proto.titanium.TradeAligmentDateAndValue.toObject, includeInstance)
@@ -4551,7 +4551,7 @@ proto.titanium.EvpAlignmentScore.deserializeBinaryFromReader = function(msg, rea
     case 4:
       var value = new google_protobuf_struct_pb.Value;
       reader.readMessage(value,google_protobuf_struct_pb.Value.deserializeBinaryFromReader);
-      msg.setMean(value);
+      msg.setCentroid(value);
       break;
     case 5:
       var value = new google_protobuf_struct_pb.Value;
@@ -4615,7 +4615,7 @@ proto.titanium.EvpAlignmentScore.serializeBinaryToWriter = function(message, wri
       google_protobuf_struct_pb.Value.serializeBinaryToWriter
     );
   }
-  f = message.getMean();
+  f = message.getCentroid();
   if (f != null) {
     writer.writeMessage(
       4,
@@ -4735,10 +4735,10 @@ proto.titanium.EvpAlignmentScore.prototype.hasEvpMid = function() {
 
 
 /**
- * optional google.protobuf.Value mean = 4;
+ * optional google.protobuf.Value centroid = 4;
  * @return {?proto.google.protobuf.Value}
  */
-proto.titanium.EvpAlignmentScore.prototype.getMean = function() {
+proto.titanium.EvpAlignmentScore.prototype.getCentroid = function() {
   return /** @type{?proto.google.protobuf.Value} */ (
     jspb.Message.getWrapperField(this, google_protobuf_struct_pb.Value, 4));
 };
@@ -4748,7 +4748,7 @@ proto.titanium.EvpAlignmentScore.prototype.getMean = function() {
  * @param {?proto.google.protobuf.Value|undefined} value
  * @return {!proto.titanium.EvpAlignmentScore} returns this
 */
-proto.titanium.EvpAlignmentScore.prototype.setMean = function(value) {
+proto.titanium.EvpAlignmentScore.prototype.setCentroid = function(value) {
   return jspb.Message.setWrapperField(this, 4, value);
 };
 
@@ -4757,8 +4757,8 @@ proto.titanium.EvpAlignmentScore.prototype.setMean = function(value) {
  * Clears the message field making it undefined.
  * @return {!proto.titanium.EvpAlignmentScore} returns this
  */
-proto.titanium.EvpAlignmentScore.prototype.clearMean = function() {
-  return this.setMean(undefined);
+proto.titanium.EvpAlignmentScore.prototype.clearCentroid = function() {
+  return this.setCentroid(undefined);
 };
 
 
@@ -4766,7 +4766,7 @@ proto.titanium.EvpAlignmentScore.prototype.clearMean = function() {
  * Returns whether this field is set.
  * @return {boolean}
  */
-proto.titanium.EvpAlignmentScore.prototype.hasMean = function() {
+proto.titanium.EvpAlignmentScore.prototype.hasCentroid = function() {
   return jspb.Message.getField(this, 4) != null;
 };
 

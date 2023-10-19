@@ -434,10 +434,10 @@ export class TradeAlignmentScore extends jspb.Message {
   getLatestTradePrice(): google_protobuf_struct_pb.Value | undefined;
   setLatestTradePrice(value?: google_protobuf_struct_pb.Value): void;
 
-  hasMean(): boolean;
-  clearMean(): void;
-  getMean(): google_protobuf_struct_pb.Value | undefined;
-  setMean(value?: google_protobuf_struct_pb.Value): void;
+  hasCentroid(): boolean;
+  clearCentroid(): void;
+  getCentroid(): google_protobuf_struct_pb.Value | undefined;
+  setCentroid(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
@@ -464,7 +464,7 @@ export namespace TradeAlignmentScore {
     score?: google_protobuf_struct_pb.Value.AsObject,
     scoreStatus: string,
     latestTradePrice?: google_protobuf_struct_pb.Value.AsObject,
-    mean?: google_protobuf_struct_pb.Value.AsObject,
+    centroid?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
     historyList: Array<TradeAligmentDateAndValue.AsObject>,
   }
@@ -514,10 +514,10 @@ export class EvpAlignmentScore extends jspb.Message {
   getEvpMid(): google_protobuf_struct_pb.Value | undefined;
   setEvpMid(value?: google_protobuf_struct_pb.Value): void;
 
-  hasMean(): boolean;
-  clearMean(): void;
-  getMean(): google_protobuf_struct_pb.Value | undefined;
-  setMean(value?: google_protobuf_struct_pb.Value): void;
+  hasCentroid(): boolean;
+  clearCentroid(): void;
+  getCentroid(): google_protobuf_struct_pb.Value | undefined;
+  setCentroid(value?: google_protobuf_struct_pb.Value): void;
 
   hasStdDev(): boolean;
   clearStdDev(): void;
@@ -544,7 +544,7 @@ export namespace EvpAlignmentScore {
     score?: google_protobuf_struct_pb.Value.AsObject,
     scoreStatus: string,
     evpMid?: google_protobuf_struct_pb.Value.AsObject,
-    mean?: google_protobuf_struct_pb.Value.AsObject,
+    centroid?: google_protobuf_struct_pb.Value.AsObject,
     stdDev?: google_protobuf_struct_pb.Value.AsObject,
     historyList: Array<TradeAligmentDateAndValue.AsObject>,
   }
