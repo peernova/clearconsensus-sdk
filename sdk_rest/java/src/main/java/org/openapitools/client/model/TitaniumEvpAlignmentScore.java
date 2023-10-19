@@ -50,8 +50,12 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpAlignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-06T18:33:51.913217Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-19T16:11:30.307312Z[UTC]")
 public class TitaniumEvpAlignmentScore {
+  public static final String SERIALIZED_NAME_CENTROID = "centroid";
+  @SerializedName(SERIALIZED_NAME_CENTROID)
+  private Object centroid;
+
   public static final String SERIALIZED_NAME_EVP_MID = "evpMid";
   @SerializedName(SERIALIZED_NAME_EVP_MID)
   private Object evpMid;
@@ -59,10 +63,6 @@ public class TitaniumEvpAlignmentScore {
   public static final String SERIALIZED_NAME_HISTORY = "history";
   @SerializedName(SERIALIZED_NAME_HISTORY)
   private List<TitaniumTradeAligmentDateAndValue> history = null;
-
-  public static final String SERIALIZED_NAME_MEAN = "mean";
-  @SerializedName(SERIALIZED_NAME_MEAN)
-  private Object mean;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -78,6 +78,29 @@ public class TitaniumEvpAlignmentScore {
 
   public TitaniumEvpAlignmentScore() { 
   }
+
+  public TitaniumEvpAlignmentScore centroid(Object centroid) {
+    
+    this.centroid = centroid;
+    return this;
+  }
+
+   /**
+   * Get centroid
+   * @return centroid
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getCentroid() {
+    return centroid;
+  }
+
+
+  public void setCentroid(Object centroid) {
+    this.centroid = centroid;
+  }
+
 
   public TitaniumEvpAlignmentScore evpMid(Object evpMid) {
     
@@ -130,29 +153,6 @@ public class TitaniumEvpAlignmentScore {
 
   public void setHistory(List<TitaniumTradeAligmentDateAndValue> history) {
     this.history = history;
-  }
-
-
-  public TitaniumEvpAlignmentScore mean(Object mean) {
-    
-    this.mean = mean;
-    return this;
-  }
-
-   /**
-   * Get mean
-   * @return mean
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getMean() {
-    return mean;
-  }
-
-
-  public void setMean(Object mean) {
-    this.mean = mean;
   }
 
 
@@ -235,9 +235,9 @@ public class TitaniumEvpAlignmentScore {
       return false;
     }
     TitaniumEvpAlignmentScore titaniumEvpAlignmentScore = (TitaniumEvpAlignmentScore) o;
-    return Objects.equals(this.evpMid, titaniumEvpAlignmentScore.evpMid) &&
+    return Objects.equals(this.centroid, titaniumEvpAlignmentScore.centroid) &&
+        Objects.equals(this.evpMid, titaniumEvpAlignmentScore.evpMid) &&
         Objects.equals(this.history, titaniumEvpAlignmentScore.history) &&
-        Objects.equals(this.mean, titaniumEvpAlignmentScore.mean) &&
         Objects.equals(this.score, titaniumEvpAlignmentScore.score) &&
         Objects.equals(this.scoreStatus, titaniumEvpAlignmentScore.scoreStatus) &&
         Objects.equals(this.stdDev, titaniumEvpAlignmentScore.stdDev);
@@ -245,16 +245,16 @@ public class TitaniumEvpAlignmentScore {
 
   @Override
   public int hashCode() {
-    return Objects.hash(evpMid, history, mean, score, scoreStatus, stdDev);
+    return Objects.hash(centroid, evpMid, history, score, scoreStatus, stdDev);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumEvpAlignmentScore {\n");
+    sb.append("    centroid: ").append(toIndentedString(centroid)).append("\n");
     sb.append("    evpMid: ").append(toIndentedString(evpMid)).append("\n");
     sb.append("    history: ").append(toIndentedString(history)).append("\n");
-    sb.append("    mean: ").append(toIndentedString(mean)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    scoreStatus: ").append(toIndentedString(scoreStatus)).append("\n");
     sb.append("    stdDev: ").append(toIndentedString(stdDev)).append("\n");
@@ -280,9 +280,9 @@ public class TitaniumEvpAlignmentScore {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("centroid");
     openapiFields.add("evpMid");
     openapiFields.add("history");
-    openapiFields.add("mean");
     openapiFields.add("score");
     openapiFields.add("scoreStatus");
     openapiFields.add("stdDev");

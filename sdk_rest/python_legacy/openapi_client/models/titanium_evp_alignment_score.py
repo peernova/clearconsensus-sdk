@@ -36,49 +36,70 @@ class TitaniumEvpAlignmentScore(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'centroid': 'object',
         'evp_mid': 'object',
         'history': 'list[TitaniumTradeAligmentDateAndValue]',
-        'mean': 'object',
         'score': 'object',
         'score_status': 'str',
         'std_dev': 'object'
     }
 
     attribute_map = {
+        'centroid': 'centroid',
         'evp_mid': 'evpMid',
         'history': 'history',
-        'mean': 'mean',
         'score': 'score',
         'score_status': 'scoreStatus',
         'std_dev': 'stdDev'
     }
 
-    def __init__(self, evp_mid=None, history=None, mean=None, score=None, score_status=None, std_dev=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, centroid=None, evp_mid=None, history=None, score=None, score_status=None, std_dev=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumEvpAlignmentScore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._centroid = None
         self._evp_mid = None
         self._history = None
-        self._mean = None
         self._score = None
         self._score_status = None
         self._std_dev = None
         self.discriminator = None
 
+        if centroid is not None:
+            self.centroid = centroid
         if evp_mid is not None:
             self.evp_mid = evp_mid
         if history is not None:
             self.history = history
-        if mean is not None:
-            self.mean = mean
         if score is not None:
             self.score = score
         if score_status is not None:
             self.score_status = score_status
         if std_dev is not None:
             self.std_dev = std_dev
+
+    @property
+    def centroid(self):
+        """Gets the centroid of this TitaniumEvpAlignmentScore.  # noqa: E501
+
+
+        :return: The centroid of this TitaniumEvpAlignmentScore.  # noqa: E501
+        :rtype: object
+        """
+        return self._centroid
+
+    @centroid.setter
+    def centroid(self, centroid):
+        """Sets the centroid of this TitaniumEvpAlignmentScore.
+
+
+        :param centroid: The centroid of this TitaniumEvpAlignmentScore.  # noqa: E501
+        :type centroid: object
+        """
+
+        self._centroid = centroid
 
     @property
     def evp_mid(self):
@@ -121,27 +142,6 @@ class TitaniumEvpAlignmentScore(object):
         """
 
         self._history = history
-
-    @property
-    def mean(self):
-        """Gets the mean of this TitaniumEvpAlignmentScore.  # noqa: E501
-
-
-        :return: The mean of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :rtype: object
-        """
-        return self._mean
-
-    @mean.setter
-    def mean(self, mean):
-        """Sets the mean of this TitaniumEvpAlignmentScore.
-
-
-        :param mean: The mean of this TitaniumEvpAlignmentScore.  # noqa: E501
-        :type mean: object
-        """
-
-        self._mean = mean
 
     @property
     def score(self):

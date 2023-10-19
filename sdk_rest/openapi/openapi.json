@@ -10439,6 +10439,10 @@
       },
       "titaniumEvpAlignmentScore" : {
         "properties" : {
+          "centroid" : {
+            "properties" : { },
+            "type" : "object"
+          },
           "evpMid" : {
             "properties" : { },
             "type" : "object"
@@ -10448,10 +10452,6 @@
               "$ref" : "#/components/schemas/titaniumTradeAligmentDateAndValue"
             },
             "type" : "array"
-          },
-          "mean" : {
-            "properties" : { },
-            "type" : "object"
           },
           "score" : {
             "properties" : { },
@@ -13249,6 +13249,10 @@
       },
       "titaniumTradeAlignmentScore" : {
         "properties" : {
+          "centroid" : {
+            "properties" : { },
+            "type" : "object"
+          },
           "history" : {
             "items" : {
               "$ref" : "#/components/schemas/titaniumTradeAligmentDateAndValue"
@@ -13256,10 +13260,6 @@
             "type" : "array"
           },
           "latestTradePrice" : {
-            "properties" : { },
-            "type" : "object"
-          },
-          "mean" : {
             "properties" : { },
             "type" : "object"
           },

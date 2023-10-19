@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**centroid** | **object** |  | [optional] 
 **evp_mid** | **object** |  | [optional] 
 **history** | [**list[TitaniumTradeAligmentDateAndValue]**](TitaniumTradeAligmentDateAndValue.md) |  | [optional] 
-**mean** | **object** |  | [optional] 
 **score** | **object** |  | [optional] 
 **score_status** | **str** |  | [optional] 
 **std_dev** | **object** |  | [optional] 

@@ -87,9 +87,9 @@ class TitaniumEvpAlignmentScore(ModelNormal):
         """
         lazy_import()
         return {
+            'centroid': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'evp_mid': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'history': ([TitaniumTradeAligmentDateAndValue],),  # noqa: E501
-            'mean': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'score': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
             'score_status': (str,),  # noqa: E501
             'std_dev': (bool, date, datetime, dict, float, int, list, str, none_type,),  # noqa: E501
@@ -101,9 +101,9 @@ class TitaniumEvpAlignmentScore(ModelNormal):
 
 
     attribute_map = {
+        'centroid': 'centroid',  # noqa: E501
         'evp_mid': 'evpMid',  # noqa: E501
         'history': 'history',  # noqa: E501
-        'mean': 'mean',  # noqa: E501
         'score': 'score',  # noqa: E501
         'score_status': 'scoreStatus',  # noqa: E501
         'std_dev': 'stdDev',  # noqa: E501
@@ -150,9 +150,9 @@ class TitaniumEvpAlignmentScore(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            centroid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             history ([TitaniumTradeAligmentDateAndValue]): [optional]  # noqa: E501
-            mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score_status (str): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
@@ -241,9 +241,9 @@ class TitaniumEvpAlignmentScore(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            centroid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             evp_mid (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             history ([TitaniumTradeAligmentDateAndValue]): [optional]  # noqa: E501
-            mean (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501
             score_status (str): [optional]  # noqa: E501
             std_dev (bool, date, datetime, dict, float, int, list, str, none_type): [optional]  # noqa: E501

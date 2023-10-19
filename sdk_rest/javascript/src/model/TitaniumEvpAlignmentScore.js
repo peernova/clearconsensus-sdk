@@ -48,14 +48,14 @@ class TitaniumEvpAlignmentScore {
         if (data) {
             obj = obj || new TitaniumEvpAlignmentScore();
 
+            if (data.hasOwnProperty('centroid')) {
+                obj['centroid'] = ApiClient.convertToType(data['centroid'], Object);
+            }
             if (data.hasOwnProperty('evpMid')) {
                 obj['evpMid'] = ApiClient.convertToType(data['evpMid'], Object);
             }
             if (data.hasOwnProperty('history')) {
                 obj['history'] = ApiClient.convertToType(data['history'], [TitaniumTradeAligmentDateAndValue]);
-            }
-            if (data.hasOwnProperty('mean')) {
-                obj['mean'] = ApiClient.convertToType(data['mean'], Object);
             }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], Object);
@@ -74,6 +74,11 @@ class TitaniumEvpAlignmentScore {
 }
 
 /**
+ * @member {Object} centroid
+ */
+TitaniumEvpAlignmentScore.prototype['centroid'] = undefined;
+
+/**
  * @member {Object} evpMid
  */
 TitaniumEvpAlignmentScore.prototype['evpMid'] = undefined;
@@ -82,11 +87,6 @@ TitaniumEvpAlignmentScore.prototype['evpMid'] = undefined;
  * @member {Array.<module:model/TitaniumTradeAligmentDateAndValue>} history
  */
 TitaniumEvpAlignmentScore.prototype['history'] = undefined;
-
-/**
- * @member {Object} mean
- */
-TitaniumEvpAlignmentScore.prototype['mean'] = undefined;
 
 /**
  * @member {Object} score

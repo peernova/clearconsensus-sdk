@@ -8176,7 +8176,7 @@ components:
         consensusScores:
           tradeAlignmentScore:
             score: "{}"
-            mean: "{}"
+            centroid: "{}"
             latestTradePrice: "{}"
             scoreStatus: scoreStatus
             history:
@@ -8190,7 +8190,7 @@ components:
           evpAlignmentScore:
             score: "{}"
             evpMid: "{}"
-            mean: "{}"
+            centroid: "{}"
             scoreStatus: scoreStatus
             history:
             - date: date
@@ -8298,7 +8298,7 @@ components:
           consensusScores:
             tradeAlignmentScore:
               score: "{}"
-              mean: "{}"
+              centroid: "{}"
               latestTradePrice: "{}"
               scoreStatus: scoreStatus
               history:
@@ -8312,7 +8312,7 @@ components:
             evpAlignmentScore:
               score: "{}"
               evpMid: "{}"
-              mean: "{}"
+              centroid: "{}"
               scoreStatus: scoreStatus
               history:
               - date: date
@@ -9080,7 +9080,7 @@ components:
       example:
         tradeAlignmentScore:
           score: "{}"
-          mean: "{}"
+          centroid: "{}"
           latestTradePrice: "{}"
           scoreStatus: scoreStatus
           history:
@@ -9094,7 +9094,7 @@ components:
         evpAlignmentScore:
           score: "{}"
           evpMid: "{}"
-          mean: "{}"
+          centroid: "{}"
           scoreStatus: scoreStatus
           history:
           - date: date
@@ -10192,7 +10192,7 @@ components:
       example:
         score: "{}"
         evpMid: "{}"
-        mean: "{}"
+        centroid: "{}"
         scoreStatus: scoreStatus
         history:
         - date: date
@@ -10203,6 +10203,9 @@ components:
           scoreStatus: scoreStatus
         stdDev: "{}"
       properties:
+        centroid:
+          properties: {}
+          type: object
         evpMid:
           properties: {}
           type: object
@@ -10210,9 +10213,6 @@ components:
           items:
             $ref: '#/components/schemas/titaniumTradeAligmentDateAndValue'
           type: array
-        mean:
-          properties: {}
-          type: object
         score:
           properties: {}
           type: object
@@ -14249,7 +14249,7 @@ components:
     titaniumTradeAlignmentScore:
       example:
         score: "{}"
-        mean: "{}"
+        centroid: "{}"
         latestTradePrice: "{}"
         scoreStatus: scoreStatus
         history:
@@ -14261,14 +14261,14 @@ components:
           scoreStatus: scoreStatus
         stdDev: "{}"
       properties:
+        centroid:
+          properties: {}
+          type: object
         history:
           items:
             $ref: '#/components/schemas/titaniumTradeAligmentDateAndValue'
           type: array
         latestTradePrice:
-          properties: {}
-          type: object
-        mean:
           properties: {}
           type: object
         score:

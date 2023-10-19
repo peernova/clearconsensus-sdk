@@ -50,8 +50,12 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradeAlignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-06T18:33:51.913217Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-19T16:11:30.307312Z[UTC]")
 public class TitaniumTradeAlignmentScore {
+  public static final String SERIALIZED_NAME_CENTROID = "centroid";
+  @SerializedName(SERIALIZED_NAME_CENTROID)
+  private Object centroid;
+
   public static final String SERIALIZED_NAME_HISTORY = "history";
   @SerializedName(SERIALIZED_NAME_HISTORY)
   private List<TitaniumTradeAligmentDateAndValue> history = null;
@@ -59,10 +63,6 @@ public class TitaniumTradeAlignmentScore {
   public static final String SERIALIZED_NAME_LATEST_TRADE_PRICE = "latestTradePrice";
   @SerializedName(SERIALIZED_NAME_LATEST_TRADE_PRICE)
   private Object latestTradePrice;
-
-  public static final String SERIALIZED_NAME_MEAN = "mean";
-  @SerializedName(SERIALIZED_NAME_MEAN)
-  private Object mean;
 
   public static final String SERIALIZED_NAME_SCORE = "score";
   @SerializedName(SERIALIZED_NAME_SCORE)
@@ -78,6 +78,29 @@ public class TitaniumTradeAlignmentScore {
 
   public TitaniumTradeAlignmentScore() { 
   }
+
+  public TitaniumTradeAlignmentScore centroid(Object centroid) {
+    
+    this.centroid = centroid;
+    return this;
+  }
+
+   /**
+   * Get centroid
+   * @return centroid
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Object getCentroid() {
+    return centroid;
+  }
+
+
+  public void setCentroid(Object centroid) {
+    this.centroid = centroid;
+  }
+
 
   public TitaniumTradeAlignmentScore history(List<TitaniumTradeAligmentDateAndValue> history) {
     
@@ -130,29 +153,6 @@ public class TitaniumTradeAlignmentScore {
 
   public void setLatestTradePrice(Object latestTradePrice) {
     this.latestTradePrice = latestTradePrice;
-  }
-
-
-  public TitaniumTradeAlignmentScore mean(Object mean) {
-    
-    this.mean = mean;
-    return this;
-  }
-
-   /**
-   * Get mean
-   * @return mean
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public Object getMean() {
-    return mean;
-  }
-
-
-  public void setMean(Object mean) {
-    this.mean = mean;
   }
 
 
@@ -235,9 +235,9 @@ public class TitaniumTradeAlignmentScore {
       return false;
     }
     TitaniumTradeAlignmentScore titaniumTradeAlignmentScore = (TitaniumTradeAlignmentScore) o;
-    return Objects.equals(this.history, titaniumTradeAlignmentScore.history) &&
+    return Objects.equals(this.centroid, titaniumTradeAlignmentScore.centroid) &&
+        Objects.equals(this.history, titaniumTradeAlignmentScore.history) &&
         Objects.equals(this.latestTradePrice, titaniumTradeAlignmentScore.latestTradePrice) &&
-        Objects.equals(this.mean, titaniumTradeAlignmentScore.mean) &&
         Objects.equals(this.score, titaniumTradeAlignmentScore.score) &&
         Objects.equals(this.scoreStatus, titaniumTradeAlignmentScore.scoreStatus) &&
         Objects.equals(this.stdDev, titaniumTradeAlignmentScore.stdDev);
@@ -245,16 +245,16 @@ public class TitaniumTradeAlignmentScore {
 
   @Override
   public int hashCode() {
-    return Objects.hash(history, latestTradePrice, mean, score, scoreStatus, stdDev);
+    return Objects.hash(centroid, history, latestTradePrice, score, scoreStatus, stdDev);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumTradeAlignmentScore {\n");
+    sb.append("    centroid: ").append(toIndentedString(centroid)).append("\n");
     sb.append("    history: ").append(toIndentedString(history)).append("\n");
     sb.append("    latestTradePrice: ").append(toIndentedString(latestTradePrice)).append("\n");
-    sb.append("    mean: ").append(toIndentedString(mean)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    scoreStatus: ").append(toIndentedString(scoreStatus)).append("\n");
     sb.append("    stdDev: ").append(toIndentedString(stdDev)).append("\n");
@@ -280,9 +280,9 @@ public class TitaniumTradeAlignmentScore {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("centroid");
     openapiFields.add("history");
     openapiFields.add("latestTradePrice");
-    openapiFields.add("mean");
     openapiFields.add("score");
     openapiFields.add("scoreStatus");
     openapiFields.add("stdDev");

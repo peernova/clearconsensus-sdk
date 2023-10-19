@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**centroid** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **history** | [**[TitaniumTradeAligmentDateAndValue]**](TitaniumTradeAligmentDateAndValue.md) |  | [optional] 
 **latest_trade_price** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
-**mean** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **score** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 
 **score_status** | **str** |  | [optional] 
 **std_dev** | **bool, date, datetime, dict, float, int, list, str, none_type** |  | [optional] 

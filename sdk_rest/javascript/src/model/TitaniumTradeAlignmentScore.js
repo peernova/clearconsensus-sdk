@@ -48,14 +48,14 @@ class TitaniumTradeAlignmentScore {
         if (data) {
             obj = obj || new TitaniumTradeAlignmentScore();
 
+            if (data.hasOwnProperty('centroid')) {
+                obj['centroid'] = ApiClient.convertToType(data['centroid'], Object);
+            }
             if (data.hasOwnProperty('history')) {
                 obj['history'] = ApiClient.convertToType(data['history'], [TitaniumTradeAligmentDateAndValue]);
             }
             if (data.hasOwnProperty('latestTradePrice')) {
                 obj['latestTradePrice'] = ApiClient.convertToType(data['latestTradePrice'], Object);
-            }
-            if (data.hasOwnProperty('mean')) {
-                obj['mean'] = ApiClient.convertToType(data['mean'], Object);
             }
             if (data.hasOwnProperty('score')) {
                 obj['score'] = ApiClient.convertToType(data['score'], Object);
@@ -74,6 +74,11 @@ class TitaniumTradeAlignmentScore {
 }
 
 /**
+ * @member {Object} centroid
+ */
+TitaniumTradeAlignmentScore.prototype['centroid'] = undefined;
+
+/**
  * @member {Array.<module:model/TitaniumTradeAligmentDateAndValue>} history
  */
 TitaniumTradeAlignmentScore.prototype['history'] = undefined;
@@ -82,11 +87,6 @@ TitaniumTradeAlignmentScore.prototype['history'] = undefined;
  * @member {Object} latestTradePrice
  */
 TitaniumTradeAlignmentScore.prototype['latestTradePrice'] = undefined;
-
-/**
- * @member {Object} mean
- */
-TitaniumTradeAlignmentScore.prototype['mean'] = undefined;
 
 /**
  * @member {Object} score
