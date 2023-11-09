@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusHistoryRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:53:23.329796Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:03:56.499981Z[UTC]")
 public class TitaniumConsensusHistoryRequest {
   public static final String SERIALIZED_NAME_FILTER = "filter";
   @SerializedName(SERIALIZED_NAME_FILTER)
