@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUserRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:41:41.039267Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:42:41.744003Z[UTC]")
 public class TitaniumUserRequest {
   public static final String SERIALIZED_NAME_USER = "user";
   @SerializedName(SERIALIZED_NAME_USER)

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetChartDataRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:41:41.039267Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:42:41.744003Z[UTC]")
 public class TitaniumGetChartDataRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)

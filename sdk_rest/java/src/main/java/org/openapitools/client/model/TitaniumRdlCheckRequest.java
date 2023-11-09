@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumRdlCheckRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:41:41.039267Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:42:41.744003Z[UTC]")
 public class TitaniumRdlCheckRequest {
   public static final String SERIALIZED_NAME_RDL = "rdl";
   @SerializedName(SERIALIZED_NAME_RDL)
