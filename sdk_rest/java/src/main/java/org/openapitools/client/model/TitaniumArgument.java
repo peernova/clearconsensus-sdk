@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumArgument
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:12:23.464509Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:13:27.270882Z[UTC]")
 public class TitaniumArgument {
   public static final String SERIALIZED_NAME_DEFINITION = "definition";
   @SerializedName(SERIALIZED_NAME_DEFINITION)

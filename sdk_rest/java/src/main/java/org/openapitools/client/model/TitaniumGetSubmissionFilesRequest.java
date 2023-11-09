@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetSubmissionFilesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:12:23.464509Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:13:27.270882Z[UTC]")
 public class TitaniumGetSubmissionFilesRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
