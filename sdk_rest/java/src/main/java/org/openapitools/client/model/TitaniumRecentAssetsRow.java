@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumRecentAssetsRow
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:18:15.973724Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:27:52.648843Z[UTC]")
 public class TitaniumRecentAssetsRow {
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
