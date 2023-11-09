@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumMarket
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:27:52.648843Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:29:00.000800Z[UTC]")
 public class TitaniumMarket {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
