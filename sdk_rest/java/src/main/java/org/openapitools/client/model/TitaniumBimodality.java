@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumBimodality
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:29:00.000800Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:30:15.521341Z[UTC]")
 public class TitaniumBimodality {
   public static final String SERIALIZED_NAME_BIMODALITY_INDEX = "bimodalityIndex";
   @SerializedName(SERIALIZED_NAME_BIMODALITY_INDEX)
