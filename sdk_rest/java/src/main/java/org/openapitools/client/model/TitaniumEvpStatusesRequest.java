@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpStatusesRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:40:14.901257Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:48:07.724819Z[UTC]")
 public class TitaniumEvpStatusesRequest {
   public static final String SERIALIZED_NAME_SLICE_REQUEST_DATA = "sliceRequestData";
   @SerializedName(SERIALIZED_NAME_SLICE_REQUEST_DATA)
