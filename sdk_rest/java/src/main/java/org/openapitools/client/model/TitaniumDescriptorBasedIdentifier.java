@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumDescriptorBasedIdentifier
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:13:59.284481Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:22:18.538272Z[UTC]")
 public class TitaniumDescriptorBasedIdentifier {
   public static final String SERIALIZED_NAME_DESCRIPTOR_NAME = "descriptorName";
   @SerializedName(SERIALIZED_NAME_DESCRIPTOR_NAME)
