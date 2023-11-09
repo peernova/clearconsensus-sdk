@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvidentalPricing
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:06:22.961185Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:08:28.733850Z[UTC]")
 public class TitaniumEvidentalPricing {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_EVP_MID = "absDiffFromEvpMid";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_EVP_MID)
