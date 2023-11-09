@@ -180,12 +180,40 @@ export namespace ColDependency {
   }
 }
 
-export class DescriptorDependenciesResponse extends jspb.Message {
+export class ColDependencyResponse extends jspb.Message {
   clearDependenciesList(): void;
   getDependenciesList(): Array<ColDependency>;
   setDependenciesList(value: Array<ColDependency>): void;
   addDependencies(value?: ColDependency, index?: number): ColDependency;
 
+  serializeBinary(): Uint8Array;
+  toObject(includeInstance?: boolean): ColDependencyResponse.AsObject;
+  static toObject(includeInstance: boolean, msg: ColDependencyResponse): ColDependencyResponse.AsObject;
+  static extensions: {[key: number]: jspb.ExtensionFieldInfo<jspb.Message>};
+  static extensionsBinary: {[key: number]: jspb.ExtensionFieldBinaryInfo<jspb.Message>};
+  static serializeBinaryToWriter(message: ColDependencyResponse, writer: jspb.BinaryWriter): void;
+  static deserializeBinary(bytes: Uint8Array): ColDependencyResponse;
+  static deserializeBinaryFromReader(message: ColDependencyResponse, reader: jspb.BinaryReader): ColDependencyResponse;
+}
+
+export namespace ColDependencyResponse {
+  export type AsObject = {
+    dependenciesList: Array<ColDependency.AsObject>,
+  }
+}
+
+export class DescriptorDependenciesResponse extends jspb.Message {
+  hasDependencies(): boolean;
+  clearDependencies(): void;
+  getDependencies(): ColDependencyResponse | undefined;
+  setDependencies(value?: ColDependencyResponse): void;
+
+  hasError(): boolean;
+  clearError(): void;
+  getError(): common_gateway_base_pb.Error | undefined;
+  setError(value?: common_gateway_base_pb.Error): void;
+
+  getResponseCase(): DescriptorDependenciesResponse.ResponseCase;
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): DescriptorDependenciesResponse.AsObject;
   static toObject(includeInstance: boolean, msg: DescriptorDependenciesResponse): DescriptorDependenciesResponse.AsObject;
@@ -198,7 +226,14 @@ export class DescriptorDependenciesResponse extends jspb.Message {
 
 export namespace DescriptorDependenciesResponse {
   export type AsObject = {
-    dependenciesList: Array<ColDependency.AsObject>,
+    dependencies?: ColDependencyResponse.AsObject,
+    error?: common_gateway_base_pb.Error.AsObject,
+  }
+
+  export enum ResponseCase {
+    RESPONSE_NOT_SET = 0,
+    DEPENDENCIES = 1,
+    ERROR = 2,
   }
 }
 

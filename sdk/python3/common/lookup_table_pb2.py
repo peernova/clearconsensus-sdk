@@ -8,7 +8,7 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from ..common import gateway_base_pb2 as common_dot_gateway__base__pb2
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19common/lookup_table.proto\x12\x08titanium\x1a\x1cgoogle/protobuf/struct.proto\x1a\x19common/gateway_base.proto"\\\n\x15AddLookupTableRequest\x12\r\n\x05scope\x18\x01 \x01(\t\x124\n\x0blookuptable\x18\x02 \x01(\x0b2\x1f.titanium.LookupTableDefinition"w\n\x16GetLookupTableResponse\x12/\n\x04data\x18\x01 \x01(\x0b2\x1f.titanium.LookupTableDefinitionH\x00\x12 \n\x05error\x18\x02 \x01(\x0b2\x0f.titanium.ErrorH\x00B\n\n\x08response"u\n\x13LookupTableListItem\x12(\n\nidentifier\x18\x01 \x01(\x0b2\x14.titanium.Identifier\x12\x1f\n\x04type\x18\x02 \x01(\x0e2\x11.titanium.LutType\x12\x13\n\x0bvalue_field\x18\x03 \x01(\t"W\n\x0fLookupTableList\x12.\n\x07results\x18\x01 \x03(\x0b2\x1d.titanium.LookupTableListItem\x12\x14\n\x0ctotalRecords\x18\x02 \x01(\x05"r\n\x17ListLookupTableResponse\x12)\n\x04data\x18\x01 \x01(\x0b2\x19.titanium.LookupTableListH\x00\x12 \n\x05error\x18\x02 \x01(\x0b2\x0f.titanium.ErrorH\x00B\n\n\x08response"\xa2\x01\n\x15LookupTableDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1f\n\x04type\x18\x02 \x01(\x0e2\x11.titanium.LutType\x12"\n\x06fields\x18\x03 \x03(\x0b2\x12.titanium.LutField\x12 \n\x04rows\x18\x04 \x03(\x0b2\x12.titanium.LutEntry\x12\x14\n\x0ctotalRecords\x18\x05 \x01(\x05"F\n\x08LutField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1f\n\x04type\x18\x02 \x01(\x0e2\x11.titanium.LutType\x12\x0b\n\x03key\x18\x03 \x01(\x08"6\n\x08LutEntry\x12*\n\x06values\x18\x01 \x01(\x0b2\x1a.google.protobuf.ListValue*>\n\x07LutType\x12\x0b\n\x07BOOLEAN\x10\x00\x12\n\n\x06STRING\x10\x01\x12\x0b\n\x07NUMERIC\x10\x02\x12\r\n\tTIMESTAMP\x10\x03Bt\n com.peernova.titanium.interfacesB\x18LookupServiceProtoCommonP\x01Z4github.com/peernova/clearconsensus-sdk/sdk/go/commonb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19common/lookup_table.proto\x12\x08titanium\x1a\x1cgoogle/protobuf/struct.proto\x1a\x19common/gateway_base.proto"\\\n\x15AddLookupTableRequest\x12\r\n\x05scope\x18\x01 \x01(\t\x124\n\x0blookuptable\x18\x02 \x01(\x0b2\x1f.titanium.LookupTableDefinition"w\n\x16GetLookupTableResponse\x12/\n\x04data\x18\x01 \x01(\x0b2\x1f.titanium.LookupTableDefinitionH\x00\x12 \n\x05error\x18\x02 \x01(\x0b2\x0f.titanium.ErrorH\x00B\n\n\x08response"u\n\x13LookupTableListItem\x12(\n\nidentifier\x18\x01 \x01(\x0b2\x14.titanium.Identifier\x12\x1f\n\x04type\x18\x02 \x01(\x0e2\x11.titanium.LutType\x12\x13\n\x0bvalue_field\x18\x03 \x01(\t"W\n\x0fLookupTableList\x12.\n\x07results\x18\x01 \x03(\x0b2\x1d.titanium.LookupTableListItem\x12\x14\n\x0ctotalRecords\x18\x02 \x01(\x05"r\n\x17ListLookupTableResponse\x12)\n\x04data\x18\x01 \x01(\x0b2\x19.titanium.LookupTableListH\x00\x12 \n\x05error\x18\x02 \x01(\x0b2\x0f.titanium.ErrorH\x00B\n\n\x08response"\xa2\x01\n\x15LookupTableDefinition\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1f\n\x04type\x18\x02 \x01(\x0e2\x11.titanium.LutType\x12"\n\x06fields\x18\x03 \x03(\x0b2\x12.titanium.LutField\x12 \n\x04rows\x18\x04 \x03(\x0b2\x12.titanium.LutEntry\x12\x14\n\x0ctotalRecords\x18\x05 \x01(\x05"U\n\x08LutField\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x1f\n\x04type\x18\x02 \x01(\x0e2\x11.titanium.LutType\x12\x0b\n\x03key\x18\x03 \x01(\x08\x12\r\n\x05group\x18\x04 \x01(\x08"6\n\x08LutEntry\x12*\n\x06values\x18\x01 \x01(\x0b2\x1a.google.protobuf.ListValue*>\n\x07LutType\x12\x0b\n\x07BOOLEAN\x10\x00\x12\n\n\x06STRING\x10\x01\x12\x0b\n\x07NUMERIC\x10\x02\x12\r\n\tTIMESTAMP\x10\x03Bt\n com.peernova.titanium.interfacesB\x18LookupServiceProtoCommonP\x01Z4github.com/peernova/clearconsensus-sdk/sdk/go/commonb\x06proto3')
 _LUTTYPE = DESCRIPTOR.enum_types_by_name['LutType']
 LutType = enum_type_wrapper.EnumTypeWrapper(_LUTTYPE)
 BOOLEAN = 0
@@ -42,8 +42,8 @@ _sym_db.RegisterMessage(LutEntry)
 if _descriptor._USE_C_DESCRIPTORS == False:
     DESCRIPTOR._options = None
     DESCRIPTOR._serialized_options = b'\n com.peernova.titanium.interfacesB\x18LookupServiceProtoCommonP\x01Z4github.com/peernova/clearconsensus-sdk/sdk/go/common'
-    _LUTTYPE._serialized_start = 928
-    _LUTTYPE._serialized_end = 990
+    _LUTTYPE._serialized_start = 943
+    _LUTTYPE._serialized_end = 1005
     _ADDLOOKUPTABLEREQUEST._serialized_start = 96
     _ADDLOOKUPTABLEREQUEST._serialized_end = 188
     _GETLOOKUPTABLERESPONSE._serialized_start = 190
@@ -57,6 +57,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
     _LOOKUPTABLEDEFINITION._serialized_start = 636
     _LOOKUPTABLEDEFINITION._serialized_end = 798
     _LUTFIELD._serialized_start = 800
-    _LUTFIELD._serialized_end = 870
-    _LUTENTRY._serialized_start = 872
-    _LUTENTRY._serialized_end = 926
+    _LUTFIELD._serialized_end = 885
+    _LUTENTRY._serialized_start = 887
+    _LUTENTRY._serialized_end = 941

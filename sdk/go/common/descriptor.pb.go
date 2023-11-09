@@ -442,7 +442,7 @@ func (x *ColDependency) GetDependency() []*Dependency {
 	return nil
 }
 
-type DescriptorDependenciesResponse struct {
+type ColDependencyResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -450,10 +450,61 @@ type DescriptorDependenciesResponse struct {
 	Dependencies []*ColDependency `protobuf:"bytes,1,rep,name=dependencies,proto3" json:"dependencies,omitempty"`
 }
 
+func (x *ColDependencyResponse) Reset() {
+	*x = ColDependencyResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_common_descriptor_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ColDependencyResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ColDependencyResponse) ProtoMessage() {}
+
+func (x *ColDependencyResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_common_descriptor_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ColDependencyResponse.ProtoReflect.Descriptor instead.
+func (*ColDependencyResponse) Descriptor() ([]byte, []int) {
+	return file_common_descriptor_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ColDependencyResponse) GetDependencies() []*ColDependency {
+	if x != nil {
+		return x.Dependencies
+	}
+	return nil
+}
+
+type DescriptorDependenciesResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Response:
+	//
+	//	*DescriptorDependenciesResponse_Dependencies
+	//	*DescriptorDependenciesResponse_Error
+	Response isDescriptorDependenciesResponse_Response `protobuf_oneof:"response"`
+}
+
 func (x *DescriptorDependenciesResponse) Reset() {
 	*x = DescriptorDependenciesResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_common_descriptor_proto_msgTypes[5]
+		mi := &file_common_descriptor_proto_msgTypes[6]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -466,7 +517,7 @@ func (x *DescriptorDependenciesResponse) String() string {
 func (*DescriptorDependenciesResponse) ProtoMessage() {}
 
 func (x *DescriptorDependenciesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_common_descriptor_proto_msgTypes[5]
+	mi := &file_common_descriptor_proto_msgTypes[6]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -479,15 +530,45 @@ func (x *DescriptorDependenciesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DescriptorDependenciesResponse.ProtoReflect.Descriptor instead.
 func (*DescriptorDependenciesResponse) Descriptor() ([]byte, []int) {
-	return file_common_descriptor_proto_rawDescGZIP(), []int{5}
+	return file_common_descriptor_proto_rawDescGZIP(), []int{6}
 }
 
-func (x *DescriptorDependenciesResponse) GetDependencies() []*ColDependency {
-	if x != nil {
+func (m *DescriptorDependenciesResponse) GetResponse() isDescriptorDependenciesResponse_Response {
+	if m != nil {
+		return m.Response
+	}
+	return nil
+}
+
+func (x *DescriptorDependenciesResponse) GetDependencies() *ColDependencyResponse {
+	if x, ok := x.GetResponse().(*DescriptorDependenciesResponse_Dependencies); ok {
 		return x.Dependencies
 	}
 	return nil
 }
+
+func (x *DescriptorDependenciesResponse) GetError() *Error {
+	if x, ok := x.GetResponse().(*DescriptorDependenciesResponse_Error); ok {
+		return x.Error
+	}
+	return nil
+}
+
+type isDescriptorDependenciesResponse_Response interface {
+	isDescriptorDependenciesResponse_Response()
+}
+
+type DescriptorDependenciesResponse_Dependencies struct {
+	Dependencies *ColDependencyResponse `protobuf:"bytes,1,opt,name=dependencies,proto3,oneof"`
+}
+
+type DescriptorDependenciesResponse_Error struct {
+	Error *Error `protobuf:"bytes,2,opt,name=error,proto3,oneof"`
+}
+
+func (*DescriptorDependenciesResponse_Dependencies) isDescriptorDependenciesResponse_Response() {}
+
+func (*DescriptorDependenciesResponse_Error) isDescriptorDependenciesResponse_Response() {}
 
 var File_common_descriptor_proto protoreflect.FileDescriptor
 
@@ -544,20 +625,30 @@ var file_common_descriptor_proto_rawDesc = []byte{
 	0x12, 0x34, 0x0a, 0x0a, 0x64, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x79, 0x18, 0x02,
 	0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e,
 	0x44, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x0a, 0x64, 0x65, 0x70, 0x65,
-	0x6e, 0x64, 0x65, 0x6e, 0x63, 0x79, 0x22, 0x5d, 0x0a, 0x1e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69,
-	0x70, 0x74, 0x6f, 0x72, 0x44, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73,
-	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3b, 0x0a, 0x0c, 0x64, 0x65, 0x70, 0x65,
-	0x6e, 0x64, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17,
-	0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x43, 0x6f, 0x6c, 0x44, 0x65, 0x70,
-	0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x0c, 0x64, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65,
-	0x6e, 0x63, 0x69, 0x65, 0x73, 0x42, 0x71, 0x0a, 0x20, 0x63, 0x6f, 0x6d, 0x2e, 0x70, 0x65, 0x65,
-	0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x69,
-	0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65, 0x73, 0x42, 0x15, 0x44, 0x65, 0x73, 0x63, 0x72,
-	0x69, 0x70, 0x74, 0x6f, 0x72, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e,
-	0x50, 0x01, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x70,
-	0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2f, 0x63, 0x6c, 0x65, 0x61, 0x72, 0x63, 0x6f, 0x6e,
-	0x73, 0x65, 0x6e, 0x73, 0x75, 0x73, 0x2d, 0x73, 0x64, 0x6b, 0x2f, 0x73, 0x64, 0x6b, 0x2f, 0x67,
-	0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x6e, 0x64, 0x65, 0x6e, 0x63, 0x79, 0x22, 0x54, 0x0a, 0x15, 0x43, 0x6f, 0x6c, 0x44, 0x65, 0x70,
+	0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x3b, 0x0a, 0x0c, 0x64, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x17, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d,
+	0x2e, 0x43, 0x6f, 0x6c, 0x44, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x0c,
+	0x64, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x22, 0x9c, 0x01, 0x0a,
+	0x1e, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x6f, 0x72, 0x44, 0x65, 0x70, 0x65, 0x6e,
+	0x64, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
+	0x45, 0x0a, 0x0c, 0x64, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d,
+	0x2e, 0x43, 0x6f, 0x6c, 0x44, 0x65, 0x70, 0x65, 0x6e, 0x64, 0x65, 0x6e, 0x63, 0x79, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x48, 0x00, 0x52, 0x0c, 0x64, 0x65, 0x70, 0x65, 0x6e, 0x64,
+	0x65, 0x6e, 0x63, 0x69, 0x65, 0x73, 0x12, 0x27, 0x0a, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0f, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d,
+	0x2e, 0x45, 0x72, 0x72, 0x6f, 0x72, 0x48, 0x00, 0x52, 0x05, 0x65, 0x72, 0x72, 0x6f, 0x72, 0x42,
+	0x0a, 0x0a, 0x08, 0x72, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x71, 0x0a, 0x20, 0x63,
+	0x6f, 0x6d, 0x2e, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2e, 0x74, 0x69, 0x74, 0x61,
+	0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x69, 0x6e, 0x74, 0x65, 0x72, 0x66, 0x61, 0x63, 0x65, 0x73, 0x42,
+	0x15, 0x44, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x6f, 0x72, 0x50, 0x72, 0x6f, 0x74, 0x6f,
+	0x43, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x50, 0x01, 0x5a, 0x34, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62,
+	0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x70, 0x65, 0x65, 0x72, 0x6e, 0x6f, 0x76, 0x61, 0x2f, 0x63, 0x6c,
+	0x65, 0x61, 0x72, 0x63, 0x6f, 0x6e, 0x73, 0x65, 0x6e, 0x73, 0x75, 0x73, 0x2d, 0x73, 0x64, 0x6b,
+	0x2f, 0x73, 0x64, 0x6b, 0x2f, 0x67, 0x6f, 0x2f, 0x63, 0x6f, 0x6d, 0x6d, 0x6f, 0x6e, 0x62, 0x06,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -573,7 +664,7 @@ func file_common_descriptor_proto_rawDescGZIP() []byte {
 }
 
 var file_common_descriptor_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_common_descriptor_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
+var file_common_descriptor_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_common_descriptor_proto_goTypes = []interface{}{
 	(Usage_UsageType)(0),                   // 0: titanium.Usage.UsageType
 	(*DescriptorDefinitionResponse)(nil),   // 1: titanium.DescriptorDefinitionResponse
@@ -581,25 +672,28 @@ var file_common_descriptor_proto_goTypes = []interface{}{
 	(*Usage)(nil),                          // 3: titanium.Usage
 	(*Dependency)(nil),                     // 4: titanium.Dependency
 	(*ColDependency)(nil),                  // 5: titanium.ColDependency
-	(*DescriptorDependenciesResponse)(nil), // 6: titanium.DescriptorDependenciesResponse
-	(*Error)(nil),                          // 7: titanium.Error
-	(*ResultsList)(nil),                    // 8: titanium.ResultsList
-	(EntityType)(0),                        // 9: titanium.EntityType
+	(*ColDependencyResponse)(nil),          // 6: titanium.ColDependencyResponse
+	(*DescriptorDependenciesResponse)(nil), // 7: titanium.DescriptorDependenciesResponse
+	(*Error)(nil),                          // 8: titanium.Error
+	(*ResultsList)(nil),                    // 9: titanium.ResultsList
+	(EntityType)(0),                        // 10: titanium.EntityType
 }
 var file_common_descriptor_proto_depIdxs = []int32{
-	7, // 0: titanium.DescriptorDefinitionResponse.error:type_name -> titanium.Error
-	8, // 1: titanium.DescriptorList.data:type_name -> titanium.ResultsList
-	7, // 2: titanium.DescriptorList.error:type_name -> titanium.Error
-	0, // 3: titanium.Usage.usage_type:type_name -> titanium.Usage.UsageType
-	9, // 4: titanium.Dependency.entity_type:type_name -> titanium.EntityType
-	3, // 5: titanium.Dependency.usages:type_name -> titanium.Usage
-	4, // 6: titanium.ColDependency.dependency:type_name -> titanium.Dependency
-	5, // 7: titanium.DescriptorDependenciesResponse.dependencies:type_name -> titanium.ColDependency
-	8, // [8:8] is the sub-list for method output_type
-	8, // [8:8] is the sub-list for method input_type
-	8, // [8:8] is the sub-list for extension type_name
-	8, // [8:8] is the sub-list for extension extendee
-	0, // [0:8] is the sub-list for field type_name
+	8,  // 0: titanium.DescriptorDefinitionResponse.error:type_name -> titanium.Error
+	9,  // 1: titanium.DescriptorList.data:type_name -> titanium.ResultsList
+	8,  // 2: titanium.DescriptorList.error:type_name -> titanium.Error
+	0,  // 3: titanium.Usage.usage_type:type_name -> titanium.Usage.UsageType
+	10, // 4: titanium.Dependency.entity_type:type_name -> titanium.EntityType
+	3,  // 5: titanium.Dependency.usages:type_name -> titanium.Usage
+	4,  // 6: titanium.ColDependency.dependency:type_name -> titanium.Dependency
+	5,  // 7: titanium.ColDependencyResponse.dependencies:type_name -> titanium.ColDependency
+	6,  // 8: titanium.DescriptorDependenciesResponse.dependencies:type_name -> titanium.ColDependencyResponse
+	8,  // 9: titanium.DescriptorDependenciesResponse.error:type_name -> titanium.Error
+	10, // [10:10] is the sub-list for method output_type
+	10, // [10:10] is the sub-list for method input_type
+	10, // [10:10] is the sub-list for extension type_name
+	10, // [10:10] is the sub-list for extension extendee
+	0,  // [0:10] is the sub-list for field type_name
 }
 
 func init() { file_common_descriptor_proto_init() }
@@ -670,6 +764,18 @@ func file_common_descriptor_proto_init() {
 			}
 		}
 		file_common_descriptor_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ColDependencyResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_common_descriptor_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*DescriptorDependenciesResponse); i {
 			case 0:
 				return &v.state
@@ -690,13 +796,17 @@ func file_common_descriptor_proto_init() {
 		(*DescriptorList_Data)(nil),
 		(*DescriptorList_Error)(nil),
 	}
+	file_common_descriptor_proto_msgTypes[6].OneofWrappers = []interface{}{
+		(*DescriptorDependenciesResponse_Dependencies)(nil),
+		(*DescriptorDependenciesResponse_Error)(nil),
+	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_common_descriptor_proto_rawDesc,
 			NumEnums:      1,
-			NumMessages:   6,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

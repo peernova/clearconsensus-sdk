@@ -1180,13 +1180,13 @@ type UploadURLRequest struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Date           string          `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
-	AssetId        string          `protobuf:"bytes,2,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
-	FileName       string          `protobuf:"bytes,3,opt,name=file_name,json=fileName,proto3" json:"file_name,omitempty"`
-	Client         string          `protobuf:"bytes,4,opt,name=client,proto3" json:"client,omitempty"`
-	TraceName      string          `protobuf:"bytes,5,opt,name=trace_name,json=traceName,proto3" json:"trace_name,omitempty"`
-	DescriptorName string          `protobuf:"bytes,6,opt,name=descriptor_name,json=descriptorName,proto3" json:"descriptor_name,omitempty"`
-	FileAnnotation *FileAnnotation `protobuf:"bytes,7,opt,name=file_annotation,json=fileAnnotation,proto3" json:"file_annotation,omitempty"`
+	Date           string            `protobuf:"bytes,1,opt,name=date,proto3" json:"date,omitempty"`
+	AssetId        string            `protobuf:"bytes,2,opt,name=asset_id,json=assetId,proto3" json:"asset_id,omitempty"`
+	FileName       string            `protobuf:"bytes,3,opt,name=file_name,json=fileName,proto3" json:"file_name,omitempty"`
+	Client         string            `protobuf:"bytes,4,opt,name=client,proto3" json:"client,omitempty"`
+	TraceName      string            `protobuf:"bytes,5,opt,name=trace_name,json=traceName,proto3" json:"trace_name,omitempty"`
+	DescriptorName string            `protobuf:"bytes,6,opt,name=descriptor_name,json=descriptorName,proto3" json:"descriptor_name,omitempty"`
+	FileAnnotation []*FileAnnotation `protobuf:"bytes,7,rep,name=file_annotation,json=fileAnnotation,proto3" json:"file_annotation,omitempty"`
 }
 
 func (x *UploadURLRequest) Reset() {
@@ -1263,7 +1263,7 @@ func (x *UploadURLRequest) GetDescriptorName() string {
 	return ""
 }
 
-func (x *UploadURLRequest) GetFileAnnotation() *FileAnnotation {
+func (x *UploadURLRequest) GetFileAnnotation() []*FileAnnotation {
 	if x != nil {
 		return x.FileAnnotation
 	}
@@ -2185,7 +2185,7 @@ var file_common_data_proto_rawDesc = []byte{
 	0x12, 0x27, 0x0a, 0x0f, 0x64, 0x65, 0x73, 0x63, 0x72, 0x69, 0x70, 0x74, 0x6f, 0x72, 0x5f, 0x6e,
 	0x61, 0x6d, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0e, 0x64, 0x65, 0x73, 0x63, 0x72,
 	0x69, 0x70, 0x74, 0x6f, 0x72, 0x4e, 0x61, 0x6d, 0x65, 0x12, 0x41, 0x0a, 0x0f, 0x66, 0x69, 0x6c,
-	0x65, 0x5f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20, 0x01,
+	0x65, 0x5f, 0x61, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x07, 0x20, 0x03,
 	0x28, 0x0b, 0x32, 0x18, 0x2e, 0x74, 0x69, 0x74, 0x61, 0x6e, 0x69, 0x75, 0x6d, 0x2e, 0x46, 0x69,
 	0x6c, 0x65, 0x41, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x52, 0x0e, 0x66, 0x69,
 	0x6c, 0x65, 0x41, 0x6e, 0x6e, 0x6f, 0x74, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0xa0, 0x02, 0x0a,

@@ -336,7 +336,7 @@ if (goog.DEBUG && !COMPILED) {
  * @constructor
  */
 proto.titanium.UploadURLRequest = function(opt_data) {
-  jspb.Message.initialize(this, opt_data, 0, -1, null, null);
+  jspb.Message.initialize(this, opt_data, 0, -1, proto.titanium.UploadURLRequest.repeatedFields_, null);
 };
 goog.inherits(proto.titanium.UploadURLRequest, jspb.Message);
 if (goog.DEBUG && !COMPILED) {
@@ -3779,6 +3779,13 @@ proto.titanium.ExportResponseData.prototype.setData = function(value) {
 
 
 
+/**
+ * List of repeated fields within this message type.
+ * @private {!Array<number>}
+ * @const
+ */
+proto.titanium.UploadURLRequest.repeatedFields_ = [7];
+
 
 
 if (jspb.Message.GENERATE_TO_OBJECT) {
@@ -3816,7 +3823,8 @@ proto.titanium.UploadURLRequest.toObject = function(includeInstance, msg) {
     client: jspb.Message.getFieldWithDefault(msg, 4, ""),
     traceName: jspb.Message.getFieldWithDefault(msg, 5, ""),
     descriptorName: jspb.Message.getFieldWithDefault(msg, 6, ""),
-    fileAnnotation: (f = msg.getFileAnnotation()) && proto.titanium.FileAnnotation.toObject(includeInstance, f)
+    fileAnnotationList: jspb.Message.toObjectList(msg.getFileAnnotationList(),
+    proto.titanium.FileAnnotation.toObject, includeInstance)
   };
 
   if (includeInstance) {
@@ -3880,7 +3888,7 @@ proto.titanium.UploadURLRequest.deserializeBinaryFromReader = function(msg, read
     case 7:
       var value = new proto.titanium.FileAnnotation;
       reader.readMessage(value,proto.titanium.FileAnnotation.deserializeBinaryFromReader);
-      msg.setFileAnnotation(value);
+      msg.addFileAnnotation(value);
       break;
     default:
       reader.skipField();
@@ -3953,9 +3961,9 @@ proto.titanium.UploadURLRequest.serializeBinaryToWriter = function(message, writ
       f
     );
   }
-  f = message.getFileAnnotation();
-  if (f != null) {
-    writer.writeMessage(
+  f = message.getFileAnnotationList();
+  if (f.length > 0) {
+    writer.writeRepeatedMessage(
       7,
       f,
       proto.titanium.FileAnnotation.serializeBinaryToWriter
@@ -4073,39 +4081,40 @@ proto.titanium.UploadURLRequest.prototype.setDescriptorName = function(value) {
 
 
 /**
- * optional FileAnnotation file_annotation = 7;
- * @return {?proto.titanium.FileAnnotation}
+ * repeated FileAnnotation file_annotation = 7;
+ * @return {!Array<!proto.titanium.FileAnnotation>}
  */
-proto.titanium.UploadURLRequest.prototype.getFileAnnotation = function() {
-  return /** @type{?proto.titanium.FileAnnotation} */ (
-    jspb.Message.getWrapperField(this, proto.titanium.FileAnnotation, 7));
+proto.titanium.UploadURLRequest.prototype.getFileAnnotationList = function() {
+  return /** @type{!Array<!proto.titanium.FileAnnotation>} */ (
+    jspb.Message.getRepeatedWrapperField(this, proto.titanium.FileAnnotation, 7));
 };
 
 
 /**
- * @param {?proto.titanium.FileAnnotation|undefined} value
+ * @param {!Array<!proto.titanium.FileAnnotation>} value
  * @return {!proto.titanium.UploadURLRequest} returns this
 */
-proto.titanium.UploadURLRequest.prototype.setFileAnnotation = function(value) {
-  return jspb.Message.setWrapperField(this, 7, value);
+proto.titanium.UploadURLRequest.prototype.setFileAnnotationList = function(value) {
+  return jspb.Message.setRepeatedWrapperField(this, 7, value);
 };
 
 
 /**
- * Clears the message field making it undefined.
+ * @param {!proto.titanium.FileAnnotation=} opt_value
+ * @param {number=} opt_index
+ * @return {!proto.titanium.FileAnnotation}
+ */
+proto.titanium.UploadURLRequest.prototype.addFileAnnotation = function(opt_value, opt_index) {
+  return jspb.Message.addToRepeatedWrapperField(this, 7, opt_value, proto.titanium.FileAnnotation, opt_index);
+};
+
+
+/**
+ * Clears the list making it empty but non-null.
  * @return {!proto.titanium.UploadURLRequest} returns this
  */
-proto.titanium.UploadURLRequest.prototype.clearFileAnnotation = function() {
-  return this.setFileAnnotation(undefined);
-};
-
-
-/**
- * Returns whether this field is set.
- * @return {boolean}
- */
-proto.titanium.UploadURLRequest.prototype.hasFileAnnotation = function() {
-  return jspb.Message.getField(this, 7) != null;
+proto.titanium.UploadURLRequest.prototype.clearFileAnnotationList = function() {
+  return this.setFileAnnotationList([]);
 };
 
 

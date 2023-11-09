@@ -1575,7 +1575,8 @@ proto.titanium.LutField.toObject = function(includeInstance, msg) {
   var f, obj = {
     name: jspb.Message.getFieldWithDefault(msg, 1, ""),
     type: jspb.Message.getFieldWithDefault(msg, 2, 0),
-    key: jspb.Message.getBooleanFieldWithDefault(msg, 3, false)
+    key: jspb.Message.getBooleanFieldWithDefault(msg, 3, false),
+    group: jspb.Message.getBooleanFieldWithDefault(msg, 4, false)
   };
 
   if (includeInstance) {
@@ -1624,6 +1625,10 @@ proto.titanium.LutField.deserializeBinaryFromReader = function(msg, reader) {
       var value = /** @type {boolean} */ (reader.readBool());
       msg.setKey(value);
       break;
+    case 4:
+      var value = /** @type {boolean} */ (reader.readBool());
+      msg.setGroup(value);
+      break;
     default:
       reader.skipField();
       break;
@@ -1671,6 +1676,13 @@ proto.titanium.LutField.serializeBinaryToWriter = function(message, writer) {
   if (f) {
     writer.writeBool(
       3,
+      f
+    );
+  }
+  f = message.getGroup();
+  if (f) {
+    writer.writeBool(
+      4,
       f
     );
   }
@@ -1728,6 +1740,24 @@ proto.titanium.LutField.prototype.getKey = function() {
  */
 proto.titanium.LutField.prototype.setKey = function(value) {
   return jspb.Message.setProto3BooleanField(this, 3, value);
+};
+
+
+/**
+ * optional bool group = 4;
+ * @return {boolean}
+ */
+proto.titanium.LutField.prototype.getGroup = function() {
+  return /** @type {boolean} */ (jspb.Message.getBooleanFieldWithDefault(this, 4, false));
+};
+
+
+/**
+ * @param {boolean} value
+ * @return {!proto.titanium.LutField} returns this
+ */
+proto.titanium.LutField.prototype.setGroup = function(value) {
+  return jspb.Message.setProto3BooleanField(this, 4, value);
 };
 
 

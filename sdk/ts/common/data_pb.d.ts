@@ -489,10 +489,10 @@ export class UploadURLRequest extends jspb.Message {
   getDescriptorName(): string;
   setDescriptorName(value: string): void;
 
-  hasFileAnnotation(): boolean;
-  clearFileAnnotation(): void;
-  getFileAnnotation(): FileAnnotation | undefined;
-  setFileAnnotation(value?: FileAnnotation): void;
+  clearFileAnnotationList(): void;
+  getFileAnnotationList(): Array<FileAnnotation>;
+  setFileAnnotationList(value: Array<FileAnnotation>): void;
+  addFileAnnotation(value?: FileAnnotation, index?: number): FileAnnotation;
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UploadURLRequest.AsObject;
@@ -512,7 +512,7 @@ export namespace UploadURLRequest {
     client: string,
     traceName: string,
     descriptorName: string,
-    fileAnnotation?: FileAnnotation.AsObject,
+    fileAnnotationList: Array<FileAnnotation.AsObject>,
   }
 }
 

@@ -209,6 +209,9 @@ export class LutField extends jspb.Message {
   getKey(): boolean;
   setKey(value: boolean): void;
 
+  getGroup(): boolean;
+  setGroup(value: boolean): void;
+
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): LutField.AsObject;
   static toObject(includeInstance: boolean, msg: LutField): LutField.AsObject;
@@ -224,6 +227,7 @@ export namespace LutField {
     name: string,
     type: LutTypeMap[keyof LutTypeMap],
     key: boolean,
+    group: boolean,
   }
 }
 
