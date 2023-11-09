@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAddWorkflowDefinitionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:03:47.049974Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:04:47.539075Z[UTC]")
 public class TitaniumAddWorkflowDefinitionRequest {
   public static final String SERIALIZED_NAME_DEFINITION = "definition";
   @SerializedName(SERIALIZED_NAME_DEFINITION)

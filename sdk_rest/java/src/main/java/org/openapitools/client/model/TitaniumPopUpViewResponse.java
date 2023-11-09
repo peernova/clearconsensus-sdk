@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumPopUpViewResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:03:47.049974Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:04:47.539075Z[UTC]")
 public class TitaniumPopUpViewResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
