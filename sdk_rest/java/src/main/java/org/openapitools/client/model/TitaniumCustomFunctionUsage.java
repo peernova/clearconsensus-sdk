@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumCustomFunctionUsage
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:09:00.362352Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:10:15.592603Z[UTC]")
 public class TitaniumCustomFunctionUsage {
   public static final String SERIALIZED_NAME_IDENTIFIER = "identifier";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER)
