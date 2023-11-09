@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumStringKeyVal
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:04:59.334903Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:06:22.961185Z[UTC]")
 public class TitaniumStringKeyVal {
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
