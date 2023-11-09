@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEvpAlignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:30:15.521341Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:39:00.881675Z[UTC]")
 public class TitaniumEvpAlignmentScore {
   public static final String SERIALIZED_NAME_CENTROID = "centroid";
   @SerializedName(SERIALIZED_NAME_CENTROID)

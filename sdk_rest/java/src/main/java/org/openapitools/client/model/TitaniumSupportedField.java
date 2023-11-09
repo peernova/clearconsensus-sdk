@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSupportedField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:30:15.521341Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:39:00.881675Z[UTC]")
 public class TitaniumSupportedField {
   public static final String SERIALIZED_NAME_ASSET = "asset";
   @SerializedName(SERIALIZED_NAME_ASSET)
