@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChartRanges
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:50:10.371088Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:51:14.117630Z[UTC]")
 public class TitaniumChartRanges {
   public static final String SERIALIZED_NAME_BIMODAL_LEFT_POPULATION = "bimodalLeftPopulation";
   @SerializedName(SERIALIZED_NAME_BIMODAL_LEFT_POPULATION)

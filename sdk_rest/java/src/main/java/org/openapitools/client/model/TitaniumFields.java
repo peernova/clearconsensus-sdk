@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumFields
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:50:10.371088Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:51:14.117630Z[UTC]")
 public class TitaniumFields {
   public static final String SERIALIZED_NAME_GROUPING_KEYS = "groupingKeys";
   @SerializedName(SERIALIZED_NAME_GROUPING_KEYS)
