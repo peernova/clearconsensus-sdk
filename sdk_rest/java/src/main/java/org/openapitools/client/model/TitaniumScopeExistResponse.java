@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumScopeExistResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:11:20.940336Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:12:23.464509Z[UTC]")
 public class TitaniumScopeExistResponse {
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
