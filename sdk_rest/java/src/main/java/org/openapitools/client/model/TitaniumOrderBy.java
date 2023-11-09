@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumOrderBy
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:52:19.062379Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:53:23.329796Z[UTC]")
 public class TitaniumOrderBy {
   public static final String SERIALIZED_NAME_COLUMN = "column";
   @SerializedName(SERIALIZED_NAME_COLUMN)
