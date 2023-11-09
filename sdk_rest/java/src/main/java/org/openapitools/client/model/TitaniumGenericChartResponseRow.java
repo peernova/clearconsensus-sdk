@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGenericChartResponseRow
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:48:11.178618Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:49:10.073376Z[UTC]")
 public class TitaniumGenericChartResponseRow {
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
