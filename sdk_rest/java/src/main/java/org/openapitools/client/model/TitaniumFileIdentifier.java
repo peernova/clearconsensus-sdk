@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumFileIdentifier
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:47:12.614194Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:48:11.178618Z[UTC]")
 public class TitaniumFileIdentifier {
   public static final String SERIALIZED_NAME_FILE_STATUS = "fileStatus";
   @SerializedName(SERIALIZED_NAME_FILE_STATUS)
