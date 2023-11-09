@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSetFileDelimiterRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:55:38.819796Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:03:47.049974Z[UTC]")
 public class TitaniumSetFileDelimiterRequest {
   public static final String SERIALIZED_NAME_DELIMITER_SETTING = "delimiterSetting";
   @SerializedName(SERIALIZED_NAME_DELIMITER_SETTING)
