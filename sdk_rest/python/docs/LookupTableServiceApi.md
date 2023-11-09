@@ -43,6 +43,7 @@ with openapi_client.ApiClient() as api_client:
         lookuptable=TitaniumLookupTableDefinition(
             fields=[
                 TitaniumLutField(
+                    group=True,
                     key=True,
                     name="name_example",
                     type="type_example",

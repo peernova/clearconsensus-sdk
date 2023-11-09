@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**group** | **bool** |  | [optional] 
 **key** | **bool** |  | [optional] 
 **name** | **str** |  | [optional] 
 **type** | **str** |  | [optional] 

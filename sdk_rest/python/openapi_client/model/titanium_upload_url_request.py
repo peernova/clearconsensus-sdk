@@ -91,7 +91,7 @@ class TitaniumUploadURLRequest(ModelNormal):
             'client': (str,),  # noqa: E501
             'date': (str,),  # noqa: E501
             'descriptor_name': (str,),  # noqa: E501
-            'file_annotation': (TitaniumFileAnnotation,),  # noqa: E501
+            'file_annotation': ([TitaniumFileAnnotation],),  # noqa: E501
             'file_name': (str,),  # noqa: E501
             'trace_name': (str,),  # noqa: E501
         }
@@ -156,7 +156,7 @@ class TitaniumUploadURLRequest(ModelNormal):
             client (str): [optional]  # noqa: E501
             date (str): [optional]  # noqa: E501
             descriptor_name (str): [optional]  # noqa: E501
-            file_annotation (TitaniumFileAnnotation): [optional]  # noqa: E501
+            file_annotation ([TitaniumFileAnnotation]): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """
@@ -248,7 +248,7 @@ class TitaniumUploadURLRequest(ModelNormal):
             client (str): [optional]  # noqa: E501
             date (str): [optional]  # noqa: E501
             descriptor_name (str): [optional]  # noqa: E501
-            file_annotation (TitaniumFileAnnotation): [optional]  # noqa: E501
+            file_annotation ([TitaniumFileAnnotation]): [optional]  # noqa: E501
             file_name (str): [optional]  # noqa: E501
             trace_name (str): [optional]  # noqa: E501
         """

@@ -135,6 +135,7 @@ docs/TitaniumChunk.md
 docs/TitaniumClientName.md
 docs/TitaniumCohortConsensusRangeTabData.md
 docs/TitaniumColDependency.md
+docs/TitaniumColDependencyResponse.md
 docs/TitaniumCollapseTableRequest.md
 docs/TitaniumColumnInfo.md
 docs/TitaniumComparisonTable.md
@@ -586,6 +587,7 @@ src/main/java/org/openapitools/client/model/TitaniumChunk.java
 src/main/java/org/openapitools/client/model/TitaniumClientName.java
 src/main/java/org/openapitools/client/model/TitaniumCohortConsensusRangeTabData.java
 src/main/java/org/openapitools/client/model/TitaniumColDependency.java
+src/main/java/org/openapitools/client/model/TitaniumColDependencyResponse.java
 src/main/java/org/openapitools/client/model/TitaniumCollapseTableRequest.java
 src/main/java/org/openapitools/client/model/TitaniumColumnInfo.java
 src/main/java/org/openapitools/client/model/TitaniumComparisonTable.java
@@ -872,3 +874,4 @@ src/main/java/org/openapitools/client/model/TitaniumViewRow.java
 src/main/java/org/openapitools/client/model/TitaniumWorkflowDefinition.java
 src/main/java/org/openapitools/client/model/TitaniumWorkflowDefinitionResponse.java
 src/main/java/org/openapitools/client/model/TitaniumWorkflowList.java
+src/test/java/org/openapitools/client/model/TitaniumColDependencyResponseTest.java

@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGenericChartMetadataDataQuality
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T18:16:57.438672Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:45:58.731484Z[UTC]")
 public class TitaniumGenericChartMetadataDataQuality {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)

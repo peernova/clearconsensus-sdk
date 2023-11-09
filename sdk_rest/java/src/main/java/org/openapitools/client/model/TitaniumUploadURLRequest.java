@@ -23,6 +23,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.openapitools.client.model.TitaniumFileAnnotation;
 
 import com.google.gson.Gson;
@@ -48,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUploadURLRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T18:16:57.438672Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:45:58.731484Z[UTC]")
 public class TitaniumUploadURLRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -68,7 +70,7 @@ public class TitaniumUploadURLRequest {
 
   public static final String SERIALIZED_NAME_FILE_ANNOTATION = "fileAnnotation";
   @SerializedName(SERIALIZED_NAME_FILE_ANNOTATION)
-  private TitaniumFileAnnotation fileAnnotation;
+  private List<TitaniumFileAnnotation> fileAnnotation = null;
 
   public static final String SERIALIZED_NAME_FILE_NAME = "fileName";
   @SerializedName(SERIALIZED_NAME_FILE_NAME)
@@ -173,9 +175,17 @@ public class TitaniumUploadURLRequest {
   }
 
 
-  public TitaniumUploadURLRequest fileAnnotation(TitaniumFileAnnotation fileAnnotation) {
+  public TitaniumUploadURLRequest fileAnnotation(List<TitaniumFileAnnotation> fileAnnotation) {
     
     this.fileAnnotation = fileAnnotation;
+    return this;
+  }
+
+  public TitaniumUploadURLRequest addFileAnnotationItem(TitaniumFileAnnotation fileAnnotationItem) {
+    if (this.fileAnnotation == null) {
+      this.fileAnnotation = new ArrayList<>();
+    }
+    this.fileAnnotation.add(fileAnnotationItem);
     return this;
   }
 
@@ -186,12 +196,12 @@ public class TitaniumUploadURLRequest {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public TitaniumFileAnnotation getFileAnnotation() {
+  public List<TitaniumFileAnnotation> getFileAnnotation() {
     return fileAnnotation;
   }
 
 
-  public void setFileAnnotation(TitaniumFileAnnotation fileAnnotation) {
+  public void setFileAnnotation(List<TitaniumFileAnnotation> fileAnnotation) {
     this.fileAnnotation = fileAnnotation;
   }
 
@@ -345,9 +355,17 @@ public class TitaniumUploadURLRequest {
       if (jsonObj.get("descriptorName") != null && !jsonObj.get("descriptorName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `descriptorName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("descriptorName").toString()));
       }
-      // validate the optional field `fileAnnotation`
-      if (jsonObj.getAsJsonObject("fileAnnotation") != null) {
-        TitaniumFileAnnotation.validateJsonObject(jsonObj.getAsJsonObject("fileAnnotation"));
+      JsonArray jsonArrayfileAnnotation = jsonObj.getAsJsonArray("fileAnnotation");
+      if (jsonArrayfileAnnotation != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("fileAnnotation").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `fileAnnotation` to be an array in the JSON string but got `%s`", jsonObj.get("fileAnnotation").toString()));
+        }
+
+        // validate the optional field `fileAnnotation` (array)
+        for (int i = 0; i < jsonArrayfileAnnotation.size(); i++) {
+          TitaniumFileAnnotation.validateJsonObject(jsonArrayfileAnnotation.get(i).getAsJsonObject());
+        };
       }
       if (jsonObj.get("fileName") != null && !jsonObj.get("fileName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `fileName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fileName").toString()));

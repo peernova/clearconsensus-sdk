@@ -61,7 +61,7 @@ class TitaniumUploadURLRequest {
                 obj['descriptorName'] = ApiClient.convertToType(data['descriptorName'], 'String');
             }
             if (data.hasOwnProperty('fileAnnotation')) {
-                obj['fileAnnotation'] = TitaniumFileAnnotation.constructFromObject(data['fileAnnotation']);
+                obj['fileAnnotation'] = ApiClient.convertToType(data['fileAnnotation'], [TitaniumFileAnnotation]);
             }
             if (data.hasOwnProperty('fileName')) {
                 obj['fileName'] = ApiClient.convertToType(data['fileName'], 'String');
@@ -97,7 +97,7 @@ TitaniumUploadURLRequest.prototype['date'] = undefined;
 TitaniumUploadURLRequest.prototype['descriptorName'] = undefined;
 
 /**
- * @member {module:model/TitaniumFileAnnotation} fileAnnotation
+ * @member {Array.<module:model/TitaniumFileAnnotation>} fileAnnotation
  */
 TitaniumUploadURLRequest.prototype['fileAnnotation'] = undefined;
 

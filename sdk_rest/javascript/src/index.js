@@ -112,6 +112,7 @@ import TitaniumChunk from './model/TitaniumChunk';
 import TitaniumClientName from './model/TitaniumClientName';
 import TitaniumCohortConsensusRangeTabData from './model/TitaniumCohortConsensusRangeTabData';
 import TitaniumColDependency from './model/TitaniumColDependency';
+import TitaniumColDependencyResponse from './model/TitaniumColDependencyResponse';
 import TitaniumCollapseTableRequest from './model/TitaniumCollapseTableRequest';
 import TitaniumColumnInfo from './model/TitaniumColumnInfo';
 import TitaniumComparisonTable from './model/TitaniumComparisonTable';
@@ -1066,6 +1067,12 @@ export {
      * @property {module:model/TitaniumColDependency}
      */
     TitaniumColDependency,
+
+    /**
+     * The TitaniumColDependencyResponse model constructor.
+     * @property {module:model/TitaniumColDependencyResponse}
+     */
+    TitaniumColDependencyResponse,
 
     /**
      * The TitaniumCollapseTableRequest model constructor.

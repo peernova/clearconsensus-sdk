@@ -36,24 +36,29 @@ class TitaniumDescriptorDependenciesResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'dependencies': 'list[TitaniumColDependency]'
+        'dependencies': 'TitaniumColDependencyResponse',
+        'error': 'TitaniumError'
     }
 
     attribute_map = {
-        'dependencies': 'dependencies'
+        'dependencies': 'dependencies',
+        'error': 'error'
     }
 
-    def __init__(self, dependencies=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, dependencies=None, error=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumDescriptorDependenciesResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
         self._dependencies = None
+        self._error = None
         self.discriminator = None
 
         if dependencies is not None:
             self.dependencies = dependencies
+        if error is not None:
+            self.error = error
 
     @property
     def dependencies(self):
@@ -61,7 +66,7 @@ class TitaniumDescriptorDependenciesResponse(object):
 
 
         :return: The dependencies of this TitaniumDescriptorDependenciesResponse.  # noqa: E501
-        :rtype: list[TitaniumColDependency]
+        :rtype: TitaniumColDependencyResponse
         """
         return self._dependencies
 
@@ -71,10 +76,31 @@ class TitaniumDescriptorDependenciesResponse(object):
 
 
         :param dependencies: The dependencies of this TitaniumDescriptorDependenciesResponse.  # noqa: E501
-        :type dependencies: list[TitaniumColDependency]
+        :type dependencies: TitaniumColDependencyResponse
         """
 
         self._dependencies = dependencies
+
+    @property
+    def error(self):
+        """Gets the error of this TitaniumDescriptorDependenciesResponse.  # noqa: E501
+
+
+        :return: The error of this TitaniumDescriptorDependenciesResponse.  # noqa: E501
+        :rtype: TitaniumError
+        """
+        return self._error
+
+    @error.setter
+    def error(self, error):
+        """Sets the error of this TitaniumDescriptorDependenciesResponse.
+
+
+        :param error: The error of this TitaniumDescriptorDependenciesResponse.  # noqa: E501
+        :type error: TitaniumError
+        """
+
+        self._error = error
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

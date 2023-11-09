@@ -7873,6 +7873,59 @@ components:
             $ref: '#/components/schemas/titaniumDependency'
           type: array
       type: object
+    titaniumColDependencyResponse:
+      example:
+        dependencies:
+        - col: col
+          dependency:
+          - entityName: entityName
+            entityType: entityType
+            scope: scope
+            usages:
+            - usageName: usageName
+              usageType: usageType
+            - usageName: usageName
+              usageType: usageType
+            version: version
+            entity: entity
+          - entityName: entityName
+            entityType: entityType
+            scope: scope
+            usages:
+            - usageName: usageName
+              usageType: usageType
+            - usageName: usageName
+              usageType: usageType
+            version: version
+            entity: entity
+        - col: col
+          dependency:
+          - entityName: entityName
+            entityType: entityType
+            scope: scope
+            usages:
+            - usageName: usageName
+              usageType: usageType
+            - usageName: usageName
+              usageType: usageType
+            version: version
+            entity: entity
+          - entityName: entityName
+            entityType: entityType
+            scope: scope
+            usages:
+            - usageName: usageName
+              usageType: usageType
+            - usageName: usageName
+              usageType: usageType
+            version: version
+            entity: entity
+      properties:
+        dependencies:
+          items:
+            $ref: '#/components/schemas/titaniumColDependency'
+          type: array
+      type: object
     titaniumCollapseTableRequest:
       properties:
         filters:
@@ -9768,56 +9821,60 @@ components:
       type: object
     titaniumDescriptorDependenciesResponse:
       example:
+        error:
+          code: 0
+          message: message
         dependencies:
-        - col: col
-          dependency:
-          - entityName: entityName
-            entityType: entityType
-            scope: scope
-            usages:
-            - usageName: usageName
-              usageType: usageType
-            - usageName: usageName
-              usageType: usageType
-            version: version
-            entity: entity
-          - entityName: entityName
-            entityType: entityType
-            scope: scope
-            usages:
-            - usageName: usageName
-              usageType: usageType
-            - usageName: usageName
-              usageType: usageType
-            version: version
-            entity: entity
-        - col: col
-          dependency:
-          - entityName: entityName
-            entityType: entityType
-            scope: scope
-            usages:
-            - usageName: usageName
-              usageType: usageType
-            - usageName: usageName
-              usageType: usageType
-            version: version
-            entity: entity
-          - entityName: entityName
-            entityType: entityType
-            scope: scope
-            usages:
-            - usageName: usageName
-              usageType: usageType
-            - usageName: usageName
-              usageType: usageType
-            version: version
-            entity: entity
+          dependencies:
+          - col: col
+            dependency:
+            - entityName: entityName
+              entityType: entityType
+              scope: scope
+              usages:
+              - usageName: usageName
+                usageType: usageType
+              - usageName: usageName
+                usageType: usageType
+              version: version
+              entity: entity
+            - entityName: entityName
+              entityType: entityType
+              scope: scope
+              usages:
+              - usageName: usageName
+                usageType: usageType
+              - usageName: usageName
+                usageType: usageType
+              version: version
+              entity: entity
+          - col: col
+            dependency:
+            - entityName: entityName
+              entityType: entityType
+              scope: scope
+              usages:
+              - usageName: usageName
+                usageType: usageType
+              - usageName: usageName
+                usageType: usageType
+              version: version
+              entity: entity
+            - entityName: entityName
+              entityType: entityType
+              scope: scope
+              usages:
+              - usageName: usageName
+                usageType: usageType
+              - usageName: usageName
+                usageType: usageType
+              version: version
+              entity: entity
       properties:
         dependencies:
-          items:
-            $ref: '#/components/schemas/titaniumColDependency'
-          type: array
+          $ref: '#/components/schemas/titaniumColDependencyResponse'
+        error:
+          $ref: '#/components/schemas/titaniumError'
       type: object
     titaniumDescriptorField:
       example:
@@ -11416,9 +11473,11 @@ components:
           - name: name
             type: type
             key: true
+            group: true
           - name: name
             type: type
             key: true
+            group: true
           rows:
           - values:
             - "{}"
@@ -12395,9 +12454,11 @@ components:
         - name: name
           type: type
           key: true
+          group: true
         - name: name
           type: type
           key: true
+          group: true
         rows:
         - values:
           - "{}"
@@ -12476,7 +12537,10 @@ components:
         name: name
         type: type
         key: true
+        group: true
       properties:
+        group:
+          type: boolean
         key:
           type: boolean
         name:
@@ -14558,7 +14622,9 @@ components:
         descriptorName:
           type: string
         fileAnnotation:
-          $ref: '#/components/schemas/titaniumFileAnnotation'
+          items:
+            $ref: '#/components/schemas/titaniumFileAnnotation'
+          type: array
         fileName:
           type: string
         traceName:

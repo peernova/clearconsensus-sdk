@@ -192,6 +192,7 @@ public class JSON {
             .registerTypeAdapterFactory(new org.openapitools.client.model.TitaniumClientName.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.TitaniumCohortConsensusRangeTabData.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.TitaniumColDependency.CustomTypeAdapterFactory())
+            .registerTypeAdapterFactory(new org.openapitools.client.model.TitaniumColDependencyResponse.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.TitaniumCollapseTableRequest.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.TitaniumColumnInfo.CustomTypeAdapterFactory())
             .registerTypeAdapterFactory(new org.openapitools.client.model.TitaniumComparisonTable.CustomTypeAdapterFactory())

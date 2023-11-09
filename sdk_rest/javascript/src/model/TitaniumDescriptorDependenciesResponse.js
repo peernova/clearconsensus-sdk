@@ -12,7 +12,8 @@
  */
 
 import ApiClient from '../ApiClient';
-import TitaniumColDependency from './TitaniumColDependency';
+import TitaniumColDependencyResponse from './TitaniumColDependencyResponse';
+import TitaniumError from './TitaniumError';
 
 /**
  * The TitaniumDescriptorDependenciesResponse model module.
@@ -49,7 +50,10 @@ class TitaniumDescriptorDependenciesResponse {
             obj = obj || new TitaniumDescriptorDependenciesResponse();
 
             if (data.hasOwnProperty('dependencies')) {
-                obj['dependencies'] = ApiClient.convertToType(data['dependencies'], [TitaniumColDependency]);
+                obj['dependencies'] = TitaniumColDependencyResponse.constructFromObject(data['dependencies']);
+            }
+            if (data.hasOwnProperty('error')) {
+                obj['error'] = TitaniumError.constructFromObject(data['error']);
             }
         }
         return obj;
@@ -59,9 +63,14 @@ class TitaniumDescriptorDependenciesResponse {
 }
 
 /**
- * @member {Array.<module:model/TitaniumColDependency>} dependencies
+ * @member {module:model/TitaniumColDependencyResponse} dependencies
  */
 TitaniumDescriptorDependenciesResponse.prototype['dependencies'] = undefined;
+
+/**
+ * @member {module:model/TitaniumError} error
+ */
+TitaniumDescriptorDependenciesResponse.prototype['error'] = undefined;
 
 
 

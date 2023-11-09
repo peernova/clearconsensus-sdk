@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dependencies** | [**[TitaniumColDependency]**](TitaniumColDependency.md) |  | [optional] 
+**dependencies** | [**TitaniumColDependencyResponse**](TitaniumColDependencyResponse.md) |  | [optional] 
+**error** | [**TitaniumError**](TitaniumError.md) |  | [optional] 
 
 

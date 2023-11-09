@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradePeriodMetrics
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T18:16:57.438672Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:45:58.731484Z[UTC]")
 public class TitaniumTradePeriodMetrics {
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
   @SerializedName(SERIALIZED_NAME_CURRENCY)

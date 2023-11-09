@@ -40,7 +40,7 @@ class TitaniumUploadURLRequest(object):
         'client': 'str',
         'date': 'str',
         'descriptor_name': 'str',
-        'file_annotation': 'TitaniumFileAnnotation',
+        'file_annotation': 'list[TitaniumFileAnnotation]',
         'file_name': 'str',
         'trace_name': 'str'
     }
@@ -175,7 +175,7 @@ class TitaniumUploadURLRequest(object):
 
 
         :return: The file_annotation of this TitaniumUploadURLRequest.  # noqa: E501
-        :rtype: TitaniumFileAnnotation
+        :rtype: list[TitaniumFileAnnotation]
         """
         return self._file_annotation
 
@@ -185,7 +185,7 @@ class TitaniumUploadURLRequest(object):
 
 
         :param file_annotation: The file_annotation of this TitaniumUploadURLRequest.  # noqa: E501
-        :type file_annotation: TitaniumFileAnnotation
+        :type file_annotation: list[TitaniumFileAnnotation]
         """
 
         self._file_annotation = file_annotation

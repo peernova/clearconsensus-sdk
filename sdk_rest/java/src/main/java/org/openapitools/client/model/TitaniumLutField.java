@@ -47,8 +47,12 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumLutField
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-10-23T18:16:57.438672Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T09:45:58.731484Z[UTC]")
 public class TitaniumLutField {
+  public static final String SERIALIZED_NAME_GROUP = "group";
+  @SerializedName(SERIALIZED_NAME_GROUP)
+  private Boolean group;
+
   public static final String SERIALIZED_NAME_KEY = "key";
   @SerializedName(SERIALIZED_NAME_KEY)
   private Boolean key;
@@ -63,6 +67,29 @@ public class TitaniumLutField {
 
   public TitaniumLutField() { 
   }
+
+  public TitaniumLutField group(Boolean group) {
+    
+    this.group = group;
+    return this;
+  }
+
+   /**
+   * Get group
+   * @return group
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public Boolean getGroup() {
+    return group;
+  }
+
+
+  public void setGroup(Boolean group) {
+    this.group = group;
+  }
+
 
   public TitaniumLutField key(Boolean key) {
     
@@ -143,20 +170,22 @@ public class TitaniumLutField {
       return false;
     }
     TitaniumLutField titaniumLutField = (TitaniumLutField) o;
-    return Objects.equals(this.key, titaniumLutField.key) &&
+    return Objects.equals(this.group, titaniumLutField.group) &&
+        Objects.equals(this.key, titaniumLutField.key) &&
         Objects.equals(this.name, titaniumLutField.name) &&
         Objects.equals(this.type, titaniumLutField.type);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(key, name, type);
+    return Objects.hash(group, key, name, type);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class TitaniumLutField {\n");
+    sb.append("    group: ").append(toIndentedString(group)).append("\n");
     sb.append("    key: ").append(toIndentedString(key)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
@@ -182,6 +211,7 @@ public class TitaniumLutField {
   static {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
+    openapiFields.add("group");
     openapiFields.add("key");
     openapiFields.add("name");
     openapiFields.add("type");

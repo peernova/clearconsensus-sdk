@@ -401,6 +401,7 @@ Class | Method | HTTP request | Description
  - [TitaniumClientName](docs/TitaniumClientName.md)
  - [TitaniumCohortConsensusRangeTabData](docs/TitaniumCohortConsensusRangeTabData.md)
  - [TitaniumColDependency](docs/TitaniumColDependency.md)
+ - [TitaniumColDependencyResponse](docs/TitaniumColDependencyResponse.md)
  - [TitaniumCollapseTableRequest](docs/TitaniumCollapseTableRequest.md)
  - [TitaniumColumnInfo](docs/TitaniumColumnInfo.md)
  - [TitaniumComparisonTable](docs/TitaniumComparisonTable.md)

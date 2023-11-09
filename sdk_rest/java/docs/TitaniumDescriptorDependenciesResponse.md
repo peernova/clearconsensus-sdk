@@ -7,7 +7,8 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**dependencies** | [**List&lt;TitaniumColDependency&gt;**](TitaniumColDependency.md) |  |  [optional] |
+|**dependencies** | [**TitaniumColDependencyResponse**](TitaniumColDependencyResponse.md) |  |  [optional] |
+|**error** | [**TitaniumError**](TitaniumError.md) |  |  [optional] |
 
 
 

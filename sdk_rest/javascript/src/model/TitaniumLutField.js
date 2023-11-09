@@ -47,6 +47,9 @@ class TitaniumLutField {
         if (data) {
             obj = obj || new TitaniumLutField();
 
+            if (data.hasOwnProperty('group')) {
+                obj['group'] = ApiClient.convertToType(data['group'], 'Boolean');
+            }
             if (data.hasOwnProperty('key')) {
                 obj['key'] = ApiClient.convertToType(data['key'], 'Boolean');
             }
@@ -62,6 +65,11 @@ class TitaniumLutField {
 
 
 }
+
+/**
+ * @member {Boolean} group
+ */
+TitaniumLutField.prototype['group'] = undefined;
 
 /**
  * @member {Boolean} key

@@ -30,8 +30,10 @@ from openapi_client.exceptions import ApiAttributeError
 
 
 def lazy_import():
-    from openapi_client.model.titanium_col_dependency import TitaniumColDependency
-    globals()['TitaniumColDependency'] = TitaniumColDependency
+    from openapi_client.model.titanium_col_dependency_response import TitaniumColDependencyResponse
+    from openapi_client.model.titanium_error import TitaniumError
+    globals()['TitaniumColDependencyResponse'] = TitaniumColDependencyResponse
+    globals()['TitaniumError'] = TitaniumError
 
 
 class TitaniumDescriptorDependenciesResponse(ModelNormal):
@@ -87,7 +89,8 @@ class TitaniumDescriptorDependenciesResponse(ModelNormal):
         """
         lazy_import()
         return {
-            'dependencies': ([TitaniumColDependency],),  # noqa: E501
+            'dependencies': (TitaniumColDependencyResponse,),  # noqa: E501
+            'error': (TitaniumError,),  # noqa: E501
         }
 
     @cached_property
@@ -97,6 +100,7 @@ class TitaniumDescriptorDependenciesResponse(ModelNormal):
 
     attribute_map = {
         'dependencies': 'dependencies',  # noqa: E501
+        'error': 'error',  # noqa: E501
     }
 
     read_only_vars = {
@@ -140,7 +144,8 @@ class TitaniumDescriptorDependenciesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            dependencies ([TitaniumColDependency]): [optional]  # noqa: E501
+            dependencies (TitaniumColDependencyResponse): [optional]  # noqa: E501
+            error (TitaniumError): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -226,7 +231,8 @@ class TitaniumDescriptorDependenciesResponse(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
-            dependencies ([TitaniumColDependency]): [optional]  # noqa: E501
+            dependencies (TitaniumColDependencyResponse): [optional]  # noqa: E501
+            error (TitaniumError): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)

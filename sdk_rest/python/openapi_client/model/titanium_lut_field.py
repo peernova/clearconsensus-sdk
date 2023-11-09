@@ -81,6 +81,7 @@ class TitaniumLutField(ModelNormal):
                 and the value is attribute type.
         """
         return {
+            'group': (bool,),  # noqa: E501
             'key': (bool,),  # noqa: E501
             'name': (str,),  # noqa: E501
             'type': (str,),  # noqa: E501
@@ -92,6 +93,7 @@ class TitaniumLutField(ModelNormal):
 
 
     attribute_map = {
+        'group': 'group',  # noqa: E501
         'key': 'key',  # noqa: E501
         'name': 'name',  # noqa: E501
         'type': 'type',  # noqa: E501
@@ -138,6 +140,7 @@ class TitaniumLutField(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            group (bool): [optional]  # noqa: E501
             key (bool): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501
@@ -226,6 +229,7 @@ class TitaniumLutField(ModelNormal):
                                 Animal class but this time we won't travel
                                 through its discriminator because we passed in
                                 _visited_composed_classes = (Animal,)
+            group (bool): [optional]  # noqa: E501
             key (bool): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             type (str): [optional]  # noqa: E501

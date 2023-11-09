@@ -132,6 +132,7 @@ docs/TitaniumChunk.md
 docs/TitaniumClientName.md
 docs/TitaniumCohortConsensusRangeTabData.md
 docs/TitaniumColDependency.md
+docs/TitaniumColDependencyResponse.md
 docs/TitaniumCollapseTableRequest.md
 docs/TitaniumColumnInfo.md
 docs/TitaniumComparisonTable.md
@@ -561,6 +562,7 @@ src/model/TitaniumChunk.js
 src/model/TitaniumClientName.js
 src/model/TitaniumCohortConsensusRangeTabData.js
 src/model/TitaniumColDependency.js
+src/model/TitaniumColDependencyResponse.js
 src/model/TitaniumCollapseTableRequest.js
 src/model/TitaniumColumnInfo.js
 src/model/TitaniumComparisonTable.js
@@ -847,3 +849,4 @@ src/model/TitaniumViewRow.js
 src/model/TitaniumWorkflowDefinition.js
 src/model/TitaniumWorkflowDefinitionResponse.js
 src/model/TitaniumWorkflowList.js
+test/model/TitaniumColDependencyResponse.spec.js

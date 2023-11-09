@@ -36,34 +36,60 @@ class TitaniumLutField(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'group': 'bool',
         'key': 'bool',
         'name': 'str',
         'type': 'str'
     }
 
     attribute_map = {
+        'group': 'group',
         'key': 'key',
         'name': 'name',
         'type': 'type'
     }
 
-    def __init__(self, key=None, name=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, group=None, key=None, name=None, type=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumLutField - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
         self.local_vars_configuration = local_vars_configuration
 
+        self._group = None
         self._key = None
         self._name = None
         self._type = None
         self.discriminator = None
 
+        if group is not None:
+            self.group = group
         if key is not None:
             self.key = key
         if name is not None:
             self.name = name
         if type is not None:
             self.type = type
+
+    @property
+    def group(self):
+        """Gets the group of this TitaniumLutField.  # noqa: E501
+
+
+        :return: The group of this TitaniumLutField.  # noqa: E501
+        :rtype: bool
+        """
+        return self._group
+
+    @group.setter
+    def group(self, group):
+        """Sets the group of this TitaniumLutField.
+
+
+        :param group: The group of this TitaniumLutField.  # noqa: E501
+        :type group: bool
+        """
+
+        self._group = group
 
     @property
     def key(self):

@@ -414,6 +414,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumClientName](docs/TitaniumClientName.md)
  - [ClearconsensusSdk.TitaniumCohortConsensusRangeTabData](docs/TitaniumCohortConsensusRangeTabData.md)
  - [ClearconsensusSdk.TitaniumColDependency](docs/TitaniumColDependency.md)
+ - [ClearconsensusSdk.TitaniumColDependencyResponse](docs/TitaniumColDependencyResponse.md)
  - [ClearconsensusSdk.TitaniumCollapseTableRequest](docs/TitaniumCollapseTableRequest.md)
  - [ClearconsensusSdk.TitaniumColumnInfo](docs/TitaniumColumnInfo.md)
  - [ClearconsensusSdk.TitaniumComparisonTable](docs/TitaniumComparisonTable.md)

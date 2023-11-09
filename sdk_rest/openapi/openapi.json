@@ -9098,6 +9098,17 @@
         },
         "type" : "object"
       },
+      "titaniumColDependencyResponse" : {
+        "properties" : {
+          "dependencies" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumColDependency"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumCollapseTableRequest" : {
         "properties" : {
           "filters" : {
@@ -10097,10 +10108,10 @@
       "titaniumDescriptorDependenciesResponse" : {
         "properties" : {
           "dependencies" : {
-            "items" : {
-              "$ref" : "#/components/schemas/titaniumColDependency"
-            },
-            "type" : "array"
+            "$ref" : "#/components/schemas/titaniumColDependencyResponse"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
           }
         },
         "type" : "object"
@@ -11896,6 +11907,9 @@
       },
       "titaniumLutField" : {
         "properties" : {
+          "group" : {
+            "type" : "boolean"
+          },
           "key" : {
             "type" : "boolean"
           },
@@ -13549,7 +13563,10 @@
             "type" : "string"
           },
           "fileAnnotation" : {
-            "$ref" : "#/components/schemas/titaniumFileAnnotation"
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumFileAnnotation"
+            },
+            "type" : "array"
           },
           "fileName" : {
             "type" : "string"
