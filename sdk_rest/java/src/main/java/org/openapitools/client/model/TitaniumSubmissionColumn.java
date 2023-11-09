@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:39:00.881675Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:40:14.901257Z[UTC]")
 public class TitaniumSubmissionColumn {
   public static final String SERIALIZED_NAME_SUBMISSION_PRICE = "submissionPrice";
   @SerializedName(SERIALIZED_NAME_SUBMISSION_PRICE)
