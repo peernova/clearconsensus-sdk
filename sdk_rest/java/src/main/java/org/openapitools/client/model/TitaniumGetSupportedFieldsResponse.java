@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetSupportedFieldsResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:07:56.837092Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:09:00.362352Z[UTC]")
 public class TitaniumGetSupportedFieldsResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
