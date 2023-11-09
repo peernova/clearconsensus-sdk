@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChallengeFormGeneralRowMin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:00:07.580411Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:01:11.763467Z[UTC]")
 public class TitaniumChallengeFormGeneralRowMin {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
