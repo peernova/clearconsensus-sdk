@@ -849,4 +849,3 @@ src/model/TitaniumViewRow.js
 src/model/TitaniumWorkflowDefinition.js
 src/model/TitaniumWorkflowDefinitionResponse.js
 src/model/TitaniumWorkflowList.js
-test/model/TitaniumColDependencyResponse.spec.js

@@ -860,5 +860,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_titanium_col_dependency_response.py
 tox.ini
