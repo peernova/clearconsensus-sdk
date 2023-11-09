@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUniqueKeyDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:04:47.539075Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T12:05:47.784176Z[UTC]")
 public class TitaniumUniqueKeyDefinition {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
