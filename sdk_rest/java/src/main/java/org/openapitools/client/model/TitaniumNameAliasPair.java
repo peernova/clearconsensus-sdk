@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumNameAliasPair
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:01:11.763467Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:08:41.170239Z[UTC]")
 public class TitaniumNameAliasPair {
   public static final String SERIALIZED_NAME_ALIAS = "alias";
   @SerializedName(SERIALIZED_NAME_ALIAS)
