@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumRulesetDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:49:15.248692Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:50:25.453582Z[UTC]")
 public class TitaniumRulesetDefinition {
   public static final String SERIALIZED_NAME_CRITERIA = "criteria";
   @SerializedName(SERIALIZED_NAME_CRITERIA)
