@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumFileHistoryRow
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:03:56.499981Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T10:04:59.334903Z[UTC]")
 public class TitaniumFileHistoryRow {
   public static final String SERIALIZED_NAME_CONSENSUS_RUN = "consensusRun";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_RUN)
