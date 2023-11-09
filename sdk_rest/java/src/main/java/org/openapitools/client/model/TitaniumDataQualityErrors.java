@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumDataQualityErrors
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:09:41.112152Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-09T11:10:42.442387Z[UTC]")
 public class TitaniumDataQualityErrors {
   public static final String SERIALIZED_NAME_ERRORS = "errors";
   @SerializedName(SERIALIZED_NAME_ERRORS)
