@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumFileDescriptorSetting
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:53:19.229665Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:54:27.615688Z[UTC]")
 public class TitaniumFileDescriptorSetting {
   public static final String SERIALIZED_NAME_DESCRIPTOR_NAME = "descriptorName";
   @SerializedName(SERIALIZED_NAME_DESCRIPTOR_NAME)
