@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAddAssetRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:55:33.998827Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:56:34.325698Z[UTC]")
 public class TitaniumAddAssetRequest {
   public static final String SERIALIZED_NAME_ASSET = "asset";
   @SerializedName(SERIALIZED_NAME_ASSET)
