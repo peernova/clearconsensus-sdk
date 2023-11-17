@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumFilePreview
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:20:46.452236Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:21:54.486708Z[UTC]")
 public class TitaniumFilePreview {
   public static final String SERIALIZED_NAME_DELIMITER_SETTING = "delimiterSetting";
   @SerializedName(SERIALIZED_NAME_DELIMITER_SETTING)
