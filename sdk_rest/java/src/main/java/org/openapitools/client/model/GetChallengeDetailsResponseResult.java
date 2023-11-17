@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * GetChallengeDetailsResponseResult
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:28:39.395444Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:29:45.074957Z[UTC]")
 public class GetChallengeDetailsResponseResult {
   public static final String SERIALIZED_NAME_ATTACHMENTS = "attachments";
   @SerializedName(SERIALIZED_NAME_ATTACHMENTS)
