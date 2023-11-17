@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ProtoPoliciesList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:22:58.067519Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:24:06.400642Z[UTC]")
 public class ProtoPoliciesList {
   public static final String SERIALIZED_NAME_POLICIES = "policies";
   @SerializedName(SERIALIZED_NAME_POLICIES)

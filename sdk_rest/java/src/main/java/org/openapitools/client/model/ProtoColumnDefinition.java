@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * ProtoColumnDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:22:58.067519Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:24:06.400642Z[UTC]")
 public class ProtoColumnDefinition {
   public static final String SERIALIZED_NAME_COLUMN_DB_TYPE = "columnDbType";
   @SerializedName(SERIALIZED_NAME_COLUMN_DB_TYPE)
