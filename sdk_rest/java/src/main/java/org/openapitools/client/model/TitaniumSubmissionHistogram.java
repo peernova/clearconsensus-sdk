@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionHistogram
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:08:32.921048Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:09:57.005509Z[UTC]")
 public class TitaniumSubmissionHistogram {
   public static final String SERIALIZED_NAME_HIGH_SEVERITY = "highSeverity";
   @SerializedName(SERIALIZED_NAME_HIGH_SEVERITY)
