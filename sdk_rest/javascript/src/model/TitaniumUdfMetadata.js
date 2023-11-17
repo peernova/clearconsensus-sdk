@@ -53,17 +53,11 @@ class TitaniumUdfMetadata {
             if (data.hasOwnProperty('columnTypes')) {
                 obj['columnTypes'] = ApiClient.convertToType(data['columnTypes'], ['String']);
             }
-            if (data.hasOwnProperty('detailColumnTypes')) {
-                obj['detailColumnTypes'] = ApiClient.convertToType(data['detailColumnTypes'], ['String']);
-            }
             if (data.hasOwnProperty('name')) {
                 obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('output')) {
                 obj['output'] = ApiClient.convertToType(data['output'], 'String');
-            }
-            if (data.hasOwnProperty('type')) {
-                obj['type'] = ApiClient.convertToType(data['type'], 'String');
             }
         }
         return obj;
@@ -83,11 +77,6 @@ TitaniumUdfMetadata.prototype['args'] = undefined;
 TitaniumUdfMetadata.prototype['columnTypes'] = undefined;
 
 /**
- * @member {Array.<String>} detailColumnTypes
- */
-TitaniumUdfMetadata.prototype['detailColumnTypes'] = undefined;
-
-/**
  * @member {String} name
  */
 TitaniumUdfMetadata.prototype['name'] = undefined;
@@ -96,11 +85,6 @@ TitaniumUdfMetadata.prototype['name'] = undefined;
  * @member {String} output
  */
 TitaniumUdfMetadata.prototype['output'] = undefined;
-
-/**
- * @member {String} type
- */
-TitaniumUdfMetadata.prototype['type'] = undefined;
 
 
 

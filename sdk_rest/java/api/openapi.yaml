@@ -6070,8 +6070,6 @@ components:
         rawColumnName:
           type: string
       type: object
-    UdfMetadataUdfFieldType:
-      type: string
     grpcprotoError:
       example:
         code: 0
@@ -11788,10 +11786,6 @@ components:
           - null
           - null
           name: name
-          type: type
-          detailColumnTypes:
-          - detailColumnTypes
-          - detailColumnTypes
         error:
           code: 0
           message: message
@@ -14577,6 +14571,8 @@ components:
         targetColumn:
           type: string
       type: object
+    titaniumUdfFieldType:
+      type: string
     titaniumUdfItem:
       example:
         name: name
@@ -14615,28 +14611,18 @@ components:
         - null
         - null
         name: name
-        type: type
-        detailColumnTypes:
-        - detailColumnTypes
-        - detailColumnTypes
       properties:
         args:
           items:
-            $ref: '#/components/schemas/UdfMetadataUdfFieldType'
+            $ref: '#/components/schemas/titaniumUdfFieldType'
           type: array
         columnTypes:
           items:
-            $ref: '#/components/schemas/UdfMetadataUdfFieldType'
-          type: array
-        detailColumnTypes:
-          items:
-            type: string
+            $ref: '#/components/schemas/titaniumUdfFieldType'
           type: array
         name:
           type: string
         output:
-          type: string
-        type:
           type: string
       type: object
     titaniumUdfNameRequest:
@@ -14646,8 +14632,6 @@ components:
         scope:
           type: string
       type: object
-    titaniumUdfType:
-      type: string
     titaniumUniqueKeyDefinition:
       example:
         scope: scope

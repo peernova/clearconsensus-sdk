@@ -863,10 +863,3 @@ src/model/TitaniumViewRow.js
 src/model/TitaniumWorkflowDefinition.js
 src/model/TitaniumWorkflowDefinitionResponse.js
 src/model/TitaniumWorkflowList.js
-test/api/UdfServiceApi.spec.js
-test/model/TitaniumGetUdfResponse.spec.js
-test/model/TitaniumListUdfResponse.spec.js
-test/model/TitaniumUdfItem.spec.js
-test/model/TitaniumUdfList.spec.js
-test/model/TitaniumUdfMetadata.spec.js
-test/model/TitaniumUdfNameRequest.spec.js

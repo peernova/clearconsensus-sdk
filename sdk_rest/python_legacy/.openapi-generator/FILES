@@ -871,11 +871,4 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
-test/test_titanium_get_udf_response.py
-test/test_titanium_list_udf_response.py
-test/test_titanium_udf_item.py
-test/test_titanium_udf_list.py
-test/test_titanium_udf_metadata.py
-test/test_titanium_udf_name_request.py
-test/test_udf_service_api.py
 tox.ini

@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUdfMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T07:56:53.757907Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:48:57.917032Z[UTC]")
 public class TitaniumUdfMetadata {
   public static final String SERIALIZED_NAME_ARGS = "args";
   @SerializedName(SERIALIZED_NAME_ARGS)
@@ -59,10 +59,6 @@ public class TitaniumUdfMetadata {
   @SerializedName(SERIALIZED_NAME_COLUMN_TYPES)
   private List<String> columnTypes = null;
 
-  public static final String SERIALIZED_NAME_DETAIL_COLUMN_TYPES = "detailColumnTypes";
-  @SerializedName(SERIALIZED_NAME_DETAIL_COLUMN_TYPES)
-  private List<String> detailColumnTypes = null;
-
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
@@ -70,10 +66,6 @@ public class TitaniumUdfMetadata {
   public static final String SERIALIZED_NAME_OUTPUT = "output";
   @SerializedName(SERIALIZED_NAME_OUTPUT)
   private String output;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
 
   public TitaniumUdfMetadata() { 
   }
@@ -140,37 +132,6 @@ public class TitaniumUdfMetadata {
   }
 
 
-  public TitaniumUdfMetadata detailColumnTypes(List<String> detailColumnTypes) {
-    
-    this.detailColumnTypes = detailColumnTypes;
-    return this;
-  }
-
-  public TitaniumUdfMetadata addDetailColumnTypesItem(String detailColumnTypesItem) {
-    if (this.detailColumnTypes == null) {
-      this.detailColumnTypes = new ArrayList<>();
-    }
-    this.detailColumnTypes.add(detailColumnTypesItem);
-    return this;
-  }
-
-   /**
-   * Get detailColumnTypes
-   * @return detailColumnTypes
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public List<String> getDetailColumnTypes() {
-    return detailColumnTypes;
-  }
-
-
-  public void setDetailColumnTypes(List<String> detailColumnTypes) {
-    this.detailColumnTypes = detailColumnTypes;
-  }
-
-
   public TitaniumUdfMetadata name(String name) {
     
     this.name = name;
@@ -217,29 +178,6 @@ public class TitaniumUdfMetadata {
   }
 
 
-  public TitaniumUdfMetadata type(String type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Get type
-   * @return type
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
-
-  public String getType() {
-    return type;
-  }
-
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-
 
   @Override
   public boolean equals(Object o) {
@@ -252,15 +190,13 @@ public class TitaniumUdfMetadata {
     TitaniumUdfMetadata titaniumUdfMetadata = (TitaniumUdfMetadata) o;
     return Objects.equals(this.args, titaniumUdfMetadata.args) &&
         Objects.equals(this.columnTypes, titaniumUdfMetadata.columnTypes) &&
-        Objects.equals(this.detailColumnTypes, titaniumUdfMetadata.detailColumnTypes) &&
         Objects.equals(this.name, titaniumUdfMetadata.name) &&
-        Objects.equals(this.output, titaniumUdfMetadata.output) &&
-        Objects.equals(this.type, titaniumUdfMetadata.type);
+        Objects.equals(this.output, titaniumUdfMetadata.output);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(args, columnTypes, detailColumnTypes, name, output, type);
+    return Objects.hash(args, columnTypes, name, output);
   }
 
   @Override
@@ -269,10 +205,8 @@ public class TitaniumUdfMetadata {
     sb.append("class TitaniumUdfMetadata {\n");
     sb.append("    args: ").append(toIndentedString(args)).append("\n");
     sb.append("    columnTypes: ").append(toIndentedString(columnTypes)).append("\n");
-    sb.append("    detailColumnTypes: ").append(toIndentedString(detailColumnTypes)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    output: ").append(toIndentedString(output)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -297,10 +231,8 @@ public class TitaniumUdfMetadata {
     openapiFields = new HashSet<String>();
     openapiFields.add("args");
     openapiFields.add("columnTypes");
-    openapiFields.add("detailColumnTypes");
     openapiFields.add("name");
     openapiFields.add("output");
-    openapiFields.add("type");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -336,18 +268,11 @@ public class TitaniumUdfMetadata {
       if (jsonObj.get("columnTypes") != null && !jsonObj.get("columnTypes").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `columnTypes` to be an array in the JSON string but got `%s`", jsonObj.get("columnTypes").toString()));
       }
-      // ensure the json data is an array
-      if (jsonObj.get("detailColumnTypes") != null && !jsonObj.get("detailColumnTypes").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `detailColumnTypes` to be an array in the JSON string but got `%s`", jsonObj.get("detailColumnTypes").toString()));
-      }
       if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       if (jsonObj.get("output") != null && !jsonObj.get("output").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `output` to be a primitive type in the JSON string but got `%s`", jsonObj.get("output").toString()));
-      }
-      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
   }
 

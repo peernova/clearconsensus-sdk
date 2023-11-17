@@ -38,22 +38,18 @@ class TitaniumUdfMetadata(object):
     openapi_types = {
         'args': 'list[str]',
         'column_types': 'list[str]',
-        'detail_column_types': 'list[str]',
         'name': 'str',
-        'output': 'str',
-        'type': 'str'
+        'output': 'str'
     }
 
     attribute_map = {
         'args': 'args',
         'column_types': 'columnTypes',
-        'detail_column_types': 'detailColumnTypes',
         'name': 'name',
-        'output': 'output',
-        'type': 'type'
+        'output': 'output'
     }
 
-    def __init__(self, args=None, column_types=None, detail_column_types=None, name=None, output=None, type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, args=None, column_types=None, name=None, output=None, local_vars_configuration=None):  # noqa: E501
         """TitaniumUdfMetadata - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration.get_default_copy()
@@ -61,24 +57,18 @@ class TitaniumUdfMetadata(object):
 
         self._args = None
         self._column_types = None
-        self._detail_column_types = None
         self._name = None
         self._output = None
-        self._type = None
         self.discriminator = None
 
         if args is not None:
             self.args = args
         if column_types is not None:
             self.column_types = column_types
-        if detail_column_types is not None:
-            self.detail_column_types = detail_column_types
         if name is not None:
             self.name = name
         if output is not None:
             self.output = output
-        if type is not None:
-            self.type = type
 
     @property
     def args(self):
@@ -123,27 +113,6 @@ class TitaniumUdfMetadata(object):
         self._column_types = column_types
 
     @property
-    def detail_column_types(self):
-        """Gets the detail_column_types of this TitaniumUdfMetadata.  # noqa: E501
-
-
-        :return: The detail_column_types of this TitaniumUdfMetadata.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._detail_column_types
-
-    @detail_column_types.setter
-    def detail_column_types(self, detail_column_types):
-        """Sets the detail_column_types of this TitaniumUdfMetadata.
-
-
-        :param detail_column_types: The detail_column_types of this TitaniumUdfMetadata.  # noqa: E501
-        :type detail_column_types: list[str]
-        """
-
-        self._detail_column_types = detail_column_types
-
-    @property
     def name(self):
         """Gets the name of this TitaniumUdfMetadata.  # noqa: E501
 
@@ -184,27 +153,6 @@ class TitaniumUdfMetadata(object):
         """
 
         self._output = output
-
-    @property
-    def type(self):
-        """Gets the type of this TitaniumUdfMetadata.  # noqa: E501
-
-
-        :return: The type of this TitaniumUdfMetadata.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this TitaniumUdfMetadata.
-
-
-        :param type: The type of this TitaniumUdfMetadata.  # noqa: E501
-        :type type: str
-        """
-
-        self._type = type
 
     def to_dict(self, serialize=False):
         """Returns the model properties as a dict"""

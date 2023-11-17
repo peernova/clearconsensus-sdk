@@ -7814,9 +7814,6 @@
         },
         "type" : "object"
       },
-      "UdfMetadataUdfFieldType" : {
-        "type" : "string"
-      },
       "grpcprotoError" : {
         "properties" : {
           "code" : {
@@ -13519,6 +13516,9 @@
         },
         "type" : "object"
       },
+      "titaniumUdfFieldType" : {
+        "type" : "string"
+      },
       "titaniumUdfItem" : {
         "properties" : {
           "lastModified" : {
@@ -13528,7 +13528,7 @@
             "type" : "string"
           },
           "type" : {
-            "$ref" : "#/components/schemas/titaniumUdfType"
+            "$ref" : "#/components/schemas/titaniumUdfFieldType"
           }
         },
         "type" : "object"
@@ -13548,19 +13548,13 @@
         "properties" : {
           "args" : {
             "items" : {
-              "$ref" : "#/components/schemas/UdfMetadataUdfFieldType"
+              "$ref" : "#/components/schemas/titaniumUdfFieldType"
             },
             "type" : "array"
           },
           "columnTypes" : {
             "items" : {
-              "$ref" : "#/components/schemas/UdfMetadataUdfFieldType"
-            },
-            "type" : "array"
-          },
-          "detailColumnTypes" : {
-            "items" : {
-              "type" : "string"
+              "$ref" : "#/components/schemas/titaniumUdfFieldType"
             },
             "type" : "array"
           },
@@ -13568,10 +13562,7 @@
             "type" : "string"
           },
           "output" : {
-            "$ref" : "#/components/schemas/UdfMetadataUdfFieldType"
-          },
-          "type" : {
-            "$ref" : "#/components/schemas/titaniumUdfType"
+            "$ref" : "#/components/schemas/titaniumUdfFieldType"
           }
         },
         "type" : "object"
@@ -13586,9 +13577,6 @@
           }
         },
         "type" : "object"
-      },
-      "titaniumUdfType" : {
-        "type" : "string"
       },
       "titaniumUniqueKeyDefinition" : {
         "properties" : {

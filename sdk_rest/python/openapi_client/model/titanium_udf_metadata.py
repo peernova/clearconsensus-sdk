@@ -83,10 +83,8 @@ class TitaniumUdfMetadata(ModelNormal):
         return {
             'args': ([str],),  # noqa: E501
             'column_types': ([str],),  # noqa: E501
-            'detail_column_types': ([str],),  # noqa: E501
             'name': (str,),  # noqa: E501
             'output': (str,),  # noqa: E501
-            'type': (str,),  # noqa: E501
         }
 
     @cached_property
@@ -97,10 +95,8 @@ class TitaniumUdfMetadata(ModelNormal):
     attribute_map = {
         'args': 'args',  # noqa: E501
         'column_types': 'columnTypes',  # noqa: E501
-        'detail_column_types': 'detailColumnTypes',  # noqa: E501
         'name': 'name',  # noqa: E501
         'output': 'output',  # noqa: E501
-        'type': 'type',  # noqa: E501
     }
 
     read_only_vars = {
@@ -146,10 +142,8 @@ class TitaniumUdfMetadata(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             args ([str]): [optional]  # noqa: E501
             column_types ([str]): [optional]  # noqa: E501
-            detail_column_types ([str]): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             output (str): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
@@ -237,10 +231,8 @@ class TitaniumUdfMetadata(ModelNormal):
                                 _visited_composed_classes = (Animal,)
             args ([str]): [optional]  # noqa: E501
             column_types ([str]): [optional]  # noqa: E501
-            detail_column_types ([str]): [optional]  # noqa: E501
             name (str): [optional]  # noqa: E501
             output (str): [optional]  # noqa: E501
-            type (str): [optional]  # noqa: E501
         """
 
         _check_type = kwargs.pop('_check_type', True)
