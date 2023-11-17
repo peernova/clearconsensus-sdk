@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * GetChallengeDetailsResponseCommonChallengeData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:39:38.078108Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:40:38.426788Z[UTC]")
 public class GetChallengeDetailsResponseCommonChallengeData {
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)

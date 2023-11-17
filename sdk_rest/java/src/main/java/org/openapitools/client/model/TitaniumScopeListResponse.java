@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumScopeListResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:39:38.078108Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:40:38.426788Z[UTC]")
 public class TitaniumScopeListResponse {
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
