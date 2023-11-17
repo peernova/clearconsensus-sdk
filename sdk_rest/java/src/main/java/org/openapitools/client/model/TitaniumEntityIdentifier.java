@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEntityIdentifier
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:37:28.016539Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:38:32.244224Z[UTC]")
 public class TitaniumEntityIdentifier {
   public static final String SERIALIZED_NAME_IDENTIFIER = "identifier";
   @SerializedName(SERIALIZED_NAME_IDENTIFIER)

@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUploadNotifyRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:37:28.016539Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:38:32.244224Z[UTC]")
 public class TitaniumUploadNotifyRequest {
   public static final String SERIALIZED_NAME_CURRENT_PATH = "currentPath";
   @SerializedName(SERIALIZED_NAME_CURRENT_PATH)
