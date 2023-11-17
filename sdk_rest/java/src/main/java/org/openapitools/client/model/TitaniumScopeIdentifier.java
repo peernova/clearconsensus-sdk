@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumScopeIdentifier
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:50:29.613100Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:51:28.114086Z[UTC]")
 public class TitaniumScopeIdentifier {
   public static final String SERIALIZED_NAME_SCOPE = "scope";
   @SerializedName(SERIALIZED_NAME_SCOPE)
