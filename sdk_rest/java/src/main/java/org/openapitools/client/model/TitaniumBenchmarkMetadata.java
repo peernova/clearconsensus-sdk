@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumBenchmarkMetadata
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:16:25.794270Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:17:30.696510Z[UTC]")
 public class TitaniumBenchmarkMetadata {
   public static final String SERIALIZED_NAME_REASON = "reason";
   @SerializedName(SERIALIZED_NAME_REASON)
