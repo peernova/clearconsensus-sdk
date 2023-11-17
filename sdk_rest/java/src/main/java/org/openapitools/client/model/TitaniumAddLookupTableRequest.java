@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAddLookupTableRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:50:06.087841Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:51:10.560344Z[UTC]")
 public class TitaniumAddLookupTableRequest {
   public static final String SERIALIZED_NAME_LOOKUPTABLE = "lookuptable";
   @SerializedName(SERIALIZED_NAME_LOOKUPTABLE)
