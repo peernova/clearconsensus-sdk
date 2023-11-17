@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusDensityScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:43:55.727190Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:45:09.925730Z[UTC]")
 public class TitaniumConsensusDensityScore {
   public static final String SERIALIZED_NAME_BIMODALITY_SCORE = "bimodalityScore";
   @SerializedName(SERIALIZED_NAME_BIMODALITY_SCORE)

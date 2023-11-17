@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumColumnInfo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:43:55.727190Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:45:09.925730Z[UTC]")
 public class TitaniumColumnInfo {
   public static final String SERIALIZED_NAME_COLUMN_NAME = "columnName";
   @SerializedName(SERIALIZED_NAME_COLUMN_NAME)
