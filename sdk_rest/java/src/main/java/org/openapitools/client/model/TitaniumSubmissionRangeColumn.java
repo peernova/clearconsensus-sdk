@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubmissionRangeColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:33:01.612151Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:34:07.368883Z[UTC]")
 public class TitaniumSubmissionRangeColumn {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_MEAN = "absDiffFromMean";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_MEAN)
