@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSliceRequestData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:25:13.078291Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:26:14.301702Z[UTC]")
 public class TitaniumSliceRequestData {
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
