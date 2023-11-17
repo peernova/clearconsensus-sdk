@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumCompleteDataUploadRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:27:30.826548Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:28:39.395444Z[UTC]")
 public class TitaniumCompleteDataUploadRequest {
   public static final String SERIALIZED_NAME_ASSET = "asset";
   @SerializedName(SERIALIZED_NAME_ASSET)
