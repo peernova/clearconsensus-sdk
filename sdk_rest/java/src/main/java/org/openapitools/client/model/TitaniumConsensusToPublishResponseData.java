@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusToPublishResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:41:45.807947Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:42:50.364277Z[UTC]")
 public class TitaniumConsensusToPublishResponseData {
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
