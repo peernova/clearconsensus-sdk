@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUserNotificationRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:53:32.718826Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:54:54.945367Z[UTC]")
 public class TitaniumUserNotificationRequest {
   public static final String SERIALIZED_NAME_USER_NOTIFICATION = "userNotification";
   @SerializedName(SERIALIZED_NAME_USER_NOTIFICATION)
