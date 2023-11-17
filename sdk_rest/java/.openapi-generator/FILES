@@ -270,6 +270,7 @@ docs/TitaniumGetSubmissionFilesResponse.md
 docs/TitaniumGetSupportedFields.md
 docs/TitaniumGetSupportedFieldsResponse.md
 docs/TitaniumGetTableResponse.md
+docs/TitaniumGetUdfResponse.md
 docs/TitaniumGetUserNotificationByMarketRequest.md
 docs/TitaniumGetUserNotificationRequest.md
 docs/TitaniumGetUserPermissionsRequest.md
@@ -296,6 +297,7 @@ docs/TitaniumListKVResponse.md
 docs/TitaniumListLookupTableResponse.md
 docs/TitaniumListRequest.md
 docs/TitaniumListRuleResponse.md
+docs/TitaniumListUdfResponse.md
 docs/TitaniumListUniqueKeysResponse.md
 docs/TitaniumListVersionResponse.md
 docs/TitaniumLoginRequest.md
@@ -389,6 +391,10 @@ docs/TitaniumTradeAnchorDetails.md
 docs/TitaniumTradePeriodMetrics.md
 docs/TitaniumTradePeriodsWithMetrics.md
 docs/TitaniumTransformation.md
+docs/TitaniumUdfItem.md
+docs/TitaniumUdfList.md
+docs/TitaniumUdfMetadata.md
+docs/TitaniumUdfNameRequest.md
 docs/TitaniumUniqueKeyDefinition.md
 docs/TitaniumUniqueKeyDefinitionResponse.md
 docs/TitaniumUniqueKeyList.md
@@ -422,6 +428,7 @@ docs/TitaniumViewRow.md
 docs/TitaniumWorkflowDefinition.md
 docs/TitaniumWorkflowDefinitionResponse.md
 docs/TitaniumWorkflowList.md
+docs/UdfServiceApi.md
 docs/UniqueKeyServiceApi.md
 docs/UserServiceApi.md
 docs/ValidatorServiceApi.md
@@ -479,6 +486,7 @@ src/main/java/org/openapitools/client/api/PopUpServiceApi.java
 src/main/java/org/openapitools/client/api/ScopeServiceApi.java
 src/main/java/org/openapitools/client/api/SubmissionServiceApi.java
 src/main/java/org/openapitools/client/api/SupportedFieldsServiceApi.java
+src/main/java/org/openapitools/client/api/UdfServiceApi.java
 src/main/java/org/openapitools/client/api/UniqueKeyServiceApi.java
 src/main/java/org/openapitools/client/api/UserServiceApi.java
 src/main/java/org/openapitools/client/api/ValidatorServiceApi.java
@@ -722,6 +730,7 @@ src/main/java/org/openapitools/client/model/TitaniumGetSubmissionFilesResponse.j
 src/main/java/org/openapitools/client/model/TitaniumGetSupportedFields.java
 src/main/java/org/openapitools/client/model/TitaniumGetSupportedFieldsResponse.java
 src/main/java/org/openapitools/client/model/TitaniumGetTableResponse.java
+src/main/java/org/openapitools/client/model/TitaniumGetUdfResponse.java
 src/main/java/org/openapitools/client/model/TitaniumGetUserNotificationByMarketRequest.java
 src/main/java/org/openapitools/client/model/TitaniumGetUserNotificationRequest.java
 src/main/java/org/openapitools/client/model/TitaniumGetUserPermissionsRequest.java
@@ -748,6 +757,7 @@ src/main/java/org/openapitools/client/model/TitaniumListKVResponse.java
 src/main/java/org/openapitools/client/model/TitaniumListLookupTableResponse.java
 src/main/java/org/openapitools/client/model/TitaniumListRequest.java
 src/main/java/org/openapitools/client/model/TitaniumListRuleResponse.java
+src/main/java/org/openapitools/client/model/TitaniumListUdfResponse.java
 src/main/java/org/openapitools/client/model/TitaniumListUniqueKeysResponse.java
 src/main/java/org/openapitools/client/model/TitaniumListVersionResponse.java
 src/main/java/org/openapitools/client/model/TitaniumLoginRequest.java
@@ -841,6 +851,10 @@ src/main/java/org/openapitools/client/model/TitaniumTradeAnchorDetails.java
 src/main/java/org/openapitools/client/model/TitaniumTradePeriodMetrics.java
 src/main/java/org/openapitools/client/model/TitaniumTradePeriodsWithMetrics.java
 src/main/java/org/openapitools/client/model/TitaniumTransformation.java
+src/main/java/org/openapitools/client/model/TitaniumUdfItem.java
+src/main/java/org/openapitools/client/model/TitaniumUdfList.java
+src/main/java/org/openapitools/client/model/TitaniumUdfMetadata.java
+src/main/java/org/openapitools/client/model/TitaniumUdfNameRequest.java
 src/main/java/org/openapitools/client/model/TitaniumUniqueKeyDefinition.java
 src/main/java/org/openapitools/client/model/TitaniumUniqueKeyDefinitionResponse.java
 src/main/java/org/openapitools/client/model/TitaniumUniqueKeyList.java
@@ -874,3 +888,10 @@ src/main/java/org/openapitools/client/model/TitaniumViewRow.java
 src/main/java/org/openapitools/client/model/TitaniumWorkflowDefinition.java
 src/main/java/org/openapitools/client/model/TitaniumWorkflowDefinitionResponse.java
 src/main/java/org/openapitools/client/model/TitaniumWorkflowList.java
+src/test/java/org/openapitools/client/api/UdfServiceApiTest.java
+src/test/java/org/openapitools/client/model/TitaniumGetUdfResponseTest.java
+src/test/java/org/openapitools/client/model/TitaniumListUdfResponseTest.java
+src/test/java/org/openapitools/client/model/TitaniumUdfItemTest.java
+src/test/java/org/openapitools/client/model/TitaniumUdfListTest.java
+src/test/java/org/openapitools/client/model/TitaniumUdfMetadataTest.java
+src/test/java/org/openapitools/client/model/TitaniumUdfNameRequestTest.java

@@ -5233,6 +5233,126 @@
         "tags" : [ "AssetsService" ]
       }
     },
+    "/api/v1/udf/disable" : {
+      "post" : {
+        "operationId" : "UdfService_DisableUdf",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumUdfNameRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumMessageResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UdfService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/udf/list" : {
+      "post" : {
+        "operationId" : "UdfService_ListUdfs",
+        "requestBody" : {
+          "content" : {
+            "*/*" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/titaniumListRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumListUdfResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UdfService" ],
+        "x-codegen-request-body-name" : "body"
+      }
+    },
+    "/api/v1/udf/{name}" : {
+      "get" : {
+        "operationId" : "UdfService_GetUdfDefinition",
+        "parameters" : [ {
+          "in" : "path",
+          "name" : "name",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        }, {
+          "in" : "query",
+          "name" : "scope",
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/titaniumGetUdfResponse"
+                }
+              }
+            },
+            "description" : "A successful response."
+          },
+          "default" : {
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/rpcStatus"
+                }
+              }
+            },
+            "description" : "An unexpected error response."
+          }
+        },
+        "tags" : [ "UdfService" ]
+      }
+    },
     "/api/v1/uniquekey/add" : {
       "post" : {
         "description" : "Example of request :\n{\n  \"name\":\"foreign_exchange-vanilla-forwards\",\n  \"scope\":\"global\",\n  \"uniqueKey\":[\n     \"snap_date\",\n     \"asset\",\n     \"service\",\n     \"client\",\n     \"service\",\n     \"tenor\",\n     \"snap_time\",\n     \"instrument_type\",\n     \"spot_reference_price\",\n     \"mid_fwrd_outright\",\n     \"mid_fwrd_points\",\n     \"onshore_offshore_curr_1\",\n     \"onshore_offshore_curr_2\"\n  ]\n}",
@@ -7693,6 +7813,9 @@
           }
         },
         "type" : "object"
+      },
+      "UdfMetadataUdfFieldType" : {
+        "type" : "string"
       },
       "grpcprotoError" : {
         "properties" : {
@@ -11451,6 +11574,17 @@
         },
         "type" : "object"
       },
+      "titaniumGetUdfResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumUdfMetadata"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
       "titaniumGetUserNotificationByMarketRequest" : {
         "properties" : {
           "marketId" : {
@@ -11783,6 +11917,17 @@
         "properties" : {
           "data" : {
             "$ref" : "#/components/schemas/titaniumDescriptorBasedResultsList"
+          },
+          "error" : {
+            "$ref" : "#/components/schemas/titaniumError"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumListUdfResponse" : {
+        "properties" : {
+          "data" : {
+            "$ref" : "#/components/schemas/titaniumUdfList"
           },
           "error" : {
             "$ref" : "#/components/schemas/titaniumError"
@@ -13373,6 +13518,77 @@
           }
         },
         "type" : "object"
+      },
+      "titaniumUdfItem" : {
+        "properties" : {
+          "lastModified" : {
+            "type" : "string"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/titaniumUdfType"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUdfList" : {
+        "properties" : {
+          "results" : {
+            "items" : {
+              "$ref" : "#/components/schemas/titaniumUdfItem"
+            },
+            "type" : "array"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUdfMetadata" : {
+        "properties" : {
+          "args" : {
+            "items" : {
+              "$ref" : "#/components/schemas/UdfMetadataUdfFieldType"
+            },
+            "type" : "array"
+          },
+          "columnTypes" : {
+            "items" : {
+              "$ref" : "#/components/schemas/UdfMetadataUdfFieldType"
+            },
+            "type" : "array"
+          },
+          "detailColumnTypes" : {
+            "items" : {
+              "type" : "string"
+            },
+            "type" : "array"
+          },
+          "name" : {
+            "type" : "string"
+          },
+          "output" : {
+            "$ref" : "#/components/schemas/UdfMetadataUdfFieldType"
+          },
+          "type" : {
+            "$ref" : "#/components/schemas/titaniumUdfType"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUdfNameRequest" : {
+        "properties" : {
+          "name" : {
+            "type" : "string"
+          },
+          "scope" : {
+            "type" : "string"
+          }
+        },
+        "type" : "object"
+      },
+      "titaniumUdfType" : {
+        "type" : "string"
       },
       "titaniumUniqueKeyDefinition" : {
         "properties" : {

@@ -267,6 +267,7 @@ docs/TitaniumGetSubmissionFilesResponse.md
 docs/TitaniumGetSupportedFields.md
 docs/TitaniumGetSupportedFieldsResponse.md
 docs/TitaniumGetTableResponse.md
+docs/TitaniumGetUdfResponse.md
 docs/TitaniumGetUserNotificationByMarketRequest.md
 docs/TitaniumGetUserNotificationRequest.md
 docs/TitaniumGetUserPermissionsRequest.md
@@ -293,6 +294,7 @@ docs/TitaniumListKVResponse.md
 docs/TitaniumListLookupTableResponse.md
 docs/TitaniumListRequest.md
 docs/TitaniumListRuleResponse.md
+docs/TitaniumListUdfResponse.md
 docs/TitaniumListUniqueKeysResponse.md
 docs/TitaniumListVersionResponse.md
 docs/TitaniumLoginRequest.md
@@ -386,6 +388,10 @@ docs/TitaniumTradeAnchorDetails.md
 docs/TitaniumTradePeriodMetrics.md
 docs/TitaniumTradePeriodsWithMetrics.md
 docs/TitaniumTransformation.md
+docs/TitaniumUdfItem.md
+docs/TitaniumUdfList.md
+docs/TitaniumUdfMetadata.md
+docs/TitaniumUdfNameRequest.md
 docs/TitaniumUniqueKeyDefinition.md
 docs/TitaniumUniqueKeyDefinitionResponse.md
 docs/TitaniumUniqueKeyList.md
@@ -419,6 +425,7 @@ docs/TitaniumViewRow.md
 docs/TitaniumWorkflowDefinition.md
 docs/TitaniumWorkflowDefinitionResponse.md
 docs/TitaniumWorkflowList.md
+docs/UdfServiceApi.md
 docs/UniqueKeyServiceApi.md
 docs/UserServiceApi.md
 docs/ValidatorServiceApi.md
@@ -457,6 +464,7 @@ openapi_client/api/pop_up_service_api.py
 openapi_client/api/scope_service_api.py
 openapi_client/api/submission_service_api.py
 openapi_client/api/supported_fields_service_api.py
+openapi_client/api/udf_service_api.py
 openapi_client/api/unique_key_service_api.py
 openapi_client/api/user_service_api.py
 openapi_client/api/validator_service_api.py
@@ -699,6 +707,7 @@ openapi_client/models/titanium_get_submission_files_response.py
 openapi_client/models/titanium_get_supported_fields.py
 openapi_client/models/titanium_get_supported_fields_response.py
 openapi_client/models/titanium_get_table_response.py
+openapi_client/models/titanium_get_udf_response.py
 openapi_client/models/titanium_get_user_notification_by_market_request.py
 openapi_client/models/titanium_get_user_notification_request.py
 openapi_client/models/titanium_get_user_permissions_request.py
@@ -725,6 +734,7 @@ openapi_client/models/titanium_list_kv_response.py
 openapi_client/models/titanium_list_lookup_table_response.py
 openapi_client/models/titanium_list_request.py
 openapi_client/models/titanium_list_rule_response.py
+openapi_client/models/titanium_list_udf_response.py
 openapi_client/models/titanium_list_unique_keys_response.py
 openapi_client/models/titanium_list_version_response.py
 openapi_client/models/titanium_login_request.py
@@ -818,6 +828,10 @@ openapi_client/models/titanium_trade_anchor_details.py
 openapi_client/models/titanium_trade_period_metrics.py
 openapi_client/models/titanium_trade_periods_with_metrics.py
 openapi_client/models/titanium_transformation.py
+openapi_client/models/titanium_udf_item.py
+openapi_client/models/titanium_udf_list.py
+openapi_client/models/titanium_udf_metadata.py
+openapi_client/models/titanium_udf_name_request.py
 openapi_client/models/titanium_unique_key_definition.py
 openapi_client/models/titanium_unique_key_definition_response.py
 openapi_client/models/titanium_unique_key_list.py
@@ -857,4 +871,11 @@ setup.cfg
 setup.py
 test-requirements.txt
 test/__init__.py
+test/test_titanium_get_udf_response.py
+test/test_titanium_list_udf_response.py
+test/test_titanium_udf_item.py
+test/test_titanium_udf_list.py
+test/test_titanium_udf_metadata.py
+test/test_titanium_udf_name_request.py
+test/test_udf_service_api.py
 tox.ini

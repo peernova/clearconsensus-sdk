@@ -257,6 +257,9 @@ Class | Method | HTTP request | Description
 *SubmissionServiceApi* | [**submission_service_get_files_view**](docs/SubmissionServiceApi.md#submission_service_get_files_view) | **POST** /api/v1/submission/files-view | GetFilesView returns information about submitted to s3 storage files.
 *SupportedFieldsServiceApi* | [**supported_fields_service_get_supported_fields_values**](docs/SupportedFieldsServiceApi.md#supported_fields_service_get_supported_fields_values) | **POST** /api/v1/list/field-values | 
 *SupportedFieldsServiceApi* | [**supported_fields_service_list_supported_fields**](docs/SupportedFieldsServiceApi.md#supported_fields_service_list_supported_fields) | **POST** /api/v1/list/fields | 
+*UdfServiceApi* | [**udf_service_disable_udf**](docs/UdfServiceApi.md#udf_service_disable_udf) | **POST** /api/v1/udf/disable | 
+*UdfServiceApi* | [**udf_service_get_udf_definition**](docs/UdfServiceApi.md#udf_service_get_udf_definition) | **GET** /api/v1/udf/{name} | 
+*UdfServiceApi* | [**udf_service_list_udfs**](docs/UdfServiceApi.md#udf_service_list_udfs) | **POST** /api/v1/udf/list | 
 *UniqueKeyServiceApi* | [**unique_key_service_add_unique_key**](docs/UniqueKeyServiceApi.md#unique_key_service_add_unique_key) | **POST** /api/v1/uniquekey/add | AddUniqueKey is used to add a new unique key definition to the system.
 *UniqueKeyServiceApi* | [**unique_key_service_disable_unique_key**](docs/UniqueKeyServiceApi.md#unique_key_service_disable_unique_key) | **POST** /api/v1/uniquekey/disable | 
 *UniqueKeyServiceApi* | [**unique_key_service_enable_unique_key**](docs/UniqueKeyServiceApi.md#unique_key_service_enable_unique_key) | **POST** /api/v1/uniquekey/enable | 
@@ -536,6 +539,7 @@ Class | Method | HTTP request | Description
  - [TitaniumGetSupportedFields](docs/TitaniumGetSupportedFields.md)
  - [TitaniumGetSupportedFieldsResponse](docs/TitaniumGetSupportedFieldsResponse.md)
  - [TitaniumGetTableResponse](docs/TitaniumGetTableResponse.md)
+ - [TitaniumGetUdfResponse](docs/TitaniumGetUdfResponse.md)
  - [TitaniumGetUserNotificationByMarketRequest](docs/TitaniumGetUserNotificationByMarketRequest.md)
  - [TitaniumGetUserNotificationRequest](docs/TitaniumGetUserNotificationRequest.md)
  - [TitaniumGetUserPermissionsRequest](docs/TitaniumGetUserPermissionsRequest.md)
@@ -562,6 +566,7 @@ Class | Method | HTTP request | Description
  - [TitaniumListLookupTableResponse](docs/TitaniumListLookupTableResponse.md)
  - [TitaniumListRequest](docs/TitaniumListRequest.md)
  - [TitaniumListRuleResponse](docs/TitaniumListRuleResponse.md)
+ - [TitaniumListUdfResponse](docs/TitaniumListUdfResponse.md)
  - [TitaniumListUniqueKeysResponse](docs/TitaniumListUniqueKeysResponse.md)
  - [TitaniumListVersionResponse](docs/TitaniumListVersionResponse.md)
  - [TitaniumLoginRequest](docs/TitaniumLoginRequest.md)
@@ -655,6 +660,10 @@ Class | Method | HTTP request | Description
  - [TitaniumTradePeriodMetrics](docs/TitaniumTradePeriodMetrics.md)
  - [TitaniumTradePeriodsWithMetrics](docs/TitaniumTradePeriodsWithMetrics.md)
  - [TitaniumTransformation](docs/TitaniumTransformation.md)
+ - [TitaniumUdfItem](docs/TitaniumUdfItem.md)
+ - [TitaniumUdfList](docs/TitaniumUdfList.md)
+ - [TitaniumUdfMetadata](docs/TitaniumUdfMetadata.md)
+ - [TitaniumUdfNameRequest](docs/TitaniumUdfNameRequest.md)
  - [TitaniumUniqueKeyDefinition](docs/TitaniumUniqueKeyDefinition.md)
  - [TitaniumUniqueKeyDefinitionResponse](docs/TitaniumUniqueKeyDefinitionResponse.md)
  - [TitaniumUniqueKeyList](docs/TitaniumUniqueKeyList.md)

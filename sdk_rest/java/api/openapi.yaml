@@ -3926,6 +3926,94 @@ paths:
       tags:
       - AssetsService
       x-accepts: '*/*'
+  /api/v1/udf/disable:
+    post:
+      operationId: UdfService_DisableUdf
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumUdfNameRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumMessageResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UdfService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/udf/list:
+    post:
+      operationId: UdfService_ListUdfs
+      requestBody:
+        content:
+          '*/*':
+            schema:
+              $ref: '#/components/schemas/titaniumListRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumListUdfResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UdfService
+      x-codegen-request-body-name: body
+      x-content-type: '*/*'
+      x-accepts: '*/*'
+  /api/v1/udf/{name}:
+    get:
+      operationId: UdfService_GetUdfDefinition
+      parameters:
+      - explode: false
+        in: path
+        name: name
+        required: true
+        schema:
+          type: string
+        style: simple
+      - explode: true
+        in: query
+        name: scope
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/titaniumGetUdfResponse'
+          description: A successful response.
+        default:
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/rpcStatus'
+          description: An unexpected error response.
+      tags:
+      - UdfService
+      x-accepts: '*/*'
   /api/v1/uniquekey/add:
     post:
       description: "Example of request :\n{\n  \"name\":\"foreign_exchange-vanilla-forwards\"\
@@ -5982,6 +6070,8 @@ components:
         rawColumnName:
           type: string
       type: object
+    UdfMetadataUdfFieldType:
+      type: string
     grpcprotoError:
       example:
         code: 0
@@ -11687,6 +11777,30 @@ components:
         error:
           $ref: '#/components/schemas/titaniumError'
       type: object
+    titaniumGetUdfResponse:
+      example:
+        data:
+          args:
+          - null
+          - null
+          output: output
+          columnTypes:
+          - null
+          - null
+          name: name
+          type: type
+          detailColumnTypes:
+          - detailColumnTypes
+          - detailColumnTypes
+        error:
+          code: 0
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/titaniumUdfMetadata'
+        error:
+          $ref: '#/components/schemas/titaniumError'
+      type: object
     titaniumGetUserNotificationByMarketRequest:
       properties:
         marketId:
@@ -12370,6 +12484,25 @@ components:
       properties:
         data:
           $ref: '#/components/schemas/titaniumDescriptorBasedResultsList'
+        error:
+          $ref: '#/components/schemas/titaniumError'
+      type: object
+    titaniumListUdfResponse:
+      example:
+        data:
+          results:
+          - name: name
+            lastModified: lastModified
+            type: type
+          - name: name
+            lastModified: lastModified
+            type: type
+        error:
+          code: 0
+          message: message
+      properties:
+        data:
+          $ref: '#/components/schemas/titaniumUdfList'
         error:
           $ref: '#/components/schemas/titaniumError'
       type: object
@@ -14444,6 +14577,77 @@ components:
         targetColumn:
           type: string
       type: object
+    titaniumUdfItem:
+      example:
+        name: name
+        lastModified: lastModified
+        type: type
+      properties:
+        lastModified:
+          type: string
+        name:
+          type: string
+        type:
+          type: string
+      type: object
+    titaniumUdfList:
+      example:
+        results:
+        - name: name
+          lastModified: lastModified
+          type: type
+        - name: name
+          lastModified: lastModified
+          type: type
+      properties:
+        results:
+          items:
+            $ref: '#/components/schemas/titaniumUdfItem'
+          type: array
+      type: object
+    titaniumUdfMetadata:
+      example:
+        args:
+        - null
+        - null
+        output: output
+        columnTypes:
+        - null
+        - null
+        name: name
+        type: type
+        detailColumnTypes:
+        - detailColumnTypes
+        - detailColumnTypes
+      properties:
+        args:
+          items:
+            $ref: '#/components/schemas/UdfMetadataUdfFieldType'
+          type: array
+        columnTypes:
+          items:
+            $ref: '#/components/schemas/UdfMetadataUdfFieldType'
+          type: array
+        detailColumnTypes:
+          items:
+            type: string
+          type: array
+        name:
+          type: string
+        output:
+          type: string
+        type:
+          type: string
+      type: object
+    titaniumUdfNameRequest:
+      properties:
+        name:
+          type: string
+        scope:
+          type: string
+      type: object
+    titaniumUdfType:
+      type: string
     titaniumUniqueKeyDefinition:
       example:
         scope: scope

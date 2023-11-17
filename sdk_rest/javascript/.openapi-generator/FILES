@@ -267,6 +267,7 @@ docs/TitaniumGetSubmissionFilesResponse.md
 docs/TitaniumGetSupportedFields.md
 docs/TitaniumGetSupportedFieldsResponse.md
 docs/TitaniumGetTableResponse.md
+docs/TitaniumGetUdfResponse.md
 docs/TitaniumGetUserNotificationByMarketRequest.md
 docs/TitaniumGetUserNotificationRequest.md
 docs/TitaniumGetUserPermissionsRequest.md
@@ -293,6 +294,7 @@ docs/TitaniumListKVResponse.md
 docs/TitaniumListLookupTableResponse.md
 docs/TitaniumListRequest.md
 docs/TitaniumListRuleResponse.md
+docs/TitaniumListUdfResponse.md
 docs/TitaniumListUniqueKeysResponse.md
 docs/TitaniumListVersionResponse.md
 docs/TitaniumLoginRequest.md
@@ -386,6 +388,10 @@ docs/TitaniumTradeAnchorDetails.md
 docs/TitaniumTradePeriodMetrics.md
 docs/TitaniumTradePeriodsWithMetrics.md
 docs/TitaniumTransformation.md
+docs/TitaniumUdfItem.md
+docs/TitaniumUdfList.md
+docs/TitaniumUdfMetadata.md
+docs/TitaniumUdfNameRequest.md
 docs/TitaniumUniqueKeyDefinition.md
 docs/TitaniumUniqueKeyDefinitionResponse.md
 docs/TitaniumUniqueKeyList.md
@@ -419,6 +425,7 @@ docs/TitaniumViewRow.md
 docs/TitaniumWorkflowDefinition.md
 docs/TitaniumWorkflowDefinitionResponse.md
 docs/TitaniumWorkflowList.md
+docs/UdfServiceApi.md
 docs/UniqueKeyServiceApi.md
 docs/UserServiceApi.md
 docs/ValidatorServiceApi.md
@@ -458,6 +465,7 @@ src/api/PopUpServiceApi.js
 src/api/ScopeServiceApi.js
 src/api/SubmissionServiceApi.js
 src/api/SupportedFieldsServiceApi.js
+src/api/UdfServiceApi.js
 src/api/UniqueKeyServiceApi.js
 src/api/UserServiceApi.js
 src/api/ValidatorServiceApi.js
@@ -697,6 +705,7 @@ src/model/TitaniumGetSubmissionFilesResponse.js
 src/model/TitaniumGetSupportedFields.js
 src/model/TitaniumGetSupportedFieldsResponse.js
 src/model/TitaniumGetTableResponse.js
+src/model/TitaniumGetUdfResponse.js
 src/model/TitaniumGetUserNotificationByMarketRequest.js
 src/model/TitaniumGetUserNotificationRequest.js
 src/model/TitaniumGetUserPermissionsRequest.js
@@ -723,6 +732,7 @@ src/model/TitaniumListKVResponse.js
 src/model/TitaniumListLookupTableResponse.js
 src/model/TitaniumListRequest.js
 src/model/TitaniumListRuleResponse.js
+src/model/TitaniumListUdfResponse.js
 src/model/TitaniumListUniqueKeysResponse.js
 src/model/TitaniumListVersionResponse.js
 src/model/TitaniumLoginRequest.js
@@ -816,6 +826,10 @@ src/model/TitaniumTradeAnchorDetails.js
 src/model/TitaniumTradePeriodMetrics.js
 src/model/TitaniumTradePeriodsWithMetrics.js
 src/model/TitaniumTransformation.js
+src/model/TitaniumUdfItem.js
+src/model/TitaniumUdfList.js
+src/model/TitaniumUdfMetadata.js
+src/model/TitaniumUdfNameRequest.js
 src/model/TitaniumUniqueKeyDefinition.js
 src/model/TitaniumUniqueKeyDefinitionResponse.js
 src/model/TitaniumUniqueKeyList.js
@@ -849,3 +863,10 @@ src/model/TitaniumViewRow.js
 src/model/TitaniumWorkflowDefinition.js
 src/model/TitaniumWorkflowDefinitionResponse.js
 src/model/TitaniumWorkflowList.js
+test/api/UdfServiceApi.spec.js
+test/model/TitaniumGetUdfResponse.spec.js
+test/model/TitaniumListUdfResponse.spec.js
+test/model/TitaniumUdfItem.spec.js
+test/model/TitaniumUdfList.spec.js
+test/model/TitaniumUdfMetadata.spec.js
+test/model/TitaniumUdfNameRequest.spec.js

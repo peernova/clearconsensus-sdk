@@ -247,6 +247,7 @@ import TitaniumGetSubmissionFilesResponse from './model/TitaniumGetSubmissionFil
 import TitaniumGetSupportedFields from './model/TitaniumGetSupportedFields';
 import TitaniumGetSupportedFieldsResponse from './model/TitaniumGetSupportedFieldsResponse';
 import TitaniumGetTableResponse from './model/TitaniumGetTableResponse';
+import TitaniumGetUdfResponse from './model/TitaniumGetUdfResponse';
 import TitaniumGetUserNotificationByMarketRequest from './model/TitaniumGetUserNotificationByMarketRequest';
 import TitaniumGetUserNotificationRequest from './model/TitaniumGetUserNotificationRequest';
 import TitaniumGetUserPermissionsRequest from './model/TitaniumGetUserPermissionsRequest';
@@ -273,6 +274,7 @@ import TitaniumListKVResponse from './model/TitaniumListKVResponse';
 import TitaniumListLookupTableResponse from './model/TitaniumListLookupTableResponse';
 import TitaniumListRequest from './model/TitaniumListRequest';
 import TitaniumListRuleResponse from './model/TitaniumListRuleResponse';
+import TitaniumListUdfResponse from './model/TitaniumListUdfResponse';
 import TitaniumListUniqueKeysResponse from './model/TitaniumListUniqueKeysResponse';
 import TitaniumListVersionResponse from './model/TitaniumListVersionResponse';
 import TitaniumLoginRequest from './model/TitaniumLoginRequest';
@@ -366,6 +368,10 @@ import TitaniumTradeAnchorDetails from './model/TitaniumTradeAnchorDetails';
 import TitaniumTradePeriodMetrics from './model/TitaniumTradePeriodMetrics';
 import TitaniumTradePeriodsWithMetrics from './model/TitaniumTradePeriodsWithMetrics';
 import TitaniumTransformation from './model/TitaniumTransformation';
+import TitaniumUdfItem from './model/TitaniumUdfItem';
+import TitaniumUdfList from './model/TitaniumUdfList';
+import TitaniumUdfMetadata from './model/TitaniumUdfMetadata';
+import TitaniumUdfNameRequest from './model/TitaniumUdfNameRequest';
 import TitaniumUniqueKeyDefinition from './model/TitaniumUniqueKeyDefinition';
 import TitaniumUniqueKeyDefinitionResponse from './model/TitaniumUniqueKeyDefinitionResponse';
 import TitaniumUniqueKeyList from './model/TitaniumUniqueKeyList';
@@ -430,6 +436,7 @@ import PopUpServiceApi from './api/PopUpServiceApi';
 import ScopeServiceApi from './api/ScopeServiceApi';
 import SubmissionServiceApi from './api/SubmissionServiceApi';
 import SupportedFieldsServiceApi from './api/SupportedFieldsServiceApi';
+import UdfServiceApi from './api/UdfServiceApi';
 import UniqueKeyServiceApi from './api/UniqueKeyServiceApi';
 import UserServiceApi from './api/UserServiceApi';
 import ValidatorServiceApi from './api/ValidatorServiceApi';
@@ -1879,6 +1886,12 @@ export {
     TitaniumGetTableResponse,
 
     /**
+     * The TitaniumGetUdfResponse model constructor.
+     * @property {module:model/TitaniumGetUdfResponse}
+     */
+    TitaniumGetUdfResponse,
+
+    /**
      * The TitaniumGetUserNotificationByMarketRequest model constructor.
      * @property {module:model/TitaniumGetUserNotificationByMarketRequest}
      */
@@ -2033,6 +2046,12 @@ export {
      * @property {module:model/TitaniumListRuleResponse}
      */
     TitaniumListRuleResponse,
+
+    /**
+     * The TitaniumListUdfResponse model constructor.
+     * @property {module:model/TitaniumListUdfResponse}
+     */
+    TitaniumListUdfResponse,
 
     /**
      * The TitaniumListUniqueKeysResponse model constructor.
@@ -2593,6 +2612,30 @@ export {
     TitaniumTransformation,
 
     /**
+     * The TitaniumUdfItem model constructor.
+     * @property {module:model/TitaniumUdfItem}
+     */
+    TitaniumUdfItem,
+
+    /**
+     * The TitaniumUdfList model constructor.
+     * @property {module:model/TitaniumUdfList}
+     */
+    TitaniumUdfList,
+
+    /**
+     * The TitaniumUdfMetadata model constructor.
+     * @property {module:model/TitaniumUdfMetadata}
+     */
+    TitaniumUdfMetadata,
+
+    /**
+     * The TitaniumUdfNameRequest model constructor.
+     * @property {module:model/TitaniumUdfNameRequest}
+     */
+    TitaniumUdfNameRequest,
+
+    /**
      * The TitaniumUniqueKeyDefinition model constructor.
      * @property {module:model/TitaniumUniqueKeyDefinition}
      */
@@ -2975,6 +3018,12 @@ export {
     * @property {module:api/SupportedFieldsServiceApi}
     */
     SupportedFieldsServiceApi,
+
+    /**
+    * The UdfServiceApi service constructor.
+    * @property {module:api/UdfServiceApi}
+    */
+    UdfServiceApi,
 
     /**
     * The UniqueKeyServiceApi service constructor.

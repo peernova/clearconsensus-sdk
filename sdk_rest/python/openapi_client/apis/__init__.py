@@ -45,6 +45,7 @@ from openapi_client.api.pop_up_service_api import PopUpServiceApi
 from openapi_client.api.scope_service_api import ScopeServiceApi
 from openapi_client.api.submission_service_api import SubmissionServiceApi
 from openapi_client.api.supported_fields_service_api import SupportedFieldsServiceApi
+from openapi_client.api.udf_service_api import UdfServiceApi
 from openapi_client.api.unique_key_service_api import UniqueKeyServiceApi
 from openapi_client.api.user_service_api import UserServiceApi
 from openapi_client.api.validator_service_api import ValidatorServiceApi

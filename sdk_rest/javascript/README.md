@@ -270,6 +270,9 @@ Class | Method | HTTP request | Description
 *ClearconsensusSdk.SubmissionServiceApi* | [**submissionServiceGetFilesView**](docs/SubmissionServiceApi.md#submissionServiceGetFilesView) | **POST** /api/v1/submission/files-view | GetFilesView returns information about submitted to s3 storage files.
 *ClearconsensusSdk.SupportedFieldsServiceApi* | [**supportedFieldsServiceGetSupportedFieldsValues**](docs/SupportedFieldsServiceApi.md#supportedFieldsServiceGetSupportedFieldsValues) | **POST** /api/v1/list/field-values | 
 *ClearconsensusSdk.SupportedFieldsServiceApi* | [**supportedFieldsServiceListSupportedFields**](docs/SupportedFieldsServiceApi.md#supportedFieldsServiceListSupportedFields) | **POST** /api/v1/list/fields | 
+*ClearconsensusSdk.UdfServiceApi* | [**udfServiceDisableUdf**](docs/UdfServiceApi.md#udfServiceDisableUdf) | **POST** /api/v1/udf/disable | 
+*ClearconsensusSdk.UdfServiceApi* | [**udfServiceGetUdfDefinition**](docs/UdfServiceApi.md#udfServiceGetUdfDefinition) | **GET** /api/v1/udf/{name} | 
+*ClearconsensusSdk.UdfServiceApi* | [**udfServiceListUdfs**](docs/UdfServiceApi.md#udfServiceListUdfs) | **POST** /api/v1/udf/list | 
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceAddUniqueKey**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceAddUniqueKey) | **POST** /api/v1/uniquekey/add | AddUniqueKey is used to add a new unique key definition to the system.
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceDisableUniqueKey**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceDisableUniqueKey) | **POST** /api/v1/uniquekey/disable | 
 *ClearconsensusSdk.UniqueKeyServiceApi* | [**uniqueKeyServiceEnableUniqueKey**](docs/UniqueKeyServiceApi.md#uniqueKeyServiceEnableUniqueKey) | **POST** /api/v1/uniquekey/enable | 
@@ -549,6 +552,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumGetSupportedFields](docs/TitaniumGetSupportedFields.md)
  - [ClearconsensusSdk.TitaniumGetSupportedFieldsResponse](docs/TitaniumGetSupportedFieldsResponse.md)
  - [ClearconsensusSdk.TitaniumGetTableResponse](docs/TitaniumGetTableResponse.md)
+ - [ClearconsensusSdk.TitaniumGetUdfResponse](docs/TitaniumGetUdfResponse.md)
  - [ClearconsensusSdk.TitaniumGetUserNotificationByMarketRequest](docs/TitaniumGetUserNotificationByMarketRequest.md)
  - [ClearconsensusSdk.TitaniumGetUserNotificationRequest](docs/TitaniumGetUserNotificationRequest.md)
  - [ClearconsensusSdk.TitaniumGetUserPermissionsRequest](docs/TitaniumGetUserPermissionsRequest.md)
@@ -575,6 +579,7 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumListLookupTableResponse](docs/TitaniumListLookupTableResponse.md)
  - [ClearconsensusSdk.TitaniumListRequest](docs/TitaniumListRequest.md)
  - [ClearconsensusSdk.TitaniumListRuleResponse](docs/TitaniumListRuleResponse.md)
+ - [ClearconsensusSdk.TitaniumListUdfResponse](docs/TitaniumListUdfResponse.md)
  - [ClearconsensusSdk.TitaniumListUniqueKeysResponse](docs/TitaniumListUniqueKeysResponse.md)
  - [ClearconsensusSdk.TitaniumListVersionResponse](docs/TitaniumListVersionResponse.md)
  - [ClearconsensusSdk.TitaniumLoginRequest](docs/TitaniumLoginRequest.md)
@@ -668,6 +673,10 @@ Class | Method | HTTP request | Description
  - [ClearconsensusSdk.TitaniumTradePeriodMetrics](docs/TitaniumTradePeriodMetrics.md)
  - [ClearconsensusSdk.TitaniumTradePeriodsWithMetrics](docs/TitaniumTradePeriodsWithMetrics.md)
  - [ClearconsensusSdk.TitaniumTransformation](docs/TitaniumTransformation.md)
+ - [ClearconsensusSdk.TitaniumUdfItem](docs/TitaniumUdfItem.md)
+ - [ClearconsensusSdk.TitaniumUdfList](docs/TitaniumUdfList.md)
+ - [ClearconsensusSdk.TitaniumUdfMetadata](docs/TitaniumUdfMetadata.md)
+ - [ClearconsensusSdk.TitaniumUdfNameRequest](docs/TitaniumUdfNameRequest.md)
  - [ClearconsensusSdk.TitaniumUniqueKeyDefinition](docs/TitaniumUniqueKeyDefinition.md)
  - [ClearconsensusSdk.TitaniumUniqueKeyDefinitionResponse](docs/TitaniumUniqueKeyDefinitionResponse.md)
  - [ClearconsensusSdk.TitaniumUniqueKeyList](docs/TitaniumUniqueKeyList.md)
