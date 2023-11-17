@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumInstrumentSubmissionStatus
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:38:32.244224Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:39:38.078108Z[UTC]")
 public class TitaniumInstrumentSubmissionStatus {
   public static final String SERIALIZED_NAME_CONSENSUS_STATUS = "consensusStatus";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_STATUS)

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumColDependency
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:38:32.244224Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:39:38.078108Z[UTC]")
 public class TitaniumColDependency {
   public static final String SERIALIZED_NAME_COL = "col";
   @SerializedName(SERIALIZED_NAME_COL)
