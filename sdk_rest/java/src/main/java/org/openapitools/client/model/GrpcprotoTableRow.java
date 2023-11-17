@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * GrpcprotoTableRow
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:29:45.074957Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:30:50.688776Z[UTC]")
 public class GrpcprotoTableRow {
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
