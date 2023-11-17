@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSubGroupKeySearch
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:15:19.319352Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:16:25.794270Z[UTC]")
 public class TitaniumSubGroupKeySearch {
   public static final String SERIALIZED_NAME_GROUP_KEYS = "groupKeys";
   @SerializedName(SERIALIZED_NAME_GROUP_KEYS)

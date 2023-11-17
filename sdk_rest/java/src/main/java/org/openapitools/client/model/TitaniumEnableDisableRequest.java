@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumEnableDisableRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:15:19.319352Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:16:25.794270Z[UTC]")
 public class TitaniumEnableDisableRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

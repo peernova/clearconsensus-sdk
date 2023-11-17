@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumOnBoardRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:15:19.319352Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:16:25.794270Z[UTC]")
 public class TitaniumOnBoardRequest {
   public static final String SERIALIZED_NAME_AUTHORIZED = "authorized";
   @SerializedName(SERIALIZED_NAME_AUTHORIZED)
