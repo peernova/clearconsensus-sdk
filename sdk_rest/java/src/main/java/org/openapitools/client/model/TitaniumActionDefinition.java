@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumActionDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:52:15.032311Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:53:19.229665Z[UTC]")
 public class TitaniumActionDefinition {
   public static final String SERIALIZED_NAME_ACTION_TYPE = "actionType";
   @SerializedName(SERIALIZED_NAME_ACTION_TYPE)

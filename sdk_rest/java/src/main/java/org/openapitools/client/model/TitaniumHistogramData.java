@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumHistogramData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:52:15.032311Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:53:19.229665Z[UTC]")
 public class TitaniumHistogramData {
   public static final String SERIALIZED_NAME_CONSENSUS_HISTOGRAM = "consensusHistogram";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_HISTOGRAM)
