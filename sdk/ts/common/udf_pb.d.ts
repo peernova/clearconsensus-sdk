@@ -11,8 +11,8 @@ export class UdfItem extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getType(): UdfTypeMap[keyof UdfTypeMap];
-  setType(value: UdfTypeMap[keyof UdfTypeMap]): void;
+  getType(): UdfFieldTypeMap[keyof UdfFieldTypeMap];
+  setType(value: UdfFieldTypeMap[keyof UdfFieldTypeMap]): void;
 
   getLastModified(): string;
   setLastModified(value: string): void;
@@ -30,7 +30,7 @@ export class UdfItem extends jspb.Message {
 export namespace UdfItem {
   export type AsObject = {
     name: string,
-    type: UdfTypeMap[keyof UdfTypeMap],
+    type: UdfFieldTypeMap[keyof UdfFieldTypeMap],
     lastModified: string,
   }
 }
@@ -120,26 +120,18 @@ export class UdfMetadata extends jspb.Message {
   getName(): string;
   setName(value: string): void;
 
-  getType(): UdfTypeMap[keyof UdfTypeMap];
-  setType(value: UdfTypeMap[keyof UdfTypeMap]): void;
+  getOutput(): UdfFieldTypeMap[keyof UdfFieldTypeMap];
+  setOutput(value: UdfFieldTypeMap[keyof UdfFieldTypeMap]): void;
 
   clearArgsList(): void;
-  getArgsList(): Array<UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap]>;
-  setArgsList(value: Array<UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap]>): void;
-  addArgs(value: UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap], index?: number): UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap];
-
-  getOutput(): UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap];
-  setOutput(value: UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap]): void;
+  getArgsList(): Array<UdfFieldTypeMap[keyof UdfFieldTypeMap]>;
+  setArgsList(value: Array<UdfFieldTypeMap[keyof UdfFieldTypeMap]>): void;
+  addArgs(value: UdfFieldTypeMap[keyof UdfFieldTypeMap], index?: number): UdfFieldTypeMap[keyof UdfFieldTypeMap];
 
   clearColumnTypesList(): void;
-  getColumnTypesList(): Array<UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap]>;
-  setColumnTypesList(value: Array<UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap]>): void;
-  addColumnTypes(value: UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap], index?: number): UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap];
-
-  clearDetailColumnTypesList(): void;
-  getDetailColumnTypesList(): Array<string>;
-  setDetailColumnTypesList(value: Array<string>): void;
-  addDetailColumnTypes(value: string, index?: number): string;
+  getColumnTypesList(): Array<UdfFieldTypeMap[keyof UdfFieldTypeMap]>;
+  setColumnTypesList(value: Array<UdfFieldTypeMap[keyof UdfFieldTypeMap]>): void;
+  addColumnTypes(value: UdfFieldTypeMap[keyof UdfFieldTypeMap], index?: number): UdfFieldTypeMap[keyof UdfFieldTypeMap];
 
   serializeBinary(): Uint8Array;
   toObject(includeInstance?: boolean): UdfMetadata.AsObject;
@@ -154,29 +146,10 @@ export class UdfMetadata extends jspb.Message {
 export namespace UdfMetadata {
   export type AsObject = {
     name: string,
-    type: UdfTypeMap[keyof UdfTypeMap],
-    argsList: Array<UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap]>,
-    output: UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap],
-    columnTypesList: Array<UdfMetadata.UdfFieldTypeMap[keyof UdfMetadata.UdfFieldTypeMap]>,
-    detailColumnTypesList: Array<string>,
+    output: UdfFieldTypeMap[keyof UdfFieldTypeMap],
+    argsList: Array<UdfFieldTypeMap[keyof UdfFieldTypeMap]>,
+    columnTypesList: Array<UdfFieldTypeMap[keyof UdfFieldTypeMap]>,
   }
-
-  export interface UdfFieldTypeMap {
-    STRING: 0;
-    BOOLEAN: 1;
-    BIGDECIMAL: 2;
-    TIMESTAMP: 3;
-    LONG: 4;
-    LIST: 5;
-    FLOAT: 6;
-    DOUBLE: 7;
-    INTEGER: 8;
-    LOOKUPTABLE: 9;
-    RULEERROR: 10;
-    DATASET: 11;
-  }
-
-  export const UdfFieldType: UdfFieldTypeMap;
 }
 
 export class GetUdfResponse extends jspb.Message {
@@ -214,11 +187,20 @@ export namespace GetUdfResponse {
   }
 }
 
-export interface UdfTypeMap {
-  VALUE: 0;
-  ERRORS: 1;
-  DATASET: 2;
+export interface UdfFieldTypeMap {
+  UDF_STRING: 0;
+  UDF_BOOLEAN: 1;
+  BIGDECIMAL: 2;
+  UDF_TIMESTAMP: 3;
+  LONG: 4;
+  LIST: 5;
+  FLOAT: 6;
+  DOUBLE: 7;
+  INTEGER: 8;
+  LOOKUPTABLE: 9;
+  RULEERROR: 10;
+  DATASET: 11;
 }
 
-export const UdfType: UdfTypeMap;
+export const UdfFieldType: UdfFieldTypeMap;
 
