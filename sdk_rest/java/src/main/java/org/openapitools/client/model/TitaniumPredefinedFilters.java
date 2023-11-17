@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumPredefinedFilters
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:35:09.846311Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:36:13.498051Z[UTC]")
 public class TitaniumPredefinedFilters {
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
