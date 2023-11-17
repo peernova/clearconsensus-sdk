@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumChartSource
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:34:07.368883Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:35:09.846311Z[UTC]")
 public class TitaniumChartSource {
   public static final String SERIALIZED_NAME_CHARTS = "charts";
   @SerializedName(SERIALIZED_NAME_CHARTS)

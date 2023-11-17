@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TableColumn
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:34:07.368883Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:35:09.846311Z[UTC]")
 public class TableColumn {
   public static final String SERIALIZED_NAME_COLUMN_NAME = "columnName";
   @SerializedName(SERIALIZED_NAME_COLUMN_NAME)
