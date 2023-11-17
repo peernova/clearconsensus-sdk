@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradeAligmentDateAndValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:57:40.863761Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:58:45.076336Z[UTC]")
 public class TitaniumTradeAligmentDateAndValue {
   public static final String SERIALIZED_NAME_DATE = "date";
   @SerializedName(SERIALIZED_NAME_DATE)
