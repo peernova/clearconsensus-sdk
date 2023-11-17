@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumDescriptorPairBasedGetDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:07:31.560674Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:08:32.921048Z[UTC]")
 public class TitaniumDescriptorPairBasedGetDefinition {
   public static final String SERIALIZED_NAME_DEST_DESCRIPTOR = "destDescriptor";
   @SerializedName(SERIALIZED_NAME_DEST_DESCRIPTOR)
