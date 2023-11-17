@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:46:09.266546Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:47:14.030061Z[UTC]")
 public class TitaniumError {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)

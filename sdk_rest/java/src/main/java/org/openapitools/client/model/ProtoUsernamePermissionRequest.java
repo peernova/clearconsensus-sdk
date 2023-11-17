@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * ProtoUsernamePermissionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:46:09.266546Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:47:14.030061Z[UTC]")
 public class ProtoUsernamePermissionRequest {
   public static final String SERIALIZED_NAME_PERMISSION = "permission";
   @SerializedName(SERIALIZED_NAME_PERMISSION)
