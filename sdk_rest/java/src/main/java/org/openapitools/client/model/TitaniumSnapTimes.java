@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumSnapTimes
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:21:54.486708Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:22:58.067519Z[UTC]")
 public class TitaniumSnapTimes {
   public static final String SERIALIZED_NAME_SNAP_TIMES = "snapTimes";
   @SerializedName(SERIALIZED_NAME_SNAP_TIMES)
