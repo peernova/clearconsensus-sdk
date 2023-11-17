@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumFileAnnotation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:54:54.945367Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:56:00.701139Z[UTC]")
 public class TitaniumFileAnnotation {
   public static final String SERIALIZED_NAME_ANNOTATION = "annotation";
   @SerializedName(SERIALIZED_NAME_ANNOTATION)
