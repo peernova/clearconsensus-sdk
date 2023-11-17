@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * EntityServiceUpdateRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:48:19.931155Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:49:23.060280Z[UTC]")
 public class EntityServiceUpdateRequest {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)

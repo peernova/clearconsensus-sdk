@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumUdfNameRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:48:19.931155Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:49:23.060280Z[UTC]")
 public class TitaniumUdfNameRequest {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
