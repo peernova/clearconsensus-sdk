@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * ErrorValidationErrorDetail
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:51:28.114086Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:52:30.202412Z[UTC]")
 public class ErrorValidationErrorDetail {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
