@@ -53,7 +53,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTableRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:11:00.538416Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:12:05.511649Z[UTC]")
 public class TitaniumTableRequest {
   public static final String SERIALIZED_NAME_FILTER_PACK = "filterPack";
   @SerializedName(SERIALIZED_NAME_FILTER_PACK)
