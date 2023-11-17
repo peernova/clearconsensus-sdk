@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusTimestampsResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:56:00.701139Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:57:07.232227Z[UTC]")
 public class TitaniumConsensusTimestampsResponseData {
   public static final String SERIALIZED_NAME_TIMESTAMPS = "timestamps";
   @SerializedName(SERIALIZED_NAME_TIMESTAMPS)
