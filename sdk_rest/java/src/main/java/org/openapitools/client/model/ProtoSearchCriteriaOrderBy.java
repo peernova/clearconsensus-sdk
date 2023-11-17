@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * ProtoSearchCriteriaOrderBy
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:56:34.325698Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T18:57:40.863761Z[UTC]")
 public class ProtoSearchCriteriaOrderBy {
   public static final String SERIALIZED_NAME_COLUMN = "column";
   @SerializedName(SERIALIZED_NAME_COLUMN)
