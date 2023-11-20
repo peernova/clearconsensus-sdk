@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumMessageResponseData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:28:53.559516Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:30:09.225239Z[UTC]")
 public class TitaniumMessageResponseData {
   public static final String SERIALIZED_NAME_MESSAGE = "message";
   @SerializedName(SERIALIZED_NAME_MESSAGE)

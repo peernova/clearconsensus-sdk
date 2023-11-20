@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTransformation
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:28:53.559516Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:30:09.225239Z[UTC]")
 public class TitaniumTransformation {
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
