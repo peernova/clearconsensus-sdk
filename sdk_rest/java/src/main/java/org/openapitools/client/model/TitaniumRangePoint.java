@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumRangePoint
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:33:40.338788Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:34:50.374851Z[UTC]")
 public class TitaniumRangePoint {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)

@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumKVList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:33:40.338788Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:34:50.374851Z[UTC]")
 public class TitaniumKVList {
   public static final String SERIALIZED_NAME_RESULTS = "results";
   @SerializedName(SERIALIZED_NAME_RESULTS)

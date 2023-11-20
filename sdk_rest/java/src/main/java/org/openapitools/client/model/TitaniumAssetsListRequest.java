@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAssetsListRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:33:40.338788Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:34:50.374851Z[UTC]")
 public class TitaniumAssetsListRequest {
   public static final String SERIALIZED_NAME_SNAP_TIME = "snapTime";
   @SerializedName(SERIALIZED_NAME_SNAP_TIME)

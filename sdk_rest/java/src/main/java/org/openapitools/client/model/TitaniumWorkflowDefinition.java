@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumWorkflowDefinition
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:33:40.338788Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:34:50.374851Z[UTC]")
 public class TitaniumWorkflowDefinition {
   public static final String SERIALIZED_NAME_ACTION_LIST = "actionList";
   @SerializedName(SERIALIZED_NAME_ACTION_LIST)
