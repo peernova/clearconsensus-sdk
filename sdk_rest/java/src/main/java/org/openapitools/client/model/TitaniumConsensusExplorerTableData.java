@@ -48,7 +48,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusExplorerTableData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:25:27.601976Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:26:34.858838Z[UTC]")
 public class TitaniumConsensusExplorerTableData {
   public static final String SERIALIZED_NAME_COMPARISON_TABLE = "comparisonTable";
   @SerializedName(SERIALIZED_NAME_COMPARISON_TABLE)

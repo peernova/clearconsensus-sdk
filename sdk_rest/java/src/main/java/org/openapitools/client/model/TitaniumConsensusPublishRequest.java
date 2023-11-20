@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusPublishRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:25:27.601976Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:26:34.858838Z[UTC]")
 public class TitaniumConsensusPublishRequest {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
