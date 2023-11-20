@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusDecisionRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:30:09.225239Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:31:21.732898Z[UTC]")
 public class TitaniumConsensusDecisionRequest {
   public static final String SERIALIZED_NAME_CONSENSUS_TRACKING_ID = "consensusTrackingId";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_TRACKING_ID)
