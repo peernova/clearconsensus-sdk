@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumRunWorkflowRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:26:34.858838Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:27:45.570258Z[UTC]")
 public class TitaniumRunWorkflowRequest {
   public static final String SERIALIZED_NAME_ARGS = "args";
   @SerializedName(SERIALIZED_NAME_ARGS)

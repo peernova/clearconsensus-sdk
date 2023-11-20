@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumGetUserNotificationByMarketRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:26:34.858838Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:27:45.570258Z[UTC]")
 public class TitaniumGetUserNotificationByMarketRequest {
   public static final String SERIALIZED_NAME_MARKET_ID = "marketId";
   @SerializedName(SERIALIZED_NAME_MARKET_ID)
