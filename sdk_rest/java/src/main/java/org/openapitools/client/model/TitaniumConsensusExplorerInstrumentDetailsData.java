@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumConsensusExplorerInstrumentDetailsData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-17T19:57:07.232227Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:24:18.181624Z[UTC]")
 public class TitaniumConsensusExplorerInstrumentDetailsData {
   public static final String SERIALIZED_NAME_CONSENSUS_SCORES = "consensusScores";
   @SerializedName(SERIALIZED_NAME_CONSENSUS_SCORES)
