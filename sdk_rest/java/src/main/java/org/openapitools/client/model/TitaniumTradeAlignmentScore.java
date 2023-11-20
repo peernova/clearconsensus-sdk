@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumTradeAlignmentScore
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:24:18.181624Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:25:27.601976Z[UTC]")
 public class TitaniumTradeAlignmentScore {
   public static final String SERIALIZED_NAME_CENTROID = "centroid";
   @SerializedName(SERIALIZED_NAME_CENTROID)

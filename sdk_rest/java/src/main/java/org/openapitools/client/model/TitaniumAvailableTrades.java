@@ -47,7 +47,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumAvailableTrades
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:24:18.181624Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:25:27.601976Z[UTC]")
 public class TitaniumAvailableTrades {
   public static final String SERIALIZED_NAME_ABS_DIFF_FROM_LATEST_TRADE = "absDiffFromLatestTrade";
   @SerializedName(SERIALIZED_NAME_ABS_DIFF_FROM_LATEST_TRADE)
