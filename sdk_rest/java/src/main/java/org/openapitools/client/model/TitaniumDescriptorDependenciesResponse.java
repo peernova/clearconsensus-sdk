@@ -49,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * TitaniumDescriptorDependenciesResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:34:50.374851Z[UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2023-11-20T18:36:00.931829Z[UTC]")
 public class TitaniumDescriptorDependenciesResponse {
   public static final String SERIALIZED_NAME_DEPENDENCIES = "dependencies";
   @SerializedName(SERIALIZED_NAME_DEPENDENCIES)
